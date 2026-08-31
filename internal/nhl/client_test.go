@@ -63,3 +63,68 @@ func TestSchedule(t *testing.T) {
 		t.Errorf("gameScheduleState = %q, want OK", g.GameScheduleState)
 	}
 }
+
+func TestPlayByPlay(t *testing.T) {
+	c := fixtureClient(t, map[string]string{"/v1/gamecenter/2025020001/play-by-play": "pbp.json"})
+	pbp, raw, err := c.PlayByPlay(context.Background(), 2025020001)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(raw) == 0 {
+		t.Error("raw body is empty")
+	}
+	if pbp.ID != 2025020001 || pbp.GameState != "OFF" {
+		t.Errorf("id=%d state=%q, want 2025020001 OFF", pbp.ID, pbp.GameState)
+	}
+	if pbp.HomeTeam.Abbrev != "FLA" || pbp.AwayTeam.Abbrev != "CHI" {
+		t.Errorf("teams = %s@%s, want CHI@FLA", pbp.AwayTeam.Abbrev, pbp.HomeTeam.Abbrev)
+	}
+	if len(pbp.Plays) < 100 {
+		t.Fatalf("only %d plays parsed", len(pbp.Plays))
+	}
+	// Find the first goal and check details parsing + raw retention.
+	var goal *Play
+	for i := range pbp.Plays {
+		if pbp.Plays[i].TypeDescKey == "goal" {
+			goal = &pbp.Plays[i]
+			break
+		}
+	}
+	if goal == nil {
+		t.Fatal("no goal play found in fixture")
+	}
+	if goal.SortOrder == 0 {
+		t.Error("goal sortOrder not parsed")
+	}
+	d := goal.ParsedDetails()
+	if d.EventOwnerTeamID != 16 { // CHI scored first in this game
+		t.Errorf("eventOwnerTeamId = %d, want 16", d.EventOwnerTeamID)
+	}
+	if d.AwayScore == nil || *d.AwayScore != 1 {
+		t.Error("awayScore not parsed as 1")
+	}
+	if len(goal.Raw) == 0 {
+		t.Error("play Raw not retained")
+	}
+}
+
+func TestRawFeedAndShifts(t *testing.T) {
+	c := fixtureClient(t, map[string]string{
+		"/v1/gamecenter/2025020001/boxscore": "boxscore.json",
+		"/stats/rest/en/shiftcharts":         "boxscore.json", // any JSON body works; we only check passthrough
+	})
+	box, err := c.RawFeed(context.Background(), 2025020001, "boxscore")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(box) == 0 {
+		t.Error("boxscore body empty")
+	}
+	shifts, err := c.ShiftCharts(context.Background(), 2025020001)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(shifts) == 0 {
+		t.Error("shifts body empty")
+	}
+}

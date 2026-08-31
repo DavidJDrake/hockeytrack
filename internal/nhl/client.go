@@ -55,3 +55,23 @@ func (c *Client) Schedule(ctx context.Context, date string) (*ScheduleResponse, 
 	}
 	return &s, raw, nil
 }
+
+func (c *Client) PlayByPlay(ctx context.Context, gameID int64) (*PlayByPlay, []byte, error) {
+	raw, err := c.get(ctx, fmt.Sprintf("%s/v1/gamecenter/%d/play-by-play", c.BaseURL, gameID))
+	if err != nil {
+		return nil, nil, err
+	}
+	var p PlayByPlay
+	if err := json.Unmarshal(raw, &p); err != nil {
+		return nil, nil, fmt.Errorf("parse play-by-play: %w", err)
+	}
+	return &p, raw, nil
+}
+
+func (c *Client) RawFeed(ctx context.Context, gameID int64, feed string) ([]byte, error) {
+	return c.get(ctx, fmt.Sprintf("%s/v1/gamecenter/%d/%s", c.BaseURL, gameID, feed))
+}
+
+func (c *Client) ShiftCharts(ctx context.Context, gameID int64) ([]byte, error) {
+	return c.get(ctx, fmt.Sprintf("%s/stats/rest/en/shiftcharts?cayenneExp=gameId=%d", c.StatsBaseURL, gameID))
+}
