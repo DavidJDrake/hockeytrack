@@ -12,7 +12,7 @@ resource "aws_lambda_function" "schedule_sync" {
   package_type  = "Image"
   image_uri     = local.image_uri
   role          = aws_iam_role.schedule_sync.arn
-  architectures = ["arm64"]
+  architectures = ["x86_64"]
   timeout       = 120
   memory_size   = 256
 
@@ -35,7 +35,7 @@ resource "aws_lambda_function" "poller" {
   package_type  = "Image"
   image_uri     = local.image_uri
   role          = aws_iam_role.poller.arn
-  architectures = ["arm64"]
+  architectures = ["x86_64"]
   timeout       = 900
   memory_size   = 256
   # No reserved concurrency: the account's default 10-execution limit cannot
@@ -60,7 +60,7 @@ resource "aws_lambda_function" "sweeper" {
   package_type  = "Image"
   image_uri     = local.image_uri
   role          = aws_iam_role.sweeper.arn
-  architectures = ["arm64"]
+  architectures = ["x86_64"]
   timeout       = 60
   memory_size   = 256
 

@@ -10,7 +10,7 @@ test:
 	go test ./...
 
 build: test
-	docker build --platform linux/arm64 -t $(IMAGE) .
+	docker build --platform linux/amd64 -t $(IMAGE) .
 
 push: build
 	aws ecr get-login-password --region $(REGION) | docker login --username AWS --password-stdin $(ACCOUNT_ID).dkr.ecr.$(REGION).amazonaws.com
