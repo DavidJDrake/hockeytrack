@@ -1,0 +1,124 @@
+# HockeyTrack
+
+A serverless NHL game-data ingestion pipeline on AWS. It watches the league schedule, wakes up for every game, polls the NHL's public API every few seconds while the puck is in play, archives every raw response to S3, and publishes each play as a discrete event on an EventBridge bus — so anything you want to build on live hockey data is one EventBridge rule away.
+
+## What it does
+
+- **Archives everything, raw.** Play-by-play and boxscore snapshots land in S3 whenever they change during a game, plus a full end-of-game sweep (play-by-play, boxscore, landing summary, shift charts). Nothing is parsed away; every future use case has the original JSON.
+- **Publishes events in near-real-time.** Every new play (goals, shots, hits, penalties, faceoffs…), every game-state change, and a final summary event go onto a custom EventBridge bus within seconds of the NHL API reflecting them.
+- **Runs only when hockey is on.** A daily job reads the schedule and creates a one-time EventBridge Scheduler entry per game. No games, no compute.
+
+## Architecture
+
+```
+EventBridge cron (daily)
+        │
+        ▼
+┌─────────────────┐    upserts games    ┌──────────────┐
+│ schedule-sync    │───────────────────▶│  DynamoDB     │
+│ Lambda           │  creates one-time  │  games table  │
+└─────────────────┘  schedules ─┐       └──────────────┘
+                                ▼               ▲ leases, diff
+                    EventBridge Scheduler       │ high-water marks
+                    (one entry per game,        │
+                     fires at puck drop − 15m)  │
+                                │               │
+                                ▼               │
+                    ┌──────────────────┐        │
+                    │ game-poller       │────────┘
+                    │ Lambda (5s loop,  │──▶ S3 (raw JSON archive)
+                    │ self-chaining)    │
+                    └──────────────────┘
+                                │
+                                ▼
+                    EventBridge bus "hockeytrack" ──▶ your rules & targets
+```
+
+One Go binary, shipped as a single container image, runs in three modes selected by a `MODE` env var:
+
+| Mode | Trigger | Job |
+|---|---|---|
+| `schedule-sync` | daily cron | Pull the schedule, record games in DynamoDB, create/move/delete per-game Scheduler entries (handles reschedules and postponements) |
+| `poller` | per-game Scheduler entry | Poll play-by-play + boxscore every 5s, diff against a DynamoDB high-water mark, publish new events, snapshot changed JSON to S3; near the 15-minute Lambda limit it re-invokes itself and hands off (a DynamoDB lease guarantees exactly one active chain per game); at game end it runs the archive sweep |
+| `sweeper` | 5-minute rate rule | Restart any poller chain that died mid-game, detected via expired leases |
+
+The poll loop itself is runtime-agnostic — Lambda's 15-minute ceiling is handled by an injected `shouldHandOff()` callback. Point the same container at ECS/Fargate with a callback that always returns false and it simply polls a whole game in one run. That migration is a new thin entrypoint, not a rewrite.
+
+## The event contract
+
+Bus `hockeytrack`, source `hockeytrack.poller`. Three detail-types (plus `hockeytrack.alert` for operational alerts):
+
+- **`nhl.game.play`** — one event per play. Detail includes `schemaVersion`, `gameId`, `seq`, `playType` (`goal`, `shot-on-goal`, `penalty`, `faceoff`, `hit`, …), team abbreviations, `scoringTeam` (goals only), period/clock, the running score, and the full untouched NHL play object under `raw`.
+- **`nhl.game.status`** — game-state transitions (pregame → live → final) with score.
+- **`nhl.game.final`** — emitted once after the archive sweep, with the final score and the game's S3 prefix.
+
+Delivery is at-least-once; consumers should dedupe on `(gameId, seq)`. Every event carries `schemaVersion` so the schema can evolve without breaking you.
+
+## Extending it
+
+The pipeline never needs to change for new consumers — subscribe with an EventBridge rule and point it at any target (Lambda, SNS, SQS, Step Functions, API destinations…).
+
+**"Text me every Lightning goal":**
+
+```json
+{
+  "source": ["hockeytrack.poller"],
+  "detail-type": ["nhl.game.play"],
+  "detail": { "playType": ["goal"], "scoringTeam": ["TBL"] }
+}
+```
+→ target an SNS topic with an SMS/email subscription. That's the whole feature.
+
+**Other natural extensions:**
+
+- **Post-game analytics** — rule on `nhl.game.final`, trigger a Lambda/Glue job that reads the game's S3 prefix (the event hands it to you).
+- **Live dashboards** — rule on `nhl.game.play` → WebSocket pushes via API Gateway.
+- **Historical backfill** — the `internal/nhl` client fetches any past game; a batch job reusing it can fill S3 with prior seasons.
+- **Ad-hoc queries over the archive** — the S3 layout (`raw/{season}/{date}/{gameId}/{feed}/…`) partitions cleanly for Athena.
+- **Fargate migration** — see above; the container is already ECS-ready.
+
+## Deploying
+
+Prereqs: AWS credentials, Terraform ≥ 1.6, Docker, Go 1.23+.
+
+```bash
+# one-time: create the ECR repo first so the image push has a home
+cd terraform && terraform init && terraform apply -target=aws_ecr_repository.main -var="image_tag=bootstrap"
+
+# then every deploy: test → build → push image (tagged with the git SHA) → terraform apply
+make deploy
+```
+
+Variables: `region` (default `us-east-1`), `alert_email` (optional — subscribes you to CloudWatch alarms for DLQ depth and poller errors).
+
+Cost is dominated by poller runtime: roughly **$0.05/game**, on the order of **$10–15/month in season** and near-zero in the off-season. S3/DynamoDB/EventBridge usage is pennies at this volume.
+
+## Development
+
+- `make test` / `go test ./...` — unit tests use real captured NHL API responses as fixtures (never hand-written), with golden tests on the play-by-play diff logic: given snapshot N and N+1, exactly these events are emitted.
+- **Replay harness** — run a full recorded game through the real poller path against in-memory fakes, printing every event it would publish:
+
+  ```bash
+  go run ./cmd/replay -game path/to/snapshots/
+  ```
+
+  This is the primary end-to-end check when no live games are on.
+- AWS is always behind interfaces (`internal/store`, `internal/events`); logic tests run against fakes, no AWS or localstack required.
+
+```
+cmd/ingestor/     entrypoint; MODE selects schedule-sync | poller | sweeper
+cmd/replay/       offline replay harness
+internal/nhl/     NHL API client + captured fixtures
+internal/poller/  diff logic + the runtime-agnostic poll loop
+internal/schedsync/  schedule pull + Scheduler reconciliation
+internal/sweeper/ dead-chain detection and restart
+internal/store/   DynamoDB game store (leases, high-water marks) + S3 archive
+internal/events/  versioned event types + EventBridge publisher
+terraform/        the whole stack: ECR, Lambdas, DynamoDB, S3, bus, scheduler, IAM, DLQs, alarms
+docs/superpowers/ design spec and implementation plan
+```
+
+## Caveats
+
+- The NHL API (`api-web.nhle.com`) is **unofficial and undocumented**. It's free, keyless, and widely used by community projects, but the NHL could change or restrict it at any time. The client isolates all API knowledge in `internal/nhl`, and the raw archive means a format change never costs you already-captured data.
+- This project is not affiliated with or endorsed by the NHL. Data belongs to its respective owners; use responsibly.
