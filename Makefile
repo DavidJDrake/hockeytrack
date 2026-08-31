@@ -9,8 +9,17 @@ IMAGE       := $(ACCOUNT_ID).dkr.ecr.$(REGION).amazonaws.com/$(REPO):$(TAG)
 test:
 	go test ./...
 
+# The final image is flattened to a single layer (export/import): this host's
+# Docker daemon pushes layered images whose shared base blobs Lambda cannot
+# apply (Runtime.InvalidEntrypoint/ProcessSpawnFailed), while a fresh
+# single-layer image always works. Costs layer dedupe (~12MB/version), buys
+# a deploy that cannot reference a poisoned blob.
 build: test
-	docker build --platform linux/amd64 -t $(IMAGE) .
+	docker build --platform linux/amd64 -t $(IMAGE)-layered .
+	docker rm -f hockeytrack-flatten 2>/dev/null || true
+	docker create --name hockeytrack-flatten $(IMAGE)-layered
+	docker export hockeytrack-flatten | docker import --change 'ENTRYPOINT ["/ingestor"]' --change 'USER 65532' - $(IMAGE)
+	docker rm hockeytrack-flatten
 
 push: build
 	aws ecr get-login-password --region $(REGION) | docker login --username AWS --password-stdin $(ACCOUNT_ID).dkr.ecr.$(REGION).amazonaws.com
