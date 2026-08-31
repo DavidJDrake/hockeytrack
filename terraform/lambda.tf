@@ -38,8 +38,10 @@ resource "aws_lambda_function" "poller" {
   architectures = ["arm64"]
   timeout       = 900
   memory_size   = 256
-  # One chain per game; modest headroom for simultaneous games league-wide.
-  reserved_concurrent_executions = 20
+  # No reserved concurrency: the account's default 10-execution limit cannot
+  # spare a reservation (AWS requires 10 unreserved). The DynamoDB lease
+  # already guarantees one chain per game. Request a quota increase before
+  # the season if >10 games may poll simultaneously.
 
   environment {
     variables = merge(local.common_env, {
