@@ -6,6 +6,7 @@ import (
 	"net/http/httptest"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 )
 
@@ -152,5 +153,22 @@ func TestScheduleTeamNames(t *testing.T) {
 	}
 	if got := g.AwayTeam.Name(); got != "Montréal Canadiens" {
 		t.Errorf("away name = %q, want Montréal Canadiens", got)
+	}
+}
+
+func TestRequestsIdentifyThemselves(t *testing.T) {
+	var gotUA string
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		gotUA = r.Header.Get("User-Agent")
+		w.Write([]byte(`{"gameWeek":[]}`))
+	}))
+	t.Cleanup(srv.Close)
+	c := New()
+	c.BaseURL = srv.URL
+	if _, _, err := c.Schedule(context.Background(), "2026-01-15"); err != nil {
+		t.Fatal(err)
+	}
+	if gotUA != UserAgent || !strings.Contains(gotUA, "github.com/DavidJDrake/hockeytrack") {
+		t.Errorf("User-Agent = %q, want %q", gotUA, UserAgent)
 	}
 }

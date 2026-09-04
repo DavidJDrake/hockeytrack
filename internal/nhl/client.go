@@ -28,11 +28,16 @@ func New() *Client {
 	}
 }
 
+// UserAgent identifies this project to the NHL's operators, with a way to
+// reach us, instead of Go's anonymous default.
+const UserAgent = "hockeytrack/1.0 (+https://github.com/DavidJDrake/hockeytrack)"
+
 func (c *Client) get(ctx context.Context, url string) ([]byte, error) {
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
 	if err != nil {
 		return nil, err
 	}
+	req.Header.Set("User-Agent", UserAgent)
 	resp, err := c.HTTP.Do(req)
 	if err != nil {
 		return nil, err

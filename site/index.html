@@ -86,6 +86,7 @@
   .rest.b2b { color: var(--redline); font-weight: 500; }
   .empty { padding: 40px 0; color: var(--muted); text-align: center; }
   .foot a { color: var(--accent); }
+  .foot + .foot { margin-top: 8px; padding-top: 0; border-top: 0; }
   .foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--rule); font-size: 12px; color: var(--muted); max-width: 65ch; }
   @media (max-width: 640px) {
     .day { grid-template-columns: 1fr; gap: 6px; }
@@ -127,6 +128,7 @@
   <div id="teamline" class="teamline" hidden></div>
   <div id="list"></div>
   <p class="foot">Times are Eastern. <span id="stamp">Refreshed every morning</span> from the NHL’s public schedule API by <a href="https://github.com/DavidJDrake/hockeytrack">HockeyTrack</a>. Preseason games are exhibition; the 2026&ndash;27 regular season is 84 games per team. Playoff dates are set in April.</p>
+  <p class="foot">Not affiliated with or endorsed by the NHL. NHL and team names are trademarks of their respective owners; schedule data is provided for personal, non-commercial use.</p>
 </div>
 
 <script>
