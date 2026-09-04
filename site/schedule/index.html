@@ -34,6 +34,27 @@
   .seg button { font: inherit; font-weight: 500; color: var(--muted); background: transparent; border: 0; padding: 8px 12px; cursor: pointer; }
   .seg button + button { border-left: 1px solid var(--rule); }
   .seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+  .teams { position: relative; }
+  .teams > summary { list-style: none; cursor: pointer; font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 8px 34px 8px 10px; position: relative; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .teams > summary::-webkit-details-marker { display: none; }
+  .teams > summary::after { content: ""; position: absolute; right: 12px; top: 50%; width: 7px; height: 7px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: translateY(-70%) rotate(45deg); }
+  .teams[open] > summary { border-color: var(--blue); }
+  .teams[open] > summary::after { transform: translateY(-20%) rotate(225deg); }
+  .teams-panel { position: absolute; z-index: 5; top: calc(100% + 6px); left: 0; min-width: 100%; width: max(100%, 560px); max-width: calc(100vw - 40px); background: var(--ice); border: 1px solid var(--blue); border-radius: 6px; box-shadow: 0 8px 24px rgba(0, 51, 160, 0.12); padding: 12px 14px; }
+  .teams-panel fieldset { border: 0; margin: 0; padding: 0; }
+  .teams-panel legend { font-family: var(--display); font-weight: 700; font-size: 17px; letter-spacing: 0.03em; padding: 0; margin-bottom: 8px; }
+  .teams-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 2px 14px; max-height: 50vh; overflow-y: auto; }
+  .teams-grid label { display: flex; align-items: center; gap: 8px; padding: 4px 6px; border-radius: 4px; cursor: pointer; font-size: 13.5px; }
+  .teams-grid label:hover { background: var(--crease-soft); }
+  .teams-grid input { margin: 0; width: 16px; height: 16px; accent-color: var(--blue); }
+  .teams-grid b { font-family: var(--display); font-weight: 700; font-size: 16px; letter-spacing: 0.04em; min-width: 40px; }
+  .teams-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--rule); }
+  .teams-actions button { font: inherit; font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; padding: 6px 14px; border-radius: 4px; border: 1px solid var(--rule); background: var(--ice); color: var(--ink); cursor: pointer; }
+  .teams-actions #teams-done { background: var(--blue); border-color: var(--blue); color: #fff; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 10px; }
+  .chips button { font: inherit; font-family: var(--display); font-weight: 700; font-size: 14px; letter-spacing: 0.04em; color: var(--blue); background: var(--crease-soft); border: 1px solid var(--crease); border-radius: 999px; padding: 3px 9px 3px 11px; cursor: pointer; }
+  .chips button::after { content: " \00d7"; font-weight: 400; }
+  .chips button:hover { border-color: var(--red); color: var(--red); }
   .quick { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 18px; align-items: center; color: var(--muted); font-size: 12px; }
   .quick button { font: inherit; font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: 0.04em; color: var(--ink); background: var(--surface); border: 1px solid var(--rule); border-radius: 999px; padding: 3px 11px; cursor: pointer; }
   .quick button[aria-pressed="true"] { background: var(--crease-soft); border-color: var(--crease); color: var(--blue); }
@@ -104,7 +125,19 @@
   </header>
 
   <div class="rail">
-    <select id="team" aria-label="Team"><option value="">All teams</option></select>
+    <details class="teams" id="teams">
+      <summary id="teams-summary">All teams</summary>
+      <div class="teams-panel">
+        <fieldset>
+          <legend>Show games involving</legend>
+          <div class="teams-grid" id="teams-grid"></div>
+          <div class="teams-actions">
+            <button type="button" id="teams-clear">Clear</button>
+            <button type="button" id="teams-done">Done</button>
+          </div>
+        </fieldset>
+      </div>
+    </details>
     <div class="seg" role="group" aria-label="Game type">
       <button data-type="" aria-pressed="true">All</button>
       <button data-type="1" aria-pressed="false">Preseason</button>
@@ -113,6 +146,7 @@
     <select id="month" aria-label="Month"><option value="">Every month</option></select>
     <input type="search" id="q" placeholder="Search team or arena" aria-label="Search">
   </div>
+  <div class="chips" id="chips" aria-live="polite" hidden></div>
   <div class="quick">Quick picks:
     <button data-quick="TBL" aria-pressed="false">TBL</button>
     <button data-quick="FLA" aria-pressed="false">FLA</button>
@@ -138,10 +172,11 @@ const DATEFMT = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric
 const MONTHFMT = new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
 const todayET = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date());
 
-const state = { team: "", type: "", month: "", q: "" };
+const state = { teams: new Set(), type: "", month: "", q: "" };
 const $ = (s) => document.querySelector(s);
 
-const teamSel = $("#team");
+const teamsBox = $("#teams");
+const teamsGrid = $("#teams-grid");
 const monthSel = $("#month");
 
 async function load() {
@@ -161,13 +196,11 @@ async function load() {
   GENERATED = doc.generatedAt;
   populate();
   restore();
-  render();
 }
 
 function populate() {
-Object.entries(TEAMS).sort((a, b) => a[1].localeCompare(b[1])).forEach(([ab, name]) => {
-  const o = document.createElement("option"); o.value = ab; o.textContent = `${name} (${ab})`; teamSel.append(o);
-});
+teamsGrid.innerHTML = Object.entries(TEAMS).sort((a, b) => a[1].localeCompare(b[1]))
+  .map(([ab, name]) => `<label><input type="checkbox" value="${ab}"><b>${ab}</b><span>${name}</span></label>`).join("");
 [...new Set(GAMES.map(g => g.date.slice(0, 7)))].sort().forEach(m => {
   const o = document.createElement("option"); o.value = m; o.textContent = MONTHFMT.format(new Date(m + "-01T00:00:00Z")); monthSel.append(o);
 });
@@ -176,7 +209,7 @@ Object.entries(TEAMS).sort((a, b) => a[1].localeCompare(b[1])).forEach(([ab, nam
 function filtered() {
   const q = state.q.trim().toLowerCase();
   return GAMES.filter(g =>
-    (!state.team || g.away === state.team || g.home === state.team) &&
+    (!state.teams.size || state.teams.has(g.away) || state.teams.has(g.home)) &&
     (!state.type || String(g.type) === state.type) &&
     (!state.month || g.date.startsWith(state.month)) &&
     (!q || g.away.toLowerCase().includes(q) || g.home.toLowerCase().includes(q) ||
@@ -196,9 +229,13 @@ function teamContext(team) {
   return ctx;
 }
 
+// The per-team view (game numbers, rest, home/away) only makes sense for one club.
+function soloTeam() { return state.teams.size === 1 ? [...state.teams][0] : ""; }
+
 function render() {
   const rows = filtered();
-  const ctx = teamContext(state.team);
+  const solo = soloTeam();
+  const ctx = teamContext(solo);
   const byDay = new Map();
   rows.forEach(g => { (byDay.get(g.date) || byDay.set(g.date, []).get(g.date)).push(g); });
   $("#s-games").textContent = rows.length.toLocaleString();
@@ -207,12 +244,12 @@ function render() {
   const stampFmt = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
   if (GENERATED) $("#stamp").textContent = `Updated ${stampFmt.format(new Date(GENERATED))} ET, refreshed every morning`;
   const tl = $("#teamline");
-  if (state.team) {
-    const reg = GAMES.filter(g => g.type === 2 && (g.away === state.team || g.home === state.team));
-    const home = reg.filter(g => g.home === state.team).length;
+  if (solo) {
+    const reg = GAMES.filter(g => g.type === 2 && (g.away === solo || g.home === solo));
+    const home = reg.filter(g => g.home === solo).length;
     const b2b = [...ctx.values()].filter(c => c.rest === 0).length;
     tl.hidden = false;
-    tl.innerHTML = `<h2>${TEAMS[state.team]}</h2>
+    tl.innerHTML = `<h2>${TEAMS[solo]}</h2>
       <span><b>${reg.length}</b> regular-season games</span>
       <span><b>${home}</b> home &middot; <b>${reg.length - home}</b> away</span>
       <span><b>${b2b}</b> back-to-backs</span>
@@ -233,9 +270,9 @@ function render() {
 }
 
 function gameRow(g, ctx) {
-  const t = state.team;
+  const t = soloTeam();
   const c = ctx.get(g.id);
-  const hl = (ab) => `<span class="ab${ab === t ? " hl" : ""}">${ab}</span>`;
+  const hl = (ab) => `<span class="ab${state.teams.has(ab) ? " hl" : ""}">${ab}</span>`;
   const right = [];
   if (g.type === 1) right.push(`<span class="chip pre">Pre</span>`);
   if (t) right.push(`<span class="chip ${g.home === t ? "home" : "away"}">${g.home === t ? "Home" : "Away"}</span>`);
@@ -249,7 +286,32 @@ function gameRow(g, ctx) {
 }
 
 // Wiring
-teamSel.addEventListener("change", () => { state.team = teamSel.value; syncQuick(); render(); });
+function setTeams(next) {
+  state.teams = new Set(next);
+  teamsGrid.querySelectorAll("input").forEach(i => { i.checked = state.teams.has(i.value); });
+  const n = state.teams.size;
+  $("#teams-summary").textContent = n === 0 ? "All teams" : n === 1 ? TEAMS[[...state.teams][0]] : `${n} teams selected`;
+  const chips = $("#chips");
+  chips.hidden = n === 0;
+  chips.innerHTML = [...state.teams].sort((a, b) => TEAMS[a].localeCompare(TEAMS[b]))
+    .map(ab => `<button type="button" data-remove="${ab}" aria-label="Remove ${TEAMS[ab]}">${ab}</button>`).join("");
+  syncQuick();
+  try { localStorage.setItem("nhl2627-teams", JSON.stringify([...state.teams])); } catch (e) {}
+  render();
+}
+teamsGrid.addEventListener("change", (e) => {
+  const next = new Set(state.teams);
+  e.target.checked ? next.add(e.target.value) : next.delete(e.target.value);
+  setTeams(next);
+});
+$("#chips").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-remove]"); if (!b) return;
+  const next = new Set(state.teams); next.delete(b.dataset.remove); setTeams(next);
+});
+$("#teams-clear").addEventListener("click", () => setTeams([]));
+$("#teams-done").addEventListener("click", () => { teamsBox.open = false; teamsBox.querySelector("summary").focus(); });
+teamsBox.addEventListener("keydown", (e) => { if (e.key === "Escape" && teamsBox.open) { teamsBox.open = false; teamsBox.querySelector("summary").focus(); } });
+document.addEventListener("click", (e) => { if (teamsBox.open && !teamsBox.contains(e.target)) teamsBox.open = false; });
 monthSel.addEventListener("change", () => { state.month = monthSel.value; render(); });
 $("#q").addEventListener("input", (e) => { state.q = e.target.value; render(); });
 document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => {
@@ -262,13 +324,21 @@ document.querySelectorAll(".quick button").forEach(b => b.addEventListener("clic
     if (el) el.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
     return;
   }
-  state.team = state.team === b.dataset.quick ? "" : b.dataset.quick; teamSel.value = state.team; syncQuick(); render();
+  const next = new Set(state.teams);
+  next.has(b.dataset.quick) ? next.delete(b.dataset.quick) : next.add(b.dataset.quick);
+  setTeams(next);
 }));
-function syncQuick() { document.querySelectorAll(".quick button[data-quick]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.quick === state.team))); }
+function syncQuick() { document.querySelectorAll(".quick button[data-quick]").forEach(b => b.setAttribute("aria-pressed", String(state.teams.has(b.dataset.quick)))); }
 function restore() {
-  try { const saved = localStorage.getItem("nhl2627-team"); if (saved && TEAMS[saved]) { state.team = saved; teamSel.value = saved; syncQuick(); } } catch (e) {}
+  let saved = [];
+  try {
+    saved = JSON.parse(localStorage.getItem("nhl2627-teams") || "[]");
+    const legacy = localStorage.getItem("nhl2627-team"); // pre-multi-select key
+    if (legacy) { saved.push(legacy); localStorage.removeItem("nhl2627-team"); }
+  } catch (e) {}
+  const valid = saved.filter(ab => TEAMS[ab]);
+  if (valid.length) setTeams(valid); else setTeams([]);
 }
-teamSel.addEventListener("change", () => { try { localStorage.setItem("nhl2627-team", state.team); } catch (e) {} });
 load();
 </script>
 </body>
