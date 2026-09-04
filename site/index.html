@@ -73,18 +73,19 @@
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <nav class="nav" aria-label="Site">
   <div class="wrap">
     <a class="wordmark" href="/">HOCKEYTRACK</a>
     <ul>
       <li><a href="/" aria-current="page">Home</a></li>
       <li><a href="/schedule/">Schedule</a></li>
-      <li><a href="https://github.com/DavidJDrake/hockeytrack" target="_blank" rel="noopener">GitHub<span class="ext" aria-hidden="true">&#8599;</span><span class="sr" hidden>(opens in a new tab)</span></a></li>
+      <li><a href="https://github.com/DavidJDrake/hockeytrack" target="_blank" rel="noopener">GitHub<span class="ext" aria-hidden="true">&#8599;</span><span class="sr-only"> (opens in a new tab)</span></a></li>
     </ul>
   </div>
 </nav>
 
-<main class="wrap">
+<main class="wrap" id="main">
   <section class="hero">
     <div>
       <p class="eyebrow">NHL game data, as events</p>
@@ -92,10 +93,10 @@
       <p class="lede">HockeyTrack watches the league schedule, polls every game while the puck is in play, archives every raw response, and publishes each play as an event within seconds. It sits between the NHL&rsquo;s public data and any hockey project I dream up, so each new idea starts from live, structured data instead of from scratch.</p>
       <div class="cta">
         <a class="btn primary" href="/schedule/">View the 2026&ndash;27 schedule</a>
-        <a class="btn" href="https://github.com/DavidJDrake/hockeytrack" target="_blank" rel="noopener">Source on GitHub &#8599;</a>
+        <a class="btn" href="https://github.com/DavidJDrake/hockeytrack" target="_blank" rel="noopener">Source on GitHub &#8599;<span class="sr-only"> (opens in a new tab)</span></a>
       </div>
     </div>
-    <div class="board" aria-label="Season at a glance">
+    <div class="board" role="group" aria-label="Season at a glance">
       <div><b id="b-games">1,409</b>games this season</div>
       <div><b id="b-teams">32</b>teams</div>
       <div class="red"><b id="b-days">&mdash;</b>days to puck drop</div>
@@ -186,14 +187,14 @@
       <h2>Built in the open</h2>
       <p>Go, Terraform, and AWS Lambda, MIT licensed. The design spec, the implementation plan, and every commit are on GitHub &mdash; fork it and point it at your own team.</p>
     </div>
-    <a class="btn" href="https://github.com/DavidJDrake/hockeytrack" target="_blank" rel="noopener">github.com/DavidJDrake/hockeytrack &#8599;</a>
+    <a class="btn" href="https://github.com/DavidJDrake/hockeytrack" target="_blank" rel="noopener">github.com/DavidJDrake/hockeytrack &#8599;<span class="sr-only"> (opens in a new tab)</span></a>
   </section>
 </main>
 
 <footer class="site-foot">
   <div class="wrap">
     <p>Data from the NHL&rsquo;s public schedule and game APIs. Not affiliated with or endorsed by the NHL. NHL and team names are trademarks of their respective owners; provided for personal, non-commercial use.</p>
-    <p>&copy; 2026 <a href="https://www.davidjdrake.com" target="_blank" rel="noopener">David J Drake</a> &middot; <a href="https://github.com/DavidJDrake/hockeytrack/blob/main/LICENSE">MIT License</a></p>
+    <p>&copy; 2026 <a href="https://www.davidjdrake.com" target="_blank" rel="noopener">David J Drake<span class="sr-only"> (opens in a new tab)</span></a> &middot; <a href="https://github.com/DavidJDrake/hockeytrack/blob/main/LICENSE">MIT License</a></p>
   </div>
 </footer>
 

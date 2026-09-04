@@ -20,7 +20,10 @@ html { color-scheme: light; }
 body { margin: 0; background: var(--ice); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5; }
 a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 2px; }
 a:hover { color: var(--red); }
-:focus-visible { outline: 2px solid var(--crease); outline-offset: 2px; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.skip { position: absolute; left: 12px; top: -60px; z-index: 20; background: var(--blue); color: #fff; padding: 8px 14px; font-family: var(--display); font-size: 18px; letter-spacing: 0.04em; text-decoration: none; }
+.skip:focus { top: 12px; }
 
 /* The rink's own structure as a divider: blue line, red center line, blue line. */
 .rink { border: 0; height: 14px; margin: 44px 0; background:
