@@ -6,7 +6,7 @@ A serverless NHL game-data ingestion pipeline on AWS. It watches the league sche
 
 - **Archives everything, raw.** Play-by-play and boxscore snapshots land in S3 whenever they change during a game, plus a full end-of-game sweep (play-by-play, boxscore, landing summary, shift charts). Nothing is parsed away; every future use case has the original JSON.
 - **Publishes events in near-real-time.** Every new play (goals, shots, hits, penalties, faceoffs…), every game-state change, and a final summary event go onto a custom EventBridge bus within seconds of the NHL API reflecting them.
-- **Runs only when hockey is on.** A daily job reads the schedule and creates a one-time EventBridge Scheduler entry per game. No games, no compute.
+- **Runs only when hockey is on.** A daily job walks the entire published season and keeps a one-time EventBridge Scheduler entry per game — every game is armed as soon as the league announces it, and reschedules are reconciled each morning. No games, no compute.
 
 ## Architecture
 
@@ -38,7 +38,7 @@ One Go binary, shipped as a single container image, runs in three modes selected
 
 | Mode | Trigger | Job |
 |---|---|---|
-| `schedule-sync` | daily cron | Pull the schedule, record games in DynamoDB, create/move/delete per-game Scheduler entries (handles reschedules and postponements) |
+| `schedule-sync` | daily cron | Pull the full published season (following the API's week-to-week links), record games in DynamoDB, create/move/delete per-game Scheduler entries (handles reschedules and postponements) |
 | `poller` | per-game Scheduler entry | Poll play-by-play + boxscore every 5s, diff against a DynamoDB high-water mark, publish new events, snapshot changed JSON to S3; near the 15-minute Lambda limit it re-invokes itself and hands off (a DynamoDB lease guarantees exactly one active chain per game); at game end it runs the archive sweep |
 | `sweeper` | 5-minute rate rule | Restart any poller chain that died mid-game, detected via expired leases |
 
@@ -89,7 +89,7 @@ cd terraform && terraform init && terraform apply -target=aws_ecr_repository.mai
 make deploy
 ```
 
-Variables: `region` (default `us-east-1`), `alert_email` (optional — subscribes you to CloudWatch alarms for DLQ depth and poller errors).
+Variables: `region` (default `us-east-1`), `alert_email` (optional — subscribes you to CloudWatch alarms for DLQ depth and poller errors), `lightning_email` (optional — the example goal-alert rule in `terraform/notifications.tf`). Put personal values in a gitignored `terraform/terraform.tfvars` so `make deploy` carries them every time.
 
 Cost is dominated by poller runtime: roughly **$0.05/game**, on the order of **$10–15/month in season** and near-zero in the off-season. S3/DynamoDB/EventBridge usage is pennies at this volume.
 
@@ -122,3 +122,7 @@ docs/superpowers/ design spec and implementation plan
 
 - The NHL API (`api-web.nhle.com`) is **unofficial and undocumented**. It's free, keyless, and widely used by community projects, but the NHL could change or restrict it at any time. The client isolates all API knowledge in `internal/nhl`, and the raw archive means a format change never costs you already-captured data.
 - This project is not affiliated with or endorsed by the NHL. Data belongs to its respective owners; use responsibly.
+
+## License
+
+[MIT](LICENSE) — use it, fork it, build your own alerts on it.
