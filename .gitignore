@@ -4,3 +4,4 @@
 *.tfstate*
 .claude/
 .playwright-mcp/
+terraform/terraform.tfvars
