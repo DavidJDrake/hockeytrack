@@ -32,5 +32,6 @@ deploy: push
 # owns) and expire the CloudFront cache.
 site:
 	aws s3 sync site/ s3://$$(cd terraform && terraform output -raw site_bucket)/ --exclude 'data/*' --exclude 'assets/*' --delete --cache-control 'public, max-age=300' --region $(REGION)
-	aws s3 sync site/assets/ s3://$$(cd terraform && terraform output -raw site_bucket)/assets/ --delete --cache-control 'public, max-age=86400' --region $(REGION)
+	aws s3 sync site/assets/ s3://$$(cd terraform && terraform output -raw site_bucket)/assets/ --exclude 'fonts/*' --delete --cache-control 'public, max-age=86400' --region $(REGION)
+	aws s3 sync site/assets/fonts/ s3://$$(cd terraform && terraform output -raw site_bucket)/assets/fonts/ --delete --cache-control 'public, max-age=31536000, immutable' --content-type 'font/woff2' --region $(REGION)
 	aws cloudfront create-invalidation --distribution-id $$(cd terraform && terraform output -raw site_distribution_id) --paths '/*' --query 'Invalidation.Id' --output text
