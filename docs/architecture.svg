@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 590" width="960" height="590" role="img" aria-labelledby="t d">
+  <title id="t">HockeyTrack architecture</title>
+  <desc id="d">A daily schedule-sync Lambda records every NHL game in DynamoDB and creates a one-time EventBridge Scheduler entry per game. At puck drop the entry starts a game-poller Lambda that polls the NHL API every five seconds, archives raw JSON to S3, and publishes play events to an EventBridge bus that your own rules consume. A sweeper Lambda restarts any poller that dies mid-game.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5C6B82"/>
+    </marker>
+    <marker id="arrow-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1857C8"/>
+    </marker>
+    <style>
+      text { font-family: "Segoe UI", Helvetica, Arial, sans-serif; fill: #14213A; }
+      .name { font-size: 15px; font-weight: 700; }
+      .sub { font-size: 11.5px; fill: #5C6B82; }
+      .lbl { font-size: 11px; fill: #5C6B82; }
+      .lbl-accent { font-size: 11px; fill: #1857C8; font-weight: 600; }
+      .box { fill: #FFFFFF; stroke: #C9D3DE; stroke-width: 1.2; }
+      .box-compute { fill: #FFFFFF; stroke: #1857C8; stroke-width: 1.6; }
+      .box-bus { fill: #1857C8; stroke: #1857C8; }
+      .box-yours { fill: #F3F6F9; stroke: #8FA3BC; stroke-width: 1.2; stroke-dasharray: 5 4; }
+      .line { fill: none; stroke: #5C6B82; stroke-width: 1.4; marker-end: url(#arrow); }
+      .line-accent { fill: none; stroke: #1857C8; stroke-width: 1.6; marker-end: url(#arrow-accent); }
+      .line-both { fill: none; stroke: #5C6B82; stroke-width: 1.4; marker-end: url(#arrow); marker-start: url(#arrow); }
+      .pill { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; fill: #FFFFFF; }
+    </style>
+  </defs>
+
+  <!-- ground -->
+  <rect x="0" y="0" width="960" height="590" rx="12" fill="#F7F9FB"/>
+
+  <!-- NHL API -->
+  <rect class="box" x="40" y="80" width="150" height="290" rx="8"/>
+  <text class="name" x="115" y="108" text-anchor="middle">NHL public API</text>
+  <text class="sub" x="115" y="126" text-anchor="middle">api-web.nhle.com</text>
+  <line x1="56" y1="140" x2="174" y2="140" stroke="#E1E7EE"/>
+  <text class="sub" x="115" y="162" text-anchor="middle">schedule</text>
+  <text class="sub" x="115" y="310" text-anchor="middle">play-by-play</text>
+  <text class="sub" x="115" y="326" text-anchor="middle">boxscore · landing</text>
+  <text class="sub" x="115" y="342" text-anchor="middle">shift charts</text>
+
+  <!-- schedule-sync -->
+  <rect class="box-compute" x="250" y="80" width="210" height="64" rx="8"/>
+  <text class="name" x="355" y="106" text-anchor="middle">schedule-sync</text>
+  <text class="sub" x="355" y="126" text-anchor="middle">Lambda · daily, whole season</text>
+
+  <!-- DynamoDB -->
+  <rect class="box" x="250" y="190" width="210" height="56" rx="8"/>
+  <text class="name" x="355" y="213" text-anchor="middle">DynamoDB</text>
+  <text class="sub" x="355" y="231" text-anchor="middle">games · leases · high-water marks</text>
+
+  <!-- game-poller -->
+  <rect class="box-compute" x="250" y="280" width="210" height="90" rx="8"/>
+  <text class="name" x="355" y="308" text-anchor="middle">game-poller</text>
+  <text class="sub" x="355" y="327" text-anchor="middle">Lambda · self-chains past 15 min</text>
+  <rect x="313" y="340" width="84" height="18" rx="9" fill="#C8102E"/>
+  <text class="pill" x="355" y="353" text-anchor="middle">EVERY 5 SEC</text>
+
+  <!-- sweeper -->
+  <rect class="box-compute" x="250" y="440" width="210" height="56" rx="8"/>
+  <text class="name" x="355" y="463" text-anchor="middle">sweeper</text>
+  <text class="sub" x="355" y="481" text-anchor="middle">Lambda · every 5 min</text>
+
+  <!-- Scheduler -->
+  <rect class="box" x="600" y="80" width="200" height="64" rx="8"/>
+  <text class="name" x="700" y="106" text-anchor="middle">EventBridge Scheduler</text>
+  <text class="sub" x="700" y="126" text-anchor="middle">one-time entry per game</text>
+
+  <!-- S3 -->
+  <rect class="box" x="600" y="310" width="160" height="56" rx="8"/>
+  <text class="name" x="680" y="333" text-anchor="middle">S3 archive</text>
+  <text class="sub" x="680" y="351" text-anchor="middle">every raw response</text>
+
+  <!-- Bus -->
+  <rect class="box-bus" x="600" y="400" width="160" height="56" rx="8"/>
+  <text class="name" x="680" y="423" text-anchor="middle" style="fill:#FFFFFF">EventBridge bus</text>
+  <text class="sub" x="680" y="441" text-anchor="middle" style="fill:#D6E3FA">nhl.game.play · status · final</text>
+
+  <!-- Consumers -->
+  <rect class="box-yours" x="600" y="500" width="320" height="60" rx="8"/>
+  <text class="name" x="760" y="524" text-anchor="middle">your EventBridge rules</text>
+  <text class="sub" x="760" y="543" text-anchor="middle">SNS alerts · Lambdas · SQS · dashboards · analytics</text>
+
+  <!-- arrows: schedule path -->
+  <path class="line" d="M 190 162 H 250"/>
+  <path class="line" d="M 460 112 H 600"/>
+  <text class="lbl" x="530" y="104" text-anchor="middle">create / move / delete</text>
+  <path class="line" d="M 355 144 V 190"/>
+  <text class="lbl" x="366" y="171">upsert every game</text>
+  <path class="line-accent" d="M 785 144 V 292 H 460"/>
+  <text class="lbl-accent" x="622" y="284" text-anchor="middle">fires at puck drop − 15 min</text>
+
+  <!-- arrows: game path -->
+  <path class="line" d="M 190 320 H 250"/>
+  <path class="line-both" d="M 355 246 V 280"/>
+  <text class="lbl" x="366" y="267">lease · diff mark</text>
+  <path class="line" d="M 460 338 H 600"/>
+  <text class="lbl" x="530" y="331" text-anchor="middle">on change</text>
+  <path class="line-accent" d="M 460 362 H 520 V 428 H 600"/>
+  <text class="lbl-accent" x="528" y="410" text-anchor="start">new plays</text>
+  <path class="line-accent" d="M 680 456 V 500"/>
+  <path class="line" d="M 355 440 V 370"/>
+  <text class="lbl" x="366" y="410">restarts dead chains</text>
+</svg>

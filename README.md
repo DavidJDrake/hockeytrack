@@ -10,29 +10,9 @@ A serverless NHL game-data ingestion pipeline on AWS. It watches the league sche
 
 ## Architecture
 
-```
-EventBridge cron (daily)
-        │
-        ▼
-┌─────────────────┐    upserts games    ┌──────────────┐
-│ schedule-sync    │───────────────────▶│  DynamoDB     │
-│ Lambda           │  creates one-time  │  games table  │
-└─────────────────┘  schedules ─┐       └──────────────┘
-                                ▼               ▲ leases, diff
-                    EventBridge Scheduler       │ high-water marks
-                    (one entry per game,        │
-                     fires at puck drop − 15m)  │
-                                │               │
-                                ▼               │
-                    ┌──────────────────┐        │
-                    │ game-poller       │────────┘
-                    │ Lambda (5s loop,  │──▶ S3 (raw JSON archive)
-                    │ self-chaining)    │
-                    └──────────────────┘
-                                │
-                                ▼
-                    EventBridge bus "hockeytrack" ──▶ your rules & targets
-```
+<p align="center">
+  <img src="docs/architecture.svg" alt="HockeyTrack architecture: schedule-sync records every game in DynamoDB and creates a Scheduler entry per game; at puck drop the entry starts a game-poller that polls the NHL API every 5 seconds, archives raw JSON to S3, and publishes play events to an EventBridge bus consumed by your own rules; a sweeper restarts any poller that dies mid-game." width="960">
+</p>
 
 One Go binary, shipped as a single container image, runs in three modes selected by a `MODE` env var:
 
