@@ -26,7 +26,7 @@ The poll loop itself is runtime-agnostic — Lambda's 15-minute ceiling is handl
 
 ## The website
 
-**[hockeytrack.davidjdrake.com](https://hockeytrack.davidjdrake.com)** shows the whole season — every game, filterable by team, month, and preseason/regular season, with per-team game numbers, rest days, and back-to-backs. It is a static page on S3 behind CloudFront; the schedule it renders is `data/schedule.json`, which `schedule-sync` republishes every morning, so it stays current with reschedules without any manual step. The page lives in `site/` and is uploaded with `make site`; the infrastructure (bucket, distribution, certificate, DNS) is `terraform/site.tf`.
+**[hockeytrack.davidjdrake.com](https://hockeytrack.davidjdrake.com)** shows the whole season — every game, with **multi-select filters for teams and months** (pick any combination of clubs to see every game involving them, and any set of months; selections show as removable chips and persist between visits), a preseason/regular-season toggle, and free-text search. Selecting a single team switches to that club's season view: game number 1–84, home/away, rest days, and back-to-backs. It is a static page on S3 behind CloudFront; the schedule it renders is `data/schedule.json`, which `schedule-sync` republishes every morning, so it stays current with reschedules without any manual step. The page lives in `site/` and is uploaded with `make site`; the infrastructure (bucket, distribution, certificate, DNS) is `terraform/site.tf`.
 
 ## The event contract
 

@@ -51,6 +51,8 @@
   .teams-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--rule); }
   .teams-actions button { font: inherit; font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; padding: 6px 14px; border-radius: 4px; border: 1px solid var(--rule); background: var(--ice); color: var(--ink); cursor: pointer; }
   .teams-actions #teams-done { background: var(--blue); border-color: var(--blue); color: #fff; }
+  .months .teams-panel { width: max(100%, 260px); }
+  .months .teams-grid { grid-template-columns: 1fr; }
   .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 10px; }
   .chips button { font: inherit; font-family: var(--display); font-weight: 700; font-size: 14px; letter-spacing: 0.04em; color: var(--blue); background: var(--crease-soft); border: 1px solid var(--crease); border-radius: 999px; padding: 3px 9px 3px 11px; cursor: pointer; }
   .chips button::after { content: " \00d7"; font-weight: 400; }
@@ -143,7 +145,19 @@
       <button data-type="1" aria-pressed="false">Preseason</button>
       <button data-type="2" aria-pressed="false">Regular</button>
     </div>
-    <select id="month" aria-label="Month"><option value="">Every month</option></select>
+    <details class="teams months" id="months">
+      <summary id="months-summary">Every month</summary>
+      <div class="teams-panel">
+        <fieldset>
+          <legend>Show games in</legend>
+          <div class="teams-grid" id="months-grid"></div>
+          <div class="teams-actions">
+            <button type="button" id="months-clear">Clear</button>
+            <button type="button" id="months-done">Done</button>
+          </div>
+        </fieldset>
+      </div>
+    </details>
     <input type="search" id="q" placeholder="Search team or arena" aria-label="Search">
   </div>
   <div class="chips" id="chips" aria-live="polite" hidden></div>
@@ -172,12 +186,9 @@ const DATEFMT = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric
 const MONTHFMT = new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
 const todayET = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date());
 
-const state = { teams: new Set(), type: "", month: "", q: "" };
+const state = { teams: new Set(), months: new Set(), type: "", q: "" };
 const $ = (s) => document.querySelector(s);
 
-const teamsBox = $("#teams");
-const teamsGrid = $("#teams-grid");
-const monthSel = $("#month");
 
 async function load() {
   const list = $("#list");
@@ -199,11 +210,9 @@ async function load() {
 }
 
 function populate() {
-teamsGrid.innerHTML = Object.entries(TEAMS).sort((a, b) => a[1].localeCompare(b[1]))
-  .map(([ab, name]) => `<label><input type="checkbox" value="${ab}"><b>${ab}</b><span>${name}</span></label>`).join("");
-[...new Set(GAMES.map(g => g.date.slice(0, 7)))].sort().forEach(m => {
-  const o = document.createElement("option"); o.value = m; o.textContent = MONTHFMT.format(new Date(m + "-01T00:00:00Z")); monthSel.append(o);
-});
+  teams.populate(Object.entries(TEAMS).sort((a, b) => a[1].localeCompare(b[1])).map(([ab, name]) => ({ value: ab, code: ab, name })));
+  months.populate([...new Set(GAMES.map(g => g.date.slice(0, 7)))].sort()
+    .map(m => ({ value: m, code: "", name: MONTHFMT.format(new Date(m + "-01T00:00:00Z")) })));
 }
 
 function filtered() {
@@ -211,7 +220,7 @@ function filtered() {
   return GAMES.filter(g =>
     (!state.teams.size || state.teams.has(g.away) || state.teams.has(g.home)) &&
     (!state.type || String(g.type) === state.type) &&
-    (!state.month || g.date.startsWith(state.month)) &&
+    (!state.months.size || state.months.has(g.date.slice(0, 7))) &&
     (!q || g.away.toLowerCase().includes(q) || g.home.toLowerCase().includes(q) ||
       TEAMS[g.away].toLowerCase().includes(q) || TEAMS[g.home].toLowerCase().includes(q) || g.venue.toLowerCase().includes(q)));
 }
@@ -286,33 +295,56 @@ function gameRow(g, ctx) {
 }
 
 // Wiring
-function setTeams(next) {
-  state.teams = new Set(next);
-  teamsGrid.querySelectorAll("input").forEach(i => { i.checked = state.teams.has(i.value); });
-  const n = state.teams.size;
-  $("#teams-summary").textContent = n === 0 ? "All teams" : n === 1 ? TEAMS[[...state.teams][0]] : `${n} teams selected`;
+// A multi-select picker: a <details> disclosure holding labelled checkboxes,
+// with the selection echoed as removable chips and persisted per key.
+function makePicker({ id, key, empty, onChange }) {
+  const box = document.getElementById(id);
+  const grid = document.getElementById(id + "-grid");
+  const summary = document.getElementById(id + "-summary");
   const chips = $("#chips");
-  chips.hidden = n === 0;
-  chips.innerHTML = [...state.teams].sort((a, b) => TEAMS[a].localeCompare(TEAMS[b]))
-    .map(ab => `<button type="button" data-remove="${ab}" aria-label="Remove ${TEAMS[ab]}">${ab}</button>`).join("");
-  syncQuick();
-  try { localStorage.setItem("nhl2627-teams", JSON.stringify([...state.teams])); } catch (e) {}
-  render();
+  const names = new Map();
+  const selected = new Set();
+  const label = (v) => names.get(v) || v;
+  const shortLabel = (v) => (grid.querySelector(`input[value="${v}"]`) || {}).dataset?.code || label(v);
+  function set(next) {
+    selected.clear(); next.forEach(v => names.has(v) && selected.add(v));
+    grid.querySelectorAll("input").forEach(i => { i.checked = selected.has(i.value); });
+    const n = selected.size;
+    summary.textContent = n === 0 ? empty : n === 1 ? label([...selected][0]) : `${n} selected`;
+    try { localStorage.setItem(key, JSON.stringify([...selected])); } catch (e) {}
+    renderChips();
+    onChange(selected);
+  }
+  function renderChips() {
+    const all = pickers.flatMap(pk => [...pk.selected].map(v => ({ pk, v })));
+    chips.hidden = all.length === 0;
+    chips.innerHTML = all.map(({ pk, v }) => `<button type="button" data-picker="${pk.id}" data-remove="${v}" aria-label="Remove ${pk.label(v)}">${pk.shortLabel(v)}</button>`).join("");
+  }
+  function populate(options) {
+    names.clear(); options.forEach(o => names.set(o.value, o.name));
+    grid.innerHTML = options.map(o => `<label><input type="checkbox" value="${o.value}" data-code="${o.code}">${o.code ? `<b>${o.code}</b>` : ""}<span>${o.name}</span></label>`).join("");
+  }
+  function restore() {
+    let saved = [];
+    try { saved = JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) {}
+    return saved;
+  }
+  const close = () => { if (box.open) { box.open = false; box.querySelector("summary").focus(); } };
+  grid.addEventListener("change", (e) => { const next = new Set(selected); e.target.checked ? next.add(e.target.value) : next.delete(e.target.value); set(next); });
+  document.getElementById(id + "-clear").addEventListener("click", () => set([]));
+  document.getElementById(id + "-done").addEventListener("click", close);
+  box.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+  document.addEventListener("click", (e) => { if (box.open && !box.contains(e.target)) box.open = false; });
+  return { id, box, selected, set, populate, restore, label, shortLabel, renderChips };
 }
-teamsGrid.addEventListener("change", (e) => {
-  const next = new Set(state.teams);
-  e.target.checked ? next.add(e.target.value) : next.delete(e.target.value);
-  setTeams(next);
-});
+const teams = makePicker({ id: "teams", key: "nhl2627-teams", empty: "All teams", onChange: (sel) => { state.teams = sel; syncQuick(); render(); } });
+const months = makePicker({ id: "months", key: "nhl2627-months", empty: "Every month", onChange: (sel) => { state.months = sel; render(); } });
+const pickers = [teams, months];
 $("#chips").addEventListener("click", (e) => {
   const b = e.target.closest("button[data-remove]"); if (!b) return;
-  const next = new Set(state.teams); next.delete(b.dataset.remove); setTeams(next);
+  const pk = pickers.find(p => p.id === b.dataset.picker);
+  const next = new Set(pk.selected); next.delete(b.dataset.remove); pk.set(next);
 });
-$("#teams-clear").addEventListener("click", () => setTeams([]));
-$("#teams-done").addEventListener("click", () => { teamsBox.open = false; teamsBox.querySelector("summary").focus(); });
-teamsBox.addEventListener("keydown", (e) => { if (e.key === "Escape" && teamsBox.open) { teamsBox.open = false; teamsBox.querySelector("summary").focus(); } });
-document.addEventListener("click", (e) => { if (teamsBox.open && !teamsBox.contains(e.target)) teamsBox.open = false; });
-monthSel.addEventListener("change", () => { state.month = monthSel.value; render(); });
 $("#q").addEventListener("input", (e) => { state.q = e.target.value; render(); });
 document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => {
   document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", "false"));
@@ -324,20 +356,16 @@ document.querySelectorAll(".quick button").forEach(b => b.addEventListener("clic
     if (el) el.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
     return;
   }
-  const next = new Set(state.teams);
+  const next = new Set(teams.selected);
   next.has(b.dataset.quick) ? next.delete(b.dataset.quick) : next.add(b.dataset.quick);
-  setTeams(next);
+  teams.set(next);
 }));
 function syncQuick() { document.querySelectorAll(".quick button[data-quick]").forEach(b => b.setAttribute("aria-pressed", String(state.teams.has(b.dataset.quick)))); }
 function restore() {
-  let saved = [];
-  try {
-    saved = JSON.parse(localStorage.getItem("nhl2627-teams") || "[]");
-    const legacy = localStorage.getItem("nhl2627-team"); // pre-multi-select key
-    if (legacy) { saved.push(legacy); localStorage.removeItem("nhl2627-team"); }
-  } catch (e) {}
-  const valid = saved.filter(ab => TEAMS[ab]);
-  if (valid.length) setTeams(valid); else setTeams([]);
+  const savedTeams = teams.restore();
+  try { const legacy = localStorage.getItem("nhl2627-team"); if (legacy) { savedTeams.push(legacy); localStorage.removeItem("nhl2627-team"); } } catch (e) {}
+  teams.set(savedTeams);
+  months.set(months.restore());
 }
 load();
 </script>
