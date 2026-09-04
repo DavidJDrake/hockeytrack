@@ -24,6 +24,10 @@ One Go binary, shipped as a single container image, runs in three modes selected
 
 The poll loop itself is runtime-agnostic — Lambda's 15-minute ceiling is handled by an injected `shouldHandOff()` callback. Point the same container at ECS/Fargate with a callback that always returns false and it simply polls a whole game in one run. That migration is a new thin entrypoint, not a rewrite.
 
+## The website
+
+**[hockeytrack.davidjdrake.com](https://hockeytrack.davidjdrake.com)** shows the whole season — every game, filterable by team, month, and preseason/regular season, with per-team game numbers, rest days, and back-to-backs. It is a static page on S3 behind CloudFront; the schedule it renders is `data/schedule.json`, which `schedule-sync` republishes every morning, so it stays current with reschedules without any manual step. The page lives in `site/` and is uploaded with `make site`; the infrastructure (bucket, distribution, certificate, DNS) is `terraform/site.tf`.
+
 ## The event contract
 
 Bus `hockeytrack`, source `hockeytrack.poller`. Three detail-types (plus `hockeytrack.alert` for operational alerts):
@@ -88,6 +92,7 @@ Cost is dominated by poller runtime: roughly **$0.05/game**, on the order of **$
 ```
 cmd/ingestor/     entrypoint; MODE selects schedule-sync | poller | sweeper
 cmd/replay/       offline replay harness
+site/             the website (static page; data published by schedule-sync)
 internal/nhl/     NHL API client + captured fixtures
 internal/poller/  diff logic + the runtime-agnostic poll loop
 internal/schedsync/  schedule pull + Scheduler reconciliation
