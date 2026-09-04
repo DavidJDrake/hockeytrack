@@ -31,5 +31,6 @@ deploy: push
 # Upload the static website (everything except data/, which schedule-sync
 # owns) and expire the CloudFront cache.
 site:
-	aws s3 sync site/ s3://$$(cd terraform && terraform output -raw site_bucket)/ --exclude 'data/*' --delete --region $(REGION)
+	aws s3 sync site/ s3://$$(cd terraform && terraform output -raw site_bucket)/ --exclude 'data/*' --exclude 'assets/*' --delete --cache-control 'public, max-age=300' --region $(REGION)
+	aws s3 sync site/assets/ s3://$$(cd terraform && terraform output -raw site_bucket)/assets/ --delete --cache-control 'public, max-age=86400' --region $(REGION)
 	aws cloudfront create-invalidation --distribution-id $$(cd terraform && terraform output -raw site_distribution_id) --paths '/*' --query 'Invalidation.Id' --output text
