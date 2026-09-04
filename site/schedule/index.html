@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Every 2026–27 NHL game, filterable by team, month, and preseason or regular season, refreshed each morning from the league schedule.">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%92%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/site.css">
+<title>Schedule &middot; HockeyTrack</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: var(--ice); --surface: var(--panel);
+    --accent: var(--blue); --accent-ink: #FFFFFF; --accent-soft: var(--blue-soft);
+    --redline: var(--red); --pre: var(--blue); --pre-soft: var(--crease-soft);
+    --home-soft: var(--blue-soft); --away-soft: #EEF1F4;
+  }
+  body { font-size: 14px; line-height: 1.45; }
+  main.wrap { padding: 28px 20px 64px; }
+
+  header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 24px; border-bottom: 3px solid var(--accent); padding-bottom: 14px; }
+  h1 { font-family: var(--display); font-weight: 700; font-size: 44px; line-height: 1; margin: 0; letter-spacing: 0.01em; text-wrap: balance; }
+  h1 small { display: block; font-family: var(--body); font-weight: 500; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .stats { display: flex; gap: 22px; font-family: var(--mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .stats b { display: block; color: var(--ink); font-family: var(--display); font-size: 26px; font-weight: 600; line-height: 1; }
+
+  .rail { display: grid; grid-template-columns: minmax(200px, 1.4fr) auto auto minmax(160px, 1fr); gap: 10px; align-items: center; margin: 18px 0 8px; }
+  @media (max-width: 760px) { .rail { grid-template-columns: 1fr 1fr; } }
+  select, input[type=search] { font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 8px 10px; width: 100%; }
+  select:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; background: var(--surface); }
+  .seg button { font: inherit; font-weight: 500; color: var(--muted); background: transparent; border: 0; padding: 8px 12px; cursor: pointer; }
+  .seg button + button { border-left: 1px solid var(--rule); }
+  .seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+  .quick { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 18px; align-items: center; color: var(--muted); font-size: 12px; }
+  .quick button { font: inherit; font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: 0.04em; color: var(--ink); background: var(--surface); border: 1px solid var(--rule); border-radius: 999px; padding: 3px 11px; cursor: pointer; }
+  .quick button[aria-pressed="true"] { background: var(--crease-soft); border-color: var(--crease); color: var(--blue); }
+
+  .teamline { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: baseline; margin: 0 0 14px; padding: 12px 14px; background: var(--crease-soft); border: 1px solid var(--crease); border-left: 4px solid var(--blue); }
+  .teamline[hidden] { display: none; }
+  .teamline h2 { font-family: var(--display); font-size: 28px; font-weight: 700; margin: 0; line-height: 1; }
+  .teamline span { font-family: var(--mono); font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .teamline span b { color: var(--ink); font-weight: 500; }
+
+  .day { display: grid; grid-template-columns: 150px 1fr; gap: 0 18px; padding: 10px 0; border-top: 1px solid var(--rule); }
+  .day:first-of-type { border-top: 0; }
+  .day.today { border-top: 2px solid var(--redline); }
+  .dhead { font-family: var(--display); font-weight: 600; font-size: 19px; line-height: 1.15; padding-top: 3px; }
+  .dhead small { display: block; font-family: var(--mono); font-weight: 400; font-size: 11.5px; color: var(--muted); letter-spacing: 0.02em; margin-top: 2px; }
+  .dhead .todaytag { color: var(--redline); font-family: var(--body); font-weight: 600; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .games { display: grid; gap: 4px; }
+  .g { display: grid; grid-template-columns: 74px 1fr auto; gap: 0 14px; align-items: center; padding: 6px 10px; border-radius: 4px; background: var(--surface); border: 1px solid transparent; }
+  .g { border-color: var(--rule); }
+  .g:hover { border-color: var(--crease); }
+  .g .t { font-family: var(--mono); font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .g .m { display: flex; align-items: baseline; gap: 8px; min-width: 0; flex-wrap: wrap; }
+  .g .ab { font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: 0.03em; }
+  .g .ab.hl { color: var(--accent); }
+  .g .at { color: var(--muted); font-size: 12px; }
+  .g .nm { color: var(--muted); font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .g .r { display: flex; gap: 6px; align-items: center; font-size: 11px; color: var(--muted); white-space: nowrap; }
+  .chip { display: inline-block; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-size: 10px; padding: 2px 7px; border-radius: 3px; }
+  .chip.pre { background: var(--pre-soft); color: var(--pre); }
+  .chip.home { background: var(--home-soft); color: var(--accent); }
+  .chip.away { background: var(--away-soft); color: var(--muted); }
+  .gn { font-family: var(--mono); font-size: 11.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .rest { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+  .rest.b2b { color: var(--redline); font-weight: 500; }
+  .empty { padding: 40px 0; color: var(--muted); text-align: center; }
+  @media (max-width: 640px) {
+    .day { grid-template-columns: 1fr; gap: 6px; }
+    .g { grid-template-columns: 62px 1fr; }
+    .g .r { grid-column: 1 / -1; padding-left: 0; }
+    .g .nm { display: none; }
+  }
+  @media (prefers-reduced-motion: no-preference) { .g { transition: border-color 120ms; } }
+</style>
+
+</head>
+<body>
+<nav class="nav" aria-label="Site">
+  <main class="wrap">
+    <a class="wordmark" href="/">HOCKEYTRACK</a>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/schedule/" aria-current="page">Schedule</a></li>
+      <li><a href="https://github.com/DavidJDrake/hockeytrack" target="_blank" rel="noopener">GitHub<span class="ext" aria-hidden="true">&#8599;</span></a></li>
+    </ul>
+  </div>
+</nav>
+<div class="wrap">
+  <header>
+    <h1><small>National Hockey League</small>2026&ndash;27 Schedule</h1>
+    <div class="stats">
+      <div><b id="s-games">—</b>games shown</div>
+      <div><b id="s-days">—</b>game days</div>
+      <div><b>32</b>teams</div>
+    </div>
+  </header>
+
+  <div class="rail">
+    <select id="team" aria-label="Team"><option value="">All teams</option></select>
+    <div class="seg" role="group" aria-label="Game type">
+      <button data-type="" aria-pressed="true">All</button>
+      <button data-type="1" aria-pressed="false">Preseason</button>
+      <button data-type="2" aria-pressed="false">Regular</button>
+    </div>
+    <select id="month" aria-label="Month"><option value="">Every month</option></select>
+    <input type="search" id="q" placeholder="Search team or arena" aria-label="Search">
+  </div>
+  <div class="quick">Quick picks:
+    <button data-quick="TBL" aria-pressed="false">TBL</button>
+    <button data-quick="FLA" aria-pressed="false">FLA</button>
+    <button data-quick="TODAY" aria-pressed="false">Jump to next game day</button>
+  </div>
+
+  <div id="teamline" class="teamline" hidden></div>
+  <div id="list"></div>
+  <footer class="site-foot" style="margin-top:36px">
+    <p>Times are Eastern. <span id="stamp">Refreshed every morning</span> from the NHL&rsquo;s public schedule API. Preseason games are exhibition; the 2026&ndash;27 regular season is 84 games per team. Playoff dates are set in April.</p>
+    <p>Not affiliated with or endorsed by the NHL. NHL and team names are trademarks of their respective owners; provided for personal, non-commercial use.</p>
+  </footer>
+</main>
+
+<script>
+let TEAMS = {};
+let GAMES = [];
+let GENERATED = null;
+const ET = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit" });
+const DAYFMT = new Intl.DateTimeFormat("en-US", { weekday: "long", timeZone: "UTC" });
+const DATEFMT = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
+const MONTHFMT = new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
+const todayET = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date());
+
+const state = { team: "", type: "", month: "", q: "" };
+const $ = (s) => document.querySelector(s);
+
+const teamSel = $("#team");
+const monthSel = $("#month");
+
+async function load() {
+  const list = $("#list");
+  list.innerHTML = `<div class="empty">Loading the schedule…</div>`;
+  let doc;
+  try {
+    const res = await fetch("/data/schedule.json", { cache: "no-cache" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    doc = await res.json();
+  } catch (err) {
+    list.innerHTML = `<div class="empty">Couldn’t load the schedule (${err.message}). Refresh to try again.</div>`;
+    return;
+  }
+  TEAMS = doc.teams;
+  GAMES = doc.games;
+  GENERATED = doc.generatedAt;
+  populate();
+  restore();
+  render();
+}
+
+function populate() {
+Object.entries(TEAMS).sort((a, b) => a[1].localeCompare(b[1])).forEach(([ab, name]) => {
+  const o = document.createElement("option"); o.value = ab; o.textContent = `${name} (${ab})`; teamSel.append(o);
+});
+[...new Set(GAMES.map(g => g.date.slice(0, 7)))].sort().forEach(m => {
+  const o = document.createElement("option"); o.value = m; o.textContent = MONTHFMT.format(new Date(m + "-01T00:00:00Z")); monthSel.append(o);
+});
+}
+
+function filtered() {
+  const q = state.q.trim().toLowerCase();
+  return GAMES.filter(g =>
+    (!state.team || g.away === state.team || g.home === state.team) &&
+    (!state.type || String(g.type) === state.type) &&
+    (!state.month || g.date.startsWith(state.month)) &&
+    (!q || g.away.toLowerCase().includes(q) || g.home.toLowerCase().includes(q) ||
+      TEAMS[g.away].toLowerCase().includes(q) || TEAMS[g.home].toLowerCase().includes(q) || g.venue.toLowerCase().includes(q)));
+}
+
+// Per-team season context: game number and rest days, computed over the team's regular-season games.
+function teamContext(team) {
+  const ctx = new Map(); if (!team) return ctx;
+  let n = 0, prev = null;
+  GAMES.filter(g => g.type === 2 && (g.away === team || g.home === team)).forEach(g => {
+    n += 1;
+    const d = new Date(g.date + "T00:00:00Z");
+    const rest = prev ? Math.round((d - prev) / 86400000) - 1 : null;
+    ctx.set(g.id, { n, rest }); prev = d;
+  });
+  return ctx;
+}
+
+function render() {
+  const rows = filtered();
+  const ctx = teamContext(state.team);
+  const byDay = new Map();
+  rows.forEach(g => { (byDay.get(g.date) || byDay.set(g.date, []).get(g.date)).push(g); });
+  $("#s-games").textContent = rows.length.toLocaleString();
+  $("#s-days").textContent = byDay.size.toLocaleString();
+
+  const stampFmt = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+  if (GENERATED) $("#stamp").textContent = `Updated ${stampFmt.format(new Date(GENERATED))} ET, refreshed every morning`;
+  const tl = $("#teamline");
+  if (state.team) {
+    const reg = GAMES.filter(g => g.type === 2 && (g.away === state.team || g.home === state.team));
+    const home = reg.filter(g => g.home === state.team).length;
+    const b2b = [...ctx.values()].filter(c => c.rest === 0).length;
+    tl.hidden = false;
+    tl.innerHTML = `<h2>${TEAMS[state.team]}</h2>
+      <span><b>${reg.length}</b> regular-season games</span>
+      <span><b>${home}</b> home &middot; <b>${reg.length - home}</b> away</span>
+      <span><b>${b2b}</b> back-to-backs</span>
+      <span>${reg.length ? `opens ${DATEFMT.format(new Date(reg[0].date + "T00:00:00Z"))}, closes ${DATEFMT.format(new Date(reg[reg.length - 1].date + "T00:00:00Z"))}` : ""}</span>`;
+  } else { tl.hidden = true; }
+
+  const nextDay = [...byDay.keys()].find(d => d >= todayET);
+  const html = [];
+  for (const [date, gs] of byDay) {
+    const d = new Date(date + "T00:00:00Z");
+    const isNext = date === nextDay;
+    html.push(`<section class="day${isNext ? " today" : ""}" id="d-${date}">
+      <div class="dhead">${DAYFMT.format(d)}<small>${DATEFMT.format(d)}, ${date.slice(0, 4)}${isNext ? ` <span class="todaytag">${date === todayET ? "today" : "up next"}</span>` : ""}</small></div>
+      <div class="games">${gs.map(g => gameRow(g, ctx)).join("")}</div>
+    </section>`);
+  }
+  $("#list").innerHTML = html.length ? html.join("") : `<div class="empty">No games match those filters.</div>`;
+}
+
+function gameRow(g, ctx) {
+  const t = state.team;
+  const c = ctx.get(g.id);
+  const hl = (ab) => `<span class="ab${ab === t ? " hl" : ""}">${ab}</span>`;
+  const right = [];
+  if (g.type === 1) right.push(`<span class="chip pre">Pre</span>`);
+  if (t) right.push(`<span class="chip ${g.home === t ? "home" : "away"}">${g.home === t ? "Home" : "Away"}</span>`);
+  if (c) right.push(`<span class="gn">Gm ${c.n}</span>`);
+  if (c && c.rest !== null) right.push(`<span class="rest${c.rest === 0 ? " b2b" : ""}">${c.rest === 0 ? "back-to-back" : c.rest + "d rest"}</span>`);
+  return `<div class="g">
+    <span class="t">${ET.format(new Date(g.start))} ET</span>
+    <span class="m">${hl(g.away)}<span class="at">at</span>${hl(g.home)}<span class="nm">${TEAMS[g.away]} at ${TEAMS[g.home]} &middot; ${g.venue}</span></span>
+    <span class="r">${right.join("")}</span>
+  </div>`;
+}
+
+// Wiring
+teamSel.addEventListener("change", () => { state.team = teamSel.value; syncQuick(); render(); });
+monthSel.addEventListener("change", () => { state.month = monthSel.value; render(); });
+$("#q").addEventListener("input", (e) => { state.q = e.target.value; render(); });
+document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", "false"));
+  b.setAttribute("aria-pressed", "true"); state.type = b.dataset.type; render();
+}));
+document.querySelectorAll(".quick button").forEach(b => b.addEventListener("click", () => {
+  if (b.dataset.quick === "TODAY") {
+    const el = [...document.querySelectorAll(".day")].find(s => s.id.slice(2) >= todayET);
+    if (el) el.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+    return;
+  }
+  state.team = state.team === b.dataset.quick ? "" : b.dataset.quick; teamSel.value = state.team; syncQuick(); render();
+}));
+function syncQuick() { document.querySelectorAll(".quick button[data-quick]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.quick === state.team))); }
+function restore() {
+  try { const saved = localStorage.getItem("nhl2627-team"); if (saved && TEAMS[saved]) { state.team = saved; teamSel.value = saved; syncQuick(); } } catch (e) {}
+}
+teamSel.addEventListener("change", () => { try { localStorage.setItem("nhl2627-team", state.team); } catch (e) {} });
+load();
+</script>
+</body>
+</html>

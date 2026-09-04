@@ -1,0 +1,46 @@
+/* HockeyTrack — shared shell. Light only: the ground is the ice. */
+:root {
+  --ice: #FFFFFF;
+  --panel: #F6F8FA;
+  --ink: #0A0A0A;
+  --muted: #4A5560;
+  --rule: #DDE3EA;
+  --blue: #0033A0;
+  --blue-soft: #E6ECF7;
+  --red: #C8102E;
+  --crease: #41B6E6;
+  --crease-soft: #E3F4FC;
+  --display: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", Roboto, sans-serif;
+  --mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { color-scheme: light; }
+body { margin: 0; background: var(--ice); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5; }
+a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--red); }
+:focus-visible { outline: 2px solid var(--crease); outline-offset: 2px; }
+
+/* The rink's own structure as a divider: blue line, red center line, blue line. */
+.rink { border: 0; height: 14px; margin: 44px 0; background:
+  linear-gradient(var(--blue) 0 2px, transparent 2px 6px, var(--red) 6px 8px, transparent 8px 12px, var(--blue) 12px 14px); }
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+/* Navigation */
+.nav { position: sticky; top: 0; z-index: 10; background: var(--ice); border-bottom: 2px solid var(--blue); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 58px; }
+.wordmark { font-family: var(--display); font-weight: 700; font-size: 26px; letter-spacing: 0.06em; color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; }
+.wordmark:hover { color: var(--ink); }
+.wordmark::before { content: ""; width: 10px; height: 26px; background:
+  linear-gradient(var(--blue) 0 35%, var(--ice) 35% 45%, var(--red) 45% 55%, var(--ice) 55% 65%, var(--blue) 65% 100%); }
+.nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px; }
+.nav li a { display: inline-block; padding: 8px 12px; font-family: var(--display); font-weight: 600; font-size: 18px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 3px solid transparent; }
+.nav li a:hover { color: var(--blue); border-bottom-color: var(--crease); }
+.nav li a[aria-current="page"] { color: var(--blue); border-bottom-color: var(--blue); }
+.nav li a .ext { font-family: var(--body); font-size: 12px; margin-left: 4px; vertical-align: super; }
+
+/* Footer */
+.site-foot { margin-top: 56px; padding: 20px 0 40px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--muted); }
+.site-foot p { margin: 0 0 6px; max-width: 72ch; }
