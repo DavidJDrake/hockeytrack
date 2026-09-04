@@ -32,7 +32,10 @@ type ScheduleDay struct {
 }
 
 type ScheduleResponse struct {
-	GameWeek []ScheduleDay `json:"gameWeek"`
+	// NextStartDate links to the following week; empty at the end of the
+	// published schedule.
+	NextStartDate string        `json:"nextStartDate"`
+	GameWeek      []ScheduleDay `json:"gameWeek"`
 }
 
 type PBPTeam struct {

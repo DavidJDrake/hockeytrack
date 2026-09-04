@@ -127,3 +127,104 @@ func TestSyncRescheduleMovesEntry(t *testing.T) {
 		t.Errorf("fireAt = %v, want %v", got, moved.Add(-15*time.Minute))
 	}
 }
+
+// weekFeed serves distinct bodies per requested week-start date and records
+// which dates were requested, so multi-week syncs can be asserted on.
+type weekFeed struct {
+	weeks     map[string][]byte
+	requested []string
+}
+
+func (f *weekFeed) Schedule(_ context.Context, date string) (*nhl.ScheduleResponse, []byte, error) {
+	f.requested = append(f.requested, date)
+	body, ok := f.weeks[date]
+	if !ok {
+		body = []byte(`{"gameWeek":[]}`)
+	}
+	var s nhl.ScheduleResponse
+	if err := json.Unmarshal(body, &s); err != nil {
+		return nil, nil, err
+	}
+	return &s, body, nil
+}
+
+func weekBody(t *testing.T, date, next string, games ...map[string]any) []byte {
+	t.Helper()
+	b, err := json.Marshal(map[string]any{
+		"nextStartDate": next,
+		"gameWeek":      []map[string]any{{"date": date, "games": games}},
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	return b
+}
+
+func TestSyncFollowsNextStartDateAcrossWeeks(t *testing.T) {
+	feed := &weekFeed{weeks: map[string][]byte{
+		"2026-01-15": weekBody(t, "2026-01-15", "2026-01-22", gameJSON(201, syncNow.Add(10*time.Hour), "OK")),
+		"2026-01-22": weekBody(t, "2026-01-22", "2026-01-29"), // empty week mid-season
+		"2026-01-29": weekBody(t, "2026-01-29", "2026-02-05", gameJSON(202, syncNow.Add(15*24*time.Hour), "OK")),
+		"2026-02-05": weekBody(t, "2026-02-05", ""), // end of published schedule
+	}}
+	gs := store.NewFakeGameStore()
+	ar := store.NewFakeArchive()
+	sched := NewFakeScheduler()
+	d := Deps{Feed: feed, Store: gs, Archive: ar, Scheduler: sched, Now: func() time.Time { return syncNow }}
+	if err := Sync(context.Background(), d, Config{PregameBuffer: 15 * time.Minute, Horizon: 300 * 24 * time.Hour}, "2026-01-15"); err != nil {
+		t.Fatal(err)
+	}
+	if len(feed.requested) != 4 {
+		t.Errorf("requested weeks = %v, want 4 chained weeks", feed.requested)
+	}
+	for _, id := range []int64{201, 202} {
+		if rec, _ := gs.Get(context.Background(), id); rec == nil {
+			t.Errorf("game %d not recorded", id)
+		}
+		if _, ok := sched.Entries[EntryName(id)]; !ok {
+			t.Errorf("no scheduler entry for game %d", id)
+		}
+	}
+	// Archive: the first week always, later weeks only when they hold games.
+	for key, want := range map[string]bool{
+		"raw/schedule/2026-01-15.json": true, "raw/schedule/2026-01-22.json": false,
+		"raw/schedule/2026-01-29.json": true, "raw/schedule/2026-02-05.json": false,
+	} {
+		if _, ok := ar.Objects[key]; ok != want {
+			t.Errorf("archive %s present=%v, want %v", key, ok, want)
+		}
+	}
+}
+
+func TestSyncStopsAtHorizon(t *testing.T) {
+	feed := &weekFeed{weeks: map[string][]byte{
+		"2026-01-15": weekBody(t, "2026-01-15", "2026-01-22", gameJSON(201, syncNow.Add(10*time.Hour), "OK")),
+		"2026-01-22": weekBody(t, "2026-01-22", "2026-01-29"),
+		"2026-01-29": weekBody(t, "2026-01-29", "2026-02-05", gameJSON(202, syncNow.Add(15*24*time.Hour), "OK")),
+	}}
+	gs := store.NewFakeGameStore()
+	d := Deps{Feed: feed, Store: gs, Archive: store.NewFakeArchive(), Scheduler: NewFakeScheduler(), Now: func() time.Time { return syncNow }}
+	// 10-day horizon from 01-15 reaches the 01-22 week but not 01-29.
+	if err := Sync(context.Background(), d, Config{PregameBuffer: 15 * time.Minute, Horizon: 10 * 24 * time.Hour}, "2026-01-15"); err != nil {
+		t.Fatal(err)
+	}
+	if len(feed.requested) != 2 {
+		t.Errorf("requested weeks = %v, want 2 (horizon)", feed.requested)
+	}
+	if rec, _ := gs.Get(context.Background(), 202); rec != nil {
+		t.Error("game beyond horizon was recorded")
+	}
+}
+
+func TestSyncStopsWhenNextDateDoesNotAdvance(t *testing.T) {
+	feed := &weekFeed{weeks: map[string][]byte{
+		"2026-01-15": weekBody(t, "2026-01-15", "2026-01-15"), // pathological self-link
+	}}
+	d := Deps{Feed: feed, Store: store.NewFakeGameStore(), Archive: store.NewFakeArchive(), Scheduler: NewFakeScheduler(), Now: func() time.Time { return syncNow }}
+	if err := Sync(context.Background(), d, Config{PregameBuffer: 15 * time.Minute, Horizon: 300 * 24 * time.Hour}, "2026-01-15"); err != nil {
+		t.Fatal(err)
+	}
+	if len(feed.requested) != 1 {
+		t.Errorf("requested weeks = %v, want exactly 1 (no infinite loop)", feed.requested)
+	}
+}

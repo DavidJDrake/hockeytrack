@@ -13,7 +13,8 @@ resource "aws_lambda_function" "schedule_sync" {
   image_uri     = local.image_uri
   role          = aws_iam_role.schedule_sync.arn
   architectures = ["x86_64"]
-  timeout       = 120
+  # Full-season sync upserts ~1,400 games and scheduler entries per run.
+  timeout       = 600
   memory_size   = 256
 
   environment {

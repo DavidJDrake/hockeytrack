@@ -126,7 +126,9 @@ func (a *app) handleScheduleSync(ctx context.Context) error {
 		Scheduler: schedsync.NewAWSScheduler(a.schedCl, mustEnv("SCHEDULER_GROUP"), mustEnv("POLLER_FUNCTION_ARN"), mustEnv("SCHEDULER_ROLE_ARN")),
 		Now:       time.Now,
 	}
-	return schedsync.Sync(ctx, d, schedsync.Config{PregameBuffer: 15 * time.Minute}, time.Now().UTC().Format("2006-01-02"))
+	// 300 days from any run date covers the rest of the season including playoffs.
+	cfg := schedsync.Config{PregameBuffer: 15 * time.Minute, Horizon: 300 * 24 * time.Hour}
+	return schedsync.Sync(ctx, d, cfg, time.Now().UTC().Format("2006-01-02"))
 }
 
 func (a *app) handleSweeper(ctx context.Context) error {

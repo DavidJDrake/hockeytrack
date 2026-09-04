@@ -128,3 +128,14 @@ func TestRawFeedAndShifts(t *testing.T) {
 		t.Error("shifts body empty")
 	}
 }
+
+func TestScheduleNextStartDate(t *testing.T) {
+	c := fixtureClient(t, map[string]string{"/v1/schedule/2026-01-15": "schedule.json"})
+	sched, _, err := c.Schedule(context.Background(), "2026-01-15")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if sched.NextStartDate != "2026-01-22" {
+		t.Errorf("nextStartDate = %q, want 2026-01-22", sched.NextStartDate)
+	}
+}

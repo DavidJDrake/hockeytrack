@@ -26,11 +26,11 @@ func TestSweepRestartsOnlyDeadLiveGames(t *testing.T) {
 	inv := &FakeInvoker{}
 
 	gameStart := now.Add(-90 * time.Minute)
-	seed(t, gs, 1, gameStart, "LIVE", false, time.Time{})           // dead: no lease -> restart
-	seed(t, gs, 2, gameStart, "LIVE", false, now.Add(-time.Minute)) // dead: expired lease -> restart
-	seed(t, gs, 3, gameStart, "LIVE", false, now.Add(time.Minute))  // healthy lease -> skip
-	seed(t, gs, 4, gameStart, "OFF", true, time.Time{})             // done -> skip
-	seed(t, gs, 5, now.Add(2*time.Hour), "FUT", false, time.Time{}) // not started -> skip
+	seed(t, gs, 1, gameStart, "LIVE", false, time.Time{})             // dead: no lease -> restart
+	seed(t, gs, 2, gameStart, "LIVE", false, now.Add(-time.Minute))   // dead: expired lease -> restart
+	seed(t, gs, 3, gameStart, "LIVE", false, now.Add(time.Minute))    // healthy lease -> skip
+	seed(t, gs, 4, gameStart, "OFF", true, time.Time{})               // done -> skip
+	seed(t, gs, 5, now.Add(2*time.Hour), "FUT", false, time.Time{})   // not started -> skip
 	seed(t, gs, 6, now.Add(-7*time.Hour), "LIVE", false, time.Time{}) // outside give-up window -> skip
 
 	if err := Sweep(context.Background(), gs, inv, now); err != nil {
