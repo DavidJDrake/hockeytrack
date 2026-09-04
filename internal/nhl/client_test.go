@@ -139,3 +139,18 @@ func TestScheduleNextStartDate(t *testing.T) {
 		t.Errorf("nextStartDate = %q, want 2026-01-22", sched.NextStartDate)
 	}
 }
+
+func TestScheduleTeamNames(t *testing.T) {
+	c := fixtureClient(t, map[string]string{"/v1/schedule/2026-01-15": "schedule.json"})
+	sched, _, err := c.Schedule(context.Background(), "2026-01-15")
+	if err != nil {
+		t.Fatal(err)
+	}
+	g := sched.GameWeek[0].Games[0]
+	if got := g.HomeTeam.Name(); got != "Buffalo Sabres" {
+		t.Errorf("home name = %q, want Buffalo Sabres", got)
+	}
+	if got := g.AwayTeam.Name(); got != "Montréal Canadiens" {
+		t.Errorf("away name = %q, want Montréal Canadiens", got)
+	}
+}

@@ -2,6 +2,7 @@ package nhl
 
 import (
 	"encoding/json"
+	"strings"
 	"time"
 )
 
@@ -10,8 +11,20 @@ type Localized struct {
 }
 
 type ScheduleTeam struct {
-	ID     int64  `json:"id"`
-	Abbrev string `json:"abbrev"`
+	ID         int64     `json:"id"`
+	Abbrev     string    `json:"abbrev"`
+	PlaceName  Localized `json:"placeName"`
+	CommonName Localized `json:"commonName"`
+}
+
+// Name joins place and nickname ("Tampa Bay Lightning"); falls back to the
+// abbreviation when the API omits the names.
+func (t ScheduleTeam) Name() string {
+	n := strings.TrimSpace(t.PlaceName.Default + " " + t.CommonName.Default)
+	if n == "" {
+		return t.Abbrev
+	}
+	return n
 }
 
 type ScheduleGame struct {

@@ -30,6 +30,7 @@ type app struct {
 	nhl      *nhl.Client
 	store    *store.DynamoStore
 	archive  *store.S3Archive
+	site     store.Archive // nil unless SITE_BUCKET is set
 	pub      *events.EventBridgePublisher
 	lambdaCl *awslambdasvc.Client
 	schedCl  *scheduler.Client
@@ -67,7 +68,12 @@ func newApp(ctx context.Context) (*app, error) {
 		return nil, err
 	}
 	maxChains, _ := strconv.Atoi(envOr("MAX_CHAINS", "30"))
+	var site store.Archive
+	if b := os.Getenv("SITE_BUCKET"); b != "" {
+		site = store.NewS3Archive(s3.NewFromConfig(awsCfg), b)
+	}
 	return &app{
+		site:     site,
 		nhl:      nhl.New(),
 		store:    store.NewDynamoStore(dynamodb.NewFromConfig(awsCfg), mustEnv("GAMES_TABLE")),
 		archive:  store.NewS3Archive(s3.NewFromConfig(awsCfg), mustEnv("RAW_BUCKET")),
@@ -122,7 +128,7 @@ func (a *app) handlePoller(ctx context.Context, raw json.RawMessage) error {
 
 func (a *app) handleScheduleSync(ctx context.Context) error {
 	d := schedsync.Deps{
-		Feed: a.nhl, Store: a.store, Archive: a.archive,
+		Feed: a.nhl, Store: a.store, Archive: a.archive, Site: a.site,
 		Scheduler: schedsync.NewAWSScheduler(a.schedCl, mustEnv("SCHEDULER_GROUP"), mustEnv("POLLER_FUNCTION_ARN"), mustEnv("SCHEDULER_ROLE_ARN")),
 		Now:       time.Now,
 	}

@@ -4,7 +4,9 @@ package schedsync
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
+	"sort"
 	"sync"
 	"time"
 
@@ -26,7 +28,30 @@ type Deps struct {
 	Store     store.GameStore
 	Archive   store.Archive
 	Scheduler SchedulerAPI
-	Now       func() time.Time
+	// Site, when set, receives the website's schedule document
+	// (SiteKey) at the end of every sync.
+	Site store.Archive
+	Now  func() time.Time
+}
+
+// SiteKey is where the website reads the published schedule from.
+const SiteKey = "data/schedule.json"
+
+// SitePayload is the schedule document the website renders.
+type SitePayload struct {
+	GeneratedAt time.Time         `json:"generatedAt"`
+	Teams       map[string]string `json:"teams"`
+	Games       []SiteGame        `json:"games"`
+}
+
+type SiteGame struct {
+	ID    int64     `json:"id"`
+	Date  string    `json:"date"`
+	Start time.Time `json:"start"`
+	Away  string    `json:"away"`
+	Home  string    `json:"home"`
+	Type  int       `json:"type"`
+	Venue string    `json:"venue"`
 }
 
 type Config struct {
@@ -50,27 +75,45 @@ func Sync(ctx context.Context, d Deps, cfg Config, date string) error {
 		return fmt.Errorf("sync date %q: %w", date, err)
 	}
 	limit := start.Add(cfg.Horizon)
+	site := &SitePayload{GeneratedAt: d.Now(), Teams: map[string]string{}}
 	for week, first := date, true; week != ""; first = false {
 		weekStart, err := time.Parse("2006-01-02", week)
 		if err != nil {
 			return fmt.Errorf("week start %q: %w", week, err)
 		}
 		if !first && weekStart.After(limit) {
-			return nil
+			break
 		}
-		next, err := syncWeek(ctx, d, cfg, week, first)
+		next, err := syncWeek(ctx, d, cfg, week, first, site)
 		if err != nil {
 			return err
 		}
 		if next <= week {
-			return nil // no link, or a link that does not advance
+			break // no link, or a link that does not advance
 		}
 		week = next
 	}
-	return nil
+	return publishSite(ctx, d, site)
 }
 
-func syncWeek(ctx context.Context, d Deps, cfg Config, date string, archiveAlways bool) (string, error) {
+func publishSite(ctx context.Context, d Deps, site *SitePayload) error {
+	if d.Site == nil {
+		return nil
+	}
+	sort.Slice(site.Games, func(i, j int) bool {
+		if !site.Games[i].Start.Equal(site.Games[j].Start) {
+			return site.Games[i].Start.Before(site.Games[j].Start)
+		}
+		return site.Games[i].ID < site.Games[j].ID
+	})
+	body, err := json.Marshal(site)
+	if err != nil {
+		return err
+	}
+	return d.Site.Put(ctx, SiteKey, body)
+}
+
+func syncWeek(ctx context.Context, d Deps, cfg Config, date string, archiveAlways bool, site *SitePayload) (string, error) {
 	sched, raw, err := d.Feed.Schedule(ctx, date)
 	if err != nil {
 		return "", err
@@ -90,6 +133,13 @@ func syncWeek(ctx context.Context, d Deps, cfg Config, date string, archiveAlway
 	for _, day := range sched.GameWeek {
 		for _, g := range day.Games {
 			name := EntryName(g.ID)
+			site.Teams[g.AwayTeam.Abbrev] = g.AwayTeam.Name()
+			site.Teams[g.HomeTeam.Abbrev] = g.HomeTeam.Name()
+			site.Games = append(site.Games, SiteGame{
+				ID: g.ID, Date: day.Date, Start: g.StartTimeUTC,
+				Away: g.AwayTeam.Abbrev, Home: g.HomeTeam.Abbrev,
+				Type: g.GameType, Venue: g.Venue.Default,
+			})
 			rec := store.GameRecord{
 				GameID: g.ID, Season: g.Season, GameDate: day.Date,
 				StartTimeUTC: g.StartTimeUTC,

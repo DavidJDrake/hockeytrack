@@ -228,3 +228,43 @@ func TestSyncStopsWhenNextDateDoesNotAdvance(t *testing.T) {
 		t.Errorf("requested weeks = %v, want exactly 1 (no infinite loop)", feed.requested)
 	}
 }
+
+func TestSyncPublishesSiteSchedule(t *testing.T) {
+	feed := &weekFeed{weeks: map[string][]byte{
+		"2026-01-15": weekBody(t, "2026-01-15", "2026-01-22", gameJSON(201, syncNow.Add(10*time.Hour), "OK")),
+		"2026-01-22": weekBody(t, "2026-01-22", "", gameJSON(202, syncNow.Add(8*24*time.Hour), "OK")),
+	}}
+	site := store.NewFakeArchive()
+	d := Deps{Feed: feed, Store: store.NewFakeGameStore(), Archive: store.NewFakeArchive(), Scheduler: NewFakeScheduler(), Site: site, Now: func() time.Time { return syncNow }}
+	if err := Sync(context.Background(), d, Config{PregameBuffer: 15 * time.Minute, Horizon: 300 * 24 * time.Hour}, "2026-01-15"); err != nil {
+		t.Fatal(err)
+	}
+	body, ok := site.Objects["data/schedule.json"]
+	if !ok {
+		t.Fatal("data/schedule.json not published to the site archive")
+	}
+	var pub SitePayload
+	if err := json.Unmarshal(body, &pub); err != nil {
+		t.Fatalf("site payload is not valid JSON: %v", err)
+	}
+	if !pub.GeneratedAt.Equal(syncNow) {
+		t.Errorf("generatedAt = %v, want %v", pub.GeneratedAt, syncNow)
+	}
+	if len(pub.Games) != 2 {
+		t.Fatalf("published %d games, want 2 (across both weeks)", len(pub.Games))
+	}
+	if pub.Games[0].ID != 201 || pub.Games[1].ID != 202 {
+		t.Errorf("games not in start-time order: %+v", pub.Games)
+	}
+	if pub.Teams["BUF"] == "" || pub.Teams["MTL"] == "" {
+		t.Errorf("teams map incomplete: %v", pub.Teams)
+	}
+}
+
+func TestSyncWithoutSiteIsUnchanged(t *testing.T) {
+	// Site is optional: nil must not be dereferenced.
+	_, ar, _ := testSync(t, scheduleBody(t, gameJSON(101, syncNow.Add(10*time.Hour), "OK")))
+	if _, ok := ar.Objects["data/schedule.json"]; ok {
+		t.Error("site payload written to the raw archive")
+	}
+}

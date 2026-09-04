@@ -4,7 +4,7 @@ REPO        := hockeytrack
 TAG         ?= $(shell git rev-parse --short HEAD)
 IMAGE       := $(ACCOUNT_ID).dkr.ecr.$(REGION).amazonaws.com/$(REPO):$(TAG)
 
-.PHONY: test build push deploy
+.PHONY: test build push deploy site
 
 test:
 	go test ./...
@@ -27,3 +27,9 @@ push: build
 
 deploy: push
 	cd terraform && terraform apply -var="image_tag=$(TAG)" -auto-approve
+
+# Upload the static website (everything except data/, which schedule-sync
+# owns) and expire the CloudFront cache.
+site:
+	aws s3 sync site/ s3://$$(cd terraform && terraform output -raw site_bucket)/ --exclude 'data/*' --delete --region $(REGION)
+	aws cloudfront create-invalidation --distribution-id $$(cd terraform && terraform output -raw site_distribution_id) --paths '/*' --query 'Invalidation.Id' --output text

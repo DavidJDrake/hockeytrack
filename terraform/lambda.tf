@@ -23,6 +23,7 @@ resource "aws_lambda_function" "schedule_sync" {
       SCHEDULER_GROUP     = aws_scheduler_schedule_group.games.name
       POLLER_FUNCTION_ARN = aws_lambda_function.poller.arn
       SCHEDULER_ROLE_ARN  = aws_iam_role.scheduler_invoke.arn
+      SITE_BUCKET         = aws_s3_bucket.site.bucket
     })
   }
 

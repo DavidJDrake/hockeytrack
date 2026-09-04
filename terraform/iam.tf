@@ -42,7 +42,7 @@ data "aws_iam_policy_document" "schedule_sync" {
   }
   statement {
     actions   = ["s3:PutObject"]
-    resources = ["${aws_s3_bucket.raw.arn}/raw/schedule/*"]
+    resources = ["${aws_s3_bucket.raw.arn}/raw/schedule/*", "${aws_s3_bucket.site.arn}/data/*"]
   }
   statement {
     actions   = ["scheduler:CreateSchedule", "scheduler:UpdateSchedule", "scheduler:DeleteSchedule", "scheduler:GetSchedule"]
