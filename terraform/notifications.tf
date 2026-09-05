@@ -1,10 +1,11 @@
 # Example consumer: notify on every Tampa Bay Lightning goal.
 # Demonstrates the extension pattern — a rule + target, zero pipeline changes.
 
+# No default on purpose: a plan without terraform.tfvars must fail rather than
+# silently destroy the subscription. Set it to "" to opt out explicitly.
 variable "lightning_email" {
   type        = string
-  default     = ""
-  description = "Email to notify on every TBL goal; empty skips the subscription"
+  description = "Email to notify on every TBL goal; empty string skips the subscription"
 }
 
 resource "aws_sns_topic" "tbl_goals" {
