@@ -111,6 +111,81 @@ func TestPlayByPlay(t *testing.T) {
 	}
 }
 
+func TestStandings(t *testing.T) {
+	c := fixtureClient(t, map[string]string{"/v1/standings/now": "standings.json"})
+	st, raw, err := c.Standings(context.Background())
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(raw) == 0 {
+		t.Error("raw body is empty")
+	}
+	if len(st.Standings) != 32 {
+		t.Fatalf("parsed %d rows, want 32", len(st.Standings))
+	}
+	r := st.Standings[0]
+	if r.TeamAbbrev.Default != "COL" || r.TeamName.Default != "Colorado Avalanche" {
+		t.Errorf("first row = %s %q, want COL Colorado Avalanche", r.TeamAbbrev.Default, r.TeamName.Default)
+	}
+	if r.ConferenceName != "Western" || r.DivisionName != "Central" || r.DivisionSequence != 1 {
+		t.Errorf("placement = %s/%s #%d, want Western/Central #1", r.ConferenceName, r.DivisionName, r.DivisionSequence)
+	}
+	if r.GamesPlayed != 82 || r.Wins != 55 || r.Losses != 16 || r.OtLosses != 11 || r.Points != 121 {
+		t.Errorf("record = %d-%d-%d (%d pts) in %d GP", r.Wins, r.Losses, r.OtLosses, r.Points, r.GamesPlayed)
+	}
+	if r.GoalFor != 302 || r.GoalAgainst != 203 {
+		t.Errorf("GF/GA = %d/%d, want 302/203", r.GoalFor, r.GoalAgainst)
+	}
+	if got := r.Streak(); got != "W3" {
+		t.Errorf("streak = %q, want W3", got)
+	}
+	if r.SeasonID != 20252026 || r.Date != "2026-04-17" {
+		t.Errorf("season/date = %d/%s, want 20252026/2026-04-17", r.SeasonID, r.Date)
+	}
+}
+
+func TestStreakEmptyBeforeFirstGame(t *testing.T) {
+	if got := (StandingsRow{}).Streak(); got != "" {
+		t.Errorf("zero-row streak = %q, want empty", got)
+	}
+	if got := (StandingsRow{StreakCode: "OT", StreakCount: 2}).Streak(); got != "OT2" {
+		t.Errorf("streak = %q, want OT2", got)
+	}
+}
+
+// The live endpoint answers /standings/now with a 307 to the dated
+// document; the client must land on the body behind the redirect.
+func TestStandingsFollowsRedirect(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		switch r.URL.Path {
+		case "/v1/standings/now":
+			http.Redirect(w, r, "/v1/standings/2026-04-17", http.StatusTemporaryRedirect)
+		case "/v1/standings/2026-04-17":
+			if r.Header.Get("User-Agent") != UserAgent {
+				t.Errorf("User-Agent after redirect = %q", r.Header.Get("User-Agent"))
+			}
+			b, err := os.ReadFile(filepath.Join("testdata", "standings.json"))
+			if err != nil {
+				t.Fatal(err)
+			}
+			w.Write(b)
+		default:
+			t.Errorf("unexpected request path %q", r.URL.Path)
+			w.WriteHeader(http.StatusNotFound)
+		}
+	}))
+	t.Cleanup(srv.Close)
+	c := New()
+	c.BaseURL = srv.URL
+	st, _, err := c.Standings(context.Background())
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(st.Standings) != 32 {
+		t.Errorf("parsed %d rows through the redirect, want 32", len(st.Standings))
+	}
+}
+
 func TestRawFeedAndShifts(t *testing.T) {
 	c := fixtureClient(t, map[string]string{
 		"/v1/gamecenter/2025020001/boxscore": "boxscore.json",

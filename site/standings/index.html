@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="NHL standings by conference and division — wins, losses, overtime losses, points, goals for and against, and streaks — refreshed each morning from the league's own table.">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HockeyTrack">
+<meta property="og:title" content="NHL Standings · HockeyTrack">
+<meta property="og:description" content="Every division, every club — W-L-OTL, points, goals for and against, and streaks, refreshed every morning from the league's own table.">
+<meta property="og:url" content="https://hockeytrack.davidjdrake.com/standings/">
+<meta property="og:image" content="https://hockeytrack.davidjdrake.com/assets/og/schedule.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="HockeyTrack NHL Standings">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NHL Standings · HockeyTrack">
+<meta name="twitter:description" content="Every division, every club — W-L-OTL, points, goals for and against, and streaks, refreshed every morning from the league's own table.">
+<meta name="twitter:image" content="https://hockeytrack.davidjdrake.com/assets/og/schedule.png">
+<link rel="canonical" href="https://hockeytrack.davidjdrake.com/standings/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%92%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/site.css">
+<title>Standings &middot; HockeyTrack</title>
+<link rel="preload" href="/assets/fonts/plex-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  :root {
+    --ground: var(--ice); --surface: var(--panel);
+    --accent: var(--blue); --accent-ink: #FFFFFF; --accent-soft: var(--blue-soft);
+    --redline: var(--red);
+  }
+  body { font-size: 14px; line-height: 1.45; }
+  main.wrap { padding: 28px 20px 64px; }
+
+  header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 24px; border-bottom: 3px solid var(--accent); padding-bottom: 14px; }
+  h1 { font-family: var(--display); font-weight: 700; font-size: 44px; line-height: 1; margin: 0; letter-spacing: 0.01em; text-wrap: balance; }
+  h1 small { display: block; font-family: var(--body); font-weight: 500; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .stats { display: flex; gap: 22px; font-family: var(--mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .stats b { display: block; color: var(--ink); font-family: var(--display); font-size: 26px; font-weight: 600; line-height: 1; }
+
+  /* Notices: the preseason note and the load error share one style. */
+  .note { margin: 18px 0 0; padding: 12px 14px; background: var(--crease-soft); border: 1px solid var(--crease); border-left: 4px solid var(--blue); }
+  .note p { margin: 0; }
+  .note.err { background: #FBEAEC; border-color: #F0B8C0; border-left-color: var(--redline); }
+
+  .legend { margin: 14px 0 0; color: var(--muted); font-size: 12.5px; }
+  .legend dl { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 0; }
+  .legend div { display: flex; gap: 5px; }
+  .legend dt { font-family: var(--mono); font-weight: 500; color: var(--ink); }
+  .legend dd { margin: 0; }
+
+  .conf { margin-top: 30px; }
+  .conf h2 { font-family: var(--display); font-weight: 700; font-size: 32px; line-height: 1; margin: 0 0 14px; padding-bottom: 8px; border-bottom: 2px solid var(--rule); letter-spacing: 0.01em; }
+  .divs { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; }
+  @media (max-width: 900px) { .divs { grid-template-columns: 1fr; } }
+  .div { min-width: 0; }
+  .div h3 { font-family: var(--display); font-weight: 600; font-size: 22px; line-height: 1; margin: 0 0 8px; letter-spacing: 0.02em; color: var(--blue); }
+  .tbl { overflow-x: auto; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+  th, td { padding: 7px 8px; text-align: right; white-space: nowrap; border-top: 1px solid var(--rule); }
+  thead th { border-top: 0; font-family: var(--body); font-weight: 600; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  thead th abbr { text-decoration: none; }
+  th[scope="row"], th.team { text-align: left; }
+  th[scope="row"] { font-weight: 400; width: 100%; padding-left: 6px; }
+  td.rk { color: var(--muted); font-family: var(--mono); font-size: 12px; text-align: left; padding-right: 0; width: 2ch; }
+  .ab { font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: 0.03em; }
+  .nm { color: var(--muted); font-size: 12.5px; margin-left: 8px; }
+  td.pts { font-family: var(--display); font-weight: 700; font-size: 18px; }
+  td.diff.pos { color: var(--blue); }
+  td.diff.neg { color: var(--redline); }
+  td.streak { font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
+  tr.hl { background: var(--crease-soft); }
+  tr.hl .ab { color: var(--blue); }
+  tbody tr:hover { background: var(--accent-soft); }
+  @media (max-width: 640px) {
+    .nm { display: none; }
+    th, td { padding: 6px 6px; }
+  }
+  @media (max-width: 420px) { th, td { padding: 6px 4px; } }
+  /* Reserve the tables' height so the footer does not jump when they arrive. */
+  #list { min-height: 80vh; }
+  .empty { padding: 40px 0; color: var(--muted); text-align: center; }
+  .site-foot { margin-top: 36px; }
+</style>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Site">
+  <div class="wrap">
+    <a class="wordmark" href="/">HOCKEYTRACK</a>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/schedule/">Schedule</a></li>
+      <li><a href="/standings/" aria-current="page">Standings</a></li>
+      <li><a href="https://github.com/DavidJDrake/hockeytrack" target="_blank" rel="noopener">GitHub<span class="ext" aria-hidden="true">&#8599;</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+    </ul>
+  </div>
+</nav>
+<main class="wrap" id="main">
+  <header>
+    <h1><small>National Hockey League</small><span id="h-title">Standings</span></h1>
+    <div class="stats">
+      <div><b id="s-gp">—</b>games played</div>
+      <div><b id="s-teams">—</b>teams</div>
+      <div><b id="s-goals">—</b>goals</div>
+    </div>
+  </header>
+
+  <div class="note" id="note-preseason" hidden>
+    <p>No games have been played yet. The 2026&ndash;27 regular season opens October 1; the table fills in the morning after the first games.</p>
+  </div>
+  <div class="note err" id="note-error" hidden role="alert"><p></p></div>
+
+  <div class="legend">
+    <dl>
+      <div><dt>GP</dt><dd>games played</dd></div>
+      <div><dt>W</dt><dd>wins</dd></div>
+      <div><dt>L</dt><dd>regulation losses</dd></div>
+      <div><dt>OTL</dt><dd>overtime and shootout losses</dd></div>
+      <div><dt>PTS</dt><dd>points</dd></div>
+      <div><dt>GF</dt><dd>goals for</dd></div>
+      <div><dt>GA</dt><dd>goals against</dd></div>
+      <div><dt>DIFF</dt><dd>goal differential</dd></div>
+      <div><dt>STRK</dt><dd>current streak</dd></div>
+    </dl>
+  </div>
+
+  <div id="list"><div class="empty">Loading the standings&hellip;</div></div>
+</main>
+  <footer class="site-foot">
+    <div class="wrap">
+      <p><span id="stamp">Refreshed every morning</span> from the NHL&rsquo;s public standings API, in the league&rsquo;s own order, so tiebreakers are theirs, not ours. Teams you have selected on the schedule page are highlighted.</p>
+      <p>Not affiliated with or endorsed by the NHL. NHL and team names are trademarks of their respective owners; provided for personal, non-commercial use.</p>
+      <p>&copy; 2026 <a href="https://www.davidjdrake.com" target="_blank" rel="noopener">David J Drake<span class="sr-only"> (opens in a new tab)</span></a> &middot; <a href="https://github.com/DavidJDrake/hockeytrack/blob/main/LICENSE">MIT License</a></p>
+    </div>
+  </footer>
+
+<script src="/assets/standings.js" defer></script>
+</body>
+</html>

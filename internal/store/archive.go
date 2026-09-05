@@ -36,6 +36,12 @@ func ScheduleKey(date string) string {
 	return fmt.Sprintf("raw/schedule/%s.json", date)
 }
 
+// StandingsKey is the daily standings snapshot, keyed by the run date (not
+// the standings' own date, which is fixed all off-season).
+func StandingsKey(date string) string {
+	return fmt.Sprintf("raw/standings/%s.json", date)
+}
+
 type FakeArchive struct {
 	mu      sync.Mutex
 	Objects map[string][]byte

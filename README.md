@@ -18,7 +18,7 @@ One Go binary, shipped as a single container image, runs in three modes selected
 
 | Mode | Trigger | Job |
 |---|---|---|
-| `schedule-sync` | daily cron | Pull the full published season (following the API's week-to-week links), record games in DynamoDB, create/move/delete per-game Scheduler entries (handles reschedules and postponements) |
+| `schedule-sync` | daily cron | Pull the full published season (following the API's week-to-week links), record games in DynamoDB, create/move/delete per-game Scheduler entries (handles reschedules and postponements); then archive the day's league standings and publish both site documents |
 | `poller` | per-game Scheduler entry | Poll play-by-play + boxscore every 5s, diff against a DynamoDB high-water mark, publish new events, snapshot changed JSON to S3; near the 15-minute Lambda limit it re-invokes itself and hands off (a DynamoDB lease guarantees exactly one active chain per game); at game end it runs the archive sweep |
 | `sweeper` | 5-minute rate rule | Restart any poller chain that died mid-game, detected via expired leases |
 
@@ -26,7 +26,9 @@ The poll loop itself is runtime-agnostic — Lambda's 15-minute ceiling is handl
 
 ## The website
 
-**[hockeytrack.davidjdrake.com](https://hockeytrack.davidjdrake.com)** shows the whole season — every game, with **multi-select filters for teams and months** (pick any combination of clubs to see every game involving them, and any set of months; selections show as removable chips and persist between visits), a preseason/regular-season toggle, and free-text search. Selecting a single team switches to that club's season view: game number 1–84, home/away, rest days, and back-to-backs. It is a static page on S3 behind CloudFront; the schedule it renders is `data/schedule.json`, which `schedule-sync` republishes every morning, so it stays current with reschedules without any manual step. The page lives in `site/` and is uploaded with `make site`; the infrastructure (bucket, distribution, certificate, DNS) is `terraform/site.tf`.
+**[hockeytrack.davidjdrake.com](https://hockeytrack.davidjdrake.com)** shows the whole season — every game, with **multi-select filters for teams and months** (pick any combination of clubs to see every game involving them, and any set of months; selections show as removable chips and persist between visits), a preseason/regular-season toggle, and free-text search. Selecting a single team switches to that club's season view: game number 1–84, home/away, rest days, and back-to-backs. **[/standings/](https://hockeytrack.davidjdrake.com/standings/)** is the league table by conference and division — W-L-OTL, points, goals for and against, and streaks — in the NHL's own order, so tiebreakers are the league's rather than ours; clubs picked on the schedule page are highlighted.
+
+It is a static site on S3 behind CloudFront. The documents it renders are `data/schedule.json` and `data/standings.json`, which `schedule-sync` republishes every morning (the standings are a trimmed copy of `api-web.nhle.com/v1/standings/now`, whose raw response is also archived under `raw/standings/{date}.json`), so the pages stay current with reschedules and results without any manual step. Off-season, the NHL serves the previous season's final table until the first game is played, and the page labels it by that season. The pages live in `site/` and are uploaded with `make site`; the infrastructure (bucket, distribution, certificate, DNS) is `terraform/site.tf`.
 
 ## The event contract
 
@@ -152,7 +154,7 @@ cmd/ingestor/     entrypoint; MODE selects schedule-sync | poller | sweeper
 cmd/backfill/     historical season backfill (local CLI, S3 only)
 cmd/replay/       offline replay harness
 cmd/analyze/      archive → CSV flattener (local CLI, reads S3 or a local mirror)
-site/             the website (static page; data published by schedule-sync)
+site/             the website (static pages; data/*.json published by schedule-sync)
 internal/nhl/     NHL API client + captured fixtures
 internal/analyze/ final/ feeds → games/plays/shifts tables
 internal/poller/  diff logic + the runtime-agnostic poll loop
