@@ -89,6 +89,20 @@ cd terraform && terraform init && terraform apply -target=aws_ecr_repository.mai
 make deploy
 ```
 
+**Check your Lambda concurrency quota before the season.** New AWS accounts often start with a *Concurrent executions* limit of 10 in each region rather than the documented default of 1,000. HockeyTrack runs one poller per live game, and busy NHL nights have 10–13 games at once, plus the sweeper and daily sync — at 10 the pollers will throttle and games will be missed. Check with:
+
+```bash
+aws lambda get-account-settings --region us-east-1 --query AccountLimit.ConcurrentExecutions
+```
+
+If it says 10, request an increase: Service Quotas → AWS Lambda → *Concurrent executions* (quota code `L-B99A9384`) → *Request increase at account level*. The console will not accept a value below 1,000, which is fine — it is a ceiling, not a charge. Approval usually takes minutes to a day. Or from the CLI:
+
+```bash
+aws service-quotas request-service-quota-increase --service-code lambda --quota-code L-B99A9384 --desired-value 1000 --region us-east-1
+```
+
+This is also why `terraform/lambda.tf` sets no reserved concurrency on the poller: AWS requires 10 unreserved executions account-wide, so there is nothing to reserve until the quota is raised.
+
 Variables: `region` (default `us-east-1`), `image_tag` (set by `make deploy`), and two **required** notification variables that have no default on purpose: `alert_email` (subscribes you to CloudWatch alarms for DLQ depth — the three Lambda DLQs and the DLQ behind the ECR scan-findings EventBridge target — poller errors, and a silent sweeper (no invocations for 30 minutes, which means EventBridge Scheduler is not invoking Lambdas at all), and to ECR scan results with CRITICAL/HIGH findings) and `team_alerts` (the per-team alert rules in `terraform/notifications.tf`, see [Extending it](#extending-it)). Set `alert_email` to `""`, or a team's `email` to `""`, to opt out of that subscription; `team_alerts = {}` removes the team resources entirely. Put them in a gitignored `terraform/terraform.tfvars`, which Terraform loads automatically so `make deploy` carries them every time:
 
 ```hcl
