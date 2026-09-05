@@ -115,6 +115,14 @@ Cost is dominated by poller runtime: roughly **$0.05/game**, on the order of **$
   ```
 
   This is the primary end-to-end check when no live games are on.
+- **Analyzing the archive** — `cmd/analyze` flattens the `final/` objects of archived games into three CSV tables for pandas, DuckDB, a spreadsheet, or whatever you like: `games.csv` (one row per game: ids, date, season, teams, final score, period count, shots per team), `plays.csv` (one row per play: sequence, period and clock, type, team, coordinates and every player id the play names), and `shifts.csv` (one row per shift from the shift chart, with the duration in seconds). It reads straight from the raw bucket or from a local mirror of it:
+
+  ```bash
+  go run ./cmd/analyze -bucket $(cd terraform && terraform output -raw raw_bucket) -season 20252026 -out ./csv
+  aws s3 sync s3://<raw bucket>/raw ./mirror/raw && go run ./cmd/analyze -dir ./mirror -out ./csv
+  ```
+
+  Flags: `-bucket` (or `$RAW_BUCKET`) *or* `-dir`; `-out` directory (default `.`); `-season` and `-date` (YYYY-MM-DD, needs `-season`) to narrow the run, which for S3 also narrows the listing. Only `pbp.json` is required per game; what an era lacks comes out blank (no shift charts before 2010-11, no coordinates or shot totals in the earliest seasons — see the table under "Backfilling history"). Goal markers in the shift chart (`typeCode` 505) are dropped, since they duplicate `plays.csv`. Unreadable games are logged, skipped and reported with exit status 1.
 - AWS is always behind interfaces (`internal/store`, `internal/events`); logic tests run against fakes, no AWS or localstack required.
 - **Link previews** — `make og` re-renders the home page's Open Graph card (`site/assets/og/home.png`) from `docs/og/home.html` with the puck-drop countdown as of that moment. The ice photo is by Compagnons on Unsplash (Unsplash License).
 
@@ -143,8 +151,10 @@ The whole history is roughly 70,000 games, 235,000 requests, and 20 GB, which is
 cmd/ingestor/     entrypoint; MODE selects schedule-sync | poller | sweeper
 cmd/backfill/     historical season backfill (local CLI, S3 only)
 cmd/replay/       offline replay harness
+cmd/analyze/      archive → CSV flattener (local CLI, reads S3 or a local mirror)
 site/             the website (static page; data published by schedule-sync)
 internal/nhl/     NHL API client + captured fixtures
+internal/analyze/ final/ feeds → games/plays/shifts tables
 internal/poller/  diff logic + the runtime-agnostic poll loop
 internal/backfill/  season walk + final-feed fetch with pacing, retry, resume
 internal/schedsync/  schedule pull + Scheduler reconciliation

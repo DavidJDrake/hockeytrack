@@ -3,6 +3,7 @@ package store
 import (
 	"bytes"
 	"context"
+	"io"
 
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
@@ -33,6 +34,20 @@ func (a *S3Archive) List(ctx context.Context, prefix string) ([]string, error) {
 		}
 	}
 	return keys, nil
+}
+
+// Get returns the object at key. Bodies are read whole; the archive holds
+// NHL feeds, which are at most a few hundred KB.
+func (a *S3Archive) Get(ctx context.Context, key string) ([]byte, error) {
+	out, err := a.client.GetObject(ctx, &s3.GetObjectInput{
+		Bucket: aws.String(a.bucket),
+		Key:    aws.String(key),
+	})
+	if err != nil {
+		return nil, err
+	}
+	defer out.Body.Close()
+	return io.ReadAll(out.Body)
 }
 
 func (a *S3Archive) Put(ctx context.Context, key string, body []byte) error {

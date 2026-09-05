@@ -32,4 +32,11 @@ func TestFakeArchive(t *testing.T) {
 	if string(f.Objects["raw/x.json"]) != `{}` {
 		t.Error("object not stored")
 	}
+	got, err := f.Get(context.Background(), "raw/x.json")
+	if err != nil || string(got) != `{}` {
+		t.Errorf("Get = %q, %v; want {} and nil", got, err)
+	}
+	if _, err := f.Get(context.Background(), "raw/missing.json"); err == nil {
+		t.Error("Get of a missing key should fail")
+	}
 }
