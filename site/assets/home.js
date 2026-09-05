@@ -61,7 +61,7 @@ function startClock(doc) {
 
   hold.addEventListener("click", () => {
     paused = !paused;
-    hold.textContent = paused ? "Resume" : "Pause";
+    hold.setAttribute("aria-label", paused ? "Resume countdown" : "Pause countdown");
     hold.setAttribute("aria-pressed", String(paused));
     if (paused) { clearInterval(timer); timer = null; } else { tick(); timer = setInterval(tick, 1000); }
   });

@@ -44,15 +44,18 @@
   .clock { grid-column: 1 / -1; border-top: 1px solid var(--rule); padding-top: 12px; margin-top: 2px; }
   .clock-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
   .clock .tag { font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); }
-  .clock .hold { font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); background: none; border: 1px solid var(--rule); padding: 2px 9px; cursor: pointer; }
+  .clock .hold { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; padding: 0; background: none; border: 1px solid var(--rule); color: var(--muted); cursor: pointer; }
+  .clock .hold svg { fill: currentColor; }
+  .clock .hold .i-play, .clock .hold[aria-pressed="true"] .i-pause { display: none; }
+  .clock .hold[aria-pressed="true"] .i-play { display: block; }
   .clock .hold:hover { color: var(--blue); border-color: var(--blue); }
   .clock .units { display: flex; align-items: flex-start; gap: 6px; }
   .clock .units span { text-align: center; min-width: 3.4ch; font-family: var(--display); font-weight: 600; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
   .clock .units b { font-size: 46px; min-width: 2ch; margin-bottom: 2px; }
   .clock .units i { font-family: var(--display); font-style: normal; font-weight: 600; font-size: 40px; line-height: 1; color: var(--rule); margin-top: 1px; }
-  .clock .match { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px 16px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--rule); }
-  .clock .match strong { font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: 0.02em; color: var(--ink); }
-  .clock .match span { font-family: var(--mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
+  .clock .match { display: flex; align-items: baseline; flex-wrap: wrap; gap: 2px 12px; margin: 10px 0 0; font-family: var(--display); letter-spacing: 0.04em; text-transform: uppercase; }
+  .clock .match strong { font-weight: 700; font-size: 22px; color: var(--ink); }
+  .clock .match span { font-weight: 600; font-size: 14px; color: var(--muted); white-space: nowrap; }
 
   h2 { font-family: var(--display); font-weight: 700; font-size: 34px; line-height: 1.05; margin: 0 0 8px; letter-spacing: 0.01em; }
   .sub { color: var(--muted); max-width: 62ch; margin: 0 0 26px; }
@@ -131,7 +134,10 @@
       <div class="red clock" role="timer" aria-label="Countdown to puck drop">
         <div class="clock-head">
           <span class="tag">Puck drop</span>
-          <button type="button" class="hold" id="c-hold" aria-pressed="false" hidden>Pause</button>
+          <button type="button" class="hold" id="c-hold" aria-pressed="false" aria-label="Pause countdown" hidden>
+            <svg class="i-pause" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><rect x="1.5" y="1" width="3" height="10"/><rect x="7.5" y="1" width="3" height="10"/></svg>
+            <svg class="i-play" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 1l8 5-8 5z"/></svg>
+          </button>
         </div>
         <div class="units" aria-hidden="true">
           <span><b id="c-d">&ndash;&ndash;</b>days</span><i>:</i>
@@ -140,10 +146,10 @@
           <span><b id="c-s">&ndash;&ndash;</b>sec</span>
         </div>
         <span class="sr-only" id="c-text">Countdown to puck drop loading.</span>
-        <div class="match">
+        <p class="match">
           <strong id="c-match">First game</strong>
           <span id="c-when">2026&ndash;27 season</span>
-        </div>
+        </p>
       </div>
     </div>
   </section>
