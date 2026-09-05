@@ -102,12 +102,35 @@ Cost is dominated by poller runtime: roughly **$0.05/game**, on the order of **$
   This is the primary end-to-end check when no live games are on.
 - AWS is always behind interfaces (`internal/store`, `internal/events`); logic tests run against fakes, no AWS or localstack required.
 
+### Backfilling history
+
+The pipeline is forward-only, but the NHL API serves every game back to the league's first on 19 December 1917. `cmd/backfill` walks a past season's schedule week by week and writes the same `final/` objects the poller leaves behind (play-by-play, boxscore, landing, and shift charts from 2010-11 onward) for every finished game. It touches only S3: no events are published, so a historical Lightning goal never trips a notification rule, and nothing is written to DynamoDB or the scheduler.
+
+```bash
+make backfill                     # every season the API lists, newest first
+make backfill SEASONS=20252026    # one season
+make backfill SEASONS=19171918-19421943
+```
+
+Runs are resumable and idempotent: objects already in the bucket are skipped, so an interrupted run (or one with transient failures) is just rerun. Requests are paced at 3/s by default (`RPS=`). What you get depends on the era:
+
+| Seasons | Play-by-play | Shift charts |
+|---|---|---|
+| 2010-11 onward | Full, with coordinates | Yes |
+| 2009-10 | Full, with coordinates | No |
+| 2006-07 to 2008-09 | Goals, shots, penalties | No |
+| 1917-18 to 2005-06 | Goals and penalties | No |
+
+The whole history is roughly 70,000 games, 235,000 requests, and 20 GB, which is about a day of wall time at the default pace and under $0.50/month to keep.
+
 ```
 cmd/ingestor/     entrypoint; MODE selects schedule-sync | poller | sweeper
+cmd/backfill/     historical season backfill (local CLI, S3 only)
 cmd/replay/       offline replay harness
 site/             the website (static page; data published by schedule-sync)
 internal/nhl/     NHL API client + captured fixtures
 internal/poller/  diff logic + the runtime-agnostic poll loop
+internal/backfill/  season walk + final-feed fetch with pacing, retry, resume
 internal/schedsync/  schedule pull + Scheduler reconciliation
 internal/sweeper/ dead-chain detection and restart
 internal/store/   DynamoDB game store (leases, high-water marks) + S3 archive

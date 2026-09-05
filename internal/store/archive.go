@@ -3,12 +3,21 @@ package store
 import (
 	"context"
 	"fmt"
+	"strings"
 	"sync"
 	"time"
 )
 
 type Archive interface {
 	Put(ctx context.Context, key string, body []byte) error
+}
+
+// Lister is an Archive that can also enumerate what it already holds, which
+// lets a long job resume without re-fetching.
+type Lister interface {
+	Archive
+	// List returns every key under prefix, in no particular order.
+	List(ctx context.Context, prefix string) ([]string, error)
 }
 
 func GamePrefix(season int64, gameDate string, gameID int64) string {
@@ -41,4 +50,16 @@ func (f *FakeArchive) Put(_ context.Context, key string, body []byte) error {
 	defer f.mu.Unlock()
 	f.Objects[key] = append([]byte(nil), body...)
 	return nil
+}
+
+func (f *FakeArchive) List(_ context.Context, prefix string) ([]string, error) {
+	f.mu.Lock()
+	defer f.mu.Unlock()
+	var keys []string
+	for k := range f.Objects {
+		if strings.HasPrefix(k, prefix) {
+			keys = append(keys, k)
+		}
+	}
+	return keys, nil
 }

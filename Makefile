@@ -4,7 +4,10 @@ REPO        := hockeytrack
 TAG         ?= $(shell git rev-parse --short HEAD)
 IMAGE       := $(ACCOUNT_ID).dkr.ecr.$(REGION).amazonaws.com/$(REPO):$(TAG)
 
-.PHONY: test vuln build push deploy site
+SEASONS     ?= all
+RPS         ?= 3
+
+.PHONY: test vuln build push deploy site backfill
 
 test: vuln
 	go test ./...
@@ -31,6 +34,11 @@ push: build
 
 deploy: push
 	cd terraform && terraform apply -var="image_tag=$(TAG)" -auto-approve
+
+# Archive past seasons' final feeds into the raw bucket. Local, S3-only,
+# resumable; see README "Backfilling history".
+backfill:
+	AWS_REGION=$(REGION) go run ./cmd/backfill -bucket $$(cd terraform && terraform output -raw raw_bucket) -seasons $(SEASONS) -rps $(RPS)
 
 # Upload the static website (everything except data/, which schedule-sync
 # owns) and expire the CloudFront cache.
