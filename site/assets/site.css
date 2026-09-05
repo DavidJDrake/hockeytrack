@@ -25,6 +25,10 @@
 [hidden] { display: none !important; }
 html { color-scheme: light; }
 body { margin: 0; background: var(--ice); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5; }
+/* The ice: a close-up of skate-scraped rink ice (Compagnons, Unsplash License),
+   washed to ~55% white at build time so it reads as texture under the type.
+   A fixed layer rather than background-attachment, which stutters on phones. */
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; background: var(--ice) url("/assets/ice.webp") center / cover no-repeat; }
 a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 2px; }
 a:hover { color: var(--red); }
 :focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
