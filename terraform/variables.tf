@@ -17,8 +17,8 @@ variable "ecr_keep_images" {
   description = "Number of most-recent tagged images the ECR lifecycle policy keeps; older ones expire"
 
   validation {
-    condition     = var.ecr_keep_images >= 1
-    error_message = "ecr_keep_images must be at least 1."
+    condition     = var.ecr_keep_images >= 1 && floor(var.ecr_keep_images) == var.ecr_keep_images
+    error_message = "ecr_keep_images must be a positive whole number."
   }
 }
 
