@@ -1,12 +1,14 @@
 // Package analyze flattens the final/ objects of archived games into CSV.
 //
-// It reads the same objects the poller and backfill leave behind
-// (raw/{season}/{date}/{gameId}/final/{pbp,boxscore,landing,shifts}.json),
-// either from the raw bucket or from a local mirror of it, and writes three
-// tables: one row per game, one per play, one per shift. Only pbp.json is
-// required; the other feeds fill in what they can when present, so games
-// from any era (no shift charts before 2010-11, only goals and penalties
-// before 2006-07) come out with blank cells rather than errors.
+// It reads two of the objects the poller and backfill leave behind under
+// raw/{season}/{date}/{gameId}/final/, either from the raw bucket or from a
+// local mirror of it, and writes three tables: pbp.json supplies one row per
+// game and one per play; shifts.json, when present, one row per shift. The
+// game row comes entirely from pbp.json, which carries the same header
+// fields as landing.json and boxscore.json, so those two are not read (a
+// per-player table from the boxscore would be the natural next step).
+// Games from any era come out with blank cells rather than errors: no shift
+// charts before 2010-11, only goals and penalties before 2006-07.
 package analyze
 
 import (
@@ -17,6 +19,7 @@ import (
 	"fmt"
 	"io"
 	"log/slog"
+	"reflect"
 	"sort"
 	"strconv"
 	"strings"
@@ -47,14 +50,15 @@ type Writers struct {
 
 // Stats summarises a run.
 type Stats struct {
-	Games  int // games written to games.csv
-	Plays  int
-	Shifts int
-	Failed int // games skipped because pbp.json was missing or unparsable
+	Games        int // games written to games.csv
+	Plays        int
+	Shifts       int
+	Failed       int // games skipped because pbp.json was missing or unparsable
+	ChartsFailed int // games written without shift rows because shifts.json could not be read
 }
 
 func (s Stats) String() string {
-	return fmt.Sprintf("games=%d plays=%d shifts=%d failed=%d", s.Games, s.Plays, s.Shifts, s.Failed)
+	return fmt.Sprintf("games=%d plays=%d shifts=%d failed=%d chartsFailed=%d", s.Games, s.Plays, s.Shifts, s.Failed, s.ChartsFailed)
 }
 
 // ErrGamesFailed is returned when the run finished but some games could not
@@ -71,13 +75,13 @@ var gamesHeader = []string{
 var playsHeader = []string{
 	"gameId", "seq", "eventId", "period", "periodType", "timeInPeriod", "timeRemaining",
 	"typeCode", "type", "situationCode", "teamId", "team",
-	"x", "y", "zone", "shotType", "reason",
+	"x", "y", "zone", "shotType", "reason", "secondaryReason",
 	"penaltyType", "penaltyDesc", "penaltyMinutes", "awayScore", "homeScore",
 	"scoringPlayerId", "assist1PlayerId", "assist2PlayerId",
 	"shootingPlayerId", "goalieInNetId", "blockingPlayerId",
 	"winningPlayerId", "losingPlayerId",
 	"hittingPlayerId", "hitteePlayerId",
-	"committedByPlayerId", "drawnByPlayerId", "playerId",
+	"committedByPlayerId", "drawnByPlayerId", "servedByPlayerId", "playerId",
 }
 
 var shiftsHeader = []string{
@@ -85,9 +89,8 @@ var shiftsHeader = []string{
 	"period", "shiftNumber", "startTime", "endTime", "duration", "seconds", "eventNumber",
 }
 
-// game is the subset of pbp.json (and, identically shaped, landing.json and
-// boxscore.json) the tables need. Pointers distinguish "absent in this era"
-// from zero.
+// game is the subset of pbp.json the tables need. Pointers distinguish
+// "absent in this era" from zero.
 type game struct {
 	ID           int64  `json:"id"`
 	Season       int64  `json:"season"`
@@ -114,6 +117,17 @@ type team struct {
 	Abbrev string `json:"abbrev"`
 	Score  *int   `json:"score"`
 	SOG    *int   `json:"sog"`
+
+	decodeErr error
+}
+
+func (t *team) UnmarshalJSON(b []byte) error {
+	type plain team
+	var p plain
+	err := unmarshalFields(b, &p)
+	*t = team(p)
+	t.decodeErr = err
+	return nil
 }
 
 type play struct {
@@ -141,6 +155,7 @@ type details struct {
 	ZoneCode            string      `json:"zoneCode"`
 	ShotType            string      `json:"shotType"`
 	Reason              string      `json:"reason"`
+	SecondaryReason     string      `json:"secondaryReason"`
 	PenaltyType         string      `json:"typeCode"`
 	PenaltyDesc         string      `json:"descKey"`
 	PenaltyMinutes      *int        `json:"duration"`
@@ -158,7 +173,49 @@ type details struct {
 	HitteePlayerID      *int64      `json:"hitteePlayerId"`
 	CommittedByPlayerID *int64      `json:"committedByPlayerId"`
 	DrawnByPlayerID     *int64      `json:"drawnByPlayerId"`
+	ServedByPlayerID    *int64      `json:"servedByPlayerId"`
 	PlayerID            *int64      `json:"playerId"`
+
+	decodeErr error
+}
+
+func (d *details) UnmarshalJSON(b []byte) error {
+	type plain details
+	var p plain
+	err := unmarshalFields(b, &p)
+	*d = details(p)
+	d.decodeErr = err
+	return nil
+}
+
+// unmarshalFields decodes a JSON object into the tagged fields of *dst one
+// field at a time, so a value of the wrong type leaves only its own field
+// at the zero value. (Plain json.Unmarshal allocates a pointer field before
+// discovering the type mismatch, turning a bad player id into 0 rather than
+// blank.) Malformed JSON is returned as is; the first field that failed to
+// decode is returned as an *UnmarshalTypeError-wrapping error after every
+// other field has been filled.
+func unmarshalFields(b []byte, dst any) error {
+	var fields map[string]json.RawMessage
+	if err := json.Unmarshal(b, &fields); err != nil {
+		return err
+	}
+	var first error
+	v := reflect.ValueOf(dst).Elem()
+	for i := range v.NumField() {
+		name, _, _ := strings.Cut(v.Type().Field(i).Tag.Get("json"), ",")
+		raw, ok := fields[name]
+		if name == "" || name == "-" || !ok {
+			continue
+		}
+		if err := json.Unmarshal(raw, v.Field(i).Addr().Interface()); err != nil {
+			v.Field(i).SetZero()
+			if first == nil {
+				first = fmt.Errorf("field %s: %w", name, err)
+			}
+		}
+	}
+	return first
 }
 
 // shiftChart is api.nhle.com's shiftcharts response.
@@ -201,9 +258,22 @@ func Run(ctx context.Context, src Source, opts Options, w Writers) (Stats, error
 	if err != nil {
 		return st, err
 	}
+	// Whatever stops the loop, rows already produced reach the writers, so
+	// a partial run leaves complete rows rather than a truncated last one.
+	err = flatten(ctx, src, games, have, out, &st)
+	if ferr := out.flush(); ferr != nil && err == nil {
+		err = ferr
+	}
+	if err == nil && st.Failed > 0 {
+		err = ErrGamesFailed
+	}
+	return st, err
+}
+
+func flatten(ctx context.Context, src Source, games []string, have map[string]bool, out *tables, st *Stats) error {
 	for _, prefix := range games {
 		if ctx.Err() != nil {
-			return st, ctx.Err()
+			return ctx.Err()
 		}
 		g, err := loadGame(ctx, src, prefix)
 		if err != nil {
@@ -212,31 +282,27 @@ func Run(ctx context.Context, src Source, opts Options, w Writers) (Stats, error
 			continue
 		}
 		var chart shiftChart
-		if have[prefix+"final/shifts.json"] {
-			b, err := src.Get(ctx, prefix+"final/shifts.json")
-			if err != nil {
-				return st, fmt.Errorf("get %sfinal/shifts.json: %w", prefix, err)
-			}
-			if err := json.Unmarshal(b, &chart); err != nil {
-				// A bad chart costs the shift rows, not the game.
-				slog.Warn("unreadable shift chart", "prefix", prefix, "err", err)
+		if key := prefix + "final/shifts.json"; have[key] {
+			// A chart that cannot be fetched or parsed costs its shift
+			// rows, not the game.
+			if b, err := src.Get(ctx, key); err != nil {
+				slog.Warn("shift chart unavailable; no shift rows", "prefix", prefix, "err", err)
+				st.ChartsFailed++
+			} else if err := json.Unmarshal(b, &chart); err != nil {
+				slog.Warn("shift chart unreadable; no shift rows", "prefix", prefix, "err", err)
+				st.ChartsFailed++
+				chart = shiftChart{}
 			}
 		}
 		n, err := out.writeGame(g, chart)
 		if err != nil {
-			return st, err
+			return err
 		}
 		st.Games++
 		st.Plays += len(g.Plays)
 		st.Shifts += n
 	}
-	if err := out.flush(); err != nil {
-		return st, err
-	}
-	if st.Failed > 0 {
-		return st, ErrGamesFailed
-	}
-	return st, nil
+	return nil
 }
 
 // findGames returns the sorted game prefixes (…/{season}/{date}/{gameId}/)
@@ -275,7 +341,36 @@ func loadGame(ctx context.Context, src Source, prefix string) (*game, error) {
 	}
 	var g game
 	if err := json.Unmarshal(b, &g); err != nil {
-		return nil, fmt.Errorf("parse pbp.json: %w", err)
+		// A field of the wrong type is skipped by encoding/json, which
+		// still fills everything else, so the game is written with that
+		// cell blank; only malformed JSON loses the game.
+		var typeErr *json.UnmarshalTypeError
+		if !errors.As(err, &typeErr) {
+			return nil, fmt.Errorf("parse pbp.json: %w", err)
+		}
+		slog.Warn("pbp.json field has an unexpected type; left blank", "prefix", prefix, "err", err)
+	}
+	// The team and details structs decode field by field (see
+	// unmarshalFields) and report their own mismatches.
+	bad, first := 0, error(nil)
+	for _, err := range []error{g.AwayTeam.decodeErr, g.HomeTeam.decodeErr} {
+		if err != nil {
+			bad++
+			if first == nil {
+				first = err
+			}
+		}
+	}
+	for _, p := range g.Plays {
+		if p.Details.decodeErr != nil {
+			bad++
+			if first == nil {
+				first = fmt.Errorf("play %d: %w", p.SortOrder, p.Details.decodeErr)
+			}
+		}
+	}
+	if bad > 0 {
+		slog.Warn("pbp.json fields have unexpected types; left blank", "prefix", prefix, "count", bad, "first", first)
 	}
 	if g.ID == 0 {
 		return nil, errors.New("pbp.json has no game id")
@@ -365,13 +460,13 @@ func (t *tables) writeGame(g *game, chart shiftChart) (int, error) {
 				id, strconv.FormatInt(p.SortOrder, 10), strconv.FormatInt(p.EventID, 10),
 				strconv.Itoa(p.PeriodDescriptor.Number), p.PeriodDescriptor.PeriodType, p.TimeInPeriod, p.TimeRemaining,
 				strconv.Itoa(p.TypeCode), p.TypeDescKey, p.SituationCode, teamID, team,
-				string(d.XCoord), string(d.YCoord), d.ZoneCode, d.ShotType, d.Reason,
+				string(d.XCoord), string(d.YCoord), d.ZoneCode, d.ShotType, d.Reason, d.SecondaryReason,
 				d.PenaltyType, d.PenaltyDesc, optInt(d.PenaltyMinutes), optInt(d.AwayScore), optInt(d.HomeScore),
 				optID(d.ScoringPlayerID), optID(d.Assist1PlayerID), optID(d.Assist2PlayerID),
 				optID(d.ShootingPlayerID), optID(d.GoalieInNetID), optID(d.BlockingPlayerID),
 				optID(d.WinningPlayerID), optID(d.LosingPlayerID),
 				optID(d.HittingPlayerID), optID(d.HitteePlayerID),
-				optID(d.CommittedByPlayerID), optID(d.DrawnByPlayerID), optID(d.PlayerID),
+				optID(d.CommittedByPlayerID), optID(d.DrawnByPlayerID), optID(d.ServedByPlayerID), optID(d.PlayerID),
 			}
 			if err := t.plays.Write(row); err != nil {
 				return 0, err

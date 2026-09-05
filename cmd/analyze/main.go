@@ -70,6 +70,8 @@ func main() {
 			if *date != "" {
 				opts.Prefix += *date + "/"
 			}
+		} else {
+			slog.Warn("no -season: listing the whole bucket, including every live snapshot; for full history prefer `aws s3 sync` and -dir", "bucket", *bucket)
 		}
 	}
 
