@@ -4,10 +4,14 @@ REPO        := hockeytrack
 TAG         ?= $(shell git rev-parse --short HEAD)
 IMAGE       := $(ACCOUNT_ID).dkr.ecr.$(REGION).amazonaws.com/$(REPO):$(TAG)
 
-.PHONY: test build push deploy site
+.PHONY: test vuln build push deploy site
 
-test:
+test: vuln
 	go test ./...
+
+# Fails on any known vulnerability reachable from this module's code.
+vuln:
+	go run golang.org/x/vuln/cmd/govulncheck@latest ./...
 
 # The final image is flattened to a single layer (export/import): this host's
 # Docker daemon pushes layered images whose shared base blobs Lambda cannot
