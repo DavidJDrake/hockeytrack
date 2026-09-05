@@ -37,6 +37,11 @@ Every game on the schedule has a stopwatch button that opens a **puck-drop count
 
 The script (`site/assets/countdown.js`, ~9 KB, no dependencies) mounts a clock into every `.ht-countdown` element, loads its own stylesheet, and needs nothing else; the same component drives the home-page tile. It reads the visitor's clock, so it needs no server. Add `data-credit="off"` to drop the "Countdown by" line.
 
+<p align="center">
+  <img src="docs/screenshots/countdown-popup.png" alt="The schedule page with a countdown popup open for Tampa Bay at Florida: a red scoreboard clock reading 20 days, 23 hours, 27 minutes, 31 seconds above the matchup and start time, with a collapsed 'Put this countdown on your page' disclosure below." width="455">
+  <img src="docs/screenshots/countdown-embed.png" alt="The same popup with the disclosure expanded, showing the two-line embed snippet for that game and a Copy code button." width="455">
+</p>
+
 It is a static site on S3 behind CloudFront. The documents it renders are `data/schedule.json` and `data/standings.json`, which `schedule-sync` republishes every morning (the standings are a trimmed copy of `api-web.nhle.com/v1/standings/now`, whose raw response is also archived under `raw/standings/{date}.json`), so the pages stay current with reschedules and results without any manual step. Off-season, the NHL serves the previous season's final table until the first game is played, and the page labels it by that season. The pages live in `site/` and are uploaded with `make site`; the infrastructure (bucket, distribution, certificate, DNS) is `terraform/site.tf`.
 
 ## The event contract
