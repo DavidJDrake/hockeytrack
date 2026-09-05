@@ -73,13 +73,14 @@ cd terraform && terraform init && terraform apply -target=aws_ecr_repository.mai
 make deploy
 ```
 
-Variables: `region` (default `us-east-1`), `alert_email` (optional — subscribes you to CloudWatch alarms for DLQ depth and poller errors), `lightning_email` (optional — the example goal-alert rule in `terraform/notifications.tf`). Put personal values in a gitignored `terraform/terraform.tfvars` so `make deploy` carries them every time.
+Variables: `region` (default `us-east-1`), `alert_email` (optional — subscribes you to CloudWatch alarms for DLQ depth and poller errors, and to ECR scan results with CRITICAL/HIGH findings), `lightning_email` (optional — the example goal-alert rule in `terraform/notifications.tf`). Put personal values in a gitignored `terraform/terraform.tfvars` so `make deploy` carries them every time.
 
 Cost is dominated by poller runtime: roughly **$0.05/game**, on the order of **$10–15/month in season** and near-zero in the off-season. S3/DynamoDB/EventBridge usage is pennies at this volume.
 
 ## Development
 
-- `make test` / `go test ./...` — unit tests use real captured NHL API responses as fixtures (never hand-written), with golden tests on the play-by-play diff logic: given snapshot N and N+1, exactly these events are emitted.
+- `make test` / `go test ./...` — unit tests use real captured NHL API responses as fixtures (never hand-written), with golden tests on the play-by-play diff logic: given snapshot N and N+1, exactly these events are emitted. `make test` first runs `make vuln` (govulncheck), so a known reachable vulnerability fails the build.
+- **Supply chain** — every image pushed to ECR is scanned on push; the `Dockerfile` pins both base images by digest (bump instructions are in its header comment).
 - **Replay harness** — run a full recorded game through the real poller path against in-memory fakes, printing every event it would publish:
 
   ```bash
