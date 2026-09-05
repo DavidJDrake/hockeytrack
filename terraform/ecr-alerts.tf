@@ -20,9 +20,37 @@ resource "aws_cloudwatch_event_rule" "ecr_scan_findings" {
   })
 }
 
+# Deliveries EventBridge cannot complete to SNS (after its own retries) land in
+# the ecr-scan-findings DLQ (dlq.tf) instead of being dropped; its depth alarm
+# in alarms.tf notifies the alerts topic.
 resource "aws_cloudwatch_event_target" "ecr_scan_findings_sns" {
   rule = aws_cloudwatch_event_rule.ecr_scan_findings.name
   arn  = aws_sns_topic.alerts.arn
+
+  dead_letter_config {
+    arn = aws_sqs_queue.dlq["ecr-scan-findings"].arn
+  }
+}
+
+# EventBridge needs an explicit resource policy on the queue to write to it;
+# only this rule may send.
+resource "aws_sqs_queue_policy" "ecr_scan_findings_dlq" {
+  queue_url = aws_sqs_queue.dlq["ecr-scan-findings"].id
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid       = "EcrScanFindingsDlq"
+        Effect    = "Allow"
+        Principal = { Service = "events.amazonaws.com" }
+        Action    = "sqs:SendMessage"
+        Resource  = aws_sqs_queue.dlq["ecr-scan-findings"].arn
+        Condition = {
+          ArnEquals = { "aws:SourceArn" = aws_cloudwatch_event_rule.ecr_scan_findings.arn }
+        }
+      },
+    ]
+  })
 }
 
 # Setting a topic policy replaces the SNS default, so the account-owner
