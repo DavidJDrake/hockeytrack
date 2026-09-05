@@ -14,6 +14,7 @@ func TestKeyLayout(t *testing.T) {
 		{FinalKey(20252026, "2026-01-15", 2025020740, "shifts"),
 			"raw/20252026/2026-01-15/2025020740/final/shifts.json"},
 		{ScheduleKey("2026-01-15"), "raw/schedule/2026-01-15.json"},
+		{StandingsKey("2026-01-15"), "raw/standings/2026-01-15.json"},
 		{GamePrefix(20252026, "2026-01-15", 2025020740),
 			"raw/20252026/2026-01-15/2025020740/"},
 	}

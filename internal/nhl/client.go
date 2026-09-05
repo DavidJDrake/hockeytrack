@@ -83,6 +83,21 @@ func (c *Client) Schedule(ctx context.Context, date string) (*ScheduleResponse, 
 	return &s, raw, nil
 }
 
+// Standings fetches the league table as of now. The API answers with a
+// redirect to the dated resource (off-season, to the previous season's
+// final day); http.Client follows it, so raw is the dated document.
+func (c *Client) Standings(ctx context.Context) (*StandingsResponse, []byte, error) {
+	raw, err := c.get(ctx, fmt.Sprintf("%s/v1/standings/now", c.BaseURL))
+	if err != nil {
+		return nil, nil, err
+	}
+	var s StandingsResponse
+	if err := json.Unmarshal(raw, &s); err != nil {
+		return nil, nil, fmt.Errorf("parse standings: %w", err)
+	}
+	return &s, raw, nil
+}
+
 func (c *Client) PlayByPlay(ctx context.Context, gameID int64) (*PlayByPlay, []byte, error) {
 	raw, err := c.get(ctx, fmt.Sprintf("%s/v1/gamecenter/%d/play-by-play", c.BaseURL, gameID))
 	if err != nil {

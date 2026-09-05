@@ -128,7 +128,7 @@ func (a *app) handlePoller(ctx context.Context, raw json.RawMessage) error {
 
 func (a *app) handleScheduleSync(ctx context.Context) error {
 	d := schedsync.Deps{
-		Feed: a.nhl, Store: a.store, Archive: a.archive, Site: a.site,
+		Feed: a.nhl, Standings: a.nhl, Store: a.store, Archive: a.archive, Site: a.site,
 		Scheduler: schedsync.NewAWSScheduler(a.schedCl, mustEnv("SCHEDULER_GROUP"), mustEnv("POLLER_FUNCTION_ARN"), mustEnv("SCHEDULER_ROLE_ARN")),
 		Now:       time.Now,
 	}

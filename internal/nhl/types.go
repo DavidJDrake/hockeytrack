@@ -2,6 +2,7 @@ package nhl
 
 import (
 	"encoding/json"
+	"fmt"
 	"strings"
 	"time"
 )
@@ -49,6 +50,46 @@ type ScheduleResponse struct {
 	// published schedule.
 	NextStartDate string        `json:"nextStartDate"`
 	GameWeek      []ScheduleDay `json:"gameWeek"`
+}
+
+// StandingsRow is one team's line in /v1/standings/{date}. Only the fields
+// the site publishes are typed; the raw response is archived whole.
+type StandingsRow struct {
+	Date               string    `json:"date"`
+	SeasonID           int64     `json:"seasonId"`
+	ConferenceName     string    `json:"conferenceName"`
+	DivisionName       string    `json:"divisionName"`
+	DivisionSequence   int       `json:"divisionSequence"`
+	ConferenceSequence int       `json:"conferenceSequence"`
+	LeagueSequence     int       `json:"leagueSequence"`
+	TeamAbbrev         Localized `json:"teamAbbrev"`
+	TeamName           Localized `json:"teamName"`
+	GamesPlayed        int       `json:"gamesPlayed"`
+	Wins               int       `json:"wins"`
+	Losses             int       `json:"losses"`
+	OtLosses           int       `json:"otLosses"`
+	Points             int       `json:"points"`
+	GoalFor            int       `json:"goalFor"`
+	GoalAgainst        int       `json:"goalAgainst"`
+	StreakCode         string    `json:"streakCode"`
+	StreakCount        int       `json:"streakCount"`
+}
+
+// Streak renders the API's code/count pair the way standings tables print
+// it ("W3", "L2", "OT1"); empty when no games have been played.
+func (r StandingsRow) Streak() string {
+	if r.StreakCount == 0 || r.StreakCode == "" {
+		return ""
+	}
+	return fmt.Sprintf("%s%d", r.StreakCode, r.StreakCount)
+}
+
+// StandingsResponse is /v1/standings/now. Off-season, the API redirects
+// "now" to the final day of the previous regular season, so every row
+// carries its own Date and SeasonID rather than the request date.
+type StandingsResponse struct {
+	WildCardIndicator bool           `json:"wildCardIndicator"`
+	Standings         []StandingsRow `json:"standings"`
 }
 
 type PBPTeam struct {

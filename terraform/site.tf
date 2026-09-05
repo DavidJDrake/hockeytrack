@@ -1,8 +1,8 @@
 # Public website: hockeytrack.davidjdrake.com
 # Private S3 bucket behind CloudFront (origin access control), ACM certificate
 # validated through Route 53, alias records in the davidjdrake.com zone.
-# schedule-sync publishes data/schedule.json into the bucket every morning;
-# `make site` uploads the static page.
+# schedule-sync publishes data/schedule.json and data/standings.json into the
+# bucket every morning; `make site` uploads the static pages.
 
 variable "site_domain" {
   type    = string
@@ -89,7 +89,7 @@ resource "aws_acm_certificate_validation" "site" {
   validation_record_fqdns = [for r in aws_route53_record.site_cert_validation : r.fqdn]
 }
 
-# The schedule document refreshes daily; cache it for an hour at the edge so
+# The data documents refresh daily; cache them for an hour at the edge so
 # the morning sync shows up without invalidations.
 resource "aws_cloudfront_cache_policy" "site_data" {
   name        = "hockeytrack-site-data"
@@ -117,7 +117,7 @@ data "aws_cloudfront_cache_policy" "optimized" {
 
 # Security headers on every response. The CSP is strict because the site has
 # no third-party origins: scripts live in /assets/*.js, fonts are self-hosted,
-# the only fetch is /data/schedule.json, and the favicon is a data: URI.
+# the only fetches are /data/*.json, and the favicon is a data: URI.
 # style-src keeps 'unsafe-inline' for the per-page <style> blocks.
 resource "aws_cloudfront_response_headers_policy" "site" {
   name = "hockeytrack-site-security"

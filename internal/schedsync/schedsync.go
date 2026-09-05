@@ -18,13 +18,21 @@ type ScheduleFeed interface {
 	Schedule(ctx context.Context, date string) (*nhl.ScheduleResponse, []byte, error)
 }
 
+type StandingsFeed interface {
+	Standings(ctx context.Context) (*nhl.StandingsResponse, []byte, error)
+}
+
 type SchedulerAPI interface {
 	Ensure(ctx context.Context, name string, fireAt time.Time, gameID int64) error
 	Delete(ctx context.Context, name string) error
 }
 
 type Deps struct {
-	Feed      ScheduleFeed
+	Feed ScheduleFeed
+	// Standings, when set, is fetched once per run after the schedule is
+	// reconciled: the raw table is archived and a trimmed copy published
+	// to Site (StandingsKey). Nil skips standings entirely.
+	Standings StandingsFeed
 	Store     store.GameStore
 	Archive   store.Archive
 	Scheduler SchedulerAPI
@@ -36,6 +44,37 @@ type Deps struct {
 
 // SiteKey is where the website reads the published schedule from.
 const SiteKey = "data/schedule.json"
+
+// StandingsKey is where the website reads the published standings from.
+const StandingsKey = "data/standings.json"
+
+// StandingsPayload is the standings document the website renders. Teams are
+// ordered by conference, division, and the NHL's own division rank, so the
+// page never re-derives tiebreakers.
+type StandingsPayload struct {
+	GeneratedAt time.Time `json:"generatedAt"`
+	// Season and Date are the standings' own (e.g. 20252026 and the
+	// final day of that season all summer), not the run date.
+	Season int64           `json:"season"`
+	Date   string          `json:"date"`
+	Teams  []StandingsTeam `json:"teams"`
+}
+
+type StandingsTeam struct {
+	Conference string `json:"conference"`
+	Division   string `json:"division"`
+	Abbrev     string `json:"abbrev"`
+	Name       string `json:"name"`
+	Rank       int    `json:"rank"` // position within the division
+	GP         int    `json:"gp"`
+	W          int    `json:"w"`
+	L          int    `json:"l"`
+	OTL        int    `json:"otl"`
+	PTS        int    `json:"pts"`
+	GF         int    `json:"gf"`
+	GA         int    `json:"ga"`
+	Streak     string `json:"streak"`
+}
 
 // SitePayload is the schedule document the website renders.
 type SitePayload struct {
@@ -93,7 +132,64 @@ func Sync(ctx context.Context, d Deps, cfg Config, date string) error {
 		}
 		week = next
 	}
-	return publishSite(ctx, d, site)
+	if err := publishSite(ctx, d, site); err != nil {
+		return err
+	}
+	// Standings last: a failure here still surfaces as a failed run, but
+	// only after every game is recorded and armed.
+	return syncStandings(ctx, d, date)
+}
+
+// syncStandings archives today's raw standings and publishes the trimmed
+// site document. It is a no-op without a Standings feed.
+func syncStandings(ctx context.Context, d Deps, date string) error {
+	if d.Standings == nil {
+		return nil
+	}
+	st, raw, err := d.Standings.Standings(ctx)
+	if err != nil {
+		return fmt.Errorf("standings: %w", err)
+	}
+	if err := d.Archive.Put(ctx, store.StandingsKey(date), raw); err != nil {
+		return err
+	}
+	if d.Site == nil {
+		return nil
+	}
+	body, err := json.Marshal(TrimStandings(st, d.Now()))
+	if err != nil {
+		return err
+	}
+	return d.Site.Put(ctx, StandingsKey, body)
+}
+
+// TrimStandings reduces the API's ~90-field rows to what the page shows,
+// ordered by conference, division, then the NHL's division rank.
+func TrimStandings(st *nhl.StandingsResponse, now time.Time) *StandingsPayload {
+	p := &StandingsPayload{GeneratedAt: now, Teams: make([]StandingsTeam, 0, len(st.Standings))}
+	for _, r := range st.Standings {
+		if p.Season == 0 {
+			p.Season, p.Date = r.SeasonID, r.Date
+		}
+		p.Teams = append(p.Teams, StandingsTeam{
+			Conference: r.ConferenceName, Division: r.DivisionName,
+			Abbrev: r.TeamAbbrev.Default, Name: r.TeamName.Default,
+			Rank: r.DivisionSequence, GP: r.GamesPlayed,
+			W: r.Wins, L: r.Losses, OTL: r.OtLosses, PTS: r.Points,
+			GF: r.GoalFor, GA: r.GoalAgainst, Streak: r.Streak(),
+		})
+	}
+	sort.SliceStable(p.Teams, func(i, j int) bool {
+		a, b := p.Teams[i], p.Teams[j]
+		if a.Conference != b.Conference {
+			return a.Conference < b.Conference
+		}
+		if a.Division != b.Division {
+			return a.Division < b.Division
+		}
+		return a.Rank < b.Rank
+	})
+	return p
 }
 
 func publishSite(ctx context.Context, d Deps, site *SitePayload) error {
