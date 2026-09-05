@@ -52,6 +52,18 @@ func (f *FakeArchive) Put(_ context.Context, key string, body []byte) error {
 	return nil
 }
 
+// Get returns a copy of the stored object, or an error when the key is
+// absent, matching what S3 does for a missing key.
+func (f *FakeArchive) Get(_ context.Context, key string) ([]byte, error) {
+	f.mu.Lock()
+	defer f.mu.Unlock()
+	body, ok := f.Objects[key]
+	if !ok {
+		return nil, fmt.Errorf("get %s: no such key", key)
+	}
+	return append([]byte(nil), body...), nil
+}
+
 func (f *FakeArchive) List(_ context.Context, prefix string) ([]string, error) {
 	f.mu.Lock()
 	defer f.mu.Unlock()
