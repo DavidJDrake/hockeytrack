@@ -26,10 +26,13 @@ data "aws_iam_policy_document" "scheduler_assume" {
       variable = "aws:SourceAccount"
       values   = [data.aws_caller_identity.current.account_id]
     }
+    # Scheduler presents the schedule GROUP's ARN as aws:SourceArn (not the
+    # individual schedule's), so the condition must match schedule-group/<name>.
+    # A schedule/<group>/* pattern here silently denied every invocation.
     condition {
-      test     = "ArnLike"
+      test     = "ArnEquals"
       variable = "aws:SourceArn"
-      values   = ["arn:aws:scheduler:${var.region}:${data.aws_caller_identity.current.account_id}:schedule/${aws_scheduler_schedule_group.games.name}/*"]
+      values   = [aws_scheduler_schedule_group.games.arn]
     }
   }
 }
