@@ -209,6 +209,7 @@ load();
     clock = HockeyTrackCountdown.mount($("#cd-clock"), { game: g });
     $("#cd-code").textContent = HockeyTrackCountdown.embedCode(g);
     ok.textContent = "";
+    $("#cd-embed").open = false; // code stays tucked away until asked for
     dlg.showModal();
   }
   $("#list").addEventListener("click", (e) => {

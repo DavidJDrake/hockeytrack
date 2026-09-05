@@ -127,8 +127,13 @@
   .cd__close { width: 30px; height: 30px; padding: 0; border: 1px solid var(--rule); border-radius: 4px; background: none; color: var(--muted); font-size: 20px; line-height: 1; cursor: pointer; }
   .cd__close:hover { color: var(--red); border-color: var(--red); }
   .cd__embed { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--rule); }
-  .cd__embed h3 { font-family: var(--display); font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin: 0 0 4px; }
-  .cd__embed p { margin: 0 0 8px; font-size: 12.5px; color: var(--muted); }
+  .cd__embed summary { display: flex; align-items: center; gap: 8px; list-style: none; cursor: pointer; font-family: var(--display); font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); }
+  .cd__embed summary::-webkit-details-marker { display: none; }
+  .cd__embed summary:hover { color: var(--red); }
+  .cd__chev { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.15s; }
+  .cd__embed[open] .cd__chev { transform: rotate(180deg); }
+  @media (prefers-reduced-motion: reduce) { .cd__chev { transition: none; } }
+  .cd__embed p { margin: 10px 0 8px; font-size: 12.5px; color: var(--muted); }
   .cd__code { margin: 0 0 10px; padding: 10px 12px; background: var(--panel); border: 1px solid var(--rule); font-family: var(--mono); font-size: 11.5px; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--ink); }
   .cd__actions { display: flex; align-items: center; gap: 12px; }
   .cd__copy { font: inherit; font-family: var(--display); font-weight: 600; font-size: 17px; letter-spacing: 0.04em; text-transform: uppercase; padding: 7px 14px; border: 2px solid var(--blue); background: var(--blue); color: #fff; cursor: pointer; }
@@ -212,15 +217,15 @@
     <button type="button" class="cd__close" id="cd-close" aria-label="Close">&times;</button>
   </div>
   <div id="cd-clock"></div>
-  <section class="cd__embed" aria-labelledby="cd-embed-h">
-    <h3 id="cd-embed-h">Put this countdown on your page</h3>
+  <details class="cd__embed" id="cd-embed">
+    <summary>Put this countdown on your page<svg class="cd__chev" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 10l5-5 5 5"/></svg></summary>
     <p>Paste these lines where you want it. The script pulls its own styling from hockeytrack.davidjdrake.com and needs nothing else.</p>
     <pre class="cd__code" id="cd-code" tabindex="0" aria-label="Embed code"></pre>
     <div class="cd__actions">
       <button type="button" class="cd__copy" id="cd-copy">Copy code</button>
       <span class="cd__ok" id="cd-ok" role="status" aria-live="polite"></span>
     </div>
-  </section>
+  </details>
 </dialog>
   <footer class="site-foot">
     <p>Times are Eastern. <span id="stamp">Refreshed every morning</span> from the NHL&rsquo;s public schedule API. Preseason games are exhibition; the 2026&ndash;27 regular season is 84 games per team. Playoff dates are set in April.</p>
