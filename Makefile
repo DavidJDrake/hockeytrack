@@ -7,7 +7,7 @@ IMAGE       := $(ACCOUNT_ID).dkr.ecr.$(REGION).amazonaws.com/$(REPO):$(TAG)
 SEASONS     ?= all
 RPS         ?= 3
 
-.PHONY: test vuln build push deploy site backfill
+.PHONY: test vuln build push deploy site backfill og
 
 test: vuln
 	go test ./...
@@ -39,6 +39,12 @@ deploy: push
 # resumable; see README "Backfilling history".
 backfill:
 	AWS_REGION=$(REGION) go run ./cmd/backfill -bucket $$(cd terraform && terraform output -raw raw_bucket) -seasons $(SEASONS) -rps $(RPS)
+
+# Re-render the home page's Open Graph card from docs/og/home.html with the
+# countdown as of now (needs google-chrome). The digits in the card are a
+# snapshot, so run this before `make site` when a fresh preview matters.
+og:
+	./docs/og/render.sh
 
 # Upload the static website (everything except data/, which schedule-sync
 # owns) and expire the CloudFront cache.

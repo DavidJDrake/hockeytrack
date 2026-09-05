@@ -101,6 +101,7 @@ Cost is dominated by poller runtime: roughly **$0.05/game**, on the order of **$
 
   This is the primary end-to-end check when no live games are on.
 - AWS is always behind interfaces (`internal/store`, `internal/events`); logic tests run against fakes, no AWS or localstack required.
+- **Link previews** — `make og` re-renders the home page's Open Graph card (`site/assets/og/home.png`) from `docs/og/home.html` with the puck-drop countdown as of that moment. The ice photo is by Compagnons on Unsplash (Unsplash License).
 
 ### Backfilling history
 

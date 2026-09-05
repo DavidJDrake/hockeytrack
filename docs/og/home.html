@@ -1,0 +1,71 @@
+<!doctype html>
+<!-- Open Graph preview for the home page (1200x630). Rendered by `make og`
+     with headless Chrome; the countdown values arrive as query parameters
+     computed from the live schedule at render time. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HockeyTrack OG</title>
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  /* Skate-scraped ice: photo by Compagnons on Unsplash (Unsplash License),
+     cropped to docs/og/ice.jpg, under a white wash so the type stays crisp. */
+  body { position: relative; background: #F3F7FB url("/.og-ice.jpg") center / cover no-repeat; }
+  .wash { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,0.78) 0%, rgba(255,255,255,0.62) 55%, rgba(255,255,255,0.50) 100%); }
+  .board, .page > div:first-child { position: relative; }
+  .page { position: absolute; left: 84px; right: 84px; top: 96px; bottom: 120px; display: grid; grid-template-columns: 1fr 470px; gap: 48px; align-items: center; }
+  .eyebrow { font-family: var(--body); font-weight: 600; font-size: 22px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin: 0 0 10px; }
+  .wordmark { font-size: 92px; letter-spacing: 0.04em; gap: 20px; line-height: 1; }
+  .wordmark::before { width: 32px; height: 100px; }
+  .tag { font-family: var(--body); font-size: 27px; line-height: 1.3; color: var(--muted); margin: 22px 0 0; max-width: 27ch; }
+  .tag b { color: var(--ink); font-weight: 600; }
+  .url { position: absolute; right: 84px; bottom: 72px; font-family: var(--mono); font-size: 22px; line-height: 1; color: var(--blue); }
+  .mark { position: absolute; left: 84px; bottom: 76px; width: 120px; height: 8px; background: var(--crease); }
+
+  .board { border: 4px solid var(--ink); padding: 22px 28px 24px; background: var(--ice); }
+  .head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .head span { font-family: var(--display); font-weight: 700; font-size: 26px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); }
+  .head i { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 2px solid var(--rule); color: var(--muted); }
+  .head i svg { fill: currentColor; }
+  .units { display: flex; align-items: flex-start; gap: 8px; }
+  .units span { font-family: var(--display); font-weight: 600; font-size: 19px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .units b { display: block; font-family: var(--display); font-weight: 700; font-size: 74px; line-height: 1; color: var(--red); font-variant-numeric: tabular-nums; margin-bottom: 4px; min-width: 2ch; }
+  .units em { font-family: var(--display); font-style: normal; font-weight: 600; font-size: 62px; line-height: 1; color: var(--rule); margin-top: 2px; }
+  .match { display: flex; justify-content: center; align-items: baseline; gap: 16px; margin-top: 16px; font-family: var(--display); letter-spacing: 0.04em; text-transform: uppercase; }
+  .match strong { font-weight: 700; font-size: 36px; color: var(--ink); white-space: nowrap; }
+  .match span { font-weight: 600; font-size: 22px; color: var(--muted); white-space: nowrap; }
+</style>
+</head>
+<body>
+<div class="wash"></div>
+<div class="page">
+  <div>
+    <p class="eyebrow">NHL game data, as events</p>
+    <div class="wordmark">HOCKEYTRACK</div>
+    <p class="tag">Everything that happens on the ice, the moment it happens &mdash; <b>ready for whatever gets built next.</b></p>
+  </div>
+  <div class="board">
+    <div class="head">
+      <span>Puck drop</span>
+      <i><svg width="16" height="16" viewBox="0 0 12 12"><rect x="1.5" y="1" width="3" height="10"/><rect x="7.5" y="1" width="3" height="10"/></svg></i>
+    </div>
+    <div class="units">
+      <span><b id="d">14</b>days</span><em>:</em>
+      <span><b id="h">06</b>hrs</span><em>:</em>
+      <span><b id="m">25</b>min</span><em>:</em>
+      <span><b id="s">55</b>sec</span>
+    </div>
+    <p class="match"><strong id="match">DAL @ STL</strong><span id="when">Sat, Sep 19 &middot; 7:00 PM ET</span></p>
+  </div>
+</div>
+<div class="mark"></div>
+<div class="url">hockeytrack.davidjdrake.com</div>
+<script>
+  const q = new URLSearchParams(location.search);
+  for (const k of ["d", "h", "m", "s", "match", "when"]) {
+    if (q.has(k)) document.getElementById(k).textContent = q.get(k);
+  }
+</script>
+</body>
+</html>
