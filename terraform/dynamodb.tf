@@ -18,4 +18,8 @@ resource "aws_dynamodb_table" "games" {
     hash_key        = "gameDate"
     projection_type = "ALL"
   }
+
+  point_in_time_recovery {
+    enabled = true
+  }
 }
