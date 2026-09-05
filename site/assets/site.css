@@ -54,6 +54,14 @@ a:hover { color: var(--red); }
 .nav li a:hover { color: var(--blue); border-bottom-color: var(--crease); }
 .nav li a[aria-current="page"] { color: var(--blue); border-bottom-color: var(--blue); }
 .nav li a .ext { font-family: var(--body); font-size: 12px; margin-left: 4px; vertical-align: super; }
+/* Four links no longer fit beside the wordmark on a phone: let the list wrap
+   under it, and tighten each link so the row stays a single line. */
+@media (max-width: 560px) {
+  .nav .wrap { flex-wrap: wrap; height: auto; padding-top: 8px; padding-bottom: 6px; gap: 0 12px; }
+  .nav ul { flex-basis: 100%; gap: 0; }
+  .nav li a { padding: 6px 9px; font-size: 16px; }
+  .nav li:first-child a { padding-left: 0; }
+}
 
 /* Footer */
 .site-foot { margin-top: 56px; padding: 20px 0 40px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--muted); }

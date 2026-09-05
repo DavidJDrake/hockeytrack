@@ -116,6 +116,7 @@
     <ul>
       <li><a href="/" aria-current="page">Home</a></li>
       <li><a href="/schedule/">Schedule</a></li>
+      <li><a href="/standings/">Standings</a></li>
       <li><a href="https://github.com/DavidJDrake/hockeytrack" target="_blank" rel="noopener">GitHub<span class="ext" aria-hidden="true">&#8599;</span><span class="sr-only"> (opens in a new tab)</span></a></li>
     </ul>
   </div>
@@ -185,7 +186,7 @@
         <h3>Projects</h3>
         <p>Each one is a subscriber, never a rewrite of the plumbing.</p>
         <ul>
-          <li>This schedule site</li>
+          <li>This site&rsquo;s schedule and standings</li>
           <li>Goal alerts to a phone</li>
           <li>Live scores, analytics, whatever&rsquo;s next</li>
         </ul>
@@ -226,12 +227,17 @@
       </div>
       <div class="project">
         <span class="status live">Live</span>
+        <div><h3>NHL Standings</h3><p>Every division in the league&rsquo;s own order &mdash; W-L-OTL, points, goals for and against, streaks &mdash; from the standings table the pipeline archives each morning.</p></div>
+        <a class="go" href="/standings/">Open &rarr;</a>
+      </div>
+      <div class="project">
+        <span class="status live">Live</span>
         <div><h3>Lightning goal alerts</h3><p>An EventBridge rule matching goals scored by Tampa Bay, delivered to a phone. Twelve lines of configuration, zero pipeline changes.</p></div>
         <span></span>
       </div>
       <div class="project idea">
         <span class="status next">Next</span>
-        <div><h3>Whatever the stream makes easy</h3><p>Live scores on this site, post-game analytics over the archive, standings, a second team&rsquo;s alerts &mdash; each starts as a subscriber to events that already exist.</p></div>
+        <div><h3>Whatever the stream makes easy</h3><p>Live scores on this site, post-game analytics over the archive, a second team&rsquo;s alerts &mdash; each starts as a subscriber to events that already exist.</p></div>
         <span></span>
       </div>
     </div>
