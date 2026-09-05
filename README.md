@@ -65,7 +65,7 @@ The pipeline never needs to change for new consumers — subscribe with an Event
 
 ## Deploying
 
-Prereqs: AWS credentials, Terraform ≥ 1.6, Docker, Go 1.23+.
+Prereqs: AWS credentials, Terraform ≥ 1.10 (the S3 backend uses native `use_lockfile` state locking; there is no DynamoDB lock table), Docker, Go 1.23+.
 
 ```bash
 # one-time: create terraform/terraform.tfvars (gitignored) with your email variables,
