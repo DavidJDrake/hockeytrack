@@ -35,10 +35,20 @@
   .btn.primary:hover { background: var(--red); border-color: var(--red); color: #fff; }
 
   /* Scoreboard-style tile: the live numbers of the season */
-  .board { border: 2px solid var(--ink); padding: 18px 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .board { border: 2px solid var(--ink); padding: 18px 20px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .board div { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.02em; }
   .board b { display: block; font-family: var(--display); font-weight: 700; font-size: 40px; line-height: 1; color: var(--ink); margin-bottom: 4px; font-variant-numeric: tabular-nums; }
   .board .red b { color: var(--red); }
+
+  /* The clock: a scoreboard-style countdown to the next puck drop */
+  .clock { grid-column: 1 / -1; border-top: 1px solid var(--rule); padding-top: 14px; margin-top: 2px; position: relative; }
+  .clock .units { display: flex; align-items: flex-start; gap: 6px; }
+  .clock .units span { text-align: center; min-width: 3ch; }
+  .clock .units b { min-width: 2ch; }
+  .clock .units i { font-family: var(--display); font-style: normal; font-weight: 700; font-size: 40px; line-height: 1; color: var(--red); margin-top: -3px; }
+  .clock .what { display: block; margin-top: 8px; padding-right: 52px; }
+  .clock .hold { position: absolute; right: 0; bottom: 0; font: inherit; font-size: 11px; color: var(--muted); background: none; border: 0; padding: 4px 0; text-decoration: underline; cursor: pointer; }
+  .clock .hold:hover { color: var(--blue); }
 
   h2 { font-family: var(--display); font-weight: 700; font-size: 34px; line-height: 1.05; margin: 0 0 8px; letter-spacing: 0.01em; }
   .sub { color: var(--muted); max-width: 62ch; margin: 0 0 26px; }
@@ -114,7 +124,17 @@
     <div class="board" role="group" aria-label="Season at a glance">
       <div><b id="b-games">1,409</b>games this season</div>
       <div><b id="b-teams">32</b>teams</div>
-      <div class="red"><b id="b-days">&mdash;</b>days to puck drop</div>
+      <div class="red clock" role="timer" aria-label="Countdown to puck drop">
+        <div class="units" aria-hidden="true">
+          <span><b id="c-d">&ndash;&ndash;</b>days</span><i>:</i>
+          <span><b id="c-h">&ndash;&ndash;</b>hrs</span><i>:</i>
+          <span><b id="c-m">&ndash;&ndash;</b>min</span><i>:</i>
+          <span><b id="c-s">&ndash;&ndash;</b>sec</span>
+        </div>
+        <span class="sr-only" id="c-text">Countdown to puck drop loading.</span>
+        <span class="what" id="c-what">to puck drop</span>
+        <button type="button" class="hold" id="c-hold" aria-pressed="false" hidden>pause</button>
+      </div>
     </div>
   </section>
 
