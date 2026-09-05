@@ -42,6 +42,8 @@
 
   /* The clock: a scoreboard-style countdown to the next puck drop */
   .clock { grid-column: 1 / -1; border-top: 1px solid var(--rule); padding-top: 12px; margin-top: 2px; }
+  /* Header and digits share one width, so the pause control's right edge sits over the seconds */
+  .clock-top { display: grid; width: fit-content; }
   .clock-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
   .clock .tag { font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); }
   .clock .hold { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; padding: 0; background: none; border: 1px solid var(--rule); color: var(--muted); cursor: pointer; }
@@ -132,18 +134,20 @@
       <div><b id="b-games">1,409</b>games this season</div>
       <div><b id="b-teams">32</b>teams</div>
       <div class="red clock" role="timer" aria-label="Countdown to puck drop">
-        <div class="clock-head">
-          <span class="tag">Puck drop</span>
-          <button type="button" class="hold" id="c-hold" aria-pressed="false" aria-label="Pause countdown" hidden>
-            <svg class="i-pause" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><rect x="1.5" y="1" width="3" height="10"/><rect x="7.5" y="1" width="3" height="10"/></svg>
-            <svg class="i-play" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 1l8 5-8 5z"/></svg>
-          </button>
-        </div>
-        <div class="units" aria-hidden="true">
-          <span><b id="c-d">&ndash;&ndash;</b>days</span><i>:</i>
-          <span><b id="c-h">&ndash;&ndash;</b>hrs</span><i>:</i>
-          <span><b id="c-m">&ndash;&ndash;</b>min</span><i>:</i>
-          <span><b id="c-s">&ndash;&ndash;</b>sec</span>
+        <div class="clock-top">
+          <div class="clock-head">
+            <span class="tag">Puck drop</span>
+            <button type="button" class="hold" id="c-hold" aria-pressed="false" aria-label="Pause countdown" hidden>
+              <svg class="i-pause" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><rect x="1.5" y="1" width="3" height="10"/><rect x="7.5" y="1" width="3" height="10"/></svg>
+              <svg class="i-play" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 1l8 5-8 5z"/></svg>
+            </button>
+          </div>
+          <div class="units" aria-hidden="true">
+            <span><b id="c-d">&ndash;&ndash;</b>days</span><i>:</i>
+            <span><b id="c-h">&ndash;&ndash;</b>hrs</span><i>:</i>
+            <span><b id="c-m">&ndash;&ndash;</b>min</span><i>:</i>
+            <span><b id="c-s">&ndash;&ndash;</b>sec</span>
+          </div>
         </div>
         <span class="sr-only" id="c-text">Countdown to puck drop loading.</span>
         <p class="match">
