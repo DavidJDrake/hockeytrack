@@ -55,6 +55,17 @@ The pipeline never needs to change for new consumers — subscribe with an Event
 ```
 → target an SNS topic with an SMS/email subscription. That's the whole feature.
 
+`terraform/notifications.tf` ships exactly that, generalised: `team_alerts` is a map keyed by team abbreviation, and each entry gets its own SNS topic, email subscription, and one EventBridge rule per alert type it opts into. Goals are on by default; puck drop, final score, and overtime/shootout are opt-in booleans:
+
+```hcl
+team_alerts = {
+  TBL = { email = "you@example.com", name = "Lightning", game_start = true, final = true, overtime = true }
+  BOS = { email = "" } # topic and goal rule only; no subscription
+}
+```
+
+Each rule uses an input transformer to turn the event into a one-line message (e.g. `GOAL Lightning! BOS @ TBL — TBL now has 2, period 2 at 08:41.`). The `nhl.game.status` event carries no team names, so the puck-drop rule matches on the presence of the team's key in `score`; the overtime rule matches `period-start` plays with `period > 3` on the typed contract and pulls the OT/SO label from `raw.periodDescriptor.periodType`. A "playing tonight" morning digest is deliberately not here: it needs `schedule-sync` to publish something a rule can match on, which is a code change rather than a rule.
+
 **Other natural extensions:**
 
 - **Post-game analytics** — rule on `nhl.game.final`, trigger a Lambda/Glue job that reads the game's S3 prefix (the event hands it to you).
@@ -76,14 +87,18 @@ cd terraform && terraform init && terraform apply -target=aws_ecr_repository.mai
 make deploy
 ```
 
-Variables: `region` (default `us-east-1`), `image_tag` (set by `make deploy`), and two **required** email variables that have no default on purpose: `alert_email` (subscribes you to CloudWatch alarms for DLQ depth — the three Lambda DLQs and the DLQ behind the ECR scan-findings EventBridge target — and poller errors, and to ECR scan results with CRITICAL/HIGH findings) and `lightning_email` (the example goal-alert rule in `terraform/notifications.tf`). Set either to `""` to opt out of that subscription. Put them in a gitignored `terraform/terraform.tfvars`, which Terraform loads automatically so `make deploy` carries them every time:
+Variables: `region` (default `us-east-1`), `image_tag` (set by `make deploy`), and two **required** notification variables that have no default on purpose: `alert_email` (subscribes you to CloudWatch alarms for DLQ depth — the three Lambda DLQs and the DLQ behind the ECR scan-findings EventBridge target — and poller errors, and to ECR scan results with CRITICAL/HIGH findings) and `team_alerts` (the per-team alert rules in `terraform/notifications.tf`, see [Extending it](#extending-it)). Set `alert_email` to `""`, or a team's `email` to `""`, to opt out of that subscription; `team_alerts = {}` removes the team resources entirely. Put them in a gitignored `terraform/terraform.tfvars`, which Terraform loads automatically so `make deploy` carries them every time:
 
 ```hcl
-alert_email     = "you@example.com"
-lightning_email = ""
+alert_email = "you@example.com"
+team_alerts = {
+  TBL = { email = "you@example.com", name = "Lightning" }
+}
 ```
 
 They are required rather than defaulting to empty because a plan run from a checkout without the tfvars file would otherwise *silently* plan to destroy the existing email subscriptions; with no default, Terraform refuses to plan until the values are supplied.
+
+**Migrating from `lightning_email`** (pre-HOC-43): replace `lightning_email = "..."` in `terraform.tfvars` with the `team_alerts` block above, carrying the same address (or `email = ""` if it was empty). `moved` blocks in `notifications.tf` carry the existing TBL topic, rule, target, and confirmed email subscription over to the new addresses, so the plan should show updates in place (new message text, topic policy) and no destroy/create; a plan that wants to replace `aws_sns_topic_subscription.team_email["TBL"]` means the migration went wrong and would require re-confirming the subscription email.
 
 **Logging and WAF.** CloudFront standard logging for the website is deliberately not enabled: the site is static, has no authentication or user data, and an access log bucket adds S3 cost and another data store to manage for little investigative value at this scale. AWS WAF is likewise not warranted for a static site of this size. Both can be added later in `terraform/site.tf` (a private log bucket plus the distribution's `logging_config` block; a WAF web ACL attached via `web_acl_id`) if abuse or traffic patterns ever justify them. The Lambdas do log to CloudWatch, and each function's role may write only to its own `/aws/lambda/<function>` log group.
 
