@@ -45,6 +45,7 @@ function startClock(doc) {
     const left = Math.max(0, Math.floor((new Date(target.start) - now) / 1000));
     const d = Math.floor(left / 86400), h = Math.floor(left % 86400 / 3600), m = Math.floor(left % 3600 / 60), s = left % 60;
     digits.d.textContent = d;
+    digits.d.closest(".clock").classList.toggle("long", d >= 100); // three-digit days get a smaller face
     digits.h.textContent = pad(h);
     digits.m.textContent = pad(m);
     digits.s.textContent = pad(s);
