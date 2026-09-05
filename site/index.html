@@ -41,14 +41,18 @@
   .board .red b { color: var(--red); }
 
   /* The clock: a scoreboard-style countdown to the next puck drop */
-  .clock { grid-column: 1 / -1; border-top: 1px solid var(--rule); padding-top: 14px; margin-top: 2px; position: relative; }
+  .clock { grid-column: 1 / -1; border-top: 1px solid var(--rule); padding-top: 12px; margin-top: 2px; }
+  .clock-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .clock .tag { font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); }
+  .clock .hold { font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); background: none; border: 1px solid var(--rule); padding: 2px 9px; cursor: pointer; }
+  .clock .hold:hover { color: var(--blue); border-color: var(--blue); }
   .clock .units { display: flex; align-items: flex-start; gap: 6px; }
-  .clock .units span { text-align: center; min-width: 3ch; }
-  .clock .units b { min-width: 2ch; }
-  .clock .units i { font-family: var(--display); font-style: normal; font-weight: 700; font-size: 40px; line-height: 1; color: var(--red); margin-top: -3px; }
-  .clock .what { display: block; margin-top: 8px; padding-right: 52px; }
-  .clock .hold { position: absolute; right: 0; bottom: 0; font: inherit; font-size: 11px; color: var(--muted); background: none; border: 0; padding: 4px 0; text-decoration: underline; cursor: pointer; }
-  .clock .hold:hover { color: var(--blue); }
+  .clock .units span { text-align: center; min-width: 3.4ch; font-family: var(--display); font-weight: 600; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .clock .units b { font-size: 46px; min-width: 2ch; margin-bottom: 2px; }
+  .clock .units i { font-family: var(--display); font-style: normal; font-weight: 600; font-size: 40px; line-height: 1; color: var(--rule); margin-top: 1px; }
+  .clock .match { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px 16px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--rule); }
+  .clock .match strong { font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: 0.02em; color: var(--ink); }
+  .clock .match span { font-family: var(--mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
 
   h2 { font-family: var(--display); font-weight: 700; font-size: 34px; line-height: 1.05; margin: 0 0 8px; letter-spacing: 0.01em; }
   .sub { color: var(--muted); max-width: 62ch; margin: 0 0 26px; }
@@ -125,6 +129,10 @@
       <div><b id="b-games">1,409</b>games this season</div>
       <div><b id="b-teams">32</b>teams</div>
       <div class="red clock" role="timer" aria-label="Countdown to puck drop">
+        <div class="clock-head">
+          <span class="tag">Puck drop</span>
+          <button type="button" class="hold" id="c-hold" aria-pressed="false" hidden>Pause</button>
+        </div>
         <div class="units" aria-hidden="true">
           <span><b id="c-d">&ndash;&ndash;</b>days</span><i>:</i>
           <span><b id="c-h">&ndash;&ndash;</b>hrs</span><i>:</i>
@@ -132,8 +140,10 @@
           <span><b id="c-s">&ndash;&ndash;</b>sec</span>
         </div>
         <span class="sr-only" id="c-text">Countdown to puck drop loading.</span>
-        <span class="what" id="c-what">to puck drop</span>
-        <button type="button" class="hold" id="c-hold" aria-pressed="false" hidden>pause</button>
+        <div class="match">
+          <strong id="c-match">First game</strong>
+          <span id="c-when">2026&ndash;27 season</span>
+        </div>
       </div>
     </div>
   </section>

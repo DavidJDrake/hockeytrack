@@ -13,8 +13,9 @@ fetch("/data/schedule.json").then(r => r.ok ? r.json() : null).then(doc => {
 function startClock(doc) {
   const $ = id => document.getElementById(id);
   const digits = { d: $("c-d"), h: $("c-h"), m: $("c-m"), s: $("c-s") };
-  const text = $("c-text"), what = $("c-what"), hold = $("c-hold");
-  const when = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+  const text = $("c-text"), match = $("c-match"), when = $("c-when"), hold = $("c-hold");
+  const day = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", weekday: "short", month: "short", day: "numeric" });
+  const clock = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit" });
   const pad = n => String(n).padStart(2, "0");
   let target = null, timer = null, paused = false;
 
@@ -23,19 +24,23 @@ function startClock(doc) {
   }
 
   function describe(game) {
-    return game.away + " @ " + game.home + " · " + when.format(new Date(game.start)) + " ET";
+    const at = new Date(game.start);
+    return game.away + " @ " + game.home + ", " + day.format(at) + " at " + clock.format(at) + " ET";
   }
 
   function render(now) {
     if (!target || new Date(target.start) <= now) {
       target = nextGame(now);
       if (!target) {
-        what.textContent = "season complete";
+        match.textContent = "Season complete";
+        when.textContent = "";
         text.textContent = "No upcoming games.";
         hold.hidden = true;
         return false;
       }
-      what.textContent = "to puck drop · " + describe(target);
+      const at = new Date(target.start);
+      match.textContent = target.away + " @ " + target.home;
+      when.textContent = day.format(at) + " · " + clock.format(at) + " ET";
     }
     const left = Math.max(0, Math.floor((new Date(target.start) - now) / 1000));
     const d = Math.floor(left / 86400), h = Math.floor(left % 86400 / 3600), m = Math.floor(left % 3600 / 60), s = left % 60;
@@ -56,7 +61,7 @@ function startClock(doc) {
 
   hold.addEventListener("click", () => {
     paused = !paused;
-    hold.textContent = paused ? "resume" : "pause";
+    hold.textContent = paused ? "Resume" : "Pause";
     hold.setAttribute("aria-pressed", String(paused));
     if (paused) { clearInterval(timer); timer = null; } else { tick(); timer = setInterval(tick, 1000); }
   });
