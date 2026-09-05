@@ -1,7 +1,8 @@
-# Remote Terraform state: a private, versioned bucket plus a DynamoDB lock
-# table so concurrent applies cannot corrupt state. These resources are
-# managed by the same configuration whose state they hold (bootstrapped once
-# with local state, then migrated with `terraform init -migrate-state`).
+# Remote Terraform state: a private, versioned bucket. Locking is S3-native
+# (`use_lockfile = true` in providers.tf writes a .tflock object beside the
+# state key), so no DynamoDB lock table is needed. These resources are managed
+# by the same configuration whose state they hold (bootstrapped once with
+# local state, then migrated with `terraform init -migrate-state`).
 
 resource "aws_s3_bucket" "tfstate" {
   bucket = "hockeytrack-tfstate-${data.aws_caller_identity.current.account_id}"
@@ -32,15 +33,4 @@ resource "aws_s3_bucket_public_access_block" "tfstate" {
   block_public_policy     = true
   ignore_public_acls      = true
   restrict_public_buckets = true
-}
-
-resource "aws_dynamodb_table" "tflock" {
-  name         = "hockeytrack-tflock"
-  billing_mode = "PAY_PER_REQUEST"
-  hash_key     = "LockID"
-
-  attribute {
-    name = "LockID"
-    type = "S"
-  }
 }
