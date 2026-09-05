@@ -32,6 +32,12 @@ func New() *Client {
 // reach us, instead of Go's anonymous default.
 const UserAgent = "hockeytrack/1.0 (+https://github.com/DavidJDrake/hockeytrack)"
 
+// MaxResponseBytes caps how much of an NHL response body get() will buffer.
+// The largest real feeds (play-by-play, shift charts) are a few hundred KB,
+// so 16 MiB leaves ample headroom while keeping a runaway upstream from
+// exhausting Lambda memory.
+const MaxResponseBytes = 16 << 20
+
 func (c *Client) get(ctx context.Context, url string) ([]byte, error) {
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
 	if err != nil {
@@ -46,7 +52,14 @@ func (c *Client) get(ctx context.Context, url string) ([]byte, error) {
 	if resp.StatusCode != http.StatusOK {
 		return nil, fmt.Errorf("GET %s: status %d", url, resp.StatusCode)
 	}
-	return io.ReadAll(resp.Body)
+	body, err := io.ReadAll(io.LimitReader(resp.Body, MaxResponseBytes+1))
+	if err != nil {
+		return nil, err
+	}
+	if len(body) > MaxResponseBytes {
+		return nil, fmt.Errorf("GET %s: response exceeds %d bytes", url, MaxResponseBytes)
+	}
+	return body, nil
 }
 
 func (c *Client) Schedule(ctx context.Context, date string) (*ScheduleResponse, []byte, error) {

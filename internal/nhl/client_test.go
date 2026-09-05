@@ -1,7 +1,9 @@
 package nhl
 
 import (
+	"bytes"
 	"context"
+	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"os"
@@ -153,6 +155,53 @@ func TestScheduleTeamNames(t *testing.T) {
 	}
 	if got := g.AwayTeam.Name(); got != "Montréal Canadiens" {
 		t.Errorf("away name = %q, want Montréal Canadiens", got)
+	}
+}
+
+// sizedClient returns a client whose server streams a body of exactly n
+// bytes without a Content-Length, so the limit is enforced on the read
+// path rather than by the server announcing its size.
+func sizedClient(t *testing.T, n int) *Client {
+	t.Helper()
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(http.StatusOK)
+		chunk := bytes.Repeat([]byte(" "), 64<<10)
+		for remaining := n; remaining > 0; {
+			if remaining < len(chunk) {
+				chunk = chunk[:remaining]
+			}
+			if _, err := w.Write(chunk); err != nil {
+				return
+			}
+			remaining -= len(chunk)
+		}
+	}))
+	t.Cleanup(srv.Close)
+	c := New()
+	c.BaseURL = srv.URL
+	return c
+}
+
+func TestGetRejectsOversizedBody(t *testing.T) {
+	c := sizedClient(t, MaxResponseBytes+1)
+	_, err := c.RawFeed(context.Background(), 2025020001, "boxscore")
+	if err == nil {
+		t.Fatal("expected error for body over MaxResponseBytes, got nil")
+	}
+	if !strings.Contains(err.Error(), fmt.Sprintf("%d bytes", MaxResponseBytes)) {
+		t.Errorf("error = %q, want mention of the %d byte limit", err, MaxResponseBytes)
+	}
+}
+
+func TestGetAcceptsBodyAtLimit(t *testing.T) {
+	c := sizedClient(t, MaxResponseBytes)
+	body, err := c.RawFeed(context.Background(), 2025020001, "boxscore")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(body) != MaxResponseBytes {
+		t.Errorf("len(body) = %d, want %d", len(body), MaxResponseBytes)
 	}
 }
 
