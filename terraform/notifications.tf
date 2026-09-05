@@ -22,6 +22,11 @@ variable "team_alerts" {
     condition     = alltrue([for k in keys(var.team_alerts) : can(regex("^[A-Z]{3}$", k))])
     error_message = "team_alerts keys must be 3-letter uppercase NHL abbreviations (e.g. TBL)."
   }
+
+  validation {
+    condition     = alltrue([for k, v in var.team_alerts : v.goals || v.game_start || v.final || v.overtime])
+    error_message = "Every team_alerts entry must enable at least one alert type (goals, game_start, final, overtime); otherwise its topic policy would have no source rules."
+  }
 }
 
 locals {
@@ -105,7 +110,7 @@ resource "aws_cloudwatch_event_target" "goals_sns" {
       clock  = "$.detail.timeInPeriod"
       team   = "$.detail.score.${each.key}"
     }
-    input_template = "\"GOAL ${local.team_display[each.key]}! <away> @ <home> — ${each.key} now has <team>, period <period> at <clock>.\""
+    input_template = jsonencode("GOAL ${local.team_display[each.key]}! <away> @ <home> — ${each.key} now has <team>, period <period> at <clock>.")
   }
 }
 
@@ -140,9 +145,8 @@ resource "aws_cloudwatch_event_target" "game_start_sns" {
   input_transformer {
     input_paths = {
       gameId = "$.detail.gameId"
-      score  = "$.detail.score"
     }
-    input_template = "\"Puck drop! ${local.team_display[each.key]} are under way — game <gameId>, score <score>.\""
+    input_template = jsonencode("Puck drop! ${local.team_display[each.key]} are under way — game <gameId>.")
   }
 }
 
@@ -174,7 +178,7 @@ resource "aws_cloudwatch_event_target" "final_sns" {
       home  = "$.detail.homeTeam"
       score = "$.detail.score"
     }
-    input_template = "\"FINAL: <away> @ <home> — <score>.\""
+    input_template = jsonencode("FINAL: <away> @ <home> — <score>.")
   }
 }
 
@@ -214,7 +218,7 @@ resource "aws_cloudwatch_event_target" "overtime_sns" {
       ptype  = "$.detail.raw.periodDescriptor.periodType"
       score  = "$.detail.score"
     }
-    input_template = "\"<ptype> under way: <away> @ <home> tied <score>, period <period>.\""
+    input_template = jsonencode("<ptype> under way: <away> @ <home> tied <score>, period <period>.")
   }
 }
 
