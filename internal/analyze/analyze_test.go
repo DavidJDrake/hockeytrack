@@ -267,12 +267,115 @@ func TestBadGameIsSkipped(t *testing.T) {
 	if !errors.Is(err, ErrGamesFailed) {
 		t.Fatalf("err = %v, want ErrGamesFailed", err)
 	}
-	if st.Games != 2 || st.Failed != 1 || st.Shifts != 0 {
+	if st.Games != 2 || st.Failed != 1 || st.Shifts != 0 || st.ChartsFailed != 1 {
 		t.Errorf("stats %v", st)
 	}
 	if len(tb.games) != 3 || len(tb.shifts) != 1 {
 		t.Errorf("games rows %d, shifts rows %d", len(tb.games), len(tb.shifts))
 	}
+}
+
+func TestWrongTypedFieldIsBlankNotFatal(t *testing.T) {
+	// The real fixture with three fields of the wrong type, one on each
+	// decode path: a play detail (pointer, field-by-field decode), a team
+	// total (pointer, field-by-field decode) and a top-level string (plain
+	// encoding/json UnmarshalTypeError). Every other field is still filled,
+	// so the game is written with those cells blank and not counted failed.
+	pbp := fixture(t, "pbp.json")
+	for _, r := range []struct{ good, bad string }{
+		{`"losingPlayerId":8477935,"winningPlayerId":8477450,"xCoord":0`, `"losingPlayerId":8477935,"winningPlayerId":"8477450","xCoord":0`},
+		{`"sog":19`, `"sog":"19"`},
+		{`"gameState":"OFF"`, `"gameState":1`},
+	} {
+		if bytes.Count(pbp, []byte(r.good)) != 1 {
+			t.Fatalf("fixture no longer has exactly one %s", r.good)
+		}
+		pbp = bytes.Replace(pbp, []byte(r.good), []byte(r.bad), 1)
+	}
+	a := store.NewFakeArchive()
+	a.Put(context.Background(), modernGame+"final/pbp.json", pbp)
+
+	st, err, tb := run(t, a, Options{Prefix: "raw/"})
+	if err != nil {
+		t.Fatalf("err = %v, want nil", err)
+	}
+	if st.Games != 1 || st.Failed != 0 || st.Plays != 361 {
+		t.Errorf("stats %v", st)
+	}
+	var faceoff map[string]string
+	for _, rec := range tb.plays[1:] {
+		if r := row(tb.plays[0], rec); r["type"] == "faceoff" {
+			faceoff = r
+			break
+		}
+	}
+	want(t, faceoff, map[string]string{"seq": "11", "winningPlayerId": "", "losingPlayerId": "8477935", "team": "CHI", "x": "0"})
+	want(t, row(tb.games[0], tb.games[1]), map[string]string{
+		"gameId": "2025020001", "gameState": "", "awaySOG": "", "homeSOG": "37", "awayScore": "2", "awayAbbrev": "CHI", "plays": "361",
+	})
+}
+
+// failingGets wraps a Source so Get fails for the given keys.
+type failingGets struct {
+	Source
+	keys map[string]bool
+}
+
+func (f failingGets) Get(ctx context.Context, key string) ([]byte, error) {
+	if f.keys[key] {
+		return nil, errors.New("simulated fetch failure")
+	}
+	return f.Source.Get(ctx, key)
+}
+
+func TestShiftChartFetchFailureCostsOnlyItsRows(t *testing.T) {
+	src := failingGets{archive(t), map[string]bool{modernGame + "final/shifts.json": true}}
+	st, err, tb := run(t, src, Options{Prefix: "raw/"})
+	if err != nil {
+		t.Fatalf("err = %v, want nil", err)
+	}
+	if st.Games != 2 || st.Failed != 0 || st.Shifts != 0 || st.ChartsFailed != 1 {
+		t.Errorf("stats %v", st)
+	}
+	if len(tb.games) != 3 || len(tb.shifts) != 1 {
+		t.Errorf("games rows %d, shifts rows %d", len(tb.games), len(tb.shifts))
+	}
+	want(t, row(tb.games[0], tb.games[2]), map[string]string{"gameId": "2025020001", "shifts": "0", "plays": "361"})
+}
+
+func TestEarlyReturnFlushesRows(t *testing.T) {
+	// Cancel after the first game: its rows must already be in the writers.
+	a := archive(t)
+	ctx, cancel := context.WithCancel(context.Background())
+	src := cancelAfterGet{Source: a, cancel: cancel}
+	var g, p bytes.Buffer
+	st, err := Run(ctx, src, Options{Prefix: "raw/"}, Writers{Games: &g, Plays: &p})
+	if !errors.Is(err, context.Canceled) {
+		t.Fatalf("err = %v, want context.Canceled", err)
+	}
+	if st.Games != 1 {
+		t.Errorf("stats %v", st)
+	}
+	if rows := parse(t, g.String()); len(rows) != 2 || rows[1][0] != "1917020001" {
+		t.Errorf("games.csv after cancel: %v", rows)
+	}
+	if rows := parse(t, p.String()); len(rows) != 1+19 {
+		t.Errorf("plays.csv rows after cancel = %d, want 20", len(rows))
+	}
+}
+
+// cancelAfterGet cancels the run once the first pbp.json has been fetched.
+type cancelAfterGet struct {
+	Source
+	cancel context.CancelFunc
+}
+
+func (c cancelAfterGet) Get(ctx context.Context, key string) ([]byte, error) {
+	b, err := c.Source.Get(ctx, key)
+	if strings.HasSuffix(key, "final/pbp.json") {
+		c.cancel()
+	}
+	return b, err
 }
 
 func TestNilWritersSkipTables(t *testing.T) {
