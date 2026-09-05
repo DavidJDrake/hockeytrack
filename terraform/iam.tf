@@ -34,10 +34,14 @@ data "aws_iam_policy_document" "scheduler_assume" {
   }
 }
 
+# Each Lambda may only write its own log group. Function names are literal here
+# rather than aws_lambda_function.*.function_name to avoid a cycle (the functions
+# depend on these roles).
 locals {
-  logs_statement = {
-    actions   = ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents"]
-    resources = ["arn:aws:logs:*:*:*"]
+  logs_actions = ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents"]
+  lambda_log_group_arn = {
+    for name in ["hockeytrack-schedule-sync", "hockeytrack-poller", "hockeytrack-sweeper"] :
+    name => "arn:aws:logs:${var.region}:${data.aws_caller_identity.current.account_id}:log-group:/aws/lambda/${name}:*"
   }
 }
 
@@ -49,8 +53,8 @@ resource "aws_iam_role" "schedule_sync" {
 
 data "aws_iam_policy_document" "schedule_sync" {
   statement {
-    actions   = local.logs_statement.actions
-    resources = local.logs_statement.resources
+    actions   = local.logs_actions
+    resources = [local.lambda_log_group_arn["hockeytrack-schedule-sync"]]
   }
   statement {
     actions   = ["dynamodb:UpdateItem", "dynamodb:GetItem", "dynamodb:Query"]
@@ -87,8 +91,8 @@ resource "aws_iam_role" "poller" {
 
 data "aws_iam_policy_document" "poller" {
   statement {
-    actions   = local.logs_statement.actions
-    resources = local.logs_statement.resources
+    actions   = local.logs_actions
+    resources = [local.lambda_log_group_arn["hockeytrack-poller"]]
   }
   statement {
     actions   = ["dynamodb:UpdateItem", "dynamodb:GetItem", "dynamodb:Query"]
@@ -125,8 +129,8 @@ resource "aws_iam_role" "sweeper" {
 
 data "aws_iam_policy_document" "sweeper" {
   statement {
-    actions   = local.logs_statement.actions
-    resources = local.logs_statement.resources
+    actions   = local.logs_actions
+    resources = [local.lambda_log_group_arn["hockeytrack-sweeper"]]
   }
   statement {
     actions   = ["dynamodb:GetItem", "dynamodb:Query"]

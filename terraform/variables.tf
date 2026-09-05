@@ -8,8 +8,9 @@ variable "image_tag" {
   description = "ECR image tag (git SHA) all three Lambdas run"
 }
 
+# No default on purpose: a plan without terraform.tfvars must fail rather than
+# silently destroy the subscription. Set it to "" to opt out explicitly.
 variable "alert_email" {
   type        = string
-  default     = ""
-  description = "Email for CloudWatch alarm notifications; empty skips the subscription"
+  description = "Email for CloudWatch alarm notifications; empty string skips the subscription"
 }

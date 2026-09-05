@@ -38,6 +38,8 @@ Bus `hockeytrack`, source `hockeytrack.poller`. Three detail-types (plus `hockey
 
 Delivery is at-least-once; consumers should dedupe on `(gameId, seq)`. Every event carries `schemaVersion` so the schema can evolve without breaking you.
 
+**`raw` is untrusted input.** It is third-party JSON from the NHL API passed through verbatim — HockeyTrack does not validate, sanitize, or bound it. Treat it as you would any external payload: validate the fields you use, escape it before rendering it in HTML/SMS/email, never `eval` or template it unescaped, and don't assume its shape is stable. The typed top-level fields (`playType`, `scoringTeam`, score, period/clock) are parsed by the poller and are safer to match rules on, but their string values still originate from the same source.
+
 ## Extending it
 
 The pipeline never needs to change for new consumers — subscribe with an EventBridge rule and point it at any target (Lambda, SNS, SQS, Step Functions, API destinations…).
@@ -66,14 +68,24 @@ The pipeline never needs to change for new consumers — subscribe with an Event
 Prereqs: AWS credentials, Terraform ≥ 1.6, Docker, Go 1.23+.
 
 ```bash
-# one-time: create the ECR repo first so the image push has a home
+# one-time: create terraform/terraform.tfvars (gitignored) with your email variables,
+# then create the ECR repo first so the image push has a home
 cd terraform && terraform init && terraform apply -target=aws_ecr_repository.main -var="image_tag=bootstrap"
 
 # then every deploy: test → build → push image (tagged with the git SHA) → terraform apply
 make deploy
 ```
 
-Variables: `region` (default `us-east-1`), `alert_email` (optional — subscribes you to CloudWatch alarms for DLQ depth and poller errors, and to ECR scan results with CRITICAL/HIGH findings), `lightning_email` (optional — the example goal-alert rule in `terraform/notifications.tf`). Put personal values in a gitignored `terraform/terraform.tfvars` so `make deploy` carries them every time.
+Variables: `region` (default `us-east-1`), `image_tag` (set by `make deploy`), and two **required** email variables that have no default on purpose: `alert_email` (subscribes you to CloudWatch alarms for DLQ depth and poller errors, and to ECR scan results with CRITICAL/HIGH findings) and `lightning_email` (the example goal-alert rule in `terraform/notifications.tf`). Set either to `""` to opt out of that subscription. Put them in a gitignored `terraform/terraform.tfvars`, which Terraform loads automatically so `make deploy` carries them every time:
+
+```hcl
+alert_email     = "you@example.com"
+lightning_email = ""
+```
+
+They are required rather than defaulting to empty because a plan run from a checkout without the tfvars file would otherwise *silently* plan to destroy the existing email subscriptions; with no default, Terraform refuses to plan until the values are supplied.
+
+**Logging and WAF.** CloudFront standard logging for the website is deliberately not enabled: the site is static, has no authentication or user data, and an access log bucket adds S3 cost and another data store to manage for little investigative value at this scale. AWS WAF is likewise not warranted for a static site of this size. Both can be added later in `terraform/site.tf` (a private log bucket plus the distribution's `logging_config` block; a WAF web ACL attached via `web_acl_id`) if abuse or traffic patterns ever justify them. The Lambdas do log to CloudWatch, and each function's role may write only to its own `/aws/lambda/<function>` log group.
 
 Cost is dominated by poller runtime: roughly **$0.05/game**, on the order of **$10–15/month in season** and near-zero in the off-season. S3/DynamoDB/EventBridge usage is pennies at this volume.
 
