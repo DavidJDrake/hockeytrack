@@ -202,6 +202,8 @@ const todayET = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" 
 
 const state = { teams: new Set(), months: new Set(), type: "", q: "" };
 const $ = (s) => document.querySelector(s);
+// Everything in schedule.json comes from the NHL API; escape it before it goes anywhere near innerHTML.
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
 
 async function load() {
@@ -213,7 +215,7 @@ async function load() {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     doc = await res.json();
   } catch (err) {
-    list.innerHTML = `<div class="empty">Couldn’t load the schedule (${err.message}). Refresh to try again.</div>`;
+    list.innerHTML = `<div class="empty">Couldn’t load the schedule (${esc(err.message)}). Refresh to try again.</div>`;
     return;
   }
   TEAMS = doc.teams;
@@ -272,7 +274,7 @@ function render() {
     const home = reg.filter(g => g.home === solo).length;
     const b2b = [...ctx.values()].filter(c => c.rest === 0).length;
     tl.hidden = false;
-    tl.innerHTML = `<h2>${TEAMS[solo]}</h2>
+    tl.innerHTML = `<h2>${esc(TEAMS[solo])}</h2>
       <span><b>${reg.length}</b> regular-season games</span>
       <span><b>${home}</b> home &middot; <b>${reg.length - home}</b> away</span>
       <span><b>${b2b}</b> back-to-backs</span>
@@ -284,8 +286,8 @@ function render() {
   for (const [date, gs] of byDay) {
     const d = new Date(date + "T00:00:00Z");
     const isNext = date === nextDay;
-    html.push(`<section class="day${isNext ? " today" : ""}" id="d-${date}">
-      <h2 class="dhead">${DAYFMT.format(d)}<small>${DATEFMT.format(d)}, ${date.slice(0, 4)}${isNext ? ` <span class="todaytag">${date === todayET ? "today" : "up next"}</span>` : ""}</small></h2>
+    html.push(`<section class="day${isNext ? " today" : ""}" id="d-${esc(date)}">
+      <h2 class="dhead">${DAYFMT.format(d)}<small>${DATEFMT.format(d)}, ${esc(date.slice(0, 4))}${isNext ? ` <span class="todaytag">${date === todayET ? "today" : "up next"}</span>` : ""}</small></h2>
       <ul class="games">${gs.map(g => gameRow(g, ctx)).join("")}</ul>
     </section>`);
   }
@@ -295,7 +297,7 @@ function render() {
 function gameRow(g, ctx) {
   const t = soloTeam();
   const c = ctx.get(g.id);
-  const hl = (ab) => `<span class="ab${state.teams.has(ab) ? " hl" : ""}">${ab}</span>`;
+  const hl = (ab) => `<span class="ab${state.teams.has(ab) ? " hl" : ""}">${esc(ab)}</span>`;
   const right = [];
   if (g.type === 1) right.push(`<span class="chip pre">Pre</span>`);
   if (t) right.push(`<span class="chip ${g.home === t ? "home" : "away"}">${g.home === t ? "Home" : "Away"}</span>`);
@@ -303,7 +305,7 @@ function gameRow(g, ctx) {
   if (c && c.rest !== null) right.push(`<span class="rest${c.rest === 0 ? " b2b" : ""}">${c.rest === 0 ? "back-to-back" : c.rest + "d rest"}</span>`);
   return `<li class="g">
     <span class="t">${ET.format(new Date(g.start))} ET</span>
-    <span class="m">${hl(g.away)}<span class="at">at</span>${hl(g.home)}<span class="nm">${TEAMS[g.away]} at ${TEAMS[g.home]} &middot; ${g.venue}</span></span>
+    <span class="m">${hl(g.away)}<span class="at">at</span>${hl(g.home)}<span class="nm">${esc(TEAMS[g.away])} at ${esc(TEAMS[g.home])} &middot; ${esc(g.venue)}</span></span>
     <span class="r">${right.join("")}</span>
   </li>`;
 }
@@ -319,7 +321,7 @@ function makePicker({ id, key, empty, onChange }) {
   const names = new Map();
   const selected = new Set();
   const label = (v) => names.get(v) || v;
-  const shortLabel = (v) => (grid.querySelector(`input[value="${v}"]`) || {}).dataset?.code || label(v);
+  const shortLabel = (v) => (grid.querySelector(`input[value="${CSS.escape(v)}"]`) || {}).dataset?.code || label(v);
   function set(next) {
     selected.clear(); next.forEach(v => names.has(v) && selected.add(v));
     grid.querySelectorAll("input").forEach(i => { i.checked = selected.has(i.value); });
@@ -332,11 +334,11 @@ function makePicker({ id, key, empty, onChange }) {
   function renderChips() {
     const all = pickers.flatMap(pk => [...pk.selected].map(v => ({ pk, v })));
     chips.hidden = all.length === 0;
-    chips.innerHTML = all.map(({ pk, v }) => `<button type="button" data-picker="${pk.id}" data-remove="${v}" aria-label="Remove ${pk.label(v)}">${pk.shortLabel(v)}</button>`).join("");
+    chips.innerHTML = all.map(({ pk, v }) => `<button type="button" data-picker="${pk.id}" data-remove="${esc(v)}" aria-label="Remove ${esc(pk.label(v))}">${esc(pk.shortLabel(v))}</button>`).join("");
   }
   function populate(options) {
     names.clear(); options.forEach(o => names.set(o.value, o.name));
-    grid.innerHTML = options.map(o => `<label><input type="checkbox" value="${o.value}" data-code="${o.code}">${o.code ? `<b>${o.code}</b>` : ""}<span>${o.name}</span></label>`).join("");
+    grid.innerHTML = options.map(o => `<label><input type="checkbox" value="${esc(o.value)}" data-code="${esc(o.code)}">${o.code ? `<b>${esc(o.code)}</b>` : ""}<span>${esc(o.name)}</span></label>`).join("");
   }
   function restore() {
     let saved = [];
