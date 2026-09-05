@@ -115,6 +115,37 @@ data "aws_cloudfront_cache_policy" "optimized" {
   name = "Managed-CachingOptimized"
 }
 
+# Security headers on every response. The CSP is strict because the site has
+# no third-party origins: scripts live in /assets/*.js, fonts are self-hosted,
+# the only fetch is /data/schedule.json, and the favicon is a data: URI.
+# style-src keeps 'unsafe-inline' for the per-page <style> blocks.
+resource "aws_cloudfront_response_headers_policy" "site" {
+  name = "hockeytrack-site-security"
+
+  security_headers_config {
+    strict_transport_security {
+      access_control_max_age_sec = 31536000
+      include_subdomains         = true
+      override                   = true
+    }
+    content_type_options {
+      override = true
+    }
+    referrer_policy {
+      referrer_policy = "strict-origin-when-cross-origin"
+      override        = true
+    }
+    frame_options {
+      frame_option = "DENY"
+      override     = true
+    }
+    content_security_policy {
+      content_security_policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; object-src 'none'"
+      override                = true
+    }
+  }
+}
+
 # Clean URLs: /schedule/ and /schedule both serve /schedule/index.html.
 resource "aws_cloudfront_function" "index_rewrite" {
   name    = "hockeytrack-index-rewrite"
@@ -150,12 +181,13 @@ resource "aws_cloudfront_distribution" "site" {
   }
 
   default_cache_behavior {
-    target_origin_id       = "site-s3"
-    viewer_protocol_policy = "redirect-to-https"
-    allowed_methods        = ["GET", "HEAD"]
-    cached_methods         = ["GET", "HEAD"]
-    compress               = true
-    cache_policy_id        = data.aws_cloudfront_cache_policy.optimized.id
+    target_origin_id           = "site-s3"
+    viewer_protocol_policy     = "redirect-to-https"
+    allowed_methods            = ["GET", "HEAD"]
+    cached_methods             = ["GET", "HEAD"]
+    compress                   = true
+    cache_policy_id            = data.aws_cloudfront_cache_policy.optimized.id
+    response_headers_policy_id = aws_cloudfront_response_headers_policy.site.id
 
     function_association {
       event_type   = "viewer-request"
@@ -164,13 +196,14 @@ resource "aws_cloudfront_distribution" "site" {
   }
 
   ordered_cache_behavior {
-    path_pattern           = "data/*"
-    target_origin_id       = "site-s3"
-    viewer_protocol_policy = "redirect-to-https"
-    allowed_methods        = ["GET", "HEAD"]
-    cached_methods         = ["GET", "HEAD"]
-    compress               = true
-    cache_policy_id        = aws_cloudfront_cache_policy.site_data.id
+    path_pattern               = "data/*"
+    target_origin_id           = "site-s3"
+    viewer_protocol_policy     = "redirect-to-https"
+    allowed_methods            = ["GET", "HEAD"]
+    cached_methods             = ["GET", "HEAD"]
+    compress                   = true
+    cache_policy_id            = aws_cloudfront_cache_policy.site_data.id
+    response_headers_policy_id = aws_cloudfront_response_headers_policy.site.id
   }
 
   restrictions {
