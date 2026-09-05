@@ -76,7 +76,7 @@ cd terraform && terraform init && terraform apply -target=aws_ecr_repository.mai
 make deploy
 ```
 
-Variables: `region` (default `us-east-1`), `image_tag` (set by `make deploy`), and two **required** email variables that have no default on purpose: `alert_email` (subscribes you to CloudWatch alarms for DLQ depth and poller errors, and to ECR scan results with CRITICAL/HIGH findings) and `lightning_email` (the example goal-alert rule in `terraform/notifications.tf`). Set either to `""` to opt out of that subscription. Put them in a gitignored `terraform/terraform.tfvars`, which Terraform loads automatically so `make deploy` carries them every time:
+Variables: `region` (default `us-east-1`), `image_tag` (set by `make deploy`), and two **required** email variables that have no default on purpose: `alert_email` (subscribes you to CloudWatch alarms for DLQ depth — the three Lambda DLQs and the DLQ behind the ECR scan-findings EventBridge target — and poller errors, and to ECR scan results with CRITICAL/HIGH findings) and `lightning_email` (the example goal-alert rule in `terraform/notifications.tf`). Set either to `""` to opt out of that subscription. Put them in a gitignored `terraform/terraform.tfvars`, which Terraform loads automatically so `make deploy` carries them every time:
 
 ```hcl
 alert_email     = "you@example.com"
