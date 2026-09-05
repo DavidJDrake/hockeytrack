@@ -1,0 +1,35 @@
+/* HockeyTrack puck-drop countdown. Self-contained: every colour and font has
+   a fallback, so the same file styles the home tile, the schedule popup, and
+   embeds on other people's pages. Digits scale with the component's width. */
+.ht-cd {
+  --ht-red: #C8102E; --ht-blue: #0033A0; --ht-ink: #0A0A0A; --ht-muted: #4A5560; --ht-rule: #DDE3EA;
+  --ht-display: "Barlow Condensed", "Arial Narrow", Impact, "Helvetica Neue", Arial, sans-serif;
+  container-type: inline-size; box-sizing: border-box; display: block; font-family: var(--ht-display); color: var(--ht-ink); line-height: 1.2;
+}
+.ht-cd *, .ht-cd *::before, .ht-cd *::after { box-sizing: border-box; }
+/* Host pages style generic divs/spans; the component's own type must win. */
+.ht-cd .ht-cd__top, .ht-cd .ht-cd__head, .ht-cd .ht-cd__units, .ht-cd .ht-cd__match, .ht-cd .ht-cd__tag { font-family: var(--ht-display); font-size: 16px; letter-spacing: 0; line-height: 1.2; }
+/* Header and digits share one width, so the pause control's right edge sits over the seconds */
+.ht-cd__top { display: grid; width: fit-content; max-width: 100%; }
+.ht-cd__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; gap: 12px; }
+.ht-cd__tag { font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ht-red); }
+.ht-cd--done .ht-cd__tag { color: var(--ht-blue); }
+.ht-cd__hold { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; padding: 0; margin: 0; background: none; border: 1px solid var(--ht-rule); color: var(--ht-muted); cursor: pointer; font: inherit; }
+.ht-cd__hold svg { fill: currentColor; display: block; }
+.ht-cd__hold .ht-cd__play, .ht-cd__hold[aria-pressed="true"] .ht-cd__pause { display: none; }
+.ht-cd__hold[aria-pressed="true"] .ht-cd__play { display: block; }
+.ht-cd__hold:hover { color: var(--ht-blue); border-color: var(--ht-blue); }
+.ht-cd__hold:focus-visible { outline: 3px solid var(--ht-blue); outline-offset: 2px; }
+.ht-cd__units { display: flex; align-items: flex-start; gap: 1.5cqi; margin: 0; padding: 0; }
+.ht-cd .ht-cd__units span { display: block; text-align: left; min-width: 3.4ch; font-weight: 600; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ht-muted); }
+.ht-cd .ht-cd__units b { display: block; font-weight: 700; font-size: clamp(44px, 18.8cqi, 74px); line-height: 1; min-width: 2ch; margin: 0 0 2px; color: var(--ht-red); font-variant-numeric: tabular-nums; text-align: left; }
+.ht-cd .ht-cd__units i { display: block; font-style: normal; font-weight: 600; font-size: clamp(38px, 16cqi, 64px); line-height: 1; color: var(--ht-rule); margin-top: 1px; }
+.ht-cd--long .ht-cd__units b { font-size: clamp(38px, 15.6cqi, 62px); }
+.ht-cd--long .ht-cd__units i { font-size: clamp(32px, 13cqi, 52px); }
+.ht-cd__sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.ht-cd__match { display: flex; justify-content: center; align-items: baseline; flex-wrap: wrap; gap: 2px 12px; margin: 10px 0 0; padding: 0; text-align: center; letter-spacing: 0.04em; text-transform: uppercase; }
+.ht-cd__match strong { font-weight: 700; font-size: 27px; color: var(--ht-ink); }
+.ht-cd__match span { font-weight: 600; font-size: 16px; color: var(--ht-muted); white-space: nowrap; }
+.ht-cd__credit { margin: 8px 0 0; font-family: "IBM Plex Mono", Menlo, Consolas, monospace; font-size: 11px; letter-spacing: 0.02em; color: var(--ht-muted); text-align: right; }
+.ht-cd__credit a { color: var(--ht-blue); text-decoration: none; }
+.ht-cd__credit a:hover { text-decoration: underline; }

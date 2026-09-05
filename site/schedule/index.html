@@ -21,6 +21,7 @@
 <link rel="canonical" href="https://hockeytrack.davidjdrake.com/schedule/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%92%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/countdown.css">
 <title>Schedule &middot; HockeyTrack</title>
 <link rel="preload" href="/assets/fonts/plex-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin>
@@ -115,6 +116,24 @@
     .g .nm { display: none; }
   }
   @media (prefers-reduced-motion: no-preference) { .g { transition: border-color 120ms; } }
+  /* Per-game countdown button and the popup it opens */
+  .cdb { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; padding: 0; border: 1px solid var(--rule); border-radius: 4px; background: var(--ice); color: var(--muted); cursor: pointer; }
+  .cdb svg { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
+  .cdb:hover { color: var(--blue); border-color: var(--blue); }
+  dialog.cd { width: min(460px, calc(100vw - 32px)); max-width: none; margin: auto; padding: 18px 20px 20px; border: 2px solid var(--ink); background: var(--ice); color: var(--ink); }
+  dialog.cd::backdrop { background: rgba(10, 10, 10, 0.5); }
+  .cd__bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .cd__title { font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: 0.02em; margin: 0; }
+  .cd__close { width: 30px; height: 30px; padding: 0; border: 1px solid var(--rule); border-radius: 4px; background: none; color: var(--muted); font-size: 20px; line-height: 1; cursor: pointer; }
+  .cd__close:hover { color: var(--red); border-color: var(--red); }
+  .cd__embed { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--rule); }
+  .cd__embed h3 { font-family: var(--display); font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin: 0 0 4px; }
+  .cd__embed p { margin: 0 0 8px; font-size: 12.5px; color: var(--muted); }
+  .cd__code { margin: 0 0 10px; padding: 10px 12px; background: var(--panel); border: 1px solid var(--rule); font-family: var(--mono); font-size: 11.5px; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--ink); }
+  .cd__actions { display: flex; align-items: center; gap: 12px; }
+  .cd__copy { font: inherit; font-family: var(--display); font-weight: 600; font-size: 17px; letter-spacing: 0.04em; text-transform: uppercase; padding: 7px 14px; border: 2px solid var(--blue); background: var(--blue); color: #fff; cursor: pointer; }
+  .cd__copy:hover { background: var(--red); border-color: var(--red); }
+  .cd__ok { font-family: var(--mono); font-size: 12px; color: var(--muted); }
   .site-foot { margin-top: 36px; }
 </style>
 
@@ -186,12 +205,30 @@
   <div id="teamline" class="teamline" hidden></div>
   <div id="list"></div>
 </main>
+
+<dialog id="cd" class="cd" aria-labelledby="cd-title">
+  <div class="cd__bar">
+    <h2 class="cd__title" id="cd-title">Puck drop</h2>
+    <button type="button" class="cd__close" id="cd-close" aria-label="Close">&times;</button>
+  </div>
+  <div id="cd-clock"></div>
+  <section class="cd__embed" aria-labelledby="cd-embed-h">
+    <h3 id="cd-embed-h">Put this countdown on your page</h3>
+    <p>Paste these lines where you want it. The script pulls its own styling from hockeytrack.davidjdrake.com and needs nothing else.</p>
+    <pre class="cd__code" id="cd-code" tabindex="0" aria-label="Embed code"></pre>
+    <div class="cd__actions">
+      <button type="button" class="cd__copy" id="cd-copy">Copy code</button>
+      <span class="cd__ok" id="cd-ok" role="status" aria-live="polite"></span>
+    </div>
+  </section>
+</dialog>
   <footer class="site-foot">
     <p>Times are Eastern. <span id="stamp">Refreshed every morning</span> from the NHL&rsquo;s public schedule API. Preseason games are exhibition; the 2026&ndash;27 regular season is 84 games per team. Playoff dates are set in April.</p>
     <p>Not affiliated with or endorsed by the NHL. NHL and team names are trademarks of their respective owners; provided for personal, non-commercial use.</p>
     <p>&copy; 2026 <a href="https://www.davidjdrake.com" target="_blank" rel="noopener">David J Drake<span class="sr-only"> (opens in a new tab)</span></a> &middot; <a href="https://github.com/DavidJDrake/hockeytrack/blob/main/LICENSE">MIT License</a></p>
   </footer>
 
+<script src="/assets/countdown.js" defer></script>
 <script src="/assets/schedule.js" defer></script>
 </body>
 </html>

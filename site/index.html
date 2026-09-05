@@ -22,6 +22,7 @@
 <link rel="preload" href="/assets/fonts/plex-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/countdown.css">
 <title>HockeyTrack</title>
 <style>
   .hero { padding: 64px 0 8px; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr); gap: 32px 48px; align-items: end; }
@@ -40,26 +41,8 @@
   .board b { display: block; font-family: var(--display); font-weight: 700; font-size: 46px; line-height: 1; color: var(--ink); margin-bottom: 4px; font-variant-numeric: tabular-nums; }
   .board .red b { color: var(--red); }
 
-  /* The clock: a scoreboard-style countdown to the next puck drop */
+  /* The clock (shared component, /assets/countdown.css) sits under the two stats */
   .clock { grid-column: 1 / -1; border-top: 1px solid var(--rule); padding-top: 12px; margin-top: 2px; }
-  /* Header and digits share one width, so the pause control's right edge sits over the seconds */
-  .clock-top { display: grid; width: fit-content; }
-  .clock-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-  .clock .tag { font-family: var(--display); font-weight: 700; font-size: 17px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); }
-  .clock .hold { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; padding: 0; background: none; border: 1px solid var(--rule); color: var(--muted); cursor: pointer; }
-  .clock .hold svg { fill: currentColor; }
-  .clock .hold .i-play, .clock .hold[aria-pressed="true"] .i-pause { display: none; }
-  .clock .hold[aria-pressed="true"] .i-play { display: block; }
-  .clock .hold:hover { color: var(--blue); border-color: var(--blue); }
-  .clock .units { display: flex; align-items: flex-start; gap: 1.5cqi; }
-  .clock .units span { text-align: left; min-width: 3.4ch; font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-  .clock .units b { font-size: clamp(44px, 18.8cqi, 74px); min-width: 2ch; margin-bottom: 2px; text-align: left; }
-  .clock.long .units b { font-size: clamp(38px, 15.6cqi, 62px); }
-  .clock.long .units i { font-size: clamp(32px, 13cqi, 52px); }
-  .clock .units i { font-family: var(--display); font-style: normal; font-weight: 600; font-size: clamp(38px, 16cqi, 64px); line-height: 1; color: var(--rule); margin-top: 1px; }
-  .clock .match { display: flex; justify-content: center; align-items: baseline; flex-wrap: wrap; gap: 2px 12px; margin: 10px 0 0; text-align: center; font-family: var(--display); letter-spacing: 0.04em; text-transform: uppercase; }
-  .clock .match strong { font-weight: 700; font-size: 27px; color: var(--ink); }
-  .clock .match span { font-weight: 600; font-size: 16px; color: var(--muted); white-space: nowrap; }
 
   h2 { font-family: var(--display); font-weight: 700; font-size: 34px; line-height: 1.05; margin: 0 0 8px; letter-spacing: 0.01em; }
   .sub { color: var(--muted); max-width: 62ch; margin: 0 0 26px; }
@@ -136,27 +119,8 @@
     <div class="board" role="group" aria-label="Season at a glance">
       <div><b id="b-games">1,409</b>games this season</div>
       <div><b id="b-teams">32</b>teams</div>
-      <div class="red clock" role="timer" aria-label="Countdown to puck drop">
-        <div class="clock-top">
-          <div class="clock-head">
-            <span class="tag">Puck drop</span>
-            <button type="button" class="hold" id="c-hold" aria-pressed="false" aria-label="Pause countdown" hidden>
-              <svg class="i-pause" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><rect x="1.5" y="1" width="3" height="10"/><rect x="7.5" y="1" width="3" height="10"/></svg>
-              <svg class="i-play" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 1l8 5-8 5z"/></svg>
-            </button>
-          </div>
-          <div class="units" aria-hidden="true">
-            <span><b id="c-d">&ndash;&ndash;</b>days</span><i>:</i>
-            <span><b id="c-h">&ndash;&ndash;</b>hrs</span><i>:</i>
-            <span><b id="c-m">&ndash;&ndash;</b>min</span><i>:</i>
-            <span><b id="c-s">&ndash;&ndash;</b>sec</span>
-          </div>
-        </div>
-        <span class="sr-only" id="c-text">Countdown to puck drop loading.</span>
-        <p class="match">
-          <strong id="c-match">First game</strong>
-          <span id="c-when">2026&ndash;27 season</span>
-        </p>
+      <div class="clock" id="c-clock">
+        <p class="sr-only">Countdown to puck drop loading.</p>
       </div>
     </div>
   </section>
@@ -261,6 +225,7 @@
   </div>
 </footer>
 
+<script src="/assets/countdown.js" defer></script>
 <script src="/assets/home.js" defer></script>
 </body>
 </html>

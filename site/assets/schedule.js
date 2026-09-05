@@ -7,6 +7,7 @@ const DATEFMT = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric
 const MONTHFMT = new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
 const todayET = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date());
 
+const CLOCK_ICON = `<svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="9" r="6"/><path d="M8 6v3.5l2 1.5M6 1.5h4"/></svg>`;
 const state = { teams: new Set(), months: new Set(), type: "", q: "" };
 const $ = (s) => document.querySelector(s);
 // Everything in schedule.json comes from the NHL API; escape it before it goes anywhere near innerHTML.
@@ -110,6 +111,7 @@ function gameRow(g, ctx) {
   if (t) right.push(`<span class="chip ${g.home === t ? "home" : "away"}">${g.home === t ? "Home" : "Away"}</span>`);
   if (c) right.push(`<span class="gn">Gm ${c.n}</span>`);
   if (c && c.rest !== null) right.push(`<span class="rest${c.rest === 0 ? " b2b" : ""}">${c.rest === 0 ? "back-to-back" : c.rest + "d rest"}</span>`);
+  right.push(`<button type="button" class="cdb" data-cd="${g.id}" aria-label="Countdown to ${esc(g.away)} at ${esc(g.home)}, ${DATEFMT.format(new Date(g.date + "T00:00:00Z"))}">${CLOCK_ICON}</button>`);
   return `<li class="g">
     <span class="t">${ET.format(new Date(g.start))} ET</span>
     <span class="m">${hl(g.away)}<span class="at">at</span>${hl(g.home)}<span class="nm">${esc(TEAMS[g.away])} at ${esc(TEAMS[g.home])} &middot; ${esc(g.venue)}</span></span>
@@ -191,3 +193,44 @@ function restore() {
   months.set(months.restore());
 }
 load();
+
+// Per-game countdown popup: the same component as the home page, mounted
+// into a native <dialog> (focus trap, Esc, focus restore come for free),
+// plus the two-line embed snippet with a copy button.
+(function () {
+  const dlg = $("#cd");
+  if (!dlg || !("showModal" in dlg)) return;
+  let clock = null;
+  const ok = $("#cd-ok");
+  function open(g) {
+    const d = HockeyTrackCountdown.describe(g);
+    $("#cd-title").textContent = `${d.match} · ${d.when}`;
+    if (clock) clock.destroy();
+    clock = HockeyTrackCountdown.mount($("#cd-clock"), { game: g });
+    $("#cd-code").textContent = HockeyTrackCountdown.embedCode(g);
+    ok.textContent = "";
+    dlg.showModal();
+  }
+  $("#list").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-cd]");
+    if (!b) return;
+    const g = GAMES.find(x => String(x.id) === b.dataset.cd);
+    if (g) open(g);
+  });
+  $("#cd-close").addEventListener("click", () => dlg.close());
+  dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); }); // backdrop
+  dlg.addEventListener("close", () => { if (clock) { clock.destroy(); clock = null; } });
+  $("#cd-copy").addEventListener("click", async () => {
+    const code = $("#cd-code").textContent;
+    try {
+      await navigator.clipboard.writeText(code);
+      ok.textContent = "Copied.";
+    } catch {
+      // No clipboard permission (or an insecure context): select the code so a manual copy is one keystroke away.
+      const range = document.createRange(); range.selectNodeContents($("#cd-code"));
+      const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      ok.textContent = "Selected — press Ctrl+C / Cmd+C to copy.";
+    }
+    setTimeout(() => { ok.textContent = ""; }, 4000);
+  });
+})();

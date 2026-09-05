@@ -28,6 +28,15 @@ The poll loop itself is runtime-agnostic — Lambda's 15-minute ceiling is handl
 
 **[hockeytrack.davidjdrake.com](https://hockeytrack.davidjdrake.com)** shows the whole season — every game, with **multi-select filters for teams and months** (pick any combination of clubs to see every game involving them, and any set of months; selections show as removable chips and persist between visits), a preseason/regular-season toggle, and free-text search. Selecting a single team switches to that club's season view: game number 1–84, home/away, rest days, and back-to-backs. **[/standings/](https://hockeytrack.davidjdrake.com/standings/)** is the league table by conference and division — W-L-OTL, points, goals for and against, and streaks — in the NHL's own order, so tiebreakers are the league's rather than ours; clubs picked on the schedule page are highlighted.
 
+Every game on the schedule has a stopwatch button that opens a **puck-drop countdown** for that game, and the popup includes the two-line snippet to put that countdown on your own page:
+
+```html
+<div class="ht-countdown" data-start="2026-10-01T23:30:00Z" data-away="TBL" data-home="NYR"></div>
+<script src="https://hockeytrack.davidjdrake.com/assets/countdown.js" async></script>
+```
+
+The script (`site/assets/countdown.js`, ~9 KB, no dependencies) mounts a clock into every `.ht-countdown` element, loads its own stylesheet, and needs nothing else; the same component drives the home-page tile. It reads the visitor's clock, so it needs no server. Add `data-credit="off"` to drop the "Countdown by" line.
+
 It is a static site on S3 behind CloudFront. The documents it renders are `data/schedule.json` and `data/standings.json`, which `schedule-sync` republishes every morning (the standings are a trimmed copy of `api-web.nhle.com/v1/standings/now`, whose raw response is also archived under `raw/standings/{date}.json`), so the pages stay current with reschedules and results without any manual step. Off-season, the NHL serves the previous season's final table until the first game is played, and the page labels it by that season. The pages live in `site/` and are uploaded with `make site`; the infrastructure (bucket, distribution, certificate, DNS) is `terraform/site.tf`.
 
 ## The event contract
