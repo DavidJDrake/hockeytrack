@@ -11,6 +11,7 @@ package main
 
 import (
 	"context"
+	"errors"
 	"flag"
 	"fmt"
 	"log/slog"
@@ -55,7 +56,12 @@ func main() {
 	client := nhl.New()
 	archive := store.NewS3Archive(s3.NewFromConfig(awsCfg), *bucket)
 
-	seasons, err := selectSeasons(ctx, client, *seasonsFlag)
+	all, err := client.Seasons(ctx)
+	if err != nil {
+		slog.Error("list seasons", "err", err)
+		os.Exit(1)
+	}
+	seasons, err := selectSeasons(all, *seasonsFlag)
 	if err != nil {
 		slog.Error("select seasons", "err", err)
 		os.Exit(2)
@@ -83,10 +89,19 @@ func main() {
 			slog.Warn("backfill interrupted", "season", season, "stats", stats)
 			os.Exit(130)
 		}
-		if err != nil {
+		if errors.Is(err, backfill.ErrFeedsFailed) {
+			// The walk finished; only some game feeds are missing. Carry on
+			// and let a rerun pick them up.
 			failed++
 			slog.Error("season incomplete", "season", season, "stats", stats, "err", err)
 			continue
+		}
+		if err != nil {
+			// The walk itself stopped (schedule unreachable, S3 refused a
+			// write). Continuing would fail every remaining season the same
+			// way in quick succession, so stop here; a rerun resumes.
+			slog.Error("backfill aborted; rerun to resume", "season", season, "stats", stats, "err", err)
+			os.Exit(1)
 		}
 		slog.Info("season complete", "season", season, "stats", stats, "took", time.Since(started).Round(time.Second))
 	}
@@ -98,11 +113,7 @@ func main() {
 
 // selectSeasons resolves the -seasons flag against the API's season list and
 // returns the chosen IDs newest first, so the most useful data lands first.
-func selectSeasons(ctx context.Context, client *nhl.Client, spec string) ([]int64, error) {
-	all, err := client.Seasons(ctx)
-	if err != nil {
-		return nil, err
-	}
+func selectSeasons(all []int64, spec string) ([]int64, error) {
 	known := map[int64]bool{}
 	for _, s := range all {
 		known[s] = true

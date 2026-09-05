@@ -10,6 +10,7 @@ import (
 	"errors"
 	"fmt"
 	"log/slog"
+	"strings"
 	"time"
 
 	"hockeytrack/internal/nhl"
@@ -41,9 +42,21 @@ type Config struct {
 	Backoff time.Duration
 }
 
+// ErrFeedsFailed wraps a Run that walked the season but could not fetch
+// some game feeds after all retries. The season is otherwise complete and a
+// rerun retries only those feeds; callers may continue to other seasons.
+// Any other error means the walk itself stopped early.
+var ErrFeedsFailed = errors.New("some feeds failed permanently")
+
 const (
 	DefaultMaxAttempts = 5
 	DefaultBackoff     = time.Second
+
+	// scheduleAttempts is the retry budget for the schedule weeks that the
+	// walk cannot proceed without: with DefaultBackoff that is about two
+	// minutes of waiting, enough to ride out a short API outage rather than
+	// abandon the season.
+	scheduleAttempts = 8
 
 	// FirstShiftSeason is the first season for which the shift-chart feed
 	// has data; earlier seasons return an empty set and are not requested.
@@ -108,19 +121,24 @@ func Run(ctx context.Context, d Deps, cfg Config, season int64) (Stats, error) {
 	if err != nil {
 		return r.stats, fmt.Errorf("list archive: %w", err)
 	}
-	r.existing = make(map[string]bool, len(keys))
+	// Only final/ objects matter for resume; a season the poller covered
+	// also has hundreds of snapshot keys per game that would just bloat
+	// the map.
+	r.existing = map[string]bool{}
 	for _, k := range keys {
-		r.existing[k] = true
+		if strings.Contains(k, "/final/") {
+			r.existing[k] = true
+		}
 	}
-	slog.Info("backfill start", "season", season, "existingObjects", len(keys))
+	slog.Info("backfill start", "season", season, "existingFinalObjects", len(r.existing))
 
-	cap := endCap(season)
+	limit := endCap(season)
 	for week := StartDate(season); week != ""; {
 		weekStart, err := time.Parse("2006-01-02", week)
 		if err != nil {
 			return r.stats, fmt.Errorf("week start %q: %w", week, err)
 		}
-		if weekStart.After(cap) {
+		if weekStart.After(limit) {
 			break
 		}
 		next, done, err := r.week(ctx, week)
@@ -135,7 +153,7 @@ func Run(ctx context.Context, d Deps, cfg Config, season int64) (Stats, error) {
 
 	slog.Info("backfill finished", "season", season, "stats", r.stats)
 	if r.stats.Failed > 0 {
-		return r.stats, fmt.Errorf("%d feeds failed permanently (first: %w)", r.stats.Failed, r.failures[0])
+		return r.stats, fmt.Errorf("%w: %d feeds (first: %v)", ErrFeedsFailed, r.stats.Failed, r.failures[0])
 	}
 	return r.stats, nil
 }
@@ -145,7 +163,7 @@ func Run(ctx context.Context, d Deps, cfg Config, season int64) (Stats, error) {
 func (r *runner) week(ctx context.Context, date string) (next string, done bool, err error) {
 	var sched *nhl.ScheduleResponse
 	var raw []byte
-	err = r.fetch(ctx, "schedule/"+date, func() error {
+	err = r.fetch(ctx, "schedule/"+date, scheduleAttempts, func() error {
 		var e error
 		sched, raw, e = r.d.Feed.Schedule(ctx, date)
 		return e
@@ -197,7 +215,7 @@ func (r *runner) game(ctx context.Context, date string, id int64) error {
 			continue
 		}
 		var body []byte
-		err := r.fetch(ctx, fmt.Sprintf("%s/%d", feed, id), func() error {
+		err := r.fetch(ctx, fmt.Sprintf("%s/%d", feed, id), r.cfg.MaxAttempts, func() error {
 			var e error
 			if feed == "shifts" {
 				body, e = r.d.Feed.ShiftCharts(ctx, id)
@@ -235,10 +253,10 @@ func gamecenterFeed(feed string) string {
 }
 
 // fetch runs one paced NHL request with retries. Not-found is returned at
-// once; anything else is retried with doubling backoff up to MaxAttempts.
-func (r *runner) fetch(ctx context.Context, what string, do func() error) error {
+// once; anything else is retried with doubling backoff up to attempts.
+func (r *runner) fetch(ctx context.Context, what string, attempts int, do func() error) error {
 	var err error
-	for attempt := 1; attempt <= r.cfg.MaxAttempts; attempt++ {
+	for attempt := 1; attempt <= attempts; attempt++ {
 		if attempt > 1 {
 			wait := r.cfg.Backoff << (attempt - 2)
 			slog.Warn("backfill retry", "what", what, "attempt", attempt, "wait", wait, "err", err)

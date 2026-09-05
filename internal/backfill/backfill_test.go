@@ -350,3 +350,145 @@ func TestStartDate(t *testing.T) {
 		}
 	}
 }
+
+// A season whose schedule never links to a later season (a lockout year, or
+// the current one): the walk must stop at the cap instead of running on.
+func TestRunStopsAtEndCap(t *testing.T) {
+	feed := newFakeFeed()
+	feed.weeks["2003-09-01"] = week("2003-10-08", map[string][]game{})
+	feed.weeks["2003-10-08"] = week("2004-06-07", map[string][]game{
+		"2003-10-08": {{2003020001, 20032004, "OFF"}},
+	})
+	feed.weeks["2004-06-07"] = week("2005-01-03", map[string][]game{
+		"2004-06-07": {{2003030417, 20032004, "OFF"}},
+	})
+	// 2005-01-03 is past the cap (2005-01-01) and must never be requested;
+	// if it were, the fake would 404 and the run would fail.
+	ar := store.NewFakeArchive()
+	clock := &fakeClock{now: time.Date(2026, 9, 5, 0, 0, 0, 0, time.UTC)}
+
+	stats, err := Run(context.Background(), deps(feed, ar, clock), Config{}, 20032004)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if stats.Weeks != 3 || stats.Games != 2 || stats.Fetched != 6 {
+		t.Fatalf("stats = %+v", stats)
+	}
+	if feed.count("schedule/2005-01-03") != 0 {
+		t.Error("week past the end cap was requested")
+	}
+}
+
+// Walking 2020-21 from September 2020 passes through the 2019-20 bubble
+// playoffs: those games belong to the earlier season and must be neither
+// fetched nor have their week archived.
+func TestRunIgnoresPriorSeasonGamesInWindow(t *testing.T) {
+	feed := newFakeFeed()
+	feed.weeks["2020-09-01"] = week("2020-09-21", map[string][]game{})
+	feed.weeks["2020-09-21"] = week("2021-01-11", map[string][]game{
+		"2020-09-26": {{2019030415, 20192020, "OFF"}},
+	})
+	feed.weeks["2021-01-11"] = week("2021-10-11", map[string][]game{
+		"2021-01-13": {{2020020001, 20202021, "OFF"}},
+	})
+	feed.weeks["2021-10-11"] = week("2021-10-18", map[string][]game{
+		"2021-10-12": {{2021020001, 20212022, "OFF"}},
+	})
+	ar := store.NewFakeArchive()
+	clock := &fakeClock{now: time.Date(2026, 9, 5, 0, 0, 0, 0, time.UTC)}
+
+	stats, err := Run(context.Background(), deps(feed, ar, clock), Config{}, 20202021)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if stats.Games != 1 || stats.Fetched != 4 {
+		t.Fatalf("stats = %+v", stats)
+	}
+	if feed.count("pbp/2019") != 0 || feed.count("pbp/2021") != 0 {
+		t.Error("games from other seasons were fetched")
+	}
+	if _, ok := ar.Objects[store.ScheduleKey("2020-09-21")]; ok {
+		t.Error("bubble-playoff week belongs to 2019-20 and must not be archived by a 2020-21 run")
+	}
+	if _, ok := ar.Objects[store.ScheduleKey("2021-01-11")]; !ok {
+		t.Error("2020-21 week not archived")
+	}
+}
+
+// A schedule week whose nextStartDate does not advance must end the walk
+// rather than loop forever.
+func TestRunStopsWhenLinkDoesNotAdvance(t *testing.T) {
+	feed := newFakeFeed()
+	feed.weeks["2025-09-01"] = week("2025-09-01", map[string][]game{
+		"2025-09-01": {{2025010001, 20252026, "OFF"}},
+	})
+	clock := &fakeClock{now: time.Date(2026, 9, 5, 0, 0, 0, 0, time.UTC)}
+
+	stats, err := Run(context.Background(), deps(feed, store.NewFakeArchive(), clock), Config{}, 20252026)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if stats.Weeks != 1 || feed.count("schedule/") != 1 {
+		t.Fatalf("stats = %+v, schedule requests = %d", stats, feed.count("schedule/"))
+	}
+}
+
+// A schedule week that stays unreachable aborts the walk with an error that
+// is NOT ErrFeedsFailed, and it gets the larger schedule retry budget.
+func TestRunScheduleOutageAbortsWalk(t *testing.T) {
+	feed := newFakeFeed()
+	modernSeason(feed)
+	var outage []error
+	for i := 0; i < scheduleAttempts; i++ {
+		outage = append(outage, &nhl.StatusError{Code: 503})
+	}
+	feed.fail["schedule/2025-09-08"] = outage
+	clock := &fakeClock{now: time.Date(2026, 9, 5, 0, 0, 0, 0, time.UTC)}
+
+	stats, err := Run(context.Background(), deps(feed, store.NewFakeArchive(), clock), Config{}, 20252026)
+	if err == nil {
+		t.Fatal("expected error")
+	}
+	if errors.Is(err, ErrFeedsFailed) {
+		t.Error("a walk failure must not be reported as ErrFeedsFailed")
+	}
+	if n := feed.count("schedule/2025-09-08"); n != scheduleAttempts {
+		t.Errorf("schedule attempts = %d, want %d", n, scheduleAttempts)
+	}
+	if stats.Games != 0 || feed.count("pbp/") != 0 {
+		t.Error("no games should be fetched when the walk aborts")
+	}
+}
+
+// Feed failures, by contrast, finish the walk and are reported as
+// ErrFeedsFailed so the CLI can move on to the next season.
+func TestRunFeedFailuresAreErrFeedsFailed(t *testing.T) {
+	feed := newFakeFeed()
+	modernSeason(feed)
+	feed.fail["pbp/2025010004"] = []error{
+		errors.New("net"), errors.New("net"), errors.New("net"), errors.New("net"), errors.New("net"),
+	}
+	clock := &fakeClock{now: time.Date(2026, 9, 5, 0, 0, 0, 0, time.UTC)}
+
+	_, err := Run(context.Background(), deps(feed, store.NewFakeArchive(), clock), Config{}, 20252026)
+	if !errors.Is(err, ErrFeedsFailed) {
+		t.Fatalf("err = %v, want ErrFeedsFailed", err)
+	}
+}
+
+// Resume must ignore the poller's snapshot keys and only count final/ ones.
+func TestRunResumeIgnoresSnapshotKeys(t *testing.T) {
+	feed := newFakeFeed()
+	modernSeason(feed)
+	ar := store.NewFakeArchive()
+	_ = ar.Put(context.Background(), store.SnapshotKey(20252026, "2025-09-08", 2025010001, "pbp", time.Now()), []byte(`{}`))
+	clock := &fakeClock{now: time.Date(2026, 9, 5, 0, 0, 0, 0, time.UTC)}
+
+	stats, err := Run(context.Background(), deps(feed, ar, clock), Config{}, 20252026)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if stats.Skipped != 0 || stats.Fetched != 16 {
+		t.Fatalf("stats = %+v", stats)
+	}
+}
