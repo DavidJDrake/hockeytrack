@@ -366,9 +366,6 @@ func TestSnapshotsIntervalModeStillReportsIntermissions(t *testing.T) {
 			count++
 		}
 	}
-	if count == 0 {
-		t.Fatal("interval mode reported zero intermissions, want at least one")
-	}
 	if count < 2 {
 		t.Errorf("interval mode reported %d intermissions, want at least 2", count)
 	}

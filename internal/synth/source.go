@@ -76,6 +76,11 @@ func FinalPBP(ctx context.Context, src Source, gameID int64, cacheDir string) ([
 // only checks err == nil) would then serve as a valid cache hit forever
 // after. A failure here is silently swallowed, matching the caller's
 // existing policy that a cache-write failure must never fail the run.
+//
+// os.CreateTemp makes the temp file 0600; the rename carries that mode
+// through to the cache file, so cached finals went from 0644 to 0600 when
+// this was introduced. That is kept deliberately — a private cache is the
+// better default, not an accident of the temp-file API.
 func writeCacheAtomic(cacheDir string, gameID int64, body []byte) {
 	tmp, err := os.CreateTemp(cacheDir, ".final-*.json")
 	if err != nil {
@@ -86,10 +91,14 @@ func writeCacheAtomic(cacheDir string, gameID int64, body []byte) {
 	if werr == nil && cerr == nil {
 		// Rename is atomic within a directory, so a reader sees either the
 		// whole file or no file.
-		_ = os.Rename(tmp.Name(), cachePath(cacheDir, gameID))
-	} else {
-		_ = os.Remove(tmp.Name())
+		if rerr := os.Rename(tmp.Name(), cachePath(cacheDir, gameID)); rerr == nil {
+			return
+		}
 	}
+	// Either the write/close failed or the rename did: either way the temp
+	// file must not linger, or every failed write leaves another
+	// .final-*.json in the cache directory forever.
+	_ = os.Remove(tmp.Name())
 }
 
 func cachePath(dir string, gameID int64) string {

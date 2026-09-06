@@ -244,8 +244,13 @@ func cutPoints(plays []nhl.Play, interval time.Duration) []int {
 		return out
 	}
 	var out []int
-	// lastCut starts far in the past so the very first play always closes
-	// a snapshot, the same way i == len(plays)-1 always closes the last.
+	// lastCut starts far in the past so a play with a readable clock always
+	// closes a snapshot as soon as it is seen, the same way i ==
+	// len(plays)-1 always closes the last. If the very first play's clock
+	// is unreadable, parseClock's -1 falls back to lastCut below and the
+	// huge gap disappears; that first play still cuts because it is
+	// ordinarily a period-start boundary play, but the fallback alone
+	// would not force it.
 	lastCut := -1 << 30
 	lastPeriod := plays[0].PeriodDescriptor.Number
 	for i, p := range plays {

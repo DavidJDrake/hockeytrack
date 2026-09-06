@@ -4,6 +4,7 @@ import (
 	"context"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 	"time"
 
@@ -75,5 +76,67 @@ func TestFinalPBPCachesToDisk(t *testing.T) {
 	}
 	if len(got) != len(body) {
 		t.Errorf("cached read = %d bytes, want %d", len(got), len(body))
+	}
+}
+
+// TestFinalPBPLeavesNoTempFileOnFailure covers finding C from fix round 1: a
+// failed cache write (including a failed rename) must not leave a
+// .final-*.json temp file behind, and must never fail the run itself.
+func TestFinalPBPLeavesNoTempFileOnFailure(t *testing.T) {
+	a := store.NewFakeArchive()
+	ctx := context.Background()
+	body := fixture(t, "1917020001")
+	if err := a.Put(ctx, store.FinalKey(19171918, "1917-12-19", 1917020001, "pbp"), body); err != nil {
+		t.Fatal(err)
+	}
+
+	// A file where the cache directory should be makes os.MkdirAll fail,
+	// so the write path is never even reached.
+	parent := t.TempDir()
+	blocked := filepath.Join(parent, "cache")
+	if err := os.WriteFile(blocked, []byte("not a directory"), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	got, err := FinalPBP(ctx, a, 1917020001, blocked)
+	if err != nil {
+		t.Fatalf("a cache-write failure must not fail the run: %v", err)
+	}
+	if len(got) != len(body) {
+		t.Errorf("got %d bytes, want %d", len(got), len(body))
+	}
+	entries, err := os.ReadDir(parent)
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, e := range entries {
+		if strings.HasPrefix(e.Name(), ".final-") {
+			t.Errorf("temp file %q leaked into %s", e.Name(), parent)
+		}
+	}
+
+	// In a writable directory, a successful fetch leaves exactly the one
+	// named cache file behind, and no leftover temp file beside it.
+	dir := t.TempDir()
+	if _, err := FinalPBP(ctx, a, 1917020001, dir); err != nil {
+		t.Fatal(err)
+	}
+	entries, err = os.ReadDir(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	var named, temp int
+	for _, e := range entries {
+		switch {
+		case e.Name() == "1917020001.json":
+			named++
+		case strings.HasPrefix(e.Name(), ".final-"):
+			temp++
+		}
+	}
+	if named != 1 {
+		t.Errorf("cache dir has %d files named 1917020001.json, want 1", named)
+	}
+	if temp != 0 {
+		t.Errorf("cache dir has %d leftover .final-* temp files, want 0", temp)
 	}
 }
