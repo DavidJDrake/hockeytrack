@@ -1997,7 +1997,47 @@ ls -la .github/workflows/ 2>/dev/null || echo "no GitHub Actions workflows"
 
 If there is no workflow, do not create one: `make test` already runs the offline suite and inventing CI is outside this task. Record the finding in your report.
 
-- [ ] **Step 2: Add the Make targets**
+- [ ] **Step 2: Fix the Terraform environment the Makefile needs**
+
+Every target that reads a Terraform output currently fails on this machine:
+
+```
+internal error, please report: running "terraform" failed: cannot create
+XDG_RUNTIME_DIR folder "/run/user/1000": mkdir /run/user/1000: permission denied
+```
+
+Terraform is installed as a snap and refuses to run without a writable
+`XDG_RUNTIME_DIR`. Five existing lines hit this (`backfill`, three `site`
+lines, and the CloudFront invalidation), and the new `replay` and `livefire`
+targets would too. Add this near the top of `Makefile`, just after the
+`IMAGE :=` line:
+
+```makefile
+# Terraform ships as a snap here and refuses to run without a writable
+# XDG_RUNTIME_DIR; /run/user/$(shell id -u) is not creatable by this user.
+# Exported for every recipe, so `backfill`, `site`, `deploy`, `replay` and
+# `livefire` all work. A desktop session that already sets it keeps its own.
+export XDG_RUNTIME_DIR ?= $(HOME)/.cache/xdg-runtime
+$(shell mkdir -p $(XDG_RUNTIME_DIR))
+```
+
+Verify before moving on:
+
+```bash
+make -n backfill >/dev/null && (cd terraform && terraform output -raw raw_bucket)
+```
+
+The bare `terraform output` above still fails — that is expected, it is outside
+make. Instead confirm through make:
+
+```bash
+printf 'checkenv:\n\t@cd terraform && terraform output -raw raw_bucket\n' >> Makefile
+make checkenv
+```
+
+Expected: the bucket name prints. Then remove the temporary `checkenv` target.
+
+- [ ] **Step 3: Add the Make targets**
 
 In `Makefile`, add `replay golden golden-update livefire` to the `.PHONY` line, and append:
 
@@ -2033,7 +2073,7 @@ livefire:
 		go run ./cmd/livefire -game $(GAME) -speed $(SPEED) -interval $(INTERVAL)
 ```
 
-- [ ] **Step 3: Verify the offline targets work**
+- [ ] **Step 4: Verify the offline targets work**
 
 ```bash
 make golden
@@ -2042,7 +2082,7 @@ make replay GAME=2025020001 INTERVAL=60s 2>&1 | tail -2
 
 Expected: `golden` passes; `replay` ends with a `replay done: outcome=0` line. `replay` reads the cached copy, so it needs no credentials once the fixture is cached.
 
-- [ ] **Step 4: Document it in the README**
+- [ ] **Step 5: Document it in the README**
 
 Add a section after the backfill section. Match the surrounding prose style: full sentences, no bullet soup.
 
@@ -2091,16 +2131,16 @@ The tool prints a warning and waits ten seconds before starting so a mistake
 can be interrupted.
 ```
 
-- [ ] **Step 5: Cross-reference from the scoreboard section**
+- [ ] **Step 6: Cross-reference from the scoreboard section**
 
 Find the sentence in `README.md` that mentions the scoreboard as a consumer of the event stream and add one sentence: that the scoreboard device is developed against `make livefire`, because the bus is otherwise silent out of season.
 
-- [ ] **Step 6: Run everything**
+- [ ] **Step 7: Run everything**
 
 Run: `make test`
 Expected: govulncheck clean, all tests pass.
 
-- [ ] **Step 7: Commit**
+- [ ] **Step 8: Commit**
 
 ```bash
 git add Makefile README.md
