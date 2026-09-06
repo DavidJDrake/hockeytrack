@@ -214,6 +214,20 @@ Offline, against in-memory fakes, printing every event to stdout:
 make replay GAME=2024021299
 ```
 
+Any finished game in the archive works. The eight already checked in under
+`internal/synth/testdata/` replay with no AWS access at all, and they were
+chosen to cover the awkward cases — `2024021299` is a shootout, `2024021298`
+goes to overtime, `2024021294` has a match penalty, `1917020001` predates
+period markers entirely. To find others, list a date in the archive; the
+directory names are the game ids:
+
+```
+aws s3 ls s3://$(cd terraform && terraform output -raw raw_bucket)/raw/20242025/2025-04-16/
+```
+
+A game id encodes its own season and type: `2024021299` is the 2024-25 season,
+type `02` for regular season, game 1299.
+
 A snapshot is a reconstruction, not a recording. The plays, clock, score,
 shots, situation codes and rosters are exactly what the game produced, but
 the cadence is chosen rather than observed, and the JSON field order differs
