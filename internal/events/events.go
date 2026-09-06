@@ -11,12 +11,16 @@ import (
 const (
 	SchemaVersion = 1
 	Source        = "hockeytrack.poller"
-	DTPlay        = "nhl.game.play"
-	DTStatus      = "nhl.game.status"
-	DTFinal       = "nhl.game.final"
-	DTClock       = "nhl.game.clock"
-	DTRoster      = "nhl.game.roster"
-	DTAlert       = "hockeytrack.alert"
+	// SourceSynthetic marks events produced by a replayed game. Every
+	// notification rule pins the real source, so a synthetic run reaches
+	// no subscriber unless one opts in.
+	SourceSynthetic = "hockeytrack.synthetic"
+	DTPlay          = "nhl.game.play"
+	DTStatus        = "nhl.game.status"
+	DTFinal         = "nhl.game.final"
+	DTClock         = "nhl.game.clock"
+	DTRoster        = "nhl.game.roster"
+	DTAlert         = "hockeytrack.alert"
 )
 
 type PlayEvent struct {

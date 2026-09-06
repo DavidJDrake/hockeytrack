@@ -2073,6 +2073,29 @@ livefire:
 		go run ./cmd/livefire -game $(GAME) -speed $(SPEED) -interval $(INTERVAL)
 ```
 
+- [ ] **Step 3b: Keep the built commands out of git**
+
+`go build ./cmd/replay` and `go build ./cmd/livefire` drop binaries named
+`replay` and `livefire` at the repo root, and neither is ignored, so they show
+up as untracked files and can be swept into a commit by a careless `git add`.
+Add them to `.gitignore` under the existing entries:
+
+```gitignore
+/replay
+/livefire
+```
+
+The leading slash anchors each to the repo root, so it cannot accidentally
+match the `cmd/replay` directory or a future source file of the same name.
+Then confirm nothing is currently lying around:
+
+```bash
+rm -f replay livefire livefire.stderr
+git status --short
+```
+
+Expected: no untracked build artifacts.
+
 - [ ] **Step 4: Verify the offline targets work**
 
 ```bash
