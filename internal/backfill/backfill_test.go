@@ -492,3 +492,27 @@ func TestRunResumeIgnoresSnapshotKeys(t *testing.T) {
 		t.Fatalf("stats = %+v", stats)
 	}
 }
+
+// An HTTP client timeout reports context.DeadlineExceeded, but it is a
+// per-request fault, not the caller cancelling: it must be retried like any
+// other network error and must never abort the run (which happened on
+// 2026-09-06 with one landing fetch in 1943-44).
+func TestRunRetriesHTTPTimeouts(t *testing.T) {
+	feed := newFakeFeed()
+	modernSeason(feed)
+	timeout := fmt.Errorf("Get %q: %w (Client.Timeout exceeded while awaiting headers)", "https://example/landing", context.DeadlineExceeded)
+	feed.fail["landing/2025010002"] = []error{timeout, timeout}
+	ar := store.NewFakeArchive()
+	clock := &fakeClock{now: time.Date(2026, 9, 5, 0, 0, 0, 0, time.UTC)}
+
+	stats, err := Run(context.Background(), deps(feed, ar, clock), Config{}, 20252026)
+	if err != nil {
+		t.Fatalf("a timed-out request must not abort the run: %v", err)
+	}
+	if stats.Fetched != 16 || stats.Failed != 0 {
+		t.Fatalf("stats = %+v", stats)
+	}
+	if n := feed.count("landing/2025010002"); n != 3 {
+		t.Errorf("timed-out feed fetched %d times, want 3 (two timeouts then success)", n)
+	}
+}

@@ -233,8 +233,11 @@ func (r *runner) game(ctx context.Context, date string, id int64) error {
 		case isNotFound(err):
 			r.stats.Missing++
 			slog.Warn("backfill feed absent", "gameId", id, "feed", feed)
-		case errors.Is(err, context.Canceled), errors.Is(err, context.DeadlineExceeded):
-			return err
+		case ctx.Err() != nil:
+			// The caller stopped us. (An HTTP client timeout also reports
+			// DeadlineExceeded, but that is a per-request fault to retry,
+			// so only the caller's context decides.)
+			return ctx.Err()
 		default:
 			r.stats.Failed++
 			r.failures = append(r.failures, fmt.Errorf("game %d %s: %w", id, feed, err))
@@ -271,8 +274,8 @@ func (r *runner) fetch(ctx context.Context, what string, attempts int, do func()
 		if err == nil || isNotFound(err) {
 			return err
 		}
-		if errors.Is(err, context.Canceled) || errors.Is(err, context.DeadlineExceeded) {
-			return err
+		if ctx.Err() != nil {
+			return ctx.Err()
 		}
 	}
 	return err
