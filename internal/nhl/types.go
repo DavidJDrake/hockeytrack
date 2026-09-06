@@ -96,6 +96,23 @@ type PBPTeam struct {
 	ID     int64  `json:"id"`
 	Abbrev string `json:"abbrev"`
 	Score  int    `json:"score"`
+	SOG    int    `json:"sog"`
+}
+
+// Clock is the game clock as the feed reports it at fetch time.
+type Clock struct {
+	TimeRemaining    string `json:"timeRemaining"`
+	SecondsRemaining int    `json:"secondsRemaining"`
+	Running          bool   `json:"running"`
+	InIntermission   bool   `json:"inIntermission"`
+}
+
+// RosterSpot maps a player to a sweater number for one game.
+type RosterSpot struct {
+	TeamID        int64  `json:"teamId"`
+	PlayerID      int64  `json:"playerId"`
+	SweaterNumber int    `json:"sweaterNumber"`
+	PositionCode  string `json:"positionCode"`
 }
 
 type PeriodDescriptor struct {
@@ -144,11 +161,15 @@ func (p *Play) ParsedDetails() PlayDetails {
 }
 
 type PlayByPlay struct {
-	ID        int64   `json:"id"`
-	Season    int64   `json:"season"`
-	GameDate  string  `json:"gameDate"`
-	GameState string  `json:"gameState"`
-	AwayTeam  PBPTeam `json:"awayTeam"`
-	HomeTeam  PBPTeam `json:"homeTeam"`
-	Plays     []Play  `json:"plays"`
+	ID               int64            `json:"id"`
+	Season           int64            `json:"season"`
+	GameDate         string           `json:"gameDate"`
+	GameState        string           `json:"gameState"`
+	AwayTeam         PBPTeam          `json:"awayTeam"`
+	HomeTeam         PBPTeam          `json:"homeTeam"`
+	PeriodDescriptor PeriodDescriptor `json:"periodDescriptor"`
+	Clock            Clock            `json:"clock"`
+	SituationCode    string           `json:"situationCode"`
+	RosterSpots      []RosterSpot     `json:"rosterSpots"`
+	Plays            []Play           `json:"plays"`
 }
