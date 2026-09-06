@@ -46,13 +46,15 @@ It is a static site on S3 behind CloudFront. The documents it renders are `data/
 
 ## The event contract
 
-Bus `hockeytrack`, source `hockeytrack.poller`. Three detail-types (plus `hockeytrack.alert` for operational alerts):
+Bus `hockeytrack`, source `hockeytrack.poller`. Five detail-types (plus `hockeytrack.alert` for operational alerts):
 
 - **`nhl.game.play`** — one event per play. Detail includes `schemaVersion`, `gameId`, `seq`, `playType` (`goal`, `shot-on-goal`, `penalty`, `faceoff`, `hit`, …), team abbreviations, `scoringTeam` (goals only), period/clock, the running score, and the full untouched NHL play object under `raw`.
 - **`nhl.game.status`** — game-state transitions (pregame → live → final) with score.
 - **`nhl.game.final`** — emitted once after the archive sweep, with the final score and the game's S3 prefix.
+- **`nhl.game.clock`** — a heartbeat on every poll while the game is live (about every 5 s): `gameState`, `period`/`periodType`, `secondsRemaining`/`timeRemaining`/`running`/`inIntermission`, the four-digit `situationCode` (away goalie, away skaters, home skaters, home goalie), both teams' `score` and `shots`, and `observedAt`. Consumers that show a clock should count down locally from `secondsRemaining` while `running` is true and re-sync on each heartbeat.
+- **`nhl.game.roster`** — published when a game's roster is first seen and again if it changes: `players[]` with `playerId`, `team`, `number` and `position`, so a consumer can print "#86" without calling the NHL.
 
-Delivery is at-least-once; consumers should dedupe on `(gameId, seq)`. Every event carries `schemaVersion` so the schema can evolve without breaking you.
+Delivery is at-least-once; dedupe plays on `(gameId, seq)`, treat `nhl.game.clock` as a snapshot keyed by `(gameId, observedAt)` (apply the newest, drop older ones), and treat status, roster and final events as idempotent. Every event carries `schemaVersion` so the schema can evolve without breaking you.
 
 **`raw` is untrusted input.** It is third-party JSON from the NHL API passed through verbatim — HockeyTrack does not validate, sanitize, or bound it. Treat it as you would any external payload: validate the fields you use, escape it before rendering it in HTML/SMS/email, never `eval` or template it unescaped, and don't assume its shape is stable. The typed top-level fields (`playType`, `scoringTeam`, score, period/clock) are parsed by the poller and are safer to match rules on, but their string values still originate from the same source.
 
@@ -89,6 +91,7 @@ Each rule uses an input transformer to turn the event into a one-line message (e
 - **Historical backfill** — the `internal/nhl` client fetches any past game; a batch job reusing it can fill S3 with prior seasons.
 - **Ad-hoc queries over the archive** — the S3 layout (`raw/{season}/{date}/{gameId}/{feed}/…`) partitions cleanly for Athena.
 - **Fargate migration** — see above; the container is already ECS-ready.
+- **A physical scoreboard** — the [hockeytrack-scoreboard](https://github.com/DavidJDrake/hockeytrack-scoreboard) project consumes `nhl.game.clock`, `nhl.game.play` and `nhl.game.roster` to drive an LED bar display over MQTT.
 
 ## Deploying
 

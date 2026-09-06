@@ -5,6 +5,7 @@ package events
 import (
 	"context"
 	"encoding/json"
+	"time"
 )
 
 const (
@@ -13,6 +14,8 @@ const (
 	DTPlay        = "nhl.game.play"
 	DTStatus      = "nhl.game.status"
 	DTFinal       = "nhl.game.final"
+	DTClock       = "nhl.game.clock"
+	DTRoster      = "nhl.game.roster"
 	DTAlert       = "hockeytrack.alert"
 )
 
@@ -46,6 +49,46 @@ type FinalEvent struct {
 	AwayTeam      string         `json:"awayTeam"`
 	Score         map[string]int `json:"score"`
 	S3Prefix      string         `json:"s3Prefix"`
+}
+
+// ClockEvent is the per-poll heartbeat while a game is live: the clock,
+// period, shots and situation as the feed reported them at ObservedAt.
+// Consumers run their own clock from SecondsRemaining/Running/ObservedAt
+// between heartbeats.
+type ClockEvent struct {
+	SchemaVersion    int            `json:"schemaVersion"`
+	GameID           int64          `json:"gameId"`
+	GameState        string         `json:"gameState"`
+	Period           int            `json:"period"`
+	PeriodType       string         `json:"periodType"`
+	SecondsRemaining int            `json:"secondsRemaining"`
+	TimeRemaining    string         `json:"timeRemaining"`
+	Running          bool           `json:"running"`
+	InIntermission   bool           `json:"inIntermission"`
+	SituationCode    string         `json:"situationCode"`
+	HomeTeam         string         `json:"homeTeam"`
+	AwayTeam         string         `json:"awayTeam"`
+	Score            map[string]int `json:"score"`
+	Shots            map[string]int `json:"shots"`
+	ObservedAt       time.Time      `json:"observedAt"`
+}
+
+// RosterPlayer maps a player id to the sweater number worn in this game.
+type RosterPlayer struct {
+	PlayerID int64  `json:"playerId"`
+	Team     string `json:"team"`
+	Number   int    `json:"number"`
+	Position string `json:"position"`
+}
+
+// RosterEvent is published the first time a game's roster is seen and
+// whenever it changes, so consumers can print numbers without an NHL call.
+type RosterEvent struct {
+	SchemaVersion int            `json:"schemaVersion"`
+	GameID        int64          `json:"gameId"`
+	HomeTeam      string         `json:"homeTeam"`
+	AwayTeam      string         `json:"awayTeam"`
+	Players       []RosterPlayer `json:"players"`
 }
 
 type AlertEvent struct {

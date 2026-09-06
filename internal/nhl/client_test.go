@@ -3,6 +3,7 @@ package nhl
 import (
 	"bytes"
 	"context"
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"net/http/httptest"
@@ -294,5 +295,37 @@ func TestRequestsIdentifyThemselves(t *testing.T) {
 	}
 	if gotUA != UserAgent || !strings.Contains(gotUA, "github.com/DavidJDrake/hockeytrack") {
 		t.Errorf("User-Agent = %q, want %q", gotUA, UserAgent)
+	}
+}
+
+func TestPlayByPlayCarriesClockRosterAndShots(t *testing.T) {
+	b, err := os.ReadFile("testdata/pbp.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	var p PlayByPlay
+	if err := json.Unmarshal(b, &p); err != nil {
+		t.Fatal(err)
+	}
+	if p.Clock.TimeRemaining != "00:00" || p.Clock.Running || p.Clock.InIntermission {
+		t.Errorf("clock = %+v, want final-state clock 00:00 not running", p.Clock)
+	}
+	if p.AwayTeam.SOG != 19 || p.HomeTeam.SOG != 37 {
+		t.Errorf("sog = %d/%d, want 19/37", p.AwayTeam.SOG, p.HomeTeam.SOG)
+	}
+	if p.PeriodDescriptor.Number != 3 || p.PeriodDescriptor.PeriodType != "REG" {
+		t.Errorf("periodDescriptor = %+v", p.PeriodDescriptor)
+	}
+	if len(p.RosterSpots) < 36 {
+		t.Fatalf("rosterSpots = %d, want a full two-team roster", len(p.RosterSpots))
+	}
+	var found bool
+	for _, r := range p.RosterSpots {
+		if r.PlayerID == 8473419 {
+			found = r.TeamID == 13 && r.SweaterNumber == 63 && r.PositionCode == "L"
+		}
+	}
+	if !found {
+		t.Error("roster spot for 8473419 (FLA #63, L) not parsed")
 	}
 }

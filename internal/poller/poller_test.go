@@ -247,3 +247,87 @@ func TestAlreadyDoneAndLeaseHeld(t *testing.T) {
 		t.Errorf("outcome = %v, want OutcomeNotScheduled", out)
 	}
 }
+
+func TestRunPublishesClockHeartbeatAndRosterOnce(t *testing.T) {
+	// Three live polls with the same roster, then final: expect a clock event
+	// per live poll and exactly one roster event.
+	feed := &scriptedFeed{snapshots: [][]byte{
+		truncatedSnapshot(t, 5, "LIVE"),
+		truncatedSnapshot(t, 10, "LIVE"),
+		truncatedSnapshot(t, 15, "LIVE"),
+		truncatedSnapshot(t, 1<<30, "OFF"),
+	}}
+	d, gs, _, pub := testDeps(feed)
+	seedGame(t, gs)
+
+	if _, err := Run(context.Background(), d, DefaultConfig(), 2025020001, "link1", func() bool { return false }); err != nil {
+		t.Fatal(err)
+	}
+	var clocks, rosters int
+	for _, e := range pub.Published {
+		switch e.DetailType {
+		case events.DTClock:
+			clocks++
+			c := e.Detail.(events.ClockEvent)
+			if c.GameID != 2025020001 || c.Shots["FLA"] != 37 || c.ObservedAt.IsZero() {
+				t.Errorf("clock event = %+v", c)
+			}
+			if !IsLiveState(c.GameState) {
+				t.Errorf("clock heartbeat published in state %q", c.GameState)
+			}
+		case events.DTRoster:
+			rosters++
+			r := e.Detail.(events.RosterEvent)
+			if len(r.Players) == 0 || r.HomeTeam != "FLA" {
+				t.Errorf("roster event = %+v", r)
+			}
+		}
+	}
+	if clocks != 3 {
+		t.Errorf("clock events = %d, want 3 (one per LIVE poll, none for OFF)", clocks)
+	}
+	if rosters != 1 {
+		t.Errorf("roster events = %d, want 1 (roster unchanged across polls)", rosters)
+	}
+	rec, _ := gs.Get(context.Background(), 2025020001)
+	if rec.SnapshotHashes["roster"] == "" {
+		t.Error("roster hash not persisted in poller state")
+	}
+}
+
+func TestRunRepublishesRosterWhenItChanges(t *testing.T) {
+	first := truncatedSnapshot(t, 5, "LIVE")
+	// Change one sweater number in the second snapshot.
+	var m map[string]any
+	json.Unmarshal(first, &m)
+	spots := m["rosterSpots"].([]any)
+	spots[0].(map[string]any)["sweaterNumber"] = float64(99)
+	second, _ := json.Marshal(m)
+	// Third snapshot carries the roster through unchanged to FINAL (only
+	// plays/state advance), so it must not trigger a further roster publish.
+	b, err := os.ReadFile("testdata/pbp.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	var full map[string]any
+	json.Unmarshal(b, &full)
+	m["plays"] = full["plays"]
+	m["gameState"] = "OFF"
+	third, _ := json.Marshal(m)
+	feed := &scriptedFeed{snapshots: [][]byte{first, second, third}}
+	d, gs, _, pub := testDeps(feed)
+	seedGame(t, gs)
+
+	if _, err := Run(context.Background(), d, DefaultConfig(), 2025020001, "link1", func() bool { return false }); err != nil {
+		t.Fatal(err)
+	}
+	var rosters int
+	for _, e := range pub.Published {
+		if e.DetailType == events.DTRoster {
+			rosters++
+		}
+	}
+	if rosters != 2 {
+		t.Errorf("roster events = %d, want 2 (initial + changed)", rosters)
+	}
+}
