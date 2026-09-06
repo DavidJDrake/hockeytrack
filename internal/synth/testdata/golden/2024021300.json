@@ -1,0 +1,7768 @@
+[
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021300,
+   "gameState": "PRE",
+   "prevState": "FUT",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.roster",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "players": [
+    {
+     "number": 7,
+     "playerId": 8477335,
+     "position": "D",
+     "team": "LAK"
+    },
+    {
+     "number": 9,
+     "playerId": 8477960,
+     "position": "R",
+     "team": "LAK"
+    },
+    {
+     "number": 12,
+     "playerId": 8479675,
+     "position": "L",
+     "team": "LAK"
+    },
+    {
+     "number": 14,
+     "playerId": 8482155,
+     "position": "R",
+     "team": "LAK"
+    },
+    {
+     "number": 15,
+     "playerId": 8481532,
+     "position": "C",
+     "team": "LAK"
+    },
+    {
+     "number": 21,
+     "playerId": 8481606,
+     "position": "D",
+     "team": "LAK"
+    },
+    {
+     "number": 22,
+     "playerId": 8477942,
+     "position": "L",
+     "team": "LAK"
+    },
+    {
+     "number": 24,
+     "playerId": 8476479,
+     "position": "C",
+     "team": "LAK"
+    },
+    {
+     "number": 26,
+     "playerId": 8480851,
+     "position": "C",
+     "team": "LAK"
+    },
+    {
+     "number": 31,
+     "playerId": 8479496,
+     "position": "G",
+     "team": "LAK"
+    },
+    {
+     "number": 35,
+     "playerId": 8475311,
+     "position": "G",
+     "team": "LAK"
+    },
+    {
+     "number": 37,
+     "playerId": 8477998,
+     "position": "L",
+     "team": "LAK"
+    },
+    {
+     "number": 39,
+     "playerId": 8482408,
+     "position": "L",
+     "team": "LAK"
+    },
+    {
+     "number": 43,
+     "playerId": 8479421,
+     "position": "D",
+     "team": "LAK"
+    },
+    {
+     "number": 61,
+     "playerId": 8473453,
+     "position": "C",
+     "team": "LAK"
+    },
+    {
+     "number": 79,
+     "playerId": 8482726,
+     "position": "C",
+     "team": "LAK"
+    },
+    {
+     "number": 82,
+     "playerId": 8478452,
+     "position": "D",
+     "team": "LAK"
+    },
+    {
+     "number": 84,
+     "playerId": 8478882,
+     "position": "D",
+     "team": "LAK"
+    },
+    {
+     "number": 92,
+     "playerId": 8482730,
+     "position": "D",
+     "team": "LAK"
+    },
+    {
+     "number": 96,
+     "playerId": 8483808,
+     "position": "L",
+     "team": "LAK"
+    },
+    {
+     "number": 6,
+     "playerId": 8476457,
+     "position": "D",
+     "team": "SEA"
+    },
+    {
+     "number": 7,
+     "playerId": 8474586,
+     "position": "R",
+     "team": "SEA"
+    },
+    {
+     "number": 9,
+     "playerId": 8476905,
+     "position": "C",
+     "team": "SEA"
+    },
+    {
+     "number": 10,
+     "playerId": 8482665,
+     "position": "C",
+     "team": "SEA"
+    },
+    {
+     "number": 12,
+     "playerId": 8481789,
+     "position": "L",
+     "team": "SEA"
+    },
+    {
+     "number": 15,
+     "playerId": 8477401,
+     "position": "C",
+     "team": "SEA"
+    },
+    {
+     "number": 17,
+     "playerId": 8475768,
+     "position": "C",
+     "team": "SEA"
+    },
+    {
+     "number": 19,
+     "playerId": 8477955,
+     "position": "L",
+     "team": "SEA"
+    },
+    {
+     "number": 20,
+     "playerId": 8480009,
+     "position": "R",
+     "team": "SEA"
+    },
+    {
+     "number": 21,
+     "playerId": 8479591,
+     "position": "C",
+     "team": "SEA"
+    },
+    {
+     "number": 24,
+     "playerId": 8476467,
+     "position": "D",
+     "team": "SEA"
+    },
+    {
+     "number": 29,
+     "playerId": 8478407,
+     "position": "D",
+     "team": "SEA"
+    },
+    {
+     "number": 31,
+     "playerId": 8475831,
+     "position": "G",
+     "team": "SEA"
+    },
+    {
+     "number": 35,
+     "playerId": 8478916,
+     "position": "G",
+     "team": "SEA"
+    },
+    {
+     "number": 41,
+     "playerId": 8482858,
+     "position": "D",
+     "team": "SEA"
+    },
+    {
+     "number": 46,
+     "playerId": 8482866,
+     "position": "D",
+     "team": "SEA"
+    },
+    {
+     "number": 51,
+     "playerId": 8483524,
+     "position": "C",
+     "team": "SEA"
+    },
+    {
+     "number": 62,
+     "playerId": 8477986,
+     "position": "D",
+     "team": "SEA"
+    },
+    {
+     "number": 84,
+     "playerId": 8481554,
+     "position": "R",
+     "team": "SEA"
+    },
+    {
+     "number": 95,
+     "playerId": 8477444,
+     "position": "L",
+     "team": "SEA"
+    }
+   ],
+   "schemaVersion": 1
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "prevState": "PRE",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 8,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 1137,
+   "shots": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 9,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 10,
+   "timeInPeriod": "00:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 18,
+   "timeInPeriod": "01:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 1106,
+   "shots": {
+    "LAK": 0,
+    "SEA": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 19,
+   "timeInPeriod": "01:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 20,
+   "timeInPeriod": "01:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 23,
+   "timeInPeriod": "01:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 24,
+   "timeInPeriod": "01:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 25,
+   "timeInPeriod": "01:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 1074,
+   "shots": {
+    "LAK": 0,
+    "SEA": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 35,
+   "timeInPeriod": "02:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 1022,
+   "shots": {
+    "LAK": 0,
+    "SEA": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 36,
+   "timeInPeriod": "02:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 37,
+   "timeInPeriod": "02:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 45,
+   "timeInPeriod": "02:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 955,
+   "shots": {
+    "LAK": 0,
+    "SEA": 4
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 46,
+   "timeInPeriod": "03:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 47,
+   "timeInPeriod": "03:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 51,
+   "timeInPeriod": "03:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 54,
+   "timeInPeriod": "03:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 55,
+   "timeInPeriod": "03:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 61,
+   "timeInPeriod": "04:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 923,
+   "shots": {
+    "LAK": 1,
+    "SEA": 5
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 62,
+   "timeInPeriod": "04:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 63,
+   "timeInPeriod": "04:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 64,
+   "timeInPeriod": "04:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 67,
+   "timeInPeriod": "04:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 68,
+   "timeInPeriod": "04:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 69,
+   "timeInPeriod": "04:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 874,
+   "shots": {
+    "LAK": 1,
+    "SEA": 6
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 72,
+   "timeInPeriod": "04:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 73,
+   "timeInPeriod": "04:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 74,
+   "timeInPeriod": "04:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 81,
+   "timeInPeriod": "05:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 832,
+   "shots": {
+    "LAK": 1,
+    "SEA": 7
+   },
+   "situationCode": "1551",
+   "timeRemaining": "13:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 88,
+   "timeInPeriod": "05:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 89,
+   "timeInPeriod": "05:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 91,
+   "timeInPeriod": "05:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 92,
+   "timeInPeriod": "06:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 746,
+   "shots": {
+    "LAK": 2,
+    "SEA": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 94,
+   "timeInPeriod": "06:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 95,
+   "timeInPeriod": "06:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 96,
+   "timeInPeriod": "06:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 97,
+   "timeInPeriod": "06:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 98,
+   "timeInPeriod": "06:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 107,
+   "timeInPeriod": "07:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 687,
+   "shots": {
+    "LAK": 2,
+    "SEA": 9
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 115,
+   "timeInPeriod": "07:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 122,
+   "timeInPeriod": "08:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 634,
+   "shots": {
+    "LAK": 2,
+    "SEA": 10
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 124,
+   "timeInPeriod": "08:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 125,
+   "timeInPeriod": "08:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 129,
+   "timeInPeriod": "09:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 130,
+   "timeInPeriod": "09:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 136,
+   "timeInPeriod": "09:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 574,
+   "shots": {
+    "LAK": 2,
+    "SEA": 10
+   },
+   "situationCode": "1551",
+   "timeRemaining": "09:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 137,
+   "timeInPeriod": "09:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 139,
+   "timeInPeriod": "09:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 140,
+   "timeInPeriod": "09:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 141,
+   "timeInPeriod": "09:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 150,
+   "timeInPeriod": "10:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 542,
+   "shots": {
+    "LAK": 3,
+    "SEA": 10
+   },
+   "situationCode": "1551",
+   "timeRemaining": "09:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 151,
+   "timeInPeriod": "10:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 154,
+   "timeInPeriod": "10:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 156,
+   "timeInPeriod": "10:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 492,
+   "shots": {
+    "LAK": 3,
+    "SEA": 10
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 168,
+   "timeInPeriod": "11:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 452,
+   "shots": {
+    "LAK": 3,
+    "SEA": 10
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 176,
+   "timeInPeriod": "12:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 421,
+   "shots": {
+    "LAK": 3,
+    "SEA": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 177,
+   "timeInPeriod": "12:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 182,
+   "timeInPeriod": "12:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 183,
+   "timeInPeriod": "12:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 366,
+   "shots": {
+    "LAK": 3,
+    "SEA": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "06:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 186,
+   "timeInPeriod": "12:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 197,
+   "timeInPeriod": "13:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "secondsRemaining": 330,
+   "shots": {
+    "LAK": 3,
+    "SEA": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 200,
+   "timeInPeriod": "14:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 0,
+    "SEA": 0
+   },
+   "seq": 204,
+   "timeInPeriod": "14:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 1,
+    "SEA": 0
+   },
+   "secondsRemaining": 286,
+   "shots": {
+    "LAK": 4,
+    "SEA": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 1,
+    "SEA": 0
+   },
+   "seq": 212,
+   "timeInPeriod": "14:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 1,
+    "SEA": 0
+   },
+   "scoringTeam": "LAK",
+   "seq": 215,
+   "timeInPeriod": "15:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 1,
+    "SEA": 0
+   },
+   "secondsRemaining": 246,
+   "shots": {
+    "LAK": 4,
+    "SEA": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 1,
+    "SEA": 0
+   },
+   "seq": 218,
+   "timeInPeriod": "15:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 1,
+    "SEA": 0
+   },
+   "seq": 219,
+   "timeInPeriod": "15:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "delayed-penalty",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 1,
+    "SEA": 0
+   },
+   "seq": 223,
+   "timeInPeriod": "15:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "secondsRemaining": 206,
+   "shots": {
+    "LAK": 5,
+    "SEA": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "03:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 225,
+   "timeInPeriod": "15:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 227,
+   "timeInPeriod": "15:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 230,
+   "timeInPeriod": "15:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 231,
+   "timeInPeriod": "16:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 232,
+   "timeInPeriod": "16:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "scoringTeam": "LAK",
+   "seq": 233,
+   "timeInPeriod": "16:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 237,
+   "timeInPeriod": "16:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 238,
+   "timeInPeriod": "16:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "secondsRemaining": 176,
+   "shots": {
+    "LAK": 5,
+    "SEA": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 239,
+   "timeInPeriod": "16:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 240,
+   "timeInPeriod": "17:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "secondsRemaining": 105,
+   "shots": {
+    "LAK": 5,
+    "SEA": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 241,
+   "timeInPeriod": "17:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 250,
+   "timeInPeriod": "18:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "secondsRemaining": 47,
+   "shots": {
+    "LAK": 5,
+    "SEA": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 258,
+   "timeInPeriod": "19:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "secondsRemaining": 11,
+   "shots": {
+    "LAK": 5,
+    "SEA": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 262,
+   "timeInPeriod": "19:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 267,
+   "timeInPeriod": "19:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "LAK": 5,
+    "SEA": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 1,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 268,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 275,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "secondsRemaining": 1123,
+   "shots": {
+    "LAK": 5,
+    "SEA": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 276,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 277,
+   "timeInPeriod": "00:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 278,
+   "timeInPeriod": "00:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 286,
+   "timeInPeriod": "01:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "secondsRemaining": 1084,
+   "shots": {
+    "LAK": 5,
+    "SEA": 12
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 292,
+   "timeInPeriod": "01:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "secondsRemaining": 1049,
+   "shots": {
+    "LAK": 5,
+    "SEA": 12
+   },
+   "situationCode": "0651",
+   "timeRemaining": "17:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "delayed-penalty",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 294,
+   "timeInPeriod": "02:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 296,
+   "timeInPeriod": "02:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 298,
+   "timeInPeriod": "02:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "secondsRemaining": 1002,
+   "shots": {
+    "LAK": 5,
+    "SEA": 13
+   },
+   "situationCode": "1541",
+   "timeRemaining": "16:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 300,
+   "timeInPeriod": "02:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 304,
+   "timeInPeriod": "02:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 305,
+   "timeInPeriod": "02:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 306,
+   "timeInPeriod": "02:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 307,
+   "timeInPeriod": "02:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 312,
+   "timeInPeriod": "03:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "secondsRemaining": 954,
+   "shots": {
+    "LAK": 6,
+    "SEA": 13
+   },
+   "situationCode": "1541",
+   "timeRemaining": "15:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 313,
+   "timeInPeriod": "03:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 320,
+   "timeInPeriod": "04:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "secondsRemaining": 912,
+   "shots": {
+    "LAK": 6,
+    "SEA": 14
+   },
+   "situationCode": "1541",
+   "timeRemaining": "15:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "seq": 324,
+   "timeInPeriod": "04:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "secondsRemaining": 874,
+   "shots": {
+    "LAK": 7,
+    "SEA": 15
+   },
+   "situationCode": "1541",
+   "timeRemaining": "14:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 330,
+   "timeInPeriod": "05:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "scoringTeam": "SEA",
+   "seq": 331,
+   "timeInPeriod": "05:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "secondsRemaining": 820,
+   "shots": {
+    "LAK": 7,
+    "SEA": 15
+   },
+   "situationCode": "1541",
+   "timeRemaining": "13:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 334,
+   "timeInPeriod": "05:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 335,
+   "timeInPeriod": "05:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 339,
+   "timeInPeriod": "06:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "secondsRemaining": 790,
+   "shots": {
+    "LAK": 7,
+    "SEA": 15
+   },
+   "situationCode": "1551",
+   "timeRemaining": "13:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 344,
+   "timeInPeriod": "06:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 345,
+   "timeInPeriod": "06:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "secondsRemaining": 748,
+   "shots": {
+    "LAK": 7,
+    "SEA": 15
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 348,
+   "timeInPeriod": "06:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 349,
+   "timeInPeriod": "06:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 350,
+   "timeInPeriod": "07:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 352,
+   "timeInPeriod": "07:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "secondsRemaining": 718,
+   "shots": {
+    "LAK": 7,
+    "SEA": 15
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 353,
+   "timeInPeriod": "07:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 354,
+   "timeInPeriod": "07:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 356,
+   "timeInPeriod": "07:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 357,
+   "timeInPeriod": "08:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "secondsRemaining": 674,
+   "shots": {
+    "LAK": 7,
+    "SEA": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 358,
+   "timeInPeriod": "08:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 359,
+   "timeInPeriod": "08:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 360,
+   "timeInPeriod": "08:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 361,
+   "timeInPeriod": "08:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 364,
+   "timeInPeriod": "08:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 365,
+   "timeInPeriod": "08:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 366,
+   "timeInPeriod": "08:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 367,
+   "timeInPeriod": "08:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "secondsRemaining": 604,
+   "shots": {
+    "LAK": 7,
+    "SEA": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "delayed-penalty",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 374,
+   "timeInPeriod": "09:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "secondsRemaining": 507,
+   "shots": {
+    "LAK": 7,
+    "SEA": 19
+   },
+   "situationCode": "1451",
+   "timeRemaining": "08:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 375,
+   "timeInPeriod": "09:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 376,
+   "timeInPeriod": "10:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 380,
+   "timeInPeriod": "10:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 381,
+   "timeInPeriod": "10:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 382,
+   "timeInPeriod": "10:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 392,
+   "timeInPeriod": "11:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "secondsRemaining": 476,
+   "shots": {
+    "LAK": 7,
+    "SEA": 19
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 393,
+   "timeInPeriod": "11:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 394,
+   "timeInPeriod": "11:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "delayed-penalty",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 396,
+   "timeInPeriod": "12:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "secondsRemaining": 441,
+   "shots": {
+    "LAK": 8,
+    "SEA": 19
+   },
+   "situationCode": "1451",
+   "timeRemaining": "07:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 400,
+   "timeInPeriod": "12:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 402,
+   "timeInPeriod": "12:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 405,
+   "timeInPeriod": "12:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 406,
+   "timeInPeriod": "12:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "secondsRemaining": 407,
+   "shots": {
+    "LAK": 8,
+    "SEA": 20
+   },
+   "situationCode": "1451",
+   "timeRemaining": "06:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 1
+   },
+   "seq": 409,
+   "timeInPeriod": "13:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "secondsRemaining": 370,
+   "shots": {
+    "LAK": 8,
+    "SEA": 21
+   },
+   "situationCode": "1551",
+   "timeRemaining": "06:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "scoringTeam": "SEA",
+   "seq": 410,
+   "timeInPeriod": "13:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "seq": 414,
+   "timeInPeriod": "13:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "seq": 415,
+   "timeInPeriod": "13:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "seq": 416,
+   "timeInPeriod": "13:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "seq": 417,
+   "timeInPeriod": "13:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "secondsRemaining": 334,
+   "shots": {
+    "LAK": 8,
+    "SEA": 21
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "seq": 418,
+   "timeInPeriod": "14:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "seq": 419,
+   "timeInPeriod": "14:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "seq": 422,
+   "timeInPeriod": "14:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "seq": 423,
+   "timeInPeriod": "14:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "seq": 424,
+   "timeInPeriod": "14:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "seq": 425,
+   "timeInPeriod": "14:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "secondsRemaining": 266,
+   "shots": {
+    "LAK": 8,
+    "SEA": 22
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "seq": 426,
+   "timeInPeriod": "14:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "seq": 427,
+   "timeInPeriod": "14:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "seq": 430,
+   "timeInPeriod": "14:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "seq": 431,
+   "timeInPeriod": "14:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 2
+   },
+   "seq": 441,
+   "timeInPeriod": "15:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 3,
+    "SEA": 2
+   },
+   "secondsRemaining": 235,
+   "shots": {
+    "LAK": 10,
+    "SEA": 22
+   },
+   "situationCode": "1551",
+   "timeRemaining": "03:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 3,
+    "SEA": 2
+   },
+   "seq": 442,
+   "timeInPeriod": "15:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 3,
+    "SEA": 2
+   },
+   "seq": 443,
+   "timeInPeriod": "15:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 3,
+    "SEA": 2
+   },
+   "seq": 444,
+   "timeInPeriod": "15:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 3,
+    "SEA": 2
+   },
+   "scoringTeam": "LAK",
+   "seq": 445,
+   "timeInPeriod": "16:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 3,
+    "SEA": 2
+   },
+   "secondsRemaining": 199,
+   "shots": {
+    "LAK": 10,
+    "SEA": 22
+   },
+   "situationCode": "1551",
+   "timeRemaining": "03:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 3,
+    "SEA": 2
+   },
+   "seq": 448,
+   "timeInPeriod": "16:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 3,
+    "SEA": 2
+   },
+   "seq": 449,
+   "timeInPeriod": "16:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 3,
+    "SEA": 2
+   },
+   "seq": 450,
+   "timeInPeriod": "16:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 3,
+    "SEA": 2
+   },
+   "seq": 451,
+   "timeInPeriod": "16:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 3,
+    "SEA": 2
+   },
+   "secondsRemaining": 165,
+   "shots": {
+    "LAK": 11,
+    "SEA": 22
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 3,
+    "SEA": 2
+   },
+   "seq": 452,
+   "timeInPeriod": "16:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 3,
+    "SEA": 2
+   },
+   "seq": 453,
+   "timeInPeriod": "16:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 3,
+    "SEA": 2
+   },
+   "seq": 454,
+   "timeInPeriod": "17:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 3,
+    "SEA": 2
+   },
+   "seq": 457,
+   "timeInPeriod": "17:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 3,
+    "SEA": 2
+   },
+   "seq": 458,
+   "timeInPeriod": "17:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "secondsRemaining": 135,
+   "shots": {
+    "LAK": 12,
+    "SEA": 22
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "scoringTeam": "LAK",
+   "seq": 459,
+   "timeInPeriod": "17:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 460,
+   "timeInPeriod": "17:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 463,
+   "timeInPeriod": "17:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "secondsRemaining": 83,
+   "shots": {
+    "LAK": 12,
+    "SEA": 22
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 465,
+   "timeInPeriod": "18:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 475,
+   "timeInPeriod": "18:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "secondsRemaining": 46,
+   "shots": {
+    "LAK": 14,
+    "SEA": 22
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 476,
+   "timeInPeriod": "18:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 477,
+   "timeInPeriod": "18:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 479,
+   "timeInPeriod": "19:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "secondsRemaining": 16,
+   "shots": {
+    "LAK": 14,
+    "SEA": 22
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 480,
+   "timeInPeriod": "19:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 487,
+   "timeInPeriod": "19:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 489,
+   "timeInPeriod": "19:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 490,
+   "timeInPeriod": "19:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "LAK": 14,
+    "SEA": 22
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 2,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 491,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 498,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "secondsRemaining": 1164,
+   "shots": {
+    "LAK": 15,
+    "SEA": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "19:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 499,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 500,
+   "timeInPeriod": "00:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 501,
+   "timeInPeriod": "00:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 502,
+   "timeInPeriod": "00:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 505,
+   "timeInPeriod": "00:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 506,
+   "timeInPeriod": "00:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 507,
+   "timeInPeriod": "00:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "secondsRemaining": 1125,
+   "shots": {
+    "LAK": 15,
+    "SEA": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 508,
+   "timeInPeriod": "00:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 509,
+   "timeInPeriod": "00:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 512,
+   "timeInPeriod": "00:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "seq": 513,
+   "timeInPeriod": "01:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 5,
+    "SEA": 2
+   },
+   "secondsRemaining": 1073,
+   "shots": {
+    "LAK": 16,
+    "SEA": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 5,
+    "SEA": 2
+   },
+   "seq": 514,
+   "timeInPeriod": "01:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 5,
+    "SEA": 2
+   },
+   "seq": 515,
+   "timeInPeriod": "01:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 5,
+    "SEA": 2
+   },
+   "scoringTeam": "LAK",
+   "seq": 516,
+   "timeInPeriod": "01:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 5,
+    "SEA": 2
+   },
+   "seq": 519,
+   "timeInPeriod": "01:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 5,
+    "SEA": 2
+   },
+   "seq": 520,
+   "timeInPeriod": "02:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "secondsRemaining": 1042,
+   "shots": {
+    "LAK": 18,
+    "SEA": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 522,
+   "timeInPeriod": "02:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 523,
+   "timeInPeriod": "02:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 526,
+   "timeInPeriod": "02:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 528,
+   "timeInPeriod": "02:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "scoringTeam": "LAK",
+   "seq": 529,
+   "timeInPeriod": "02:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "secondsRemaining": 1000,
+   "shots": {
+    "LAK": 18,
+    "SEA": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 532,
+   "timeInPeriod": "02:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 533,
+   "timeInPeriod": "03:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "secondsRemaining": 966,
+   "shots": {
+    "LAK": 19,
+    "SEA": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 534,
+   "timeInPeriod": "03:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 537,
+   "timeInPeriod": "03:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 538,
+   "timeInPeriod": "03:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 539,
+   "timeInPeriod": "03:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 540,
+   "timeInPeriod": "03:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 541,
+   "timeInPeriod": "03:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 542,
+   "timeInPeriod": "03:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 543,
+   "timeInPeriod": "03:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 544,
+   "timeInPeriod": "03:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 545,
+   "timeInPeriod": "03:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 546,
+   "timeInPeriod": "03:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "secondsRemaining": 931,
+   "shots": {
+    "LAK": 20,
+    "SEA": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 547,
+   "timeInPeriod": "04:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 548,
+   "timeInPeriod": "04:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 549,
+   "timeInPeriod": "04:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 2
+   },
+   "seq": 553,
+   "timeInPeriod": "04:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "secondsRemaining": 888,
+   "shots": {
+    "LAK": 20,
+    "SEA": 25
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 554,
+   "timeInPeriod": "04:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 557,
+   "timeInPeriod": "04:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 558,
+   "timeInPeriod": "04:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "scoringTeam": "SEA",
+   "seq": 559,
+   "timeInPeriod": "05:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "secondsRemaining": 851,
+   "shots": {
+    "LAK": 20,
+    "SEA": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 562,
+   "timeInPeriod": "05:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 563,
+   "timeInPeriod": "05:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 564,
+   "timeInPeriod": "05:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 565,
+   "timeInPeriod": "05:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "secondsRemaining": 815,
+   "shots": {
+    "LAK": 21,
+    "SEA": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "13:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 575,
+   "timeInPeriod": "06:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "secondsRemaining": 755,
+   "shots": {
+    "LAK": 21,
+    "SEA": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 577,
+   "timeInPeriod": "06:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 587,
+   "timeInPeriod": "07:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "secondsRemaining": 720,
+   "shots": {
+    "LAK": 21,
+    "SEA": 27
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 588,
+   "timeInPeriod": "07:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 591,
+   "timeInPeriod": "07:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 592,
+   "timeInPeriod": "07:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 593,
+   "timeInPeriod": "07:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 594,
+   "timeInPeriod": "07:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 595,
+   "timeInPeriod": "08:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "secondsRemaining": 669,
+   "shots": {
+    "LAK": 22,
+    "SEA": 27
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 596,
+   "timeInPeriod": "08:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 605,
+   "timeInPeriod": "08:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "secondsRemaining": 629,
+   "shots": {
+    "LAK": 22,
+    "SEA": 27
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 606,
+   "timeInPeriod": "08:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 608,
+   "timeInPeriod": "09:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 609,
+   "timeInPeriod": "09:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 610,
+   "timeInPeriod": "09:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 611,
+   "timeInPeriod": "09:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "secondsRemaining": 597,
+   "shots": {
+    "LAK": 22,
+    "SEA": 27
+   },
+   "situationCode": "1551",
+   "timeRemaining": "09:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 612,
+   "timeInPeriod": "09:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 615,
+   "timeInPeriod": "09:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 616,
+   "timeInPeriod": "09:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 617,
+   "timeInPeriod": "09:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 618,
+   "timeInPeriod": "09:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 619,
+   "timeInPeriod": "09:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 620,
+   "timeInPeriod": "09:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 621,
+   "timeInPeriod": "09:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 622,
+   "timeInPeriod": "09:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 623,
+   "timeInPeriod": "10:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "secondsRemaining": 560,
+   "shots": {
+    "LAK": 22,
+    "SEA": 27
+   },
+   "situationCode": "1551",
+   "timeRemaining": "09:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 634,
+   "timeInPeriod": "10:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "secondsRemaining": 513,
+   "shots": {
+    "LAK": 22,
+    "SEA": 27
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 635,
+   "timeInPeriod": "11:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 642,
+   "timeInPeriod": "11:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "secondsRemaining": 481,
+   "shots": {
+    "LAK": 22,
+    "SEA": 27
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 643,
+   "timeInPeriod": "11:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 644,
+   "timeInPeriod": "11:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 645,
+   "timeInPeriod": "11:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 649,
+   "timeInPeriod": "11:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "secondsRemaining": 423,
+   "shots": {
+    "LAK": 22,
+    "SEA": 28
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 652,
+   "timeInPeriod": "11:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 653,
+   "timeInPeriod": "12:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 654,
+   "timeInPeriod": "12:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 655,
+   "timeInPeriod": "12:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 656,
+   "timeInPeriod": "12:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 657,
+   "timeInPeriod": "12:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 658,
+   "timeInPeriod": "12:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 3
+   },
+   "seq": 666,
+   "timeInPeriod": "12:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "secondsRemaining": 386,
+   "shots": {
+    "LAK": 23,
+    "SEA": 29
+   },
+   "situationCode": "1451",
+   "timeRemaining": "06:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "seq": 667,
+   "timeInPeriod": "13:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "seq": 668,
+   "timeInPeriod": "13:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "seq": 670,
+   "timeInPeriod": "13:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "seq": 674,
+   "timeInPeriod": "13:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "scoringTeam": "SEA",
+   "seq": 675,
+   "timeInPeriod": "13:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "secondsRemaining": 354,
+   "shots": {
+    "LAK": 23,
+    "SEA": 29
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "seq": 679,
+   "timeInPeriod": "13:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "seq": 680,
+   "timeInPeriod": "14:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "seq": 681,
+   "timeInPeriod": "14:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "secondsRemaining": 323,
+   "shots": {
+    "LAK": 23,
+    "SEA": 29
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "seq": 686,
+   "timeInPeriod": "14:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "seq": 689,
+   "timeInPeriod": "14:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "secondsRemaining": 291,
+   "shots": {
+    "LAK": 24,
+    "SEA": 29
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "seq": 692,
+   "timeInPeriod": "14:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "seq": 695,
+   "timeInPeriod": "14:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "seq": 696,
+   "timeInPeriod": "15:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "secondsRemaining": 181,
+   "shots": {
+    "LAK": 24,
+    "SEA": 30
+   },
+   "situationCode": "1560",
+   "timeRemaining": "03:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "seq": 714,
+   "timeInPeriod": "16:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "secondsRemaining": 148,
+   "shots": {
+    "LAK": 24,
+    "SEA": 30
+   },
+   "situationCode": "1560",
+   "timeRemaining": "02:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "seq": 717,
+   "timeInPeriod": "17:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "seq": 718,
+   "timeInPeriod": "17:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "secondsRemaining": 57,
+   "shots": {
+    "LAK": 24,
+    "SEA": 31
+   },
+   "situationCode": "1460",
+   "timeRemaining": "00:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "seq": 720,
+   "timeInPeriod": "17:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "seq": 722,
+   "timeInPeriod": "17:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 4
+   },
+   "seq": 726,
+   "timeInPeriod": "19:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021300,
+   "gameState": "CRIT",
+   "prevState": "LIVE",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 5
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "CRIT",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 5
+   },
+   "secondsRemaining": 17,
+   "shots": {
+    "LAK": 24,
+    "SEA": 34
+   },
+   "situationCode": "1560",
+   "timeRemaining": "00:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 5
+   },
+   "seq": 727,
+   "timeInPeriod": "19:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 5
+   },
+   "seq": 730,
+   "timeInPeriod": "19:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 5
+   },
+   "seq": 731,
+   "timeInPeriod": "19:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 5
+   },
+   "seq": 732,
+   "timeInPeriod": "19:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 5
+   },
+   "scoringTeam": "SEA",
+   "seq": 733,
+   "timeInPeriod": "19:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 5
+   },
+   "seq": 737,
+   "timeInPeriod": "19:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 5
+   },
+   "seq": 738,
+   "timeInPeriod": "19:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021300,
+   "gameState": "FINAL",
+   "prevState": "CRIT",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 5
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 5
+   },
+   "seq": 739,
+   "timeInPeriod": "19:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "LAK",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 5
+   },
+   "seq": 740,
+   "timeInPeriod": "19:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 5
+   },
+   "seq": 741,
+   "timeInPeriod": "19:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEA",
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 5
+   },
+   "seq": 743,
+   "timeInPeriod": "19:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 5
+   },
+   "seq": 744,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "period": 3,
+   "playType": "game-end",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 5
+   },
+   "seq": 748,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.final",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "homeTeam": "SEA",
+   "s3Prefix": "raw/20242025/2025-04-15/2024021300/",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 5
+   }
+  }
+ }
+]

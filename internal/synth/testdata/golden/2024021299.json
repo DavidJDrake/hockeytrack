@@ -1,0 +1,9692 @@
+[
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021299,
+   "gameState": "PRE",
+   "prevState": "FUT",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.roster",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "players": [
+    {
+     "number": 4,
+     "playerId": 8478397,
+     "position": "D",
+     "team": "CGY"
+    },
+    {
+     "number": 7,
+     "playerId": 8480860,
+     "position": "D",
+     "team": "CGY"
+    },
+    {
+     "number": 10,
+     "playerId": 8476456,
+     "position": "L",
+     "team": "CGY"
+    },
+    {
+     "number": 11,
+     "playerId": 8474150,
+     "position": "C",
+     "team": "CGY"
+    },
+    {
+     "number": 16,
+     "playerId": 8480028,
+     "position": "C",
+     "team": "CGY"
+    },
+    {
+     "number": 17,
+     "playerId": 8481068,
+     "position": "C",
+     "team": "CGY"
+    },
+    {
+     "number": 20,
+     "playerId": 8476399,
+     "position": "L",
+     "team": "CGY"
+    },
+    {
+     "number": 21,
+     "playerId": 8479291,
+     "position": "C",
+     "team": "CGY"
+    },
+    {
+     "number": 24,
+     "playerId": 8479402,
+     "position": "D",
+     "team": "CGY"
+    },
+    {
+     "number": 27,
+     "playerId": 8482679,
+     "position": "R",
+     "team": "CGY"
+    },
+    {
+     "number": 32,
+     "playerId": 8481692,
+     "position": "G",
+     "team": "CGY"
+    },
+    {
+     "number": 43,
+     "playerId": 8483609,
+     "position": "R",
+     "team": "CGY"
+    },
+    {
+     "number": 44,
+     "playerId": 8477810,
+     "position": "D",
+     "team": "CGY"
+    },
+    {
+     "number": 52,
+     "playerId": 8477346,
+     "position": "D",
+     "team": "CGY"
+    },
+    {
+     "number": 70,
+     "playerId": 8479066,
+     "position": "L",
+     "team": "CGY"
+    },
+    {
+     "number": 76,
+     "playerId": 8481028,
+     "position": "C",
+     "team": "CGY"
+    },
+    {
+     "number": 80,
+     "playerId": 8478435,
+     "position": "G",
+     "team": "CGY"
+    },
+    {
+     "number": 86,
+     "playerId": 8480797,
+     "position": "L",
+     "team": "CGY"
+    },
+    {
+     "number": 91,
+     "playerId": 8475172,
+     "position": "C",
+     "team": "CGY"
+    },
+    {
+     "number": 94,
+     "playerId": 8481167,
+     "position": "D",
+     "team": "CGY"
+    },
+    {
+     "number": 2,
+     "playerId": 8480727,
+     "position": "D",
+     "team": "VGK"
+    },
+    {
+     "number": 3,
+     "playerId": 8475188,
+     "position": "D",
+     "team": "VGK"
+    },
+    {
+     "number": 6,
+     "playerId": 8481527,
+     "position": "D",
+     "team": "VGK"
+    },
+    {
+     "number": 10,
+     "playerId": 8478462,
+     "position": "C",
+     "team": "VGK"
+    },
+    {
+     "number": 14,
+     "playerId": 8479980,
+     "position": "D",
+     "team": "VGK"
+    },
+    {
+     "number": 16,
+     "playerId": 8481604,
+     "position": "L",
+     "team": "VGK"
+    },
+    {
+     "number": 17,
+     "playerId": 8477018,
+     "position": "D",
+     "team": "VGK"
+    },
+    {
+     "number": 19,
+     "playerId": 8475191,
+     "position": "R",
+     "team": "VGK"
+    },
+    {
+     "number": 20,
+     "playerId": 8476438,
+     "position": "L",
+     "team": "VGK"
+    },
+    {
+     "number": 21,
+     "playerId": 8479353,
+     "position": "C",
+     "team": "VGK"
+    },
+    {
+     "number": 26,
+     "playerId": 8482125,
+     "position": "R",
+     "team": "VGK"
+    },
+    {
+     "number": 27,
+     "playerId": 8477447,
+     "position": "D",
+     "team": "VGK"
+    },
+    {
+     "number": 35,
+     "playerId": 8478492,
+     "position": "G",
+     "team": "VGK"
+    },
+    {
+     "number": 40,
+     "playerId": 8481033,
+     "position": "G",
+     "team": "VGK"
+    },
+    {
+     "number": 48,
+     "playerId": 8476881,
+     "position": "C",
+     "team": "VGK"
+    },
+    {
+     "number": 49,
+     "playerId": 8477964,
+     "position": "C",
+     "team": "VGK"
+    },
+    {
+     "number": 55,
+     "playerId": 8478434,
+     "position": "R",
+     "team": "VGK"
+    },
+    {
+     "number": 70,
+     "playerId": 8476871,
+     "position": "L",
+     "team": "VGK"
+    },
+    {
+     "number": 71,
+     "playerId": 8476448,
+     "position": "C",
+     "team": "VGK"
+    },
+    {
+     "number": 95,
+     "playerId": 8478109,
+     "position": "L",
+     "team": "VGK"
+    }
+   ],
+   "schemaVersion": 1
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "prevState": "PRE",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 8,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "secondsRemaining": 1150,
+   "shots": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "situationCode": "1551",
+   "timeRemaining": "19:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 11,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 12,
+   "timeInPeriod": "00:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 13,
+   "timeInPeriod": "00:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 14,
+   "timeInPeriod": "00:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 22,
+   "timeInPeriod": "00:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "secondsRemaining": 1116,
+   "shots": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 23,
+   "timeInPeriod": "00:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 26,
+   "timeInPeriod": "01:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 27,
+   "timeInPeriod": "01:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "secondsRemaining": 1066,
+   "shots": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 29,
+   "timeInPeriod": "01:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 30,
+   "timeInPeriod": "01:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 31,
+   "timeInPeriod": "01:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 33,
+   "timeInPeriod": "01:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 35,
+   "timeInPeriod": "02:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "secondsRemaining": 1005,
+   "shots": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 36,
+   "timeInPeriod": "02:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 44,
+   "timeInPeriod": "02:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 45,
+   "timeInPeriod": "02:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 52,
+   "timeInPeriod": "03:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "secondsRemaining": 972,
+   "shots": {
+    "CGY": 2,
+    "VGK": 1
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 55,
+   "timeInPeriod": "03:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 56,
+   "timeInPeriod": "03:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 57,
+   "timeInPeriod": "03:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 59,
+   "timeInPeriod": "03:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "secondsRemaining": 935,
+   "shots": {
+    "CGY": 3,
+    "VGK": 1
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 60,
+   "timeInPeriod": "03:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 61,
+   "timeInPeriod": "04:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 62,
+   "timeInPeriod": "04:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 63,
+   "timeInPeriod": "04:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 66,
+   "timeInPeriod": "04:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 67,
+   "timeInPeriod": "04:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "secondsRemaining": 900,
+   "shots": {
+    "CGY": 3,
+    "VGK": 1
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 68,
+   "timeInPeriod": "04:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 69,
+   "timeInPeriod": "04:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 70,
+   "timeInPeriod": "04:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 71,
+   "timeInPeriod": "04:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 0
+   },
+   "seq": 74,
+   "timeInPeriod": "05:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "secondsRemaining": 855,
+   "shots": {
+    "CGY": 4,
+    "VGK": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 81,
+   "timeInPeriod": "05:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 83,
+   "timeInPeriod": "05:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 84,
+   "timeInPeriod": "05:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "scoringTeam": "VGK",
+   "seq": 85,
+   "timeInPeriod": "05:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 88,
+   "timeInPeriod": "05:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 89,
+   "timeInPeriod": "05:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 90,
+   "timeInPeriod": "05:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "secondsRemaining": 800,
+   "shots": {
+    "CGY": 5,
+    "VGK": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "13:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 92,
+   "timeInPeriod": "05:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 94,
+   "timeInPeriod": "06:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 95,
+   "timeInPeriod": "06:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 96,
+   "timeInPeriod": "06:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 99,
+   "timeInPeriod": "06:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 100,
+   "timeInPeriod": "06:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "secondsRemaining": 752,
+   "shots": {
+    "CGY": 5,
+    "VGK": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 101,
+   "timeInPeriod": "06:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 102,
+   "timeInPeriod": "06:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 108,
+   "timeInPeriod": "07:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 110,
+   "timeInPeriod": "07:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "secondsRemaining": 717,
+   "shots": {
+    "CGY": 5,
+    "VGK": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 112,
+   "timeInPeriod": "07:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 118,
+   "timeInPeriod": "08:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "secondsRemaining": 678,
+   "shots": {
+    "CGY": 5,
+    "VGK": 3
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 119,
+   "timeInPeriod": "08:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 126,
+   "timeInPeriod": "08:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "secondsRemaining": 646,
+   "shots": {
+    "CGY": 5,
+    "VGK": 3
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 130,
+   "timeInPeriod": "09:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 131,
+   "timeInPeriod": "09:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 132,
+   "timeInPeriod": "09:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 134,
+   "timeInPeriod": "09:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 135,
+   "timeInPeriod": "09:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 136,
+   "timeInPeriod": "09:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "secondsRemaining": 613,
+   "shots": {
+    "CGY": 5,
+    "VGK": 4
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 0,
+    "VGK": 1
+   },
+   "seq": 137,
+   "timeInPeriod": "09:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "secondsRemaining": 583,
+   "shots": {
+    "CGY": 6,
+    "VGK": 4
+   },
+   "situationCode": "1551",
+   "timeRemaining": "09:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 138,
+   "timeInPeriod": "09:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 141,
+   "timeInPeriod": "09:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 142,
+   "timeInPeriod": "10:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 144,
+   "timeInPeriod": "10:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 147,
+   "timeInPeriod": "10:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "scoringTeam": "CGY",
+   "seq": 148,
+   "timeInPeriod": "10:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 152,
+   "timeInPeriod": "10:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 153,
+   "timeInPeriod": "10:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "secondsRemaining": 518,
+   "shots": {
+    "CGY": 6,
+    "VGK": 4
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 154,
+   "timeInPeriod": "10:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 155,
+   "timeInPeriod": "10:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 156,
+   "timeInPeriod": "10:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 157,
+   "timeInPeriod": "10:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 166,
+   "timeInPeriod": "11:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "secondsRemaining": 452,
+   "shots": {
+    "CGY": 6,
+    "VGK": 4
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 167,
+   "timeInPeriod": "11:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 168,
+   "timeInPeriod": "11:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 169,
+   "timeInPeriod": "11:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 170,
+   "timeInPeriod": "11:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 180,
+   "timeInPeriod": "12:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "secondsRemaining": 419,
+   "shots": {
+    "CGY": 6,
+    "VGK": 4
+   },
+   "situationCode": "1551",
+   "timeRemaining": "06:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 186,
+   "timeInPeriod": "12:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 190,
+   "timeInPeriod": "12:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 191,
+   "timeInPeriod": "12:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 192,
+   "timeInPeriod": "12:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 193,
+   "timeInPeriod": "13:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "secondsRemaining": 327,
+   "shots": {
+    "CGY": 7,
+    "VGK": 4
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 194,
+   "timeInPeriod": "13:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 196,
+   "timeInPeriod": "13:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 197,
+   "timeInPeriod": "13:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 200,
+   "timeInPeriod": "13:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 1
+   },
+   "seq": 209,
+   "timeInPeriod": "14:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "secondsRemaining": 285,
+   "shots": {
+    "CGY": 8,
+    "VGK": 5
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 210,
+   "timeInPeriod": "14:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "scoringTeam": "VGK",
+   "seq": 212,
+   "timeInPeriod": "14:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 215,
+   "timeInPeriod": "14:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 216,
+   "timeInPeriod": "15:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "secondsRemaining": 218,
+   "shots": {
+    "CGY": 8,
+    "VGK": 5
+   },
+   "situationCode": "1551",
+   "timeRemaining": "03:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 217,
+   "timeInPeriod": "15:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 219,
+   "timeInPeriod": "15:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 220,
+   "timeInPeriod": "15:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 221,
+   "timeInPeriod": "15:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 229,
+   "timeInPeriod": "16:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "secondsRemaining": 171,
+   "shots": {
+    "CGY": 8,
+    "VGK": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 232,
+   "timeInPeriod": "16:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 233,
+   "timeInPeriod": "16:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 234,
+   "timeInPeriod": "16:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 235,
+   "timeInPeriod": "16:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 236,
+   "timeInPeriod": "16:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 237,
+   "timeInPeriod": "17:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "secondsRemaining": 122,
+   "shots": {
+    "CGY": 9,
+    "VGK": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 238,
+   "timeInPeriod": "17:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 239,
+   "timeInPeriod": "17:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 240,
+   "timeInPeriod": "17:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 250,
+   "timeInPeriod": "17:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "secondsRemaining": 90,
+   "shots": {
+    "CGY": 9,
+    "VGK": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 251,
+   "timeInPeriod": "18:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 254,
+   "timeInPeriod": "18:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 255,
+   "timeInPeriod": "18:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 256,
+   "timeInPeriod": "18:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 258,
+   "timeInPeriod": "18:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 261,
+   "timeInPeriod": "18:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "secondsRemaining": 60,
+   "shots": {
+    "CGY": 9,
+    "VGK": 9
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 264,
+   "timeInPeriod": "18:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 265,
+   "timeInPeriod": "18:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 2
+   },
+   "seq": 266,
+   "timeInPeriod": "19:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 24,
+   "shots": {
+    "CGY": 9,
+    "VGK": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 269,
+   "timeInPeriod": "19:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 270,
+   "timeInPeriod": "19:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 271,
+   "timeInPeriod": "19:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 272,
+   "timeInPeriod": "19:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "scoringTeam": "VGK",
+   "seq": 273,
+   "timeInPeriod": "19:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "CGY": 9,
+    "VGK": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 276,
+   "timeInPeriod": "19:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 277,
+   "timeInPeriod": "19:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 278,
+   "timeInPeriod": "19:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 1,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 279,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 284,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 1143,
+   "shots": {
+    "CGY": 10,
+    "VGK": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "19:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 287,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 288,
+   "timeInPeriod": "00:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 289,
+   "timeInPeriod": "00:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 299,
+   "timeInPeriod": "00:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 1090,
+   "shots": {
+    "CGY": 10,
+    "VGK": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 303,
+   "timeInPeriod": "01:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 304,
+   "timeInPeriod": "01:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 307,
+   "timeInPeriod": "01:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 1051,
+   "shots": {
+    "CGY": 10,
+    "VGK": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 315,
+   "timeInPeriod": "02:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 1001,
+   "shots": {
+    "CGY": 10,
+    "VGK": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 319,
+   "timeInPeriod": "02:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 322,
+   "timeInPeriod": "03:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 957,
+   "shots": {
+    "CGY": 13,
+    "VGK": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 323,
+   "timeInPeriod": "03:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 324,
+   "timeInPeriod": "03:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 325,
+   "timeInPeriod": "03:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 326,
+   "timeInPeriod": "03:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 327,
+   "timeInPeriod": "03:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 328,
+   "timeInPeriod": "03:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 333,
+   "timeInPeriod": "04:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 921,
+   "shots": {
+    "CGY": 13,
+    "VGK": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 338,
+   "timeInPeriod": "04:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 339,
+   "timeInPeriod": "04:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 878,
+   "shots": {
+    "CGY": 13,
+    "VGK": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 340,
+   "timeInPeriod": "04:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 341,
+   "timeInPeriod": "04:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 344,
+   "timeInPeriod": "04:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 345,
+   "timeInPeriod": "04:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 346,
+   "timeInPeriod": "05:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 347,
+   "timeInPeriod": "05:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 348,
+   "timeInPeriod": "05:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 845,
+   "shots": {
+    "CGY": 13,
+    "VGK": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 354,
+   "timeInPeriod": "05:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 356,
+   "timeInPeriod": "05:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 357,
+   "timeInPeriod": "05:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 812,
+   "shots": {
+    "CGY": 13,
+    "VGK": 12
+   },
+   "situationCode": "1551",
+   "timeRemaining": "13:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 358,
+   "timeInPeriod": "06:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 359,
+   "timeInPeriod": "06:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 363,
+   "timeInPeriod": "06:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 782,
+   "shots": {
+    "CGY": 13,
+    "VGK": 13
+   },
+   "situationCode": "1551",
+   "timeRemaining": "13:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 364,
+   "timeInPeriod": "06:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 370,
+   "timeInPeriod": "06:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 373,
+   "timeInPeriod": "06:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 374,
+   "timeInPeriod": "06:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 750,
+   "shots": {
+    "CGY": 14,
+    "VGK": 14
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 375,
+   "timeInPeriod": "06:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 376,
+   "timeInPeriod": "07:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 377,
+   "timeInPeriod": "07:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 379,
+   "timeInPeriod": "07:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 380,
+   "timeInPeriod": "07:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 381,
+   "timeInPeriod": "07:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 719,
+   "shots": {
+    "CGY": 14,
+    "VGK": 14
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 389,
+   "timeInPeriod": "08:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 666,
+   "shots": {
+    "CGY": 15,
+    "VGK": 14
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 390,
+   "timeInPeriod": "08:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 391,
+   "timeInPeriod": "08:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 394,
+   "timeInPeriod": "08:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 608,
+   "shots": {
+    "CGY": 15,
+    "VGK": 14
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 402,
+   "timeInPeriod": "09:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 403,
+   "timeInPeriod": "09:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 407,
+   "timeInPeriod": "09:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 577,
+   "shots": {
+    "CGY": 15,
+    "VGK": 14
+   },
+   "situationCode": "1551",
+   "timeRemaining": "09:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 410,
+   "timeInPeriod": "10:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 413,
+   "timeInPeriod": "10:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 414,
+   "timeInPeriod": "10:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 417,
+   "timeInPeriod": "10:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 418,
+   "timeInPeriod": "10:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 419,
+   "timeInPeriod": "10:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 546,
+   "shots": {
+    "CGY": 15,
+    "VGK": 14
+   },
+   "situationCode": "1551",
+   "timeRemaining": "09:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 420,
+   "timeInPeriod": "10:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 423,
+   "timeInPeriod": "10:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 426,
+   "timeInPeriod": "10:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 427,
+   "timeInPeriod": "10:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 493,
+   "shots": {
+    "CGY": 15,
+    "VGK": 15
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 428,
+   "timeInPeriod": "10:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 429,
+   "timeInPeriod": "11:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 430,
+   "timeInPeriod": "11:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 437,
+   "timeInPeriod": "11:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 444,
+   "shots": {
+    "CGY": 15,
+    "VGK": 15
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 438,
+   "timeInPeriod": "11:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 444,
+   "timeInPeriod": "12:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 405,
+   "shots": {
+    "CGY": 15,
+    "VGK": 15
+   },
+   "situationCode": "1551",
+   "timeRemaining": "06:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 452,
+   "timeInPeriod": "13:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 453,
+   "timeInPeriod": "13:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 369,
+   "shots": {
+    "CGY": 15,
+    "VGK": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "06:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 454,
+   "timeInPeriod": "13:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 455,
+   "timeInPeriod": "13:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 456,
+   "timeInPeriod": "13:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 457,
+   "timeInPeriod": "13:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 458,
+   "timeInPeriod": "13:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 459,
+   "timeInPeriod": "13:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 460,
+   "timeInPeriod": "13:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 327,
+   "shots": {
+    "CGY": 15,
+    "VGK": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 461,
+   "timeInPeriod": "13:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 464,
+   "timeInPeriod": "13:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 465,
+   "timeInPeriod": "13:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 466,
+   "timeInPeriod": "14:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 467,
+   "timeInPeriod": "14:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 469,
+   "timeInPeriod": "14:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 289,
+   "shots": {
+    "CGY": 15,
+    "VGK": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 472,
+   "timeInPeriod": "14:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 475,
+   "timeInPeriod": "14:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 476,
+   "timeInPeriod": "14:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 477,
+   "timeInPeriod": "14:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 478,
+   "timeInPeriod": "15:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 479,
+   "timeInPeriod": "15:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 259,
+   "shots": {
+    "CGY": 15,
+    "VGK": 19
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 480,
+   "timeInPeriod": "15:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 481,
+   "timeInPeriod": "15:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 484,
+   "timeInPeriod": "15:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 485,
+   "timeInPeriod": "15:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 486,
+   "timeInPeriod": "15:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 487,
+   "timeInPeriod": "15:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 488,
+   "timeInPeriod": "15:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 489,
+   "timeInPeriod": "15:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 490,
+   "timeInPeriod": "15:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 491,
+   "timeInPeriod": "15:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 223,
+   "shots": {
+    "CGY": 15,
+    "VGK": 21
+   },
+   "situationCode": "1551",
+   "timeRemaining": "03:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 492,
+   "timeInPeriod": "15:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 493,
+   "timeInPeriod": "15:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 494,
+   "timeInPeriod": "16:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 498,
+   "timeInPeriod": "16:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 180,
+   "shots": {
+    "CGY": 15,
+    "VGK": 23
+   },
+   "situationCode": "1551",
+   "timeRemaining": "03:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 503,
+   "timeInPeriod": "16:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 504,
+   "timeInPeriod": "16:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 506,
+   "timeInPeriod": "16:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 507,
+   "timeInPeriod": "16:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 508,
+   "timeInPeriod": "16:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 509,
+   "timeInPeriod": "16:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 510,
+   "timeInPeriod": "17:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 145,
+   "shots": {
+    "CGY": 15,
+    "VGK": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 512,
+   "timeInPeriod": "17:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 513,
+   "timeInPeriod": "17:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 518,
+   "timeInPeriod": "17:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 92,
+   "shots": {
+    "CGY": 15,
+    "VGK": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 523,
+   "timeInPeriod": "18:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 526,
+   "timeInPeriod": "18:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 50,
+   "shots": {
+    "CGY": 16,
+    "VGK": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 527,
+   "timeInPeriod": "18:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 531,
+   "timeInPeriod": "18:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 540,
+   "timeInPeriod": "19:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 12,
+   "shots": {
+    "CGY": 17,
+    "VGK": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 541,
+   "timeInPeriod": "19:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 542,
+   "timeInPeriod": "19:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 543,
+   "timeInPeriod": "19:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 544,
+   "timeInPeriod": "19:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 546,
+   "timeInPeriod": "19:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "CGY": 17,
+    "VGK": 24
+   },
+   "situationCode": "1451",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 550,
+   "timeInPeriod": "19:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 551,
+   "timeInPeriod": "19:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 2,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 552,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "seq": 557,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 2,
+    "VGK": 3
+   },
+   "secondsRemaining": 1168,
+   "shots": {
+    "CGY": 18,
+    "VGK": 24
+   },
+   "situationCode": "1451",
+   "timeRemaining": "19:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 2,
+    "VGK": 3
+   },
+   "seq": 560,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 2,
+    "VGK": 3
+   },
+   "seq": 561,
+   "timeInPeriod": "00:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 2,
+    "VGK": 3
+   },
+   "scoringTeam": "CGY",
+   "seq": 562,
+   "timeInPeriod": "00:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "secondsRemaining": 1136,
+   "shots": {
+    "CGY": 19,
+    "VGK": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 566,
+   "timeInPeriod": "00:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 567,
+   "timeInPeriod": "00:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "scoringTeam": "CGY",
+   "seq": 570,
+   "timeInPeriod": "01:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "secondsRemaining": 1101,
+   "shots": {
+    "CGY": 19,
+    "VGK": 27
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 573,
+   "timeInPeriod": "01:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 574,
+   "timeInPeriod": "01:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 575,
+   "timeInPeriod": "01:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 576,
+   "timeInPeriod": "01:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 577,
+   "timeInPeriod": "01:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 579,
+   "timeInPeriod": "01:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 580,
+   "timeInPeriod": "01:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 581,
+   "timeInPeriod": "01:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 582,
+   "timeInPeriod": "01:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 583,
+   "timeInPeriod": "01:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "secondsRemaining": 1060,
+   "shots": {
+    "CGY": 19,
+    "VGK": 28
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 590,
+   "timeInPeriod": "02:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 594,
+   "timeInPeriod": "02:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "secondsRemaining": 1025,
+   "shots": {
+    "CGY": 20,
+    "VGK": 28
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 595,
+   "timeInPeriod": "02:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 596,
+   "timeInPeriod": "02:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 597,
+   "timeInPeriod": "02:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 599,
+   "timeInPeriod": "02:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 605,
+   "timeInPeriod": "02:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "secondsRemaining": 967,
+   "shots": {
+    "CGY": 21,
+    "VGK": 28
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 606,
+   "timeInPeriod": "02:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 607,
+   "timeInPeriod": "03:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 611,
+   "timeInPeriod": "03:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 612,
+   "timeInPeriod": "03:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 621,
+   "timeInPeriod": "03:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "secondsRemaining": 909,
+   "shots": {
+    "CGY": 21,
+    "VGK": 28
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 633,
+   "timeInPeriod": "04:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "secondsRemaining": 879,
+   "shots": {
+    "CGY": 22,
+    "VGK": 28
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 634,
+   "timeInPeriod": "04:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 635,
+   "timeInPeriod": "05:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 636,
+   "timeInPeriod": "05:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "secondsRemaining": 823,
+   "shots": {
+    "CGY": 23,
+    "VGK": 28
+   },
+   "situationCode": "1551",
+   "timeRemaining": "13:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 639,
+   "timeInPeriod": "05:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 641,
+   "timeInPeriod": "05:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 648,
+   "timeInPeriod": "06:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "secondsRemaining": 774,
+   "shots": {
+    "CGY": 24,
+    "VGK": 28
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 649,
+   "timeInPeriod": "06:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 652,
+   "timeInPeriod": "06:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 653,
+   "timeInPeriod": "06:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 654,
+   "timeInPeriod": "06:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 656,
+   "timeInPeriod": "07:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "secondsRemaining": 723,
+   "shots": {
+    "CGY": 24,
+    "VGK": 29
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 657,
+   "timeInPeriod": "07:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 660,
+   "timeInPeriod": "07:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 665,
+   "timeInPeriod": "07:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "secondsRemaining": 674,
+   "shots": {
+    "CGY": 24,
+    "VGK": 29
+   },
+   "situationCode": "1541",
+   "timeRemaining": "11:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "delayed-penalty",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 666,
+   "timeInPeriod": "08:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 667,
+   "timeInPeriod": "08:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 674,
+   "timeInPeriod": "08:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 678,
+   "timeInPeriod": "08:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 679,
+   "timeInPeriod": "08:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "secondsRemaining": 615,
+   "shots": {
+    "CGY": 24,
+    "VGK": 30
+   },
+   "situationCode": "1541",
+   "timeRemaining": "10:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 680,
+   "timeInPeriod": "08:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 681,
+   "timeInPeriod": "08:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 682,
+   "timeInPeriod": "09:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 684,
+   "timeInPeriod": "09:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 691,
+   "timeInPeriod": "09:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "secondsRemaining": 566,
+   "shots": {
+    "CGY": 24,
+    "VGK": 30
+   },
+   "situationCode": "1551",
+   "timeRemaining": "09:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 694,
+   "timeInPeriod": "09:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 3,
+    "VGK": 3
+   },
+   "seq": 704,
+   "timeInPeriod": "10:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 528,
+   "shots": {
+    "CGY": 26,
+    "VGK": 31
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 706,
+   "timeInPeriod": "10:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 707,
+   "timeInPeriod": "10:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 3
+   },
+   "scoringTeam": "CGY",
+   "seq": 710,
+   "timeInPeriod": "11:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 3
+   },
+   "seq": 713,
+   "timeInPeriod": "11:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "scoringTeam": "VGK",
+   "seq": 714,
+   "timeInPeriod": "11:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 482,
+   "shots": {
+    "CGY": 26,
+    "VGK": 32
+   },
+   "situationCode": "1541",
+   "timeRemaining": "08:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 715,
+   "timeInPeriod": "11:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 717,
+   "timeInPeriod": "11:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 721,
+   "timeInPeriod": "11:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 722,
+   "timeInPeriod": "11:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 445,
+   "shots": {
+    "CGY": 26,
+    "VGK": 34
+   },
+   "situationCode": "1541",
+   "timeRemaining": "07:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 723,
+   "timeInPeriod": "12:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 724,
+   "timeInPeriod": "12:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 732,
+   "timeInPeriod": "12:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 408,
+   "shots": {
+    "CGY": 26,
+    "VGK": 34
+   },
+   "situationCode": "1541",
+   "timeRemaining": "06:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 737,
+   "timeInPeriod": "13:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 373,
+   "shots": {
+    "CGY": 26,
+    "VGK": 34
+   },
+   "situationCode": "1551",
+   "timeRemaining": "06:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 744,
+   "timeInPeriod": "13:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 747,
+   "timeInPeriod": "13:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 321,
+   "shots": {
+    "CGY": 26,
+    "VGK": 35
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 748,
+   "timeInPeriod": "13:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 750,
+   "timeInPeriod": "13:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 761,
+   "timeInPeriod": "14:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021299,
+   "gameState": "CRIT",
+   "prevState": "LIVE",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "CRIT",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 290,
+   "shots": {
+    "CGY": 26,
+    "VGK": 36
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 762,
+   "timeInPeriod": "14:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 763,
+   "timeInPeriod": "14:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 766,
+   "timeInPeriod": "14:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 767,
+   "timeInPeriod": "14:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 770,
+   "timeInPeriod": "15:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "CRIT",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 220,
+   "shots": {
+    "CGY": 26,
+    "VGK": 36
+   },
+   "situationCode": "1551",
+   "timeRemaining": "03:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 772,
+   "timeInPeriod": "15:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 773,
+   "timeInPeriod": "15:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 774,
+   "timeInPeriod": "15:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 775,
+   "timeInPeriod": "15:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 785,
+   "timeInPeriod": "16:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "CRIT",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 166,
+   "shots": {
+    "CGY": 27,
+    "VGK": 36
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 786,
+   "timeInPeriod": "16:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 787,
+   "timeInPeriod": "16:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 790,
+   "timeInPeriod": "16:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 791,
+   "timeInPeriod": "16:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 795,
+   "timeInPeriod": "17:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "CRIT",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 108,
+   "shots": {
+    "CGY": 27,
+    "VGK": 36
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 801,
+   "timeInPeriod": "17:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 802,
+   "timeInPeriod": "17:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 803,
+   "timeInPeriod": "17:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 809,
+   "timeInPeriod": "18:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "CRIT",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 76,
+   "shots": {
+    "CGY": 27,
+    "VGK": 36
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 810,
+   "timeInPeriod": "18:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 811,
+   "timeInPeriod": "18:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 814,
+   "timeInPeriod": "18:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 815,
+   "timeInPeriod": "18:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "CRIT",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 39,
+   "shots": {
+    "CGY": 27,
+    "VGK": 36
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 822,
+   "timeInPeriod": "19:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 826,
+   "timeInPeriod": "19:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "CRIT",
+   "homeTeam": "CGY",
+   "inIntermission": true,
+   "period": 3,
+   "periodType": "REG",
+   "running": false,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 0,
+   "shots": {
+    "CGY": 27,
+    "VGK": 39
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 827,
+   "timeInPeriod": "19:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 828,
+   "timeInPeriod": "19:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 830,
+   "timeInPeriod": "19:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 831,
+   "timeInPeriod": "19:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 832,
+   "timeInPeriod": "19:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 833,
+   "timeInPeriod": "19:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 835,
+   "timeInPeriod": "19:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 836,
+   "timeInPeriod": "19:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 837,
+   "timeInPeriod": "19:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 839,
+   "timeInPeriod": "19:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 840,
+   "timeInPeriod": "19:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 3,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 841,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "prevState": "CRIT",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 4,
+   "periodType": "OT",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 300,
+   "shots": {
+    "CGY": 27,
+    "VGK": 39
+   },
+   "situationCode": "1331",
+   "timeRemaining": "05:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 847,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 4,
+   "periodType": "OT",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 242,
+   "shots": {
+    "CGY": 27,
+    "VGK": 40
+   },
+   "situationCode": "1331",
+   "timeRemaining": "04:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 849,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 850,
+   "timeInPeriod": "00:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 856,
+   "timeInPeriod": "00:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 4,
+   "periodType": "OT",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 181,
+   "shots": {
+    "CGY": 27,
+    "VGK": 40
+   },
+   "situationCode": "1331",
+   "timeRemaining": "03:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 857,
+   "timeInPeriod": "01:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 859,
+   "timeInPeriod": "01:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 860,
+   "timeInPeriod": "01:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 867,
+   "timeInPeriod": "01:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 4,
+   "periodType": "OT",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 151,
+   "shots": {
+    "CGY": 27,
+    "VGK": 40
+   },
+   "situationCode": "1331",
+   "timeRemaining": "02:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 868,
+   "timeInPeriod": "02:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 869,
+   "timeInPeriod": "02:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 4,
+   "periodType": "OT",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 120,
+   "shots": {
+    "CGY": 27,
+    "VGK": 41
+   },
+   "situationCode": "1331",
+   "timeRemaining": "02:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 870,
+   "timeInPeriod": "02:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 871,
+   "timeInPeriod": "02:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 872,
+   "timeInPeriod": "02:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 875,
+   "timeInPeriod": "02:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 876,
+   "timeInPeriod": "03:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 4,
+   "periodType": "OT",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 85,
+   "shots": {
+    "CGY": 28,
+    "VGK": 41
+   },
+   "situationCode": "1331",
+   "timeRemaining": "01:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 877,
+   "timeInPeriod": "03:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 878,
+   "timeInPeriod": "03:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 4,
+   "periodType": "OT",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 38,
+   "shots": {
+    "CGY": 28,
+    "VGK": 42
+   },
+   "situationCode": "1331",
+   "timeRemaining": "00:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 886,
+   "timeInPeriod": "04:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": true,
+   "period": 4,
+   "periodType": "OT",
+   "running": false,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 0,
+   "shots": {
+    "CGY": 28,
+    "VGK": 42
+   },
+   "situationCode": "1331",
+   "timeRemaining": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 887,
+   "timeInPeriod": "04:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 889,
+   "timeInPeriod": "04:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 890,
+   "timeInPeriod": "04:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 4,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 891,
+   "timeInPeriod": "05:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 5,
+   "periodType": "SO",
+   "running": false,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "secondsRemaining": 0,
+   "shots": {
+    "CGY": 28,
+    "VGK": 42
+   },
+   "situationCode": "1010",
+   "timeRemaining": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 5,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 896,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021299,
+   "gameState": "FINAL",
+   "prevState": "LIVE",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 5,
+    "VGK": 4
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 5,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 5,
+    "VGK": 4
+   },
+   "seq": 899,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 5,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 5,
+    "VGK": 4
+   },
+   "seq": 900,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 5,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 5,
+    "VGK": 4
+   },
+   "seq": 901,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 5,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 5,
+    "VGK": 4
+   },
+   "seq": 902,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CGY",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 5,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "scoringTeam": "CGY",
+   "seq": 903,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "VGK",
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 5,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 904,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 5,
+   "playType": "shootout-complete",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 905,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 5,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 906,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "period": 5,
+   "playType": "game-end",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 4,
+    "VGK": 4
+   },
+   "seq": 910,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.final",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "homeTeam": "CGY",
+   "s3Prefix": "raw/20242025/2025-04-15/2024021299/",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 5,
+    "VGK": 4
+   }
+  }
+ }
+]

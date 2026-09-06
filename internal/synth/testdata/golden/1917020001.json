@@ -1,0 +1,802 @@
+[
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 1917020001,
+   "gameState": "PRE",
+   "prevState": "FUT",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 0,
+    "SEN": 0
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.roster",
+  "detail": {
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "players": [
+    {
+     "number": 1,
+     "playerId": 8450137,
+     "position": "G",
+     "team": "MTL"
+    },
+    {
+     "number": 2,
+     "playerId": 8445571,
+     "position": "D",
+     "team": "MTL"
+    },
+    {
+     "number": 3,
+     "playerId": 8446669,
+     "position": "D",
+     "team": "MTL"
+    },
+    {
+     "number": 4,
+     "playerId": 8447289,
+     "position": "C",
+     "team": "MTL"
+    },
+    {
+     "number": 5,
+     "playerId": 8448154,
+     "position": "R",
+     "team": "MTL"
+    },
+    {
+     "number": 6,
+     "playerId": 8447348,
+     "position": "D",
+     "team": "MTL"
+    },
+    {
+     "number": 7,
+     "playerId": 8447594,
+     "position": "C",
+     "team": "MTL"
+    },
+    {
+     "number": 8,
+     "playerId": 8445071,
+     "position": "L",
+     "team": "MTL"
+    },
+    {
+     "number": 9,
+     "playerId": 8445744,
+     "position": "D",
+     "team": "MTL"
+    },
+    {
+     "number": 1,
+     "playerId": 8449817,
+     "position": "G",
+     "team": "SEN"
+    },
+    {
+     "number": 2,
+     "playerId": 8445135,
+     "position": "D",
+     "team": "SEN"
+    },
+    {
+     "number": 3,
+     "playerId": 8445191,
+     "position": "D",
+     "team": "SEN"
+    },
+    {
+     "number": 4,
+     "playerId": 8449025,
+     "position": "D",
+     "team": "SEN"
+    },
+    {
+     "number": 5,
+     "playerId": 8445802,
+     "position": "L",
+     "team": "SEN"
+    },
+    {
+     "number": 6,
+     "playerId": 8445844,
+     "position": "R",
+     "team": "SEN"
+    },
+    {
+     "number": 7,
+     "playerId": 8445874,
+     "position": "L",
+     "team": "SEN"
+    },
+    {
+     "number": 8,
+     "playerId": 8446581,
+     "position": "L",
+     "team": "SEN"
+    },
+    {
+     "number": 9,
+     "playerId": 8447522,
+     "position": "C",
+     "team": "SEN"
+    }
+   ],
+   "schemaVersion": 1
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 1917020001,
+   "gameState": "LIVE",
+   "prevState": "PRE",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 0,
+    "SEN": 0
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "gameState": "LIVE",
+   "homeTeam": "SEN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 0,
+    "SEN": 0
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "MTL": 0,
+    "SEN": 0
+   },
+   "situationCode": "",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MTL",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 0,
+    "SEN": 0
+   },
+   "seq": 1,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "gameState": "LIVE",
+   "homeTeam": "SEN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 1,
+    "SEN": 0
+   },
+   "secondsRemaining": 810,
+   "shots": {
+    "MTL": 0,
+    "SEN": 0
+   },
+   "situationCode": "",
+   "timeRemaining": "13:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MTL",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 1,
+    "SEN": 0
+   },
+   "seq": 2,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MTL",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 1,
+    "SEN": 0
+   },
+   "seq": 3,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MTL",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 1,
+    "SEN": 0
+   },
+   "seq": 4,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MTL",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 1,
+    "SEN": 0
+   },
+   "seq": 5,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MTL",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 1,
+    "SEN": 0
+   },
+   "seq": 6,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MTL",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 1,
+    "SEN": 0
+   },
+   "seq": 7,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEN",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 1,
+    "SEN": 0
+   },
+   "seq": 8,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MTL",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 1,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 1,
+    "SEN": 0
+   },
+   "scoringTeam": "MTL",
+   "seq": 9,
+   "timeInPeriod": "06:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "gameState": "LIVE",
+   "homeTeam": "SEN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 2,
+    "SEN": 0
+   },
+   "secondsRemaining": 600,
+   "shots": {
+    "MTL": 0,
+    "SEN": 0
+   },
+   "situationCode": "",
+   "timeRemaining": "10:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MTL",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 1,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 2,
+    "SEN": 0
+   },
+   "scoringTeam": "MTL",
+   "seq": 10,
+   "timeInPeriod": "10:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "gameState": "LIVE",
+   "homeTeam": "SEN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 3,
+    "SEN": 0
+   },
+   "secondsRemaining": 540,
+   "shots": {
+    "MTL": 0,
+    "SEN": 0
+   },
+   "situationCode": "",
+   "timeRemaining": "09:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MTL",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 1,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 3,
+    "SEN": 0
+   },
+   "scoringTeam": "MTL",
+   "seq": 11,
+   "timeInPeriod": "11:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "gameState": "LIVE",
+   "homeTeam": "SEN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 3,
+    "SEN": 1
+   },
+   "secondsRemaining": 930,
+   "shots": {
+    "MTL": 0,
+    "SEN": 0
+   },
+   "situationCode": "",
+   "timeRemaining": "15:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEN",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 2,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 3,
+    "SEN": 1
+   },
+   "scoringTeam": "SEN",
+   "seq": 12,
+   "timeInPeriod": "04:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "gameState": "LIVE",
+   "homeTeam": "SEN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 4,
+    "SEN": 1
+   },
+   "secondsRemaining": 840,
+   "shots": {
+    "MTL": 0,
+    "SEN": 0
+   },
+   "situationCode": "",
+   "timeRemaining": "14:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MTL",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 2,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 4,
+    "SEN": 1
+   },
+   "scoringTeam": "MTL",
+   "seq": 13,
+   "timeInPeriod": "06:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "gameState": "LIVE",
+   "homeTeam": "SEN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 5,
+    "SEN": 1
+   },
+   "secondsRemaining": 660,
+   "shots": {
+    "MTL": 0,
+    "SEN": 0
+   },
+   "situationCode": "",
+   "timeRemaining": "11:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MTL",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 2,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 5,
+    "SEN": 1
+   },
+   "scoringTeam": "MTL",
+   "seq": 14,
+   "timeInPeriod": "09:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "gameState": "LIVE",
+   "homeTeam": "SEN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 5,
+    "SEN": 2
+   },
+   "secondsRemaining": 420,
+   "shots": {
+    "MTL": 0,
+    "SEN": 0
+   },
+   "situationCode": "",
+   "timeRemaining": "07:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEN",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 2,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 5,
+    "SEN": 2
+   },
+   "scoringTeam": "SEN",
+   "seq": 15,
+   "timeInPeriod": "13:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "gameState": "LIVE",
+   "homeTeam": "SEN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 5,
+    "SEN": 3
+   },
+   "secondsRemaining": 120,
+   "shots": {
+    "MTL": 0,
+    "SEN": 0
+   },
+   "situationCode": "",
+   "timeRemaining": "02:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEN",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 2,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 5,
+    "SEN": 3
+   },
+   "scoringTeam": "SEN",
+   "seq": 16,
+   "timeInPeriod": "18:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "gameState": "LIVE",
+   "homeTeam": "SEN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 6,
+    "SEN": 3
+   },
+   "secondsRemaining": 840,
+   "shots": {
+    "MTL": 0,
+    "SEN": 0
+   },
+   "situationCode": "",
+   "timeRemaining": "14:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MTL",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 6,
+    "SEN": 3
+   },
+   "scoringTeam": "MTL",
+   "seq": 17,
+   "timeInPeriod": "06:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "gameState": "LIVE",
+   "homeTeam": "SEN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 7,
+    "SEN": 3
+   },
+   "secondsRemaining": 180,
+   "shots": {
+    "MTL": 0,
+    "SEN": 0
+   },
+   "situationCode": "",
+   "timeRemaining": "03:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MTL",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 7,
+    "SEN": 3
+   },
+   "scoringTeam": "MTL",
+   "seq": 18,
+   "timeInPeriod": "17:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 1917020001,
+   "gameState": "FINAL",
+   "prevState": "LIVE",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 7,
+    "SEN": 4
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "SEN",
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 7,
+    "SEN": 4
+   },
+   "scoringTeam": "SEN",
+   "seq": 19,
+   "timeInPeriod": "18:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.final",
+  "detail": {
+   "awayTeam": "MTL",
+   "gameId": 1917020001,
+   "homeTeam": "SEN",
+   "s3Prefix": "raw/19171918/1917-12-19/1917020001/",
+   "schemaVersion": 1,
+   "score": {
+    "MTL": 7,
+    "SEN": 4
+   }
+  }
+ }
+]

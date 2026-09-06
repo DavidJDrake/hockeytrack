@@ -1,0 +1,8932 @@
+[
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2025020001,
+   "gameState": "PRE",
+   "prevState": "FUT",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.roster",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "players": [
+    {
+     "number": 5,
+     "playerId": 8476473,
+     "position": "D",
+     "team": "CHI"
+    },
+    {
+     "number": 6,
+     "playerId": 8483506,
+     "position": "D",
+     "team": "CHI"
+    },
+    {
+     "number": 8,
+     "playerId": 8477987,
+     "position": "C",
+     "team": "CHI"
+    },
+    {
+     "number": 16,
+     "playerId": 8477450,
+     "position": "C",
+     "team": "CHI"
+    },
+    {
+     "number": 17,
+     "playerId": 8473422,
+     "position": "L",
+     "team": "CHI"
+    },
+    {
+     "number": 20,
+     "playerId": 8483450,
+     "position": "C",
+     "team": "CHI"
+    },
+    {
+     "number": 24,
+     "playerId": 8478043,
+     "position": "C",
+     "team": "CHI"
+    },
+    {
+     "number": 28,
+     "playerId": 8477444,
+     "position": "L",
+     "team": "CHI"
+    },
+    {
+     "number": 30,
+     "playerId": 8481519,
+     "position": "G",
+     "team": "CHI"
+    },
+    {
+     "number": 34,
+     "playerId": 8482703,
+     "position": "C",
+     "team": "CHI"
+    },
+    {
+     "number": 38,
+     "playerId": 8482807,
+     "position": "D",
+     "team": "CHI"
+    },
+    {
+     "number": 40,
+     "playerId": 8482821,
+     "position": "G",
+     "team": "CHI"
+    },
+    {
+     "number": 44,
+     "playerId": 8482176,
+     "position": "D",
+     "team": "CHI"
+    },
+    {
+     "number": 48,
+     "playerId": 8476891,
+     "position": "D",
+     "team": "CHI"
+    },
+    {
+     "number": 55,
+     "playerId": 8484783,
+     "position": "D",
+     "team": "CHI"
+    },
+    {
+     "number": 59,
+     "playerId": 8477479,
+     "position": "L",
+     "team": "CHI"
+    },
+    {
+     "number": 86,
+     "playerId": 8476882,
+     "position": "C",
+     "team": "CHI"
+    },
+    {
+     "number": 91,
+     "playerId": 8483493,
+     "position": "C",
+     "team": "CHI"
+    },
+    {
+     "number": 95,
+     "playerId": 8481624,
+     "position": "R",
+     "team": "CHI"
+    },
+    {
+     "number": 98,
+     "playerId": 8484144,
+     "position": "C",
+     "team": "CHI"
+    },
+    {
+     "number": 2,
+     "playerId": 8473507,
+     "position": "D",
+     "team": "FLA"
+    },
+    {
+     "number": 3,
+     "playerId": 8477495,
+     "position": "D",
+     "team": "FLA"
+    },
+    {
+     "number": 5,
+     "playerId": 8477932,
+     "position": "D",
+     "team": "FLA"
+    },
+    {
+     "number": 7,
+     "playerId": 8475179,
+     "position": "D",
+     "team": "FLA"
+    },
+    {
+     "number": 9,
+     "playerId": 8477935,
+     "position": "C",
+     "team": "FLA"
+    },
+    {
+     "number": 10,
+     "playerId": 8478421,
+     "position": "L",
+     "team": "FLA"
+    },
+    {
+     "number": 11,
+     "playerId": 8482713,
+     "position": "R",
+     "team": "FLA"
+    },
+    {
+     "number": 12,
+     "playerId": 8479981,
+     "position": "L",
+     "team": "FLA"
+    },
+    {
+     "number": 13,
+     "playerId": 8477933,
+     "position": "C",
+     "team": "FLA"
+    },
+    {
+     "number": 15,
+     "playerId": 8482113,
+     "position": "C",
+     "team": "FLA"
+    },
+    {
+     "number": 17,
+     "playerId": 8478542,
+     "position": "C",
+     "team": "FLA"
+    },
+    {
+     "number": 23,
+     "playerId": 8477409,
+     "position": "C",
+     "team": "FLA"
+    },
+    {
+     "number": 27,
+     "playerId": 8480185,
+     "position": "C",
+     "team": "FLA"
+    },
+    {
+     "number": 40,
+     "playerId": 8480193,
+     "position": "G",
+     "team": "FLA"
+    },
+    {
+     "number": 42,
+     "playerId": 8478055,
+     "position": "D",
+     "team": "FLA"
+    },
+    {
+     "number": 63,
+     "playerId": 8473419,
+     "position": "L",
+     "team": "FLA"
+    },
+    {
+     "number": 70,
+     "playerId": 8480003,
+     "position": "C",
+     "team": "FLA"
+    },
+    {
+     "number": 71,
+     "playerId": 8479316,
+     "position": "C",
+     "team": "FLA"
+    },
+    {
+     "number": 72,
+     "playerId": 8475683,
+     "position": "G",
+     "team": "FLA"
+    },
+    {
+     "number": 77,
+     "playerId": 8478859,
+     "position": "D",
+     "team": "FLA"
+    }
+   ],
+   "schemaVersion": 1
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "prevState": "PRE",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 8,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "secondsRemaining": 1166,
+   "shots": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "situationCode": "1551",
+   "timeRemaining": "19:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 11,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 12,
+   "timeInPeriod": "00:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 13,
+   "timeInPeriod": "00:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "secondsRemaining": 1130,
+   "shots": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 16,
+   "timeInPeriod": "00:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 18,
+   "timeInPeriod": "00:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 24,
+   "timeInPeriod": "01:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "secondsRemaining": 1096,
+   "shots": {
+    "CHI": 0,
+    "FLA": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 25,
+   "timeInPeriod": "01:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 26,
+   "timeInPeriod": "01:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 28,
+   "timeInPeriod": "01:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 29,
+   "timeInPeriod": "01:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 30,
+   "timeInPeriod": "01:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 31,
+   "timeInPeriod": "01:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 32,
+   "timeInPeriod": "01:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 34,
+   "timeInPeriod": "01:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 35,
+   "timeInPeriod": "01:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 36,
+   "timeInPeriod": "01:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 37,
+   "timeInPeriod": "01:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 38,
+   "timeInPeriod": "01:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "secondsRemaining": 1065,
+   "shots": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 39,
+   "timeInPeriod": "01:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 42,
+   "timeInPeriod": "01:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 43,
+   "timeInPeriod": "02:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 44,
+   "timeInPeriod": "02:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 45,
+   "timeInPeriod": "02:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "secondsRemaining": 1028,
+   "shots": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 49,
+   "timeInPeriod": "02:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 57,
+   "timeInPeriod": "02:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 60,
+   "timeInPeriod": "02:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 61,
+   "timeInPeriod": "02:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "secondsRemaining": 989,
+   "shots": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 63,
+   "timeInPeriod": "03:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 66,
+   "timeInPeriod": "03:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 72,
+   "timeInPeriod": "03:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "secondsRemaining": 954,
+   "shots": {
+    "CHI": 2,
+    "FLA": 4
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 73,
+   "timeInPeriod": "03:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 74,
+   "timeInPeriod": "03:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 77,
+   "timeInPeriod": "03:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 78,
+   "timeInPeriod": "03:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 79,
+   "timeInPeriod": "03:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 82,
+   "timeInPeriod": "04:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "secondsRemaining": 919,
+   "shots": {
+    "CHI": 2,
+    "FLA": 4
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 88,
+   "timeInPeriod": "04:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "secondsRemaining": 884,
+   "shots": {
+    "CHI": 2,
+    "FLA": 5
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 89,
+   "timeInPeriod": "04:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 90,
+   "timeInPeriod": "04:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 91,
+   "timeInPeriod": "04:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 101,
+   "timeInPeriod": "05:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "secondsRemaining": 847,
+   "shots": {
+    "CHI": 2,
+    "FLA": 5
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 102,
+   "timeInPeriod": "05:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 109,
+   "timeInPeriod": "05:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "secondsRemaining": 805,
+   "shots": {
+    "CHI": 2,
+    "FLA": 5
+   },
+   "situationCode": "1551",
+   "timeRemaining": "13:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 111,
+   "timeInPeriod": "06:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 112,
+   "timeInPeriod": "06:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 115,
+   "timeInPeriod": "06:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 116,
+   "timeInPeriod": "06:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 117,
+   "timeInPeriod": "06:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 119,
+   "timeInPeriod": "06:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 120,
+   "timeInPeriod": "06:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "secondsRemaining": 762,
+   "shots": {
+    "CHI": 2,
+    "FLA": 6
+   },
+   "situationCode": "1451",
+   "timeRemaining": "12:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 123,
+   "timeInPeriod": "06:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 124,
+   "timeInPeriod": "06:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 125,
+   "timeInPeriod": "06:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 129,
+   "timeInPeriod": "06:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 130,
+   "timeInPeriod": "07:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "secondsRemaining": 731,
+   "shots": {
+    "CHI": 2,
+    "FLA": 7
+   },
+   "situationCode": "1451",
+   "timeRemaining": "12:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 134,
+   "timeInPeriod": "07:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 135,
+   "timeInPeriod": "07:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 136,
+   "timeInPeriod": "07:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "secondsRemaining": 667,
+   "shots": {
+    "CHI": 2,
+    "FLA": 7
+   },
+   "situationCode": "1451",
+   "timeRemaining": "11:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 150,
+   "timeInPeriod": "08:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "secondsRemaining": 626,
+   "shots": {
+    "CHI": 2,
+    "FLA": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 153,
+   "timeInPeriod": "08:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 159,
+   "timeInPeriod": "09:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 0,
+    "FLA": 0
+   },
+   "seq": 160,
+   "timeInPeriod": "09:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 0
+   },
+   "secondsRemaining": 575,
+   "shots": {
+    "CHI": 3,
+    "FLA": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "09:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 0
+   },
+   "seq": 161,
+   "timeInPeriod": "09:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 0
+   },
+   "seq": 164,
+   "timeInPeriod": "09:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 0
+   },
+   "seq": 165,
+   "timeInPeriod": "09:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 0
+   },
+   "scoringTeam": "CHI",
+   "seq": 166,
+   "timeInPeriod": "10:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 0
+   },
+   "seq": 169,
+   "timeInPeriod": "10:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 0
+   },
+   "seq": 170,
+   "timeInPeriod": "10:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 0
+   },
+   "secondsRemaining": 537,
+   "shots": {
+    "CHI": 3,
+    "FLA": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 0
+   },
+   "seq": 171,
+   "timeInPeriod": "10:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 0
+   },
+   "seq": 172,
+   "timeInPeriod": "10:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 0
+   },
+   "seq": 173,
+   "timeInPeriod": "10:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 0
+   },
+   "seq": 183,
+   "timeInPeriod": "11:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "secondsRemaining": 502,
+   "shots": {
+    "CHI": 3,
+    "FLA": 9
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "scoringTeam": "FLA",
+   "seq": 184,
+   "timeInPeriod": "11:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "seq": 187,
+   "timeInPeriod": "11:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "seq": 189,
+   "timeInPeriod": "11:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "secondsRemaining": 460,
+   "shots": {
+    "CHI": 3,
+    "FLA": 9
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "seq": 193,
+   "timeInPeriod": "11:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "seq": 197,
+   "timeInPeriod": "12:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "seq": 198,
+   "timeInPeriod": "12:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "seq": 199,
+   "timeInPeriod": "12:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "secondsRemaining": 411,
+   "shots": {
+    "CHI": 3,
+    "FLA": 10
+   },
+   "situationCode": "1451",
+   "timeRemaining": "06:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "seq": 200,
+   "timeInPeriod": "12:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "seq": 203,
+   "timeInPeriod": "12:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "seq": 205,
+   "timeInPeriod": "12:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "seq": 206,
+   "timeInPeriod": "12:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "seq": 209,
+   "timeInPeriod": "13:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "secondsRemaining": 376,
+   "shots": {
+    "CHI": 3,
+    "FLA": 11
+   },
+   "situationCode": "1451",
+   "timeRemaining": "06:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "seq": 210,
+   "timeInPeriod": "13:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "seq": 212,
+   "timeInPeriod": "13:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "seq": 213,
+   "timeInPeriod": "13:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 1
+   },
+   "seq": 214,
+   "timeInPeriod": "13:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "secondsRemaining": 344,
+   "shots": {
+    "CHI": 3,
+    "FLA": 12
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 221,
+   "timeInPeriod": "14:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "scoringTeam": "FLA",
+   "seq": 222,
+   "timeInPeriod": "14:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 226,
+   "timeInPeriod": "14:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 227,
+   "timeInPeriod": "14:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "secondsRemaining": 309,
+   "shots": {
+    "CHI": 3,
+    "FLA": 13
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 229,
+   "timeInPeriod": "14:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 230,
+   "timeInPeriod": "14:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 234,
+   "timeInPeriod": "14:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 236,
+   "timeInPeriod": "14:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 237,
+   "timeInPeriod": "14:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 238,
+   "timeInPeriod": "14:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 239,
+   "timeInPeriod": "14:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "secondsRemaining": 276,
+   "shots": {
+    "CHI": 3,
+    "FLA": 14
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 240,
+   "timeInPeriod": "14:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 242,
+   "timeInPeriod": "15:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 243,
+   "timeInPeriod": "15:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 246,
+   "timeInPeriod": "15:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 247,
+   "timeInPeriod": "15:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "secondsRemaining": 197,
+   "shots": {
+    "CHI": 3,
+    "FLA": 16
+   },
+   "situationCode": "1551",
+   "timeRemaining": "03:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 248,
+   "timeInPeriod": "15:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 249,
+   "timeInPeriod": "15:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 250,
+   "timeInPeriod": "15:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 253,
+   "timeInPeriod": "15:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 254,
+   "timeInPeriod": "15:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 255,
+   "timeInPeriod": "15:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 256,
+   "timeInPeriod": "15:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 263,
+   "timeInPeriod": "16:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "secondsRemaining": 167,
+   "shots": {
+    "CHI": 3,
+    "FLA": 16
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 266,
+   "timeInPeriod": "16:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 268,
+   "timeInPeriod": "16:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 272,
+   "timeInPeriod": "16:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 273,
+   "timeInPeriod": "17:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "secondsRemaining": 118,
+   "shots": {
+    "CHI": 3,
+    "FLA": 16
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 283,
+   "timeInPeriod": "18:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "secondsRemaining": 83,
+   "shots": {
+    "CHI": 3,
+    "FLA": 16
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 284,
+   "timeInPeriod": "18:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 286,
+   "timeInPeriod": "18:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 294,
+   "timeInPeriod": "18:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "secondsRemaining": 49,
+   "shots": {
+    "CHI": 3,
+    "FLA": 16
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 295,
+   "timeInPeriod": "18:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 304,
+   "timeInPeriod": "19:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "secondsRemaining": 17,
+   "shots": {
+    "CHI": 3,
+    "FLA": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 305,
+   "timeInPeriod": "19:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 306,
+   "timeInPeriod": "19:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 307,
+   "timeInPeriod": "19:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 308,
+   "timeInPeriod": "19:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 311,
+   "timeInPeriod": "19:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 313,
+   "timeInPeriod": "19:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "CHI": 3,
+    "FLA": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 1,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 318,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 324,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "secondsRemaining": 1170,
+   "shots": {
+    "CHI": 3,
+    "FLA": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "19:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 326,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 327,
+   "timeInPeriod": "00:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 328,
+   "timeInPeriod": "00:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "seq": 329,
+   "timeInPeriod": "00:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 1131,
+   "shots": {
+    "CHI": 5,
+    "FLA": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 334,
+   "timeInPeriod": "00:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "scoringTeam": "CHI",
+   "seq": 340,
+   "timeInPeriod": "01:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 1096,
+   "shots": {
+    "CHI": 5,
+    "FLA": 17
+   },
+   "situationCode": "1541",
+   "timeRemaining": "18:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 342,
+   "timeInPeriod": "01:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 343,
+   "timeInPeriod": "01:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 347,
+   "timeInPeriod": "01:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 348,
+   "timeInPeriod": "01:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 1056,
+   "shots": {
+    "CHI": 5,
+    "FLA": 17
+   },
+   "situationCode": "1541",
+   "timeRemaining": "17:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 351,
+   "timeInPeriod": "01:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 356,
+   "timeInPeriod": "01:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 357,
+   "timeInPeriod": "02:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 994,
+   "shots": {
+    "CHI": 5,
+    "FLA": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 358,
+   "timeInPeriod": "02:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 359,
+   "timeInPeriod": "02:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 362,
+   "timeInPeriod": "02:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 370,
+   "timeInPeriod": "03:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 945,
+   "shots": {
+    "CHI": 5,
+    "FLA": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 371,
+   "timeInPeriod": "03:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 373,
+   "timeInPeriod": "03:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 374,
+   "timeInPeriod": "03:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 379,
+   "timeInPeriod": "04:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 902,
+   "shots": {
+    "CHI": 5,
+    "FLA": 18
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 380,
+   "timeInPeriod": "04:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 381,
+   "timeInPeriod": "04:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 384,
+   "timeInPeriod": "04:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 387,
+   "timeInPeriod": "04:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 388,
+   "timeInPeriod": "04:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 869,
+   "shots": {
+    "CHI": 5,
+    "FLA": 19
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 389,
+   "timeInPeriod": "05:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 391,
+   "timeInPeriod": "05:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 392,
+   "timeInPeriod": "05:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 394,
+   "timeInPeriod": "05:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 815,
+   "shots": {
+    "CHI": 6,
+    "FLA": 19
+   },
+   "situationCode": "1551",
+   "timeRemaining": "13:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 400,
+   "timeInPeriod": "05:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 401,
+   "timeInPeriod": "05:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 404,
+   "timeInPeriod": "06:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 770,
+   "shots": {
+    "CHI": 7,
+    "FLA": 20
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 405,
+   "timeInPeriod": "06:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 406,
+   "timeInPeriod": "06:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 409,
+   "timeInPeriod": "06:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 410,
+   "timeInPeriod": "06:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 411,
+   "timeInPeriod": "06:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 413,
+   "timeInPeriod": "07:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 733,
+   "shots": {
+    "CHI": 7,
+    "FLA": 22
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 415,
+   "timeInPeriod": "07:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 417,
+   "timeInPeriod": "07:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 421,
+   "timeInPeriod": "07:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 703,
+   "shots": {
+    "CHI": 9,
+    "FLA": 22
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 422,
+   "timeInPeriod": "07:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 424,
+   "timeInPeriod": "07:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 425,
+   "timeInPeriod": "08:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 426,
+   "timeInPeriod": "08:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 428,
+   "timeInPeriod": "08:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 429,
+   "timeInPeriod": "08:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "delayed-penalty",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 430,
+   "timeInPeriod": "08:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 431,
+   "timeInPeriod": "08:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 432,
+   "timeInPeriod": "08:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 660,
+   "shots": {
+    "CHI": 9,
+    "FLA": 23
+   },
+   "situationCode": "1541",
+   "timeRemaining": "11:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 436,
+   "timeInPeriod": "08:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 437,
+   "timeInPeriod": "08:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 438,
+   "timeInPeriod": "08:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 441,
+   "timeInPeriod": "09:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 585,
+   "shots": {
+    "CHI": 10,
+    "FLA": 23
+   },
+   "situationCode": "1541",
+   "timeRemaining": "09:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 443,
+   "timeInPeriod": "09:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 451,
+   "timeInPeriod": "10:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 513,
+   "shots": {
+    "CHI": 10,
+    "FLA": 23
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 468,
+   "timeInPeriod": "11:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 480,
+   "shots": {
+    "CHI": 10,
+    "FLA": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 469,
+   "timeInPeriod": "11:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 470,
+   "timeInPeriod": "11:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 473,
+   "timeInPeriod": "11:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 474,
+   "timeInPeriod": "11:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 476,
+   "timeInPeriod": "12:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 450,
+   "shots": {
+    "CHI": 10,
+    "FLA": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 480,
+   "timeInPeriod": "12:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 483,
+   "timeInPeriod": "12:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 485,
+   "timeInPeriod": "12:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 418,
+   "shots": {
+    "CHI": 10,
+    "FLA": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "06:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 487,
+   "timeInPeriod": "12:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 489,
+   "timeInPeriod": "12:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 490,
+   "timeInPeriod": "13:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 374,
+   "shots": {
+    "CHI": 10,
+    "FLA": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "06:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 496,
+   "timeInPeriod": "13:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 497,
+   "timeInPeriod": "13:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 498,
+   "timeInPeriod": "13:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 310,
+   "shots": {
+    "CHI": 10,
+    "FLA": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 501,
+   "timeInPeriod": "14:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 503,
+   "timeInPeriod": "14:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 504,
+   "timeInPeriod": "14:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 505,
+   "timeInPeriod": "14:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 514,
+   "timeInPeriod": "14:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 233,
+   "shots": {
+    "CHI": 11,
+    "FLA": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "03:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 517,
+   "timeInPeriod": "14:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 518,
+   "timeInPeriod": "15:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 519,
+   "timeInPeriod": "15:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 522,
+   "timeInPeriod": "15:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 530,
+   "timeInPeriod": "16:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 203,
+   "shots": {
+    "CHI": 11,
+    "FLA": 25
+   },
+   "situationCode": "1551",
+   "timeRemaining": "03:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 533,
+   "timeInPeriod": "16:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 536,
+   "timeInPeriod": "16:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 537,
+   "timeInPeriod": "16:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 173,
+   "shots": {
+    "CHI": 12,
+    "FLA": 25
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 538,
+   "timeInPeriod": "16:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 546,
+   "timeInPeriod": "17:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 135,
+   "shots": {
+    "CHI": 12,
+    "FLA": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 549,
+   "timeInPeriod": "17:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 551,
+   "timeInPeriod": "17:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 552,
+   "timeInPeriod": "17:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 555,
+   "timeInPeriod": "17:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 556,
+   "timeInPeriod": "17:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 53,
+   "shots": {
+    "CHI": 13,
+    "FLA": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 557,
+   "timeInPeriod": "17:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 558,
+   "timeInPeriod": "17:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 561,
+   "timeInPeriod": "17:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 570,
+   "timeInPeriod": "19:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 3,
+   "shots": {
+    "CHI": 14,
+    "FLA": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 574,
+   "timeInPeriod": "19:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 576,
+   "timeInPeriod": "19:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 579,
+   "timeInPeriod": "19:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 580,
+   "timeInPeriod": "19:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "CHI": 14,
+    "FLA": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 581,
+   "timeInPeriod": "19:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 2,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 582,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 588,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 1166,
+   "shots": {
+    "CHI": 14,
+    "FLA": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "19:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 590,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 591,
+   "timeInPeriod": "00:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 592,
+   "timeInPeriod": "00:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 594,
+   "timeInPeriod": "00:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 595,
+   "timeInPeriod": "00:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 596,
+   "timeInPeriod": "00:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 1125,
+   "shots": {
+    "CHI": 14,
+    "FLA": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 597,
+   "timeInPeriod": "00:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 600,
+   "timeInPeriod": "00:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 601,
+   "timeInPeriod": "00:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 604,
+   "timeInPeriod": "01:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 1082,
+   "shots": {
+    "CHI": 14,
+    "FLA": 27
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 611,
+   "timeInPeriod": "01:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 613,
+   "timeInPeriod": "01:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 614,
+   "timeInPeriod": "01:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 1041,
+   "shots": {
+    "CHI": 14,
+    "FLA": 27
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 617,
+   "timeInPeriod": "02:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 618,
+   "timeInPeriod": "02:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 625,
+   "timeInPeriod": "02:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 1009,
+   "shots": {
+    "CHI": 14,
+    "FLA": 28
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 626,
+   "timeInPeriod": "02:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 628,
+   "timeInPeriod": "02:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 631,
+   "timeInPeriod": "02:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 636,
+   "timeInPeriod": "03:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 943,
+   "shots": {
+    "CHI": 15,
+    "FLA": 28
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 639,
+   "timeInPeriod": "03:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 641,
+   "timeInPeriod": "03:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 644,
+   "timeInPeriod": "03:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 647,
+   "timeInPeriod": "03:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 650,
+   "timeInPeriod": "04:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 911,
+   "shots": {
+    "CHI": 15,
+    "FLA": 28
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 657,
+   "timeInPeriod": "04:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 658,
+   "timeInPeriod": "04:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 659,
+   "timeInPeriod": "04:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 875,
+   "shots": {
+    "CHI": 15,
+    "FLA": 28
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 660,
+   "timeInPeriod": "04:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 670,
+   "timeInPeriod": "05:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 844,
+   "shots": {
+    "CHI": 15,
+    "FLA": 29
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 671,
+   "timeInPeriod": "05:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 672,
+   "timeInPeriod": "05:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 673,
+   "timeInPeriod": "05:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 674,
+   "timeInPeriod": "05:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 675,
+   "timeInPeriod": "05:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "delayed-penalty",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 676,
+   "timeInPeriod": "05:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 677,
+   "timeInPeriod": "05:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 803,
+   "shots": {
+    "CHI": 15,
+    "FLA": 29
+   },
+   "situationCode": "1541",
+   "timeRemaining": "13:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 681,
+   "timeInPeriod": "05:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 682,
+   "timeInPeriod": "06:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 683,
+   "timeInPeriod": "06:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 684,
+   "timeInPeriod": "06:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 686,
+   "timeInPeriod": "06:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 687,
+   "timeInPeriod": "06:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 756,
+   "shots": {
+    "CHI": 15,
+    "FLA": 29
+   },
+   "situationCode": "1541",
+   "timeRemaining": "12:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 688,
+   "timeInPeriod": "06:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 689,
+   "timeInPeriod": "06:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 690,
+   "timeInPeriod": "06:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 693,
+   "timeInPeriod": "07:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 712,
+   "shots": {
+    "CHI": 16,
+    "FLA": 29
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 694,
+   "timeInPeriod": "07:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 697,
+   "timeInPeriod": "07:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 698,
+   "timeInPeriod": "07:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 699,
+   "timeInPeriod": "07:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 700,
+   "timeInPeriod": "07:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 703,
+   "timeInPeriod": "07:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 706,
+   "timeInPeriod": "08:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 674,
+   "shots": {
+    "CHI": 16,
+    "FLA": 29
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 707,
+   "timeInPeriod": "08:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "seq": 716,
+   "timeInPeriod": "08:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "secondsRemaining": 620,
+   "shots": {
+    "CHI": 16,
+    "FLA": 30
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 717,
+   "timeInPeriod": "08:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 721,
+   "timeInPeriod": "09:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 722,
+   "timeInPeriod": "09:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "scoringTeam": "FLA",
+   "seq": 729,
+   "timeInPeriod": "09:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "secondsRemaining": 562,
+   "shots": {
+    "CHI": 16,
+    "FLA": 31
+   },
+   "situationCode": "1551",
+   "timeRemaining": "09:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 732,
+   "timeInPeriod": "09:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 733,
+   "timeInPeriod": "09:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 736,
+   "timeInPeriod": "09:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 742,
+   "timeInPeriod": "10:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "secondsRemaining": 526,
+   "shots": {
+    "CHI": 16,
+    "FLA": 33
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 743,
+   "timeInPeriod": "10:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 746,
+   "timeInPeriod": "10:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 747,
+   "timeInPeriod": "10:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 748,
+   "timeInPeriod": "10:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 749,
+   "timeInPeriod": "10:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 750,
+   "timeInPeriod": "10:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 751,
+   "timeInPeriod": "10:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 753,
+   "timeInPeriod": "11:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "secondsRemaining": 475,
+   "shots": {
+    "CHI": 16,
+    "FLA": 34
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 757,
+   "timeInPeriod": "11:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 758,
+   "timeInPeriod": "11:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 761,
+   "timeInPeriod": "11:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 764,
+   "timeInPeriod": "12:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "secondsRemaining": 427,
+   "shots": {
+    "CHI": 16,
+    "FLA": 34
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 765,
+   "timeInPeriod": "12:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 768,
+   "timeInPeriod": "12:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 769,
+   "timeInPeriod": "12:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 770,
+   "timeInPeriod": "12:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 772,
+   "timeInPeriod": "12:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 774,
+   "timeInPeriod": "12:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 775,
+   "timeInPeriod": "12:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 776,
+   "timeInPeriod": "12:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 777,
+   "timeInPeriod": "12:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 778,
+   "timeInPeriod": "12:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 779,
+   "timeInPeriod": "12:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "secondsRemaining": 385,
+   "shots": {
+    "CHI": 17,
+    "FLA": 35
+   },
+   "situationCode": "1551",
+   "timeRemaining": "06:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 780,
+   "timeInPeriod": "12:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 781,
+   "timeInPeriod": "12:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 784,
+   "timeInPeriod": "12:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 785,
+   "timeInPeriod": "12:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 786,
+   "timeInPeriod": "13:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 787,
+   "timeInPeriod": "13:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 790,
+   "timeInPeriod": "13:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 792,
+   "timeInPeriod": "13:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "secondsRemaining": 337,
+   "shots": {
+    "CHI": 18,
+    "FLA": 35
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 794,
+   "timeInPeriod": "13:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 802,
+   "timeInPeriod": "14:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2025020001,
+   "gameState": "CRIT",
+   "prevState": "LIVE",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "CRIT",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "secondsRemaining": 279,
+   "shots": {
+    "CHI": 19,
+    "FLA": 35
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 803,
+   "timeInPeriod": "14:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 804,
+   "timeInPeriod": "14:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 805,
+   "timeInPeriod": "14:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 808,
+   "timeInPeriod": "14:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 809,
+   "timeInPeriod": "14:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 810,
+   "timeInPeriod": "15:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "CRIT",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "secondsRemaining": 246,
+   "shots": {
+    "CHI": 19,
+    "FLA": 36
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 811,
+   "timeInPeriod": "15:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 814,
+   "timeInPeriod": "15:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 815,
+   "timeInPeriod": "15:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 816,
+   "timeInPeriod": "15:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 819,
+   "timeInPeriod": "15:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 820,
+   "timeInPeriod": "15:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 821,
+   "timeInPeriod": "15:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "CRIT",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "secondsRemaining": 209,
+   "shots": {
+    "CHI": 19,
+    "FLA": 36
+   },
+   "situationCode": "1551",
+   "timeRemaining": "03:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 822,
+   "timeInPeriod": "15:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 825,
+   "timeInPeriod": "15:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 826,
+   "timeInPeriod": "16:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 829,
+   "timeInPeriod": "16:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "CRIT",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "secondsRemaining": 162,
+   "shots": {
+    "CHI": 19,
+    "FLA": 36
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 836,
+   "timeInPeriod": "16:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 839,
+   "timeInPeriod": "17:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "CRIT",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "secondsRemaining": 113,
+   "shots": {
+    "CHI": 19,
+    "FLA": 37
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 847,
+   "timeInPeriod": "17:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 852,
+   "timeInPeriod": "18:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "CRIT",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "secondsRemaining": 81,
+   "shots": {
+    "CHI": 19,
+    "FLA": 37
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 857,
+   "timeInPeriod": "18:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "CRIT",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "secondsRemaining": 50,
+   "shots": {
+    "CHI": 19,
+    "FLA": 37
+   },
+   "situationCode": "0651",
+   "timeRemaining": "00:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 859,
+   "timeInPeriod": "18:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 860,
+   "timeInPeriod": "18:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 863,
+   "timeInPeriod": "18:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 865,
+   "timeInPeriod": "19:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "CRIT",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": false,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "secondsRemaining": 0,
+   "shots": {
+    "CHI": 19,
+    "FLA": 37
+   },
+   "situationCode": "0651",
+   "timeRemaining": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 866,
+   "timeInPeriod": "19:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "CHI",
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 867,
+   "timeInPeriod": "19:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 868,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2025020001,
+   "gameState": "FINAL",
+   "prevState": "CRIT",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "period": 3,
+   "playType": "game-end",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   },
+   "seq": 872,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.final",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "homeTeam": "FLA",
+   "s3Prefix": "raw/20252026/2025-10-07/2025020001/",
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 3
+   }
+  }
+ }
+]
