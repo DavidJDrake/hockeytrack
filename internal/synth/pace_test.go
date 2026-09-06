@@ -2,6 +2,7 @@ package synth
 
 import (
 	"context"
+	"math"
 	"testing"
 	"time"
 )
@@ -62,5 +63,32 @@ func TestPacerCapsLongGaps(t *testing.T) {
 	}
 	if maxSleep > 2*time.Second {
 		t.Errorf("max sleep = %v, want the 2s cap", maxSleep)
+	}
+}
+
+// A NaN speed would make every computed wait NaN, which silently degrades to
+// an unpaced run. The guard is written !(speed > 0) precisely so NaN is
+// caught; a mutation pass showed nothing tested that.
+func TestPacerRejectsNaNAndNonPositiveSpeeds(t *testing.T) {
+	s, err := Snapshots(fixture(t, "1917020001"), Options{})
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, speed := range []float64{math.NaN(), 0, -1} {
+		var slept []time.Duration
+		p := Pacer(speed, time.Minute, func(_ context.Context, d time.Duration) error {
+			slept = append(slept, d)
+			return nil
+		})
+		for i := range s {
+			if err := p(context.Background(), s[i], i); err != nil {
+				t.Fatal(err)
+			}
+		}
+		for _, d := range slept {
+			if d < 0 || d != d { // d != d is true only for NaN
+				t.Fatalf("speed %v produced an invalid wait %v; the guard let it through", speed, d)
+			}
+		}
 	}
 }

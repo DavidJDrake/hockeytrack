@@ -2,6 +2,7 @@ package synth
 
 import (
 	"encoding/json"
+	"fmt"
 	"os"
 	"testing"
 	"time"
@@ -472,5 +473,62 @@ func TestSnapshotsRejectsBadInput(t *testing.T) {
 				t.Error("want an error, got nil")
 			}
 		})
+	}
+}
+
+// TestPeriodEndClosesASnapshotEvenWhenTheIntervalWouldNot covers the
+// `boundary` term in cutPoints, and does it with a fixture built for the
+// purpose.
+//
+// A final-review mutation pass found the term could be neutered with every
+// checked-in fixture producing byte-identical output, because in real games
+// the interval rule happens to fire at the period-end play anyway. That is a
+// coincidence of those games' timing, not a property. Here the last action of
+// each period is placed ten seconds before the period-end, well inside a
+// thirty-second interval, so the interval rule cannot fire there and only the
+// boundary term can close the snapshot. Without it the intermission vanishes.
+func TestPeriodEndClosesASnapshotEvenWhenTheIntervalWouldNot(t *testing.T) {
+	play := func(sort int64, period int, inPeriod, remaining, kind string) string {
+		return fmt.Sprintf(`{"eventId":%d,"sortOrder":%d,"typeDescKey":%q,"timeInPeriod":%q,`+
+			`"timeRemaining":%q,"situationCode":"1551",`+
+			`"periodDescriptor":{"number":%d,"periodType":"REG"},`+
+			`"details":{"eventOwnerTeamId":1}}`, sort, sort, kind, inPeriod, remaining, period)
+	}
+	doc := `{"id":2024020001,"season":20242025,"gameDate":"2025-01-01","gameState":"OFF",` +
+		`"homeTeam":{"id":1,"abbrev":"AAA","score":0,"sog":0},` +
+		`"awayTeam":{"id":2,"abbrev":"BBB","score":0,"sog":0},` +
+		`"periodDescriptor":{"number":2,"periodType":"REG"},` +
+		`"clock":{"timeRemaining":"00:00","secondsRemaining":0,"running":false,"inIntermission":false},` +
+		`"rosterSpots":[{"teamId":1,"playerId":11,"sweaterNumber":9,"positionCode":"C"}],` +
+		`"plays":[` +
+		play(1, 1, "00:00", "20:00", "period-start") + "," +
+		play(2, 1, "10:00", "10:00", "shot-on-goal") + "," +
+		// Ten seconds before the horn: inside a 30s interval, so `due` cannot
+		// fire on the period-end that follows.
+		play(3, 1, "19:50", "00:10", "shot-on-goal") + "," +
+		play(4, 1, "20:00", "00:00", "period-end") + "," +
+		play(5, 2, "00:00", "20:00", "period-start") + "," +
+		play(6, 2, "19:50", "00:10", "shot-on-goal") + "," +
+		play(7, 2, "20:00", "00:00", "period-end") + "," +
+		play(8, 2, "20:00", "00:00", "game-end") +
+		`]}`
+
+	snaps, err := Snapshots([]byte(doc), Options{Interval: 30 * time.Second})
+	if err != nil {
+		t.Fatal(err)
+	}
+	intermissions := 0
+	for _, s := range snaps {
+		if s.PBP.Clock.InIntermission {
+			intermissions++
+		}
+	}
+	// Only the first period's end is an intermission: the second is followed
+	// by game-end, not by another period-start.
+	if intermissions != 1 {
+		t.Errorf("intermission snapshots = %d, want 1; the period-end play never closed a snapshot, so consumers never see the break", intermissions)
+	}
+	if last := snaps[len(snaps)-1].PBP; last.GameState != "FINAL" {
+		t.Errorf("last state = %q, want FINAL", last.GameState)
 	}
 }

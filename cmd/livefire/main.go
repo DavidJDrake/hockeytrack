@@ -63,6 +63,24 @@ const (
 	maxGameID = 9_999_999_999
 )
 
+// validGameID enforces the precondition the id-collision argument depends on.
+// Adding syntheticOffset to a ten-digit id always lands above maxGameID, so a
+// synthetic id can never be read back as a real one — but only if the input
+// really was a ten-digit id. Without this check that guarantee would rest on
+// the operator typing sensibly, which is not a guarantee at all.
+func validGameID(id int64) bool { return id >= minGameID && id <= maxGameID }
+
+// sourceFor picks the EventBridge source. The default must stay
+// SourceSynthetic: every notification rule pins the real source, so a
+// synthetic run reaches no subscriber, and that is the whole safety story.
+// Only an explicit -as-poller opts into the real source.
+func sourceFor(asPoller bool) string {
+	if asPoller {
+		return events.Source
+	}
+	return events.SourceSynthetic
+}
+
 func main() {
 	game := flag.Int64("game", 0, "archived game id to replay (required)")
 	bus := flag.String("bus", "hockeytrack", "EventBridge bus name")
@@ -79,7 +97,7 @@ func main() {
 		fmt.Fprintln(os.Stderr, "usage: livefire -game <id> [-speed 60] [-dry-run]")
 		os.Exit(2)
 	}
-	if *game < minGameID || *game > maxGameID {
+	if !validGameID(*game) {
 		fmt.Fprintf(os.Stderr, "livefire: -game %d is not a real NHL game id; a game id is ten digits (%d-%d)\n", *game, minGameID, maxGameID)
 		os.Exit(2)
 	}
@@ -87,9 +105,8 @@ func main() {
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
 	defer stop()
 
-	source := events.SourceSynthetic
+	source := sourceFor(*asPoller)
 	if *asPoller {
-		source = events.Source
 		fmt.Fprintf(os.Stderr,
 			"WARNING: publishing as %q. Notification rules WILL match these events\nand subscribers may receive email or SMS. Ctrl-C within 10 seconds to abort.\n",
 			source)
