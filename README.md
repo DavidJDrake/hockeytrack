@@ -257,6 +257,24 @@ that the notification path itself can be tested. It reaches live subscribers.
 The tool prints a warning and waits ten seconds before starting so a mistake
 can be interrupted.
 
+That safety has a corollary worth knowing before you first run it: **nothing is
+subscribed to the synthetic source yet, so a default run reaches nobody.** The
+same fact that makes it harmless — every rule on the bus matches
+`hockeytrack.poller` — also means synthetic events land on the bus and go
+nowhere. A consumer needs its own EventBridge rule matching
+`source: ["hockeytrack.synthetic"]`, or matching both sources so one rule
+serves drills and real games alike. That rule belongs to the consumer, which is
+why it is not in this repo's Terraform. If you run a drill and nothing arrives,
+add the rule; do not reach for `-as-poller`, which reaches real subscribers.
+
+Two smaller things a consumer author will notice. A play event's score is
+seeded from the snapshot it was published in, so at a coarse `INTERVAL` a run
+of plays can carry a score that a later goal in the same snapshot explains;
+this is the poller's own behaviour, visible in real games whenever one poll
+spans a goal, and it disappears at a narrow interval. And the `s3Prefix` on a
+final event is built from the synthetic id, so under live-fire it names an
+archive prefix that does not exist — nothing is written there, by design.
+
 ## Caveats
 
 - The NHL API (`api-web.nhle.com`) is **unofficial and undocumented**. It's free, keyless, and widely used by community projects, but the NHL could change or restrict it at any time. The client isolates all API knowledge in `internal/nhl`, and the raw archive means a format change never costs you already-captured data.

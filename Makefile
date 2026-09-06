@@ -4,14 +4,15 @@ REPO        := hockeytrack
 TAG         ?= $(shell git rev-parse --short HEAD)
 IMAGE       := $(ACCOUNT_ID).dkr.ecr.$(REGION).amazonaws.com/$(REPO):$(TAG)
 
-# Terraform ships as a snap here and refuses to run without a *writable*
-# XDG_RUNTIME_DIR that only the owner can read. A login shell usually points it
-# at /run/user/$(shell id -u), which systemd-logind may never have created and
-# which this user cannot create either, so `?=` is not enough — an already-set
-# but unusable value has to be overridden, not deferred to. Exported for every
-# recipe, so `backfill`, `site`, `deploy`, `replay` and `livefire` all work.
-export XDG_RUNTIME_DIR := $(HOME)/.cache/xdg-runtime
-$(shell mkdir -p $(XDG_RUNTIME_DIR) && chmod 700 $(XDG_RUNTIME_DIR))
+# Terraform ships as a snap and refuses to run without a *writable*
+# XDG_RUNTIME_DIR. A login shell usually points it at /run/user/$(shell id -u),
+# which systemd-logind may never have created and which the user often cannot
+# create either, so `?=` is not enough: an already-set but unusable value has to
+# be replaced, not deferred to. Every recipe that reads a terraform output
+# needs this — `backfill`, `site`, `deploy`, `replay` and `livefire`.
+# Only replaces a value that does not work, so a healthy desktop or CI session
+# keeps its own and a fork of this repo is unaffected.
+export XDG_RUNTIME_DIR := $(shell test -w "$${XDG_RUNTIME_DIR}" 2>/dev/null && echo "$${XDG_RUNTIME_DIR}" || (mkdir -p "$(HOME)/.cache/xdg-runtime" && chmod 700 "$(HOME)/.cache/xdg-runtime" && echo "$(HOME)/.cache/xdg-runtime"))
 
 SEASONS     ?= all
 RPS         ?= 3
