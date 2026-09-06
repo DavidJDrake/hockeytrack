@@ -79,6 +79,47 @@ func TestFinalPBPCachesToDisk(t *testing.T) {
 	}
 }
 
+// TestFinalPBPRemovesTempFileWhenRenameFails is the real regression test for
+// the atomic cache write: it forces os.Rename to fail *after* writeCacheAtomic
+// has already created its temp file, which is the only path where the cleanup
+// matters. A directory sitting at the destination makes the rename fail with
+// EISDIR while everything before it succeeds.
+//
+// Its sibling below blocks os.MkdirAll instead, which short-circuits before
+// the write path is entered — useful, but it cannot catch a missing cleanup.
+func TestFinalPBPRemovesTempFileWhenRenameFails(t *testing.T) {
+	a := store.NewFakeArchive()
+	ctx := context.Background()
+	body := fixture(t, "1917020001")
+	if err := a.Put(ctx, store.FinalKey(19171918, "1917-12-19", 1917020001, "pbp"), body); err != nil {
+		t.Fatal(err)
+	}
+
+	dir := t.TempDir()
+	// Occupy the destination with a directory so the rename cannot succeed.
+	if err := os.Mkdir(filepath.Join(dir, "1917020001.json"), 0o755); err != nil {
+		t.Fatal(err)
+	}
+
+	got, err := FinalPBP(ctx, a, 1917020001, dir)
+	if err != nil {
+		t.Fatalf("a failed cache write must not fail the run: %v", err)
+	}
+	if len(got) != len(body) {
+		t.Errorf("got %d bytes, want %d", len(got), len(body))
+	}
+
+	entries, err := os.ReadDir(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, e := range entries {
+		if strings.HasPrefix(e.Name(), ".final-") {
+			t.Fatalf("temp file %q left behind after a failed rename", e.Name())
+		}
+	}
+}
+
 // TestFinalPBPLeavesNoTempFileOnFailure covers finding C from fix round 1: a
 // failed cache write (including a failed rename) must not leave a
 // .final-*.json temp file behind, and must never fail the run itself.
