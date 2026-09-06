@@ -1,0 +1,7829 @@
+[
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021294,
+   "gameState": "PRE",
+   "prevState": "FUT",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 0
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.roster",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "players": [
+    {
+     "number": 3,
+     "playerId": 8477495,
+     "position": "D",
+     "team": "FLA"
+    },
+    {
+     "number": 4,
+     "playerId": 8482641,
+     "position": "D",
+     "team": "FLA"
+    },
+    {
+     "number": 6,
+     "playerId": 8477034,
+     "position": "D",
+     "team": "FLA"
+    },
+    {
+     "number": 7,
+     "playerId": 8475179,
+     "position": "D",
+     "team": "FLA"
+    },
+    {
+     "number": 8,
+     "playerId": 8481477,
+     "position": "C",
+     "team": "FLA"
+    },
+    {
+     "number": 9,
+     "playerId": 8477935,
+     "position": "C",
+     "team": "FLA"
+    },
+    {
+     "number": 12,
+     "playerId": 8479981,
+     "position": "L",
+     "team": "FLA"
+    },
+    {
+     "number": 17,
+     "playerId": 8478542,
+     "position": "C",
+     "team": "FLA"
+    },
+    {
+     "number": 20,
+     "playerId": 8479344,
+     "position": "R",
+     "team": "FLA"
+    },
+    {
+     "number": 23,
+     "playerId": 8477409,
+     "position": "C",
+     "team": "FLA"
+    },
+    {
+     "number": 25,
+     "playerId": 8482713,
+     "position": "R",
+     "team": "FLA"
+    },
+    {
+     "number": 26,
+     "playerId": 8484304,
+     "position": "D",
+     "team": "FLA"
+    },
+    {
+     "number": 27,
+     "playerId": 8480185,
+     "position": "C",
+     "team": "FLA"
+    },
+    {
+     "number": 41,
+     "playerId": 8477970,
+     "position": "G",
+     "team": "FLA"
+    },
+    {
+     "number": 63,
+     "playerId": 8473419,
+     "position": "L",
+     "team": "FLA"
+    },
+    {
+     "number": 70,
+     "playerId": 8480003,
+     "position": "C",
+     "team": "FLA"
+    },
+    {
+     "number": 72,
+     "playerId": 8475683,
+     "position": "G",
+     "team": "FLA"
+    },
+    {
+     "number": 74,
+     "playerId": 8479335,
+     "position": "C",
+     "team": "FLA"
+    },
+    {
+     "number": 77,
+     "playerId": 8478859,
+     "position": "D",
+     "team": "FLA"
+    },
+    {
+     "number": 88,
+     "playerId": 8477220,
+     "position": "D",
+     "team": "FLA"
+    },
+    {
+     "number": 14,
+     "playerId": 8483447,
+     "position": "C",
+     "team": "TBL"
+    },
+    {
+     "number": 20,
+     "playerId": 8477426,
+     "position": "L",
+     "team": "TBL"
+    },
+    {
+     "number": 21,
+     "playerId": 8478010,
+     "position": "C",
+     "team": "TBL"
+    },
+    {
+     "number": 27,
+     "playerId": 8474151,
+     "position": "D",
+     "team": "TBL"
+    },
+    {
+     "number": 28,
+     "playerId": 8476878,
+     "position": "C",
+     "team": "TBL"
+    },
+    {
+     "number": 31,
+     "playerId": 8477992,
+     "position": "G",
+     "team": "TBL"
+    },
+    {
+     "number": 37,
+     "playerId": 8476826,
+     "position": "C",
+     "team": "TBL"
+    },
+    {
+     "number": 38,
+     "playerId": 8479542,
+     "position": "L",
+     "team": "TBL"
+    },
+    {
+     "number": 41,
+     "playerId": 8482070,
+     "position": "R",
+     "team": "TBL"
+    },
+    {
+     "number": 43,
+     "playerId": 8478178,
+     "position": "D",
+     "team": "TBL"
+    },
+    {
+     "number": 48,
+     "playerId": 8480246,
+     "position": "D",
+     "team": "TBL"
+    },
+    {
+     "number": 59,
+     "playerId": 8477404,
+     "position": "C",
+     "team": "TBL"
+    },
+    {
+     "number": 71,
+     "playerId": 8478519,
+     "position": "C",
+     "team": "TBL"
+    },
+    {
+     "number": 77,
+     "playerId": 8475167,
+     "position": "D",
+     "team": "TBL"
+    },
+    {
+     "number": 78,
+     "playerId": 8482929,
+     "position": "D",
+     "team": "TBL"
+    },
+    {
+     "number": 81,
+     "playerId": 8478416,
+     "position": "D",
+     "team": "TBL"
+    },
+    {
+     "number": 86,
+     "playerId": 8476453,
+     "position": "R",
+     "team": "TBL"
+    },
+    {
+     "number": 88,
+     "playerId": 8476883,
+     "position": "G",
+     "team": "TBL"
+    },
+    {
+     "number": 90,
+     "playerId": 8482655,
+     "position": "D",
+     "team": "TBL"
+    },
+    {
+     "number": 93,
+     "playerId": 8482201,
+     "position": "C",
+     "team": "TBL"
+    }
+   ],
+   "schemaVersion": 1
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "prevState": "PRE",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 0
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 0
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "FLA": 0,
+    "TBL": 0
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 0
+   },
+   "seq": 8,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 0
+   },
+   "secondsRemaining": 1161,
+   "shots": {
+    "FLA": 1,
+    "TBL": 0
+   },
+   "situationCode": "1551",
+   "timeRemaining": "19:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 0
+   },
+   "seq": 11,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 0
+   },
+   "seq": 12,
+   "timeInPeriod": "00:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 0
+   },
+   "seq": 13,
+   "timeInPeriod": "00:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 0
+   },
+   "seq": 15,
+   "timeInPeriod": "00:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "secondsRemaining": 1108,
+   "shots": {
+    "FLA": 2,
+    "TBL": 1
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 18,
+   "timeInPeriod": "00:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 25,
+   "timeInPeriod": "01:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 26,
+   "timeInPeriod": "01:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 27,
+   "timeInPeriod": "01:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 28,
+   "timeInPeriod": "01:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "scoringTeam": "TBL",
+   "seq": 29,
+   "timeInPeriod": "01:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "secondsRemaining": 1069,
+   "shots": {
+    "FLA": 2,
+    "TBL": 1
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 32,
+   "timeInPeriod": "01:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 33,
+   "timeInPeriod": "01:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 34,
+   "timeInPeriod": "01:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 43,
+   "timeInPeriod": "02:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "secondsRemaining": 1024,
+   "shots": {
+    "FLA": 2,
+    "TBL": 1
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 46,
+   "timeInPeriod": "02:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "secondsRemaining": 980,
+   "shots": {
+    "FLA": 2,
+    "TBL": 1
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 56,
+   "timeInPeriod": "03:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "secondsRemaining": 941,
+   "shots": {
+    "FLA": 3,
+    "TBL": 1
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 57,
+   "timeInPeriod": "03:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 60,
+   "timeInPeriod": "03:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 61,
+   "timeInPeriod": "03:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 62,
+   "timeInPeriod": "03:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 63,
+   "timeInPeriod": "03:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "delayed-penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 64,
+   "timeInPeriod": "04:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "secondsRemaining": 865,
+   "shots": {
+    "FLA": 3,
+    "TBL": 2
+   },
+   "situationCode": "1451",
+   "timeRemaining": "14:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 65,
+   "timeInPeriod": "04:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 69,
+   "timeInPeriod": "04:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 70,
+   "timeInPeriod": "04:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 71,
+   "timeInPeriod": "04:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 75,
+   "timeInPeriod": "05:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "secondsRemaining": 834,
+   "shots": {
+    "FLA": 3,
+    "TBL": 2
+   },
+   "situationCode": "1451",
+   "timeRemaining": "13:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 84,
+   "timeInPeriod": "05:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 85,
+   "timeInPeriod": "06:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "secondsRemaining": 797,
+   "shots": {
+    "FLA": 4,
+    "TBL": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "13:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 88,
+   "timeInPeriod": "06:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 90,
+   "timeInPeriod": "06:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 93,
+   "timeInPeriod": "06:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 96,
+   "timeInPeriod": "06:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 97,
+   "timeInPeriod": "06:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "secondsRemaining": 741,
+   "shots": {
+    "FLA": 4,
+    "TBL": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 98,
+   "timeInPeriod": "06:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 99,
+   "timeInPeriod": "07:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 108,
+   "timeInPeriod": "07:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "secondsRemaining": 711,
+   "shots": {
+    "FLA": 4,
+    "TBL": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 109,
+   "timeInPeriod": "07:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 117,
+   "timeInPeriod": "08:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "secondsRemaining": 645,
+   "shots": {
+    "FLA": 5,
+    "TBL": 3
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 119,
+   "timeInPeriod": "08:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 120,
+   "timeInPeriod": "08:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 121,
+   "timeInPeriod": "08:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 122,
+   "timeInPeriod": "08:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 123,
+   "timeInPeriod": "08:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 134,
+   "timeInPeriod": "09:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "secondsRemaining": 611,
+   "shots": {
+    "FLA": 5,
+    "TBL": 3
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 136,
+   "timeInPeriod": "09:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 137,
+   "timeInPeriod": "09:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 145,
+   "timeInPeriod": "09:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "secondsRemaining": 511,
+   "shots": {
+    "FLA": 5,
+    "TBL": 5
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 147,
+   "timeInPeriod": "09:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 148,
+   "timeInPeriod": "09:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 149,
+   "timeInPeriod": "09:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 150,
+   "timeInPeriod": "10:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 151,
+   "timeInPeriod": "10:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 152,
+   "timeInPeriod": "10:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 153,
+   "timeInPeriod": "10:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 154,
+   "timeInPeriod": "10:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 173,
+   "timeInPeriod": "11:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "secondsRemaining": 458,
+   "shots": {
+    "FLA": 5,
+    "TBL": 5
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 176,
+   "timeInPeriod": "11:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 177,
+   "timeInPeriod": "11:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 180,
+   "timeInPeriod": "11:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 181,
+   "timeInPeriod": "11:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 182,
+   "timeInPeriod": "12:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "secondsRemaining": 426,
+   "shots": {
+    "FLA": 5,
+    "TBL": 5
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 183,
+   "timeInPeriod": "12:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 184,
+   "timeInPeriod": "12:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 185,
+   "timeInPeriod": "12:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 189,
+   "timeInPeriod": "12:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "secondsRemaining": 391,
+   "shots": {
+    "FLA": 6,
+    "TBL": 5
+   },
+   "situationCode": "1541",
+   "timeRemaining": "06:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 192,
+   "timeInPeriod": "12:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 193,
+   "timeInPeriod": "12:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 194,
+   "timeInPeriod": "12:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 196,
+   "timeInPeriod": "12:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 198,
+   "timeInPeriod": "12:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 202,
+   "timeInPeriod": "12:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 203,
+   "timeInPeriod": "13:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "secondsRemaining": 342,
+   "shots": {
+    "FLA": 6,
+    "TBL": 6
+   },
+   "situationCode": "1541",
+   "timeRemaining": "05:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 204,
+   "timeInPeriod": "13:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 206,
+   "timeInPeriod": "13:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 208,
+   "timeInPeriod": "13:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 1
+   },
+   "seq": 211,
+   "timeInPeriod": "14:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 2
+   },
+   "secondsRemaining": 275,
+   "shots": {
+    "FLA": 6,
+    "TBL": 7
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 2
+   },
+   "scoringTeam": "TBL",
+   "seq": 225,
+   "timeInPeriod": "15:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 2
+   },
+   "secondsRemaining": 243,
+   "shots": {
+    "FLA": 6,
+    "TBL": 7
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 2
+   },
+   "seq": 229,
+   "timeInPeriod": "15:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 2
+   },
+   "seq": 230,
+   "timeInPeriod": "15:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 2
+   },
+   "secondsRemaining": 205,
+   "shots": {
+    "FLA": 6,
+    "TBL": 7
+   },
+   "situationCode": "1451",
+   "timeRemaining": "03:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "delayed-penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 2
+   },
+   "seq": 232,
+   "timeInPeriod": "16:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 2
+   },
+   "seq": 233,
+   "timeInPeriod": "16:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 2
+   },
+   "seq": 235,
+   "timeInPeriod": "16:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 2
+   },
+   "seq": 238,
+   "timeInPeriod": "16:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 2
+   },
+   "seq": 239,
+   "timeInPeriod": "16:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 2
+   },
+   "seq": 241,
+   "timeInPeriod": "16:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 2
+   },
+   "secondsRemaining": 173,
+   "shots": {
+    "FLA": 6,
+    "TBL": 7
+   },
+   "situationCode": "1451",
+   "timeRemaining": "02:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 2
+   },
+   "seq": 242,
+   "timeInPeriod": "16:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 2
+   },
+   "seq": 247,
+   "timeInPeriod": "17:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "delayed-penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 2
+   },
+   "seq": 248,
+   "timeInPeriod": "17:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "secondsRemaining": 111,
+   "shots": {
+    "FLA": 7,
+    "TBL": 8
+   },
+   "situationCode": "1541",
+   "timeRemaining": "01:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 249,
+   "timeInPeriod": "17:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 250,
+   "timeInPeriod": "17:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 251,
+   "timeInPeriod": "17:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 253,
+   "timeInPeriod": "17:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 258,
+   "timeInPeriod": "17:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "scoringTeam": "TBL",
+   "seq": 267,
+   "timeInPeriod": "18:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "secondsRemaining": 31,
+   "shots": {
+    "FLA": 7,
+    "TBL": 8
+   },
+   "situationCode": "1541",
+   "timeRemaining": "00:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 269,
+   "timeInPeriod": "18:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 277,
+   "timeInPeriod": "19:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": true,
+   "period": 1,
+   "periodType": "REG",
+   "running": false,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "secondsRemaining": 0,
+   "shots": {
+    "FLA": 7,
+    "TBL": 8
+   },
+   "situationCode": "1541",
+   "timeRemaining": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 285,
+   "timeInPeriod": "19:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 1,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 286,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "FLA": 7,
+    "TBL": 8
+   },
+   "situationCode": "1541",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 291,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "secondsRemaining": 1168,
+   "shots": {
+    "FLA": 7,
+    "TBL": 9
+   },
+   "situationCode": "1541",
+   "timeRemaining": "19:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 294,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 295,
+   "timeInPeriod": "00:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "secondsRemaining": 1132,
+   "shots": {
+    "FLA": 7,
+    "TBL": 9
+   },
+   "situationCode": "1541",
+   "timeRemaining": "18:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 296,
+   "timeInPeriod": "00:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 306,
+   "timeInPeriod": "01:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "secondsRemaining": 1099,
+   "shots": {
+    "FLA": 7,
+    "TBL": 9
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 308,
+   "timeInPeriod": "01:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 309,
+   "timeInPeriod": "01:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 310,
+   "timeInPeriod": "01:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 311,
+   "timeInPeriod": "01:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 312,
+   "timeInPeriod": "01:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 313,
+   "timeInPeriod": "01:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "secondsRemaining": 1066,
+   "shots": {
+    "FLA": 7,
+    "TBL": 9
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 314,
+   "timeInPeriod": "01:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 315,
+   "timeInPeriod": "01:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 316,
+   "timeInPeriod": "01:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 322,
+   "timeInPeriod": "02:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 326,
+   "timeInPeriod": "02:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "secondsRemaining": 1030,
+   "shots": {
+    "FLA": 9,
+    "TBL": 10
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 327,
+   "timeInPeriod": "02:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 329,
+   "timeInPeriod": "02:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 330,
+   "timeInPeriod": "02:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 331,
+   "timeInPeriod": "02:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 332,
+   "timeInPeriod": "02:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 333,
+   "timeInPeriod": "02:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 334,
+   "timeInPeriod": "02:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 335,
+   "timeInPeriod": "02:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "secondsRemaining": 997,
+   "shots": {
+    "FLA": 9,
+    "TBL": 10
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 343,
+   "timeInPeriod": "03:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "secondsRemaining": 965,
+   "shots": {
+    "FLA": 9,
+    "TBL": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 344,
+   "timeInPeriod": "03:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 345,
+   "timeInPeriod": "03:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 346,
+   "timeInPeriod": "03:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 347,
+   "timeInPeriod": "03:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "secondsRemaining": 929,
+   "shots": {
+    "FLA": 9,
+    "TBL": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 348,
+   "timeInPeriod": "03:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 351,
+   "timeInPeriod": "03:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 352,
+   "timeInPeriod": "04:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 353,
+   "timeInPeriod": "04:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 3
+   },
+   "seq": 354,
+   "timeInPeriod": "04:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 864,
+   "shots": {
+    "FLA": 10,
+    "TBL": 12
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 355,
+   "timeInPeriod": "04:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 4
+   },
+   "scoringTeam": "TBL",
+   "seq": 356,
+   "timeInPeriod": "04:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 4
+   },
+   "seq": 359,
+   "timeInPeriod": "04:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 0,
+    "TBL": 4
+   },
+   "seq": 360,
+   "timeInPeriod": "04:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "scoringTeam": "FLA",
+   "seq": 370,
+   "timeInPeriod": "05:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 829,
+   "shots": {
+    "FLA": 10,
+    "TBL": 12
+   },
+   "situationCode": "1551",
+   "timeRemaining": "13:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 373,
+   "timeInPeriod": "05:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 374,
+   "timeInPeriod": "05:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 375,
+   "timeInPeriod": "05:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 376,
+   "timeInPeriod": "05:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 377,
+   "timeInPeriod": "05:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "delayed-penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 378,
+   "timeInPeriod": "06:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 379,
+   "timeInPeriod": "06:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 799,
+   "shots": {
+    "FLA": 10,
+    "TBL": 12
+   },
+   "situationCode": "1451",
+   "timeRemaining": "13:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 381,
+   "timeInPeriod": "06:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 383,
+   "timeInPeriod": "06:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 386,
+   "timeInPeriod": "06:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 387,
+   "timeInPeriod": "06:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 753,
+   "shots": {
+    "FLA": 10,
+    "TBL": 12
+   },
+   "situationCode": "1451",
+   "timeRemaining": "12:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 393,
+   "timeInPeriod": "07:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 690,
+   "shots": {
+    "FLA": 10,
+    "TBL": 12
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 394,
+   "timeInPeriod": "07:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 395,
+   "timeInPeriod": "07:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 406,
+   "timeInPeriod": "08:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 632,
+   "shots": {
+    "FLA": 11,
+    "TBL": 12
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 407,
+   "timeInPeriod": "08:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 408,
+   "timeInPeriod": "08:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 409,
+   "timeInPeriod": "08:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 411,
+   "timeInPeriod": "08:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 418,
+   "timeInPeriod": "09:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 578,
+   "shots": {
+    "FLA": 12,
+    "TBL": 12
+   },
+   "situationCode": "1551",
+   "timeRemaining": "09:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 419,
+   "timeInPeriod": "09:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 420,
+   "timeInPeriod": "09:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 426,
+   "timeInPeriod": "10:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 536,
+   "shots": {
+    "FLA": 12,
+    "TBL": 13
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 428,
+   "timeInPeriod": "10:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 429,
+   "timeInPeriod": "10:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 433,
+   "timeInPeriod": "10:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 434,
+   "timeInPeriod": "11:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 505,
+   "shots": {
+    "FLA": 13,
+    "TBL": 13
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 435,
+   "timeInPeriod": "11:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 436,
+   "timeInPeriod": "11:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 439,
+   "timeInPeriod": "11:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 445,
+   "timeInPeriod": "11:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 475,
+   "shots": {
+    "FLA": 14,
+    "TBL": 13
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 448,
+   "timeInPeriod": "11:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 450,
+   "timeInPeriod": "12:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 444,
+   "shots": {
+    "FLA": 15,
+    "TBL": 13
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 453,
+   "timeInPeriod": "12:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 455,
+   "timeInPeriod": "12:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 457,
+   "timeInPeriod": "12:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 388,
+   "shots": {
+    "FLA": 15,
+    "TBL": 13
+   },
+   "situationCode": "1551",
+   "timeRemaining": "06:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 462,
+   "timeInPeriod": "12:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 467,
+   "timeInPeriod": "13:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 336,
+   "shots": {
+    "FLA": 15,
+    "TBL": 14
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 477,
+   "timeInPeriod": "14:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 297,
+   "shots": {
+    "FLA": 15,
+    "TBL": 14
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 478,
+   "timeInPeriod": "14:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 482,
+   "timeInPeriod": "14:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 488,
+   "timeInPeriod": "15:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 267,
+   "shots": {
+    "FLA": 15,
+    "TBL": 15
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 489,
+   "timeInPeriod": "15:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 490,
+   "timeInPeriod": "15:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 491,
+   "timeInPeriod": "15:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 492,
+   "timeInPeriod": "15:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 234,
+   "shots": {
+    "FLA": 15,
+    "TBL": 15
+   },
+   "situationCode": "1551",
+   "timeRemaining": "03:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 493,
+   "timeInPeriod": "15:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 501,
+   "timeInPeriod": "16:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 174,
+   "shots": {
+    "FLA": 15,
+    "TBL": 16
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 502,
+   "timeInPeriod": "16:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 505,
+   "timeInPeriod": "16:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 512,
+   "timeInPeriod": "17:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 139,
+   "shots": {
+    "FLA": 16,
+    "TBL": 16
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 513,
+   "timeInPeriod": "17:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 521,
+   "timeInPeriod": "17:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 523,
+   "timeInPeriod": "17:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 97,
+   "shots": {
+    "FLA": 17,
+    "TBL": 16
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 529,
+   "timeInPeriod": "18:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 55,
+   "shots": {
+    "FLA": 17,
+    "TBL": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 532,
+   "timeInPeriod": "18:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 538,
+   "timeInPeriod": "19:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 14,
+   "shots": {
+    "FLA": 17,
+    "TBL": 18
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 539,
+   "timeInPeriod": "19:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 543,
+   "timeInPeriod": "19:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 548,
+   "timeInPeriod": "19:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": true,
+   "period": 2,
+   "periodType": "REG",
+   "running": false,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 0,
+   "shots": {
+    "FLA": 17,
+    "TBL": 18
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 2,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 551,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "FLA": 17,
+    "TBL": 18
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 556,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 1166,
+   "shots": {
+    "FLA": 17,
+    "TBL": 18
+   },
+   "situationCode": "1551",
+   "timeRemaining": "19:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 559,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 560,
+   "timeInPeriod": "00:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 561,
+   "timeInPeriod": "00:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 562,
+   "timeInPeriod": "00:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 1124,
+   "shots": {
+    "FLA": 18,
+    "TBL": 19
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 563,
+   "timeInPeriod": "00:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 570,
+   "timeInPeriod": "00:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 571,
+   "timeInPeriod": "00:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 574,
+   "timeInPeriod": "00:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 575,
+   "timeInPeriod": "00:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 576,
+   "timeInPeriod": "01:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 1083,
+   "shots": {
+    "FLA": 18,
+    "TBL": 19
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 577,
+   "timeInPeriod": "01:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 586,
+   "timeInPeriod": "01:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 1050,
+   "shots": {
+    "FLA": 18,
+    "TBL": 19
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 596,
+   "timeInPeriod": "02:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 1011,
+   "shots": {
+    "FLA": 18,
+    "TBL": 21
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 597,
+   "timeInPeriod": "02:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 600,
+   "timeInPeriod": "02:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 601,
+   "timeInPeriod": "02:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 602,
+   "timeInPeriod": "02:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 603,
+   "timeInPeriod": "02:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 604,
+   "timeInPeriod": "02:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 605,
+   "timeInPeriod": "03:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 970,
+   "shots": {
+    "FLA": 18,
+    "TBL": 22
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 606,
+   "timeInPeriod": "03:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 609,
+   "timeInPeriod": "03:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 610,
+   "timeInPeriod": "03:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 611,
+   "timeInPeriod": "03:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 613,
+   "timeInPeriod": "03:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 912,
+   "shots": {
+    "FLA": 20,
+    "TBL": 22
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 614,
+   "timeInPeriod": "03:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 615,
+   "timeInPeriod": "03:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 626,
+   "timeInPeriod": "04:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 860,
+   "shots": {
+    "FLA": 20,
+    "TBL": 22
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "delayed-penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 636,
+   "timeInPeriod": "05:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 788,
+   "shots": {
+    "FLA": 20,
+    "TBL": 23
+   },
+   "situationCode": "1541",
+   "timeRemaining": "13:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 637,
+   "timeInPeriod": "05:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 641,
+   "timeInPeriod": "05:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 642,
+   "timeInPeriod": "06:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 650,
+   "timeInPeriod": "06:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 725,
+   "shots": {
+    "FLA": 21,
+    "TBL": 23
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 651,
+   "timeInPeriod": "06:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 652,
+   "timeInPeriod": "07:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 662,
+   "timeInPeriod": "07:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 695,
+   "shots": {
+    "FLA": 21,
+    "TBL": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 669,
+   "timeInPeriod": "08:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 662,
+   "shots": {
+    "FLA": 21,
+    "TBL": 24
+   },
+   "situationCode": "1441",
+   "timeRemaining": "11:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "delayed-penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 670,
+   "timeInPeriod": "08:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 671,
+   "timeInPeriod": "08:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 672,
+   "timeInPeriod": "08:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 673,
+   "timeInPeriod": "08:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 675,
+   "timeInPeriod": "08:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 677,
+   "timeInPeriod": "08:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 679,
+   "timeInPeriod": "08:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 681,
+   "timeInPeriod": "08:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 684,
+   "timeInPeriod": "08:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 685,
+   "timeInPeriod": "08:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 686,
+   "timeInPeriod": "08:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 628,
+   "shots": {
+    "FLA": 21,
+    "TBL": 24
+   },
+   "situationCode": "1441",
+   "timeRemaining": "10:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 693,
+   "timeInPeriod": "09:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 582,
+   "shots": {
+    "FLA": 21,
+    "TBL": 25
+   },
+   "situationCode": "1341",
+   "timeRemaining": "09:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 694,
+   "timeInPeriod": "09:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 695,
+   "timeInPeriod": "09:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "delayed-penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 696,
+   "timeInPeriod": "09:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 697,
+   "timeInPeriod": "09:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 701,
+   "timeInPeriod": "09:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 703,
+   "timeInPeriod": "10:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 551,
+   "shots": {
+    "FLA": 21,
+    "TBL": 25
+   },
+   "situationCode": "1351",
+   "timeRemaining": "09:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 704,
+   "timeInPeriod": "10:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 706,
+   "timeInPeriod": "10:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "seq": 709,
+   "timeInPeriod": "10:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "secondsRemaining": 518,
+   "shots": {
+    "FLA": 21,
+    "TBL": 26
+   },
+   "situationCode": "1351",
+   "timeRemaining": "08:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 712,
+   "timeInPeriod": "11:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "scoringTeam": "TBL",
+   "seq": 713,
+   "timeInPeriod": "11:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "secondsRemaining": 468,
+   "shots": {
+    "FLA": 21,
+    "TBL": 26
+   },
+   "situationCode": "1451",
+   "timeRemaining": "07:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 717,
+   "timeInPeriod": "11:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 718,
+   "timeInPeriod": "11:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 720,
+   "timeInPeriod": "12:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "secondsRemaining": 438,
+   "shots": {
+    "FLA": 21,
+    "TBL": 27
+   },
+   "situationCode": "1451",
+   "timeRemaining": "07:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 723,
+   "timeInPeriod": "12:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 726,
+   "timeInPeriod": "12:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "secondsRemaining": 401,
+   "shots": {
+    "FLA": 21,
+    "TBL": 28
+   },
+   "situationCode": "1451",
+   "timeRemaining": "06:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 733,
+   "timeInPeriod": "13:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 734,
+   "timeInPeriod": "13:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "secondsRemaining": 367,
+   "shots": {
+    "FLA": 23,
+    "TBL": 29
+   },
+   "situationCode": "1551",
+   "timeRemaining": "06:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 735,
+   "timeInPeriod": "13:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 738,
+   "timeInPeriod": "13:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 740,
+   "timeInPeriod": "13:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 742,
+   "timeInPeriod": "13:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 747,
+   "timeInPeriod": "13:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 748,
+   "timeInPeriod": "13:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "secondsRemaining": 283,
+   "shots": {
+    "FLA": 24,
+    "TBL": 29
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 749,
+   "timeInPeriod": "13:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 752,
+   "timeInPeriod": "14:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 769,
+   "timeInPeriod": "15:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "secondsRemaining": 238,
+   "shots": {
+    "FLA": 24,
+    "TBL": 29
+   },
+   "situationCode": "1551",
+   "timeRemaining": "03:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 777,
+   "timeInPeriod": "16:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "secondsRemaining": 176,
+   "shots": {
+    "FLA": 24,
+    "TBL": 29
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 778,
+   "timeInPeriod": "16:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 779,
+   "timeInPeriod": "16:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 781,
+   "timeInPeriod": "16:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 783,
+   "timeInPeriod": "16:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 785,
+   "timeInPeriod": "16:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 793,
+   "timeInPeriod": "17:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "secondsRemaining": 124,
+   "shots": {
+    "FLA": 24,
+    "TBL": 29
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 802,
+   "timeInPeriod": "17:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "secondsRemaining": 94,
+   "shots": {
+    "FLA": 24,
+    "TBL": 29
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 803,
+   "timeInPeriod": "18:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 804,
+   "timeInPeriod": "18:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 812,
+   "timeInPeriod": "18:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "secondsRemaining": 63,
+   "shots": {
+    "FLA": 24,
+    "TBL": 30
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 814,
+   "timeInPeriod": "18:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 815,
+   "timeInPeriod": "18:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 816,
+   "timeInPeriod": "18:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 817,
+   "timeInPeriod": "18:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 819,
+   "timeInPeriod": "18:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 820,
+   "timeInPeriod": "18:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "secondsRemaining": 16,
+   "shots": {
+    "FLA": 24,
+    "TBL": 31
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 821,
+   "timeInPeriod": "19:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TBL",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 822,
+   "timeInPeriod": "19:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 823,
+   "timeInPeriod": "19:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "FLA",
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 834,
+   "timeInPeriod": "19:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": false,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "secondsRemaining": 0,
+   "shots": {
+    "FLA": 24,
+    "TBL": 31
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 835,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021294,
+   "gameState": "FINAL",
+   "prevState": "LIVE",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "period": 3,
+   "playType": "game-end",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   },
+   "seq": 839,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.final",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "homeTeam": "TBL",
+   "s3Prefix": "raw/20242025/2025-04-15/2024021294/",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   }
+  }
+ }
+]

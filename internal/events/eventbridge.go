@@ -13,10 +13,18 @@ import (
 type EventBridgePublisher struct {
 	client  *eventbridge.Client
 	busName string
+	source  string
 }
 
 func NewEventBridgePublisher(client *eventbridge.Client, busName string) *EventBridgePublisher {
-	return &EventBridgePublisher{client: client, busName: busName}
+	return NewEventBridgePublisherWithSource(client, busName, Source)
+}
+
+// NewEventBridgePublisherWithSource publishes under an explicit source.
+// Live-fire replays use SourceSynthetic so notification rules, which all
+// pin the real source, cannot match them.
+func NewEventBridgePublisherWithSource(client *eventbridge.Client, busName, source string) *EventBridgePublisher {
+	return &EventBridgePublisher{client: client, busName: busName, source: source}
 }
 
 func (p *EventBridgePublisher) Publish(ctx context.Context, detailType string, detail any) error {
@@ -27,7 +35,7 @@ func (p *EventBridgePublisher) Publish(ctx context.Context, detailType string, d
 	out, err := p.client.PutEvents(ctx, &eventbridge.PutEventsInput{
 		Entries: []types.PutEventsRequestEntry{{
 			EventBusName: aws.String(p.busName),
-			Source:       aws.String(Source),
+			Source:       aws.String(p.source),
 			DetailType:   aws.String(detailType),
 			Detail:       aws.String(string(b)),
 		}},

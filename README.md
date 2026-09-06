@@ -91,7 +91,7 @@ Each rule uses an input transformer to turn the event into a one-line message (e
 - **Historical backfill** — the `internal/nhl` client fetches any past game; a batch job reusing it can fill S3 with prior seasons.
 - **Ad-hoc queries over the archive** — the S3 layout (`raw/{season}/{date}/{gameId}/{feed}/…`) partitions cleanly for Athena.
 - **Fargate migration** — see above; the container is already ECS-ready.
-- **A physical scoreboard** — the [hockeytrack-scoreboard](https://github.com/DavidJDrake/hockeytrack-scoreboard) project consumes `nhl.game.clock`, `nhl.game.play` and `nhl.game.roster` to drive an LED bar display over MQTT.
+- **A physical scoreboard** — the [hockeytrack-scoreboard](https://github.com/DavidJDrake/hockeytrack-scoreboard) project consumes `nhl.game.clock`, `nhl.game.play` and `nhl.game.roster` to drive an LED bar display over MQTT. It's developed against `make livefire`, since the bus is otherwise silent for six months of the year.
 
 ## Deploying
 
@@ -141,13 +141,14 @@ Cost is dominated by poller runtime: roughly **$0.05/game**, on the order of **$
 
 - `make test` / `go test ./...` — unit tests use real captured NHL API responses as fixtures (never hand-written), with golden tests on the play-by-play diff logic: given snapshot N and N+1, exactly these events are emitted. `make test` first runs `make vuln` (govulncheck), so a known reachable vulnerability fails the build.
 - **Supply chain** — every image pushed to ECR is scanned on push; the `Dockerfile` pins both base images by digest (bump instructions are in its header comment). ECR keeps only the 20 most recently pushed tagged images (`ecr_keep_images` in `terraform/variables.tf`) and drops untagged ones after a day, so superseded release tags stop accumulating. Tags are immutable and every deploy pushes a fresh git-SHA tag, so the image the Lambdas run is always among the newest and never ages out.
-- **Replay harness** — run a full recorded game through the real poller path against in-memory fakes, printing every event it would publish:
+- **Replay harness** — run a full game through the real poller path against in-memory fakes, printing every event it would publish. The source is either a directory of recorded live snapshots, or any finished game in the archive, reconstructed from its final feed:
 
   ```bash
-  go run ./cmd/replay -game path/to/snapshots/
+  go run ./cmd/replay -dir path/to/snapshots/
+  make replay GAME=2024021299
   ```
 
-  This is the primary end-to-end check when no live games are on.
+  This is the primary end-to-end check when no live games are on; see "Synthesizing a live game" below.
 - **Analyzing the archive** — `cmd/analyze` flattens archived games' `final/pbp.json` and `final/shifts.json` into three CSV tables for pandas, DuckDB, a spreadsheet, or whatever you like: `games.csv` (one row per game: ids, date, season, teams, final score, period count, shots per team), `plays.csv` (one row per play: sequence, period and clock, type, team, coordinates and every player id the play names), and `shifts.csv` (one row per shift from the shift chart, with the duration in seconds). It reads straight from the raw bucket or from a local mirror of it:
 
   ```bash
@@ -183,7 +184,8 @@ The whole history is roughly 70,000 games, 235,000 requests, and 20 GB, which is
 ```
 cmd/ingestor/     entrypoint; MODE selects schedule-sync | poller | sweeper
 cmd/backfill/     historical season backfill (local CLI, S3 only)
-cmd/replay/       offline replay harness
+cmd/replay/       offline replay harness (recorded snapshots or a synthesized game)
+cmd/livefire/     replay a synthesized game onto the real event bus
 cmd/analyze/      archive → CSV flattener (local CLI, reads S3 or a local mirror)
 site/             the website (static pages; data/*.json published by schedule-sync)
 internal/nhl/     NHL API client + captured fixtures
@@ -197,6 +199,81 @@ internal/events/  versioned event types + EventBridge publisher
 terraform/        the whole stack: ECR, Lambdas, DynamoDB, S3, bus, scheduler, IAM, DLQs, alarms
 docs/superpowers/ design spec and implementation plan
 ```
+
+### Synthesizing a live game
+
+The NHL season is six months long and the pipeline is silent for the other
+six. `cmd/replay` and `cmd/livefire` close that gap by reconstructing a live
+game from a finished one: given any of the games in the archive, they rebuild
+the sequence of play-by-play documents the poller *would* have seen and run
+the real poll loop over them.
+
+Offline, against in-memory fakes, printing every event to stdout:
+
+```
+make replay GAME=2024021299
+```
+
+Any finished game in the archive works. The eight already checked in under
+`internal/synth/testdata/` replay with no AWS access at all, and they were
+chosen to cover the awkward cases — `2024021299` is a shootout, `2024021298`
+goes to overtime, `2024021294` has a match penalty, `1917020001` predates
+period markers entirely. To find others, list a date in the archive; the
+directory names are the game ids:
+
+```
+aws s3 ls s3://$(cd terraform && terraform output -raw raw_bucket)/raw/20242025/2025-04-16/
+```
+
+A game id encodes its own season and type: `2024021299` is the 2024-25 season,
+type `02` for regular season, game 1299.
+
+A snapshot is a reconstruction, not a recording. The plays, clock, score,
+shots, situation codes and rosters are exactly what the game produced, but
+the cadence is chosen rather than observed, and the JSON field order differs
+from the original. Pass `INTERVAL=0` for one snapshot per play, which is
+denser than any real poll and the strictest test of the diff logic.
+
+`make golden` runs the regression suite: eight curated games — regulation, a
+shutout with an empty-net goal, overtime, a shootout, a match penalty,
+misconducts, a penalty shot, and a 1917 game with no period markers at all —
+whose complete event streams are recorded in
+`internal/synth/testdata/golden/`. It runs from
+checked-in fixtures and needs no AWS credentials. When you change the event
+contract on purpose, `make golden-update` rewrites the recordings; review
+that diff carefully, because it is the contract other people build against.
+
+To drive real consumers, `make livefire GAME=2024021299 SPEED=60` publishes
+to the real EventBridge bus. This is safe by default and deliberately so.
+Events carry the source `hockeytrack.synthetic`, and every notification rule
+pins `hockeytrack.poller`, so nothing you do here can send anyone a text
+message. The game id is the real id plus 9,000,000,000, which is eleven
+digits and therefore cannot collide with a real NHL game. The game store and
+the archive are in-memory fakes, so no DynamoDB row and no S3 object is
+written and there is nothing to clean up.
+
+The one exception is `-as-poller`, which publishes under the real source so
+that the notification path itself can be tested. It reaches live subscribers.
+The tool prints a warning and waits ten seconds before starting so a mistake
+can be interrupted.
+
+That safety has a corollary worth knowing before you first run it: **nothing is
+subscribed to the synthetic source yet, so a default run reaches nobody.** The
+same fact that makes it harmless — every rule on the bus matches
+`hockeytrack.poller` — also means synthetic events land on the bus and go
+nowhere. A consumer needs its own EventBridge rule matching
+`source: ["hockeytrack.synthetic"]`, or matching both sources so one rule
+serves drills and real games alike. That rule belongs to the consumer, which is
+why it is not in this repo's Terraform. If you run a drill and nothing arrives,
+add the rule; do not reach for `-as-poller`, which reaches real subscribers.
+
+Two smaller things a consumer author will notice. A play event's score is
+seeded from the snapshot it was published in, so at a coarse `INTERVAL` a run
+of plays can carry a score that a later goal in the same snapshot explains;
+this is the poller's own behaviour, visible in real games whenever one poll
+spans a goal, and it disappears at a narrow interval. And the `s3Prefix` on a
+final event is built from the synthetic id, so under live-fire it names an
+archive prefix that does not exist — nothing is written there, by design.
 
 ## Caveats
 

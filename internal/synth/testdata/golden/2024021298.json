@@ -1,0 +1,8576 @@
+[
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021298,
+   "gameState": "PRE",
+   "prevState": "FUT",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.roster",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "players": [
+    {
+     "number": 1,
+     "playerId": 8480843,
+     "position": "G",
+     "team": "ANA"
+    },
+    {
+     "number": 2,
+     "playerId": 8481605,
+     "position": "D",
+     "team": "ANA"
+    },
+    {
+     "number": 7,
+     "playerId": 8475462,
+     "position": "D",
+     "team": "ANA"
+    },
+    {
+     "number": 11,
+     "playerId": 8481533,
+     "position": "C",
+     "team": "ANA"
+    },
+    {
+     "number": 16,
+     "playerId": 8476458,
+     "position": "C",
+     "team": "ANA"
+    },
+    {
+     "number": 17,
+     "playerId": 8473986,
+     "position": "L",
+     "team": "ANA"
+    },
+    {
+     "number": 19,
+     "playerId": 8478873,
+     "position": "R",
+     "team": "ANA"
+    },
+    {
+     "number": 21,
+     "playerId": 8480806,
+     "position": "C",
+     "team": "ANA"
+    },
+    {
+     "number": 23,
+     "playerId": 8482745,
+     "position": "C",
+     "team": "ANA"
+    },
+    {
+     "number": 33,
+     "playerId": 8478024,
+     "position": "G",
+     "team": "ANA"
+    },
+    {
+     "number": 38,
+     "playerId": 8478424,
+     "position": "C",
+     "team": "ANA"
+    },
+    {
+     "number": 42,
+     "playerId": 8485512,
+     "position": "C",
+     "team": "ANA"
+    },
+    {
+     "number": 43,
+     "playerId": 8481563,
+     "position": "D",
+     "team": "ANA"
+    },
+    {
+     "number": 51,
+     "playerId": 8482803,
+     "position": "D",
+     "team": "ANA"
+    },
+    {
+     "number": 61,
+     "playerId": 8483445,
+     "position": "L",
+     "team": "ANA"
+    },
+    {
+     "number": 64,
+     "playerId": 8482118,
+     "position": "R",
+     "team": "ANA"
+    },
+    {
+     "number": 65,
+     "playerId": 8476885,
+     "position": "D",
+     "team": "ANA"
+    },
+    {
+     "number": 74,
+     "playerId": 8482178,
+     "position": "D",
+     "team": "ANA"
+    },
+    {
+     "number": 77,
+     "playerId": 8478366,
+     "position": "R",
+     "team": "ANA"
+    },
+    {
+     "number": 91,
+     "playerId": 8484153,
+     "position": "C",
+     "team": "ANA"
+    },
+    {
+     "number": 4,
+     "playerId": 8475750,
+     "position": "D",
+     "team": "MIN"
+    },
+    {
+     "number": 5,
+     "playerId": 8478136,
+     "position": "D",
+     "team": "MIN"
+    },
+    {
+     "number": 7,
+     "playerId": 8482122,
+     "position": "D",
+     "team": "MIN"
+    },
+    {
+     "number": 12,
+     "playerId": 8481557,
+     "position": "L",
+     "team": "MIN"
+    },
+    {
+     "number": 13,
+     "playerId": 8478508,
+     "position": "C",
+     "team": "MIN"
+    },
+    {
+     "number": 14,
+     "playerId": 8478493,
+     "position": "C",
+     "team": "MIN"
+    },
+    {
+     "number": 15,
+     "playerId": 8479638,
+     "position": "R",
+     "team": "MIN"
+    },
+    {
+     "number": 17,
+     "playerId": 8475220,
+     "position": "L",
+     "team": "MIN"
+    },
+    {
+     "number": 23,
+     "playerId": 8482079,
+     "position": "C",
+     "team": "MIN"
+    },
+    {
+     "number": 24,
+     "playerId": 8474567,
+     "position": "D",
+     "team": "MIN"
+    },
+    {
+     "number": 25,
+     "playerId": 8476463,
+     "position": "D",
+     "team": "MIN"
+    },
+    {
+     "number": 29,
+     "playerId": 8470594,
+     "position": "G",
+     "team": "MIN"
+    },
+    {
+     "number": 32,
+     "playerId": 8479406,
+     "position": "G",
+     "team": "MIN"
+    },
+    {
+     "number": 36,
+     "playerId": 8475692,
+     "position": "R",
+     "team": "MIN"
+    },
+    {
+     "number": 38,
+     "playerId": 8477451,
+     "position": "R",
+     "team": "MIN"
+    },
+    {
+     "number": 41,
+     "playerId": 8474679,
+     "position": "R",
+     "team": "MIN"
+    },
+    {
+     "number": 46,
+     "playerId": 8474716,
+     "position": "D",
+     "team": "MIN"
+    },
+    {
+     "number": 89,
+     "playerId": 8477919,
+     "position": "C",
+     "team": "MIN"
+    },
+    {
+     "number": 90,
+     "playerId": 8475149,
+     "position": "L",
+     "team": "MIN"
+    },
+    {
+     "number": 97,
+     "playerId": 8478864,
+     "position": "L",
+     "team": "MIN"
+    }
+   ],
+   "schemaVersion": 1
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "prevState": "PRE",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 8,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "secondsRemaining": 1169,
+   "shots": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "situationCode": "1551",
+   "timeRemaining": "19:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 11,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 12,
+   "timeInPeriod": "00:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "secondsRemaining": 1125,
+   "shots": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 17,
+   "timeInPeriod": "00:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 18,
+   "timeInPeriod": "00:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 20,
+   "timeInPeriod": "00:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 21,
+   "timeInPeriod": "01:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 26,
+   "timeInPeriod": "01:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "secondsRemaining": 1074,
+   "shots": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 27,
+   "timeInPeriod": "01:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 28,
+   "timeInPeriod": "01:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 39,
+   "timeInPeriod": "02:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "secondsRemaining": 1006,
+   "shots": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 41,
+   "timeInPeriod": "02:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 42,
+   "timeInPeriod": "02:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 46,
+   "timeInPeriod": "02:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 53,
+   "timeInPeriod": "03:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "secondsRemaining": 942,
+   "shots": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 58,
+   "timeInPeriod": "03:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 69,
+   "timeInPeriod": "04:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "secondsRemaining": 881,
+   "shots": {
+    "ANA": 1,
+    "MIN": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 72,
+   "timeInPeriod": "04:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 77,
+   "timeInPeriod": "04:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 79,
+   "timeInPeriod": "04:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 84,
+   "timeInPeriod": "05:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "secondsRemaining": 816,
+   "shots": {
+    "ANA": 1,
+    "MIN": 4
+   },
+   "situationCode": "1551",
+   "timeRemaining": "13:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 85,
+   "timeInPeriod": "05:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 86,
+   "timeInPeriod": "05:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 87,
+   "timeInPeriod": "05:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 88,
+   "timeInPeriod": "05:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 95,
+   "timeInPeriod": "06:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "secondsRemaining": 778,
+   "shots": {
+    "ANA": 1,
+    "MIN": 4
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 96,
+   "timeInPeriod": "06:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 99,
+   "timeInPeriod": "06:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 102,
+   "timeInPeriod": "07:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "secondsRemaining": 743,
+   "shots": {
+    "ANA": 1,
+    "MIN": 4
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 103,
+   "timeInPeriod": "07:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 107,
+   "timeInPeriod": "07:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 110,
+   "timeInPeriod": "07:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 113,
+   "timeInPeriod": "07:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "secondsRemaining": 701,
+   "shots": {
+    "ANA": 2,
+    "MIN": 4
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 114,
+   "timeInPeriod": "07:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 115,
+   "timeInPeriod": "07:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 118,
+   "timeInPeriod": "07:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 122,
+   "timeInPeriod": "08:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "secondsRemaining": 654,
+   "shots": {
+    "ANA": 2,
+    "MIN": 4
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 0
+   },
+   "seq": 131,
+   "timeInPeriod": "09:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "secondsRemaining": 613,
+   "shots": {
+    "ANA": 3,
+    "MIN": 6
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 134,
+   "timeInPeriod": "09:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 135,
+   "timeInPeriod": "09:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 136,
+   "timeInPeriod": "09:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "scoringTeam": "MIN",
+   "seq": 142,
+   "timeInPeriod": "09:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "secondsRemaining": 571,
+   "shots": {
+    "ANA": 5,
+    "MIN": 6
+   },
+   "situationCode": "1551",
+   "timeRemaining": "09:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 145,
+   "timeInPeriod": "09:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 146,
+   "timeInPeriod": "10:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 147,
+   "timeInPeriod": "10:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 150,
+   "timeInPeriod": "10:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 151,
+   "timeInPeriod": "10:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 152,
+   "timeInPeriod": "10:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 153,
+   "timeInPeriod": "10:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "secondsRemaining": 529,
+   "shots": {
+    "ANA": 5,
+    "MIN": 7
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 157,
+   "timeInPeriod": "10:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 159,
+   "timeInPeriod": "10:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 162,
+   "timeInPeriod": "10:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 163,
+   "timeInPeriod": "11:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "secondsRemaining": 483,
+   "shots": {
+    "ANA": 5,
+    "MIN": 7
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 164,
+   "timeInPeriod": "11:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 174,
+   "timeInPeriod": "11:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "secondsRemaining": 408,
+   "shots": {
+    "ANA": 5,
+    "MIN": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "06:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 177,
+   "timeInPeriod": "12:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 187,
+   "timeInPeriod": "13:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "secondsRemaining": 375,
+   "shots": {
+    "ANA": 6,
+    "MIN": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "06:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 188,
+   "timeInPeriod": "13:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 191,
+   "timeInPeriod": "13:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 192,
+   "timeInPeriod": "13:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 0,
+    "MIN": 1
+   },
+   "seq": 194,
+   "timeInPeriod": "13:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 332,
+   "shots": {
+    "ANA": 7,
+    "MIN": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "scoringTeam": "ANA",
+   "seq": 196,
+   "timeInPeriod": "13:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 199,
+   "timeInPeriod": "13:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 200,
+   "timeInPeriod": "14:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 201,
+   "timeInPeriod": "14:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 205,
+   "timeInPeriod": "14:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 300,
+   "shots": {
+    "ANA": 8,
+    "MIN": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 213,
+   "timeInPeriod": "14:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 215,
+   "timeInPeriod": "15:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 253,
+   "shots": {
+    "ANA": 8,
+    "MIN": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 220,
+   "timeInPeriod": "15:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 226,
+   "timeInPeriod": "15:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 196,
+   "shots": {
+    "ANA": 8,
+    "MIN": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "03:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 227,
+   "timeInPeriod": "16:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 228,
+   "timeInPeriod": "16:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 239,
+   "timeInPeriod": "16:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 163,
+   "shots": {
+    "ANA": 10,
+    "MIN": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 240,
+   "timeInPeriod": "16:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 241,
+   "timeInPeriod": "16:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 243,
+   "timeInPeriod": "16:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 244,
+   "timeInPeriod": "16:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 245,
+   "timeInPeriod": "17:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 246,
+   "timeInPeriod": "17:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 247,
+   "timeInPeriod": "17:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 248,
+   "timeInPeriod": "17:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 115,
+   "shots": {
+    "ANA": 10,
+    "MIN": 9
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 249,
+   "timeInPeriod": "17:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 252,
+   "timeInPeriod": "17:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 253,
+   "timeInPeriod": "17:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 254,
+   "timeInPeriod": "17:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 255,
+   "timeInPeriod": "18:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 75,
+   "shots": {
+    "ANA": 12,
+    "MIN": 10
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 256,
+   "timeInPeriod": "18:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 257,
+   "timeInPeriod": "18:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 260,
+   "timeInPeriod": "18:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 261,
+   "timeInPeriod": "18:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 262,
+   "timeInPeriod": "18:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 263,
+   "timeInPeriod": "18:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 25,
+   "shots": {
+    "ANA": 12,
+    "MIN": 12
+   },
+   "situationCode": "1451",
+   "timeRemaining": "00:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 264,
+   "timeInPeriod": "18:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 265,
+   "timeInPeriod": "18:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 269,
+   "timeInPeriod": "18:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 270,
+   "timeInPeriod": "18:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 271,
+   "timeInPeriod": "19:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 272,
+   "timeInPeriod": "19:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 277,
+   "timeInPeriod": "19:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": true,
+   "period": 1,
+   "periodType": "REG",
+   "running": false,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 0,
+   "shots": {
+    "ANA": 12,
+    "MIN": 12
+   },
+   "situationCode": "1451",
+   "timeRemaining": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 278,
+   "timeInPeriod": "19:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 279,
+   "timeInPeriod": "19:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 1,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 280,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "ANA": 12,
+    "MIN": 12
+   },
+   "situationCode": "1451",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 285,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 1159,
+   "shots": {
+    "ANA": 12,
+    "MIN": 13
+   },
+   "situationCode": "1451",
+   "timeRemaining": "19:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 288,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 289,
+   "timeInPeriod": "00:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 291,
+   "timeInPeriod": "00:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 1124,
+   "shots": {
+    "ANA": 12,
+    "MIN": 14
+   },
+   "situationCode": "1451",
+   "timeRemaining": "18:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 295,
+   "timeInPeriod": "00:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 299,
+   "timeInPeriod": "00:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 300,
+   "timeInPeriod": "01:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 301,
+   "timeInPeriod": "01:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 303,
+   "timeInPeriod": "01:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 304,
+   "timeInPeriod": "01:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 1083,
+   "shots": {
+    "ANA": 12,
+    "MIN": 15
+   },
+   "situationCode": "1451",
+   "timeRemaining": "18:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 305,
+   "timeInPeriod": "01:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 306,
+   "timeInPeriod": "01:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 307,
+   "timeInPeriod": "01:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 1029,
+   "shots": {
+    "ANA": 12,
+    "MIN": 16
+   },
+   "situationCode": "1451",
+   "timeRemaining": "17:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 316,
+   "timeInPeriod": "02:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 980,
+   "shots": {
+    "ANA": 13,
+    "MIN": 16
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 318,
+   "timeInPeriod": "02:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 322,
+   "timeInPeriod": "03:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 325,
+   "timeInPeriod": "03:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 326,
+   "timeInPeriod": "03:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 950,
+   "shots": {
+    "ANA": 14,
+    "MIN": 16
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 327,
+   "timeInPeriod": "03:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 328,
+   "timeInPeriod": "03:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 329,
+   "timeInPeriod": "03:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 332,
+   "timeInPeriod": "03:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 333,
+   "timeInPeriod": "04:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 334,
+   "timeInPeriod": "04:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 335,
+   "timeInPeriod": "04:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 336,
+   "timeInPeriod": "04:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 337,
+   "timeInPeriod": "04:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 888,
+   "shots": {
+    "ANA": 14,
+    "MIN": 16
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 338,
+   "timeInPeriod": "04:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 348,
+   "timeInPeriod": "05:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 852,
+   "shots": {
+    "ANA": 14,
+    "MIN": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 350,
+   "timeInPeriod": "05:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 353,
+   "timeInPeriod": "05:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 809,
+   "shots": {
+    "ANA": 14,
+    "MIN": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "13:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 355,
+   "timeInPeriod": "05:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 356,
+   "timeInPeriod": "06:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 357,
+   "timeInPeriod": "06:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 360,
+   "timeInPeriod": "06:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 361,
+   "timeInPeriod": "06:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 773,
+   "shots": {
+    "ANA": 14,
+    "MIN": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 363,
+   "timeInPeriod": "06:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 367,
+   "timeInPeriod": "06:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 370,
+   "timeInPeriod": "06:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 371,
+   "timeInPeriod": "07:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 372,
+   "timeInPeriod": "07:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 679,
+   "shots": {
+    "ANA": 14,
+    "MIN": 18
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 389,
+   "timeInPeriod": "08:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 640,
+   "shots": {
+    "ANA": 14,
+    "MIN": 18
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 390,
+   "timeInPeriod": "08:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 392,
+   "timeInPeriod": "09:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 573,
+   "shots": {
+    "ANA": 14,
+    "MIN": 20
+   },
+   "situationCode": "1551",
+   "timeRemaining": "09:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 394,
+   "timeInPeriod": "09:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 397,
+   "timeInPeriod": "09:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 398,
+   "timeInPeriod": "09:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 405,
+   "timeInPeriod": "10:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 523,
+   "shots": {
+    "ANA": 15,
+    "MIN": 21
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 406,
+   "timeInPeriod": "10:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 409,
+   "timeInPeriod": "10:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 410,
+   "timeInPeriod": "10:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 411,
+   "timeInPeriod": "10:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 412,
+   "timeInPeriod": "10:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 413,
+   "timeInPeriod": "10:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 415,
+   "timeInPeriod": "11:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 491,
+   "shots": {
+    "ANA": 15,
+    "MIN": 21
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 416,
+   "timeInPeriod": "11:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 419,
+   "timeInPeriod": "11:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 420,
+   "timeInPeriod": "11:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 421,
+   "timeInPeriod": "11:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 447,
+   "shots": {
+    "ANA": 15,
+    "MIN": 21
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 422,
+   "timeInPeriod": "12:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 433,
+   "timeInPeriod": "12:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 411,
+   "shots": {
+    "ANA": 15,
+    "MIN": 21
+   },
+   "situationCode": "1551",
+   "timeRemaining": "06:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 434,
+   "timeInPeriod": "12:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 435,
+   "timeInPeriod": "12:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 436,
+   "timeInPeriod": "13:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 437,
+   "timeInPeriod": "13:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 340,
+   "shots": {
+    "ANA": 15,
+    "MIN": 21
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 439,
+   "timeInPeriod": "13:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 441,
+   "timeInPeriod": "13:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 444,
+   "timeInPeriod": "13:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 446,
+   "timeInPeriod": "14:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 239,
+   "shots": {
+    "ANA": 15,
+    "MIN": 21
+   },
+   "situationCode": "1551",
+   "timeRemaining": "03:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 452,
+   "timeInPeriod": "14:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 462,
+   "timeInPeriod": "16:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 194,
+   "shots": {
+    "ANA": 15,
+    "MIN": 22
+   },
+   "situationCode": "1551",
+   "timeRemaining": "03:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 464,
+   "timeInPeriod": "16:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 467,
+   "timeInPeriod": "16:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 475,
+   "timeInPeriod": "16:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 160,
+   "shots": {
+    "ANA": 15,
+    "MIN": 23
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 476,
+   "timeInPeriod": "16:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 477,
+   "timeInPeriod": "16:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 478,
+   "timeInPeriod": "16:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 481,
+   "timeInPeriod": "16:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 482,
+   "timeInPeriod": "17:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 483,
+   "timeInPeriod": "17:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 484,
+   "timeInPeriod": "17:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 121,
+   "shots": {
+    "ANA": 15,
+    "MIN": 23
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 493,
+   "timeInPeriod": "17:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 495,
+   "timeInPeriod": "17:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 90,
+   "shots": {
+    "ANA": 15,
+    "MIN": 23
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 500,
+   "timeInPeriod": "18:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 60,
+   "shots": {
+    "ANA": 15,
+    "MIN": 23
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 504,
+   "timeInPeriod": "18:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 505,
+   "timeInPeriod": "18:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 506,
+   "timeInPeriod": "19:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 3,
+   "shots": {
+    "ANA": 15,
+    "MIN": 23
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 507,
+   "timeInPeriod": "19:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 510,
+   "timeInPeriod": "19:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 511,
+   "timeInPeriod": "19:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 512,
+   "timeInPeriod": "19:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 513,
+   "timeInPeriod": "19:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 514,
+   "timeInPeriod": "19:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 516,
+   "timeInPeriod": "19:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": true,
+   "period": 2,
+   "periodType": "REG",
+   "running": false,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 0,
+   "shots": {
+    "ANA": 15,
+    "MIN": 23
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 518,
+   "timeInPeriod": "19:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 2,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 519,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "ANA": 15,
+    "MIN": 23
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 524,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 1159,
+   "shots": {
+    "ANA": 15,
+    "MIN": 23
+   },
+   "situationCode": "1551",
+   "timeRemaining": "19:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 527,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 528,
+   "timeInPeriod": "00:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 532,
+   "timeInPeriod": "00:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 1126,
+   "shots": {
+    "ANA": 15,
+    "MIN": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 533,
+   "timeInPeriod": "00:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 535,
+   "timeInPeriod": "00:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 537,
+   "timeInPeriod": "01:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 539,
+   "timeInPeriod": "01:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 1095,
+   "shots": {
+    "ANA": 16,
+    "MIN": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 541,
+   "timeInPeriod": "01:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 546,
+   "timeInPeriod": "01:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 548,
+   "timeInPeriod": "01:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 551,
+   "timeInPeriod": "01:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 552,
+   "timeInPeriod": "01:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 553,
+   "timeInPeriod": "01:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 1057,
+   "shots": {
+    "ANA": 16,
+    "MIN": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 554,
+   "timeInPeriod": "01:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 555,
+   "timeInPeriod": "01:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 556,
+   "timeInPeriod": "02:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 1022,
+   "shots": {
+    "ANA": 16,
+    "MIN": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 564,
+   "timeInPeriod": "02:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 566,
+   "timeInPeriod": "02:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 567,
+   "timeInPeriod": "02:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 568,
+   "timeInPeriod": "02:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 988,
+   "shots": {
+    "ANA": 16,
+    "MIN": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 569,
+   "timeInPeriod": "02:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 570,
+   "timeInPeriod": "03:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 575,
+   "timeInPeriod": "03:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 925,
+   "shots": {
+    "ANA": 16,
+    "MIN": 27
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 576,
+   "timeInPeriod": "03:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 585,
+   "timeInPeriod": "04:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 863,
+   "shots": {
+    "ANA": 16,
+    "MIN": 28
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 586,
+   "timeInPeriod": "04:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 589,
+   "timeInPeriod": "04:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 590,
+   "timeInPeriod": "04:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 591,
+   "timeInPeriod": "04:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 592,
+   "timeInPeriod": "05:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 594,
+   "timeInPeriod": "05:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 769,
+   "shots": {
+    "ANA": 16,
+    "MIN": 29
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 595,
+   "timeInPeriod": "05:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 596,
+   "timeInPeriod": "05:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 602,
+   "timeInPeriod": "06:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 603,
+   "timeInPeriod": "06:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 606,
+   "timeInPeriod": "06:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 615,
+   "timeInPeriod": "07:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 738,
+   "shots": {
+    "ANA": 18,
+    "MIN": 29
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 616,
+   "timeInPeriod": "07:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 617,
+   "timeInPeriod": "07:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 618,
+   "timeInPeriod": "07:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 621,
+   "timeInPeriod": "07:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 622,
+   "timeInPeriod": "07:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 623,
+   "timeInPeriod": "07:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "secondsRemaining": 701,
+   "shots": {
+    "ANA": 18,
+    "MIN": 29
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 624,
+   "timeInPeriod": "07:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 627,
+   "timeInPeriod": "07:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 628,
+   "timeInPeriod": "07:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 629,
+   "timeInPeriod": "08:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 1,
+    "MIN": 1
+   },
+   "seq": 630,
+   "timeInPeriod": "08:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "secondsRemaining": 661,
+   "shots": {
+    "ANA": 19,
+    "MIN": 31
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 632,
+   "timeInPeriod": "08:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "scoringTeam": "ANA",
+   "seq": 633,
+   "timeInPeriod": "08:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 636,
+   "timeInPeriod": "08:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 637,
+   "timeInPeriod": "08:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "secondsRemaining": 630,
+   "shots": {
+    "ANA": 19,
+    "MIN": 33
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 638,
+   "timeInPeriod": "09:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 643,
+   "timeInPeriod": "09:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 645,
+   "timeInPeriod": "09:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "secondsRemaining": 565,
+   "shots": {
+    "ANA": 19,
+    "MIN": 35
+   },
+   "situationCode": "1551",
+   "timeRemaining": "09:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 646,
+   "timeInPeriod": "09:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 647,
+   "timeInPeriod": "09:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 648,
+   "timeInPeriod": "09:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 649,
+   "timeInPeriod": "09:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 650,
+   "timeInPeriod": "09:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 653,
+   "timeInPeriod": "09:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 655,
+   "timeInPeriod": "10:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "secondsRemaining": 484,
+   "shots": {
+    "ANA": 19,
+    "MIN": 35
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 656,
+   "timeInPeriod": "10:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 659,
+   "timeInPeriod": "10:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 660,
+   "timeInPeriod": "10:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 661,
+   "timeInPeriod": "10:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 662,
+   "timeInPeriod": "10:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 663,
+   "timeInPeriod": "11:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 673,
+   "timeInPeriod": "11:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "secondsRemaining": 426,
+   "shots": {
+    "ANA": 20,
+    "MIN": 35
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 675,
+   "timeInPeriod": "11:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 684,
+   "timeInPeriod": "12:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "secondsRemaining": 388,
+   "shots": {
+    "ANA": 21,
+    "MIN": 35
+   },
+   "situationCode": "1551",
+   "timeRemaining": "06:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 685,
+   "timeInPeriod": "13:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 686,
+   "timeInPeriod": "13:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 687,
+   "timeInPeriod": "13:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 690,
+   "timeInPeriod": "13:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 691,
+   "timeInPeriod": "13:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 692,
+   "timeInPeriod": "13:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 695,
+   "timeInPeriod": "13:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 696,
+   "timeInPeriod": "13:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 697,
+   "timeInPeriod": "13:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "secondsRemaining": 338,
+   "shots": {
+    "ANA": 21,
+    "MIN": 35
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 706,
+   "timeInPeriod": "14:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021298,
+   "gameState": "CRIT",
+   "prevState": "LIVE",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "CRIT",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "secondsRemaining": 284,
+   "shots": {
+    "ANA": 22,
+    "MIN": 35
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 714,
+   "timeInPeriod": "14:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 715,
+   "timeInPeriod": "15:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "CRIT",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "secondsRemaining": 247,
+   "shots": {
+    "ANA": 23,
+    "MIN": 35
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 716,
+   "timeInPeriod": "15:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 726,
+   "timeInPeriod": "15:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "CRIT",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "secondsRemaining": 205,
+   "shots": {
+    "ANA": 23,
+    "MIN": 35
+   },
+   "situationCode": "1551",
+   "timeRemaining": "03:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 729,
+   "timeInPeriod": "16:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 733,
+   "timeInPeriod": "16:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 734,
+   "timeInPeriod": "16:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "CRIT",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "secondsRemaining": 174,
+   "shots": {
+    "ANA": 24,
+    "MIN": 35
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 735,
+   "timeInPeriod": "16:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 739,
+   "timeInPeriod": "16:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 740,
+   "timeInPeriod": "16:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 742,
+   "timeInPeriod": "17:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 743,
+   "timeInPeriod": "17:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 746,
+   "timeInPeriod": "17:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 747,
+   "timeInPeriod": "17:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "CRIT",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "secondsRemaining": 138,
+   "shots": {
+    "ANA": 24,
+    "MIN": 35
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 748,
+   "timeInPeriod": "17:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 749,
+   "timeInPeriod": "17:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 750,
+   "timeInPeriod": "17:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 751,
+   "timeInPeriod": "17:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "CRIT",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "secondsRemaining": 106,
+   "shots": {
+    "ANA": 24,
+    "MIN": 35
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 755,
+   "timeInPeriod": "17:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 762,
+   "timeInPeriod": "18:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "CRIT",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "secondsRemaining": 76,
+   "shots": {
+    "ANA": 24,
+    "MIN": 35
+   },
+   "situationCode": "1560",
+   "timeRemaining": "01:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 765,
+   "timeInPeriod": "18:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 766,
+   "timeInPeriod": "18:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "CRIT",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "secondsRemaining": 45,
+   "shots": {
+    "ANA": 24,
+    "MIN": 35
+   },
+   "situationCode": "1560",
+   "timeRemaining": "00:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 767,
+   "timeInPeriod": "18:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 768,
+   "timeInPeriod": "18:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 769,
+   "timeInPeriod": "19:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 1
+   },
+   "seq": 770,
+   "timeInPeriod": "19:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "CRIT",
+   "homeTeam": "MIN",
+   "inIntermission": true,
+   "period": 3,
+   "periodType": "REG",
+   "running": false,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "secondsRemaining": 0,
+   "shots": {
+    "ANA": 24,
+    "MIN": 37
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 776,
+   "timeInPeriod": "19:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 777,
+   "timeInPeriod": "19:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "scoringTeam": "MIN",
+   "seq": 778,
+   "timeInPeriod": "19:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 782,
+   "timeInPeriod": "19:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 3,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 783,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "prevState": "CRIT",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 4,
+   "periodType": "OT",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "secondsRemaining": 300,
+   "shots": {
+    "ANA": 24,
+    "MIN": 37
+   },
+   "situationCode": "1331",
+   "timeRemaining": "05:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 788,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 4,
+   "periodType": "OT",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "secondsRemaining": 237,
+   "shots": {
+    "ANA": 26,
+    "MIN": 37
+   },
+   "situationCode": "1431",
+   "timeRemaining": "03:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 791,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 792,
+   "timeInPeriod": "00:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 793,
+   "timeInPeriod": "00:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 795,
+   "timeInPeriod": "00:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 798,
+   "timeInPeriod": "00:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 799,
+   "timeInPeriod": "00:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 800,
+   "timeInPeriod": "01:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 4,
+   "periodType": "OT",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "secondsRemaining": 207,
+   "shots": {
+    "ANA": 27,
+    "MIN": 37
+   },
+   "situationCode": "1431",
+   "timeRemaining": "03:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 801,
+   "timeInPeriod": "01:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 802,
+   "timeInPeriod": "01:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 4,
+   "periodType": "OT",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "secondsRemaining": 166,
+   "shots": {
+    "ANA": 27,
+    "MIN": 37
+   },
+   "situationCode": "1431",
+   "timeRemaining": "02:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 809,
+   "timeInPeriod": "02:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 4,
+   "periodType": "OT",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "secondsRemaining": 130,
+   "shots": {
+    "ANA": 29,
+    "MIN": 37
+   },
+   "situationCode": "1331",
+   "timeRemaining": "02:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 811,
+   "timeInPeriod": "02:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 812,
+   "timeInPeriod": "02:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 813,
+   "timeInPeriod": "02:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 816,
+   "timeInPeriod": "02:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "ANA",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 817,
+   "timeInPeriod": "02:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 4,
+   "periodType": "OT",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "secondsRemaining": 95,
+   "shots": {
+    "ANA": 29,
+    "MIN": 39
+   },
+   "situationCode": "1331",
+   "timeRemaining": "01:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 818,
+   "timeInPeriod": "02:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 819,
+   "timeInPeriod": "02:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 823,
+   "timeInPeriod": "02:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 825,
+   "timeInPeriod": "03:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 4,
+   "periodType": "OT",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "secondsRemaining": 46,
+   "shots": {
+    "ANA": 29,
+    "MIN": 39
+   },
+   "situationCode": "1331",
+   "timeRemaining": "00:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 2
+   },
+   "seq": 831,
+   "timeInPeriod": "04:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "gameState": "LIVE",
+   "homeTeam": "MIN",
+   "inIntermission": false,
+   "period": 4,
+   "periodType": "OT",
+   "running": false,
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 3
+   },
+   "secondsRemaining": 18,
+   "shots": {
+    "ANA": 29,
+    "MIN": 40
+   },
+   "situationCode": "1340",
+   "timeRemaining": "00:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 3
+   },
+   "seq": 834,
+   "timeInPeriod": "04:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "MIN",
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 3
+   },
+   "scoringTeam": "MIN",
+   "seq": 836,
+   "timeInPeriod": "04:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 3
+   },
+   "seq": 839,
+   "timeInPeriod": "04:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021298,
+   "gameState": "FINAL",
+   "prevState": "LIVE",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 3
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "period": 4,
+   "playType": "game-end",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 3
+   },
+   "seq": 843,
+   "timeInPeriod": "04:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.final",
+  "detail": {
+   "awayTeam": "ANA",
+   "gameId": 2024021298,
+   "homeTeam": "MIN",
+   "s3Prefix": "raw/20242025/2025-04-15/2024021298/",
+   "schemaVersion": 1,
+   "score": {
+    "ANA": 2,
+    "MIN": 3
+   }
+  }
+ }
+]

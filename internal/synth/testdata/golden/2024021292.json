@@ -1,0 +1,8460 @@
+[
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021292,
+   "gameState": "PRE",
+   "prevState": "FUT",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.roster",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "players": [
+    {
+     "number": 1,
+     "playerId": 8480045,
+     "position": "G",
+     "team": "BUF"
+    },
+    {
+     "number": 4,
+     "playerId": 8481524,
+     "position": "D",
+     "team": "BUF"
+    },
+    {
+     "number": 9,
+     "playerId": 8484145,
+     "position": "L",
+     "team": "BUF"
+    },
+    {
+     "number": 17,
+     "playerId": 8475722,
+     "position": "L",
+     "team": "BUF"
+    },
+    {
+     "number": 19,
+     "playerId": 8481522,
+     "position": "C",
+     "team": "BUF"
+    },
+    {
+     "number": 20,
+     "playerId": 8483468,
+     "position": "C",
+     "team": "BUF"
+    },
+    {
+     "number": 22,
+     "playerId": 8482097,
+     "position": "R",
+     "team": "BUF"
+    },
+    {
+     "number": 23,
+     "playerId": 8480807,
+     "position": "D",
+     "team": "BUF"
+    },
+    {
+     "number": 24,
+     "playerId": 8480879,
+     "position": "D",
+     "team": "BUF"
+    },
+    {
+     "number": 26,
+     "playerId": 8480839,
+     "position": "D",
+     "team": "BUF"
+    },
+    {
+     "number": 36,
+     "playerId": 8483500,
+     "position": "C",
+     "team": "BUF"
+    },
+    {
+     "number": 47,
+     "playerId": 8473503,
+     "position": "G",
+     "team": "BUF"
+    },
+    {
+     "number": 63,
+     "playerId": 8482765,
+     "position": "R",
+     "team": "BUF"
+    },
+    {
+     "number": 71,
+     "playerId": 8480802,
+     "position": "C",
+     "team": "BUF"
+    },
+    {
+     "number": 72,
+     "playerId": 8479420,
+     "position": "C",
+     "team": "BUF"
+    },
+    {
+     "number": 75,
+     "playerId": 8477365,
+     "position": "D",
+     "team": "BUF"
+    },
+    {
+     "number": 77,
+     "playerId": 8482175,
+     "position": "R",
+     "team": "BUF"
+    },
+    {
+     "number": 78,
+     "playerId": 8480196,
+     "position": "D",
+     "team": "BUF"
+    },
+    {
+     "number": 81,
+     "playerId": 8478043,
+     "position": "C",
+     "team": "BUF"
+    },
+    {
+     "number": 89,
+     "playerId": 8477949,
+     "position": "R",
+     "team": "BUF"
+    },
+    {
+     "number": 2,
+     "playerId": 8481122,
+     "position": "D",
+     "team": "TOR"
+    },
+    {
+     "number": 8,
+     "playerId": 8475690,
+     "position": "D",
+     "team": "TOR"
+    },
+    {
+     "number": 11,
+     "playerId": 8477503,
+     "position": "C",
+     "team": "TOR"
+    },
+    {
+     "number": 16,
+     "playerId": 8478483,
+     "position": "R",
+     "team": "TOR"
+    },
+    {
+     "number": 18,
+     "playerId": 8478904,
+     "position": "C",
+     "team": "TOR"
+    },
+    {
+     "number": 19,
+     "playerId": 8475714,
+     "position": "C",
+     "team": "TOR"
+    },
+    {
+     "number": 23,
+     "playerId": 8482720,
+     "position": "L",
+     "team": "TOR"
+    },
+    {
+     "number": 24,
+     "playerId": 8476872,
+     "position": "C",
+     "team": "TOR"
+    },
+    {
+     "number": 25,
+     "playerId": 8478443,
+     "position": "D",
+     "team": "TOR"
+    },
+    {
+     "number": 29,
+     "playerId": 8480995,
+     "position": "R",
+     "team": "TOR"
+    },
+    {
+     "number": 34,
+     "playerId": 8479318,
+     "position": "C",
+     "team": "TOR"
+    },
+    {
+     "number": 36,
+     "playerId": 8477541,
+     "position": "D",
+     "team": "TOR"
+    },
+    {
+     "number": 41,
+     "playerId": 8476932,
+     "position": "G",
+     "team": "TOR"
+    },
+    {
+     "number": 44,
+     "playerId": 8476853,
+     "position": "D",
+     "team": "TOR"
+    },
+    {
+     "number": 51,
+     "playerId": 8479026,
+     "position": "D",
+     "team": "TOR"
+    },
+    {
+     "number": 60,
+     "playerId": 8479361,
+     "position": "G",
+     "team": "TOR"
+    },
+    {
+     "number": 74,
+     "playerId": 8482259,
+     "position": "C",
+     "team": "TOR"
+    },
+    {
+     "number": 88,
+     "playerId": 8477939,
+     "position": "R",
+     "team": "TOR"
+    },
+    {
+     "number": 89,
+     "playerId": 8481582,
+     "position": "L",
+     "team": "TOR"
+    },
+    {
+     "number": 91,
+     "playerId": 8475166,
+     "position": "C",
+     "team": "TOR"
+    }
+   ],
+   "schemaVersion": 1
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "prevState": "PRE",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 8,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 1157,
+   "shots": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "situationCode": "1551",
+   "timeRemaining": "19:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 11,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 12,
+   "timeInPeriod": "00:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 15,
+   "timeInPeriod": "00:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 16,
+   "timeInPeriod": "00:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 1099,
+   "shots": {
+    "BUF": 1,
+    "TOR": 0
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 17,
+   "timeInPeriod": "00:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 18,
+   "timeInPeriod": "00:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 19,
+   "timeInPeriod": "01:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 20,
+   "timeInPeriod": "01:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 29,
+   "timeInPeriod": "01:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 1053,
+   "shots": {
+    "BUF": 1,
+    "TOR": 0
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 40,
+   "timeInPeriod": "02:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 995,
+   "shots": {
+    "BUF": 1,
+    "TOR": 0
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 45,
+   "timeInPeriod": "02:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 57,
+   "timeInPeriod": "03:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 931,
+   "shots": {
+    "BUF": 1,
+    "TOR": 0
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 61,
+   "timeInPeriod": "03:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 71,
+   "timeInPeriod": "04:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 893,
+   "shots": {
+    "BUF": 1,
+    "TOR": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 72,
+   "timeInPeriod": "04:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 73,
+   "timeInPeriod": "04:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 74,
+   "timeInPeriod": "04:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 80,
+   "timeInPeriod": "05:07"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 821,
+   "shots": {
+    "BUF": 2,
+    "TOR": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "13:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 81,
+   "timeInPeriod": "05:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 84,
+   "timeInPeriod": "05:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 85,
+   "timeInPeriod": "05:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 94,
+   "timeInPeriod": "06:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 766,
+   "shots": {
+    "BUF": 3,
+    "TOR": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 95,
+   "timeInPeriod": "06:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 96,
+   "timeInPeriod": "06:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 99,
+   "timeInPeriod": "06:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 100,
+   "timeInPeriod": "06:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 101,
+   "timeInPeriod": "06:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 104,
+   "timeInPeriod": "07:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 708,
+   "shots": {
+    "BUF": 3,
+    "TOR": 2
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 119,
+   "timeInPeriod": "08:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 674,
+   "shots": {
+    "BUF": 3,
+    "TOR": 3
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 120,
+   "timeInPeriod": "08:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 123,
+   "timeInPeriod": "08:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 124,
+   "timeInPeriod": "08:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 126,
+   "timeInPeriod": "08:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 639,
+   "shots": {
+    "BUF": 3,
+    "TOR": 3
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 129,
+   "timeInPeriod": "08:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 130,
+   "timeInPeriod": "09:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 131,
+   "timeInPeriod": "09:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 604,
+   "shots": {
+    "BUF": 4,
+    "TOR": 3
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 132,
+   "timeInPeriod": "09:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 134,
+   "timeInPeriod": "09:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 139,
+   "timeInPeriod": "09:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 549,
+   "shots": {
+    "BUF": 5,
+    "TOR": 4
+   },
+   "situationCode": "1551",
+   "timeRemaining": "09:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 140,
+   "timeInPeriod": "09:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 143,
+   "timeInPeriod": "09:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 144,
+   "timeInPeriod": "10:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 145,
+   "timeInPeriod": "10:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 146,
+   "timeInPeriod": "10:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 156,
+   "timeInPeriod": "10:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 500,
+   "shots": {
+    "BUF": 8,
+    "TOR": 4
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 157,
+   "timeInPeriod": "10:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 158,
+   "timeInPeriod": "10:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 159,
+   "timeInPeriod": "10:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 160,
+   "timeInPeriod": "11:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 161,
+   "timeInPeriod": "11:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 167,
+   "timeInPeriod": "11:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 170,
+   "timeInPeriod": "11:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 466,
+   "shots": {
+    "BUF": 8,
+    "TOR": 5
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 171,
+   "timeInPeriod": "11:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 174,
+   "timeInPeriod": "11:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 175,
+   "timeInPeriod": "11:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 176,
+   "timeInPeriod": "11:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 178,
+   "timeInPeriod": "12:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 180,
+   "timeInPeriod": "12:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 432,
+   "shots": {
+    "BUF": 9,
+    "TOR": 5
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 181,
+   "timeInPeriod": "12:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 185,
+   "timeInPeriod": "12:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 189,
+   "timeInPeriod": "12:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 192,
+   "timeInPeriod": "12:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 193,
+   "timeInPeriod": "12:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 389,
+   "shots": {
+    "BUF": 9,
+    "TOR": 5
+   },
+   "situationCode": "1551",
+   "timeRemaining": "06:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 194,
+   "timeInPeriod": "12:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 195,
+   "timeInPeriod": "12:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 196,
+   "timeInPeriod": "13:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 197,
+   "timeInPeriod": "13:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 202,
+   "timeInPeriod": "13:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 203,
+   "timeInPeriod": "13:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 206,
+   "timeInPeriod": "13:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 207,
+   "timeInPeriod": "13:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 350,
+   "shots": {
+    "BUF": 9,
+    "TOR": 6
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 208,
+   "timeInPeriod": "13:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 209,
+   "timeInPeriod": "13:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 212,
+   "timeInPeriod": "13:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 213,
+   "timeInPeriod": "13:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 216,
+   "timeInPeriod": "14:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 303,
+   "shots": {
+    "BUF": 10,
+    "TOR": 6
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 217,
+   "timeInPeriod": "14:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 218,
+   "timeInPeriod": "14:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 226,
+   "timeInPeriod": "14:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 273,
+   "shots": {
+    "BUF": 10,
+    "TOR": 6
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 227,
+   "timeInPeriod": "15:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 229,
+   "timeInPeriod": "15:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 235,
+   "timeInPeriod": "15:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 243,
+   "shots": {
+    "BUF": 10,
+    "TOR": 6
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 236,
+   "timeInPeriod": "15:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 237,
+   "timeInPeriod": "15:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 239,
+   "timeInPeriod": "15:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 242,
+   "timeInPeriod": "15:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 243,
+   "timeInPeriod": "15:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 211,
+   "shots": {
+    "BUF": 11,
+    "TOR": 6
+   },
+   "situationCode": "1451",
+   "timeRemaining": "03:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 247,
+   "timeInPeriod": "15:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 248,
+   "timeInPeriod": "16:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 249,
+   "timeInPeriod": "16:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 251,
+   "timeInPeriod": "16:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 252,
+   "timeInPeriod": "16:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 253,
+   "timeInPeriod": "16:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 181,
+   "shots": {
+    "BUF": 13,
+    "TOR": 6
+   },
+   "situationCode": "1451",
+   "timeRemaining": "03:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 254,
+   "timeInPeriod": "16:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 255,
+   "timeInPeriod": "16:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 256,
+   "timeInPeriod": "16:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 148,
+   "shots": {
+    "BUF": 13,
+    "TOR": 6
+   },
+   "situationCode": "1451",
+   "timeRemaining": "02:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 257,
+   "timeInPeriod": "17:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 260,
+   "timeInPeriod": "17:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 261,
+   "timeInPeriod": "17:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 264,
+   "timeInPeriod": "17:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 267,
+   "timeInPeriod": "17:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 83,
+   "shots": {
+    "BUF": 13,
+    "TOR": 7
+   },
+   "situationCode": "1541",
+   "timeRemaining": "01:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 271,
+   "timeInPeriod": "17:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 278,
+   "timeInPeriod": "18:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 46,
+   "shots": {
+    "BUF": 13,
+    "TOR": 8
+   },
+   "situationCode": "1541",
+   "timeRemaining": "00:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 279,
+   "timeInPeriod": "18:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 281,
+   "timeInPeriod": "18:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 282,
+   "timeInPeriod": "18:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 283,
+   "timeInPeriod": "18:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 285,
+   "timeInPeriod": "18:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 286,
+   "timeInPeriod": "19:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 1,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 6,
+   "shots": {
+    "BUF": 13,
+    "TOR": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 288,
+   "timeInPeriod": "19:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 299,
+   "timeInPeriod": "19:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": true,
+   "period": 1,
+   "periodType": "REG",
+   "running": false,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 0,
+   "shots": {
+    "BUF": 13,
+    "TOR": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 1,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 300,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "BUF": 13,
+    "TOR": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 305,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 1145,
+   "shots": {
+    "BUF": 13,
+    "TOR": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "19:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 308,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 318,
+   "timeInPeriod": "00:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 1108,
+   "shots": {
+    "BUF": 13,
+    "TOR": 8
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 319,
+   "timeInPeriod": "00:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 320,
+   "timeInPeriod": "01:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 323,
+   "timeInPeriod": "01:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 1059,
+   "shots": {
+    "BUF": 13,
+    "TOR": 9
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 326,
+   "timeInPeriod": "01:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 327,
+   "timeInPeriod": "01:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 335,
+   "timeInPeriod": "02:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 1006,
+   "shots": {
+    "BUF": 13,
+    "TOR": 10
+   },
+   "situationCode": "1541",
+   "timeRemaining": "16:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 336,
+   "timeInPeriod": "02:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 340,
+   "timeInPeriod": "02:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 341,
+   "timeInPeriod": "02:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 342,
+   "timeInPeriod": "02:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 343,
+   "timeInPeriod": "02:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 347,
+   "timeInPeriod": "03:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 973,
+   "shots": {
+    "BUF": 13,
+    "TOR": 10
+   },
+   "situationCode": "1541",
+   "timeRemaining": "16:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 348,
+   "timeInPeriod": "03:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 354,
+   "timeInPeriod": "03:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 931,
+   "shots": {
+    "BUF": 13,
+    "TOR": 10
+   },
+   "situationCode": "1551",
+   "timeRemaining": "15:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 357,
+   "timeInPeriod": "03:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 364,
+   "timeInPeriod": "04:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 886,
+   "shots": {
+    "BUF": 13,
+    "TOR": 10
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 366,
+   "timeInPeriod": "04:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 368,
+   "timeInPeriod": "04:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 369,
+   "timeInPeriod": "04:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 370,
+   "timeInPeriod": "04:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 373,
+   "timeInPeriod": "04:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 376,
+   "timeInPeriod": "05:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 806,
+   "shots": {
+    "BUF": 14,
+    "TOR": 10
+   },
+   "situationCode": "1551",
+   "timeRemaining": "13:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 379,
+   "timeInPeriod": "05:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 391,
+   "timeInPeriod": "06:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 760,
+   "shots": {
+    "BUF": 14,
+    "TOR": 10
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 393,
+   "timeInPeriod": "06:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 394,
+   "timeInPeriod": "06:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 396,
+   "timeInPeriod": "06:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 399,
+   "timeInPeriod": "06:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 400,
+   "timeInPeriod": "06:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 403,
+   "timeInPeriod": "07:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 724,
+   "shots": {
+    "BUF": 14,
+    "TOR": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 406,
+   "timeInPeriod": "07:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 413,
+   "timeInPeriod": "07:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 687,
+   "shots": {
+    "BUF": 14,
+    "TOR": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 414,
+   "timeInPeriod": "07:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 417,
+   "timeInPeriod": "07:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 418,
+   "timeInPeriod": "08:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 420,
+   "timeInPeriod": "08:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 649,
+   "shots": {
+    "BUF": 15,
+    "TOR": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 430,
+   "timeInPeriod": "09:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 599,
+   "shots": {
+    "BUF": 15,
+    "TOR": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "09:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 431,
+   "timeInPeriod": "09:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 432,
+   "timeInPeriod": "09:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 434,
+   "timeInPeriod": "09:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 444,
+   "timeInPeriod": "10:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 569,
+   "shots": {
+    "BUF": 15,
+    "TOR": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "09:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 445,
+   "timeInPeriod": "10:06"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 451,
+   "timeInPeriod": "10:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 514,
+   "shots": {
+    "BUF": 15,
+    "TOR": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 453,
+   "timeInPeriod": "10:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 456,
+   "timeInPeriod": "10:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 458,
+   "timeInPeriod": "10:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 461,
+   "timeInPeriod": "10:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 464,
+   "timeInPeriod": "11:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 466,
+   "shots": {
+    "BUF": 16,
+    "TOR": 12
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 465,
+   "timeInPeriod": "11:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 466,
+   "timeInPeriod": "11:38"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 470,
+   "timeInPeriod": "11:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 472,
+   "timeInPeriod": "11:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 477,
+   "timeInPeriod": "12:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "secondsRemaining": 430,
+   "shots": {
+    "BUF": 17,
+    "TOR": 13
+   },
+   "situationCode": "1551",
+   "timeRemaining": "07:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 479,
+   "timeInPeriod": "12:17"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 480,
+   "timeInPeriod": "12:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 483,
+   "timeInPeriod": "12:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 484,
+   "timeInPeriod": "12:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 487,
+   "timeInPeriod": "12:34"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 488,
+   "timeInPeriod": "12:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 0
+   },
+   "seq": 489,
+   "timeInPeriod": "12:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 345,
+   "shots": {
+    "BUF": 17,
+    "TOR": 16
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 490,
+   "timeInPeriod": "12:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 491,
+   "timeInPeriod": "13:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 492,
+   "timeInPeriod": "13:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 495,
+   "timeInPeriod": "13:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "scoringTeam": "TOR",
+   "seq": 502,
+   "timeInPeriod": "14:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 298,
+   "shots": {
+    "BUF": 17,
+    "TOR": 16
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:58"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 504,
+   "timeInPeriod": "14:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 512,
+   "timeInPeriod": "15:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 243,
+   "shots": {
+    "BUF": 18,
+    "TOR": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 515,
+   "timeInPeriod": "15:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 517,
+   "timeInPeriod": "15:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 520,
+   "timeInPeriod": "15:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 194,
+   "shots": {
+    "BUF": 19,
+    "TOR": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "03:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 525,
+   "timeInPeriod": "16:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 529,
+   "timeInPeriod": "16:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 530,
+   "timeInPeriod": "16:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 533,
+   "timeInPeriod": "16:26"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 534,
+   "timeInPeriod": "16:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 164,
+   "shots": {
+    "BUF": 19,
+    "TOR": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 536,
+   "timeInPeriod": "16:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 540,
+   "timeInPeriod": "17:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 542,
+   "timeInPeriod": "17:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 133,
+   "shots": {
+    "BUF": 19,
+    "TOR": 18
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 544,
+   "timeInPeriod": "17:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 545,
+   "timeInPeriod": "17:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 546,
+   "timeInPeriod": "17:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 547,
+   "timeInPeriod": "17:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 548,
+   "timeInPeriod": "17:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 88,
+   "shots": {
+    "BUF": 21,
+    "TOR": 19
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 549,
+   "timeInPeriod": "17:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 551,
+   "timeInPeriod": "18:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 554,
+   "timeInPeriod": "18:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 555,
+   "timeInPeriod": "18:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 556,
+   "timeInPeriod": "18:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 557,
+   "timeInPeriod": "18:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 558,
+   "timeInPeriod": "18:14"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 559,
+   "timeInPeriod": "18:16"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 560,
+   "timeInPeriod": "18:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 49,
+   "shots": {
+    "BUF": 22,
+    "TOR": 19
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 562,
+   "timeInPeriod": "18:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 565,
+   "timeInPeriod": "18:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 566,
+   "timeInPeriod": "18:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 569,
+   "timeInPeriod": "18:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 571,
+   "timeInPeriod": "18:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 572,
+   "timeInPeriod": "19:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 574,
+   "timeInPeriod": "19:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 12,
+   "shots": {
+    "BUF": 22,
+    "TOR": 19
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:12"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 576,
+   "timeInPeriod": "19:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 577,
+   "timeInPeriod": "19:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": true,
+   "period": 2,
+   "periodType": "REG",
+   "running": false,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 0,
+   "shots": {
+    "BUF": 22,
+    "TOR": 19
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 2,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 579,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "BUF": 22,
+    "TOR": 19
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "period-start",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 584,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 1130,
+   "shots": {
+    "BUF": 24,
+    "TOR": 19
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 587,
+   "timeInPeriod": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 588,
+   "timeInPeriod": "00:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 589,
+   "timeInPeriod": "00:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 590,
+   "timeInPeriod": "00:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 593,
+   "timeInPeriod": "00:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 602,
+   "timeInPeriod": "01:10"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 1099,
+   "shots": {
+    "BUF": 24,
+    "TOR": 20
+   },
+   "situationCode": "1551",
+   "timeRemaining": "18:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 603,
+   "timeInPeriod": "01:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 604,
+   "timeInPeriod": "01:23"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 605,
+   "timeInPeriod": "01:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 608,
+   "timeInPeriod": "01:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 609,
+   "timeInPeriod": "01:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 610,
+   "timeInPeriod": "01:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 1052,
+   "shots": {
+    "BUF": 24,
+    "TOR": 23
+   },
+   "situationCode": "1551",
+   "timeRemaining": "17:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 613,
+   "timeInPeriod": "01:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 614,
+   "timeInPeriod": "02:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 624,
+   "timeInPeriod": "02:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 1017,
+   "shots": {
+    "BUF": 24,
+    "TOR": 23
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 626,
+   "timeInPeriod": "02:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 632,
+   "timeInPeriod": "03:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 980,
+   "shots": {
+    "BUF": 24,
+    "TOR": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "16:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 637,
+   "timeInPeriod": "03:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 639,
+   "timeInPeriod": "03:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 640,
+   "timeInPeriod": "03:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 641,
+   "timeInPeriod": "03:40"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 919,
+   "shots": {
+    "BUF": 26,
+    "TOR": 24
+   },
+   "situationCode": "1451",
+   "timeRemaining": "15:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 643,
+   "timeInPeriod": "03:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 646,
+   "timeInPeriod": "03:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 647,
+   "timeInPeriod": "03:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "penalty",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 648,
+   "timeInPeriod": "03:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 652,
+   "timeInPeriod": "03:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 653,
+   "timeInPeriod": "04:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 654,
+   "timeInPeriod": "04:02"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 655,
+   "timeInPeriod": "04:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 656,
+   "timeInPeriod": "04:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 657,
+   "timeInPeriod": "04:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 887,
+   "shots": {
+    "BUF": 26,
+    "TOR": 24
+   },
+   "situationCode": "1451",
+   "timeRemaining": "14:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 662,
+   "timeInPeriod": "05:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 663,
+   "timeInPeriod": "05:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 848,
+   "shots": {
+    "BUF": 27,
+    "TOR": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "14:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 664,
+   "timeInPeriod": "05:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 675,
+   "timeInPeriod": "05:52"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 810,
+   "shots": {
+    "BUF": 27,
+    "TOR": 24
+   },
+   "situationCode": "1551",
+   "timeRemaining": "13:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 677,
+   "timeInPeriod": "06:04"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 685,
+   "timeInPeriod": "06:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 723,
+   "shots": {
+    "BUF": 27,
+    "TOR": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "12:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 688,
+   "timeInPeriod": "06:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 689,
+   "timeInPeriod": "06:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 690,
+   "timeInPeriod": "06:37"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 691,
+   "timeInPeriod": "06:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 692,
+   "timeInPeriod": "06:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 695,
+   "timeInPeriod": "06:46"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 696,
+   "timeInPeriod": "06:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 697,
+   "timeInPeriod": "06:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 708,
+   "timeInPeriod": "07:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 675,
+   "shots": {
+    "BUF": 27,
+    "TOR": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "11:15"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 709,
+   "timeInPeriod": "07:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 710,
+   "timeInPeriod": "08:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 711,
+   "timeInPeriod": "08:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 721,
+   "timeInPeriod": "08:45"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 639,
+   "shots": {
+    "BUF": 27,
+    "TOR": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 722,
+   "timeInPeriod": "08:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 724,
+   "timeInPeriod": "09:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 728,
+   "timeInPeriod": "09:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 609,
+   "shots": {
+    "BUF": 27,
+    "TOR": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "10:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 730,
+   "timeInPeriod": "09:21"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 733,
+   "timeInPeriod": "09:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 735,
+   "timeInPeriod": "09:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 565,
+   "shots": {
+    "BUF": 27,
+    "TOR": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "09:25"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 737,
+   "timeInPeriod": "09:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 738,
+   "timeInPeriod": "09:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 740,
+   "timeInPeriod": "09:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 741,
+   "timeInPeriod": "10:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 743,
+   "timeInPeriod": "10:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 747,
+   "timeInPeriod": "10:35"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 504,
+   "shots": {
+    "BUF": 27,
+    "TOR": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "08:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 749,
+   "timeInPeriod": "10:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 752,
+   "timeInPeriod": "10:53"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 755,
+   "timeInPeriod": "11:36"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 373,
+   "shots": {
+    "BUF": 27,
+    "TOR": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "06:13"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 782,
+   "timeInPeriod": "13:47"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 331,
+   "shots": {
+    "BUF": 27,
+    "TOR": 27
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 783,
+   "timeInPeriod": "13:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 786,
+   "timeInPeriod": "13:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 787,
+   "timeInPeriod": "13:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 789,
+   "timeInPeriod": "13:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "takeaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 790,
+   "timeInPeriod": "14:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 793,
+   "timeInPeriod": "14:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 301,
+   "shots": {
+    "BUF": 27,
+    "TOR": 28
+   },
+   "situationCode": "1551",
+   "timeRemaining": "05:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 794,
+   "timeInPeriod": "14:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 797,
+   "timeInPeriod": "14:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 798,
+   "timeInPeriod": "14:42"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 799,
+   "timeInPeriod": "14:51"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 800,
+   "timeInPeriod": "14:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021292,
+   "gameState": "CRIT",
+   "prevState": "LIVE",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "CRIT",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "secondsRemaining": 271,
+   "shots": {
+    "BUF": 28,
+    "TOR": 29
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 801,
+   "timeInPeriod": "15:03"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 802,
+   "timeInPeriod": "15:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 805,
+   "timeInPeriod": "15:09"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 806,
+   "timeInPeriod": "15:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 807,
+   "timeInPeriod": "15:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 1
+   },
+   "seq": 808,
+   "timeInPeriod": "15:29"
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "prevState": "CRIT",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "secondsRemaining": 241,
+   "shots": {
+    "BUF": 29,
+    "TOR": 30
+   },
+   "situationCode": "1551",
+   "timeRemaining": "04:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 809,
+   "timeInPeriod": "15:30"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "scoringTeam": "TOR",
+   "seq": 810,
+   "timeInPeriod": "15:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 813,
+   "timeInPeriod": "15:39"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 814,
+   "timeInPeriod": "15:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 815,
+   "timeInPeriod": "15:56"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 816,
+   "timeInPeriod": "15:57"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 817,
+   "timeInPeriod": "15:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "secondsRemaining": 175,
+   "shots": {
+    "BUF": 29,
+    "TOR": 30
+   },
+   "situationCode": "1551",
+   "timeRemaining": "02:55"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 818,
+   "timeInPeriod": "15:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 821,
+   "timeInPeriod": "16:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "missed-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 831,
+   "timeInPeriod": "17:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "secondsRemaining": 139,
+   "shots": {
+    "BUF": 33,
+    "TOR": 30
+   },
+   "situationCode": "1560",
+   "timeRemaining": "02:19"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 832,
+   "timeInPeriod": "17:05"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 833,
+   "timeInPeriod": "17:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 836,
+   "timeInPeriod": "17:11"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 837,
+   "timeInPeriod": "17:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 838,
+   "timeInPeriod": "17:18"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 839,
+   "timeInPeriod": "17:20"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 840,
+   "timeInPeriod": "17:22"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 841,
+   "timeInPeriod": "17:24"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 842,
+   "timeInPeriod": "17:31"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 2
+   },
+   "seq": 843,
+   "timeInPeriod": "17:41"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 3
+   },
+   "secondsRemaining": 92,
+   "shots": {
+    "BUF": 34,
+    "TOR": 31
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:32"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 3
+   },
+   "seq": 844,
+   "timeInPeriod": "17:44"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 3
+   },
+   "seq": 845,
+   "timeInPeriod": "17:49"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 3
+   },
+   "seq": 846,
+   "timeInPeriod": "17:54"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 3
+   },
+   "scoringTeam": "TOR",
+   "seq": 849,
+   "timeInPeriod": "18:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 3
+   },
+   "seq": 852,
+   "timeInPeriod": "18:08"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "blocked-shot",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 3
+   },
+   "seq": 853,
+   "timeInPeriod": "18:28"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 4
+   },
+   "secondsRemaining": 61,
+   "shots": {
+    "BUF": 34,
+    "TOR": 32
+   },
+   "situationCode": "1551",
+   "timeRemaining": "01:01"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 4
+   },
+   "scoringTeam": "TOR",
+   "seq": 855,
+   "timeInPeriod": "18:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 4
+   },
+   "seq": 858,
+   "timeInPeriod": "18:43"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 4
+   },
+   "seq": 859,
+   "timeInPeriod": "18:59"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 4
+   },
+   "secondsRemaining": 27,
+   "shots": {
+    "BUF": 34,
+    "TOR": 32
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "hit",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 4
+   },
+   "seq": 865,
+   "timeInPeriod": "19:27"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "giveaway",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 4
+   },
+   "seq": 866,
+   "timeInPeriod": "19:33"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "gameState": "LIVE",
+   "homeTeam": "BUF",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": false,
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 4
+   },
+   "secondsRemaining": 0,
+   "shots": {
+    "BUF": 35,
+    "TOR": 32
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "BUF",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "shot-on-goal",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 4
+   },
+   "seq": 869,
+   "timeInPeriod": "19:48"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "stoppage",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 4
+   },
+   "seq": 870,
+   "timeInPeriod": "19:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "actingTeam": "TOR",
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "faceoff",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 4
+   },
+   "seq": 873,
+   "timeInPeriod": "19:50"
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "period-end",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 4
+   },
+   "seq": 874,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021292,
+   "gameState": "FINAL",
+   "prevState": "LIVE",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 4
+   }
+  }
+ },
+ {
+  "detailType": "nhl.game.play",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "period": 3,
+   "playType": "game-end",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 4
+   },
+   "seq": 878,
+   "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.final",
+  "detail": {
+   "awayTeam": "TOR",
+   "gameId": 2024021292,
+   "homeTeam": "BUF",
+   "s3Prefix": "raw/20242025/2025-04-15/2024021292/",
+   "schemaVersion": 1,
+   "score": {
+    "BUF": 0,
+    "TOR": 4
+   }
+  }
+ }
+]

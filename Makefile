@@ -4,10 +4,20 @@ REPO        := hockeytrack
 TAG         ?= $(shell git rev-parse --short HEAD)
 IMAGE       := $(ACCOUNT_ID).dkr.ecr.$(REGION).amazonaws.com/$(REPO):$(TAG)
 
+# Terraform ships as a snap and refuses to run without a *writable*
+# XDG_RUNTIME_DIR. A login shell usually points it at /run/user/$(shell id -u),
+# which systemd-logind may never have created and which the user often cannot
+# create either, so `?=` is not enough: an already-set but unusable value has to
+# be replaced, not deferred to. Every recipe that reads a terraform output
+# needs this — `backfill`, `site`, `deploy`, `replay` and `livefire`.
+# Only replaces a value that does not work, so a healthy desktop or CI session
+# keeps its own and a fork of this repo is unaffected.
+export XDG_RUNTIME_DIR := $(shell test -w "$${XDG_RUNTIME_DIR}" 2>/dev/null && echo "$${XDG_RUNTIME_DIR}" || (mkdir -p "$(HOME)/.cache/xdg-runtime" && chmod 700 "$(HOME)/.cache/xdg-runtime" && echo "$(HOME)/.cache/xdg-runtime"))
+
 SEASONS     ?= all
 RPS         ?= 3
 
-.PHONY: test vuln build push deploy site backfill og
+.PHONY: test vuln build push deploy site backfill og replay golden golden-update livefire
 
 test: vuln
 	go test ./...
@@ -53,3 +63,33 @@ site:
 	aws s3 sync site/assets/ s3://$$(cd terraform && terraform output -raw site_bucket)/assets/ --exclude 'fonts/*' --delete --cache-control 'public, max-age=86400' --region $(REGION)
 	aws s3 sync site/assets/fonts/ s3://$$(cd terraform && terraform output -raw site_bucket)/assets/fonts/ --delete --cache-control 'public, max-age=31536000, immutable' --content-type 'font/woff2' --region $(REGION)
 	aws cloudfront create-invalidation --distribution-id $$(cd terraform && terraform output -raw site_distribution_id) --paths '/*' --query 'Invalidation.Id' --output text
+
+# Replay one archived game through the poller offline, printing every event
+# it publishes. GAME is an NHL game id; INTERVAL groups plays into snapshots
+# of that much game time (0 for one snapshot per play).
+GAME     ?=
+INTERVAL ?= 30s
+SPEED    ?= 60
+
+replay:
+	@test -n "$(GAME)" || { echo "usage: make replay GAME=2024021299 [INTERVAL=30s]"; exit 2; }
+	AWS_REGION=$(REGION) HOCKEYTRACK_RAW_BUCKET=$$(cd terraform && terraform output -raw raw_bucket) \
+		go run ./cmd/replay -game $(GAME) -interval $(INTERVAL)
+
+# The golden event-stream regression suite. Runs offline from checked-in
+# fixtures; needs no AWS credentials.
+golden:
+	go test ./internal/synth/ -run TestGolden
+
+# Rewrite the golden files. Separate from `golden` so a regeneration is
+# always deliberate: review the diff before committing it.
+golden-update:
+	go test ./internal/synth/ -run TestGolden -update -v
+
+# Replay a game onto the REAL event bus under the synthetic source, which no
+# notification rule matches. Add -as-poller by hand if you specifically want
+# to test the notification path; that can send email and SMS.
+livefire:
+	@test -n "$(GAME)" || { echo "usage: make livefire GAME=2024021299 [SPEED=60]"; exit 2; }
+	AWS_REGION=$(REGION) HOCKEYTRACK_RAW_BUCKET=$$(cd terraform && terraform output -raw raw_bucket) \
+		go run ./cmd/livefire -game $(GAME) -speed $(SPEED) -interval $(INTERVAL)
