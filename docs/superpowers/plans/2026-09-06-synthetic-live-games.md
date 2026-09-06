@@ -1368,14 +1368,14 @@ git commit -m "synth: serve synthesized games to the poller and replay them by g
 
 **Files:**
 - Create: `internal/synth/golden_test.go`
-- Create: `internal/synth/testdata/2024021294.json`, `2024021297.json`, `2024021298.json`, `2024021299.json`, `2024021300.json`
+- Create: `internal/synth/testdata/2024021292.json`, `2024021294.json`, `2024021297.json`, `2024021298.json`, `2024021299.json`, `2024021300.json`
 - Create: `internal/synth/testdata/golden/*.json` (generated)
 
 **Interfaces:**
 - Consumes: `synth.Snapshots`, `synth.NewFeed`, `poller.Run`, `events.FakePublisher` — all as used in `e2e_test.go`.
 - Produces: nothing other tasks consume.
 
-**The curated set.** These six games were selected from the archive and their characteristics verified; the notes are why each one is in the set.
+**The curated set.** These eight games were selected from the archive and their characteristics verified; the notes are why each one is in the set.
 
 | Game | Matchup | Final | Why it is here |
 |---|---|---|---|
@@ -1384,10 +1384,11 @@ git commit -m "synth: serve synthesized games to the poller and replay them by g
 | `2024021299` | VGK @ CGY | 4-5 SO | Shootout: `SO` period type, a stopped clock, and the winning goal that appears in no play's running score. |
 | `2024021294` | FLA @ TBL | 1-5 REG | 14 penalties including a match penalty and two majors. |
 | `2024021297` | UTA @ STL | 1-6 REG | Two misconducts, the one penalty class the others miss. |
-| `2024021300` | LAK @ SEA | 6-5 REG | A penalty shot, an empty-net goal, and eleven goals total. |
+| `2024021300` | LAK @ SEA | 6-5 REG | A penalty shot, and eleven goals in one game. |
+| `2024021292` | TOR @ BUF | 4-0 REG | A shutout, and a genuine empty-net goal (situation code `1560`, home goalie pulled, away team scoring). |
 | `1917020001` | MTL @ SEN | 7-4 | Pre-modern tier: goals and penalties only, no period markers, no shots. |
 
-- [ ] **Step 1: Download the five new fixtures**
+- [ ] **Step 1: Download the six new fixtures**
 
 These are read-only S3 gets. The bucket name comes from Terraform output; do not run any other Terraform command.
 
@@ -1395,14 +1396,14 @@ These are read-only S3 gets. The bucket name comes from Terraform output; do not
 cd /home/jay/projects/hockeytrack
 export AWS_REGION=us-east-1
 B=hockeytrack-raw-989232581535
-# All five were played on 2025-04-15.
-for id in 2024021294 2024021297 2024021298 2024021299 2024021300; do
+# All six were played on 2025-04-15.
+for id in 2024021292 2024021294 2024021297 2024021298 2024021299 2024021300; do
   aws s3 cp "s3://$B/raw/20242025/2025-04-15/$id/final/pbp.json" "internal/synth/testdata/$id.json" --quiet
 done
 ls -la internal/synth/testdata/
 ```
 
-Expected: five files, each roughly 120-160 KB. If a copy fails, the date is wrong — find the key with:
+Expected: six files, each roughly 120-160 KB. If a copy fails, the date is wrong — find the key with:
 `aws s3api list-objects-v2 --bucket $B --prefix raw/20242025/ --query "Contents[?contains(Key, '<id>/final/pbp.json')].Key" --output text`
 
 - [ ] **Step 2: Write the golden test**
@@ -1438,7 +1439,8 @@ var curated = []struct {
 	{"2024021299", "shootout, stopped clock, winner outside the play stream"},
 	{"2024021294", "match penalty and two majors"},
 	{"2024021297", "misconducts"},
-	{"2024021300", "penalty shot, empty-net goal, eleven goals"},
+	{"2024021300", "penalty shot, eleven goals in one game"},
+	{"2024021292", "shutout with a genuine empty-net goal"},
 	{"1917020001", "pre-modern tier: no period markers, no shots"},
 }
 
@@ -1531,7 +1533,7 @@ func itoa(n int) string { return strconv.Itoa(n) }
 - [ ] **Step 3: Generate the golden files**
 
 Run: `go test ./internal/synth/ -run TestGolden -update -v`
-Expected: PASS, with seven `wrote testdata/golden/<game>.json` log lines.
+Expected: PASS, with eight `wrote testdata/golden/<game>.json` log lines.
 
 - [ ] **Step 4: Sanity-check what was recorded**
 
@@ -2065,10 +2067,11 @@ the cadence is chosen rather than observed, and the JSON field order differs
 from the original. Pass `INTERVAL=0` for one snapshot per play, which is
 denser than any real poll and the strictest test of the diff logic.
 
-`make golden` runs the regression suite: seven curated games — regulation,
-overtime, shootout, a match penalty, misconducts, a penalty shot and empty
-net, and a 1917 game with no period markers at all — whose complete event
-streams are recorded in `internal/synth/testdata/golden/`. It runs from
+`make golden` runs the regression suite: eight curated games — regulation, a
+shutout with an empty-net goal, overtime, a shootout, a match penalty,
+misconducts, a penalty shot, and a 1917 game with no period markers at all —
+whose complete event streams are recorded in
+`internal/synth/testdata/golden/`. It runs from
 checked-in fixtures and needs no AWS credentials. When you change the event
 contract on purpose, `make golden-update` rewrites the recordings; review
 that diff carefully, because it is the contract other people build against.
@@ -2108,7 +2111,7 @@ git commit -m "replay: make targets and docs for synthesizing a live game"
 
 ## Notes for the controller
 
-- Task 3 downloads five fixtures from S3. Those are read-only `GetObject` calls and are permitted; nothing else in this plan touches AWS.
+- Task 3 downloads six fixtures from S3. Those are read-only `GetObject` calls and are permitted; nothing else in this plan touches AWS.
 - Task 4 explicitly forbids a real publish. The first real-bus run is an operator action for the controller to take after the branch is reviewed, and its result belongs in the ledger, not in a subagent's hands.
 - The plan adds fields to `nhl.Play` in Task 1. Every later task depends on that; do not reorder.
 - If a reviewer objects to `Feed.PlayByPlay` returning a shared `*nhl.PlayByPlay` rather than a copy: that is deliberate and documented. The poller only reads it, and copying every document would double a replay's memory.
