@@ -54,7 +54,7 @@ Bus `hockeytrack`, source `hockeytrack.poller`. Five detail-types (plus `hockeyt
 - **`nhl.game.clock`** — a heartbeat on every poll while the game is live (about every 5 s): `gameState`, `period`/`periodType`, `secondsRemaining`/`timeRemaining`/`running`/`inIntermission`, the four-digit `situationCode` (away goalie, away skaters, home skaters, home goalie), both teams' `score` and `shots`, and `observedAt`. Consumers that show a clock should count down locally from `secondsRemaining` while `running` is true and re-sync on each heartbeat.
 - **`nhl.game.roster`** — published when a game's roster is first seen and again if it changes: `players[]` with `playerId`, `team`, `number` and `position`, so a consumer can print "#86" without calling the NHL.
 
-Delivery is at-least-once; consumers should dedupe on `(gameId, seq)`. Every event carries `schemaVersion` so the schema can evolve without breaking you.
+Delivery is at-least-once; dedupe plays on `(gameId, seq)`, treat `nhl.game.clock` as a snapshot keyed by `(gameId, observedAt)` (apply the newest, drop older ones), and treat status, roster and final events as idempotent. Every event carries `schemaVersion` so the schema can evolve without breaking you.
 
 **`raw` is untrusted input.** It is third-party JSON from the NHL API passed through verbatim — HockeyTrack does not validate, sanitize, or bound it. Treat it as you would any external payload: validate the fields you use, escape it before rendering it in HTML/SMS/email, never `eval` or template it unescaped, and don't assume its shape is stable. The typed top-level fields (`playType`, `scoringTeam`, score, period/clock) are parsed by the poller and are safer to match rules on, but their string values still originate from the same source.
 
