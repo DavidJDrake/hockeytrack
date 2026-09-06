@@ -126,6 +126,8 @@ type Play struct {
 	TypeCode         int              `json:"typeCode"`
 	TypeDescKey      string           `json:"typeDescKey"`
 	TimeInPeriod     string           `json:"timeInPeriod"`
+	TimeRemaining    string           `json:"timeRemaining"`
+	SituationCode    string           `json:"situationCode"`
 	PeriodDescriptor PeriodDescriptor `json:"periodDescriptor"`
 	Details          json.RawMessage  `json:"details"`
 	Raw              json.RawMessage  `json:"-"`
