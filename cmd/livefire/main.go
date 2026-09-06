@@ -118,12 +118,24 @@ func main() {
 	outcome, err := poller.Run(ctx, poller.Deps{
 		Feed: feed, Store: gs, Archive: store.NewFakeArchive(), Pub: pub,
 		Now: time.Now, Sleep: sleep,
-	}, poller.DefaultConfig(), syntheticID, "livefire", func() bool { return false })
+	}, replayConfig(), syntheticID, "livefire", func() bool { return false })
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "livefire error:", err)
 		os.Exit(1)
 	}
 	fmt.Fprintf(os.Stderr, "livefire done: outcome=%d\n", outcome)
+}
+
+// replayConfig hands all pacing to synth.Pacer. The poller's own poll
+// intervals are wall-clock sleeps that know nothing about -speed, so leaving
+// them at their defaults would pin every run to snapshot_count x LiveInterval
+// no matter how fast the caller asked for. Zeroed here, the Feed's Before
+// hook is the single thing that decides how fast a replayed game runs.
+func replayConfig() poller.Config {
+	cfg := poller.DefaultConfig()
+	cfg.LiveInterval = 0
+	cfg.PregameInterval = 0
+	return cfg
 }
 
 func sleep(ctx context.Context, d time.Duration) error {
