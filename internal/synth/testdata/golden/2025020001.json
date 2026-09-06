@@ -3362,22 +3362,22 @@
    "gameId": 2025020001,
    "gameState": "LIVE",
    "homeTeam": "FLA",
-   "inIntermission": false,
-   "period": 2,
+   "inIntermission": true,
+   "period": 1,
    "periodType": "REG",
-   "running": true,
+   "running": false,
    "schemaVersion": 1,
    "score": {
     "CHI": 1,
     "FLA": 2
    },
-   "secondsRemaining": 1200,
+   "secondsRemaining": 0,
    "shots": {
     "CHI": 3,
     "FLA": 17
    },
    "situationCode": "1551",
-   "timeRemaining": "20:00"
+   "timeRemaining": "00:00"
   }
  },
  {
@@ -3395,6 +3395,31 @@
    },
    "seq": 318,
    "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 1,
+    "FLA": 2
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "CHI": 3,
+    "FLA": 17
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
   }
  },
  {
@@ -5858,22 +5883,22 @@
    "gameId": 2025020001,
    "gameState": "LIVE",
    "homeTeam": "FLA",
-   "inIntermission": false,
-   "period": 3,
+   "inIntermission": true,
+   "period": 2,
    "periodType": "REG",
-   "running": true,
+   "running": false,
    "schemaVersion": 1,
    "score": {
     "CHI": 2,
     "FLA": 2
    },
-   "secondsRemaining": 1200,
+   "secondsRemaining": 0,
    "shots": {
     "CHI": 14,
     "FLA": 26
    },
    "situationCode": "1551",
-   "timeRemaining": "20:00"
+   "timeRemaining": "00:00"
   }
  },
  {
@@ -5909,6 +5934,31 @@
    },
    "seq": 582,
    "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "CHI",
+   "gameId": 2025020001,
+   "gameState": "LIVE",
+   "homeTeam": "FLA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CHI": 2,
+    "FLA": 2
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "CHI": 14,
+    "FLA": 26
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
   }
  },
  {

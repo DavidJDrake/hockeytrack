@@ -251,3 +251,229 @@ func TestSnapshotsRewritesGameID(t *testing.T) {
 		}
 	}
 }
+
+// A shootout winner's goal is in no play's running score: the deciding play
+// itself still reports the pre-shootout-winner tie, 4-4, which is why the
+// last snapshot must defer to the document's own top-level score and shots
+// rather than to the fold.
+func TestSnapshotsShootoutFinalScoreComesFromTheDocument(t *testing.T) {
+	raw := fixture(t, "2024021299")
+	s, err := Snapshots(raw, Options{})
+	if err != nil {
+		t.Fatal(err)
+	}
+	last := s[len(s)-1].PBP
+	if last.AwayTeam.Score != 4 || last.HomeTeam.Score != 5 {
+		t.Errorf("final score = %d-%d, want 4-5", last.AwayTeam.Score, last.HomeTeam.Score)
+	}
+	if last.AwayTeam.SOG != 42 || last.HomeTeam.SOG != 28 {
+		t.Errorf("final shots = %d-%d, want 42-28", last.AwayTeam.SOG, last.HomeTeam.SOG)
+	}
+
+	var doc struct {
+		Plays []struct {
+			TypeDescKey string `json:"typeDescKey"`
+			Details     struct {
+				AwayScore *int `json:"awayScore"`
+				HomeScore *int `json:"homeScore"`
+			} `json:"details"`
+		} `json:"plays"`
+	}
+	if err := json.Unmarshal(raw, &doc); err != nil {
+		t.Fatal(err)
+	}
+	var lastGoal *struct {
+		TypeDescKey string `json:"typeDescKey"`
+		Details     struct {
+			AwayScore *int `json:"awayScore"`
+			HomeScore *int `json:"homeScore"`
+		} `json:"details"`
+	}
+	for i := range doc.Plays {
+		if doc.Plays[i].TypeDescKey == "goal" {
+			lastGoal = &doc.Plays[i]
+		}
+	}
+	if lastGoal == nil || lastGoal.Details.AwayScore == nil || lastGoal.Details.HomeScore == nil {
+		t.Fatal("no goal play with a running score found in the fixture")
+	}
+	if *lastGoal.Details.AwayScore != 4 || *lastGoal.Details.HomeScore != 4 {
+		t.Errorf("last goal play reports %d-%d, want 4-4 (the shootout winner is invisible to the fold)",
+			*lastGoal.Details.AwayScore, *lastGoal.Details.HomeScore)
+	}
+}
+
+func TestSnapshotsShootoutClockIsStopped(t *testing.T) {
+	s, err := Snapshots(fixture(t, "2024021299"), Options{})
+	if err != nil {
+		t.Fatal(err)
+	}
+	found := false
+	for i, sn := range s {
+		if sn.PBP.PeriodDescriptor.PeriodType != "SO" {
+			continue
+		}
+		found = true
+		if sn.PBP.Clock.Running {
+			t.Errorf("snapshot %d is SO but clock is running", i)
+		}
+	}
+	if !found {
+		t.Fatal("no SO snapshot found in fixture")
+	}
+}
+
+func TestSnapshotsShootoutAttemptsAreNotShots(t *testing.T) {
+	s, err := Snapshots(fixture(t, "2024021299"), Options{})
+	if err != nil {
+		t.Fatal(err)
+	}
+	var prevAway, prevHome int
+	haveSO, first := false, true
+	for i, sn := range s {
+		p := sn.PBP
+		if len(p.Plays) == 0 {
+			continue
+		}
+		if p.Plays[len(p.Plays)-1].PeriodDescriptor.PeriodType != "SO" {
+			continue
+		}
+		haveSO = true
+		if !first && (p.AwayTeam.SOG > prevAway || p.HomeTeam.SOG > prevHome) {
+			t.Errorf("snapshot %d shots rose during a shootout: %d-%d after %d-%d",
+				i, p.AwayTeam.SOG, p.HomeTeam.SOG, prevAway, prevHome)
+		}
+		first = false
+		prevAway, prevHome = p.AwayTeam.SOG, p.HomeTeam.SOG
+	}
+	if !haveSO {
+		t.Fatal("no snapshot ending in SO found in fixture")
+	}
+}
+
+// Regression test for the review finding that periodChanged, which compares
+// a play's period number to the previous play's, fires on the first play of
+// the next period rather than on the period-end play itself — so in
+// interval mode a consumer never saw an intermission at all.
+func TestSnapshotsIntervalModeStillReportsIntermissions(t *testing.T) {
+	s, err := Snapshots(fixture(t, "2025020001"), Options{Interval: 30 * time.Second})
+	if err != nil {
+		t.Fatal(err)
+	}
+	count := 0
+	for _, sn := range s {
+		if sn.PBP.Clock.InIntermission {
+			count++
+		}
+	}
+	if count == 0 {
+		t.Fatal("interval mode reported zero intermissions, want at least one")
+	}
+	if count < 2 {
+		t.Errorf("interval mode reported %d intermissions, want at least 2", count)
+	}
+}
+
+func TestSnapshotsEmptyPlaysStillEndsFinal(t *testing.T) {
+	var doc map[string]any
+	if err := json.Unmarshal(fixture(t, "1917020001"), &doc); err != nil {
+		t.Fatal(err)
+	}
+	doc["plays"] = []any{}
+	raw, err := json.Marshal(doc)
+	if err != nil {
+		t.Fatal(err)
+	}
+	s, err := Snapshots(raw, Options{})
+	if err != nil {
+		t.Fatal(err)
+	}
+	last := s[len(s)-1].PBP
+	if last.GameState != "FINAL" {
+		t.Errorf("last state = %q, want FINAL", last.GameState)
+	}
+	if len(last.Plays) != 0 {
+		t.Errorf("last plays = %d, want 0", len(last.Plays))
+	}
+}
+
+func TestSnapshotsMalformedClockIsNotCrit(t *testing.T) {
+	var doc map[string]any
+	if err := json.Unmarshal(fixture(t, "2025020001"), &doc); err != nil {
+		t.Fatal(err)
+	}
+	plays, _ := doc["plays"].([]any)
+	for _, pl := range plays {
+		p, ok := pl.(map[string]any)
+		if !ok {
+			continue
+		}
+		p["timeRemaining"] = ""
+	}
+	raw, err := json.Marshal(doc)
+	if err != nil {
+		t.Fatal(err)
+	}
+	s, err := Snapshots(raw, Options{})
+	if err != nil {
+		t.Fatal(err)
+	}
+	for i, sn := range s {
+		if sn.PBP.GameState == "CRIT" {
+			t.Errorf("snapshot %d reported CRIT with a blank timeRemaining", i)
+		}
+	}
+}
+
+func TestSnapshotsRejectsBadInput(t *testing.T) {
+	base := fixture(t, "2025020001")
+
+	makeDoc := func(t *testing.T, mutate func(doc map[string]any)) []byte {
+		t.Helper()
+		var doc map[string]any
+		if err := json.Unmarshal(base, &doc); err != nil {
+			t.Fatal(err)
+		}
+		mutate(doc)
+		raw, err := json.Marshal(doc)
+		if err != nil {
+			t.Fatal(err)
+		}
+		return raw
+	}
+
+	cases := []struct {
+		name string
+		raw  []byte
+		opts Options
+	}{
+		{
+			name: "equal team ids",
+			raw: makeDoc(t, func(doc map[string]any) {
+				home, _ := doc["homeTeam"].(map[string]any)
+				away, _ := doc["awayTeam"].(map[string]any)
+				home["id"] = json.Number("111")
+				away["id"] = json.Number("111")
+			}),
+		},
+		{
+			name: "zero team id",
+			raw: makeDoc(t, func(doc map[string]any) {
+				home, _ := doc["homeTeam"].(map[string]any)
+				home["id"] = json.Number("0")
+			}),
+		},
+		{
+			name: "negative GameID option",
+			raw:  base,
+			opts: Options{GameID: -1},
+		},
+	}
+	for _, c := range cases {
+		t.Run(c.name, func(t *testing.T) {
+			if _, err := Snapshots(c.raw, c.opts); err == nil {
+				t.Error("want an error, got nil")
+			}
+		})
+	}
+}

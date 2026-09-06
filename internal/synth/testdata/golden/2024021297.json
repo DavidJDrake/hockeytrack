@@ -2676,22 +2676,22 @@
    "gameId": 2024021297,
    "gameState": "LIVE",
    "homeTeam": "STL",
-   "inIntermission": false,
-   "period": 2,
+   "inIntermission": true,
+   "period": 1,
    "periodType": "REG",
-   "running": true,
+   "running": false,
    "schemaVersion": 1,
    "score": {
     "STL": 4,
     "UTA": 0
    },
-   "secondsRemaining": 1200,
+   "secondsRemaining": 0,
    "shots": {
     "STL": 12,
     "UTA": 5
    },
    "situationCode": "1551",
-   "timeRemaining": "20:00"
+   "timeRemaining": "00:00"
   }
  },
  {
@@ -2745,6 +2745,31 @@
    },
    "seq": 285,
    "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "UTA",
+   "gameId": 2024021297,
+   "gameState": "LIVE",
+   "homeTeam": "STL",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "STL": 4,
+    "UTA": 0
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "STL": 12,
+    "UTA": 5
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
   }
  },
  {
@@ -5398,22 +5423,22 @@
    "gameId": 2024021297,
    "gameState": "LIVE",
    "homeTeam": "STL",
-   "inIntermission": false,
-   "period": 3,
+   "inIntermission": true,
+   "period": 2,
    "periodType": "REG",
-   "running": true,
+   "running": false,
    "schemaVersion": 1,
    "score": {
     "STL": 4,
     "UTA": 1
    },
-   "secondsRemaining": 1200,
+   "secondsRemaining": 0,
    "shots": {
     "STL": 21,
     "UTA": 19
    },
    "situationCode": "1551",
-   "timeRemaining": "20:00"
+   "timeRemaining": "00:00"
   }
  },
  {
@@ -5485,6 +5510,31 @@
    },
    "seq": 559,
    "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "UTA",
+   "gameId": 2024021297,
+   "gameState": "LIVE",
+   "homeTeam": "STL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "STL": 4,
+    "UTA": 1
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "STL": 21,
+    "UTA": 19
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
   }
  },
  {
@@ -7834,16 +7884,28 @@
   }
  },
  {
-  "detailType": "nhl.game.status",
+  "detailType": "nhl.game.clock",
   "detail": {
+   "awayTeam": "UTA",
    "gameId": 2024021297,
-   "gameState": "FINAL",
-   "prevState": "LIVE",
+   "gameState": "LIVE",
+   "homeTeam": "STL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": false,
    "schemaVersion": 1,
    "score": {
     "STL": 6,
     "UTA": 1
-   }
+   },
+   "secondsRemaining": 0,
+   "shots": {
+    "STL": 29,
+    "UTA": 23
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:00"
   }
  },
  {
@@ -7861,6 +7923,19 @@
    },
    "seq": 834,
    "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021297,
+   "gameState": "FINAL",
+   "prevState": "LIVE",
+   "schemaVersion": 1,
+   "score": {
+    "STL": 6,
+    "UTA": 1
+   }
   }
  },
  {

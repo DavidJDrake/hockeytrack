@@ -3134,22 +3134,22 @@
    "gameId": 2024021299,
    "gameState": "LIVE",
    "homeTeam": "CGY",
-   "inIntermission": false,
-   "period": 2,
+   "inIntermission": true,
+   "period": 1,
    "periodType": "REG",
-   "running": true,
+   "running": false,
    "schemaVersion": 1,
    "score": {
     "CGY": 1,
     "VGK": 3
    },
-   "secondsRemaining": 1200,
+   "secondsRemaining": 0,
    "shots": {
     "CGY": 9,
     "VGK": 11
    },
    "situationCode": "1551",
-   "timeRemaining": "20:00"
+   "timeRemaining": "00:00"
   }
  },
  {
@@ -3220,6 +3220,31 @@
    },
    "seq": 279,
    "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "CGY": 9,
+    "VGK": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
   }
  },
  {
@@ -6112,22 +6137,22 @@
    "gameId": 2024021299,
    "gameState": "LIVE",
    "homeTeam": "CGY",
-   "inIntermission": false,
-   "period": 3,
+   "inIntermission": true,
+   "period": 2,
    "periodType": "REG",
-   "running": true,
+   "running": false,
    "schemaVersion": 1,
    "score": {
     "CGY": 1,
     "VGK": 3
    },
-   "secondsRemaining": 1200,
+   "secondsRemaining": 0,
    "shots": {
     "CGY": 17,
     "VGK": 24
    },
    "situationCode": "1451",
-   "timeRemaining": "20:00"
+   "timeRemaining": "00:00"
   }
  },
  {
@@ -6181,6 +6206,31 @@
    },
    "seq": 552,
    "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "VGK",
+   "gameId": 2024021299,
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 1,
+    "VGK": 3
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "CGY": 17,
+    "VGK": 24
+   },
+   "situationCode": "1451",
+   "timeRemaining": "20:00"
   }
  },
  {
@@ -9503,16 +9553,28 @@
   }
  },
  {
-  "detailType": "nhl.game.status",
+  "detailType": "nhl.game.clock",
   "detail": {
+   "awayTeam": "VGK",
    "gameId": 2024021299,
-   "gameState": "FINAL",
-   "prevState": "LIVE",
+   "gameState": "LIVE",
+   "homeTeam": "CGY",
+   "inIntermission": false,
+   "period": 5,
+   "periodType": "SO",
+   "running": false,
    "schemaVersion": 1,
    "score": {
-    "CGY": 5,
+    "CGY": 4,
     "VGK": 4
-   }
+   },
+   "secondsRemaining": 0,
+   "shots": {
+    "CGY": 28,
+    "VGK": 42
+   },
+   "situationCode": "0101",
+   "timeRemaining": "00:00"
   }
  },
  {
@@ -9526,7 +9588,7 @@
    "playType": "shot-on-goal",
    "schemaVersion": 1,
    "score": {
-    "CGY": 5,
+    "CGY": 4,
     "VGK": 4
    },
    "seq": 899,
@@ -9544,7 +9606,7 @@
    "playType": "missed-shot",
    "schemaVersion": 1,
    "score": {
-    "CGY": 5,
+    "CGY": 4,
     "VGK": 4
    },
    "seq": 900,
@@ -9562,7 +9624,7 @@
    "playType": "missed-shot",
    "schemaVersion": 1,
    "score": {
-    "CGY": 5,
+    "CGY": 4,
     "VGK": 4
    },
    "seq": 901,
@@ -9580,7 +9642,7 @@
    "playType": "missed-shot",
    "schemaVersion": 1,
    "score": {
-    "CGY": 5,
+    "CGY": 4,
     "VGK": 4
    },
    "seq": 902,
@@ -9659,6 +9721,19 @@
   }
  },
  {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021299,
+   "gameState": "FINAL",
+   "prevState": "LIVE",
+   "schemaVersion": 1,
+   "score": {
+    "CGY": 5,
+    "VGK": 4
+   }
+  }
+ },
+ {
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
@@ -9668,7 +9743,7 @@
    "playType": "game-end",
    "schemaVersion": 1,
    "score": {
-    "CGY": 4,
+    "CGY": 5,
     "VGK": 4
    },
    "seq": 910,

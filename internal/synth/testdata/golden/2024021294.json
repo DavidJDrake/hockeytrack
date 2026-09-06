@@ -5250,22 +5250,22 @@
    "gameId": 2024021294,
    "gameState": "LIVE",
    "homeTeam": "TBL",
-   "inIntermission": false,
-   "period": 3,
+   "inIntermission": true,
+   "period": 2,
    "periodType": "REG",
-   "running": true,
+   "running": false,
    "schemaVersion": 1,
    "score": {
     "FLA": 1,
     "TBL": 4
    },
-   "secondsRemaining": 1200,
+   "secondsRemaining": 0,
    "shots": {
     "FLA": 17,
     "TBL": 18
    },
    "situationCode": "1551",
-   "timeRemaining": "20:00"
+   "timeRemaining": "00:00"
   }
  },
  {
@@ -5283,6 +5283,31 @@
    },
    "seq": 551,
    "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "FLA",
+   "gameId": 2024021294,
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 4
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "FLA": 17,
+    "TBL": 18
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
   }
  },
  {
@@ -7716,16 +7741,28 @@
   }
  },
  {
-  "detailType": "nhl.game.status",
+  "detailType": "nhl.game.clock",
   "detail": {
+   "awayTeam": "FLA",
    "gameId": 2024021294,
-   "gameState": "FINAL",
-   "prevState": "LIVE",
+   "gameState": "LIVE",
+   "homeTeam": "TBL",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": false,
    "schemaVersion": 1,
    "score": {
     "FLA": 1,
     "TBL": 5
-   }
+   },
+   "secondsRemaining": 0,
+   "shots": {
+    "FLA": 24,
+    "TBL": 31
+   },
+   "situationCode": "1551",
+   "timeRemaining": "00:00"
   }
  },
  {
@@ -7743,6 +7780,19 @@
    },
    "seq": 835,
    "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021294,
+   "gameState": "FINAL",
+   "prevState": "LIVE",
+   "schemaVersion": 1,
+   "score": {
+    "FLA": 1,
+    "TBL": 5
+   }
   }
  },
  {

@@ -2419,22 +2419,22 @@
    "gameId": 2024021300,
    "gameState": "LIVE",
    "homeTeam": "SEA",
-   "inIntermission": false,
-   "period": 2,
+   "inIntermission": true,
+   "period": 1,
    "periodType": "REG",
-   "running": true,
+   "running": false,
    "schemaVersion": 1,
    "score": {
     "LAK": 2,
     "SEA": 0
    },
-   "secondsRemaining": 1200,
+   "secondsRemaining": 0,
    "shots": {
     "LAK": 5,
     "SEA": 11
    },
    "situationCode": "1551",
-   "timeRemaining": "20:00"
+   "timeRemaining": "00:00"
   }
  },
  {
@@ -2452,6 +2452,31 @@
    },
    "seq": 268,
    "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 2,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 2,
+    "SEA": 0
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "LAK": 5,
+    "SEA": 11
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
   }
  },
  {
@@ -4874,22 +4899,22 @@
    "gameId": 2024021300,
    "gameState": "LIVE",
    "homeTeam": "SEA",
-   "inIntermission": false,
-   "period": 3,
+   "inIntermission": true,
+   "period": 2,
    "periodType": "REG",
-   "running": true,
+   "running": false,
    "schemaVersion": 1,
    "score": {
     "LAK": 4,
     "SEA": 2
    },
-   "secondsRemaining": 1200,
+   "secondsRemaining": 0,
    "shots": {
     "LAK": 14,
     "SEA": 22
    },
    "situationCode": "1551",
-   "timeRemaining": "20:00"
+   "timeRemaining": "00:00"
   }
  },
  {
@@ -4907,6 +4932,31 @@
    },
    "seq": 491,
    "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.clock",
+  "detail": {
+   "awayTeam": "LAK",
+   "gameId": 2024021300,
+   "gameState": "LIVE",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": true,
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 4,
+    "SEA": 2
+   },
+   "secondsRemaining": 1200,
+   "shots": {
+    "LAK": 14,
+    "SEA": 22
+   },
+   "situationCode": "1551",
+   "timeRemaining": "20:00"
   }
  },
  {
@@ -7635,16 +7685,28 @@
   }
  },
  {
-  "detailType": "nhl.game.status",
+  "detailType": "nhl.game.clock",
   "detail": {
+   "awayTeam": "LAK",
    "gameId": 2024021300,
-   "gameState": "FINAL",
-   "prevState": "CRIT",
+   "gameState": "CRIT",
+   "homeTeam": "SEA",
+   "inIntermission": false,
+   "period": 3,
+   "periodType": "REG",
+   "running": false,
    "schemaVersion": 1,
    "score": {
     "LAK": 6,
     "SEA": 5
-   }
+   },
+   "secondsRemaining": 0,
+   "shots": {
+    "LAK": 24,
+    "SEA": 34
+   },
+   "situationCode": "1560",
+   "timeRemaining": "00:00"
   }
  },
  {
@@ -7732,6 +7794,19 @@
    },
    "seq": 744,
    "timeInPeriod": "20:00"
+  }
+ },
+ {
+  "detailType": "nhl.game.status",
+  "detail": {
+   "gameId": 2024021300,
+   "gameState": "FINAL",
+   "prevState": "CRIT",
+   "schemaVersion": 1,
+   "score": {
+    "LAK": 6,
+    "SEA": 5
+   }
   }
  },
  {

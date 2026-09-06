@@ -39,10 +39,17 @@ func FinalPBP(ctx context.Context, src Source, gameID int64, cacheDir string) ([
 	if err != nil {
 		return nil, fmt.Errorf("list season %d: %w", season, err)
 	}
-	want := fmt.Sprintf("/%d/final/pbp.json", gameID)
+	wantID := fmt.Sprint(gameID)
 	key := ""
 	for _, k := range keys {
-		if strings.HasSuffix(k, want) {
+		// Match the game id as its own path segment, not a suffix: a
+		// suffix match is only safe because every real game id happens to
+		// be exactly ten digits.
+		segs := strings.Split(k, "/")
+		if len(segs) >= 3 &&
+			segs[len(segs)-1] == "pbp.json" &&
+			segs[len(segs)-2] == "final" &&
+			segs[len(segs)-3] == wantID {
 			key = k
 			break
 		}
@@ -57,10 +64,32 @@ func FinalPBP(ctx context.Context, src Source, gameID int64, cacheDir string) ([
 	if cacheDir != "" {
 		if err := os.MkdirAll(cacheDir, 0o755); err == nil {
 			// A cache write failure is not worth failing the run over.
-			_ = os.WriteFile(cachePath(cacheDir, gameID), body, 0o644)
+			writeCacheAtomic(cacheDir, gameID, body)
 		}
 	}
 	return body, nil
+}
+
+// writeCacheAtomic writes body to the game's cache file by writing a temp
+// file and renaming it into place. os.WriteFile is not atomic: a process
+// killed mid-write would leave a truncated file that the read path (which
+// only checks err == nil) would then serve as a valid cache hit forever
+// after. A failure here is silently swallowed, matching the caller's
+// existing policy that a cache-write failure must never fail the run.
+func writeCacheAtomic(cacheDir string, gameID int64, body []byte) {
+	tmp, err := os.CreateTemp(cacheDir, ".final-*.json")
+	if err != nil {
+		return
+	}
+	_, werr := tmp.Write(body)
+	cerr := tmp.Close()
+	if werr == nil && cerr == nil {
+		// Rename is atomic within a directory, so a reader sees either the
+		// whole file or no file.
+		_ = os.Rename(tmp.Name(), cachePath(cacheDir, gameID))
+	} else {
+		_ = os.Remove(tmp.Name())
+	}
 }
 
 func cachePath(dir string, gameID int64) string {

@@ -15,18 +15,22 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"strconv"
+	"strings"
 	"time"
 
 	"hockeytrack/internal/nhl"
 )
 
-// pregameClock is what a feed shows before the opening faceoff.
+// pregameSeconds is what a feed shows before the opening faceoff.
 const pregameSeconds = 1200
 
 // critThreshold is the point in a final regulation period at which the NHL
 // feed switches a one-goal game from LIVE to CRIT.
 const critThreshold = 300
 
+// Options controls how Snapshots paces and labels the reconstructed poll
+// sequence.
 type Options struct {
 	// Interval groups plays into one snapshot per Interval of elapsed game
 	// time. Zero emits one snapshot per play: denser than any real poll
@@ -67,6 +71,21 @@ func Snapshots(finalRaw []byte, opts Options) ([]Snapshot, error) {
 	var final nhl.PlayByPlay
 	if err := json.Unmarshal(finalRaw, &final); err != nil {
 		return nil, fmt.Errorf("decode final as play-by-play: %w", err)
+	}
+
+	// Reject inputs that cannot be attributed to a team, or options that
+	// cannot produce a valid document, before any snapshot is built.
+	if final.HomeTeam.ID == 0 {
+		return nil, fmt.Errorf("synth: home team id is %d; cannot attribute plays", final.HomeTeam.ID)
+	}
+	if final.AwayTeam.ID == 0 {
+		return nil, fmt.Errorf("synth: away team id is %d; cannot attribute plays", final.AwayTeam.ID)
+	}
+	if final.HomeTeam.ID == final.AwayTeam.ID {
+		return nil, fmt.Errorf("synth: home and away team ids are both %d; cannot attribute plays", final.HomeTeam.ID)
+	}
+	if opts.GameID < 0 {
+		return nil, fmt.Errorf("synth: GameID is %d; must not be negative", opts.GameID)
 	}
 
 	// Plays travel as raw bytes so the play events carry the original
@@ -128,6 +147,20 @@ func Snapshots(finalRaw []byte, opts Options) ([]Snapshot, error) {
 	awayTeam["score"], awayTeam["sog"] = 0, 0
 	if err := emit(); err != nil {
 		return nil, err
+	}
+
+	// A document with no plays (fact: pre-modern tiers can be this sparse)
+	// still needs a terminal FINAL snapshot, or a poller driven by it would
+	// never observe an end state.
+	if len(cuts) == 0 {
+		doc["gameState"] = "FINAL"
+		doc["clock"] = clockDoc("00:00", 0, false, false)
+		awayTeam["score"], homeTeam["score"] = final.AwayTeam.Score, final.HomeTeam.Score
+		awayTeam["sog"], homeTeam["sog"] = final.AwayTeam.SOG, final.HomeTeam.SOG
+		if err := emit(); err != nil {
+			return nil, err
+		}
+		return out, nil
 	}
 
 	for n, i := range cuts {
@@ -210,15 +243,31 @@ func cutPoints(plays []nhl.Play, interval time.Duration) []int {
 		}
 		return out
 	}
-	step := int(interval.Seconds())
 	var out []int
+	// lastCut starts far in the past so the very first play always closes
+	// a snapshot, the same way i == len(plays)-1 always closes the last.
 	lastCut := -1 << 30
 	lastPeriod := plays[0].PeriodDescriptor.Number
 	for i, p := range plays {
 		elapsed := parseClock(p.TimeInPeriod)
+		if elapsed < 0 {
+			// An unreadable clock must not force or suppress a cut: treat
+			// the play as having made no progress since the last cut.
+			elapsed = lastCut
+		}
 		periodChanged := p.PeriodDescriptor.Number != lastPeriod
+		// Finding C: periodChanged only fires on the first play of the next
+		// period, never on the period-end play itself (which still carries
+		// the old period number), so a boundary marker is checked
+		// explicitly and forces a cut regardless of interval. The
+		// pre-modern tier has no boundary plays at all, so periodChanged
+		// is kept as the only signal available there.
+		boundary := p.TypeDescKey == "period-start" ||
+			p.TypeDescKey == "period-end" ||
+			p.TypeDescKey == "game-end"
+		due := time.Duration(elapsed-lastCut)*time.Second >= interval
 		switch {
-		case i == len(plays)-1, periodChanged, elapsed-lastCut >= step:
+		case i == len(plays)-1, periodChanged, boundary, due:
 			out = append(out, i)
 			lastCut = elapsed
 			if periodChanged {
@@ -242,7 +291,7 @@ func gameState(p nhl.Play, st playState, last bool) string {
 	}
 	remaining := parseClock(p.TimeRemaining)
 	if p.PeriodDescriptor.PeriodType == "REG" && p.PeriodDescriptor.Number >= 3 &&
-		remaining <= critThreshold && margin <= 1 {
+		remaining >= 0 && remaining <= critThreshold && margin <= 1 {
 		return "CRIT"
 	}
 	return "LIVE"
@@ -254,6 +303,11 @@ func gameState(p nhl.Play, st playState, last bool) string {
 func clockDocFor(plays []nhl.Play, i int) map[string]any {
 	p := plays[i]
 	remaining := parseClock(p.TimeRemaining)
+	if remaining < 0 {
+		// A malformed clock string still travels through unchanged; only
+		// the derived seconds count falls back, to zero.
+		remaining = 0
+	}
 	stopped := p.TypeDescKey == "period-end" || p.TypeDescKey == "game-end" ||
 		p.PeriodDescriptor.PeriodType == "SO"
 	intermission := false
@@ -277,12 +331,22 @@ func clockDoc(remaining string, seconds int, running, intermission bool) map[str
 	}
 }
 
-// parseClock reads the feed's MM:SS clock strings. Anything malformed
-// counts as zero: a bad clock must not stop a replay.
+// parseClock reads the feed's MM:SS clock strings, returning -1 for anything
+// it cannot read. Callers must distinguish that from a real 00:00, because a
+// zero clock means "period over" and would otherwise make every malformed
+// play look like the dying seconds of a one-goal game.
 func parseClock(s string) int {
-	var m, sec int
-	if _, err := fmt.Sscanf(s, "%d:%d", &m, &sec); err != nil {
-		return 0
+	m, sec, ok := strings.Cut(s, ":")
+	if !ok {
+		return -1
 	}
-	return m*60 + sec
+	mins, err := strconv.Atoi(m)
+	if err != nil || mins < 0 {
+		return -1
+	}
+	secs, err := strconv.Atoi(sec)
+	if err != nil || secs < 0 || secs > 59 {
+		return -1
+	}
+	return mins*60 + secs
 }
