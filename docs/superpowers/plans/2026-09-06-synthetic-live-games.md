@@ -2084,10 +2084,14 @@ Expected: `golden` passes; `replay` ends with a `replay done: outcome=0` line. `
 
 - [ ] **Step 5: Document it in the README**
 
-Add a section after the backfill section. Match the surrounding prose style: full sentences, no bullet soup.
+Add a section immediately after the existing `### Backfilling history`
+subsection, which lives under `## Development` and runs until `## Caveats`.
+Note the heading level: this is a `###` subsection of Development, **not** a
+top-level `##` section. Match the surrounding prose style: full sentences, no
+bullet soup.
 
 ```markdown
-## Synthesizing a live game
+### Synthesizing a live game
 
 The NHL season is six months long and the pipeline is silent for the other
 six. `cmd/replay` and `cmd/livefire` close that gap by reconstructing a live
@@ -2131,9 +2135,17 @@ The tool prints a warning and waits ten seconds before starting so a mistake
 can be interrupted.
 ```
 
-- [ ] **Step 6: Cross-reference from the scoreboard section**
+- [ ] **Step 6: Cross-reference from the scoreboard bullet**
 
-Find the sentence in `README.md` that mentions the scoreboard as a consumer of the event stream and add one sentence: that the scoreboard device is developed against `make livefire`, because the bus is otherwise silent out of season.
+`README.md` line 94 (under `## Extending it`) is the bullet describing the
+physical scoreboard as a consumer of `nhl.game.clock`, `nhl.game.play` and
+`nhl.game.roster`. Append one sentence to that bullet: that the device is
+developed against `make livefire`, because the bus is otherwise silent for six
+months of the year.
+
+Do **not** touch the GitHub link in that bullet. It currently 404s because the
+scoreboard repository has not been created yet; that is the repository owner's
+call and is out of scope for this task. It is recorded in the ledger.
 
 - [ ] **Step 7: Run everything**
 
