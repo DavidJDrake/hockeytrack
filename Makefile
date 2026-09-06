@@ -4,12 +4,14 @@ REPO        := hockeytrack
 TAG         ?= $(shell git rev-parse --short HEAD)
 IMAGE       := $(ACCOUNT_ID).dkr.ecr.$(REGION).amazonaws.com/$(REPO):$(TAG)
 
-# Terraform ships as a snap here and refuses to run without a writable
-# XDG_RUNTIME_DIR; /run/user/$(shell id -u) is not creatable by this user.
-# Exported for every recipe, so `backfill`, `site`, `deploy`, `replay` and
-# `livefire` all work. A desktop session that already sets it keeps its own.
-export XDG_RUNTIME_DIR ?= $(HOME)/.cache/xdg-runtime
-$(shell mkdir -p $(XDG_RUNTIME_DIR))
+# Terraform ships as a snap here and refuses to run without a *writable*
+# XDG_RUNTIME_DIR that only the owner can read. A login shell usually points it
+# at /run/user/$(shell id -u), which systemd-logind may never have created and
+# which this user cannot create either, so `?=` is not enough — an already-set
+# but unusable value has to be overridden, not deferred to. Exported for every
+# recipe, so `backfill`, `site`, `deploy`, `replay` and `livefire` all work.
+export XDG_RUNTIME_DIR := $(HOME)/.cache/xdg-runtime
+$(shell mkdir -p $(XDG_RUNTIME_DIR) && chmod 700 $(XDG_RUNTIME_DIR))
 
 SEASONS     ?= all
 RPS         ?= 3
@@ -70,7 +72,7 @@ SPEED    ?= 60
 
 replay:
 	@test -n "$(GAME)" || { echo "usage: make replay GAME=2024021299 [INTERVAL=30s]"; exit 2; }
-	HOCKEYTRACK_RAW_BUCKET=$$(cd terraform && terraform output -raw raw_bucket) \
+	AWS_REGION=$(REGION) HOCKEYTRACK_RAW_BUCKET=$$(cd terraform && terraform output -raw raw_bucket) \
 		go run ./cmd/replay -game $(GAME) -interval $(INTERVAL)
 
 # The golden event-stream regression suite. Runs offline from checked-in
@@ -88,5 +90,5 @@ golden-update:
 # to test the notification path; that can send email and SMS.
 livefire:
 	@test -n "$(GAME)" || { echo "usage: make livefire GAME=2024021299 [SPEED=60]"; exit 2; }
-	HOCKEYTRACK_RAW_BUCKET=$$(cd terraform && terraform output -raw raw_bucket) \
+	AWS_REGION=$(REGION) HOCKEYTRACK_RAW_BUCKET=$$(cd terraform && terraform output -raw raw_bucket) \
 		go run ./cmd/livefire -game $(GAME) -speed $(SPEED) -interval $(INTERVAL)

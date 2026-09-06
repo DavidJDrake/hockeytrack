@@ -141,13 +141,14 @@ Cost is dominated by poller runtime: roughly **$0.05/game**, on the order of **$
 
 - `make test` / `go test ./...` — unit tests use real captured NHL API responses as fixtures (never hand-written), with golden tests on the play-by-play diff logic: given snapshot N and N+1, exactly these events are emitted. `make test` first runs `make vuln` (govulncheck), so a known reachable vulnerability fails the build.
 - **Supply chain** — every image pushed to ECR is scanned on push; the `Dockerfile` pins both base images by digest (bump instructions are in its header comment). ECR keeps only the 20 most recently pushed tagged images (`ecr_keep_images` in `terraform/variables.tf`) and drops untagged ones after a day, so superseded release tags stop accumulating. Tags are immutable and every deploy pushes a fresh git-SHA tag, so the image the Lambdas run is always among the newest and never ages out.
-- **Replay harness** — run a full recorded game through the real poller path against in-memory fakes, printing every event it would publish:
+- **Replay harness** — run a full game through the real poller path against in-memory fakes, printing every event it would publish. The source is either a directory of recorded live snapshots, or any finished game in the archive, reconstructed from its final feed:
 
   ```bash
-  go run ./cmd/replay -game path/to/snapshots/
+  go run ./cmd/replay -dir path/to/snapshots/
+  make replay GAME=2024021299
   ```
 
-  This is the primary end-to-end check when no live games are on.
+  This is the primary end-to-end check when no live games are on; see "Synthesizing a live game" below.
 - **Analyzing the archive** — `cmd/analyze` flattens archived games' `final/pbp.json` and `final/shifts.json` into three CSV tables for pandas, DuckDB, a spreadsheet, or whatever you like: `games.csv` (one row per game: ids, date, season, teams, final score, period count, shots per team), `plays.csv` (one row per play: sequence, period and clock, type, team, coordinates and every player id the play names), and `shifts.csv` (one row per shift from the shift chart, with the duration in seconds). It reads straight from the raw bucket or from a local mirror of it:
 
   ```bash
@@ -183,7 +184,8 @@ The whole history is roughly 70,000 games, 235,000 requests, and 20 GB, which is
 ```
 cmd/ingestor/     entrypoint; MODE selects schedule-sync | poller | sweeper
 cmd/backfill/     historical season backfill (local CLI, S3 only)
-cmd/replay/       offline replay harness
+cmd/replay/       offline replay harness (recorded snapshots or a synthesized game)
+cmd/livefire/     replay a synthesized game onto the real event bus
 cmd/analyze/      archive → CSV flattener (local CLI, reads S3 or a local mirror)
 site/             the website (static pages; data/*.json published by schedule-sync)
 internal/nhl/     NHL API client + captured fixtures
