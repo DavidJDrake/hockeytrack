@@ -145,6 +145,24 @@ func Run(ctx context.Context, d Deps, cfg Config, gameID int64, owner string, sh
 			}
 		}
 
+		// Roster: publish when first seen and whenever it changes. The hash
+		// rides in SnapshotHashes so a hand-off does not republish it.
+		if rh := RosterHash(pbp); rh != "" && rh != state.SnapshotHashes["roster"] {
+			if err := d.Pub.Publish(ctx, events.DTRoster, BuildRosterEvent(pbp)); err != nil {
+				slog.Warn("roster publish failed; will retry next cycle", "gameId", gameID, "err", err)
+			} else {
+				state.SnapshotHashes["roster"] = rh
+			}
+		}
+
+		// Clock heartbeat: one per poll while the game is live, so consumers
+		// can run a local clock between samples.
+		if IsLiveState(pbp.GameState) {
+			if err := d.Pub.Publish(ctx, events.DTClock, BuildClockEvent(pbp, d.Now())); err != nil {
+				slog.Warn("clock publish failed", "gameId", gameID, "err", err)
+			}
+		}
+
 		running := score
 		for _, p := range NewPlays(pbp.Plays, state.LastPlaySortOrder) {
 			running = RunningScore(pbp, p, running)
