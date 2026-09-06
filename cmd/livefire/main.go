@@ -12,6 +12,16 @@
 // -as-poller publishes under the real source instead, which does reach the
 // notification rules. That is the one flag that can send a text message.
 //
+// Two things this command deliberately does not guard against:
+//
+//   - -dry-run still reads the archive on a cache miss. Dry-run means "does
+//     not publish", not "does not read".
+//   - A play event's raw field is the original archived play, so a real
+//     game id survives inside things like highlight URLs there (about 8 of
+//     497 events for a typical game). The gameId field itself is always
+//     synthetic. Anything keying on gameId is safe; anything parsing raw
+//     should know a real id can appear inside it.
+//
 // Usage:
 //
 //	livefire -game 2024021299 -bus hockeytrack -speed 60
@@ -20,6 +30,7 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"flag"
 	"fmt"
 	"os"
@@ -43,6 +54,15 @@ import (
 // real game can ever be.
 const syntheticOffset = 9_000_000_000
 
+// minGameID and maxGameID bound a real NHL game id: always exactly ten
+// digits. The id-collision safety argument for syntheticOffset rests on
+// this being true of every -game value, so it is enforced rather than
+// left as a convention the operator is trusted to follow.
+const (
+	minGameID = 1_000_000_000
+	maxGameID = 9_999_999_999
+)
+
 func main() {
 	game := flag.Int64("game", 0, "archived game id to replay (required)")
 	bus := flag.String("bus", "hockeytrack", "EventBridge bus name")
@@ -50,13 +70,17 @@ func main() {
 	cache := flag.String("cache", synth.DefaultCacheDir(), "directory for downloaded finals")
 	speed := flag.Float64("speed", 60, "game-time multiplier; 1 is real time")
 	interval := flag.Duration("interval", 30*time.Second, "game time between snapshots")
-	capWait := flag.Duration("cap", 5*time.Second, "longest wall-clock wait between snapshots")
+	capWait := flag.Duration("cap", 5*time.Second, "longest wall-clock wait between snapshots; 0 disables the cap")
 	asPoller := flag.Bool("as-poller", false, "publish under the real poller source; THIS CAN SEND NOTIFICATIONS")
 	dry := flag.Bool("dry-run", false, "print events instead of publishing them")
 	flag.Parse()
 
 	if *game == 0 {
 		fmt.Fprintln(os.Stderr, "usage: livefire -game <id> [-speed 60] [-dry-run]")
+		os.Exit(2)
+	}
+	if *game < minGameID || *game > maxGameID {
+		fmt.Fprintf(os.Stderr, "livefire: -game %d is not a real NHL game id; a game id is ten digits (%d-%d)\n", *game, minGameID, maxGameID)
 		os.Exit(2)
 	}
 
@@ -101,7 +125,12 @@ func main() {
 	}
 
 	feed := synth.NewFeed(snaps)
-	feed.Before = synth.Pacer(*speed, *capWait, sleep)
+	pace := synth.Pacer(*speed, *capWait, sleep)
+	var served int
+	feed.Before = func(ctx context.Context, s synth.Snapshot, i int) error {
+		served = i + 1
+		return pace(ctx, s, i)
+	}
 
 	fmt.Fprintf(os.Stderr, "livefire: %s @ %s (%s), real id %d, publishing as %d under %q, %d snapshots at %.0fx\n",
 		first.AwayTeam.Abbrev, first.HomeTeam.Abbrev, first.GameDate, *game, syntheticID, source, len(snaps), *speed)
@@ -120,6 +149,10 @@ func main() {
 		Now: time.Now, Sleep: sleep,
 	}, replayConfig(), syntheticID, "livefire", func() bool { return false })
 	if err != nil {
+		if errors.Is(err, context.Canceled) {
+			fmt.Fprintf(os.Stderr, "livefire: interrupted after %d snapshots\n", served)
+			return
+		}
 		fmt.Fprintln(os.Stderr, "livefire error:", err)
 		os.Exit(1)
 	}

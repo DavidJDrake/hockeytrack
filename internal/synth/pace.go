@@ -16,7 +16,11 @@ import (
 // second). sleep is injected so tests observe the waits instead of taking
 // them.
 func Pacer(speed float64, maxWait time.Duration, sleep func(context.Context, time.Duration) error) func(context.Context, Snapshot, int) error {
-	if speed <= 0 {
+	// Written as !(speed > 0) rather than speed <= 0 so NaN is also caught:
+	// every comparison with NaN is false, so speed <= 0 would let NaN pass
+	// through, and a NaN speed makes every computed wait NaN, which
+	// degrades the whole run to unpaced.
+	if !(speed > 0) {
 		speed = 1
 	}
 	prev := -1
