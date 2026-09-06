@@ -91,7 +91,7 @@ Each rule uses an input transformer to turn the event into a one-line message (e
 - **Historical backfill** — the `internal/nhl` client fetches any past game; a batch job reusing it can fill S3 with prior seasons.
 - **Ad-hoc queries over the archive** — the S3 layout (`raw/{season}/{date}/{gameId}/{feed}/…`) partitions cleanly for Athena.
 - **Fargate migration** — see above; the container is already ECS-ready.
-- **A physical scoreboard** — the [hockeytrack-scoreboard](https://github.com/DavidJDrake/hockeytrack-scoreboard) project consumes `nhl.game.clock`, `nhl.game.play` and `nhl.game.roster` to drive an LED bar display over MQTT.
+- **A physical scoreboard** — the [hockeytrack-scoreboard](https://github.com/DavidJDrake/hockeytrack-scoreboard) project consumes `nhl.game.clock`, `nhl.game.play` and `nhl.game.roster` to drive an LED bar display over MQTT. It's developed against `make livefire`, since the bus is otherwise silent for six months of the year.
 
 ## Deploying
 
@@ -197,6 +197,49 @@ internal/events/  versioned event types + EventBridge publisher
 terraform/        the whole stack: ECR, Lambdas, DynamoDB, S3, bus, scheduler, IAM, DLQs, alarms
 docs/superpowers/ design spec and implementation plan
 ```
+
+### Synthesizing a live game
+
+The NHL season is six months long and the pipeline is silent for the other
+six. `cmd/replay` and `cmd/livefire` close that gap by reconstructing a live
+game from a finished one: given any of the games in the archive, they rebuild
+the sequence of play-by-play documents the poller *would* have seen and run
+the real poll loop over them.
+
+Offline, against in-memory fakes, printing every event to stdout:
+
+```
+make replay GAME=2024021299
+```
+
+A snapshot is a reconstruction, not a recording. The plays, clock, score,
+shots, situation codes and rosters are exactly what the game produced, but
+the cadence is chosen rather than observed, and the JSON field order differs
+from the original. Pass `INTERVAL=0` for one snapshot per play, which is
+denser than any real poll and the strictest test of the diff logic.
+
+`make golden` runs the regression suite: eight curated games — regulation, a
+shutout with an empty-net goal, overtime, a shootout, a match penalty,
+misconducts, a penalty shot, and a 1917 game with no period markers at all —
+whose complete event streams are recorded in
+`internal/synth/testdata/golden/`. It runs from
+checked-in fixtures and needs no AWS credentials. When you change the event
+contract on purpose, `make golden-update` rewrites the recordings; review
+that diff carefully, because it is the contract other people build against.
+
+To drive real consumers, `make livefire GAME=2024021299 SPEED=60` publishes
+to the real EventBridge bus. This is safe by default and deliberately so.
+Events carry the source `hockeytrack.synthetic`, and every notification rule
+pins `hockeytrack.poller`, so nothing you do here can send anyone a text
+message. The game id is the real id plus 9,000,000,000, which is eleven
+digits and therefore cannot collide with a real NHL game. The game store and
+the archive are in-memory fakes, so no DynamoDB row and no S3 object is
+written and there is nothing to clean up.
+
+The one exception is `-as-poller`, which publishes under the real source so
+that the notification path itself can be tested. It reaches live subscribers.
+The tool prints a warning and waits ten seconds before starting so a mistake
+can be interrupted.
 
 ## Caveats
 
