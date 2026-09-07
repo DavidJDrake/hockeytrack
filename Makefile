@@ -4,6 +4,12 @@ REPO        := hockeytrack
 TAG         ?= $(shell git rev-parse --short HEAD)
 IMAGE       := $(ACCOUNT_ID).dkr.ecr.$(REGION).amazonaws.com/$(REPO):$(TAG)
 
+# make runs recipes with /bin/sh, which does not read a login profile, so a
+# toolchain that is only on PATH interactively is invisible here. Append the
+# known Go location; if go is already on PATH the earlier entry wins, so this
+# is a no-op where it is installed system-wide.
+export PATH := $(PATH):$(HOME)/.local/share/go/bin
+
 # Terraform ships as a snap and refuses to run without a *writable*
 # XDG_RUNTIME_DIR. A login shell usually points it at /run/user/$(shell id -u),
 # which systemd-logind may never have created and which the user often cannot
