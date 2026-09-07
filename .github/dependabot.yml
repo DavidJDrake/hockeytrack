@@ -1,0 +1,24 @@
+# Dependency updates. Alerts and automated security fixes are enabled in the
+# repository settings; this file adds routine version bumps on top of those.
+#
+# Weekly rather than daily: this is a one-person project and a stream of
+# minor-version pull requests would be noise that trains you to ignore them.
+# Security fixes are not affected by this schedule -- they arrive immediately
+# through automated security fixes regardless.
+version: 2
+updates:
+  - package-ecosystem: gomod
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "deps"
+    groups:
+      # The AWS SDK ships many modules that move together. One pull request
+      # for the set is reviewable; a dozen separate ones are not.
+      aws-sdk:
+        patterns:
+          - "github.com/aws/aws-sdk-go-v2*"
+          - "github.com/aws/aws-lambda-go"
