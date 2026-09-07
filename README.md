@@ -275,6 +275,18 @@ spans a goal, and it disappears at a narrow interval. And the `s3Prefix` on a
 final event is built from the synthetic id, so under live-fire it names an
 archive prefix that does not exist — nothing is written there, by design.
 
+## Security
+
+The [threat model](docs/threat-model.md) covers this project and the
+scoreboard together, since they share an AWS account, an event bus and a DNS
+zone — the account, not the repository, is the real boundary. It sets out the
+assets, the trust boundaries, the adversaries actually worth modelling, the
+design decisions that limit blast radius, and the risks knowingly accepted.
+
+It describes the model rather than a findings register. Specific open items
+are tracked privately, because publishing unmitigated weaknesses in a public
+repository hands an attacker a checklist.
+
 ## Caveats
 
 - The NHL API (`api-web.nhle.com`) is **unofficial and undocumented**. It's free, keyless, and widely used by community projects, but the NHL could change or restrict it at any time. The client isolates all API knowledge in `internal/nhl`, and the raw archive means a format change never costs you already-captured data.
