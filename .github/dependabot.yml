@@ -22,3 +22,27 @@ updates:
         patterns:
           - "github.com/aws/aws-sdk-go-v2*"
           - "github.com/aws/aws-lambda-go"
+
+  # Terraform providers are a dependency like any other. The AWS provider is
+  # pinned in .terraform.lock.hcl and nothing else here would ever move it.
+  - package-ecosystem: terraform
+    directory: /terraform
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: "deps"
+
+  # Both base images are pinned by digest, which is right for reproducibility
+  # and means they never update on their own. ECR scans the built image on
+  # push, so a vulnerable base is *detected*; this is what actually moves the
+  # digest once one is found.
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: "deps"
