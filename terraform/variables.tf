@@ -28,3 +28,25 @@ variable "alert_email" {
   type        = string
   description = "Email for CloudWatch alarm notifications; empty string skips the subscription"
 }
+
+variable "cloudtrail_retention_days" {
+  description = "How long to keep CloudTrail logs. Long enough to investigate something noticed late, short enough to bound the bill."
+  type        = number
+  default     = 365
+  validation {
+    condition     = var.cloudtrail_retention_days >= 90
+    error_message = "Keep at least 90 days: a compromise is often noticed long after it starts."
+  }
+}
+
+variable "cloudtrail_archive_data_events" {
+  description = "Log object-level events on the raw archive, not just management events. This is what makes destruction of the archive visible."
+  type        = bool
+  default     = true
+}
+
+variable "cloudtrail_archive_read_events" {
+  description = "Widen archive data events from writes to reads as well. Reads are far more numerous, so this costs more; it buys exfiltration detection."
+  type        = bool
+  default     = false
+}
