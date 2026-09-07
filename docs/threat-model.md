@@ -103,6 +103,36 @@ events rather than reads is a deliberate trade: reads are the volume driver
 and buy exfiltration detection, writes are what would destroy the one asset
 here that cannot be rebuilt.
 
+**Destroying the archive is gated, but the gate is honest about its size.**
+Versioning makes an accidental overwrite reversible; it does nothing against a
+valid credential used deliberately. So every action that would destroy or
+expose the archive — deleting objects or versions, suspending versioning,
+rewriting the lifecycle rule, re-enabling ACLs, changing encryption or
+ownership, and editing this policy itself — is denied unless the caller
+authenticated with MFA, and writes encrypted under a caller-supplied KMS key
+are refused outright. The condition is `BoolIfExists`, because
+`aws:MultiFactorAuthPresent` is absent rather than false on a call made with
+long-term access keys; a plain `Bool` test would have exempted precisely the
+stolen-key case it exists to stop.
+
+What this does not do is stop this account's own administrator credential.
+`AdministratorAccess` includes `iam:CreateVirtualMFADevice` and
+`iam:EnableMFADevice`, so the holder of that key can enrol an MFA device of
+their own and satisfy the condition legitimately in about five API calls. The
+policy is therefore a genuine control against a careless operator, an
+accidental `terraform destroy`, and any credential scoped away from IAM — and
+a speed bump, plus an audit trail, against a compromised admin key. It is
+recorded here at that value and not a higher one.
+
+The lifecycle rule carries the other half. Overwriting an object is an allowed
+`s3:PutObject`, and lifecycle expiry is executed by S3 itself rather than by a
+principal, so no bucket policy can intervene in it. Left alone, the rule would
+have deleted the original versions ninety days after an overwrite, on the
+writer's behalf, without a single denied call. It now retains the five most
+recent noncurrent versions unconditionally, which makes a single overwrite —
+hostile or a bug in the ingest path — permanently recoverable rather than
+recoverable for a quarter.
+
 **Untrusted input is parsed, never executed.** NHL responses are decoded into
 typed structs; raw payloads are stored and forwarded, never evaluated. The
 website escapes on output and runs under a CSP with no inline scripts.
@@ -125,6 +155,21 @@ Stated so they are decisions rather than oversights.
   a policy that is only safe while secret is not safe.
 - **No logo or third-party assets are redistributed**, which avoids a class
   of licensing risk entirely rather than managing it.
+- **An administrator credential can still destroy the archive.** The controls
+  above raise cost and guarantee a record; they do not stop the account's own
+  admin key, because that key can grant itself the second factor. The two
+  controls that would actually hold are Object Lock in COMPLIANCE mode, which
+  not even the root user can override, and a copy in a separate AWS account.
+  Both are deferred, and the reasoning is deliberate: compliance-mode retention
+  cannot be shortened by anyone for any reason, so a bug in the ingest path
+  would write objects nobody can delete for the life of the retention, and go
+  on being billed for them; and a second account is a second identity boundary
+  to run for an archive of public sports data. Cross-region replication was considered and rejected as theatre
+  for this threat — it lives in the same account under the same credentials,
+  and an attacker deletes the copy along with the original. The honest position
+  is that total loss here would be genuinely annoying rather than serious, and
+  the estate is sized to that. If that stops being true, the gap is named above
+  and the fix is known.
 - **The pairing model for the admin site is "you can see the screen".** For a
   device in a living room this is the right threshold; it would not be for
   anything carrying personal data.
@@ -141,3 +186,6 @@ Triggers to revisit, rather than a date:
   structural control, and the fleet-management work would relax it.
 - The archive becoming a source others depend on — changes availability from
   a personal inconvenience to an obligation.
+- The NHL API dropping historical seasons — today the archive is expensive to
+  rebuild; at that point it becomes impossible to rebuild, and the off-account
+  copy accepted against in §5 stops being optional.
