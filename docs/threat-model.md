@@ -189,3 +189,48 @@ Triggers to revisit, rather than a date:
 - The NHL API dropping historical seasons — today the archive is expensive to
   rebuild; at that point it becomes impossible to rebuild, and the off-account
   copy accepted against in §5 stops being optional.
+
+## 7. Recovery procedures
+
+The security alarms point here, so this section has to answer the question
+someone actually has at three in the morning. Each procedure assumes the
+previous step failed.
+
+**A root sign-in you cannot account for.** Treat the account as compromised
+rather than the login as anomalous. Sign in as root yourself, rotate the root
+password, and check the root email address and phone number first — an attacker
+who reached root very likely changed them, and changing them back is what makes
+every other recovery step possible. Then delete the access keys on the
+`funandgames` user, review the IAM users, roles and identity providers that
+exist against the ones this repository creates, and only then look at data.
+
+**The archive has lost objects.** Do not write anything to the bucket. Every
+object is versioned, the five most recent noncurrent versions of each key are
+retained regardless of age, and anything newer than ninety days is retained
+outright, so the previous state is almost certainly still there as noncurrent
+versions. List versions for an affected key, confirm the timestamps, and copy
+the last known good version back over the current one. Establish what happened
+before restoring in bulk: the size alarm reports a symptom, and the CloudTrail
+record says which principal caused it.
+
+**You need to change the archive's bucket policy and have no MFA.** The policy
+denies its own modification without a second factor, which is the point.
+The escape hatch is the root user, which does have an MFA device. AWS
+guarantees the bucket owner's root principal can call Get, Put and
+DeleteBucketPolicy even when the policy explicitly denies root, so a root
+session can always remove or replace it. Note the guarantee covers only those
+three calls: root is not exempt from the deny on deleting objects, so the
+policy has to come off first.
+
+**The MFA device itself is lost.** Sign in at the root console, choose
+troubleshoot MFA, and sign in using alternative factors. AWS verifies through
+the root email address and an automated call to the registered root phone
+number, so both must be current — which is why the account-contact events are
+alarmed, and worth confirming on a calendar rather than after an incident.
+
+**Confirming what actually happened.** The trail is multi-region with log file
+validation enabled, so `aws cloudtrail validate-logs` will prove whether a
+delivered log was altered, and `aws cloudtrail lookup-events` gives ninety days
+of management events without needing to read the bucket. Note the standing
+limitation from section 5: an attacker holding the admin credential can also
+reach the log, so an absence of evidence there is not evidence of absence.

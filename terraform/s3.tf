@@ -153,4 +153,14 @@ data "aws_iam_policy_document" "raw_tamper" {
 resource "aws_s3_bucket_policy" "raw" {
   bucket = aws_s3_bucket.raw.id
   policy = data.aws_iam_policy_document.raw_tamper.json
+
+  # Terraform would otherwise be free to write this policy before the
+  # versioning and lifecycle resources it denies. On the first apply that is a
+  # coin flip between a clean run and an AccessDenied halfway through, leaving
+  # the deny live and the lifecycle rule un-updated. The day-to-day credential
+  # has no MFA device, so it cannot retry past its own policy.
+  depends_on = [
+    aws_s3_bucket_versioning.raw,
+    aws_s3_bucket_lifecycle_configuration.raw,
+  ]
 }

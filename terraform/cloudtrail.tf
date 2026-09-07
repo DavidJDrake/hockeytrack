@@ -115,5 +115,50 @@ resource "aws_cloudtrail" "account" {
     }
   }
 
+  # Every region's events, in one us-east-1 log group. This exists for one
+  # specific reason: console sign-in is NOT global. CloudTrail regionalises it
+  # to the region behind the sign-in endpoint, and this account has real root
+  # logins recorded in us-east-2 as well as us-east-1. A single-region
+  # EventBridge rule would silently miss them, which for the account's most
+  # privileged principal is the wrong thing to miss. A multi-region trail
+  # feeding one log group catches all of them without a rule per region.
+  cloud_watch_logs_group_arn = "${aws_cloudwatch_log_group.trail.arn}:*"
+  cloud_watch_logs_role_arn  = aws_iam_role.cloudtrail_logs.arn
+
   depends_on = [aws_s3_bucket_policy.trail]
+}
+
+# Shorter than the S3 retention on purpose. S3 holds the durable, validated
+# copy for a year; this group exists to be pattern-matched in near real time,
+# and paying to store a second full year of it buys nothing.
+resource "aws_cloudwatch_log_group" "trail" {
+  name              = "/aws/cloudtrail/hockeytrack-account"
+  retention_in_days = 90
+}
+
+resource "aws_iam_role" "cloudtrail_logs" {
+  name = "hockeytrack-cloudtrail-logs"
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Effect    = "Allow"
+      Principal = { Service = "cloudtrail.amazonaws.com" }
+      Action    = "sts:AssumeRole"
+      Condition = {
+        StringEquals = { "aws:SourceAccount" = data.aws_caller_identity.current.account_id }
+      }
+    }]
+  })
+}
+
+resource "aws_iam_role_policy" "cloudtrail_logs" {
+  role = aws_iam_role.cloudtrail_logs.id
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Effect   = "Allow"
+      Action   = ["logs:CreateLogStream", "logs:PutLogEvents"]
+      Resource = "${aws_cloudwatch_log_group.trail.arn}:*"
+    }]
+  })
 }
