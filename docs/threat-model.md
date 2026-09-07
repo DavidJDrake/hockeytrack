@@ -94,6 +94,15 @@ policy document.
 public access is fully blocked, and objects are encrypted at rest. Nothing in
 the pipeline deletes.
 
+**Account activity is logged and the log is tamper-evident.** A multi-region
+CloudTrail records management events across the account and write events on
+the archive, delivering to a bucket separate from the one it describes —
+whatever could destroy the archive cannot quietly erase the record of it. Log
+file validation is on, so a delivered log can be proven unaltered. Write
+events rather than reads is a deliberate trade: reads are the volume driver
+and buy exfiltration detection, writes are what would destroy the one asset
+here that cannot be rebuilt.
+
 **Untrusted input is parsed, never executed.** NHL responses are decoded into
 typed structs; raw payloads are stored and forwarded, never evaluated. The
 website escapes on output and runs under a CSP with no inline scripts.
