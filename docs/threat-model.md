@@ -37,7 +37,7 @@ The archive is the crown jewel. Nothing else here is hard to rebuild.
 ```
    NHL API ──────────▶ poller        untrusted input, third party, no contract
    internet ─────────▶ CloudFront    public read, no write path
-   workstation ──────▶ AWS           long-lived admin credentials
+   workstation ──────▶ AWS           long-lived admin credentials (two users)
    EventBridge bus ──▶ consumers     cross-project, same account
    IoT broker ───────▶ devices       physical devices in other people's homes
    GitHub ───────────▶ world         everything committed is permanent
@@ -157,7 +157,7 @@ Stated so they are decisions rather than oversights.
   of licensing risk entirely rather than managing it.
 - **An administrator credential can still destroy the archive.** The controls
   above raise cost and guarantee a record; they do not stop the account's own
-  admin key, because that key can grant itself the second factor. The two
+  admin credentials, because such a key can grant itself the second factor. The two
   controls that would actually hold are Object Lock in COMPLIANCE mode, which
   not even the root user can override, and a copy in a separate AWS account.
   Both are deferred, and the reasoning is deliberate: compliance-mode retention
@@ -170,6 +170,21 @@ Stated so they are decisions rather than oversights.
   is that total loss here would be genuinely annoying rather than serious, and
   the estate is sized to that. If that stops being true, the gap is named above
   and the fix is known.
+- **Two IAM users hold unrestricted administrator access, not one.** An audit
+  for the credential-hygiene work found that `healthtracker-deploy`, created for
+  a different project in the same account, also carries `AdministratorAccess`
+  and an actively used long-lived key. The account is the trust boundary, so
+  that credential can delete this project's archive, its audit trail and its
+  alarms, and it sits outside this repository's control entirely. Its own
+  project's blast radius is therefore this project's blast radius. Recorded here
+  rather than quietly scoped down, because narrowing another project's deploy
+  credential without knowing what it needs would trade a security risk for an
+  availability one. The fix is to scope it to the resources it actually uses.
+- **No MFA device exists on any IAM user.** Only the root account has one.
+  A deny conditioned on `aws:MultiFactorAuthPresent` is therefore currently
+  unsatisfiable by any principal except root, which is why the enforcement
+  policy in `terraform/iam-mfa.tf` ships disabled: enabling it before enrolling
+  a device would deny the very calls that enrol one.
 - **The pairing model for the admin site is "you can see the screen".** For a
   device in a living room this is the right threshold; it would not be for
   anything carrying personal data.
