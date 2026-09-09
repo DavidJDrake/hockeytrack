@@ -162,5 +162,6 @@ resource "aws_s3_bucket_policy" "raw" {
   depends_on = [
     aws_s3_bucket_versioning.raw,
     aws_s3_bucket_lifecycle_configuration.raw,
+    aws_s3_bucket_public_access_block.raw,
   ]
 }

@@ -356,6 +356,36 @@ resource "aws_cloudwatch_metric_alarm" "root_signin" {
   alarm_actions       = [aws_sns_topic.security.arn]
 }
 
+# ---- The trail going quiet ----
+#
+# Every other control here assumes the trail is running. Nothing noticed if it
+# stopped, and this file's own hardening makes that worse: the log bucket's
+# policy now denies the calls that maintain it, so a bad policy edit could halt
+# delivery while IsLogging still reads true. StopLogging and DeleteTrail are
+# already matched by the audit rule; this covers the silent modes those miss.
+#
+# Measured before choosing the threshold: this group takes 11 to 31 events an
+# hour and was never empty across eight hours, so two consecutive empty hours
+# means something is wrong rather than merely quiet. Missing data counts as
+# breaching for the same reason it does on the sweeper alarm -- silence is the
+# signal, so treating absence as healthy would defeat the alarm.
+resource "aws_cloudwatch_metric_alarm" "trail_silent" {
+  alarm_name          = "hockeytrack-security-trail-silent"
+  alarm_description   = "No CloudTrail events delivered to CloudWatch Logs for two hours. The audit trail may have stopped. Check `aws cloudtrail get-trail-status --name hockeytrack-account` for LatestDeliveryError; see docs/threat-model.md, section 7."
+  namespace           = "AWS/Logs"
+  metric_name         = "IncomingLogEvents"
+  dimensions          = { LogGroupName = aws_cloudwatch_log_group.trail.name }
+  statistic           = "Sum"
+  period              = 3600
+  evaluation_periods  = 2
+  datapoints_to_alarm = 2
+  threshold           = 1
+  comparison_operator = "LessThanThreshold"
+  treat_missing_data  = "breaching"
+  alarm_actions       = [aws_sns_topic.security.arn]
+  ok_actions          = [aws_sns_topic.security.arn]
+}
+
 # ---- 6. The archive shrinking ----
 #
 # The one destruction path the rules above cannot see is overwriting objects,
