@@ -17,6 +17,8 @@
 #                                              archive rule.
 #   Take over root, then act as root        -> account-contact rule, then the
 #                                              root sign-in alarm.
+#   Blind the root sign-in alarm first      -> audit log group rule: its metric
+#                                              filter lives on the trail group.
 #   Turn the trail off first                -> audit rule.
 #   Delete these rules first                -> alerting rule.
 #   Overwrite objects and wait for the      -> NOT caught by any rule here.
@@ -121,6 +123,7 @@ locals {
     archive  = aws_cloudwatch_event_rule.archive_tampering
     alerting = aws_cloudwatch_event_rule.alerting_tampering
     iot      = aws_cloudwatch_event_rule.iot_tampering
+    logs     = aws_cloudwatch_event_rule.audit_log_tampering
   }
 
   # Raw CloudTrail JSON is unreadable on a phone, so the alert is rendered as a
@@ -159,6 +162,7 @@ locals {
     archive  = local.archive_alert_meaning
     alerting = local.archive_alert_meaning
     iot      = "If this was not you, assume an AWS credential is compromised, and check the scoreboard's device policy, certificates and IoT logging."
+    logs     = "If this was not you, assume audit history has been destroyed, shortened or redirected. Check that both audit log groups still exist with 90-day retention, that the root sign-in metric filter is intact, and whether a subscription filter, KMS key or account-level log policy has appeared."
   }
 
   security_alert_template = {
@@ -539,8 +543,8 @@ resource "aws_cloudwatch_metric_alarm" "archive_shrank" {
 # What it does not see: anything on the data plane, including a message
 # published to the panels' own topics; the IoT logging role losing its
 # permissions, because role-policy edits are the churn the identity rule
-# excludes; the AWSIotLogsV2 log group being deleted, which no rule here
-# watches; and the deletion of this rule, which the alerting rule covers.
+# excludes; and the deletion of this rule, which the alerting rule covers. The
+# AWSIotLogsV2 log group being deleted or shortened is section 8's job.
 resource "aws_cloudwatch_event_rule" "iot_tampering" {
   name        = "hockeytrack-sec-iot-tampering"
   description = "Any write to the IoT control plane, where the scoreboard's publish-nothing device policy can be widened, a device identity minted or bypassed, or IoT logging changed"
@@ -551,6 +555,164 @@ resource "aws_cloudwatch_event_rule" "iot_tampering" {
       "eventSource" = ["iot.amazonaws.com"]
       "readOnly"    = [false]
       "eventName"   = [{ "anything-but" = ["DescribeEndpoint", "ListDomainConfigurations"] }]
+    }
+  })
+}
+
+# ---- 8. The log groups that hold audit evidence (HOC-60) ----
+#
+# Two CloudWatch Logs groups hold evidence rather than application output.
+# The trail group (cloudtrail.tf) is CloudTrail's near-real-time copy: the root
+# sign-in filter above reads it, and trail_silent watches it arrive.
+# AWSIotLogsV2 holds IoT's authorization failures. The scoreboard stack owns
+# it, so it is named here as a string rather than a reference. Until this
+# rule, either could be emptied without a page. trail_silent notices the trail
+# group going quiet, not its history going. Deleting AWSIotLogsV2 is quieter
+# still: the IoT logging role may create the group, so IoT puts it back empty
+# with never-expire retention, and logging carries on as though nothing
+# happened.
+#
+# The routes to erasing, shortening, diverting or hiding that history, and the
+# call each has to make:
+#
+#   Erase it                                -> DeleteLogGroup, or
+#                                              DeleteLogStream one stream at a
+#                                              time.
+#   Shorten it                              -> PutRetentionPolicy. Expiry is
+#                                              carried out by the service, so,
+#                                              like the S3 lifecycle rule, it
+#                                              deletes with no delete call
+#                                              anyone could deny.
+#   Unguard it                              -> PutLogGroupDeletionProtection
+#                                              with false. Neither group has
+#                                              deletion protection on today.
+#   Blind what reads it                     -> Put or DeleteMetricFilter on the
+#                                              trail group, which silences the
+#                                              root sign-in alarm without
+#                                              touching root.
+#   Divert or copy it out                   -> a subscription filter, an export
+#                                              task, a scheduled query, or a
+#                                              delivery destination.
+#   Make it unreadable                      -> AssociateKmsKey with a key that
+#                                              is then deleted, or a data
+#                                              protection policy that masks it.
+#   Rewrite it on the way in                -> a transformer, which changes
+#                                              events at ingestion.
+#   Any of the above, account-wide          -> PutAccountPolicy, which names no
+#                                              group at all.
+#
+# So, as with the IoT rule, the pattern does not list those calls. It matches
+# every write that names either group and excludes one. The hard part is the
+# field rather than the event name, because CloudWatch Logs names a group in
+# three generations of parameter: logGroupName on the original APIs;
+# logGroupIdentifier, a name OR an ARN, on newer ones such as data protection,
+# transformers and deletion protection; and resourceArn on tagging and resource
+# policies. Beyond those, the KMS calls take an ARN as resourceIdentifier;
+# scheduled queries, anomaly detectors and saved queries take lists; and a
+# delivery destination names its target log group one level down. The list
+# below came from walking the input of every write operation in the service
+# model shipped with aws-cli 2.33.2, not from memory. It is the one part of
+# this rule that still fails silent: an API that names a group through a new
+# field will not match until the field is added here.
+#
+# Each field is matched against the name, the bare ARN, and the ARN followed by
+# anything after a colon. That last form catches the ":*" that describe calls
+# and cloudtrail.tf both append, and cannot reach a different group, because
+# the service does not allow colons in a group name.
+#
+# Account policies are matched whatever they select. PutAccountPolicy can mask,
+# divert or rewrite every group at once. Its selectionCriteria is a free-text
+# expression, such as LogGroupName NOT IN [...], that a pattern cannot evaluate,
+# so the only safe reading is that it reaches these two. DeleteAccountPolicy
+# is included because an account policy is as likely to be a protection as an
+# attack, and removing a protection is the move worth seeing.
+#
+# The noise was measured before deciding the exclusion. Ninety days of
+# CloudWatch Logs CloudTrail in us-east-1, 2026-06-13 to 2026-09-11, held 9,547
+# events, 7,665 of them writes. Ten writes named an audit group:
+# CreateLogGroup, PutRetentionPolicy and PutMetricFilter when this file's trail
+# group was created on 2026-09-07; CreateLogGroup and PutRetentionPolicy when
+# the scoreboard created AWSIotLogsV2 on 2026-09-11; and five CreateLogStream
+# calls, four by the CloudTrail delivery role in the trail group's first
+# thirteen minutes and one by the IoT logging role. Plans stay quiet, because
+# Terraform reads these groups with DescribeLogGroups, ListTagsForResource and
+# DescribeMetricFilters, all recorded with readOnly true. Unlike IoT, no read in
+# the window was mislabelled as a write, so there is no read to exclude. The
+# honest caveat is that this measures creation, not steady state: the trail
+# group is four days old and the IoT group under an hour. What does fire is
+# legitimate change: an apply that touches either group, and a scoreboard
+# destroy. That is accepted for the same reason as the IoT rule.
+#
+# The one exclusion is CreateLogStream. It adds an empty stream and cannot
+# erase, shorten, divert or hide anything. Every occurrence in the window was
+# a delivery role. And alerting on it would catch nothing: forged events do not
+# need a new stream, because PutLogEvents writes into an existing one, and
+# PutLogEvents is never recorded. The window held zero of them, though every
+# Lambda here writes logs constantly. For the same reason, account-scoped
+# resource policies (PutResourcePolicy with no resourceArn) are not matched:
+# AWS restricts them to letting services create streams and put events, which
+# only adds. One scoped to either group names it through resourceArn, and does
+# alert.
+#
+# CloudWatch Logs is regional. Both groups are in us-east-1, and so is this
+# rule. The multi-region trail delivers every region into the one group, so no
+# other region holds a CloudWatch copy of it.
+#
+# What it does not see: writes INTO the groups, so forged entries do not alert;
+# the delivery roles losing their permissions, which is role-policy churn that
+# the identity rule excludes (trail_silent catches the trail side; nothing
+# catches the IoT side, where silence is normal); and the deletion of this rule,
+# which the alerting rule covers. Whether CloudTrail labels a Logs Insights
+# StartQuery as a write is unmeasured, because no query has run in the window.
+# If it does, a responder querying the trail group will page themselves, and
+# StartQuery belongs in an anything-but list with that event as evidence.
+locals {
+  audit_log_group_names = [aws_cloudwatch_log_group.trail.name, "AWSIotLogsV2"]
+  audit_log_group_match = flatten([
+    for name in local.audit_log_group_names : [
+      name,
+      "arn:aws:logs:${var.region}:${data.aws_caller_identity.current.account_id}:log-group:${name}",
+      { "prefix" = "arn:aws:logs:${var.region}:${data.aws_caller_identity.current.account_id}:log-group:${name}:" },
+    ]
+  ])
+  audit_log_group_fields = [
+    "logGroupName", "logGroupIdentifier", "logGroupIdentifiers",
+    "logGroupNames", "logGroupArnList", "resourceArn", "resourceIdentifier",
+  ]
+}
+
+# The CreateLogStream exclusion is repeated inside every branch rather than
+# written once beside the $or, and that is not style. When eventName is
+# constrained both outside the $or and inside one of its branches, EventBridge's
+# answer depends on the order of the keys in the JSON: the same pattern and the
+# same unrelated event gave false with eventName written first and true with
+# $or written first. jsonencode sorts keys, and "$" sorts before "e", so
+# Terraform always renders the broken order. The first draft of this rule did
+# exactly that, and matched every negative written for it, including a real
+# PutRetentionPolicy on an unrelated Lambda group. Keep eventName out of the
+# top level of detail while the account branch needs it.
+resource "aws_cloudwatch_event_rule" "audit_log_tampering" {
+  name        = "hockeytrack-sec-audit-log-tampering"
+  description = "Any write naming the CloudTrail or IoT log group, or any account-wide log policy change: the routes to deleting, shortening, diverting or hiding audit history"
+  event_pattern = jsonencode({
+    "source"      = ["aws.logs"]
+    "detail-type" = ["AWS API Call via CloudTrail"]
+    "detail" = {
+      "eventSource" = ["logs.amazonaws.com"]
+      "readOnly"    = [false]
+      "$or" = concat(
+        [for field in local.audit_log_group_fields : {
+          "eventName"         = [{ "anything-but" = ["CreateLogStream"] }]
+          "requestParameters" = { (field) = local.audit_log_group_match }
+        }],
+        [
+          {
+            "eventName"         = [{ "anything-but" = ["CreateLogStream"] }]
+            "requestParameters" = { "deliveryDestinationConfiguration" = { "destinationResourceArn" = local.audit_log_group_match } }
+          },
+          { "eventName" = ["PutAccountPolicy", "DeleteAccountPolicy"] },
+        ],
+      )
     }
   })
 }

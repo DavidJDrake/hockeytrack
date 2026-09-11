@@ -105,12 +105,12 @@ the person reading the alert.
 
 On the device side, IoT's own logging is on at ERROR, which records operations
 that fail authorization, such as a subscribe the device policy denies. It
-writes to the
-`AWSIotLogsV2` log group, which is kept for ninety days. The writing is done
-through a role whose trust policy admits only IoT acting for this account,
-pinned by both `aws:SourceAccount` and `aws:SourceArn`. That role can create
-that one group and append to it, and nothing else. It is deliberately denied
-`PutRetentionPolicy`, so the service cannot reset the group to never-expire.
+writes to the `AWSIotLogsV2` log group, which is kept for ninety days. The
+writing is done through a role whose trust policy admits only IoT acting for
+this account, pinned by both `aws:SourceAccount` and `aws:SourceArn`. That
+role can create that one group and append to it, and nothing else. It is
+deliberately denied `PutRetentionPolicy`, so the service cannot reset the
+group to never-expire.
 
 Its limits, stated:
 - It watches us-east-1, where the policy and certificates live. IoT activity
@@ -122,10 +122,16 @@ Its limits, stated:
   revoked or forged certificate. AWS ships that event type
   (`Connection.AuthNError`) disabled by default, as the first deploy showed,
   and the Terraform provider cannot enable it. The CloudWatch metric of the
-  same name is emitted regardless; alarming on it is tracked as SCO-18.
-- Deleting the log group is not alarmed anywhere. IoT would recreate the
-  group itself, with never-expire retention. Future logging would survive,
-  but the history would be gone.
+  same name is emitted regardless, so the scoreboard stack alarms on it, and
+  on the other IoT authorization-failure metrics, to the security topic. Each
+  alarm sums across the metrics' `Protocol` dimension rather than pinning one
+  value: the scoreboard's own refused publishes on 2026-09-07 were tagged MQTT
+  although they were made over HTTPS, so a pinned alarm would have missed the
+  one real incident.
+- Deleting the log group would not stop logging: IoT would recreate the
+  group itself, with never-expire retention, and carry on. The history would
+  be gone. That deletion, or a shortened retention, now pages through the
+  audit log group rule below. Nothing prevents it.
 - Removing the logging resource from Terraform leaves logging on, because at
   the pinned provider version its delete makes no API call. Turning logging
   off takes a deliberate call, which the rule catches.
@@ -161,6 +167,40 @@ file validation is on, so a delivered log can be proven unaltered. Write
 events rather than reads is a deliberate trade: reads are the volume driver
 and buy exfiltration detection, writes are what would destroy the one asset
 here that cannot be rebuilt.
+
+**Changing the log groups that hold audit evidence pages someone.** Two
+CloudWatch Logs groups are evidence rather than output: the trail's copy,
+which the root sign-in alarm reads, and `AWSIotLogsV2`. A rule fires on every
+write that names either group. Deleting a group or a stream, shortening
+retention, turning off deletion protection, and editing or deleting the root
+sign-in filter all pass through such a write. So does adding a subscription
+filter, export, KMS key, masking policy or transformer. The hard part is that
+the API names a group in several fields, not one: `logGroupName` on older
+calls, `logGroupIdentifier` (a name or an ARN) on newer ones, `resourceArn`,
+the KMS calls' `resourceIdentifier`, and several list parameters. The list
+was taken from every write operation in the CloudWatch Logs service model, and
+each field is matched against the name and both ARN forms. Account-wide log
+policies name no group but can reach every group, so they alert whatever they
+select.
+
+One write is excluded: `CreateLogStream`. It only adds, and every occurrence in
+ninety days came from a delivery role. Excluding it costs no detection,
+because the only harm an attacker could do with a stream is write forged
+events, and that does not need a new stream: `PutLogEvents` writes into an
+existing one, and CloudTrail does not record it.
+
+Its limits:
+- It watches us-east-1, where both groups live. The trail delivers every
+  region into the one group.
+- Writes *into* a group are not recorded, so forged entries would not alert.
+- Account-scoped resource policies are not matched, because AWS limits them to
+  letting services add events. One scoped to either group is matched.
+- A future API that names a group through a field not yet in the list would
+  not match. That is the one way this rule fails silently rather than loudly.
+- The noise measurement covers creation rather than steady state: the trail
+  group was four days old and the IoT group under an hour.
+- Like every alarm here, the rule can be deleted by the administrator
+  credential it watches for. Deleting it is itself alarmed.
 
 **Destroying the archive is gated, but the gate is honest about its size.**
 Versioning makes an accidental overwrite reversible; it does nothing against a
@@ -293,6 +333,25 @@ back:
    provision.
 3. Delete any authorizer, role alias, CA certificate or provisioning template.
    Neither repository creates any of these, so one that exists is not yours.
+
+**An audit log group alert you cannot account for.** The Actor line names the
+credential, and the procedure for a root sign-in applies to it. Then establish
+what is left:
+1. `aws logs describe-log-groups --region us-east-1 --log-group-name-prefix`
+   for `/aws/cloudtrail/hockeytrack-account` and for `AWSIotLogsV2`. Both
+   should exist with `retentionInDays` 90 and no `kmsKeyId`, and the trail
+   group should report one metric filter, the root sign-in filter.
+2. Look for what was added. On each group, check `describe-subscription-filters`,
+   `get-data-protection-policy` and `get-transformer`. For the account, check
+   `describe-account-policies` for each policy type. Neither repository creates
+   any of these, so one that exists is not yours.
+3. Run a plan in the repository that owns the group: this one for the trail
+   group and its filter, the scoreboard for `AWSIotLogsV2`. The plan compares
+   retention with the repository, which is how a group that IoT recreated
+   with never-expire retention shows up. Applying it sets retention back.
+4. Know what is recoverable. The trail group is a copy: the S3 bucket holds the
+   validated original for a year, so nothing it held is lost. `AWSIotLogsV2`
+   has no second copy, so deleted IoT history is gone.
 
 **The archive has lost objects.** Do not write anything to the bucket. Every
 object is versioned, the five most recent noncurrent versions of each key are
