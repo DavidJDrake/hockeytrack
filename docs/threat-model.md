@@ -104,7 +104,8 @@ policy all alert. That is accepted, because the person doing any of them is
 the person reading the alert.
 
 On the device side, IoT's own logging is on at ERROR, which records operations
-that fail, such as a failed device authentication. It writes to the
+that fail authorization, such as a subscribe the device policy denies. It
+writes to the
 `AWSIotLogsV2` log group, which is kept for ninety days. The writing is done
 through a role whose trust policy admits only IoT acting for this account,
 pinned by both `aws:SourceAccount` and `aws:SourceArn`. That role can create
@@ -117,6 +118,11 @@ Its limits, stated:
   connect to the us-east-1 endpoint.
 - It sees the control plane only, not messages published to the panels'
   topics.
+- The logging does not record a failed *authentication* at connect, such as a
+  revoked or forged certificate. AWS ships that event type
+  (`Connection.AuthNError`) disabled by default, as the first deploy showed,
+  and the Terraform provider cannot enable it. The CloudWatch metric of the
+  same name is emitted regardless; alarming on it is tracked as SCO-18.
 - Deleting the log group is not alarmed anywhere. IoT would recreate the
   group itself, with never-expire retention. Future logging would survive,
   but the history would be gone.
