@@ -129,8 +129,12 @@ Its limits, stated:
 - Removing the logging resource from Terraform leaves logging on, because at
   the pinned provider version its delete makes no API call. Turning logging
   off takes a deliberate call, which the rule catches.
-- Whether IoT's logging honours the role's trust conditions is unverified
-  until the first deploy.
+- The role's trust conditions are verified in production, not assumed. On
+  the first deploy a deliberately forbidden subscribe, `scoreboard-01` asking
+  for `scoreboard/scoreboard-02/config`, was refused. Within two seconds an
+  ERROR `Subscribe` entry with reason `AUTHORIZATION_FAILURE` landed in
+  `AWSIotLogsV2`, naming the client, its certificate and the topic. So IoT
+  can assume the role with both conditions in place.
 - Like every alarm here, the rule can be deleted by the administrator
   credential it watches for. Deleting it is itself alarmed. Deleting that
   second alarm is not, which is the second-account argument in §5.
