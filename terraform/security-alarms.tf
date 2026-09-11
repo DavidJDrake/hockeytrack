@@ -118,12 +118,13 @@ resource "aws_sns_topic_policy" "security" {
 
 locals {
   security_rules = {
-    identity = aws_cloudwatch_event_rule.identity_escalation
-    audit    = aws_cloudwatch_event_rule.audit_tampering
-    archive  = aws_cloudwatch_event_rule.archive_tampering
-    alerting = aws_cloudwatch_event_rule.alerting_tampering
-    iot      = aws_cloudwatch_event_rule.iot_tampering
-    logs     = aws_cloudwatch_event_rule.audit_log_tampering
+    identity        = aws_cloudwatch_event_rule.identity_escalation
+    audit           = aws_cloudwatch_event_rule.audit_tampering
+    archive         = aws_cloudwatch_event_rule.archive_tampering
+    alerting        = aws_cloudwatch_event_rule.alerting_tampering
+    alerting_modify = aws_cloudwatch_event_rule.alerting_modification
+    iot             = aws_cloudwatch_event_rule.iot_tampering
+    logs            = aws_cloudwatch_event_rule.audit_log_tampering
   }
 
   # Raw CloudTrail JSON is unreadable on a phone, so the alert is rendered as a
@@ -157,12 +158,13 @@ locals {
   # sentence lands inside a JSON string in the template below.
   archive_alert_meaning = "If this was not you, assume the archive's MFA gate is bypassed."
   security_alert_meaning = {
-    identity = local.archive_alert_meaning
-    audit    = local.archive_alert_meaning
-    archive  = local.archive_alert_meaning
-    alerting = local.archive_alert_meaning
-    iot      = "If this was not you, assume an AWS credential is compromised, and check the scoreboard's device policy, certificates and IoT logging."
-    logs     = "If this was not you, assume audit history has been destroyed, shortened or redirected. Check that both audit log groups still exist with 90-day retention, that the root sign-in metric filter is intact, and whether a subscription filter, KMS key or account-level log policy has appeared."
+    identity        = local.archive_alert_meaning
+    audit           = local.archive_alert_meaning
+    archive         = local.archive_alert_meaning
+    alerting        = local.archive_alert_meaning
+    alerting_modify = "If this was not you, assume a security alarm has been reconfigured rather than removed, which is the quieter way to silence it. Check the pattern and targets of every hockeytrack-sec rule, the security topic's policy and its subscription list, and the threshold, actions, actions-enabled flag and state of every hockeytrack-security and scoreboard-iot alarm, against this repository."
+    iot             = "If this was not you, assume an AWS credential is compromised, and check the scoreboard's device policy, certificates and IoT logging."
+    logs            = "If this was not you, assume audit history has been destroyed, shortened or redirected. Check that both audit log groups still exist with 90-day retention, that the root sign-in metric filter is intact, and whether a subscription filter, KMS key or account-level log policy has appeared."
   }
 
   security_alert_template = {
@@ -285,13 +287,30 @@ resource "aws_cloudwatch_event_rule" "archive_tampering" {
 # PutTargets and PutMetricAlarm on every apply, and those are excluded so this
 # stays quiet during ordinary work.
 #
+# Modification is the other half of this, and section 9 below carries it: every
+# alarm listed here can be silenced by rewriting it as well as by deleting it.
+#
 # The irreducible residual: deleting THIS rule is itself unalarmed. Closing that
 # needs a second account, which is the HOC-55 conversation.
+#
+# "aws.monitoring", not "aws.cloudwatch". CloudWatch answers to two different
+# source values depending on how the event was delivered, and the original
+# "aws.cloudwatch" here was the wrong one of the pair, so DeleteAlarms and
+# DisableAlarmActions have never been able to match: no event carries both
+# source "aws.cloudwatch" and detail-type "AWS API Call via CloudTrail".
+# EventBridge's service reference is explicit that a CloudTrail-delivered
+# CloudWatch event has source "aws.monitoring" with eventSource
+# "monitoring.amazonaws.com", and that source "aws.cloudwatch" belongs to the
+# native "CloudWatch Alarm State Change" and "CloudWatch Alarm Configuration
+# Change" events, which are a separate delivery path with no userIdentity in
+# them. Both are listed because the correction is documented rather than
+# observed -- no delivered event was available to confirm it against, and an
+# extra source value costs nothing but a wrong one costs the whole branch.
 resource "aws_cloudwatch_event_rule" "alerting_tampering" {
   name        = "hockeytrack-sec-alerting-tampering"
   description = "The security alarming itself being removed or disabled"
   event_pattern = jsonencode({
-    "source"      = ["aws.events", "aws.sns", "aws.cloudwatch"]
+    "source"      = ["aws.events", "aws.sns", "aws.monitoring", "aws.cloudwatch"]
     "detail-type" = ["AWS API Call via CloudTrail"]
     "detail" = {
       "eventName" = [
@@ -735,6 +754,201 @@ resource "aws_cloudwatch_event_rule" "audit_log_tampering" {
     precondition {
       condition     = length(local.audit_log_pattern) <= 2048
       error_message = "The audit log group rule's event pattern is ${length(local.audit_log_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
+    }
+  }
+}
+
+# ---- 9. Reconfiguring the alerting path, rather than dismantling it (HOC-61) ----
+#
+# Section 4 watches eight destructive calls. Every alarm it protects can be
+# silenced just as completely by a call that modifies it, and none of those
+# paged until this rule. Rewriting is also the quieter move: a deleted rule is
+# missing from a plan, while a rule whose pattern no longer matches anything
+# still exists, still has its target, and still reports as ENABLED.
+#
+# The routes to a silent alerting path, and the call each has to make:
+#
+#   Make a rule match nothing               -> PutRule with a narrower pattern.
+#                                              The rule survives; it just never
+#                                              fires again.
+#   Cut a rule off from the topic           -> PutTargets, repointing the target
+#                                              elsewhere or dropping the input
+#                                              transformer that renders the
+#                                              alert.
+#   Turn a rule off without deleting it     -> DisableRule.
+#   Raise an alarm out of reach             -> PutMetricAlarm with a threshold
+#                                              nothing will cross, or with
+#                                              alarm_actions emptied, or with
+#                                              actionsEnabled false.
+#   Pin an alarm to healthy                 -> SetAlarmState forcing OK.
+#   Drop every alert at the topic           -> SetSubscriptionAttributes adding
+#                                              a filter policy that matches
+#                                              nothing, which is invisible
+#                                              unless you read the subscription.
+#   Stop the rules publishing               -> SetTopicAttributes rewriting the
+#                                              topic policy, so the rules are
+#                                              refused, or the delivery policy,
+#                                              so retries stop.
+#   Leak the alerts instead of hiding them  -> Subscribe, adding a subscriber
+#                                              nobody asked for. This one does
+#                                              not silence anything; it is here
+#                                              because a security topic gaining
+#                                              a reader is worth the same look.
+#
+# So, as with sections 7 and 8, the rule does not list those calls. It matches
+# any write to EventBridge, SNS or CloudWatch that NAMES a security resource,
+# whichever field carries the name. A list of event names would have to spell
+# each one right and would miss whatever AWS ships next; this fails loud
+# instead. It is also why DeleteRule, RemoveTargets and Unsubscribe on a
+# security resource now alert twice, once here and once through section 4. A
+# duplicate page on a genuinely bad event is the right side to err on.
+#
+# The difference from sections 7 and 8 is that matching every write outright
+# would be unusable. PutRule, PutTargets and PutMetricAlarm are what ordinary
+# Terraform does, in this account and two others sharing it. So this rule is
+# scoped by resource, and the scoping rests on a naming convention: the
+# security rules are hockeytrack-sec-*, this stack's security alarms are
+# hockeytrack-security-*, and the topic is hockeytrack-security-alerts, so the
+# single prefix "hockeytrack-sec" covers all three. The scoreboard's six IoT
+# authorization alarms are security alarms too -- they publish to this topic --
+# but they are named scoreboard-iot-*, so that prefix is named here as a
+# literal, the way AWSIotLogsV2 is in section 8. They are owned by the other
+# repository; if it renames them, this rule silently stops covering them.
+#
+# Which field names the resource was taken from the input of every write
+# operation in the events, sns and cloudwatch service models shipped with
+# aws-cli 2.33.2, then confirmed against the casing CloudTrail actually records,
+# which is not the model's: the models say Name, Rule, AlarmName, TopicArn, and
+# CloudTrail writes name, rule, alarmName, topicArn. Both spellings of the
+# tagging field are real and neither is a typo -- EventBridge and CloudWatch
+# record resourceARN, SNS records resourceArn.
+#
+#   name             PutRule, DeleteRule, DisableRule, EnableRule, CreateTopic
+#   rule             PutTargets, RemoveTargets
+#   alarmName        PutMetricAlarm, PutCompositeAlarm, SetAlarmState
+#   alarmNames       DeleteAlarms, DisableAlarmActions, EnableAlarmActions
+#   topicArn         SetTopicAttributes, Subscribe, AddPermission,
+#                    RemovePermission, DeleteTopic
+#   subscriptionArn  SetSubscriptionAttributes, Unsubscribe
+#   resourceArn      SNS TagResource, UntagResource, PutDataProtectionPolicy
+#   resourceARN      EventBridge and CloudWatch TagResource, UntagResource
+#
+# Names match by prefix and ARNs match by prefix, which over-matches in two
+# directions worth stating. A future resource called hockeytrack-secondary
+# would alert, and so would an EventBridge event bus, connection or API
+# destination named hockeytrack-sec-anything, because those share the "name"
+# field with rules. Both raise a false alarm rather than hiding a real one.
+#
+# The noise was measured before choosing any of it. Ninety days of CloudTrail
+# in us-east-1, to 2026-09-11: events.amazonaws.com held 1,688 events of which
+# 40 were writes, sns.amazonaws.com 924 of which 42 were writes, and
+# monitoring.amazonaws.com 1,094 of which 27 were writes. Of those 109 writes,
+# 33 named a security resource and would have fired this rule: 7 PutRule and 6
+# PutTargets on the hockeytrack-sec rules, 1 CreateTopic, 8 SetTopicAttributes
+# and 1 Subscribe on the security topic, and 10 PutMetricAlarm, four on
+# hockeytrack-security alarms and six on the scoreboard's. Every one was this
+# repository's own apply, by the funandgames user, on four days: 2026-09-07,
+# 09-09 and twice on 09-11. The other 76 writes were HealthTracker's and
+# EbookShare's CloudFormation stacks, the hockeytrack bus and its goal
+# notifications, the ECR scan rule and the scoreboard's game-events rule, and
+# none of them name a security resource.
+#
+# Of the modify calls this rule exists for -- DisableRule, EnableRule,
+# SetAlarmState, DeleteAlarms, DisableAlarmActions, SetSubscriptionAttributes,
+# AddPermission, RemovePermission, PutCompositeAlarm, PutDataProtectionPolicy
+# -- the window held not one occurrence, on any resource. Watching them is free.
+# What is not free is that an apply touching a security resource now pages, up
+# to ten times for a run that rewrites every alarm. Accepted on the same terms
+# as sections 7 and 8: it is rare, deliberate, and the person doing it is the
+# person reading the alert. Plans and no-op applies stay silent, because
+# Terraform reads these with DescribeRule, ListTargetsByRule, DescribeAlarms,
+# GetTopicAttributes and ListTagsForResource, and calls PutRule or
+# PutMetricAlarm only when something actually differs -- 409 DescribeRule
+# against 15 PutRule in the window.
+#
+# readOnly [false] is not what keeps those reads out, and it is worth being
+# exact about why it is here. 677 read events in the window named a security
+# resource in one of the fields above: 125 DescribeRule, 116 ListTagsForResource,
+# 114 ListTargetsByRule, 98 DescribeAlarms, and so on. None of them can reach
+# this rule, because EventBridge documents that a rule in the ENABLED state
+# matches everything "except for read-only AWS management events delivered
+# through CloudTrail" -- receiving those needs the state
+# ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS, which nothing here sets. So
+# readOnly [false] is a second lock on a door that is already shut: it costs
+# nothing, it makes those 677 events testable as negatives, and it is what
+# would hold if that state were ever changed.
+#
+# eventSource rather than source. The two say the same thing, but eventSource
+# is the field this was verified against, because it appears in the CloudTrail
+# records that can actually be read back. source is derived, and for CloudWatch
+# it is derived to a value that is easy to get wrong -- see the note above
+# section 4, where getting it wrong disabled a branch for four days.
+#
+# What it does not see:
+#   - A call that names one of these resources only through a field not listed
+#     above. This is the same silent-failure mode as section 8's field list.
+#   - Rewriting THIS rule. A PutRule that narrows this pattern produces an
+#     event that arrives minutes later, by which time the pattern it would be
+#     matched against is already the attacker's. Deleting it is caught, by
+#     section 4, which is not resource-scoped. Rewriting it is the residual,
+#     and it is the second-account argument in section 5 again.
+#   - Anything outside us-east-1. All of these resources are there.
+#   - The alarms' data: a metric filter or metric that stops producing
+#     datapoints silences an alarm without any call to CloudWatch at all.
+locals {
+  # "hockeytrack-sec" is a prefix of the rule names, of the topic name, and of
+  # this stack's alarm names, so one entry covers all three.
+  alerting_prefix         = "hockeytrack-sec"
+  alerting_foreign_prefix = "scoreboard-iot-"
+  alerting_arn_stem       = "${var.region}:${data.aws_caller_identity.current.account_id}"
+
+  alerting_names       = [{ "prefix" = local.alerting_prefix }]
+  alerting_alarm_names = [{ "prefix" = local.alerting_prefix }, { "prefix" = local.alerting_foreign_prefix }]
+  # A subscription ARN is the topic ARN plus ":<uuid>", so one prefix serves the
+  # topic and its subscriptions both.
+  alerting_topic_arns = [{ "prefix" = "arn:aws:sns:${local.alerting_arn_stem}:${aws_sns_topic.security.name}" }]
+  alerting_tag_arns = [
+    { "prefix" = "arn:aws:events:${local.alerting_arn_stem}:rule/${local.alerting_prefix}" },
+    { "prefix" = "arn:aws:cloudwatch:${local.alerting_arn_stem}:alarm:${local.alerting_prefix}" },
+    { "prefix" = "arn:aws:cloudwatch:${local.alerting_arn_stem}:alarm:${local.alerting_foreign_prefix}" },
+  ]
+
+  alerting_modify_fields = {
+    name            = local.alerting_names
+    rule            = local.alerting_names
+    alarmName       = local.alerting_alarm_names
+    alarmNames      = local.alerting_alarm_names
+    topicArn        = local.alerting_topic_arns
+    subscriptionArn = local.alerting_topic_arns
+    resourceArn     = local.alerting_topic_arns
+    resourceARN     = local.alerting_tag_arns
+  }
+
+  # eventName appears nowhere in this pattern, which is deliberate and is the
+  # other half of section 8's lesson: constrain eventName both beside a $or and
+  # inside one of its branches and EventBridge's verdict depends on JSON key
+  # order, which jsonencode always renders the wrong way round. No field here is
+  # constrained in both places -- eventSource and readOnly appear only at the
+  # top level, requestParameters only inside the branches.
+  alerting_modify_pattern = jsonencode({
+    "detail-type" = ["AWS API Call via CloudTrail"]
+    "detail" = {
+      "eventSource" = ["events.amazonaws.com", "sns.amazonaws.com", "monitoring.amazonaws.com"]
+      "readOnly"    = [false]
+      "$or"         = [for field, values in local.alerting_modify_fields : { "requestParameters" = { (field) = values } }]
+    }
+  })
+}
+
+resource "aws_cloudwatch_event_rule" "alerting_modification" {
+  name          = "hockeytrack-sec-alerting-modification"
+  description   = "Any write naming a security rule, the security topic, one of its subscriptions, or a security alarm: the routes to silencing an alert by rewriting it rather than deleting it"
+  event_pattern = local.alerting_modify_pattern
+
+  lifecycle {
+    precondition {
+      condition     = length(local.alerting_modify_pattern) <= 2048
+      error_message = "The alerting modification rule's event pattern is ${length(local.alerting_modify_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
     }
   }
 }

@@ -142,8 +142,9 @@ Its limits, stated:
   `AWSIotLogsV2`, naming the client, its certificate and the topic. So IoT
   can assume the role with both conditions in place.
 - Like every alarm here, the rule can be deleted by the administrator
-  credential it watches for. Deleting it is itself alarmed. Deleting that
-  second alarm is not, which is the second-account argument in §5.
+  credential it watches for. Deleting it is itself alarmed, and so is rewriting
+  it. Deleting the rule that alarms on *that* is not, which is the
+  second-account argument in §5.
 
 **Replays cannot reach subscribers.** The replay harness publishes under
 `hockeytrack.synthetic`; every notification rule pins `hockeytrack.poller`.
@@ -205,7 +206,62 @@ Its limits:
 - The noise measurement covers creation rather than steady state: the trail
   group was four days old and the IoT group under an hour.
 - Like every alarm here, the rule can be deleted by the administrator
-  credential it watches for. Deleting it is itself alarmed.
+  credential it watches for. Deleting it is itself alarmed, and so is
+  rewriting it.
+
+**Changing an alarm pages someone, not only deleting it.** Every control above
+is worth exactly as much as the alerting path it runs on, and all of them can be
+silenced by a call that rewrites them rather than one that removes them.
+Rewriting is also the quieter move: a rule whose pattern no longer matches
+anything still exists, still has its target, and still reports as enabled. So a
+second rule fires on any write to EventBridge, SNS or CloudWatch that names a
+security resource — narrowing a rule's pattern, repointing its target, disabling
+it, pushing an alarm's threshold out of reach or emptying its actions, forcing
+an alarm to OK, adding a subscription filter policy that drops everything,
+rewriting the topic policy so the rules can no longer publish, or adding a
+subscriber nobody asked for. As with the IoT and log-group rules, it matches
+every such write rather than a list of API names, so a call AWS adds later is
+caught rather than missed.
+
+The scoping is a naming convention, which is worth stating plainly because it is
+load-bearing: the security rules are `hockeytrack-sec-*`, this stack's security
+alarms `hockeytrack-security-*` and the topic `hockeytrack-security-alerts`, so
+a single prefix covers all three. The scoreboard's six IoT authorization alarms
+publish to the same topic but are named `scoreboard-iot-*`, so that prefix is
+listed as well. Which request field carries the name differs per call —
+`name`, `rule`, `alarmName`, `alarmNames`, `topicArn`, `subscriptionArn`, and
+both spellings of the tagging field, which EventBridge and CloudWatch record as
+`resourceARN` and SNS as `resourceArn` — and the list came from every write
+operation in the three service models, checked against the casing CloudTrail
+actually records rather than the casing the models declare.
+
+Building this turned up a latent fault in the companion rule that watches for
+deletion: its CloudWatch branch named the wrong event source, so `DeleteAlarms`
+and `DisableAlarmActions` could never have matched anything. CloudWatch answers
+to two different source values depending on how an event was delivered, and that
+rule had the one belonging to the other delivery path. Both are now listed.
+
+Its limits:
+- Scoping by name prefix means a renamed resource stops being watched, and the
+  scoreboard's alarms are named by the other repository, not this one.
+- A call naming one of these resources through a field not in the list would not
+  match. This is the same silent failure as the log-group rule, for the same
+  reason.
+- Rewriting *this* rule is the residual. The event arrives minutes later, by
+  which time the pattern it would be matched against is the attacker's own.
+  Deleting it is caught, because the deletion rule is not scoped by resource.
+- An alarm can also be silenced without calling CloudWatch at all, by stopping
+  the data underneath it — a metric filter that no longer matches emits nothing,
+  and an alarm with no datapoints is not an alarm that fires.
+- The cost was measured before the rule was chosen: across ninety days, 33
+  writes to the three services named a security resource, and every one was this
+  repository's own `terraform apply`. None of the modify-style calls the rule
+  exists for — `SetAlarmState`, `DisableRule`, `SetSubscriptionAttributes` and
+  the rest — occurred at all, on any resource. So an apply that touches a
+  security resource now pages, up to ten times for a run that rewrites every
+  alarm, and nothing else does. Plans and no-op applies stay silent, because
+  Terraform reads these resources rather than writing them unless something
+  differs.
 
 **Destroying the archive is gated, but the gate is honest about its size.**
 Versioning makes an accidental overwrite reversible; it does nothing against a
@@ -357,6 +413,27 @@ what is left:
 4. Know what is recoverable. The trail group is a copy: the S3 bucket holds the
    validated original for a year, so nothing it held is lost. `AWSIotLogsV2`
    has no second copy, so deleted IoT history is gone.
+
+**An alerting-path alert you cannot account for.** Someone has rewritten part of
+the alarming rather than removed it, so read the alert you are holding as
+possibly the last one that will arrive. The Actor line names the credential and
+the root sign-in procedure applies to it. Then establish what still works:
+1. `aws events describe-rule` and `aws events list-targets-by-rule` for each
+   `hockeytrack-sec-*` rule. Compare the pattern and the target's input
+   transformer against this repository. A rule can be `ENABLED`, have its
+   target, and match nothing.
+2. `aws sns get-topic-attributes` for `hockeytrack-security-alerts` and
+   `list-subscriptions-by-topic`. The policy should still let the security rules
+   publish; there should be no subscription you did not create; and
+   `get-subscription-attributes` on each should show no `FilterPolicy`.
+3. `aws cloudwatch describe-alarms` for the `hockeytrack-security` and
+   `scoreboard-iot` prefixes. Check `ActionsEnabled`, the threshold, and that
+   `AlarmActions` still names the security topic.
+4. Run a plan in this repository, and one in the scoreboard for its IoT alarms.
+   Anything rewritten shows as a difference, and applying puts the repository's
+   version back. What a plan cannot show you is an alarm forced to `OK` by
+   `SetAlarmState`, because that is state rather than configuration; step 3 is
+   what catches it.
 
 **The archive has lost objects.** Do not write anything to the bucket. Every
 object is versioned, the five most recent noncurrent versions of each key are
