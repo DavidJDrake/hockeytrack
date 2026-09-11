@@ -80,6 +80,55 @@ anything but public game data. Device keys are deliberately low-value.
 connecting thing's own name, so one panel cannot receive another's
 configuration even if it tries.
 
+**Changing the IoT layer pages someone, and devices leave a record.** Both
+properties above live in one IoT policy, and a single API call can replace
+it. A device cannot make that call. A credential can, so the account-level
+security alarms include a rule that fires on every write to the IoT control
+plane. The only exceptions are two reads that CloudTrail labels as writes.
+The routes the design turned up all pass through such a write:
+- a new default policy version, or a policy attached to a certificate
+- a certificate bound to a different thing
+- a certificate created, registered, transferred in or reactivated
+- a CA, certificate provider or provisioning template that would issue
+  identities later without any further API call
+- a role alias turning a device identity into AWS credentials
+- a custom authorizer or domain configuration that skips certificates
+- any change to IoT's own logging configuration
+
+Matching every write, rather than listing those events, is deliberate. A list
+fails silently if one name is wrong or AWS adds a new API. Matching everything
+fails loudly instead. The cost was measured before choosing: in ninety days
+the account recorded five other IoT writes, all of them provisioning the first
+panel. So provisioning, policy changes, deleting a certificate and detaching a
+policy all alert. That is accepted, because the person doing any of them is
+the person reading the alert.
+
+On the device side, IoT's own logging is on at ERROR, which records operations
+that fail, such as a failed device authentication. It writes to the
+`AWSIotLogsV2` log group, which is kept for ninety days. The writing is done
+through a role whose trust policy admits only IoT acting for this account,
+pinned by both `aws:SourceAccount` and `aws:SourceArn`. That role can create
+that one group and append to it, and nothing else. It is deliberately denied
+`PutRetentionPolicy`, so the service cannot reset the group to never-expire.
+
+Its limits, stated:
+- It watches us-east-1, where the policy and certificates live. IoT activity
+  in other regions is unwatched. That activity cannot reach the panels, which
+  connect to the us-east-1 endpoint.
+- It sees the control plane only, not messages published to the panels'
+  topics.
+- Deleting the log group is not alarmed anywhere. IoT would recreate the
+  group itself, with never-expire retention. Future logging would survive,
+  but the history would be gone.
+- Removing the logging resource from Terraform leaves logging on, because at
+  the pinned provider version its delete makes no API call. Turning logging
+  off takes a deliberate call, which the rule catches.
+- Whether IoT's logging honours the role's trust conditions is unverified
+  until the first deploy.
+- Like every alarm here, the rule can be deleted by the administrator
+  credential it watches for. Deleting it is itself alarmed. Deleting that
+  second alarm is not, which is the second-account argument in §5.
+
 **Replays cannot reach subscribers.** The replay harness publishes under
 `hockeytrack.synthetic`; every notification rule pins `hockeytrack.poller`.
 A drill is silent by construction rather than by a flag that might default
@@ -218,6 +267,22 @@ who reached root very likely changed them, and changing them back is what makes
 every other recovery step possible. Then delete the access keys on the
 `funandgames` user, review the IAM users, roles and identity providers that
 exist against the ones this repository creates, and only then look at data.
+
+**An IoT alert you cannot account for.** A device cannot make these calls, so
+whoever did holds an AWS credential. Start with the credential: the alert's
+Actor line names it, and the procedure above applies. Then put the device side
+back:
+1. Run a scoreboard `terraform plan`. The provider reads the
+   `scoreboard-device` policy's default version, and the logging level and
+   role, and shows any difference from the repository. Applying the plan
+   creates a new policy version from the repository and sets it as the
+   default, and sends the repository's logging settings back.
+2. Terraform does not manage certificates or policy attachments;
+   `tools/provision.sh` does. So the plan cannot see those. Check what is
+   attached to each certificate, and deactivate any certificate you did not
+   provision.
+3. Delete any authorizer, role alias, CA certificate or provisioning template.
+   Neither repository creates any of these, so one that exists is not yours.
 
 **The archive has lost objects.** Do not write anything to the bucket. Every
 object is versioned, the five most recent noncurrent versions of each key are

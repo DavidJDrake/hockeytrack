@@ -120,6 +120,7 @@ locals {
     audit    = aws_cloudwatch_event_rule.audit_tampering
     archive  = aws_cloudwatch_event_rule.archive_tampering
     alerting = aws_cloudwatch_event_rule.alerting_tampering
+    iot      = aws_cloudwatch_event_rule.iot_tampering
   }
 
   # Raw CloudTrail JSON is unreadable on a phone, so the alert is rendered as a
@@ -144,7 +145,26 @@ locals {
     ip      = "$.detail.sourceIPAddress"
   }
 
-  security_alert_template = "\"HOCKEYTRACK SECURITY: <event> in account <account> (<region>) at <time>.\\nActor: <actor>\\nSource IP: <ip>\\n\\nIf this was not you, assume the archive's MFA gate is bypassed. Recovery procedure: docs/threat-model.md, section 7.\""
+  # The one sentence that says what an event means differs by rule, so it is
+  # keyed like security_rules. Indexed rather than looked up with a default: a
+  # new rule without a sentence of its own fails the plan instead of inheriting
+  # one that is not true of it. That inheritance is how the IoT rule was first
+  # drafted, and it would have sent someone chasing an MFA bypass at 3 a.m.
+  # when the thing to check was the device policy. Plain text only: each
+  # sentence lands inside a JSON string in the template below.
+  archive_alert_meaning = "If this was not you, assume the archive's MFA gate is bypassed."
+  security_alert_meaning = {
+    identity = local.archive_alert_meaning
+    audit    = local.archive_alert_meaning
+    archive  = local.archive_alert_meaning
+    alerting = local.archive_alert_meaning
+    iot      = "If this was not you, assume an AWS credential is compromised, and check the scoreboard's device policy, certificates and IoT logging."
+  }
+
+  security_alert_template = {
+    for k, meaning in local.security_alert_meaning :
+    k => "\"HOCKEYTRACK SECURITY: <event> in account <account> (<region>) at <time>.\\nActor: <actor>\\nSource IP: <ip>\\n\\n${meaning} Recovery procedure: docs/threat-model.md, section 7.\""
+  }
 }
 
 # ---- 1. Identity and account escalation ----
@@ -296,7 +316,7 @@ resource "aws_cloudwatch_event_target" "security" {
 
   input_transformer {
     input_paths    = local.security_alert_transform
-    input_template = local.security_alert_template
+    input_template = local.security_alert_template[each.key]
   }
 }
 
@@ -426,4 +446,111 @@ resource "aws_cloudwatch_metric_alarm" "archive_shrank" {
   treat_missing_data  = "notBreaching"
   alarm_actions       = [aws_sns_topic.security.arn]
   ok_actions          = [aws_sns_topic.security.arn]
+}
+
+# ---- 7. The IoT control plane (SCO-16) ----
+#
+# The scoreboard's strongest structural claim is that devices publish nothing,
+# and that claim is exactly one IoT policy deep. scoreboard-device grants
+# Connect, Subscribe and Receive; a CreatePolicyVersion with setAsDefault
+# rewrites it in one call, and every panel inherits the change on its next
+# connect. Until this rule nothing watched aws.iot, so the property the threat
+# model leans on hardest could be removed in silence.
+#
+# Why any IoT write matters here. The routes to undermining a device identity,
+# and the events each has to pass through:
+#
+#   Widen what a certificate may do         -> a new default policy version, or
+#                                              a policy attached to it,
+#                                              including through the deprecated
+#                                              AttachPrincipalPolicy.
+#   Borrow another panel's scope            -> AttachThingPrincipal. The policy
+#                                              keys on the thing name, so
+#                                              binding a certificate to a
+#                                              different thing hands it that
+#                                              thing's config topic.
+#   Turn a certificate into AWS credentials -> a role alias, which is the
+#                                              bridge from a device identity
+#                                              to an IAM role.
+#   Mint, clone or revive an identity       -> every way a certificate enters
+#                                              the account or becomes ACTIVE:
+#                                              created, registered, transferred
+#                                              in, or reactivated, which is the
+#                                              same UpdateCertificate event as
+#                                              deactivation.
+#   Set up issuance that never calls an API -> a CA with auto-registration, a
+#                                              certificate provider, or a
+#                                              provisioning template or claim.
+#                                              What they issue later arrives
+#                                              over MQTT or on first connect,
+#                                              where CloudTrail never looks, so
+#                                              the setup call is the only record.
+#   Skip certificates altogether            -> custom authorizers, and the
+#                                              domain configurations that route
+#                                              connections to them.
+#   Blind the record of all of the above    -> IoT's own logging configuration,
+#                                              v1 and v2. Any change alerts, not
+#                                              just a disable: lowering the
+#                                              level, or pointing it at a role
+#                                              that cannot write, is the
+#                                              quieter version of the same move.
+#
+# So the rule does not list those events. It matches every IoT write and
+# excludes only reads that CloudTrail mislabels as writes, which fails loud
+# where a list fails silent. A list has to spell every CloudTrail name right,
+# and those are not always API names: the S3 rule above had three wrong on its
+# first draft. Here a misspelling cannot hide an event, and an IoT API that AWS
+# adds next year alerts the first time it is used. Of the names in the table,
+# only AttachPolicy, AttachThingPrincipal and CreateKeysAndCertificate have
+# been seen as real events in this account; the rest come from the IoT API
+# reference. That distinction now matters only for the documentation. It no
+# longer decides whether the rule fires.
+#
+# The cost is noise, and it was measured before choosing. Ninety days of IoT
+# CloudTrail in us-east-1, 2026-06-25 to 2026-09-11, held 16 events with
+# readOnly false: 9 DescribeEndpoint, 2 ListDomainConfigurations, and 5 from
+# provisioning the first panel (CreatePolicy, CreateThing,
+# CreateKeysAndCertificate, AttachPolicy, AttachThingPrincipal). A scoreboard
+# plan stays quiet, because its only write-labelled call is DescribeEndpoint.
+# What does fire is legitimate change, and that is accepted: make provision
+# raises at least four alerts per panel, and more when it replaces a
+# certificate; a scoreboard apply alerts whenever it changes an IoT resource;
+# and narrowing calls such as DeleteCertificate and DetachPolicy alert too. All
+# of it is rare and deliberate, and the person doing it is the person reading
+# the alert.
+#
+# The two exclusions are reads that CloudTrail records with readOnly false, so
+# readOnly [false] alone does not keep them out. DescribeEndpoint runs on every
+# scoreboard plan, and accounts for all nine in the window.
+# ListDomainConfigurations is a List call, and both occurrences were a
+# read-only inventory of IoT resources on 2026-09-11. Add to this list only a
+# read with evidence like that, never a write that merely happens often.
+# readOnly [false] and eventSource say what delivery and source already imply:
+# EventBridge hands a rule in the ENABLED state only write events. They are
+# there so the pattern reads plainly, and so a read-only event can be tested
+# as a negative.
+#
+# IoT is regional, unlike IAM. This rule watches us-east-1 because the policy,
+# the certificates and the logging configuration are all there, and
+# provision.sh writes the us-east-1 endpoint into every panel. IoT activity in
+# any other region is invisible to it. That activity could not reach these
+# panels, but it would be unwatched use of the account.
+#
+# What it does not see: anything on the data plane, including a message
+# published to the panels' own topics; the IoT logging role losing its
+# permissions, because role-policy edits are the churn the identity rule
+# excludes; the AWSIotLogsV2 log group being deleted, which no rule here
+# watches; and the deletion of this rule, which the alerting rule covers.
+resource "aws_cloudwatch_event_rule" "iot_tampering" {
+  name        = "hockeytrack-sec-iot-tampering"
+  description = "Any write to the IoT control plane, where the scoreboard's publish-nothing device policy can be widened, a device identity minted or bypassed, or IoT logging changed"
+  event_pattern = jsonencode({
+    "source"      = ["aws.iot"]
+    "detail-type" = ["AWS API Call via CloudTrail"]
+    "detail" = {
+      "eventSource" = ["iot.amazonaws.com"]
+      "readOnly"    = [false]
+      "eventName"   = [{ "anything-but" = ["DescribeEndpoint", "ListDomainConfigurations"] }]
+    }
+  })
 }
