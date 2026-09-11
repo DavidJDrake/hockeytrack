@@ -5,6 +5,10 @@
 # minor-version pull requests would be noise that trains you to ignore them.
 # Security fixes are not affected by this schedule -- they arrive immediately
 # through automated security fixes regardless.
+#
+# Every ecosystem also holds a new release for 7 days before proposing it, so
+# a version yanked or found malicious in its first days (a real supply-chain
+# pattern) never even reaches a pull request here.
 version: 2
 updates:
   - package-ecosystem: gomod
@@ -22,6 +26,8 @@ updates:
         patterns:
           - "github.com/aws/aws-sdk-go-v2*"
           - "github.com/aws/aws-lambda-go"
+    cooldown:
+      default-days: 7
 
   # Terraform providers are a dependency like any other. The AWS provider is
   # pinned in .terraform.lock.hcl and nothing else here would ever move it.
@@ -33,6 +39,8 @@ updates:
     open-pull-requests-limit: 3
     commit-message:
       prefix: "deps"
+    cooldown:
+      default-days: 7
 
   # Both base images are pinned by digest, which is right for reproducibility
   # and means they never update on their own. ECR scans the built image on
@@ -46,3 +54,19 @@ updates:
     open-pull-requests-limit: 3
     commit-message:
       prefix: "deps"
+    cooldown:
+      default-days: 7
+
+  # CI's actions are pinned to a commit SHA, not a tag, for supply-chain
+  # safety (a tag can move; a commit can't) -- which means they never update
+  # on their own either. This is what bumps the pin when a release ships.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: "deps"
+    cooldown:
+      default-days: 7

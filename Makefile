@@ -29,8 +29,11 @@ test: vuln
 	go test ./...
 
 # Fails on any known vulnerability reachable from this module's code.
+# Pinned in go.mod (`tool golang.org/x/vuln/cmd/govulncheck`) rather than
+# run via `go run ...@latest`, so this and CI check the same version and
+# Dependabot's gomod updates keep it current.
 vuln:
-	go run golang.org/x/vuln/cmd/govulncheck@latest ./...
+	go tool govulncheck ./...
 
 # The final image is flattened to a single layer (export/import): this host's
 # Docker daemon pushes layered images whose shared base blobs Lambda cannot
