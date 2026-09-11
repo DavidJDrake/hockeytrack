@@ -615,10 +615,10 @@ resource "aws_cloudwatch_event_rule" "iot_tampering" {
 # this rule that still fails silent: an API that names a group through a new
 # field will not match until the field is added here.
 #
-# Each field is matched against the name, the bare ARN, and the ARN followed by
-# anything after a colon. That last form catches the ":*" that describe calls
-# and cloudtrail.tf both append, and cannot reach a different group, because
-# the service does not allow colons in a group name.
+# A field that can hold only a name matches the exact name; a field that can
+# hold an ARN matches the group's ARN as a prefix, which covers the bare ARN and
+# the ":*" that describe calls and cloudtrail.tf both append. Why a prefix, and
+# what it over-matches, is explained above the rule below.
 #
 # Account policies are matched whatever they select. PutAccountPolicy can mask,
 # divert or rewrite every group at once. Its selectionCriteria is a free-text
@@ -668,51 +668,73 @@ resource "aws_cloudwatch_event_rule" "iot_tampering" {
 # StartQuery belongs in an anything-but list with that event as evidence.
 locals {
   audit_log_group_names = [aws_cloudwatch_log_group.trail.name, "AWSIotLogsV2"]
-  audit_log_group_match = flatten([
-    for name in local.audit_log_group_names : [
-      name,
-      "arn:aws:logs:${var.region}:${data.aws_caller_identity.current.account_id}:log-group:${name}",
-      { "prefix" = "arn:aws:logs:${var.region}:${data.aws_caller_identity.current.account_id}:log-group:${name}:" },
-    ]
-  ])
-  audit_log_group_fields = [
-    "logGroupName", "logGroupIdentifier", "logGroupIdentifiers",
-    "logGroupNames", "logGroupArnList", "resourceArn", "resourceIdentifier",
+  audit_log_group_arns = [
+    for name in local.audit_log_group_names :
+    { "prefix" = "arn:aws:logs:${var.region}:${data.aws_caller_identity.current.account_id}:log-group:${name}" }
   ]
-}
-
-# The CreateLogStream exclusion is repeated inside every branch rather than
-# written once beside the $or, and that is not style. When eventName is
-# constrained both outside the $or and inside one of its branches, EventBridge's
-# answer depends on the order of the keys in the JSON: the same pattern and the
-# same unrelated event gave false with eventName written first and true with
-# $or written first. jsonencode sorts keys, and "$" sorts before "e", so
-# Terraform always renders the broken order. The first draft of this rule did
-# exactly that, and matched every negative written for it, including a real
-# PutRetentionPolicy on an unrelated Lambda group. Keep eventName out of the
-# top level of detail while the account branch needs it.
-resource "aws_cloudwatch_event_rule" "audit_log_tampering" {
-  name        = "hockeytrack-sec-audit-log-tampering"
-  description = "Any write naming the CloudTrail or IoT log group, or any account-wide log policy change: the routes to deleting, shortening, diverting or hiding audit history"
-  event_pattern = jsonencode({
+  # Every group-naming field except logGroupName, with the forms it can carry.
+  # The service model gives logGroupNames a pattern with no colon, so it can
+  # only hold a name; logGroupIdentifier(s) take a name or an ARN; the rest take
+  # ARNs.
+  audit_log_group_other_fields = {
+    logGroupNames       = local.audit_log_group_names
+    logGroupIdentifier  = concat(local.audit_log_group_names, local.audit_log_group_arns)
+    logGroupIdentifiers = concat(local.audit_log_group_names, local.audit_log_group_arns)
+    logGroupArnList     = local.audit_log_group_arns
+    resourceArn         = local.audit_log_group_arns
+    resourceIdentifier  = local.audit_log_group_arns
+  }
+  audit_log_pattern = jsonencode({
     "source"      = ["aws.logs"]
     "detail-type" = ["AWS API Call via CloudTrail"]
     "detail" = {
       "eventSource" = ["logs.amazonaws.com"]
       "readOnly"    = [false]
       "$or" = concat(
-        [for field in local.audit_log_group_fields : {
+        [{
           "eventName"         = [{ "anything-but" = ["CreateLogStream"] }]
-          "requestParameters" = { (field) = local.audit_log_group_match }
+          "requestParameters" = { "logGroupName" = local.audit_log_group_names }
         }],
+        [for field, values in local.audit_log_group_other_fields : { "requestParameters" = { (field) = values } }],
         [
-          {
-            "eventName"         = [{ "anything-but" = ["CreateLogStream"] }]
-            "requestParameters" = { "deliveryDestinationConfiguration" = { "destinationResourceArn" = local.audit_log_group_match } }
-          },
+          { "requestParameters" = { "deliveryDestinationConfiguration" = { "destinationResourceArn" = local.audit_log_group_arns } } },
           { "eventName" = ["PutAccountPolicy", "DeleteAccountPolicy"] },
         ],
       )
     }
   })
+}
+
+# Three decisions in the pattern above are not style.
+#
+# The CreateLogStream exclusion sits on the logGroupName branch only, because
+# CreateLogStream takes no other group field (its input is logGroupName and
+# logStreamName, per the service model). That also keeps eventName out of the
+# top level of detail, which matters: when eventName is constrained both beside
+# a $or and inside one of its branches, EventBridge's answer depends on JSON key
+# order. The same pattern and the same unrelated event gave false with eventName
+# written first and true with $or first, and jsonencode sorts "$" before "e", so
+# Terraform always renders the broken order. The first draft did exactly that
+# and matched every write in the account.
+#
+# ARN-shaped fields match the group's ARN as a prefix, so the bare ARN, its
+# ":*" form and anything after it all match. The prefix also matches a sibling
+# group whose name merely begins the same way. That over-match can only raise a
+# false alarm, never hide a real one, and it was accepted because EventBridge
+# rejects a pattern over 2048 characters: the exact forms (name, bare ARN, and
+# ARN plus ":", on every field) came to 3,942, and the first apply failed on it.
+#
+# That limit is enforced only at apply, after a plan has passed, so the
+# precondition below moves the failure to plan.
+resource "aws_cloudwatch_event_rule" "audit_log_tampering" {
+  name          = "hockeytrack-sec-audit-log-tampering"
+  description   = "Any write naming the CloudTrail or IoT log group, or any account-wide log policy change: the routes to deleting, shortening, diverting or hiding audit history"
+  event_pattern = local.audit_log_pattern
+
+  lifecycle {
+    precondition {
+      condition     = length(local.audit_log_pattern) <= 2048
+      error_message = "The audit log group rule's event pattern is ${length(local.audit_log_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
+    }
+  }
 }

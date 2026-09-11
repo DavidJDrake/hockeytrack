@@ -178,10 +178,10 @@ filter, export, KMS key, masking policy or transformer. The hard part is that
 the API names a group in several fields, not one: `logGroupName` on older
 calls, `logGroupIdentifier` (a name or an ARN) on newer ones, `resourceArn`,
 the KMS calls' `resourceIdentifier`, and several list parameters. The list
-was taken from every write operation in the CloudWatch Logs service model, and
-each field is matched against the name and both ARN forms. Account-wide log
-policies name no group but can reach every group, so they alert whatever they
-select.
+was taken from every write operation in the CloudWatch Logs service model. A
+field that can hold only a name matches the exact name, and a field that can
+hold an ARN matches the group's ARN as a prefix. Account-wide log policies name
+no group but can reach every group, so they alert whatever they select.
 
 One write is excluded: `CreateLogStream`. It only adds, and every occurrence in
 ninety days came from a delivery role. Excluding it costs no detection,
@@ -197,6 +197,11 @@ Its limits:
   letting services add events. One scoped to either group is matched.
 - A future API that names a group through a field not yet in the list would
   not match. That is the one way this rule fails silently rather than loudly.
+- ARN fields match by prefix, so a group whose name merely begins with either
+  audit group's name would also alert. That can only raise a false alarm, never
+  hide a real one. It was accepted because EventBridge rejects a pattern over
+  2048 characters, and the exact forms needed 3,942: the first deploy failed on
+  it. The Terraform now refuses such a pattern at plan time.
 - The noise measurement covers creation rather than steady state: the trail
   group was four days old and the IoT group under an hour.
 - Like every alarm here, the rule can be deleted by the administrator
