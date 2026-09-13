@@ -50,3 +50,9 @@ variable "cloudtrail_archive_read_events" {
   type        = bool
   default     = false
 }
+
+variable "enable_foreign_bucket_deny" {
+  description = "Add a bucket-policy deny for the two foreign project identities. Requires an MFA session to apply, because the bucket's own policy refuses PutBucketPolicy without one (HOC-53, HOC-58)."
+  type        = bool
+  default     = false
+}

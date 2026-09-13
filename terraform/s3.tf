@@ -133,6 +133,37 @@ data "aws_iam_policy_document" "raw_tamper" {
   # here ever writes a KMS-encrypted object, so refusing them outright costs the
   # system nothing and closes that path. Unconditional rather than MFA-gated:
   # there is no legitimate caller, so there is no case to leave open.
+  # Belt and braces for the identity-based deny in iam-foreign-deny.tf: the
+  # same two foreign identities, refused at the resource as well as at the
+  # identity, so an attacker who detaches one still meets the other.
+  #
+  # Ships DISABLED, and the reason is worth reading. Applying this statement
+  # requires s3:PutBucketPolicy, which DenyDestructiveActionsWithoutMFA above
+  # refuses without an MFA session -- and no IAM user in this account has an
+  # MFA device yet (HOC-53). The first attempt to apply it failed with exactly
+  # that AccessDenied, which is the control working. Leaving it enabled would
+  # therefore fail every `make deploy` until a device is enrolled.
+  #
+  # Enrol MFA on the deploy user, then:
+  #   eval "$(./tools/mfa-session.sh 123456)"
+  #   terraform apply -var="enable_foreign_bucket_deny=true" ...
+  dynamic "statement" {
+    for_each = var.enable_foreign_bucket_deny ? [1] : []
+    content {
+      sid    = "DenyOtherProjectIdentities"
+      effect = "Deny"
+      principals {
+        type = "AWS"
+        identifiers = [
+          "arn:aws:iam::${data.aws_caller_identity.current.account_id}:user/healthtracker-deploy",
+          "arn:aws:iam::${data.aws_caller_identity.current.account_id}:user/davidjdrake",
+        ]
+      }
+      actions   = ["s3:*"]
+      resources = [aws_s3_bucket.raw.arn, "${aws_s3_bucket.raw.arn}/*"]
+    }
+  }
+
   statement {
     sid    = "DenyKMSEncryptedWrites"
     effect = "Deny"
