@@ -987,18 +987,20 @@ resource "aws_cloudwatch_event_rule" "alerting_modification" {
 # prefixes: this account also runs LitLibrary's and HealthTracker's user pools,
 # Lambdas and parameters, so a service-wide rule would page on their work. Like
 # section 9, it does not list the calls it catches, and it has no eventName
-# constraint at all -- section 7 excludes one event name and section 8 lists
-# two, but neither eventName nor anything-but appears here. It matches any
-# write that names one of the three resources, in whichever request field
-# names it. A misspelled CloudTrail name therefore cannot hide a route, and an
-# API added later alerts the first time it is used, provided it names the
-# resource in one of the fields below; one that names it some other way is the
-# silent-failure mode noted at the end of this section.
+# constraint at all -- sections 7 and 8 both constrain eventName, one with an
+# anything-but exclusion and the other with two literal names, but this rule
+# has neither. It matches any write that names one of the three resources, in
+# whichever request field names it. A misspelled CloudTrail name therefore
+# cannot hide a route, and an API added later alerts the first time it is
+# used, provided it names the resource in one of the fields below; one that
+# names it some other way is the silent-failure mode noted at the end of this
+# section.
 #
-# Which fields name them comes from the input shape of every non-read operation
-# in the cognito-idp, lambda and ssm service models shipped with aws-cli 2.33.2,
-# cased the way CloudTrail records them. That casing was confirmed against real
-# events on 2026-09-14 for userPoolId, functionName and name:
+# Which fields name them comes from the input shape of every operation outside
+# Get/List/Describe in the cognito-idp, lambda and ssm service models shipped
+# with aws-cli 2.33.2, cased the way CloudTrail records them. That casing was
+# confirmed against real events on 2026-09-14 for userPoolId, functionName and
+# name:
 #
 #   userPoolId    every Cognito configuration and admin write; 58 operations
 #                 outside Get/List/Describe take it, a few of them reads such
