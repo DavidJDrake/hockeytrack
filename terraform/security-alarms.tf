@@ -986,24 +986,29 @@ resource "aws_cloudwatch_event_rule" "alerting_modification" {
 # Scoped by resource, like section 9, and for the same reason as section 9's
 # prefixes: this account also runs LitLibrary's and HealthTracker's user pools,
 # Lambdas and parameters, so a service-wide rule would page on their work. Like
-# sections 7 and 8, it lists no event names. It matches any write that names
-# one of the three resources, in whichever request field names it. A misspelled
-# CloudTrail name therefore cannot hide a route, and an API added later alerts
-# the first time it is used.
+# section 9, it does not list the calls it catches, and it has no eventName
+# constraint at all -- section 7 excludes one event name and section 8 lists
+# two, but neither eventName nor anything-but appears here. It matches any
+# write that names one of the three resources, in whichever request field
+# names it. A misspelled CloudTrail name therefore cannot hide a route, and an
+# API added later alerts the first time it is used, provided it names the
+# resource in one of the fields below; one that names it some other way is the
+# silent-failure mode noted at the end of this section.
 #
 # Which fields name them comes from the input shape of every non-read operation
 # in the cognito-idp, lambda and ssm service models shipped with aws-cli 2.33.2,
 # cased the way CloudTrail records them. That casing was confirmed against real
 # events on 2026-09-14 for userPoolId, functionName and name:
 #
-#   userPoolId    every Cognito configuration and admin write; 58 operations in
-#                 the model take it
+#   userPoolId    every Cognito configuration and admin write; 58 operations
+#                 outside Get/List/Describe take it, a few of them reads such
+#                 as AdminGetUser
 #   resourceArn   Cognito TagResource/UntagResource (the pool's ARN), and SSM
 #                 Put/DeleteResourcePolicy (the parameter's ARN)
-#   functionName  every Lambda write that takes a function (30 operations in
-#                 the model take it, reads included). CloudTrail records it
-#                 both bare and as a full ARN, so it is matched with a
-#                 wildcard.
+#   functionName  every Lambda write that takes a function; 30 operations
+#                 outside Get/List take it, Invoke among them. CloudTrail
+#                 records it both bare and as a full ARN, so it is matched
+#                 with a wildcard.
 #   resource      Lambda TagResource/UntagResource, an ARN
 #   name          SSM PutParameter, DeleteParameter, (Un)LabelParameterVersion
 #   names         SSM DeleteParameters, a list
@@ -1013,8 +1018,17 @@ resource "aws_cloudwatch_event_rule" "alerting_modification" {
 # sign-in (Token_POST, OAuth2Response_GET, Logout) carry no requestParameters at
 # all, and InitiateAuth and SignUp carry clientId, not userPoolId. Those are
 # attempts against the gate, which the scoreboard's refusal alarm counts, not
-# changes to it. Plans stay silent because reads are readOnly true. CloudTrail
-# masks PutParameter's value and CreateIdentityProvider's client_secret, so no
+# changes to it. That leaves the gate's own Invoke, once per sign-in as the
+# pre sign-up and pre token generation triggers fire: functionName would match
+# it exactly like a Lambda write, and every sign-in would page, if any trail
+# in this account ever logged Lambda data events. It does not today -- the
+# account's one trail, hockeytrack-account, logs S3 object data events only
+# (checked 2026-09-14) -- but that is a property of the trail, not of this
+# rule. Plans stay silent not because readOnly [false] blocks them but because
+# an ENABLED rule never receives read-only management events in the first
+# place, exactly as section 9 explains; readOnly [false] is a second lock on a
+# door already shut, kept for the same clarity reason. CloudTrail masks
+# PutParameter's value and CreateIdentityProvider's client_secret, so no
 # invited address and no Google secret reaches this rule's input.
 #
 # What does page is legitimate change, and that is accepted: a scoreboard apply
@@ -1023,10 +1037,18 @@ resource "aws_cloudwatch_event_rule" "alerting_modification" {
 # is the person reading the alert.
 #
 # The pool ID is looked up, not typed, because the pool can be replaced (its
-# username_attributes forces a new pool). The precondition fails the plan unless
-# exactly one pool has this name, so a replaced pool is picked up and a missing
-# or duplicated one is refused, instead of the rule silently watching an ID that
-# no longer exists. The function and the parameter have fixed names in the
+# username_attributes forces a new pool). But the lookup only runs when
+# HockeyTrack itself plans, so a replacement is picked up at HockeyTrack's
+# next apply, not the scoreboard's. Until then, this rule keeps watching the
+# old pool ID, and nothing prompts a HockeyTrack apply to happen sooner:
+# writes to the new pool in that window, including an UpdateUserPool that
+# drops the triggers, page nobody. The one write that does page is the
+# replacement's own DeleteUserPool on the old pool, because that ID is still
+# what this rule matches. The precondition fails the plan unless exactly one
+# pool has this name, so a missing or duplicated pool is refused rather than
+# silently watched -- at a cost: HockeyTrack's plan then fails outright,
+# blocking every other security change until the scoreboard pool situation is
+# resolved. The function and the parameter have fixed names in the
 # scoreboard's Terraform and are named here as literals, the way AWSIotLogsV2 is
 # in section 8. If that repository renames either, this rule silently stops
 # covering it.
@@ -1034,8 +1056,11 @@ resource "aws_cloudwatch_event_rule" "alerting_modification" {
 # What it does not see: the static site's bucket and distribution, which could
 # serve a look-alike sign-in page; the gate's IAM role, whose edits can only
 # make the gate fail closed; a crash or throttle, which are not API calls and
-# which the scoreboard's own authgate alarms watch; and rewriting this rule,
-# which section 9 catches.
+# which the scoreboard's own authgate alarms watch; rewriting this rule, which
+# section 9 catches; a pool replacement between HockeyTrack applies, covered
+# above; and a call that names one of these three resources only through a
+# field not listed above, the same silent-failure mode as section 8's and
+# section 9's field lists.
 data "aws_cognito_user_pools" "scoreboard" {
   name = "scoreboard-admins"
 }

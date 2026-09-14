@@ -274,11 +274,14 @@ every Google account; rewriting the function or its configuration; adding an
 address to the list; adding an identity provider or an app client; or changing
 a user directly. It lists no event names, and it is scoped to the scoreboard's
 resources because two other projects run pools, Lambdas and parameters in this
-account. The pool is found by name at plan time, so a replaced pool is picked up
-rather than silently unwatched. Sign-ins themselves do not page: the per-sign-in
-Cognito events carry no request parameters to match. The scoreboard repository
-separately alarms on the gate crashing or being throttled, which are not API
-calls.
+account. The pool is found by name, but only when HockeyTrack itself plans, so
+a replaced pool is picked up at HockeyTrack's next apply, not the scoreboard's;
+until then the rule watches the old pool ID, and the replacement's own deletion
+of that pool is the write that happens to page. Sign-ins themselves do not
+page: the per-sign-in Cognito events carry no request parameters to match, and
+the gate's own invocation would, but the account's one trail does not log
+Lambda data events today. The scoreboard repository separately alarms on the
+gate crashing or being throttled, which are not API calls.
 
 **Destroying the archive is gated, but the gate is honest about its size.**
 Versioning makes an accidental overwrite reversible; it does nothing against a
