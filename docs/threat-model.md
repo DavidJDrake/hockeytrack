@@ -263,6 +263,23 @@ Its limits:
   Terraform reads these resources rather than writing them unless something
   differs.
 
+**Changing the scoreboard's sign-in gate pages someone.** The scoreboard's
+admin site admits only invited Google accounts, and the thing that enforces
+that is a Lambda the user pool calls as a trigger, reading the invite list from
+one SSM parameter. The pool's own invite-only setting was verified not to stop
+Google accounts, so those three resources are an authorization root. A rule
+fires on any write that names the pool, the function or the parameter, in
+whichever request field names it: dropping the triggers, which fails open to
+every Google account; rewriting the function or its configuration; adding an
+address to the list; adding an identity provider or an app client; or changing
+a user directly. It lists no event names, and it is scoped to the scoreboard's
+resources because two other projects run pools, Lambdas and parameters in this
+account. The pool is found by name at plan time, so a replaced pool is picked up
+rather than silently unwatched. Sign-ins themselves do not page: the per-sign-in
+Cognito events carry no request parameters to match. The scoreboard repository
+separately alarms on the gate crashing or being throttled, which are not API
+calls.
+
 **Destroying the archive is gated, but the gate is honest about its size.**
 Versioning makes an accidental overwrite reversible; it does nothing against a
 valid credential used deliberately. So every action that would destroy or
@@ -434,6 +451,26 @@ the root sign-in procedure applies to it. Then establish what still works:
    version back. What a plan cannot show you is an alarm forced to `OK` by
    `SetAlarmState`, because that is state rather than configuration; step 3 is
    what catches it.
+
+**A scoreboard sign-in alert you cannot account for.** Assume someone can admit
+an account of their choosing to the scoreboard admin site, and with it claim
+panels. The Actor line names the credential, and the root sign-in procedure
+applies to it. Then, in us-east-1:
+1. `aws cognito-idp describe-user-pool --user-pool-id <id> --query
+   'UserPool.LambdaConfig'`. Both `PreSignUp` and `PreTokenGenerationConfig`
+   must name `scoreboard-authgate`. If they are missing, the gate is open.
+2. `list-user-pool-clients` must show exactly one client, and
+   `list-identity-providers` exactly one provider, `Google`.
+3. `list-users`: every user should be an invited address, and none should be
+   anything but `EXTERNAL_PROVIDER`.
+4. `aws lambda get-function --function-name scoreboard-authgate` and
+   `get-function-configuration`. Compare the code SHA and
+   `ALLOWLIST_PARAMETER` against a fresh `make build` and plan in the
+   scoreboard repository.
+5. Read the invite list and remove anyone you did not invite. Then run a plan
+   in the scoreboard repository: anything rewritten shows as a difference, and
+   applying puts it back. The invite list's value is the exception, because
+   Terraform deliberately ignores it.
 
 **The archive has lost objects.** Do not write anything to the bucket. Every
 object is versioned, the five most recent noncurrent versions of each key are

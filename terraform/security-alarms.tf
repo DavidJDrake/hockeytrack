@@ -118,13 +118,14 @@ resource "aws_sns_topic_policy" "security" {
 
 locals {
   security_rules = {
-    identity        = aws_cloudwatch_event_rule.identity_escalation
-    audit           = aws_cloudwatch_event_rule.audit_tampering
-    archive         = aws_cloudwatch_event_rule.archive_tampering
-    alerting        = aws_cloudwatch_event_rule.alerting_tampering
-    alerting_modify = aws_cloudwatch_event_rule.alerting_modification
-    iot             = aws_cloudwatch_event_rule.iot_tampering
-    logs            = aws_cloudwatch_event_rule.audit_log_tampering
+    identity          = aws_cloudwatch_event_rule.identity_escalation
+    audit             = aws_cloudwatch_event_rule.audit_tampering
+    archive           = aws_cloudwatch_event_rule.archive_tampering
+    alerting          = aws_cloudwatch_event_rule.alerting_tampering
+    alerting_modify   = aws_cloudwatch_event_rule.alerting_modification
+    iot               = aws_cloudwatch_event_rule.iot_tampering
+    logs              = aws_cloudwatch_event_rule.audit_log_tampering
+    scoreboard_signin = aws_cloudwatch_event_rule.scoreboard_signin
   }
 
   # Raw CloudTrail JSON is unreadable on a phone, so the alert is rendered as a
@@ -158,13 +159,14 @@ locals {
   # sentence lands inside a JSON string in the template below.
   archive_alert_meaning = "If this was not you, assume the archive's MFA gate is bypassed."
   security_alert_meaning = {
-    identity        = local.archive_alert_meaning
-    audit           = local.archive_alert_meaning
-    archive         = local.archive_alert_meaning
-    alerting        = local.archive_alert_meaning
-    alerting_modify = "If this was not you, assume a security alarm has been reconfigured rather than removed, which is the quieter way to silence it. Check the pattern and targets of every hockeytrack-sec rule, the security topic's policy and its subscription list, and the threshold, actions, actions-enabled flag and state of every hockeytrack-security and scoreboard-iot alarm, against this repository."
-    iot             = "If this was not you, assume an AWS credential is compromised, and check the scoreboard's device policy, certificates and IoT logging."
-    logs            = "If this was not you, assume audit history has been destroyed, shortened or redirected. Check that both audit log groups still exist with 90-day retention, that the root sign-in metric filter is intact, and whether a subscription filter, KMS key or account-level log policy has appeared."
+    identity          = local.archive_alert_meaning
+    audit             = local.archive_alert_meaning
+    archive           = local.archive_alert_meaning
+    alerting          = local.archive_alert_meaning
+    alerting_modify   = "If this was not you, assume a security alarm has been reconfigured rather than removed, which is the quieter way to silence it. Check the pattern and targets of every hockeytrack-sec rule, the security topic's policy and its subscription list, and the threshold, actions, actions-enabled flag and state of every hockeytrack-security and scoreboard-iot alarm, against this repository."
+    iot               = "If this was not you, assume an AWS credential is compromised, and check the scoreboard's device policy, certificates and IoT logging."
+    logs              = "If this was not you, assume audit history has been destroyed, shortened or redirected. Check that both audit log groups still exist with 90-day retention, that the root sign-in metric filter is intact, and whether a subscription filter, KMS key or account-level log policy has appeared."
+    scoreboard_signin = "If this was not you, assume the scoreboard admin site's sign-in gate may be bypassed. Check the invite list, the user pool's triggers, app clients, identity providers and users, and the authgate function's code and environment, against the scoreboard repository."
   }
 
   security_alert_template = {
@@ -949,6 +951,133 @@ resource "aws_cloudwatch_event_rule" "alerting_modification" {
     precondition {
       condition     = length(local.alerting_modify_pattern) <= 2048
       error_message = "The alerting modification rule's event pattern is ${length(local.alerting_modify_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
+    }
+  }
+}
+
+# ---- 10. The scoreboard admin site's sign-in gate ----
+#
+# The scoreboard's admin site signs people in with Google, and only invited
+# addresses get an account. What enforces that is not IAM and not Cognito's own
+# settings. It is one Lambda, scoreboard-authgate, which the user pool calls as
+# its pre sign-up and pre token generation triggers, reading the invite list
+# from one SSM parameter. The pool's allow_admin_create_user_only was verified
+# live NOT to stop federated sign-up, so the triggers are the control. That
+# makes three resources an authorization root, and until this rule a write to
+# any of them paged nobody:
+#
+#   Drop the pool's triggers                -> UpdateUserPool. Fails OPEN:
+#                                              every Google account admitted.
+#   Rewrite the function, or point its      -> UpdateFunctionCode*,
+#   ALLOWLIST_PARAMETER elsewhere              UpdateFunctionConfiguration*.
+#   Invite yourself                         -> PutParameter.
+#   Add an identity provider you control    -> CreateIdentityProvider. The gate
+#                                              admits any external provider
+#                                              whose mapping says the address is
+#                                              verified.
+#   Add or widen an app client              -> Create/UpdateUserPoolClient.
+#   Rewrite a user directly                 -> AdminUpdateUserAttributes and
+#                                              the other Admin* calls.
+#   Stop the gate running                   -> RemovePermission*,
+#                                              DeleteFunction*,
+#                                              DeleteParameter(s). Fails
+#                                              closed, but still unexplained.
+#
+# Scoped by resource, like section 9, and for the same reason as section 9's
+# prefixes: this account also runs LitLibrary's and HealthTracker's user pools,
+# Lambdas and parameters, so a service-wide rule would page on their work. Like
+# sections 7 and 8, it lists no event names. It matches any write that names
+# one of the three resources, in whichever request field names it. A misspelled
+# CloudTrail name therefore cannot hide a route, and an API added later alerts
+# the first time it is used.
+#
+# Which fields name them comes from the input shape of every non-read operation
+# in the cognito-idp, lambda and ssm service models shipped with aws-cli 2.33.2,
+# cased the way CloudTrail records them. That casing was confirmed against real
+# events on 2026-09-14 for userPoolId, functionName and name:
+#
+#   userPoolId    every Cognito configuration and admin write; 58 operations in
+#                 the model take it
+#   resourceArn   Cognito TagResource/UntagResource (the pool's ARN), and SSM
+#                 Put/DeleteResourcePolicy (the parameter's ARN)
+#   functionName  every Lambda write that takes a function (30 operations in
+#                 the model take it, reads included). CloudTrail records it
+#                 both bare and as a full ARN, so it is matched with a
+#                 wildcard.
+#   resource      Lambda TagResource/UntagResource, an ARN
+#   name          SSM PutParameter, DeleteParameter, (Un)LabelParameterVersion
+#   names         SSM DeleteParameters, a list
+#   resourceId    SSM AddTagsToResource/RemoveTagsFromResource
+#
+# Sign-in traffic does not page. The hosted-UI events recorded for every
+# sign-in (Token_POST, OAuth2Response_GET, Logout) carry no requestParameters at
+# all, and InitiateAuth and SignUp carry clientId, not userPoolId. Those are
+# attempts against the gate, which the scoreboard's refusal alarm counts, not
+# changes to it. Plans stay silent because reads are readOnly true. CloudTrail
+# masks PutParameter's value and CreateIdentityProvider's client_secret, so no
+# invited address and no Google secret reaches this rule's input.
+#
+# What does page is legitimate change, and that is accepted: a scoreboard apply
+# that touches these resources, every invitation or removal, and any admin
+# action on the pool. All of it is rare and deliberate, and the person doing it
+# is the person reading the alert.
+#
+# The pool ID is looked up, not typed, because the pool can be replaced (its
+# username_attributes forces a new pool). The precondition fails the plan unless
+# exactly one pool has this name, so a replaced pool is picked up and a missing
+# or duplicated one is refused, instead of the rule silently watching an ID that
+# no longer exists. The function and the parameter have fixed names in the
+# scoreboard's Terraform and are named here as literals, the way AWSIotLogsV2 is
+# in section 8. If that repository renames either, this rule silently stops
+# covering it.
+#
+# What it does not see: the static site's bucket and distribution, which could
+# serve a look-alike sign-in page; the gate's IAM role, whose edits can only
+# make the gate fail closed; a crash or throttle, which are not API calls and
+# which the scoreboard's own authgate alarms watch; and rewriting this rule,
+# which section 9 catches.
+data "aws_cognito_user_pools" "scoreboard" {
+  name = "scoreboard-admins"
+}
+
+locals {
+  scoreboard_signin_arn_stem  = "${var.region}:${data.aws_caller_identity.current.account_id}"
+  scoreboard_signin_parameter = "/scoreboard/allowed-emails"
+
+  scoreboard_signin_pattern = jsonencode({
+    "detail-type" = ["AWS API Call via CloudTrail"]
+    "detail" = {
+      "eventSource" = ["cognito-idp.amazonaws.com", "lambda.amazonaws.com", "ssm.amazonaws.com"]
+      "readOnly"    = [false]
+      "$or" = [
+        { "requestParameters" = { "userPoolId" = data.aws_cognito_user_pools.scoreboard.ids } },
+        { "requestParameters" = { "functionName" = [{ "wildcard" = "*scoreboard-authgate*" }] } },
+        { "requestParameters" = { "resource" = [{ "wildcard" = "*:function:scoreboard-authgate*" }] } },
+        { "requestParameters" = { "name" = [local.scoreboard_signin_parameter] } },
+        { "requestParameters" = { "names" = [local.scoreboard_signin_parameter] } },
+        { "requestParameters" = { "resourceId" = [local.scoreboard_signin_parameter] } },
+        { "requestParameters" = { "resourceArn" = concat(
+          data.aws_cognito_user_pools.scoreboard.arns,
+          ["arn:aws:ssm:${local.scoreboard_signin_arn_stem}:parameter${local.scoreboard_signin_parameter}"],
+        ) } },
+      ]
+    }
+  })
+}
+
+resource "aws_cloudwatch_event_rule" "scoreboard_signin" {
+  name          = "hockeytrack-sec-scoreboard-signin"
+  description   = "Any write naming the scoreboard admin site's user pool, sign-in gate function or invite list: the routes to bypassing or blinding the gate"
+  event_pattern = local.scoreboard_signin_pattern
+
+  lifecycle {
+    precondition {
+      condition     = length(data.aws_cognito_user_pools.scoreboard.ids) == 1
+      error_message = "Expected exactly one Cognito user pool named scoreboard-admins, found ${length(data.aws_cognito_user_pools.scoreboard.ids)}. The scoreboard sign-in rule would watch the wrong pool, or none."
+    }
+    precondition {
+      condition     = length(local.scoreboard_signin_pattern) <= 2048
+      error_message = "The scoreboard sign-in rule's event pattern is ${length(local.scoreboard_signin_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
     }
   }
 }
