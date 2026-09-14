@@ -163,7 +163,7 @@ locals {
     audit             = local.archive_alert_meaning
     archive           = local.archive_alert_meaning
     alerting          = local.archive_alert_meaning
-    alerting_modify   = "If this was not you, assume a security alarm has been reconfigured rather than removed, which is the quieter way to silence it. Check the pattern and targets of every hockeytrack-sec rule, the security topic's policy and its subscription list, and the threshold, actions, actions-enabled flag and state of every hockeytrack-security and scoreboard-iot alarm, against this repository."
+    alerting_modify   = "If this was not you, assume a security alarm has been reconfigured rather than removed, which is the quieter way to silence it. Check the pattern and targets of every hockeytrack-sec rule, the security topic's policy and its subscription list, and the threshold, actions, actions-enabled flag and state of every hockeytrack-security and scoreboard alarm, against this repository."
     iot               = "If this was not you, assume an AWS credential is compromised, and check the scoreboard's device policy, certificates and IoT logging."
     logs              = "If this was not you, assume audit history has been destroyed, shortened or redirected. Check that both audit log groups still exist with 90-day retention, that the root sign-in metric filter is intact, and whether a subscription filter, KMS key or account-level log policy has appeared."
     scoreboard_signin = "If this was not you, assume the scoreboard admin site's sign-in gate may be bypassed. Check the invite list, the user pool's triggers, app clients, identity providers and users, and the authgate function's code and environment, against the scoreboard repository."
@@ -811,11 +811,16 @@ resource "aws_cloudwatch_event_rule" "audit_log_tampering" {
 # scoped by resource, and the scoping rests on a naming convention: the
 # security rules are hockeytrack-sec-*, this stack's security alarms are
 # hockeytrack-security-*, and the topic is hockeytrack-security-alerts, so the
-# single prefix "hockeytrack-sec" covers all three. The scoreboard's six IoT
-# authorization alarms are security alarms too -- they publish to this topic --
-# but they are named scoreboard-iot-*, so that prefix is named here as a
-# literal, the way AWSIotLogsV2 is in section 8. They are owned by the other
-# repository; if it renames them, this rule silently stops covering them.
+# single prefix "hockeytrack-sec" covers all three. The scoreboard's alarms are
+# security alarms too -- its IoT authorization, enrollment, sign-in refusal and
+# sign-in gate alarms all publish to this topic -- and every one is named
+# scoreboard-*, so that prefix is named here as a literal, the way AWSIotLogsV2
+# is in section 8. It was scoreboard-iot- until 2026-09-14, which left the
+# enrollment and sign-in alarms rewritable without a page. They are owned by the
+# other repository, whose tests fail if an alarm there loses the prefix; a
+# rename that dropped it would otherwise silently end this rule's coverage. The
+# wider prefix also covers scoreboard-dlq-depth, which notifies the operational
+# topic, and rewriting that pages too; that is accepted.
 #
 # Which field names the resource was taken from the input of every write
 # operation in the events, sns and cloudwatch service models shipped with
@@ -901,7 +906,7 @@ locals {
   # "hockeytrack-sec" is a prefix of the rule names, of the topic name, and of
   # this stack's alarm names, so one entry covers all three.
   alerting_prefix         = "hockeytrack-sec"
-  alerting_foreign_prefix = "scoreboard-iot-"
+  alerting_foreign_prefix = "scoreboard-"
   alerting_arn_stem       = "${var.region}:${data.aws_caller_identity.current.account_id}"
 
   alerting_names       = [{ "prefix" = local.alerting_prefix }]

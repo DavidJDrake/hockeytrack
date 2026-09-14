@@ -226,9 +226,9 @@ caught rather than missed.
 The scoping is a naming convention, which is worth stating plainly because it is
 load-bearing: the security rules are `hockeytrack-sec-*`, this stack's security
 alarms `hockeytrack-security-*` and the topic `hockeytrack-security-alerts`, so
-a single prefix covers all three. The scoreboard's six IoT authorization alarms
-publish to the same topic but are named `scoreboard-iot-*`, so that prefix is
-listed as well. Which request field carries the name differs per call —
+a single prefix covers all three. The scoreboard's alarms publish to the same
+topic and are all named `scoreboard-*`, so that prefix is listed as well; the
+scoreboard's own tests keep every alarm there inside it. Which request field carries the name differs per call —
 `name`, `rule`, `alarmName`, `alarmNames`, `topicArn`, `subscriptionArn`, and
 both spellings of the tagging field, which EventBridge and CloudWatch record as
 `resourceARN` and SNS as `resourceArn` — and the list came from every write
@@ -447,9 +447,9 @@ the root sign-in procedure applies to it. Then establish what still works:
    publish; there should be no subscription you did not create; and
    `get-subscription-attributes` on each should show no `FilterPolicy`.
 3. `aws cloudwatch describe-alarms` for the `hockeytrack-security` and
-   `scoreboard-iot` prefixes. Check `ActionsEnabled`, the threshold, and that
+   `scoreboard` prefixes. Check `ActionsEnabled`, the threshold, and that
    `AlarmActions` still names the security topic.
-4. Run a plan in this repository, and one in the scoreboard for its IoT alarms.
+4. Run a plan in this repository, and one in the scoreboard for its alarms.
    Anything rewritten shows as a difference, and applying puts the repository's
    version back. What a plan cannot show you is an alarm forced to `OK` by
    `SetAlarmState`, because that is state rather than configuration; step 3 is
