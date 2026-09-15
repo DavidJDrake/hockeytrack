@@ -1041,12 +1041,13 @@ resource "aws_cloudwatch_event_rule" "alerting_modification" {
 # all, and InitiateAuth and SignUp carry clientId, not userPoolId. Those are
 # attempts against the gate, which the scoreboard's refusal alarm counts, not
 # changes to it. That leaves the gate's own Invoke, once per sign-in as the
-# pre sign-up and pre token generation triggers fire: functionName would match
-# it exactly like a Lambda write, and every sign-in would page, if any trail
-# in this account ever logged Lambda data events. It does not today -- the
-# account's one trail, hockeytrack-account, logs S3 object data events only
-# (checked 2026-09-14) -- but that is a property of the trail, not of this
-# rule. Plans stay silent not because readOnly [false] blocks them but because
+# pre sign-up and pre token generation triggers fire. The trail logs it, for
+# this function and the admin API's two (cloudtrail.tf, since 2026-09-15), and
+# functionName would match it exactly like a Lambda write, so every sign-in
+# would page. "eventCategory" = ["Management"] is what stops that: an Invoke
+# record's category is Data. Section 12 is the rule that watches invocations,
+# and pages only on one Cognito did not make. Plans stay silent not because
+# readOnly [false] blocks them but because
 # an ENABLED rule never receives read-only management events in the first
 # place, exactly as section 9 explains; readOnly [false] is a second lock on a
 # door already shut, kept for the same clarity reason. CloudTrail masks
@@ -1111,8 +1112,9 @@ locals {
   scoreboard_signin_pattern = jsonencode({
     "detail-type" = ["AWS API Call via CloudTrail"]
     "detail" = {
-      "eventSource" = ["cognito-idp.amazonaws.com", "lambda.amazonaws.com", "ssm.amazonaws.com"]
-      "readOnly"    = [false]
+      "eventSource"   = ["cognito-idp.amazonaws.com", "lambda.amazonaws.com", "ssm.amazonaws.com"]
+      "eventCategory" = ["Management"]
+      "readOnly"      = [false]
       "$or" = [
         { "requestParameters" = { "userPoolId" = data.aws_cognito_user_pools.scoreboard.ids } },
         { "requestParameters" = { "functionName" = [{ "wildcard" = "*scoreboard-authgate*" }] } },
@@ -1220,20 +1222,15 @@ resource "aws_cloudwatch_event_rule" "scoreboard_signin" {
 # other security change until the scoreboard API situation is resolved. The
 # function names are literals, like section 10's.
 #
-# What it does not see, the most important first:
-#   - Direct invocation. Both handlers read the caller's identity only from the
-#     event's requestContext.authorizer.jwt.claims, so any principal in this
-#     account whose own policy allows lambda:InvokeFunction on either function
-#     -- the administrator key section 1 describes among them -- can invoke it
-#     with a hand-built event carrying whatever claims it likes, skipping API
-#     Gateway and the authorizer, with no configuration write at all. Invoke is
-#     a Lambda data event, which the account's one trail does not log (section
-#     10). Nor is turning data events on the fix: API Gateway's own calls are
-#     Invoke events naming these functions, so if a trail ever logged Lambda
-#     data events, the functionName wildcard above would page on every
-#     admin-API request, the same caveat section 10 gives for the gate.
-#     Closing this needs Invoke events filtered to callers other than API
-#     Gateway, not merely logged.
+# What it does not see, the most important first, after one thing it ignores:
+#   - Invocations. API Gateway's own calls to these functions are Invoke
+#     records naming them, which the trail now logs (cloudtrail.tf), so this
+#     rule ignores data events by eventCategory or it would page on every
+#     admin-API request. Direct invocation with forged claims is closed in two
+#     other places: both handlers verify the caller's ID token themselves
+#     (the scoreboard's cloud/internal/idtoken) rather than trusting the
+#     event's authorizer claims, and section 12 pages on any invocation API
+#     Gateway did not make.
 #   - Deleting or shortening the logs the recovery steps read. A DeleteLogGroup,
 #     DeleteLogStream or PutRetentionPolicy on /aws/apigateway/scoreboard-admin,
 #     /aws/lambda/scoreboard-api or /aws/lambda/scoreboard-enroll pages nobody:
@@ -1266,8 +1263,9 @@ locals {
   scoreboard_api_pattern = jsonencode({
     "detail-type" = ["AWS API Call via CloudTrail"]
     "detail" = {
-      "eventSource" = ["apigateway.amazonaws.com", "lambda.amazonaws.com"]
-      "readOnly"    = [false]
+      "eventSource"   = ["apigateway.amazonaws.com", "lambda.amazonaws.com"]
+      "eventCategory" = ["Management"]
+      "readOnly"      = [false]
       "$or" = [
         { "requestParameters" = { "apiId" = local.scoreboard_api_ids } },
         { "requestParameters" = { "resource-arn" = [for id in local.scoreboard_api_ids : { "prefix" = "arn:aws:apigateway:${var.region}::/apis/${id}" }] } },

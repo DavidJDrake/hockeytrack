@@ -287,8 +287,8 @@ a replaced pool is picked up at HockeyTrack's next apply, not the scoreboard's;
 until then the rule watches the old pool ID, and the replacement's own deletion
 of that pool is the write that happens to page. Sign-ins themselves do not
 page: the per-sign-in Cognito events carry no request parameters to match, and
-the gate's own invocation would, but the account's one trail does not log
-Lambda data events today. The scoreboard repository separately alarms on the
+the gate's own invocations, which the trail now logs, are data events this rule
+ignores; a third rule, below, watches those. The scoreboard repository separately alarms on the
 gate crashing or being throttled, which are not API calls. The gate is not
 the only authorization root, though; the admin API that consumes the tokens is
 the other, and the next paragraph covers it.
@@ -301,12 +301,9 @@ integration, or changing either function's code, configuration or permissions
 can claim or control panels without touching the gate. A second rule fires on
 any write that names the `scoreboard-admin` API, in `apiId` or by ARN, or either
 function. Like the sign-in rule, it lists no event names and is scoped to the
-scoreboard's resources, because the account runs three other HTTP APIs. Its
-largest blind spot needs no write at all. The functions read identity only
-from the claims in the event they are handed, so anyone in the account allowed
-`lambda:InvokeFunction` on either one can invoke it directly with forged claims,
-skipping API Gateway and the authorizer, and the trail does not log Lambda
-invocations. What else it does not see is named in its comment, and includes
+scoreboard's resources, because the account runs three other HTTP APIs. It
+ignores invocations, which the next paragraph covers. What it does not see is
+named in its comment, and includes
 the functions' IAM roles, deletion or shortened retention of the API's and
 functions' log groups, the devices table's ownership rows, whose writes the
 trail does not log, the static site, and a custom domain rerouted away from the

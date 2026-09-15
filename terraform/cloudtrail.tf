@@ -272,6 +272,24 @@ resource "aws_cloudtrail" "account" {
     }
   }
 
+  # Invocations of the three functions that decide who may use the scoreboard
+  # admin site: its API, enrollment, and the sign-in gate. Invoke is a data
+  # event, so without this the trail cannot show anyone calling them directly
+  # with a hand-built event. Lambda's data events are invocations only, so
+  # "All" adds no read volume and removes any dependence on how Lambda
+  # classifies Invoke. Management events stay with the selector above;
+  # CloudTrail does not log them twice. security-alarms.tf section 12 pages on
+  # any of these invocations API Gateway or Cognito did not make, and sections
+  # 10 and 11 ignore them by eventCategory.
+  event_selector {
+    read_write_type           = "All"
+    include_management_events = false
+    data_resource {
+      type   = "AWS::Lambda::Function"
+      values = [for f in data.aws_lambda_function.scoreboard_admin_path : f.arn]
+    }
+  }
+
   # Every region's events, in one us-east-1 log group. This exists for one
   # specific reason: console sign-in is NOT global. CloudTrail regionalises it
   # to the region behind the sign-in endpoint, and this account has real root
@@ -318,4 +336,14 @@ resource "aws_iam_role_policy" "cloudtrail_logs" {
       Resource = "${aws_cloudwatch_log_group.trail.arn}:*"
     }]
   })
+}
+
+# The scoreboard functions whose invocations the trail logs and section 12
+# watches. Looked up by name, like section 10's pool and section 11's API, so a
+# renamed or deleted function fails this plan instead of silently logging
+# nothing -- at the same cost: this repository's plan fails until the
+# scoreboard's functions exist again.
+data "aws_lambda_function" "scoreboard_admin_path" {
+  for_each      = toset(["scoreboard-api", "scoreboard-enroll", "scoreboard-authgate"])
+  function_name = each.key
 }
