@@ -811,16 +811,17 @@ resource "aws_cloudwatch_event_rule" "audit_log_tampering" {
 # scoped by resource, and the scoping rests on a naming convention: the
 # security rules are hockeytrack-sec-*, this stack's security alarms are
 # hockeytrack-security-*, and the topic is hockeytrack-security-alerts, so the
-# single prefix "hockeytrack-sec" covers all three. The scoreboard's alarms are
-# security alarms too -- its IoT authorization, enrollment, sign-in refusal and
-# sign-in gate alarms all publish to this topic -- and every one is named
-# scoreboard-*, so that prefix is named here as a literal, the way AWSIotLogsV2
-# is in section 8. It was scoreboard-iot- until 2026-09-14, which left the
-# enrollment and sign-in alarms rewritable without a page. They are owned by the
-# other repository, whose tests fail if an alarm there loses the prefix; a
-# rename that dropped it would otherwise silently end this rule's coverage. The
-# wider prefix also covers scoreboard-dlq-depth, which notifies the operational
-# topic, and rewriting that pages too; that is accepted.
+# single prefix "hockeytrack-sec" covers all three. Most of the scoreboard's
+# alarms are security alarms too: its IoT authorization, enrollment, sign-in
+# refusal and sign-in gate alarms publish to this topic. Two do not --
+# scoreboard-iot-publish-retained-auth-error and scoreboard-dlq-depth notify
+# the operational alerts topic -- but every one is named scoreboard-*, so that
+# prefix is named here as a literal, the way AWSIotLogsV2 is in section 8, and
+# rewriting any of them pages, those two included; that is accepted. It was
+# scoreboard-iot- until 2026-09-14, which left the enrollment and sign-in alarms
+# rewritable without a page. They are owned by the other repository, whose
+# tests fail if an alarm there loses the prefix; a rename that dropped it would
+# otherwise silently end this rule's coverage.
 #
 # Which field names the resource was taken from the input of every write
 # operation in the events, sns and cloudwatch service models shipped with
@@ -846,10 +847,11 @@ resource "aws_cloudwatch_event_rule" "audit_log_tampering" {
 # destination named hockeytrack-sec-anything, because those share the "name"
 # field with rules. Both raise a false alarm rather than hiding a real one.
 #
-# The noise was measured before choosing any of it. Ninety days of CloudTrail
-# in us-east-1, to 2026-09-11: events.amazonaws.com held 1,688 events of which
-# 40 were writes, sns.amazonaws.com 924 of which 42 were writes, and
-# monitoring.amazonaws.com 1,094 of which 27 were writes. Of those 109 writes,
+# The noise was measured before choosing any of it, while the scoreboard prefix
+# was still scoreboard-iot-. Ninety days of CloudTrail in us-east-1, to
+# 2026-09-11: events.amazonaws.com held 1,688 events of which 40 were writes,
+# sns.amazonaws.com 924 of which 42 were writes, and monitoring.amazonaws.com
+# 1,094 of which 27 were writes. Of those 109 writes,
 # 33 named a security resource and would have fired this rule: 7 PutRule and 6
 # PutTargets on the hockeytrack-sec rules, 1 CreateTopic, 8 SetTopicAttributes
 # and 1 Subscribe on the security topic, and 10 PutMetricAlarm, four on
@@ -858,19 +860,26 @@ resource "aws_cloudwatch_event_rule" "audit_log_tampering" {
 # 09-09 and twice on 09-11. The other 76 writes were HealthTracker's and
 # EbookShare's CloudFormation stacks, the hockeytrack bus and its goal
 # notifications, the ECR scan rule and the scoreboard's game-events rule, and
-# none of them name a security resource.
+# none of them name a security resource. Those figures predate the widening to
+# scoreboard-: they could not count a write to scoreboard-dlq-depth or to the
+# enrollment and sign-in alarms, so the same window may hold more matches under
+# today's prefix. They are re-measured at deploy, not estimated here.
 #
 # Of the modify calls this rule exists for -- DisableRule, EnableRule,
 # SetAlarmState, DeleteAlarms, DisableAlarmActions, SetSubscriptionAttributes,
 # AddPermission, RemovePermission, PutCompositeAlarm, PutDataProtectionPolicy
 # -- the window held not one occurrence, on any resource. Watching them is free.
-# What is not free is that an apply touching a security resource now pages, up
-# to ten times for a run that rewrites every alarm. Accepted on the same terms
-# as sections 7 and 8: it is rare, deliberate, and the person doing it is the
-# person reading the alert. Plans and no-op applies stay silent, because
-# Terraform reads these with DescribeRule, ListTargetsByRule, DescribeAlarms,
-# GetTopicAttributes and ListTagsForResource, and calls PutRule or
-# PutMetricAlarm only when something actually differs -- 409 DescribeRule
+# What is not free is that an apply touching a security resource now pages, at
+# least once for every alarm it rewrites. "Up to ten times" was the figure here
+# under the old prefix. The alarms in scope are now four of this repository's
+# (the three in this file and hockeytrack-security-alerts-dlq-depth, from
+# alarms.tf) and all thirteen of the scoreboard's, so a scoreboard apply that
+# rewrote every alarm it owns would page at least thirteen times. Accepted on
+# the same terms as sections 7 and 8: it is rare, deliberate, and the person
+# doing it is the person reading the alert. Plans and no-op applies stay
+# silent, because Terraform reads these with DescribeRule, ListTargetsByRule,
+# DescribeAlarms, GetTopicAttributes and ListTagsForResource, and calls PutRule
+# or PutMetricAlarm only when something actually differs -- 409 DescribeRule
 # against 15 PutRule in the window.
 #
 # readOnly [false] is not what keeps those reads out, and it is worth being
@@ -1060,14 +1069,41 @@ resource "aws_cloudwatch_event_rule" "alerting_modification" {
 # in section 8. If that repository renames either, this rule silently stops
 # covering it.
 #
-# What it does not see: the static site's bucket and distribution, which could
-# serve a look-alike sign-in page; the gate's IAM role, whose edits can only
-# make the gate fail closed; a crash or throttle, which are not API calls and
+# What it does not see, the most important first. The gate decides who gets a
+# token; it does not decide what a token is worth. The scoreboard's admin API
+# does, and it is a second authorization root that nothing watches.
+# scoreboard-api and scoreboard-enroll take the caller's identity entirely from
+# the claims API Gateway's JWT authorizer hands them -- sub, and for claiming a
+# panel cognito:username, email and email_verified -- and that authorizer's
+# issuer and audience decide whose tokens are believed. An UpdateAuthorizer
+# naming an issuer the attacker runs, an UpdateRoute that moves a route to an
+# authorizer of their own, an UpdateIntegration that hands a route to other
+# code, or new code in either function, changes whose identity the API believes
+# or what it does with it -- enough to claim or control panels -- without one
+# write to the pool, the gate or the invite list. No rule in either
+# repository watches apigateway.amazonaws.com or those two functions. The fix
+# has this rule's shape: scoped to the admin API's authorizer, routes and
+# integrations, and to the two functions.
+#
+# The rest: the static site's bucket and distribution, which could serve a
+# look-alike sign-in page; a crash or throttle, which are not API calls and
 # which the scoreboard's own authgate alarms watch; rewriting this rule, which
 # section 9 catches; a pool replacement between HockeyTrack applies, covered
 # above; and a call that names one of these three resources only through a
 # field not listed above, the same silent-failure mode as section 8's and
 # section 9's field lists.
+#
+# Nor does it see the quieter ways to blind or close the gate, because it
+# watches neither CloudWatch Logs nor IAM. Deleting or rewriting the metric
+# filters on /aws/lambda/scoreboard-authgate silences the refusal and failures
+# alarms; section 8 names only the trail group and AWSIotLogsV2. Taking the
+# logs permissions off the gate's role does the same while the gate carries on
+# deciding, and taking ssm:GetParameter off it fails the gate closed, logging
+# each refusal as "invite list unavailable" but paging only at three in an
+# hour. Section 1 deliberately excludes role-policy churn. The failures filter
+# also assumes Lambda's default text log format: switching the function to
+# JSON logging changes how the runtime writes those lines, though that switch
+# is itself an UpdateFunctionConfiguration, which this rule pages on.
 data "aws_cognito_user_pools" "scoreboard" {
   name = "scoreboard-admins"
 }
@@ -1105,7 +1141,7 @@ resource "aws_cloudwatch_event_rule" "scoreboard_signin" {
   lifecycle {
     precondition {
       condition     = length(data.aws_cognito_user_pools.scoreboard.ids) == 1
-      error_message = "Expected exactly one Cognito user pool named scoreboard-admins, found ${length(data.aws_cognito_user_pools.scoreboard.ids)}. The scoreboard sign-in rule would watch the wrong pool, or none."
+      error_message = "Expected exactly one Cognito user pool named scoreboard-admins, found ${length(data.aws_cognito_user_pools.scoreboard.ids)}. With none, the scoreboard sign-in rule would watch no pool; with several, it cannot tell which one is the gate's."
     }
     precondition {
       condition     = length(local.scoreboard_signin_pattern) <= 2048

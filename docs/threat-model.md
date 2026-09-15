@@ -226,14 +226,17 @@ caught rather than missed.
 The scoping is a naming convention, which is worth stating plainly because it is
 load-bearing: the security rules are `hockeytrack-sec-*`, this stack's security
 alarms `hockeytrack-security-*` and the topic `hockeytrack-security-alerts`, so
-a single prefix covers all three. The scoreboard's alarms publish to the same
-topic and are all named `scoreboard-*`, so that prefix is listed as well; the
-scoreboard's own tests keep every alarm there inside it. Which request field carries the name differs per call —
-`name`, `rule`, `alarmName`, `alarmNames`, `topicArn`, `subscriptionArn`, and
-both spellings of the tagging field, which EventBridge and CloudWatch record as
-`resourceARN` and SNS as `resourceArn` — and the list came from every write
-operation in the three service models, checked against the casing CloudTrail
-actually records rather than the casing the models declare.
+a single prefix covers all three. Most of the scoreboard's alarms publish to the
+same topic, and all of them are named `scoreboard-*`, so that prefix is listed
+as well; the scoreboard's own tests keep every alarm there inside it. Two of
+them, `scoreboard-iot-publish-retained-auth-error` and `scoreboard-dlq-depth`,
+notify the operational topic instead, and rewriting them pages too. Which
+request field carries the name differs per call — `name`, `rule`, `alarmName`,
+`alarmNames`, `topicArn`, `subscriptionArn`, and both spellings of the tagging
+field, which EventBridge and CloudWatch record as `resourceARN` and SNS as
+`resourceArn` — and the list came from every write operation in the three
+service models, checked against the casing CloudTrail actually records rather
+than the casing the models declare.
 
 Building this turned up a latent fault in the companion rule that watches for
 deletion: its CloudWatch branch named the wrong event source, so `DeleteAlarms`
@@ -253,15 +256,18 @@ Its limits:
 - An alarm can also be silenced without calling CloudWatch at all, by stopping
   the data underneath it — a metric filter that no longer matches emits nothing,
   and an alarm with no datapoints is not an alarm that fires.
-- The cost was measured before the rule was chosen: across ninety days, 33
-  writes to the three services named a security resource, and every one was this
-  repository's own `terraform apply`. None of the modify-style calls the rule
-  exists for — `SetAlarmState`, `DisableRule`, `SetSubscriptionAttributes` and
-  the rest — occurred at all, on any resource. So an apply that touches a
-  security resource now pages, up to ten times for a run that rewrites every
-  alarm, and nothing else does. Plans and no-op applies stay silent, because
-  Terraform reads these resources rather than writing them unless something
-  differs.
+- The cost was measured before the rule was chosen, while the scoreboard prefix
+  was still `scoreboard-iot-`: across ninety days, 33 writes to the three
+  services named a security resource, and every one was this repository's own
+  `terraform apply`. None of the modify-style calls the rule exists for —
+  `SetAlarmState`, `DisableRule`, `SetSubscriptionAttributes` and the rest —
+  occurred at all, on any resource. So an apply that touches a security
+  resource now pages, at least once for every alarm it rewrites, and nothing
+  else does. The "up to ten times" once given here was counted under the old
+  prefix; the scope is now four of this repository's alarms and all thirteen of
+  the scoreboard's, and the figures are re-measured at deploy. Plans and no-op
+  applies stay silent, because Terraform reads these resources rather than
+  writing them unless something differs.
 
 **Changing the scoreboard's sign-in gate pages someone.** The scoreboard's
 admin site admits only invited Google accounts, and the thing that enforces
@@ -281,7 +287,13 @@ of that pool is the write that happens to page. Sign-ins themselves do not
 page: the per-sign-in Cognito events carry no request parameters to match, and
 the gate's own invocation would, but the account's one trail does not log
 Lambda data events today. The scoreboard repository separately alarms on the
-gate crashing or being throttled, which are not API calls.
+gate crashing or being throttled, which are not API calls. The gate is not
+the only authorization root, though, and this rule does not watch the other:
+the admin API that consumes the tokens takes the caller's identity entirely
+from API Gateway's JWT authorizer, so changing which issuer that authorizer
+trusts, its routes or integrations, or the code of the two functions behind
+them can claim or control panels without touching the gate, and no rule in
+either repository watches any of that today.
 
 **Destroying the archive is gated, but the gate is honest about its size.**
 Versioning makes an accidental overwrite reversible; it does nothing against a
@@ -461,16 +473,38 @@ panels. The Actor line names the credential, and the root sign-in procedure
 applies to it. Then, in us-east-1:
 1. `aws cognito-idp describe-user-pool --user-pool-id <id> --query
    'UserPool.LambdaConfig'`. Both `PreSignUp` and `PreTokenGenerationConfig`
-   must name `scoreboard-authgate`. If they are missing, the gate is open.
+   must name `scoreboard-authgate`. If they are missing, the gate is open. No
+   other trigger may be set, because the scoreboard configures none; a
+   `PreTokenGeneration` key, if Cognito reports one, must name the same
+   function.
 2. `list-user-pool-clients` must show exactly one client, and
    `list-identity-providers` exactly one provider, `Google`.
 3. `list-users`: every user should be an invited address, and none should be
    anything but `EXTERNAL_PROVIDER`.
-4. `aws lambda get-function --function-name scoreboard-authgate` and
+4. Check which panels a user you did not invite claimed, before removing
+   anyone: `aws dynamodb scan --table-name scoreboard-devices
+   --projection-expression 'thingName, #o' --expression-attribute-names
+   '{"#o":"owner"}'`. Every `owner` must be the `sub` of a user you invited,
+   which `list-users` shows. Record any other: that panel is under someone
+   else's control.
+5. For each user who should not be there, `admin-user-global-sign-out` and
+   then `admin-delete-user`, after taking their address off the invite list
+   (step 8), or the account can sign straight back in. Neither call ends their
+   access at once: access and ID tokens already issued stay valid for up to an
+   hour, because the API's JWT authorizer checks a token's signature, issuer,
+   audience and expiry, not whether Cognito has revoked it.
+6. `aws lambda get-function --function-name scoreboard-authgate` and
    `get-function-configuration`. Compare the code SHA and
    `ALLOWLIST_PARAMETER` against a fresh `make build` and plan in the
    scoreboard repository.
-5. Read the invite list and remove anyone you did not invite. Then run a plan
+7. The admin API, which the alert's rule does not watch. Find the
+   `scoreboard-admin` API with `aws apigatewayv2 get-apis`, then
+   `get-authorizers --api-id <id>`: its one JWT authorizer's issuer must be
+   `https://cognito-idp.us-east-1.amazonaws.com/<pool id>` and its audience the
+   site client's ID alone, as the scoreboard repository's `terraform/admin.tf`
+   sets them. A different issuer means whoever runs it can mint tokens the API
+   believes.
+8. Read the invite list and remove anyone you did not invite. Then run a plan
    in the scoreboard repository: anything rewritten shows as a difference, and
    applying puts it back. The invite list's value is the exception, because
    Terraform deliberately ignores it.
