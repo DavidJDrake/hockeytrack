@@ -628,10 +628,13 @@ applies to it. Then, in us-east-1:
    `aws logs filter-log-events --log-group-name /aws/lambda/scoreboard-api --start-time <ms> --filter-pattern '"START RequestId"'`,
    and the same for `/aws/lambda/scoreboard-enroll` (both 30-day retention).
    Each line is one invocation. Compare them with the access-log entries for
-   the routes on that function over the same window;
-   a request the authorizer refuses never reaches the function, so it has no
-   `START` line, but an invocation with no API request beside it is a direct
-   invoke. This depends on the roles' logs permissions, which step 5 checked,
+   the routes on that function over the same window. The comparison is by count
+   and time, not by ID, because the access log does not record Lambda's request
+   ID; and a request refused before the function — an authorizer 401 or a
+   throttled 429 — appears in the access log with no `START` line, so expect
+   fewer invocations than log entries (on 2026-09-15, 4 entries against 1). More
+   invocations than the routes can explain, or an invocation with no API request
+   near it, is a direct invoke. This depends on the roles' logs permissions, which step 5 checked,
    and on the log groups still being there with their retention intact, which
    no rule watches.
 8. `aws iot list-certificates`, which gives each certificate's `creationDate`
@@ -643,7 +646,8 @@ applies to it. Then, in us-east-1:
    `detach-policy --policy-name scoreboard-device --target <certificate arn>`,
    and the same for any other policy `list-attached-policies --target
    <certificate arn>` shows; `detach-thing-principal --thing-name <thing>
-   --principal <certificate arn>`; `delete-certificate --certificate-id <id>`;
+   --principal <certificate arn>` (asynchronous: retry the next deletes if they
+   say the certificate or thing is still attached); `delete-certificate --certificate-id <id>`;
    `delete-thing --thing-name <thing>`; and finally remove the thing's
    ownership row with `aws dynamodb delete-item --table-name
    scoreboard-devices --key '{"thingName":{"S":"<thing>"}}'`.

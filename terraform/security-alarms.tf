@@ -1203,7 +1203,7 @@ resource "aws_cloudwatch_event_rule" "scoreboard_signin" {
 # write, unless its code, its dependencies or the Go toolchain building it
 # change: each binary still embeds the Go version and its module versions, and
 # the scoreboard's go.mod names go 1.27.0 under the default GOTOOLCHAIN=auto,
-# which builds with any newer Go already installed. This rule still fires on
+# which builds with whichever Go is invoked, provided it is 1.27.0 or newer. This rule still fires on
 # any write; unchanged code simply no longer causes one. Reads stay silent for
 # section 9's reason: an ENABLED rule never receives read-only management
 # events.
@@ -1234,8 +1234,8 @@ resource "aws_cloudwatch_event_rule" "scoreboard_signin" {
 #     admin-API request, the same caveat section 10 gives for the gate.
 #     Closing this needs Invoke events filtered to callers other than API
 #     Gateway, not merely logged.
-#   - Deleting or shortening the logs the recovery steps read. A DeleteLogGroup
-#     or PutRetentionPolicy on /aws/apigateway/scoreboard-admin,
+#   - Deleting or shortening the logs the recovery steps read. A DeleteLogGroup,
+#     DeleteLogStream or PutRetentionPolicy on /aws/apigateway/scoreboard-admin,
 #     /aws/lambda/scoreboard-api or /aws/lambda/scoreboard-enroll pages nobody:
 #     section 8 names only the trail group and AWSIotLogsV2. The threat
 #     model's recovery entry depends on those groups. Removing access logging
