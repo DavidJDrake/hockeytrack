@@ -169,7 +169,7 @@ locals {
     iot               = "If this was not you, assume an AWS credential is compromised, and check the scoreboard's device policy, certificates and IoT logging."
     logs              = "If this was not you, assume audit history has been destroyed, shortened or redirected. Check that both audit log groups still exist with 90-day retention, that the root sign-in metric filter is intact, and whether a subscription filter, KMS key or account-level log policy has appeared."
     scoreboard_signin = "If this was not you, assume the scoreboard admin site's sign-in gate may be bypassed. Check the invite list, the user pool's triggers, app clients, identity providers and users, and the authgate function's code and environment, against the scoreboard repository."
-    scoreboard_api    = "If this was not you, assume the scoreboard admin API may accept tokens or requests it should not. Check its JWT authorizer's issuer and audience, its routes' authorizers and integrations, and the scoreboard-api and scoreboard-enroll functions' code, configuration, role and permissions, against the scoreboard repository."
+    scoreboard_api    = "If this was not you, assume the scoreboard admin API may accept tokens or requests it should not. Check its JWT authorizer's issuer and audience, its routes' authorizers and integrations, the scoreboard-api and scoreboard-enroll functions' USER_POOL_ID and APP_CLIENT_ID environment variables, and their code, configuration, role and permissions, against the scoreboard repository."
     scoreboard_invoke = "If this was not you, assume someone with credentials in this account called a scoreboard admin function directly, skipping API Gateway or Cognito. Find the caller and access key in the CloudTrail record, check what the function did in its logs at that time, revoke the key, then check the admin API and sign-in gate against the scoreboard repository."
   }
 
@@ -1049,10 +1049,10 @@ resource "aws_cloudwatch_event_rule" "alerting_modification" {
 # would page. "eventCategory" = ["Management"] is what stops that: an Invoke
 # record's category is Data. Section 12 is the rule that watches invocations,
 # and pages only on one Cognito did not make. Plans stay silent not because
-# readOnly [false] blocks them but because
-# an ENABLED rule never receives read-only management events in the first
-# place, exactly as section 9 explains; readOnly [false] is a second lock on a
-# door already shut, kept for the same clarity reason. CloudTrail masks
+# readOnly [false] blocks them but because an ENABLED rule never receives
+# read-only management events in the first place, exactly as section 9
+# explains; readOnly [false] is a second lock on a door already shut, kept
+# for the same clarity reason. CloudTrail masks
 # PutParameter's value and CreateIdentityProvider's client_secret, so no
 # invited address and no Google secret reaches this rule's input.
 #
@@ -1153,27 +1153,45 @@ resource "aws_cloudwatch_event_rule" "scoreboard_signin" {
 # ---- 11. The scoreboard admin API ----
 #
 # Section 10 watches the gate that decides who gets a token. This watches what
-# decides what a token is worth. The scoreboard's scoreboard-api and
-# scoreboard-enroll functions take the caller's identity entirely from the
-# claims API Gateway's JWT authorizer hands them -- sub, and for claiming a
-# panel cognito:username, email and email_verified -- and that authorizer's
-# issuer and audience decide whose tokens are believed. So the API and the two
-# functions are an authorization root of their own, and a write to them can
-# claim or control panels without going near the pool, the gate or the invite
-# list:
+# decides what a token is worth. That decision now rests on two checks: API
+# Gateway's JWT authorizer runs in front of the scoreboard-api and
+# scoreboard-enroll functions as a first gate, and each function also
+# verifies the caller's raw ID token itself -- signature, issuer, exact
+# audience, token use, expiry -- against the pool and client named in its own
+# USER_POOL_ID and APP_CLIENT_ID environment variables, never trusting the
+# claims the authorizer hands it in the event. So the API, the two functions
+# and their environment variables are together an authorization root, and a
+# write to any of them can claim or control panels without going near the
+# pool, the gate or the invite list:
 #
 #   Point the authorizer elsewhere          -> UpdateAuthorizer, CreateAuthorizer.
-#                                              An issuer the attacker runs mints
-#                                              any sub, or the owner's verified
-#                                              email.
+#                                              No longer sufficient by itself:
+#                                              a token from an issuer the
+#                                              attacker runs still fails the
+#                                              function's own check against
+#                                              USER_POOL_ID and APP_CLIENT_ID,
+#                                              is refused with 401, and logs a
+#                                              mismatch line the scoreboard
+#                                              alarms on. It still matters
+#                                              alongside a change to one of
+#                                              those two variables, or if a
+#                                              route is moved off the
+#                                              authorizer entirely.
+#   Change either function's configuration  -> UpdateFunctionConfiguration*
+#                                              (including its role). This is
+#                                              what now moves trust:
+#                                              repointing USER_POOL_ID or
+#                                              APP_CLIENT_ID makes the
+#                                              function itself believe a
+#                                              different issuer or client.
 #   Move a route, or repoint an integration -> UpdateRoute, CreateRoute,
 #                                              UpdateIntegration. Removing a
 #                                              route's authorizer alone is not
-#                                              enough: the handler returns 401
-#                                              with no sub.
-#   Change either function                  -> UpdateFunctionCode*,
-#                                              UpdateFunctionConfiguration*
-#                                              (including its role), AddPermission*,
+#                                              enough: the function still
+#                                              verifies the token itself and
+#                                              returns 401 without one.
+#   Change either function otherwise        -> UpdateFunctionCode*,
+#                                              AddPermission*,
 #                                              CreateFunctionUrlConfig.
 #   Reshape or reroute the API              -> UpdateStage, UpdateApi,
 #                                              CreateApiMapping, DeleteApi.
@@ -1316,8 +1334,10 @@ resource "aws_cloudwatch_event_rule" "scoreboard_api" {
 # caller that is not AWSService pages, whatever its invokedBy says or omits,
 # including a role that API Gateway, Cognito or some other service assumes to
 # call a function on that role's own credentials rather than through the
-# function's resource policy. An AWSService caller pages unless it is the one
-# service each function's resource policy grants.
+# function's resource policy. An AWSService caller whose invokedBy names a
+# service other than the one each function's resource policy grants pages
+# too; an AWSService caller with no invokedBy at all does not -- see "what it
+# does not see" below.
 #
 # Each function is listed as CloudTrail may name it: bare, as an unqualified
 # ARN, and by prefix as an ARN qualified with a version or alias. The prefix
@@ -1338,12 +1358,25 @@ resource "aws_cloudwatch_event_rule" "scoreboard_api" {
 #   - A new integration or route on the scoreboard-admin API, which section 11
 #     pages on. A new resource-policy grant (AddPermission) on scoreboard-api
 #     or scoreboard-enroll, which section 11 also pages on; the same grant on
-#     scoreboard-authgate, which section 10 pages on instead. A separate API
-#     invoking any of the three through its own role, rather than through a
-#     grant on the function, pages here, as AssumedRole.
+#     scoreboard-authgate, which section 10 pages on instead.
 #   - Invocations while the trail is not logging, which the audit rule pages on
 #     when logging stops or the selectors change.
 #   - Rewriting this rule, which section 9 catches.
+#   - An AWSService caller with no invokedBy at all. Each of the pattern's
+#     first two branches excludes a named invokedBy value with anything-but,
+#     which -- like an exists:false branch -- does not match a field that is
+#     simply absent, and the third branch only catches a caller whose type is
+#     not AWSService. So a hypothetical AWSService invocation carrying no
+#     invokedBy would match none of the three and would not page. This has
+#     not been observed: the resource policies on all three functions grant
+#     invoke only to the apigateway.amazonaws.com and cognito-idp.amazonaws.com
+#     service principals, and both were seen carrying invokedBy on 2026-09-15.
+#     Recorded here rather than fixed, because there is no real record to
+#     write the branch against.
+#
+# A separate API invoking any of the three through its own role, rather than
+# through a grant on the function, does page here -- as AssumedRole, caught by
+# the third branch's type check, not by either service-specific branch.
 locals {
   scoreboard_invoke_arn = { for name, f in data.aws_lambda_function.scoreboard_admin_path : name => f.arn }
 

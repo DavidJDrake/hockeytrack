@@ -277,13 +277,22 @@ resource "aws_cloudtrail" "account" {
   # event, so without this the trail cannot show anyone calling them directly
   # with a hand-built event. Lambda's data events are invocations only, so
   # "All" adds no read volume and removes any dependence on how Lambda
-  # classifies Invoke. Management events stay with the selector above;
-  # CloudTrail does not log them twice. security-alarms.tf section 12 pages on
-  # any of these invocations API Gateway or Cognito did not make, and sections
-  # 10 and 11 ignore them by eventCategory.
+  # classifies Invoke. security-alarms.tf section 12 pages on any of these
+  # invocations API Gateway or Cognito did not make, and sections 10 and 11
+  # ignore them by eventCategory.
+  #
+  # include_management_events is tied to the selector above rather than
+  # hardcoded false: that selector only exists when
+  # cloudtrail_archive_data_events is true, so if it were ever false, this
+  # selector would be the trail's only one, and a hardcoded false here would
+  # leave management events unlogged account-wide -- the root sign-in metric
+  # filter included. The expression keeps exactly one selector logging
+  # management events, whichever one is present, and CloudTrail never logs
+  # them twice. The variable is true today, so this is a no-op for the live
+  # trail.
   event_selector {
     read_write_type           = "All"
-    include_management_events = false
+    include_management_events = !var.cloudtrail_archive_data_events
     data_resource {
       type   = "AWS::Lambda::Function"
       values = [for f in data.aws_lambda_function.scoreboard_admin_path : f.arn]

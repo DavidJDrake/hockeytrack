@@ -288,30 +288,38 @@ until then the rule watches the old pool ID, and the replacement's own deletion
 of that pool is the write that happens to page. Sign-ins themselves do not
 page: the per-sign-in Cognito events carry no request parameters to match, and
 the gate's own invocations, which the trail now logs, are data events this rule
-ignores; a third rule, below, watches those. The scoreboard repository separately alarms on the
-gate crashing or being throttled, which are not API calls. The gate is not
-the only authorization root, though; the admin API that consumes the tokens is
-the other, and the next paragraph covers it.
+ignores; a third rule, below, watches those. The scoreboard repository
+separately alarms on the gate crashing or being throttled, which are not API
+calls. The gate is not the only authorization root, though; the admin API
+that consumes the tokens is the other, and the next paragraph covers it.
 
 **Changing the scoreboard's admin API pages someone.** The gate decides who
-gets a token; the admin API decides what a token is worth. Its two functions
-take the caller's identity entirely from API Gateway's JWT authorizer, so
-changing which issuer that authorizer trusts, moving a route or repointing an
-integration, or changing either function's code, configuration or permissions
-can claim or control panels without touching the gate. A second rule fires on
+gets a token; the admin API decides what a token is worth. That decision now
+rests on two checks, not one: API Gateway's JWT authorizer runs in front of
+both functions as a first gate, and each function also verifies the caller's
+ID token itself, against the pool and client named in its own `USER_POOL_ID`
+and `APP_CLIENT_ID` environment variables, never trusting the claims the
+authorizer hands it in the event. So swapping which issuer the authorizer
+trusts no longer claims a panel on its own: a token from a different issuer
+still fails the function's own check, is refused with 401, and logs a line
+the scoreboard alarms on (`docs/superpowers/specs/2026-09-15-direct-invoke-design.md`
+§3.3). What now moves trust is changing a function's own environment —
+`UpdateFunctionConfiguration`, which this rule pages on — moving a route or
+repointing an integration away from the authorizer, or changing either
+function's code or permissions. A second rule fires on
 any write that names the `scoreboard-admin` API, in `apiId` or by ARN, or either
 function. Like the sign-in rule, it lists no event names and is scoped to the
 scoreboard's resources, because the account runs three other HTTP APIs. It
 ignores invocations, which the next paragraph covers. What it does not see is
-named in its comment, and includes
-the functions' IAM roles, deletion or shortened retention of the API's and
-functions' log groups, the devices table's ownership rows, whose writes the
-trail does not log, the static site, and a custom domain rerouted away from the
-API (there is none today). A scoreboard apply no longer redeploys a function,
-and so no longer pages, unless that function's code, dependencies or Go
-toolchain change: the scoreboard's build no longer stamps each binary with its
-commit (the scoreboard change lands alongside this one), though each binary
-still records the Go and module versions that built it.
+named in its comment, and includes the functions' IAM roles, deletion or
+shortened retention of the API's and functions' log groups, the devices
+table's ownership rows, whose writes the trail does not log, the static site,
+and a custom domain rerouted away from the API (there is none today). A
+scoreboard apply no longer redeploys a function, and so no longer pages,
+unless that function's code, dependencies or Go toolchain change: the
+scoreboard's build no longer stamps each binary with its commit (the
+scoreboard change lands alongside this one), though each binary still
+records the Go and module versions that built it.
 
 **Calling the scoreboard's admin functions directly pages someone, and forged
 claims are refused.** API Gateway's authorizer checks a token and passes its
@@ -548,8 +556,12 @@ applies to it. Then, in us-east-1:
    `get-authorizers --api-id <id>`: its one JWT authorizer's issuer must be
    `https://cognito-idp.us-east-1.amazonaws.com/<pool id>` and its audience the
    site client's ID alone, as the scoreboard repository's `terraform/admin.tf`
-   sets them. A different issuer means whoever runs it can mint tokens the API
-   believes.
+   sets them. A different issuer here is not enough on its own: the functions
+   verify the token themselves against their own `USER_POOL_ID` and
+   `APP_CLIENT_ID`, which the admin API entry's step 4 checks. A different
+   authorizer issuer together with a repointed `USER_POOL_ID` or
+   `APP_CLIENT_ID` is what would let whoever controls that issuer mint tokens
+   the API believes.
 9. Run a plan in the scoreboard repository: anything rewritten shows as a
    difference, and applying puts it back. The invite list's value is the
    exception, because Terraform deliberately ignores it, which is why step 5
@@ -597,7 +609,13 @@ applies to it. Then, in us-east-1:
    - the resource policy must allow only API Gateway, from this API's
      execution ARN;
    - there must be no function URL and no event source mapping;
-   - there must be no alias and no version beyond `$LATEST`.
+   - there must be no alias and no version beyond `$LATEST`;
+   - each function's `USER_POOL_ID` and `APP_CLIENT_ID` environment variables
+     (`aws lambda get-function-configuration --function-name <fn> --query
+     Environment.Variables`) must equal the pool ID and the site client ID
+     found in step 1. The authorizer is only a first gate; each function
+     believes tokens issued by whichever pool and client its own environment
+     names, whatever the authorizer's issuer says.
 5. For each role, `scoreboard-api` and `scoreboard-enroll`: first `aws iam
    get-role --role-name <role>`. Its trust policy must allow `sts:AssumeRole`
    to the `lambda.amazonaws.com` service alone, and it must have no
@@ -620,8 +638,12 @@ applies to it. Then, in us-east-1:
    ownership rows written that way look legitimate. Steps 7 and 8 are how
    those are found, with a limit: a direct invocation of either function,
    carrying forged claims in a hand-built event, never passes through API
-   Gateway, so it leaves no access-log entry and no CloudTrail record. The
-   invocation count at the end of step 7 is the check that can show one.
+   Gateway, so it leaves no access-log entry. It does leave a CloudTrail
+   record now: the trail logs invocations of these functions
+   (`terraform/cloudtrail.tf`), and section 12 pages on any not made by API
+   Gateway, whether the event carried forged claims or a genuine token. The
+   invocation count at the end of step 7 is the check that can show one
+   section 12 somehow missed.
 7. Read the admin API's access log for the window between the change and the
    fix: `aws logs filter-log-events --log-group-name
    /aws/apigateway/scoreboard-admin --start-time <ms>` (30-day retention).
@@ -671,11 +693,15 @@ applies to it. Then, in us-east-1:
 holds a credential in this account and has called a scoreboard admin function
 with an event they wrote. In us-east-1:
 1. Find the full record. The alert gives the time and the Actor ARN, but the
-   log group stamps each record when CloudTrail delivers it, typically about
-   five minutes and up to about fifteen minutes after the call, so match on
-   the record's own `eventTime` rather than searching close around the
-   alert's time. Start one minute before the alert's time and end at least
-   twenty minutes after it, or omit `--end-time` if the alert is recent:
+   log group stamps each record when CloudTrail delivers it, not when the
+   call happened, so match on the record's own `eventTime` rather than
+   searching close around the alert's time. About five minutes of delivery
+   delay was measured (design spec §8: an `eventTime` of 19:36:46, delivered
+   at 19:41:53), but CloudTrail documents no upper bound on delivery time, so
+   treat that as a starting point, not a guarantee. Start one minute before
+   the alert's time and end at least twenty minutes after it, or omit
+   `--end-time` if the alert is recent, and widen the window further if
+   nothing returns:
    `aws logs filter-log-events --log-group-name /aws/cloudtrail/hockeytrack-account --start-time <ms> --end-time <ms> --filter-pattern '{ ($.eventSource = "lambda.amazonaws.com") && ($.eventCategory = "Data") && ($.userIdentity.type != "AWSService") }'`.
    Note `userIdentity` (its `arn`, `accessKeyId`, and for a role
    `sessionContext.sessionIssuer`), `sourceIPAddress`, which function, and the
@@ -690,21 +716,41 @@ with an event they wrote. In us-east-1:
    deactivate it; for one of those, attach an inline deny-all policy to the
    user instead:
    `aws iam put-user-policy --user-name <user> --policy-name deny-all-incident --policy-document '{"Version":"2012-10-17","Statement":[{"Effect":"Deny","Action":"*","Resource":"*"}]}'`,
-   and remove it once the credentials are rotated. For a role, revoke its
-   active sessions (IAM console, the role, Revoke active sessions). Then
-   follow the root sign-in procedure's credential steps for whoever owns it.
-   If the credential you just cut off is the one you normally use, continue
-   this procedure from a separate one: sign in to the root console and use
-   CloudShell.
+   and remove it once the credentials are rotated. For a role
+   (`userIdentity.type` `AssumedRole`), revoke its active sessions (IAM
+   console, the role, Revoke active sessions). For a federated session
+   (`FederatedUser`), revoke it at the identity provider or role that issued
+   it, the same way. For `userIdentity.type` `Root`, this is a root
+   compromise: stop here and run the root sign-in procedure above in full,
+   starting with the root password and the contact email and phone. For
+   anything else, follow the root sign-in procedure's credential steps for
+   whoever owns it. If the credential you just cut off is the one you
+   normally use, continue this procedure from a separate one: sign in to the
+   root console and use CloudShell.
 3. Read what the function did, from one minute before to five minutes after:
    `aws logs filter-log-events --log-group-name /aws/lambda/<function> --start-time <ms> --end-time <ms>`.
    - For `scoreboard-api` or `scoreboard-enroll`, a
-     `token rejected after authorizer accepted` line means the function refused
-     a forged event, and `scoreboard-token-mismatch` will have paged as well.
+     `token rejected after authorizer accepted` line at the invoke's own
+     `eventTime` means this call's token failed the function's own
+     verification, and `scoreboard-token-mismatch` will have paged as well.
+     The same line also fires on two real paths that are not this direct
+     invoke — an access token sent through API Gateway by a signed-in user,
+     or a Cognito signing-key rotation inside the verifier's refetch window
+     — so match it to the invoke by time and route rather than treating any
+     mismatch line in the window as proof; a mismatch page with no section
+     12 page at the same time is one of those real-path cases, not a direct
+     invoke.
    - No such line, and no error, means the event may have carried a genuine
-     token and been served. The logs do not record whose. Run the admin API
-     entry's panel check (step 6) and certificate check (step 8), and sign
-     every user out: `aws cognito-idp list-users --user-pool-id <pool id>`, then
+     token and been served. The logs do not record whose. Treat this branch
+     as conservative rather than conclusive: it also covers a forged event
+     with no authorizer block, which fails the function's own verification
+     and is refused, but logs nothing at all, because `idtoken.Authenticate`
+     only writes the mismatch line when an authorizer block is present. That
+     refusal is indistinguishable in the function log from a served genuine
+     token, so treat "no mismatch line" as "assume served" and run the
+     recovery either way. Run the admin API entry's panel check (step 6) and
+     certificate check (step 8), and sign every user out:
+     `aws cognito-idp list-users --user-pool-id <pool id>`, then
      `aws cognito-idp admin-user-global-sign-out --user-pool-id <pool id> --username <username>`
      for each. That revokes refresh tokens; ID tokens already issued stay valid
      until they expire, at most an hour.
