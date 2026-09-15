@@ -670,8 +670,12 @@ applies to it. Then, in us-east-1:
 **A scoreboard direct-invoke alert you cannot account for.** Assume someone
 holds a credential in this account and has called a scoreboard admin function
 with an event they wrote. In us-east-1:
-1. Find the full record. The alert gives the time and the Actor ARN. Search
-   five minutes either side of the alert's time:
+1. Find the full record. The alert gives the time and the Actor ARN, but the
+   log group stamps each record when CloudTrail delivers it, typically about
+   five minutes and up to about fifteen minutes after the call, so match on
+   the record's own `eventTime` rather than searching close around the
+   alert's time. Start one minute before the alert's time and end at least
+   twenty minutes after it, or omit `--end-time` if the alert is recent:
    `aws logs filter-log-events --log-group-name /aws/cloudtrail/hockeytrack-account --start-time <ms> --end-time <ms> --filter-pattern '{ ($.eventSource = "lambda.amazonaws.com") && ($.eventCategory = "Data") && ($.userIdentity.type != "AWSService") }'`.
    Note `userIdentity` (its `arn`, `accessKeyId`, and for a role
    `sessionContext.sessionIssuer`), `sourceIPAddress`, which function, and the
