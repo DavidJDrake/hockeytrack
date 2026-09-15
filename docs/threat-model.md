@@ -301,13 +301,20 @@ integration, or changing either function's code, configuration or permissions
 can claim or control panels without touching the gate. A second rule fires on
 any write that names the `scoreboard-admin` API, in `apiId` or by ARN, or either
 function. Like the sign-in rule, it lists no event names and is scoped to the
-scoreboard's resources, because the account runs three other HTTP APIs. What it
-does not see is named in its comment: a custom domain rerouted away from the
-API (there is none today), the functions' IAM roles, and the devices table's
-ownership rows, whose writes the trail does not log. A scoreboard apply that
-changes no function code no longer redeploys, and so no longer pages, because
-the scoreboard's build no longer stamps each binary with its commit (the
-scoreboard change lands alongside this one).
+scoreboard's resources, because the account runs three other HTTP APIs. Its
+largest blind spot needs no write at all. The functions read identity only
+from the claims in the event they are handed, so anyone in the account allowed
+`lambda:InvokeFunction` on either one can invoke it directly with forged claims,
+skipping API Gateway and the authorizer, and the trail does not log Lambda
+invocations. What else it does not see is named in its comment, and includes
+the functions' IAM roles, deletion or shortened retention of the API's and
+functions' log groups, the devices table's ownership rows, whose writes the
+trail does not log, the static site, and a custom domain rerouted away from the
+API (there is none today). A scoreboard apply no longer redeploys a function,
+and so no longer pages, unless that function's code, dependencies or Go
+toolchain change: the scoreboard's build no longer stamps each binary with its
+commit (the scoreboard change lands alongside this one), though each binary
+still records the Go and module versions that built it.
 
 **Destroying the archive is gated, but the gate is honest about its size.**
 Versioning makes an accidental overwrite reversible; it does nothing against a
@@ -511,9 +518,18 @@ applies to it. Then, in us-east-1:
    authorizer checks a token's signature, issuer, audience and expiry, not
    whether Cognito has revoked it.
 7. `aws lambda get-function --function-name scoreboard-authgate` and
-   `get-function-configuration`. Compare the code SHA and
-   `ALLOWLIST_PARAMETER` against a fresh `make build` and plan in the
-   scoreboard repository.
+   `get-function-configuration`. `ALLOWLIST_PARAMETER` must be
+   `/scoreboard/allowed-emails`. The code must be what the scoreboard
+   repository builds: at the commit last applied, with the Go version that
+   built it (`go version -m` on the `bootstrap` inside the zip that
+   `get-function`'s `Code.Location` downloads), run `make build` and then `terraform plan` there, which
+   regenerates `build/authgate.zip`. Then compare `aws lambda
+   get-function-configuration --function-name scoreboard-authgate --query
+   CodeSha256 --output text` with `openssl dgst -sha256 -binary
+   build/authgate.zip | base64`; they must be equal. Hash only the zip the plan
+   regenerated: the one `make build` writes first is not reproducible and is
+   not what Terraform deploys. A plan showing no change is not this check;
+   it is step 9's drift check.
 8. The admin API, which a separate rule watches. Check it anyway: find the
    `scoreboard-admin` API with `aws apigatewayv2 get-apis`, then
    `get-authorizers --api-id <id>`: its one JWT authorizer's issuer must be
@@ -536,53 +552,101 @@ applies to it. Then, in us-east-1:
    whose audience is the site client's ID alone, as the scoreboard repository's
    `terraform/admin.tf` sets them.
 2. `get-routes --api-id <id>`. `GET /api/devices`, `PUT /api/devices/{thing}/game`,
-   `PATCH /api/devices/{thing}` and `DELETE /api/devices/{thing}`, and `GET
-   /api/games`, must target the api integration and that authorizer. `POST
+   `PATCH /api/devices/{thing}`, `DELETE /api/devices/{thing}` and `GET
+   /api/games` must target the api integration and that authorizer. `POST
    /api/enroll` and `GET /api/enroll` must target the enroll integration and be
    unauthenticated by design; `POST /api/devices/claim` must target the enroll
    integration but use that same authorizer (`terraform/admin.tf`
    `local.admin_routes`, `terraform/enroll.tf`). No route may exist that the
    scoreboard repository does not define.
-3. `get-integrations --api-id <id>`. The api integration's `IntegrationUri`
-   must be the `scoreboard-api` function's unqualified ARN, and the enroll
-   integration's the `scoreboard-enroll` function's unqualified ARN; a
-   qualified ARN, naming an alias or version, sends traffic to code this check
-   does not see.
+3. `get-integrations --api-id <id>`. Both integrations must be `AWS_PROXY`,
+   and each `IntegrationUri` API Gateway's invoke form for a function. The api
+   integration's must be
+   `arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:<account>:function:scoreboard-api/invocations`,
+   and the enroll integration's the same with `scoreboard-enroll`. Nothing may
+   sit between the function name and `/invocations`: a `:<alias>` or
+   `:<version>` qualifier there sends traffic to code this check does not see.
 4. For each function, run `aws lambda get-function`, `get-function-configuration`,
    `get-policy`, `list-function-url-configs`, `list-event-source-mappings`,
    `list-aliases` and `list-versions-by-function`:
-   - the code SHA must match a fresh `make build` and plan in the scoreboard
-     repository (a plan showing no change to the function is the check);
+   - the code must be what the scoreboard repository builds. At the commit
+     last applied, with the Go version that built it (found as in the
+     sign-in entry's step 7), run `make build` and
+     then `terraform plan` there, which regenerates `build/api.zip` and
+     `build/enroll.zip`. Compare `aws lambda get-function-configuration
+     --function-name scoreboard-api --query CodeSha256 --output text` with
+     `openssl dgst -sha256 -binary build/api.zip | base64`, and the same for
+     `scoreboard-enroll` against `build/enroll.zip`; each pair must be equal.
+     Hash only the zips the plan regenerated: the ones `make build` writes
+     first are not reproducible and are not what Terraform deploys. A plan
+     showing no change is not this check; it is step 9's drift check;
    - the role must be the scoreboard's own;
    - the resource policy must allow only API Gateway, from this API's
      execution ARN;
    - there must be no function URL and no event source mapping;
    - there must be no alias and no version beyond `$LATEST`.
-5. For each role, `scoreboard-api` and `scoreboard-enroll`: `aws iam
-   list-role-policies --role-name <role>` and `get-role-policy` for each result,
-   then `list-attached-role-policies`. Compare every statement against
+5. For each role, `scoreboard-api` and `scoreboard-enroll`: first `aws iam
+   get-role --role-name <role>`. Its trust policy must allow `sts:AssumeRole`
+   to the `lambda.amazonaws.com` service alone, and it must have no
+   `PermissionsBoundary`, because the scoreboard sets none (`terraform/iam.tf`
+   `lambda_trust`, `terraform/enroll.tf`). Any other principal in the trust
+   policy can take the role's permissions without going near the function: on
+   `scoreboard-enroll` that means minting device certificates with no API
+   involved, and the `UpdateAssumeRolePolicy` that would allow it is a call
+   HockeyTrack's identity rule deliberately excludes. Then `list-role-policies
+   --role-name <role>` and `get-role-policy` for each result, then
+   `list-attached-role-policies`. Compare every statement against
    `terraform/admin.tf` and `terraform/enroll.tf`. A credential that can rewrite
    a function's configuration can likely rewrite its role too, and a widened
-   grant here -- especially on `scoreboard-enroll`, which can mint device
-   certificates -- is a route this rule does not watch.
+   grant here — especially on `scoreboard-enroll`, which can mint device
+   certificates — is a route this rule does not watch.
 6. Check which panels changed hands, as in the sign-in entry's step 4, by
    scanning `scoreboard-devices` for owners who are not invited users. This
    cannot reveal actions taken under a forged invited user's `sub`: an issuer
    the attacker runs can mint a token carrying any invited user's `sub`, so
    ownership rows written that way look legitimate. Steps 7 and 8 are how
-   those are found.
+   those are found, with a limit: a direct invocation of either function,
+   carrying forged claims in a hand-built event, never passes through API
+   Gateway, so it leaves no access-log entry and no CloudTrail record. The
+   invocation count at the end of step 7 is the check that can show one.
 7. Read the admin API's access log for the window between the change and the
    fix: `aws logs filter-log-events --log-group-name
    /aws/apigateway/scoreboard-admin --start-time <ms>` (30-day retention).
    Each entry carries `requestId`, `ip`, `route`, `status`, `sub` and `error`
-   (`terraform/admin.tf` `access_log_settings`). Look for requests from
-   unfamiliar IPs, successful `POST /api/devices/claim` calls, and
-   `PUT`/`PATCH`/`DELETE` on devices the owner did not make.
-8. `aws iot list-things` and `list-certificates`. Panel things are named
-   `scoreboard-<suffix>` (`cloud/internal/enroll/enroll.go`). For any
-   `scoreboard-*` thing or certificate created in the window that is not a
-   known panel: `aws iot update-certificate --certificate-id <id> --new-status
-   REVOKED`, then detach and delete it.
+   (`terraform/admin.tf` `access_log_settings`). `route` is the route
+   template, such as `PATCH /api/devices/{thing}`, so the log shows which
+   routes were called, from where and under which `sub`, but not which panel;
+   `scoreboard-devices` shows each panel's current owner, name and game. Look
+   for requests from unfamiliar IPs, successful `POST /api/devices/claim`
+   calls, `PUT`/`PATCH`/`DELETE` calls the owner did not make, and `GET
+   /api/enroll` answered `200`, above all from an unfamiliar IP: that is the
+   call that hands a claimed panel's certificate to whoever holds its
+   collection token, while a waiting panel's polls are answered `202`.
+
+   Then count invocations, which the functions log whether or not API Gateway
+   sent them:
+   `aws logs filter-log-events --log-group-name /aws/lambda/scoreboard-api --start-time <ms> --filter-pattern '"START RequestId"'`,
+   and the same for `/aws/lambda/scoreboard-enroll` (both 30-day retention).
+   Each line is one invocation. Compare them with the access-log entries for
+   the routes on that function over the same window;
+   a request the authorizer refuses never reaches the function, so it has no
+   `START` line, but an invocation with no API request beside it is a direct
+   invoke. This depends on the roles' logs permissions, which step 5 checked,
+   and on the log groups still being there with their retention intact, which
+   no rule watches.
+8. `aws iot list-certificates`, which gives each certificate's `creationDate`
+   (`list-things` gives none), and pick those created in the window. For each,
+   `aws iot list-principal-things --principal <certificate arn>`. Panel things
+   are named `scoreboard-<suffix>` (`cloud/internal/enroll/enroll.go`). For a
+   certificate or thing that is not a known panel, in this order: `aws iot
+   update-certificate --certificate-id <id> --new-status REVOKED`;
+   `detach-policy --policy-name scoreboard-device --target <certificate arn>`,
+   and the same for any other policy `list-attached-policies --target
+   <certificate arn>` shows; `detach-thing-principal --thing-name <thing>
+   --principal <certificate arn>`; `delete-certificate --certificate-id <id>`;
+   `delete-thing --thing-name <thing>`; and finally remove the thing's
+   ownership row with `aws dynamodb delete-item --table-name
+   scoreboard-devices --key '{"thingName":{"S":"<thing>"}}'`.
 9. Run a plan in the scoreboard repository. Anything rewritten shows as a
    difference, and applying puts it back.
 

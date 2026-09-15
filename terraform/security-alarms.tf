@@ -1197,11 +1197,16 @@ resource "aws_cloudwatch_event_rule" "scoreboard_signin" {
 # scoreboard-enroll, all the scoreboard's own applies. Most of those code
 # updates changed no code: Go stamped each binary with its commit, so every
 # commit redeployed every function, and each redeploy's UpdateFunctionCode
-# write paged. As of the companion scoreboard change, its make build passes
-# -buildvcs=false and -trimpath, so an unchanged function keeps its code hash
-# and no longer triggers that write -- this rule still fires on any write;
-# unchanged code simply no longer causes one. Reads stay silent for section
-# 9's reason: an ENABLED rule never receives read-only management events.
+# write would have paged, had any rule watched these two functions then. As of
+# the companion scoreboard change, its make build passes -buildvcs=false and
+# -trimpath, so a function keeps its code hash, and no longer triggers that
+# write, unless its code, its dependencies or the Go toolchain building it
+# change: each binary still embeds the Go version and its module versions, and
+# the scoreboard's go.mod names go 1.27.0 under the default GOTOOLCHAIN=auto,
+# which builds with any newer Go already installed. This rule still fires on
+# any write; unchanged code simply no longer causes one. Reads stay silent for
+# section 9's reason: an ENABLED rule never receives read-only management
+# events.
 #
 # The API ID is looked up by name, with a precondition that exactly one API
 # has it, like section 10's pool: a replaced API is picked up at this
@@ -1215,7 +1220,27 @@ resource "aws_cloudwatch_event_rule" "scoreboard_signin" {
 # other security change until the scoreboard API situation is resolved. The
 # function names are literals, like section 10's.
 #
-# What it does not see:
+# What it does not see, the most important first:
+#   - Direct invocation. Both handlers read the caller's identity only from the
+#     event's requestContext.authorizer.jwt.claims, so any principal in this
+#     account whose own policy allows lambda:InvokeFunction on either function
+#     -- the administrator key section 1 describes among them -- can invoke it
+#     with a hand-built event carrying whatever claims it likes, skipping API
+#     Gateway and the authorizer, with no configuration write at all. Invoke is
+#     a Lambda data event, which the account's one trail does not log (section
+#     10). Nor is turning data events on the fix: API Gateway's own calls are
+#     Invoke events naming these functions, so if a trail ever logged Lambda
+#     data events, the functionName wildcard above would page on every
+#     admin-API request, the same caveat section 10 gives for the gate.
+#     Closing this needs Invoke events filtered to callers other than API
+#     Gateway, not merely logged.
+#   - Deleting or shortening the logs the recovery steps read. A DeleteLogGroup
+#     or PutRetentionPolicy on /aws/apigateway/scoreboard-admin,
+#     /aws/lambda/scoreboard-api or /aws/lambda/scoreboard-enroll pages nobody:
+#     section 8 names only the trail group and AWSIotLogsV2. The threat
+#     model's recovery entry depends on those groups. Removing access logging
+#     from the stage itself does page, because UpdateStage and
+#     DeleteAccessLogSettings both name the API.
 #   - A custom domain rerouted away from the API. DeleteApiMapping names only
 #     the domain and the mapping, and UpdateDomainName names only the domain.
 #     CreateRoutingRule and PutRoutingRule do carry the API ID, but nested at
