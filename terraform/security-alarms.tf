@@ -126,6 +126,7 @@ locals {
     iot               = aws_cloudwatch_event_rule.iot_tampering
     logs              = aws_cloudwatch_event_rule.audit_log_tampering
     scoreboard_signin = aws_cloudwatch_event_rule.scoreboard_signin
+    scoreboard_api    = aws_cloudwatch_event_rule.scoreboard_api
   }
 
   # Raw CloudTrail JSON is unreadable on a phone, so the alert is rendered as a
@@ -167,6 +168,7 @@ locals {
     iot               = "If this was not you, assume an AWS credential is compromised, and check the scoreboard's device policy, certificates and IoT logging."
     logs              = "If this was not you, assume audit history has been destroyed, shortened or redirected. Check that both audit log groups still exist with 90-day retention, that the root sign-in metric filter is intact, and whether a subscription filter, KMS key or account-level log policy has appeared."
     scoreboard_signin = "If this was not you, assume the scoreboard admin site's sign-in gate may be bypassed. Check the invite list, the user pool's triggers, app clients, identity providers and users, and the authgate function's code and environment, against the scoreboard repository."
+    scoreboard_api    = "If this was not you, assume the scoreboard admin API may accept tokens or requests it should not. Check its JWT authorizer's issuer and audience, its routes' authorizers and integrations, and the scoreboard-api and scoreboard-enroll functions' code, configuration, role and permissions, against the scoreboard repository."
   }
 
   security_alert_template = {
@@ -1075,19 +1077,9 @@ resource "aws_cloudwatch_event_rule" "alerting_modification" {
 #
 # What it does not see, the most important first. The gate decides who gets a
 # token; it does not decide what a token is worth. The scoreboard's admin API
-# does, and it is a second authorization root that nothing watches.
-# scoreboard-api and scoreboard-enroll take the caller's identity entirely from
-# the claims API Gateway's JWT authorizer hands them -- sub, and for claiming a
-# panel cognito:username, email and email_verified -- and that authorizer's
-# issuer and audience decide whose tokens are believed. An UpdateAuthorizer
-# naming an issuer the attacker runs, an UpdateRoute that moves a route to an
-# authorizer of their own, an UpdateIntegration that hands a route to other
-# code, or new code in either function, changes whose identity the API believes
-# or what it does with it -- enough to claim or control panels -- without one
-# write to the pool, the gate or the invite list. No rule in either
-# repository watches apigateway.amazonaws.com or those two functions. The fix
-# has this rule's shape: scoped to the admin API's authorizer, routes and
-# integrations, and to the two functions.
+# does, and it is a second authorization root: section 11 watches it, as a
+# separate rule, so its alert names the authorizer and routes rather than the
+# invite list.
 #
 # The rest: the static site's bucket and distribution, which could serve a
 # look-alike sign-in page; a crash or throttle, which are not API calls and
@@ -1150,6 +1142,155 @@ resource "aws_cloudwatch_event_rule" "scoreboard_signin" {
     precondition {
       condition     = length(local.scoreboard_signin_pattern) <= 2048
       error_message = "The scoreboard sign-in rule's event pattern is ${length(local.scoreboard_signin_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
+    }
+  }
+}
+
+# ---- 11. The scoreboard admin API ----
+#
+# Section 10 watches the gate that decides who gets a token. This watches what
+# decides what a token is worth. The scoreboard's scoreboard-api and
+# scoreboard-enroll functions take the caller's identity entirely from the
+# claims API Gateway's JWT authorizer hands them -- sub, and for claiming a
+# panel cognito:username, email and email_verified -- and that authorizer's
+# issuer and audience decide whose tokens are believed. So the API and the two
+# functions are an authorization root of their own, and a write to them can
+# claim or control panels without going near the pool, the gate or the invite
+# list:
+#
+#   Point the authorizer elsewhere          -> UpdateAuthorizer, CreateAuthorizer.
+#                                              An issuer the attacker runs mints
+#                                              any sub, or the owner's verified
+#                                              email.
+#   Move a route, or repoint an integration -> UpdateRoute, CreateRoute,
+#                                              UpdateIntegration. Removing a
+#                                              route's authorizer alone is not
+#                                              enough: the handler returns 401
+#                                              with no sub.
+#   Change either function                  -> UpdateFunctionCode*,
+#                                              UpdateFunctionConfiguration*
+#                                              (including its role), AddPermission*,
+#                                              CreateFunctionUrlConfig.
+#   Reshape or reroute the API              -> UpdateStage, UpdateApi,
+#                                              CreateApiMapping, DeleteApi.
+#
+# Scoped by resource for the same reason as section 10: the account runs three
+# other HTTP APIs (davidjdrake-api, healthtracker-api and HttpApi) and many
+# other functions. It has no eventName constraint.
+#
+# Which fields name them comes from the apigatewayv2 and lambda service models
+# shipped with aws-cli 2.33.2, cased as CloudTrail records them. Ninety days of
+# real events, to 2026-09-15, confirmed apiId and resource-arn:
+#
+#   apiId         every write to the API and everything under it: routes,
+#                 integrations, authorizers, stages, deployments, models, CORS,
+#                 API mappings (35 operations outside Get/List take it)
+#   resource-arn  TagResource/UntagResource, arn:aws:apigateway:<region>::/apis/<id>
+#                 and anything under that ARN, so it is matched by prefix. The
+#                 hyphen is the wire name, not a typo.
+#   functionName  every Lambda write that takes a function; matched by wildcard,
+#                 because CloudTrail records it both bare and as a full ARN
+#   resource      Lambda TagResource/UntagResource, an ARN
+#
+# Measured before choosing, over ninety days to 2026-09-15: 1,427 API Gateway
+# events, 1,340 of them reads; 5 writes to scoreboard-api and 4 to
+# scoreboard-enroll, all the scoreboard's own applies. Most of those code
+# updates changed no code: Go stamped each binary with its commit, so every
+# commit redeployed every function, and each redeploy's UpdateFunctionCode
+# write would have paged, had any rule watched these two functions then. As of
+# the companion scoreboard change, its make build passes -buildvcs=false and
+# -trimpath, so a function keeps its code hash, and no longer triggers that
+# write, unless its code, its dependencies or the Go toolchain building it
+# change: each binary still embeds the Go version and its module versions, and
+# the scoreboard's go.mod names go 1.27.0 under the default GOTOOLCHAIN=auto,
+# which builds with whichever Go is invoked, provided it is 1.27.0 or newer. This rule still fires on
+# any write; unchanged code simply no longer causes one. Reads stay silent for
+# section 9's reason: an ENABLED rule never receives read-only management
+# events.
+#
+# The API ID is looked up by name, with a precondition that exactly one API
+# has it, like section 10's pool: a replaced API is picked up at this
+# repository's next apply, and until then writes to the new API page nobody,
+# while the teardown of the old one -- DeleteRoute, DeleteIntegration,
+# DeleteAuthorizer, DeleteStage and DeleteApi, all carrying the old apiId --
+# and any write to either function still page throughout. As with section
+# 10's pool, the precondition fails the plan unless exactly one API has this
+# name, so a missing or duplicated API is refused rather than silently
+# watched -- at a cost: HockeyTrack's plan then fails outright, blocking every
+# other security change until the scoreboard API situation is resolved. The
+# function names are literals, like section 10's.
+#
+# What it does not see, the most important first:
+#   - Direct invocation. Both handlers read the caller's identity only from the
+#     event's requestContext.authorizer.jwt.claims, so any principal in this
+#     account whose own policy allows lambda:InvokeFunction on either function
+#     -- the administrator key section 1 describes among them -- can invoke it
+#     with a hand-built event carrying whatever claims it likes, skipping API
+#     Gateway and the authorizer, with no configuration write at all. Invoke is
+#     a Lambda data event, which the account's one trail does not log (section
+#     10). Nor is turning data events on the fix: API Gateway's own calls are
+#     Invoke events naming these functions, so if a trail ever logged Lambda
+#     data events, the functionName wildcard above would page on every
+#     admin-API request, the same caveat section 10 gives for the gate.
+#     Closing this needs Invoke events filtered to callers other than API
+#     Gateway, not merely logged.
+#   - Deleting or shortening the logs the recovery steps read. A DeleteLogGroup,
+#     DeleteLogStream or PutRetentionPolicy on /aws/apigateway/scoreboard-admin,
+#     /aws/lambda/scoreboard-api or /aws/lambda/scoreboard-enroll pages nobody:
+#     section 8 names only the trail group and AWSIotLogsV2. The threat
+#     model's recovery entry depends on those groups. Removing access logging
+#     from the stage itself does page, because UpdateStage and
+#     DeleteAccessLogSettings both name the API.
+#   - A custom domain rerouted away from the API. DeleteApiMapping names only
+#     the domain and the mapping, and UpdateDomainName names only the domain.
+#     CreateRoutingRule and PutRoutingRule do carry the API ID, but nested at
+#     actions[].invokeApi.apiId, which this rule's top-level apiId match
+#     cannot see. The admin API has no custom domain today, so none of these
+#     can reach it yet. Adding one means adding its domainName here.
+#   - The two functions' IAM roles. HockeyTrack's identity rule excludes role-policy
+#     churn deliberately, but scoreboard-enroll's role can mint device
+#     certificates, so a widened grant there is a real route this does not watch.
+#   - The devices table's ownership rows. Writes to them are DynamoDB data events,
+#     which the trail does not log.
+#   - The static site's bucket and distribution.
+#   - A call that names these resources only through a field not listed above,
+#     the silent-failure mode sections 8 to 10 share.
+#   - Rewriting this rule, which section 9 catches.
+data "aws_apigatewayv2_apis" "scoreboard_admin" {
+  name = "scoreboard-admin"
+}
+
+locals {
+  scoreboard_api_ids = tolist(data.aws_apigatewayv2_apis.scoreboard_admin.ids)
+
+  scoreboard_api_pattern = jsonencode({
+    "detail-type" = ["AWS API Call via CloudTrail"]
+    "detail" = {
+      "eventSource" = ["apigateway.amazonaws.com", "lambda.amazonaws.com"]
+      "readOnly"    = [false]
+      "$or" = [
+        { "requestParameters" = { "apiId" = local.scoreboard_api_ids } },
+        { "requestParameters" = { "resource-arn" = [for id in local.scoreboard_api_ids : { "prefix" = "arn:aws:apigateway:${var.region}::/apis/${id}" }] } },
+        { "requestParameters" = { "functionName" = [{ "wildcard" = "*scoreboard-api*" }, { "wildcard" = "*scoreboard-enroll*" }] } },
+        { "requestParameters" = { "resource" = [{ "wildcard" = "*:function:scoreboard-api*" }, { "wildcard" = "*:function:scoreboard-enroll*" }] } },
+      ]
+    }
+  })
+}
+
+resource "aws_cloudwatch_event_rule" "scoreboard_api" {
+  name          = "hockeytrack-sec-scoreboard-api"
+  description   = "Any write naming the scoreboard admin API or the scoreboard-api or scoreboard-enroll function: the routes to changing what the API believes about a caller"
+  event_pattern = local.scoreboard_api_pattern
+
+  lifecycle {
+    precondition {
+      condition     = length(local.scoreboard_api_ids) == 1
+      error_message = "Expected exactly one API Gateway API named scoreboard-admin, found ${length(local.scoreboard_api_ids)}. The scoreboard API rule would watch the wrong API, or none."
+    }
+    precondition {
+      condition     = length(local.scoreboard_api_pattern) <= 2048
+      error_message = "The scoreboard API rule's event pattern is ${length(local.scoreboard_api_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
     }
   }
 }
