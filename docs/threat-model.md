@@ -258,14 +258,16 @@ Its limits:
   and an alarm with no datapoints is not an alarm that fires.
 - The cost was measured before the rule was chosen, while the scoreboard prefix
   was still `scoreboard-iot-`: across ninety days, 33 writes to the three
-  services named a security resource, and every one was this repository's own
-  `terraform apply`. None of the modify-style calls the rule exists for —
+  services named a security resource, and every one was a `terraform apply` by
+  the account's one operator, in this repository or the scoreboard's. Under
+  today's `scoreboard-` prefix the same window holds 34, the extra one a write
+  to `scoreboard-dlq-depth`. None of the modify-style calls the rule exists for —
   `SetAlarmState`, `DisableRule`, `SetSubscriptionAttributes` and the rest —
   occurred at all, on any resource. So an apply that touches a security
   resource now pages, at least once for every alarm it rewrites, and nothing
   else does. The "up to ten times" once given here was counted under the old
   prefix; the scope is now four of this repository's alarms and all thirteen of
-  the scoreboard's, and the figures are re-measured at deploy. Plans and no-op
+  the scoreboard's. Plans and no-op
   applies stay silent, because Terraform reads these resources rather than
   writing them unless something differs.
 
@@ -309,7 +311,7 @@ stolen-key case it exists to stop.
 
 What this does not do is stop this account's own administrator credential.
 `AdministratorAccess` includes `iam:CreateVirtualMFADevice` and
-`iam:EnableMFADevice`, so the holder of that key can enrol an MFA device of
+`iam:EnableMFADevice`, so the holder of that key can enroll an MFA device of
 their own and satisfy the condition legitimately in about five API calls. The
 policy is therefore a genuine control against a careless operator, an
 accidental `terraform destroy`, and any credential scoped away from IAM — and
@@ -376,7 +378,7 @@ Stated so they are decisions rather than oversights.
   A deny conditioned on `aws:MultiFactorAuthPresent` is therefore currently
   unsatisfiable by any principal except root, which is why the enforcement
   policy in `terraform/iam-mfa.tf` ships disabled: enabling it before enrolling
-  a device would deny the very calls that enrol one.
+  a device would deny the very calls that enroll one.
 - **The pairing model for the admin site is "you can see the screen".** For a
   device in a living room this is the right threshold; it would not be for
   anything carrying personal data.
@@ -487,27 +489,30 @@ applies to it. Then, in us-east-1:
    '{"#o":"owner"}'`. Every `owner` must be the `sub` of a user you invited,
    which `list-users` shows. Record any other: that panel is under someone
    else's control.
-5. For each user who should not be there, `admin-user-global-sign-out` and
-   then `admin-delete-user`, after taking their address off the invite list
-   (step 8), or the account can sign straight back in. Neither call ends their
-   access at once: access and ID tokens already issued stay valid for up to an
-   hour, because the API's JWT authorizer checks a token's signature, issuer,
-   audience and expiry, not whether Cognito has revoked it.
-6. `aws lambda get-function --function-name scoreboard-authgate` and
+5. Read the invite list and remove anyone you did not invite
+   (`aws ssm get-parameter --name /scoreboard/allowed-emails`, then
+   `put-parameter --overwrite`). Do this before step 6, or a deleted account can
+   sign straight back in.
+6. For each user who should not be there, `admin-user-global-sign-out` and
+   then `admin-delete-user`. Neither call ends their access at once: access and
+   ID tokens already issued stay valid for up to an hour, because the API's JWT
+   authorizer checks a token's signature, issuer, audience and expiry, not
+   whether Cognito has revoked it.
+7. `aws lambda get-function --function-name scoreboard-authgate` and
    `get-function-configuration`. Compare the code SHA and
    `ALLOWLIST_PARAMETER` against a fresh `make build` and plan in the
    scoreboard repository.
-7. The admin API, which the alert's rule does not watch. Find the
+8. The admin API, which the alert's rule does not watch. Find the
    `scoreboard-admin` API with `aws apigatewayv2 get-apis`, then
    `get-authorizers --api-id <id>`: its one JWT authorizer's issuer must be
    `https://cognito-idp.us-east-1.amazonaws.com/<pool id>` and its audience the
    site client's ID alone, as the scoreboard repository's `terraform/admin.tf`
    sets them. A different issuer means whoever runs it can mint tokens the API
    believes.
-8. Read the invite list and remove anyone you did not invite. Then run a plan
-   in the scoreboard repository: anything rewritten shows as a difference, and
-   applying puts it back. The invite list's value is the exception, because
-   Terraform deliberately ignores it.
+9. Run a plan in the scoreboard repository: anything rewritten shows as a
+   difference, and applying puts it back. The invite list's value is the
+   exception, because Terraform deliberately ignores it, which is why step 5
+   reads it by hand.
 
 **The archive has lost objects.** Do not write anything to the bucket. Every
 object is versioned, the five most recent noncurrent versions of each key are

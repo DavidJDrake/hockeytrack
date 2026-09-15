@@ -9,7 +9,7 @@
 #
 #   Delete objects with the static key      -> denied by the bucket policy
 #                                              without MFA, so the attacker
-#                                              must first enrol one, which is
+#                                              must first enroll one, which is
 #                                              the identity rule.
 #   Remove the bucket policy, then delete   -> also needs MFA, so the identity
 #                                              rule again, and
@@ -855,15 +855,19 @@ resource "aws_cloudwatch_event_rule" "audit_log_tampering" {
 # 33 named a security resource and would have fired this rule: 7 PutRule and 6
 # PutTargets on the hockeytrack-sec rules, 1 CreateTopic, 8 SetTopicAttributes
 # and 1 Subscribe on the security topic, and 10 PutMetricAlarm, four on
-# hockeytrack-security alarms and six on the scoreboard's. Every one was this
-# repository's own apply, by the funandgames user, on four days: 2026-09-07,
-# 09-09 and twice on 09-11. The other 76 writes were HealthTracker's and
+# hockeytrack-security alarms and six on the scoreboard's. Every one was a
+# terraform apply by the funandgames user -- this repository's, or the
+# scoreboard's for its own alarms -- on 2026-09-07, 09-09 and 09-11. The other
+# 76 writes were HealthTracker's and
 # EbookShare's CloudFormation stacks, the hockeytrack bus and its goal
 # notifications, the ECR scan rule and the scoreboard's game-events rule, and
-# none of them name a security resource. Those figures predate the widening to
-# scoreboard-: they could not count a write to scoreboard-dlq-depth or to the
-# enrollment and sign-in alarms, so the same window may hold more matches under
-# today's prefix. They are re-measured at deploy, not estimated here.
+# none of them name a security resource. Re-measured under today's
+# scoreboard- prefix on 2026-09-15, over the same window as far as CloudTrail
+# still held it (2026-06-20 to 2026-09-11, the same 109 writes): 34 match, the
+# extra one a PutMetricAlarm on scoreboard-dlq-depth on 2026-09-07. The
+# enrollment and sign-in refusal alarms were created after the window closed
+# but before the widening, so their creation paged nobody. The two sign-in gate
+# alarms were created after it, and each creation paged, as intended.
 #
 # Of the modify calls this rule exists for -- DisableRule, EnableRule,
 # SetAlarmState, DeleteAlarms, DisableAlarmActions, SetSubscriptionAttributes,
