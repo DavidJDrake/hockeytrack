@@ -304,9 +304,10 @@ function. Like the sign-in rule, it lists no event names and is scoped to the
 scoreboard's resources, because the account runs three other HTTP APIs. What it
 does not see is named in its comment: a custom domain rerouted away from the
 API (there is none today), the functions' IAM roles, and the devices table's
-ownership rows, whose writes the trail does not log. It pages only when code
-changes, because the scoreboard's build no longer stamps each binary with its
-commit.
+ownership rows, whose writes the trail does not log. A scoreboard apply that
+changes no function code no longer redeploys, and so no longer pages, because
+the scoreboard's build no longer stamps each binary with its commit (the
+scoreboard change lands alongside this one).
 
 **Destroying the archive is gated, but the gate is honest about its size.**
 Versioning makes an accidental overwrite reversible; it does nothing against a
@@ -534,23 +535,55 @@ applies to it. Then, in us-east-1:
    whose issuer is `https://cognito-idp.us-east-1.amazonaws.com/<pool id>` and
    whose audience is the site client's ID alone, as the scoreboard repository's
    `terraform/admin.tf` sets them.
-2. `get-routes --api-id <id>`. Every route must use that authorizer except
-   `POST /api/enroll` and `GET /api/enroll`, which are unauthenticated by
-   design (`terraform/enroll.tf`), and no route may exist that the scoreboard
-   repository does not define.
-3. `get-integrations --api-id <id>`. Every `IntegrationUri` must be the
-   `scoreboard-api` or `scoreboard-enroll` function.
-4. For each function, run `aws lambda get-function`, `get-function-configuration`
-   and `get-policy`, then `list-function-url-configs` and
-   `list-event-source-mappings`:
-   - the code SHA must match a fresh `make build`;
+2. `get-routes --api-id <id>`. `GET /api/devices`, `PUT /api/devices/{thing}/game`,
+   `PATCH /api/devices/{thing}` and `DELETE /api/devices/{thing}`, and `GET
+   /api/games`, must target the api integration and that authorizer. `POST
+   /api/enroll` and `GET /api/enroll` must target the enroll integration and be
+   unauthenticated by design; `POST /api/devices/claim` must target the enroll
+   integration but use that same authorizer (`terraform/admin.tf`
+   `local.admin_routes`, `terraform/enroll.tf`). No route may exist that the
+   scoreboard repository does not define.
+3. `get-integrations --api-id <id>`. The api integration's `IntegrationUri`
+   must be the `scoreboard-api` function's unqualified ARN, and the enroll
+   integration's the `scoreboard-enroll` function's unqualified ARN; a
+   qualified ARN, naming an alias or version, sends traffic to code this check
+   does not see.
+4. For each function, run `aws lambda get-function`, `get-function-configuration`,
+   `get-policy`, `list-function-url-configs`, `list-event-source-mappings`,
+   `list-aliases` and `list-versions-by-function`:
+   - the code SHA must match a fresh `make build` and plan in the scoreboard
+     repository (a plan showing no change to the function is the check);
    - the role must be the scoreboard's own;
    - the resource policy must allow only API Gateway, from this API's
      execution ARN;
-   - there must be no function URL and no event source mapping.
-5. Check which panels changed hands, as in the sign-in entry's step 4, by
-   scanning `scoreboard-devices` for owners who are not invited users.
-6. Run a plan in the scoreboard repository. Anything rewritten shows as a
+   - there must be no function URL and no event source mapping;
+   - there must be no alias and no version beyond `$LATEST`.
+5. For each role, `scoreboard-api` and `scoreboard-enroll`: `aws iam
+   list-role-policies --role-name <role>` and `get-role-policy` for each result,
+   then `list-attached-role-policies`. Compare every statement against
+   `terraform/admin.tf` and `terraform/enroll.tf`. A credential that can rewrite
+   a function's configuration can likely rewrite its role too, and a widened
+   grant here -- especially on `scoreboard-enroll`, which can mint device
+   certificates -- is a route this rule does not watch.
+6. Check which panels changed hands, as in the sign-in entry's step 4, by
+   scanning `scoreboard-devices` for owners who are not invited users. This
+   cannot reveal actions taken under a forged invited user's `sub`: an issuer
+   the attacker runs can mint a token carrying any invited user's `sub`, so
+   ownership rows written that way look legitimate. Steps 7 and 8 are how
+   those are found.
+7. Read the admin API's access log for the window between the change and the
+   fix: `aws logs filter-log-events --log-group-name
+   /aws/apigateway/scoreboard-admin --start-time <ms>` (30-day retention).
+   Each entry carries `requestId`, `ip`, `route`, `status`, `sub` and `error`
+   (`terraform/admin.tf` `access_log_settings`). Look for requests from
+   unfamiliar IPs, successful `POST /api/devices/claim` calls, and
+   `PUT`/`PATCH`/`DELETE` on devices the owner did not make.
+8. `aws iot list-things` and `list-certificates`. Panel things are named
+   `scoreboard-<suffix>` (`cloud/internal/enroll/enroll.go`). For any
+   `scoreboard-*` thing or certificate created in the window that is not a
+   known panel: `aws iot update-certificate --certificate-id <id> --new-status
+   REVOKED`, then detach and delete it.
+9. Run a plan in the scoreboard repository. Anything rewritten shows as a
    difference, and applying puts it back.
 
 **The archive has lost objects.** Do not write anything to the bucket. Every

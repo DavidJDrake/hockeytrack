@@ -1196,22 +1196,32 @@ resource "aws_cloudwatch_event_rule" "scoreboard_signin" {
 # events, 1,340 of them reads; 5 writes to scoreboard-api and 4 to
 # scoreboard-enroll, all the scoreboard's own applies. Most of those code
 # updates changed no code: Go stamped each binary with its commit, so every
-# commit redeployed every function. The scoreboard's make build now passes
+# commit redeployed every function, and each redeploy's UpdateFunctionCode
+# write paged. As of the companion scoreboard change, its make build passes
 # -buildvcs=false and -trimpath, so an unchanged function keeps its code hash
-# and an apply pages here only when code moves. Reads stay silent for section
+# and no longer triggers that write -- this rule still fires on any write;
+# unchanged code simply no longer causes one. Reads stay silent for section
 # 9's reason: an ENABLED rule never receives read-only management events.
 #
 # The API ID is looked up by name, with a precondition that exactly one API
 # has it, like section 10's pool: a replaced API is picked up at this
-# repository's next apply, and until then writes to the new API page nobody.
-# The replacement's DeleteApi on the old ID is the one write that pages in that
-# window. The function names are literals, like section 10's.
+# repository's next apply, and until then writes to the new API page nobody,
+# while the teardown of the old one -- DeleteRoute, DeleteIntegration,
+# DeleteAuthorizer, DeleteStage and DeleteApi, all carrying the old apiId --
+# and any write to either function still page throughout. As with section
+# 10's pool, the precondition fails the plan unless exactly one API has this
+# name, so a missing or duplicated API is refused rather than silently
+# watched -- at a cost: HockeyTrack's plan then fails outright, blocking every
+# other security change until the scoreboard API situation is resolved. The
+# function names are literals, like section 10's.
 #
 # What it does not see:
-#   - A custom domain rerouted away from the API. DeleteApiMapping names only the
-#     domain and the mapping, and routing rules and UpdateDomainName name only the
-#     domain. The admin API has no custom domain today, so none of these can reach
-#     it yet. Adding one means adding its domainName here.
+#   - A custom domain rerouted away from the API. DeleteApiMapping names only
+#     the domain and the mapping, and UpdateDomainName names only the domain.
+#     CreateRoutingRule and PutRoutingRule do carry the API ID, but nested at
+#     actions[].invokeApi.apiId, which this rule's top-level apiId match
+#     cannot see. The admin API has no custom domain today, so none of these
+#     can reach it yet. Adding one means adding its domainName here.
 #   - The two functions' IAM roles. HockeyTrack's identity rule excludes role-policy
 #     churn deliberately, but scoreboard-enroll's role can mint device
 #     certificates, so a widened grant there is a real route this does not watch.
