@@ -1356,14 +1356,8 @@ locals {
   ]
 
   # All three functions, for the branch that catches any non-AWSService
-  # caller regardless of which function it names. A literal tuple, not
-  # concat(scoreboard_invoke_api_path, scoreboard_invoke_gate): concat over
-  # tuples that mix strings and objects does not reliably unify their types.
-  scoreboard_invoke_all = [
-    "scoreboard-api", local.scoreboard_invoke_arn["scoreboard-api"], { "prefix" = "${local.scoreboard_invoke_arn["scoreboard-api"]}:" },
-    "scoreboard-enroll", local.scoreboard_invoke_arn["scoreboard-enroll"], { "prefix" = "${local.scoreboard_invoke_arn["scoreboard-enroll"]}:" },
-    "scoreboard-authgate", local.scoreboard_invoke_arn["scoreboard-authgate"], { "prefix" = "${local.scoreboard_invoke_arn["scoreboard-authgate"]}:" },
-  ]
+  # caller regardless of which function it names.
+  scoreboard_invoke_all = concat(local.scoreboard_invoke_api_path, local.scoreboard_invoke_gate)
 
   scoreboard_invoke_pattern = jsonencode({
     "detail-type" = ["AWS API Call via CloudTrail"]
