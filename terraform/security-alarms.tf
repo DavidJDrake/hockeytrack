@@ -1308,17 +1308,22 @@ resource "aws_cloudwatch_event_rule" "scoreboard_api" {
 # invocation not made by the one service each function exists for pages.
 #
 # The trail logs these invocations as Lambda data events (cloudtrail.tf).
-# Measured on 2026-09-15: API Gateway's invocations carry
-# userIdentity.invokedBy "apigateway.amazonaws.com", Cognito's
-# "cognito-idp.amazonaws.com", and a direct invoke by an IAM user carries no
-# invokedBy at all. anything-but does not match a missing field, so each
-# function group has a second branch for exists false.
+# Measured on 2026-09-15: a legitimate invocation arrives with
+# userIdentity.type "AWSService" -- that is what API Gateway's and Cognito's
+# own resource-policy grants look like on the wire -- carrying invokedBy
+# "apigateway.amazonaws.com" or "cognito-idp.amazonaws.com". A direct invoke
+# by an IAM user arrived as type "IAMUser" with no invokedBy at all. So any
+# caller that is not AWSService pages, whatever its invokedBy says or omits,
+# including a role that API Gateway, Cognito or some other service assumes to
+# call a function on that role's own credentials rather than through the
+# function's resource policy. An AWSService caller pages unless it is the one
+# service each function's resource policy grants.
 #
 # Each function is listed as CloudTrail may name it: bare, as an unqualified
 # ARN, and by prefix as an ARN qualified with a version or alias. The prefix
 # ends in a colon, so scoreboard-api cannot match a future scoreboard-api-v2.
-# No event names are listed, so Invoke, asynchronous invokes and
-# InvokeWithResponseStream are covered alike. Management events never match:
+# No event names are listed, so any Lambda data event recorded for these
+# functions matches, whatever it is called. Management events never match:
 # eventCategory is Data.
 #
 # What it does not see, the most important first:
@@ -1330,8 +1335,12 @@ resource "aws_cloudwatch_event_rule" "scoreboard_api" {
 #     forged invocation corrupts displayed game state without granting control
 #     of a panel or a certificate. Scheduler invokes today through its own role,
 #     and a direct invoke only republishes today's schedule.
-#   - A new route or permission that makes API Gateway or Cognito itself the
-#     caller: those are writes that sections 10 and 11 page on.
+#   - A new integration or route on the scoreboard-admin API, which section 11
+#     pages on. A new resource-policy grant (AddPermission) on scoreboard-api
+#     or scoreboard-enroll, which section 11 also pages on; the same grant on
+#     scoreboard-authgate, which section 10 pages on instead. A separate API
+#     invoking any of the three through its own role, rather than through a
+#     grant on the function, pages here, as AssumedRole.
 #   - Invocations while the trail is not logging, which the audit rule pages on
 #     when logging stops or the selectors change.
 #   - Rewriting this rule, which section 9 catches.
@@ -1346,6 +1355,16 @@ locals {
     "scoreboard-authgate", local.scoreboard_invoke_arn["scoreboard-authgate"], { "prefix" = "${local.scoreboard_invoke_arn["scoreboard-authgate"]}:" },
   ]
 
+  # All three functions, for the branch that catches any non-AWSService
+  # caller regardless of which function it names. A literal tuple, not
+  # concat(scoreboard_invoke_api_path, scoreboard_invoke_gate): concat over
+  # tuples that mix strings and objects does not reliably unify their types.
+  scoreboard_invoke_all = [
+    "scoreboard-api", local.scoreboard_invoke_arn["scoreboard-api"], { "prefix" = "${local.scoreboard_invoke_arn["scoreboard-api"]}:" },
+    "scoreboard-enroll", local.scoreboard_invoke_arn["scoreboard-enroll"], { "prefix" = "${local.scoreboard_invoke_arn["scoreboard-enroll"]}:" },
+    "scoreboard-authgate", local.scoreboard_invoke_arn["scoreboard-authgate"], { "prefix" = "${local.scoreboard_invoke_arn["scoreboard-authgate"]}:" },
+  ]
+
   scoreboard_invoke_pattern = jsonencode({
     "detail-type" = ["AWS API Call via CloudTrail"]
     "detail" = {
@@ -1353,9 +1372,8 @@ locals {
       "eventCategory" = ["Data"]
       "$or" = [
         { "requestParameters" = { "functionName" = local.scoreboard_invoke_api_path }, "userIdentity" = { "invokedBy" = [{ "anything-but" = ["apigateway.amazonaws.com"] }] } },
-        { "requestParameters" = { "functionName" = local.scoreboard_invoke_api_path }, "userIdentity" = { "invokedBy" = [{ "exists" = false }] } },
         { "requestParameters" = { "functionName" = local.scoreboard_invoke_gate }, "userIdentity" = { "invokedBy" = [{ "anything-but" = ["cognito-idp.amazonaws.com"] }] } },
-        { "requestParameters" = { "functionName" = local.scoreboard_invoke_gate }, "userIdentity" = { "invokedBy" = [{ "exists" = false }] } },
+        { "requestParameters" = { "functionName" = local.scoreboard_invoke_all }, "userIdentity" = { "type" = [{ "anything-but" = ["AWSService"] }] } },
       ]
     }
   })

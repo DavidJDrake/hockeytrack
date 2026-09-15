@@ -670,16 +670,28 @@ applies to it. Then, in us-east-1:
 **A scoreboard direct-invoke alert you cannot account for.** Assume someone
 holds a credential in this account and has called a scoreboard admin function
 with an event they wrote. In us-east-1:
-1. Find the full record. The alert gives the time and the Actor ARN:
-   `aws logs filter-log-events --log-group-name /aws/cloudtrail/hockeytrack-account --start-time <ms> --filter-pattern '{ ($.eventSource = "lambda.amazonaws.com") && ($.eventCategory = "Data") }'`.
+1. Find the full record. The alert gives the time and the Actor ARN. Search
+   five minutes either side of the alert's time:
+   `aws logs filter-log-events --log-group-name /aws/cloudtrail/hockeytrack-account --start-time <ms> --end-time <ms> --filter-pattern '{ ($.eventSource = "lambda.amazonaws.com") && ($.eventCategory = "Data") && ($.userIdentity.type != "AWSService") }'`.
    Note `userIdentity` (its `arn`, `accessKeyId`, and for a role
    `sessionContext.sessionIssuer`), `sourceIPAddress`, which function, and the
-   exact `eventTime`.
-2. Cut the credential off before investigating further. For an IAM user's key,
-   `aws iam update-access-key --user-name <user> --access-key-id <id> --status Inactive`.
-   For a role, revoke its active sessions (IAM console, the role, Revoke active
-   sessions). Then follow the root sign-in procedure's credential steps for
-   whoever owns it.
+   exact `eventTime`. If the alert's Actor line is empty, the caller was an AWS
+   service: drop the `userIdentity.type` clause and look instead for the
+   record whose `invokedBy` is not `apigateway.amazonaws.com` (or, for
+   `scoreboard-authgate`, not `cognito-idp.amazonaws.com`).
+2. Cut the credential off before investigating further. For an IAM user's
+   long-term key, `aws iam update-access-key --user-name <user> --access-key-id <id> --status Inactive`.
+   A key ID beginning `ASIA` is temporary (a session token, not a registered
+   access key), and `update-access-key` does not accept it and cannot
+   deactivate it; for one of those, attach an inline deny-all policy to the
+   user instead:
+   `aws iam put-user-policy --user-name <user> --policy-name deny-all-incident --policy-document '{"Version":"2012-10-17","Statement":[{"Effect":"Deny","Action":"*","Resource":"*"}]}'`,
+   and remove it once the credentials are rotated. For a role, revoke its
+   active sessions (IAM console, the role, Revoke active sessions). Then
+   follow the root sign-in procedure's credential steps for whoever owns it.
+   If the credential you just cut off is the one you normally use, continue
+   this procedure from a separate one: sign in to the root console and use
+   CloudShell.
 3. Read what the function did, from one minute before to five minutes after:
    `aws logs filter-log-events --log-group-name /aws/lambda/<function> --start-time <ms> --end-time <ms>`.
    - For `scoreboard-api` or `scoreboard-enroll`, a
@@ -692,10 +704,14 @@ with an event they wrote. In us-east-1:
      `aws cognito-idp admin-user-global-sign-out --user-pool-id <pool id> --username <username>`
      for each. That revokes refresh tokens; ID tokens already issued stay valid
      until they expire, at most an hour.
-   - For `scoreboard-authgate`, a direct invoke gets its caller nothing: the
-     gate's answer only matters when Cognito asks. Check its log for the
-     decision, then run the sign-in entry anyway, because a credential that can
-     invoke the gate can usually change it.
+   - For `scoreboard-authgate`, a direct invoke does get its caller something:
+     the gate's answer tells whoever sent it whether the address in the event
+     is on the invite list, so a direct invoke can enumerate invitations. Only
+     a refusal writes a log line (`sign-in refused`); an admitted address
+     writes none, so a decision in this window with no refusal line means that
+     address was admitted. Check its log for the decision, then run the
+     sign-in entry anyway, because a credential that can invoke the gate can
+     usually change it.
 4. Run the admin API entry in full for `scoreboard-api` or `scoreboard-enroll`,
    and the sign-in entry for `scoreboard-authgate`.
 
