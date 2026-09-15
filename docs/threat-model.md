@@ -226,14 +226,17 @@ caught rather than missed.
 The scoping is a naming convention, which is worth stating plainly because it is
 load-bearing: the security rules are `hockeytrack-sec-*`, this stack's security
 alarms `hockeytrack-security-*` and the topic `hockeytrack-security-alerts`, so
-a single prefix covers all three. The scoreboard's six IoT authorization alarms
-publish to the same topic but are named `scoreboard-iot-*`, so that prefix is
-listed as well. Which request field carries the name differs per call —
-`name`, `rule`, `alarmName`, `alarmNames`, `topicArn`, `subscriptionArn`, and
-both spellings of the tagging field, which EventBridge and CloudWatch record as
-`resourceARN` and SNS as `resourceArn` — and the list came from every write
-operation in the three service models, checked against the casing CloudTrail
-actually records rather than the casing the models declare.
+a single prefix covers all three. Most of the scoreboard's alarms publish to the
+same topic, and all of them are named `scoreboard-*`, so that prefix is listed
+as well; the scoreboard's own tests keep every alarm there inside it. Two of
+them, `scoreboard-iot-publish-retained-auth-error` and `scoreboard-dlq-depth`,
+notify the operational topic instead, and rewriting them pages too. Which
+request field carries the name differs per call — `name`, `rule`, `alarmName`,
+`alarmNames`, `topicArn`, `subscriptionArn`, and both spellings of the tagging
+field, which EventBridge and CloudWatch record as `resourceARN` and SNS as
+`resourceArn` — and the list came from every write operation in the three
+service models, checked against the casing CloudTrail actually records rather
+than the casing the models declare.
 
 Building this turned up a latent fault in the companion rule that watches for
 deletion: its CloudWatch branch named the wrong event source, so `DeleteAlarms`
@@ -253,15 +256,46 @@ Its limits:
 - An alarm can also be silenced without calling CloudWatch at all, by stopping
   the data underneath it — a metric filter that no longer matches emits nothing,
   and an alarm with no datapoints is not an alarm that fires.
-- The cost was measured before the rule was chosen: across ninety days, 33
-  writes to the three services named a security resource, and every one was this
-  repository's own `terraform apply`. None of the modify-style calls the rule
-  exists for — `SetAlarmState`, `DisableRule`, `SetSubscriptionAttributes` and
-  the rest — occurred at all, on any resource. So an apply that touches a
-  security resource now pages, up to ten times for a run that rewrites every
-  alarm, and nothing else does. Plans and no-op applies stay silent, because
-  Terraform reads these resources rather than writing them unless something
-  differs.
+- The cost was measured before the rule was chosen, while the scoreboard prefix
+  was still `scoreboard-iot-`: across ninety days, 33 writes to the three
+  services named a security resource, and every one was a `terraform apply` by
+  the account's one operator, in this repository or the scoreboard's. Under
+  today's `scoreboard-` prefix the same window holds 34, the extra one a write
+  to `scoreboard-dlq-depth`. None of the modify-style calls the rule exists for —
+  `SetAlarmState`, `DisableRule`, `SetSubscriptionAttributes` and the rest —
+  occurred at all, on any resource. So an apply that touches a security
+  resource now pages, at least once for every alarm it rewrites, and nothing
+  else does. The "up to ten times" once given here was counted under the old
+  prefix; the scope is now four of this repository's alarms and all thirteen of
+  the scoreboard's. Plans and no-op
+  applies stay silent, because Terraform reads these resources rather than
+  writing them unless something differs.
+
+**Changing the scoreboard's sign-in gate pages someone.** The scoreboard's
+admin site admits only invited Google accounts, and the thing that enforces
+that is a Lambda the user pool calls as a trigger, reading the invite list from
+one SSM parameter. The pool's own invite-only setting was verified not to stop
+Google accounts, so those three resources are an authorization root. A rule
+fires on any write that names the pool, the function or the parameter, in
+whichever request field names it: dropping the triggers, which fails open to
+every Google account; rewriting the function or its configuration; adding an
+address to the list; adding an identity provider or an app client; or changing
+a user directly. It lists no event names, and it is scoped to the scoreboard's
+resources because two other projects run pools, Lambdas and parameters in this
+account. The pool is found by name, but only when HockeyTrack itself plans, so
+a replaced pool is picked up at HockeyTrack's next apply, not the scoreboard's;
+until then the rule watches the old pool ID, and the replacement's own deletion
+of that pool is the write that happens to page. Sign-ins themselves do not
+page: the per-sign-in Cognito events carry no request parameters to match, and
+the gate's own invocation would, but the account's one trail does not log
+Lambda data events today. The scoreboard repository separately alarms on the
+gate crashing or being throttled, which are not API calls. The gate is not
+the only authorization root, though, and this rule does not watch the other:
+the admin API that consumes the tokens takes the caller's identity entirely
+from API Gateway's JWT authorizer, so changing which issuer that authorizer
+trusts, its routes or integrations, or the code of the two functions behind
+them can claim or control panels without touching the gate, and no rule in
+either repository watches any of that today.
 
 **Destroying the archive is gated, but the gate is honest about its size.**
 Versioning makes an accidental overwrite reversible; it does nothing against a
@@ -277,7 +311,7 @@ stolen-key case it exists to stop.
 
 What this does not do is stop this account's own administrator credential.
 `AdministratorAccess` includes `iam:CreateVirtualMFADevice` and
-`iam:EnableMFADevice`, so the holder of that key can enrol an MFA device of
+`iam:EnableMFADevice`, so the holder of that key can enroll an MFA device of
 their own and satisfy the condition legitimately in about five API calls. The
 policy is therefore a genuine control against a careless operator, an
 accidental `terraform destroy`, and any credential scoped away from IAM — and
@@ -344,7 +378,7 @@ Stated so they are decisions rather than oversights.
   A deny conditioned on `aws:MultiFactorAuthPresent` is therefore currently
   unsatisfiable by any principal except root, which is why the enforcement
   policy in `terraform/iam-mfa.tf` ships disabled: enabling it before enrolling
-  a device would deny the very calls that enrol one.
+  a device would deny the very calls that enroll one.
 - **The pairing model for the admin site is "you can see the screen".** For a
   device in a living room this is the right threshold; it would not be for
   anything carrying personal data.
@@ -427,13 +461,58 @@ the root sign-in procedure applies to it. Then establish what still works:
    publish; there should be no subscription you did not create; and
    `get-subscription-attributes` on each should show no `FilterPolicy`.
 3. `aws cloudwatch describe-alarms` for the `hockeytrack-security` and
-   `scoreboard-iot` prefixes. Check `ActionsEnabled`, the threshold, and that
+   `scoreboard` prefixes. Check `ActionsEnabled`, the threshold, and that
    `AlarmActions` still names the security topic.
-4. Run a plan in this repository, and one in the scoreboard for its IoT alarms.
+4. Run a plan in this repository, and one in the scoreboard for its alarms.
    Anything rewritten shows as a difference, and applying puts the repository's
    version back. What a plan cannot show you is an alarm forced to `OK` by
    `SetAlarmState`, because that is state rather than configuration; step 3 is
    what catches it.
+
+**A scoreboard sign-in alert you cannot account for.** Assume someone can admit
+an account of their choosing to the scoreboard admin site, and with it claim
+panels. The Actor line names the credential, and the root sign-in procedure
+applies to it. Then, in us-east-1:
+1. `aws cognito-idp describe-user-pool --user-pool-id <id> --query
+   'UserPool.LambdaConfig'`. Both `PreSignUp` and `PreTokenGenerationConfig`
+   must name `scoreboard-authgate`. If they are missing, the gate is open. No
+   other trigger may be set, because the scoreboard configures none; a
+   `PreTokenGeneration` key, if Cognito reports one, must name the same
+   function.
+2. `list-user-pool-clients` must show exactly one client, and
+   `list-identity-providers` exactly one provider, `Google`.
+3. `list-users`: every user should be an invited address, and none should be
+   anything but `EXTERNAL_PROVIDER`.
+4. Check which panels a user you did not invite claimed, before removing
+   anyone: `aws dynamodb scan --table-name scoreboard-devices
+   --projection-expression 'thingName, #o' --expression-attribute-names
+   '{"#o":"owner"}'`. Every `owner` must be the `sub` of a user you invited,
+   which `list-users` shows. Record any other: that panel is under someone
+   else's control.
+5. Read the invite list and remove anyone you did not invite
+   (`aws ssm get-parameter --name /scoreboard/allowed-emails`, then
+   `put-parameter --overwrite`). Do this before step 6, or a deleted account can
+   sign straight back in.
+6. For each user who should not be there, `admin-user-global-sign-out` and
+   then `admin-delete-user`. Neither call ends their access at once: access and
+   ID tokens already issued stay valid for up to an hour, because the API's JWT
+   authorizer checks a token's signature, issuer, audience and expiry, not
+   whether Cognito has revoked it.
+7. `aws lambda get-function --function-name scoreboard-authgate` and
+   `get-function-configuration`. Compare the code SHA and
+   `ALLOWLIST_PARAMETER` against a fresh `make build` and plan in the
+   scoreboard repository.
+8. The admin API, which the alert's rule does not watch. Find the
+   `scoreboard-admin` API with `aws apigatewayv2 get-apis`, then
+   `get-authorizers --api-id <id>`: its one JWT authorizer's issuer must be
+   `https://cognito-idp.us-east-1.amazonaws.com/<pool id>` and its audience the
+   site client's ID alone, as the scoreboard repository's `terraform/admin.tf`
+   sets them. A different issuer means whoever runs it can mint tokens the API
+   believes.
+9. Run a plan in the scoreboard repository: anything rewritten shows as a
+   difference, and applying puts it back. The invite list's value is the
+   exception, because Terraform deliberately ignores it, which is why step 5
+   reads it by hand.
 
 **The archive has lost objects.** Do not write anything to the bucket. Every
 object is versioned, the five most recent noncurrent versions of each key are
