@@ -313,6 +313,22 @@ toolchain change: the scoreboard's build no longer stamps each binary with its
 commit (the scoreboard change lands alongside this one), though each binary
 still records the Go and module versions that built it.
 
+**Calling the scoreboard's admin functions directly pages someone, and forged
+claims are refused.** API Gateway's authorizer checks a token and passes its
+claims to the function in the event, but a function cannot tell that event from
+one written by hand and sent with `lambda:Invoke`. Anyone in the account allowed
+that call could once have acted as any panel owner. Two things close it. The
+API and enrollment functions verify the ID token themselves (signature against
+the pool's published keys, issuer, exact audience, token use, expiry) and never
+read identity from the authorizer's claims; an event whose authorizer block
+says a token was accepted but whose token fails logs a line the scoreboard
+alarms on. And the trail now logs invocations of those two functions and the
+sign-in gate, and a rule pages on any not made by API Gateway or, for the gate,
+Cognito. The rule is what sees a genuine token replayed through a direct invoke,
+and anything sent to the gate, whose events carry no token. It does not watch
+the reducer or the daily schedule function, whose forged invocations would
+corrupt displayed game state but grant no control of a panel.
+
 **Destroying the archive is gated, but the gate is honest about its size.**
 Versioning makes an accidental overwrite reversible; it does nothing against a
 valid credential used deliberately. So every action that would destroy or
@@ -650,6 +666,38 @@ applies to it. Then, in us-east-1:
    scoreboard-devices --key '{"thingName":{"S":"<thing>"}}'`.
 9. Run a plan in the scoreboard repository. Anything rewritten shows as a
    difference, and applying puts it back.
+
+**A scoreboard direct-invoke alert you cannot account for.** Assume someone
+holds a credential in this account and has called a scoreboard admin function
+with an event they wrote. In us-east-1:
+1. Find the full record. The alert gives the time and the Actor ARN:
+   `aws logs filter-log-events --log-group-name /aws/cloudtrail/hockeytrack-account --start-time <ms> --filter-pattern '{ ($.eventSource = "lambda.amazonaws.com") && ($.eventCategory = "Data") }'`.
+   Note `userIdentity` (its `arn`, `accessKeyId`, and for a role
+   `sessionContext.sessionIssuer`), `sourceIPAddress`, which function, and the
+   exact `eventTime`.
+2. Cut the credential off before investigating further. For an IAM user's key,
+   `aws iam update-access-key --user-name <user> --access-key-id <id> --status Inactive`.
+   For a role, revoke its active sessions (IAM console, the role, Revoke active
+   sessions). Then follow the root sign-in procedure's credential steps for
+   whoever owns it.
+3. Read what the function did, from one minute before to five minutes after:
+   `aws logs filter-log-events --log-group-name /aws/lambda/<function> --start-time <ms> --end-time <ms>`.
+   - For `scoreboard-api` or `scoreboard-enroll`, a
+     `token rejected after authorizer accepted` line means the function refused
+     a forged event, and `scoreboard-token-mismatch` will have paged as well.
+   - No such line, and no error, means the event may have carried a genuine
+     token and been served. The logs do not record whose. Run the admin API
+     entry's panel check (step 6) and certificate check (step 8), and sign
+     every user out: `aws cognito-idp list-users --user-pool-id <pool id>`, then
+     `aws cognito-idp admin-user-global-sign-out --user-pool-id <pool id> --username <username>`
+     for each. That revokes refresh tokens; ID tokens already issued stay valid
+     until they expire, at most an hour.
+   - For `scoreboard-authgate`, a direct invoke gets its caller nothing: the
+     gate's answer only matters when Cognito asks. Check its log for the
+     decision, then run the sign-in entry anyway, because a credential that can
+     invoke the gate can usually change it.
+4. Run the admin API entry in full for `scoreboard-api` or `scoreboard-enroll`,
+   and the sign-in entry for `scoreboard-authgate`.
 
 **The archive has lost objects.** Do not write anything to the bucket. Every
 object is versioned, the five most recent noncurrent versions of each key are

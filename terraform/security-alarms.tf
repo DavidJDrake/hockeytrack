@@ -127,6 +127,7 @@ locals {
     logs              = aws_cloudwatch_event_rule.audit_log_tampering
     scoreboard_signin = aws_cloudwatch_event_rule.scoreboard_signin
     scoreboard_api    = aws_cloudwatch_event_rule.scoreboard_api
+    scoreboard_invoke = aws_cloudwatch_event_rule.scoreboard_invoke
   }
 
   # Raw CloudTrail JSON is unreadable on a phone, so the alert is rendered as a
@@ -169,6 +170,7 @@ locals {
     logs              = "If this was not you, assume audit history has been destroyed, shortened or redirected. Check that both audit log groups still exist with 90-day retention, that the root sign-in metric filter is intact, and whether a subscription filter, KMS key or account-level log policy has appeared."
     scoreboard_signin = "If this was not you, assume the scoreboard admin site's sign-in gate may be bypassed. Check the invite list, the user pool's triggers, app clients, identity providers and users, and the authgate function's code and environment, against the scoreboard repository."
     scoreboard_api    = "If this was not you, assume the scoreboard admin API may accept tokens or requests it should not. Check its JWT authorizer's issuer and audience, its routes' authorizers and integrations, and the scoreboard-api and scoreboard-enroll functions' code, configuration, role and permissions, against the scoreboard repository."
+    scoreboard_invoke = "If this was not you, assume someone with credentials in this account called a scoreboard admin function directly, skipping API Gateway or Cognito. Find the caller and access key in the CloudTrail record, check what the function did in its logs at that time, revoke the key, then check the admin API and sign-in gate against the scoreboard repository."
   }
 
   security_alert_template = {
@@ -1289,6 +1291,85 @@ resource "aws_cloudwatch_event_rule" "scoreboard_api" {
     precondition {
       condition     = length(local.scoreboard_api_pattern) <= 2048
       error_message = "The scoreboard API rule's event pattern is ${length(local.scoreboard_api_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
+    }
+  }
+}
+
+# ---- 12. Direct invocation of the scoreboard's admin-path functions ----
+#
+# Sections 10 and 11 watch changes to the sign-in gate and the admin API. This
+# watches calls. scoreboard-api and scoreboard-enroll exist to be invoked by
+# API Gateway, and scoreboard-authgate by Cognito; each function's resource
+# policy grants only that service. Anyone in this account whose own policy
+# allows lambda:InvokeFunction can still invoke them directly with an event
+# they wrote. The two API functions no longer believe such an event's claims
+# (they verify the ID token themselves), but a genuine token replayed that way
+# would be served, and authgate's events carry no token at all. So any
+# invocation not made by the one service each function exists for pages.
+#
+# The trail logs these invocations as Lambda data events (cloudtrail.tf).
+# Measured on 2026-09-15: API Gateway's invocations carry
+# userIdentity.invokedBy "apigateway.amazonaws.com", Cognito's
+# "cognito-idp.amazonaws.com", and a direct invoke by an IAM user carries no
+# invokedBy at all. anything-but does not match a missing field, so each
+# function group has a second branch for exists false.
+#
+# Each function is listed as CloudTrail may name it: bare, as an unqualified
+# ARN, and by prefix as an ARN qualified with a version or alias. The prefix
+# ends in a colon, so scoreboard-api cannot match a future scoreboard-api-v2.
+# No event names are listed, so Invoke, asynchronous invokes and
+# InvokeWithResponseStream are covered alike. Management events never match:
+# eventCategory is Data.
+#
+# What it does not see, the most important first:
+#   - A genuine token used through the API. Nothing about that call is
+#     unusual; token theft is a session problem. Tokens last an hour
+#     (id_token_validity in the scoreboard's admin.tf).
+#   - scoreboard-reducer and scoreboard-today. EventBridge invokes the reducer
+#     on every game event, so logging it multiplies data-event volume, and a
+#     forged invocation corrupts displayed game state without granting control
+#     of a panel or a certificate. Scheduler invokes today through its own role,
+#     and a direct invoke only republishes today's schedule.
+#   - A new route or permission that makes API Gateway or Cognito itself the
+#     caller: those are writes that sections 10 and 11 page on.
+#   - Invocations while the trail is not logging, which the audit rule pages on
+#     when logging stops or the selectors change.
+#   - Rewriting this rule, which section 9 catches.
+locals {
+  scoreboard_invoke_arn = { for name, f in data.aws_lambda_function.scoreboard_admin_path : name => f.arn }
+
+  scoreboard_invoke_api_path = [
+    "scoreboard-api", local.scoreboard_invoke_arn["scoreboard-api"], { "prefix" = "${local.scoreboard_invoke_arn["scoreboard-api"]}:" },
+    "scoreboard-enroll", local.scoreboard_invoke_arn["scoreboard-enroll"], { "prefix" = "${local.scoreboard_invoke_arn["scoreboard-enroll"]}:" },
+  ]
+  scoreboard_invoke_gate = [
+    "scoreboard-authgate", local.scoreboard_invoke_arn["scoreboard-authgate"], { "prefix" = "${local.scoreboard_invoke_arn["scoreboard-authgate"]}:" },
+  ]
+
+  scoreboard_invoke_pattern = jsonencode({
+    "detail-type" = ["AWS API Call via CloudTrail"]
+    "detail" = {
+      "eventSource"   = ["lambda.amazonaws.com"]
+      "eventCategory" = ["Data"]
+      "$or" = [
+        { "requestParameters" = { "functionName" = local.scoreboard_invoke_api_path }, "userIdentity" = { "invokedBy" = [{ "anything-but" = ["apigateway.amazonaws.com"] }] } },
+        { "requestParameters" = { "functionName" = local.scoreboard_invoke_api_path }, "userIdentity" = { "invokedBy" = [{ "exists" = false }] } },
+        { "requestParameters" = { "functionName" = local.scoreboard_invoke_gate }, "userIdentity" = { "invokedBy" = [{ "anything-but" = ["cognito-idp.amazonaws.com"] }] } },
+        { "requestParameters" = { "functionName" = local.scoreboard_invoke_gate }, "userIdentity" = { "invokedBy" = [{ "exists" = false }] } },
+      ]
+    }
+  })
+}
+
+resource "aws_cloudwatch_event_rule" "scoreboard_invoke" {
+  name          = "hockeytrack-sec-scoreboard-invoke"
+  description   = "Any invocation of scoreboard-api or scoreboard-enroll not made by API Gateway, or of scoreboard-authgate not made by Cognito: someone calling them directly with an event they wrote"
+  event_pattern = local.scoreboard_invoke_pattern
+
+  lifecycle {
+    precondition {
+      condition     = length(local.scoreboard_invoke_pattern) <= 2048
+      error_message = "The scoreboard invoke rule's event pattern is ${length(local.scoreboard_invoke_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
     }
   }
 }
