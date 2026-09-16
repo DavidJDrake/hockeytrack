@@ -106,3 +106,13 @@ A CloudFront invalidation on the site's distribution — what every `make site` 
 ### Drift
 
 `terraform plan -detailed-exitcode` exits 0 in this repository after the apply.
+
+### After the whole-branch review (2026-09-16 03:00)
+
+The review found two gaps in the rule as first applied, and four documents that had drifted apart. Both gaps are closed, and the pattern is now 1,572 characters.
+
+- **The CloudFront tag branch was dead.** It matched `Resource`, but CloudTrail records CloudFront's request parameters with a lowercase first letter, so tagging the distribution paged nobody. Worse, the field table listed that row as confirmed against real events when it came from the service model: no CloudFront `TagResource` occurred in the 90-day window. Both casings now match, and the row says where it came from.
+- **The log-group leg saw one field name only.** CloudWatch Logs names a group through `logGroupName`, `logGroupIdentifier` (name or ARN) and `resourceArn` depending on the call. `PutTransformer` and `PutDataProtectionPolicy` rewrite or mask log content at ingestion, which silences the refusal, crash and mismatch filters exactly as deleting a filter would, and neither paged. Both fields are now matched in both forms. The list-valued fields on query and anomaly-detector calls stay out of the pattern and are named as gaps.
+- **EventBridge rejects a pattern with too many wildcards in one field,** and only at apply, where `terraform validate` cannot see it. The ARN branches use `prefix` with the account and region written out instead.
+- **Breaks for the newly covered routes, 03:04:13 to 03:04:18:** a tag added and removed on the distribution, and a data-protection policy put and deleted on `/aws/lambda/scoreboard-api`. All four paged: `MatchedEvents` 4, `Invocations` 4, no `FailedInvocations`, dead-letter queue 0. Nothing was left behind — the distribution has no tags, and the policy is deleted.
+- **The documents were reconciled.** The threat model no longer says the rule lists no event names, and the six places in sections 10, 11 and the threat model that called these routes unwatched now point at section 13.
