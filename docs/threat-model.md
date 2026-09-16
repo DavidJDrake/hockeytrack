@@ -337,6 +337,21 @@ and anything sent to the gate, whose events carry no token. It does not watch
 the reducer or the daily schedule function, whose forged invocations would
 corrupt displayed game state but grant no control of a panel.
 
+**Changing what the scoreboard's rules lean on pages someone.** Three things
+carry the rules above, and none of them was watched. The seven roles the
+scoreboard's functions assume, `scoreboard-enroll`'s above all, which may
+create IoT certificates and attach the device policy. The log groups whose
+metric filters are the refusal, crash and mismatch alarms, and whose history
+the recovery procedures read: deleting a filter silences an alarm without
+touching it, and shortening retention destroys the evidence. And the static
+site's bucket and distribution, which serve the sign-in page on the real
+domain. A fourth rule now fires on any write naming one of them. It is scoped
+to those resources and lists no event names, so ordinary site deploys stay
+silent only because an invalidation names the distribution in a different
+field than a configuration change does. It does not see objects replaced
+inside the site bucket, which are data events the trail does not log, nor the
+DNS record that points the domain at the distribution.
+
 **Destroying the archive is gated, but the gate is honest about its size.**
 Versioning makes an accidental overwrite reversible; it does nothing against a
 valid credential used deliberately. So every action that would destroy or
@@ -764,6 +779,44 @@ with an event they wrote. In us-east-1:
      usually change it.
 4. Run the admin API entry in full for `scoreboard-api` or `scoreboard-enroll`,
    and the sign-in entry for `scoreboard-authgate`.
+
+**A scoreboard support alert you cannot account for.** Assume one of the
+things the scoreboard's other rules depend on has been changed. The alert's
+event name says which. In us-east-1:
+1. **A role** (`PutRolePolicy`, `AttachRolePolicy`, `UpdateAssumeRolePolicy`,
+   `DeleteRolePolicy`, …). List what it holds now:
+   `aws iam list-role-policies --role-name <role>`,
+   `aws iam get-role-policy --role-name <role> --policy-name <name>`,
+   `aws iam list-attached-role-policies --role-name <role>`, and
+   `aws iam get-role --role-name <role> --query Role.AssumeRolePolicyDocument`.
+   Compare each with the scoreboard repository's `terraform/` (`iam.tf`,
+   `admin.tf`, `enroll.tf`, `signin.tf`, `scheduler.tf`, `iot-logging.tf`).
+   For `scoreboard-enroll`, also run the admin API entry's certificate check:
+   a widened role's whole point is minting device identities.
+2. **A log group** (`PutRetentionPolicy`, `DeleteMetricFilter`,
+   `PutMetricFilter`, `DeleteLogGroup`, `PutSubscriptionFilter`). Check what
+   survives: `aws logs describe-log-groups --log-group-name-prefix /aws/lambda/scoreboard`
+   for retention, and `aws logs describe-metric-filters --log-group-name <group>`
+   against the scoreboard repository (`signin.tf` and `admin.tf` hold them all).
+   A filter that is gone means its alarm has been sitting in
+   INSUFFICIENT_DATA rather than firing:
+   `aws cloudwatch describe-alarms --alarm-name-prefix scoreboard- --query "MetricAlarms[].[AlarmName,StateValue,StateUpdatedTimestamp]"`.
+   A subscription filter that you did not create is exfiltration of the logs;
+   delete it. Re-apply the scoreboard repository to restore filters and
+   retention.
+3. **The site** (`PutBucketPolicy`, `PutBucketPublicAccessBlock`,
+   `UpdateDistribution`, `DeleteDistribution`, …). Compare
+   `aws s3api get-bucket-policy --bucket scoreboard-site-<account id>` and
+   `aws s3api get-public-access-block --bucket scoreboard-site-<account id>`
+   with the scoreboard repository's `terraform/site.tf`, and
+   `aws cloudfront get-distribution-config --id <id>` for its origins, origin
+   access control, cache behaviors, aliases and custom error responses. Then
+   check what is being served, because the objects themselves are not logged:
+   re-run the scoreboard's `make site` from a clean checkout, which uploads
+   every file and invalidates, and confirm the sign-in page's script and style
+   sources against the repository.
+4. In every case, the credential in the Actor line is the thing to cut off
+   first; the direct-invoke entry's step 2 says how.
 
 **The archive has lost objects.** Do not write anything to the bucket. Every
 object is versioned, the five most recent noncurrent versions of each key are

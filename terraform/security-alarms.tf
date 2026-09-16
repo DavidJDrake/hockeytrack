@@ -118,16 +118,17 @@ resource "aws_sns_topic_policy" "security" {
 
 locals {
   security_rules = {
-    identity          = aws_cloudwatch_event_rule.identity_escalation
-    audit             = aws_cloudwatch_event_rule.audit_tampering
-    archive           = aws_cloudwatch_event_rule.archive_tampering
-    alerting          = aws_cloudwatch_event_rule.alerting_tampering
-    alerting_modify   = aws_cloudwatch_event_rule.alerting_modification
-    iot               = aws_cloudwatch_event_rule.iot_tampering
-    logs              = aws_cloudwatch_event_rule.audit_log_tampering
-    scoreboard_signin = aws_cloudwatch_event_rule.scoreboard_signin
-    scoreboard_api    = aws_cloudwatch_event_rule.scoreboard_api
-    scoreboard_invoke = aws_cloudwatch_event_rule.scoreboard_invoke
+    identity           = aws_cloudwatch_event_rule.identity_escalation
+    audit              = aws_cloudwatch_event_rule.audit_tampering
+    archive            = aws_cloudwatch_event_rule.archive_tampering
+    alerting           = aws_cloudwatch_event_rule.alerting_tampering
+    alerting_modify    = aws_cloudwatch_event_rule.alerting_modification
+    iot                = aws_cloudwatch_event_rule.iot_tampering
+    logs               = aws_cloudwatch_event_rule.audit_log_tampering
+    scoreboard_signin  = aws_cloudwatch_event_rule.scoreboard_signin
+    scoreboard_api     = aws_cloudwatch_event_rule.scoreboard_api
+    scoreboard_invoke  = aws_cloudwatch_event_rule.scoreboard_invoke
+    scoreboard_support = aws_cloudwatch_event_rule.scoreboard_support
   }
 
   # Raw CloudTrail JSON is unreadable on a phone, so the alert is rendered as a
@@ -161,16 +162,17 @@ locals {
   # sentence lands inside a JSON string in the template below.
   archive_alert_meaning = "If this was not you, assume the archive's MFA gate is bypassed."
   security_alert_meaning = {
-    identity          = local.archive_alert_meaning
-    audit             = local.archive_alert_meaning
-    archive           = local.archive_alert_meaning
-    alerting          = local.archive_alert_meaning
-    alerting_modify   = "If this was not you, assume a security alarm has been reconfigured rather than removed, which is the quieter way to silence it. Check the pattern and targets of every hockeytrack-sec rule, the security topic's policy and its subscription list, and the threshold, actions, actions-enabled flag and state of every hockeytrack-security and scoreboard alarm, against this repository."
-    iot               = "If this was not you, assume an AWS credential is compromised, and check the scoreboard's device policy, certificates and IoT logging."
-    logs              = "If this was not you, assume audit history has been destroyed, shortened or redirected. Check that both audit log groups still exist with 90-day retention, that the root sign-in metric filter is intact, and whether a subscription filter, KMS key or account-level log policy has appeared."
-    scoreboard_signin = "If this was not you, assume the scoreboard admin site's sign-in gate may be bypassed. Check the invite list, the user pool's triggers, app clients, identity providers and users, and the authgate function's code and environment, against the scoreboard repository."
-    scoreboard_api    = "If this was not you, assume the scoreboard admin API may accept tokens or requests it should not. Check its JWT authorizer's issuer and audience, its routes' authorizers and integrations, the scoreboard-api and scoreboard-enroll functions' USER_POOL_ID and APP_CLIENT_ID environment variables, and their code, configuration, role and permissions, against the scoreboard repository."
-    scoreboard_invoke = "If this was not you, assume someone with credentials in this account called a scoreboard admin function directly, skipping API Gateway or Cognito. Find the caller and access key in the CloudTrail record, check what the function did in its logs at that time, revoke the key, then check the admin API and sign-in gate against the scoreboard repository."
+    identity           = local.archive_alert_meaning
+    audit              = local.archive_alert_meaning
+    archive            = local.archive_alert_meaning
+    alerting           = local.archive_alert_meaning
+    alerting_modify    = "If this was not you, assume a security alarm has been reconfigured rather than removed, which is the quieter way to silence it. Check the pattern and targets of every hockeytrack-sec rule, the security topic's policy and its subscription list, and the threshold, actions, actions-enabled flag and state of every hockeytrack-security and scoreboard alarm, against this repository."
+    iot                = "If this was not you, assume an AWS credential is compromised, and check the scoreboard's device policy, certificates and IoT logging."
+    logs               = "If this was not you, assume audit history has been destroyed, shortened or redirected. Check that both audit log groups still exist with 90-day retention, that the root sign-in metric filter is intact, and whether a subscription filter, KMS key or account-level log policy has appeared."
+    scoreboard_signin  = "If this was not you, assume the scoreboard admin site's sign-in gate may be bypassed. Check the invite list, the user pool's triggers, app clients, identity providers and users, and the authgate function's code and environment, against the scoreboard repository."
+    scoreboard_api     = "If this was not you, assume the scoreboard admin API may accept tokens or requests it should not. Check its JWT authorizer's issuer and audience, its routes' authorizers and integrations, the scoreboard-api and scoreboard-enroll functions' USER_POOL_ID and APP_CLIENT_ID environment variables, and their code, configuration, role and permissions, against the scoreboard repository."
+    scoreboard_invoke  = "If this was not you, assume someone with credentials in this account called a scoreboard admin function directly, skipping API Gateway or Cognito. Find the caller and access key in the CloudTrail record, check what the function did in its logs at that time, revoke the key, then check the admin API and sign-in gate against the scoreboard repository."
+    scoreboard_support = "If this was not you, assume the scoreboard's supporting resources have been changed: a function's role, the log groups its alarms and recovery steps read, or the site's bucket or distribution. Check the enroll role's IoT permissions, the metric filters and retention on every scoreboard log group, and the site bucket's policy and the distribution's origins and behaviors, against the scoreboard repository."
   }
 
   security_alert_template = {
@@ -1415,6 +1417,127 @@ resource "aws_cloudwatch_event_rule" "scoreboard_invoke" {
     precondition {
       condition     = length(local.scoreboard_invoke_pattern) <= 2048
       error_message = "The scoreboard invoke rule's event pattern is ${length(local.scoreboard_invoke_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
+    }
+  }
+}
+
+# ---- 13. The scoreboard's supporting control plane ----
+#
+# Sections 10 to 12 watch who may sign in, what a token is worth, and who may
+# call the functions. Each of them leans on three things nothing watched until
+# now, and each is a way to take control or go blind without touching what
+# those rules see:
+#
+#   The roles          scoreboard-enroll's role can create IoT certificates and
+#                      attach the device policy, so a widened grant there mints
+#                      device identities. Section 1 excludes role-policy churn
+#                      deliberately, because this account's own applies are
+#                      noisy; scoped to these seven roles it is not.
+#   The log groups     Every alarm here is a metric filter on a log group:
+#                      refused sign-ins, gate crashes, the token mismatch.
+#                      Deleting a filter silences the alarm while leaving the
+#                      alarm in place, and deleting a group or shortening its
+#                      retention destroys what the recovery procedures read.
+#   The static site    The bucket and distribution serve the sign-in page on
+#                      the real domain. A changed bucket policy or a repointed
+#                      origin serves a look-alike page to the owner.
+#
+# Which fields name them, confirmed against real events on 2026-09-16:
+#
+#   roleName       every IAM write that takes a role; these roles' policies are
+#                  all inline, so no write names them only by policy ARN
+#   logGroupName   PutRetentionPolicy, PutMetricFilter, DeleteMetricFilter,
+#                  DeleteLogGroup, PutSubscriptionFilter
+#   bucketName     S3 bucket writes, which also name the bucket in resources[]
+#   id             CloudFront UpdateDistribution and DeleteDistribution
+#   Resource       CloudFront TagResource/UntagResource, a distribution ARN
+#
+# Site deploys stay silent without naming an event, which is how sections 9 to
+# 12 are built: CreateInvalidation names the distribution in distributionId,
+# which this pattern does not match, while configuration changes name it in id,
+# which it does. If CloudFront ever records an invalidation under id, every
+# deploy starts paging -- noisy, not blind, and the fix is a field list here.
+#
+# Measured over ninety days to 2026-09-16, account-wide: CreateInvalidation
+# past the 50-event query cap, UpdateDistribution 17 (all while the site was
+# being built), PutRolePolicy 50 of which about 10 name scoreboard roles,
+# PutRetentionPolicy 27, PutMetricFilter 6, PutBucketPolicy 13 (none on the
+# site bucket), DeleteLogGroup 0. So the accepted noise is a scoreboard apply
+# that changes a role policy, a retention or filter change, and the occasional
+# distribution change. All are deliberate, and the person doing them is the
+# person reading the alert.
+#
+# What it does not see:
+#   - Objects in the site bucket. PutObject is a data event, and the trail logs
+#     object events only for the raw archive, so a page replaced in place is
+#     invisible. The distribution's origins and behaviors are what this covers.
+#   - A moved domain alias. AssociateAlias names the target distribution, which
+#     for an attacker's copy is not this one, and the DNS record lives outside
+#     the resources this account watches.
+#   - Customer-managed policies. These roles use inline policies only; a
+#     managed policy attached later could be widened by a CreatePolicyVersion
+#     that names only the policy ARN.
+#   - Identities that can already reach these resources, which section 1 covers
+#     for the account's own escalation paths.
+#   - Rewriting this rule, which section 9 catches.
+data "aws_iam_role" "scoreboard" {
+  for_each = toset([
+    "scoreboard-api",
+    "scoreboard-authgate",
+    "scoreboard-enroll",
+    "scoreboard-iot-logging",
+    "scoreboard-reducer",
+    "scoreboard-scheduler-invoke",
+    "scoreboard-today",
+  ])
+  name = each.key
+}
+
+data "aws_s3_bucket" "scoreboard_site" {
+  bucket = "scoreboard-site-${data.aws_caller_identity.current.account_id}"
+}
+
+data "aws_cloudfront_distribution" "scoreboard_site" {
+  id = "E3Q7R79Q7PXH26"
+}
+
+locals {
+  scoreboard_role_names        = sort([for r in data.aws_iam_role.scoreboard : r.name])
+  scoreboard_site_bucket       = data.aws_s3_bucket.scoreboard_site.bucket
+  scoreboard_site_distribution = data.aws_cloudfront_distribution.scoreboard_site.id
+  scoreboard_site_alias        = "scoreboard.davidjdrake.com"
+
+  scoreboard_support_pattern = jsonencode({
+    "detail-type" = ["AWS API Call via CloudTrail"]
+    "detail" = {
+      "eventSource"   = ["iam.amazonaws.com", "logs.amazonaws.com", "s3.amazonaws.com", "cloudfront.amazonaws.com"]
+      "eventCategory" = ["Management"]
+      "readOnly"      = [false]
+      "$or" = [
+        { "requestParameters" = { "roleName" = local.scoreboard_role_names } },
+        { "requestParameters" = { "logGroupName" = [{ "wildcard" = "/aws/lambda/scoreboard-*" }, "/aws/apigateway/scoreboard-admin"] } },
+        { "requestParameters" = { "bucketName" = [local.scoreboard_site_bucket] } },
+        { "requestParameters" = { "id" = [local.scoreboard_site_distribution] } },
+        { "requestParameters" = { "Resource" = [{ "prefix" = "arn:aws:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/${local.scoreboard_site_distribution}" }] } },
+        { "resources" = { "ARN" = ["arn:aws:s3:::${local.scoreboard_site_bucket}"] } },
+      ]
+    }
+  })
+}
+
+resource "aws_cloudwatch_event_rule" "scoreboard_support" {
+  name          = "hockeytrack-sec-scoreboard-support"
+  description   = "Any write naming a scoreboard function's role, a scoreboard log group, or the static site's bucket or distribution: the routes to widening a role, silencing an alarm, or serving a look-alike page"
+  event_pattern = local.scoreboard_support_pattern
+
+  lifecycle {
+    precondition {
+      condition     = contains(data.aws_cloudfront_distribution.scoreboard_site.aliases, local.scoreboard_site_alias)
+      error_message = "Distribution ${local.scoreboard_site_distribution} does not serve ${local.scoreboard_site_alias}. The scoreboard site's distribution has been replaced, and this rule would watch the wrong one."
+    }
+    precondition {
+      condition     = length(local.scoreboard_support_pattern) <= 2048
+      error_message = "The scoreboard support rule's event pattern is ${length(local.scoreboard_support_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
     }
   }
 }
