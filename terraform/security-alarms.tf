@@ -118,16 +118,17 @@ resource "aws_sns_topic_policy" "security" {
 
 locals {
   security_rules = {
-    identity          = aws_cloudwatch_event_rule.identity_escalation
-    audit             = aws_cloudwatch_event_rule.audit_tampering
-    archive           = aws_cloudwatch_event_rule.archive_tampering
-    alerting          = aws_cloudwatch_event_rule.alerting_tampering
-    alerting_modify   = aws_cloudwatch_event_rule.alerting_modification
-    iot               = aws_cloudwatch_event_rule.iot_tampering
-    logs              = aws_cloudwatch_event_rule.audit_log_tampering
-    scoreboard_signin = aws_cloudwatch_event_rule.scoreboard_signin
-    scoreboard_api    = aws_cloudwatch_event_rule.scoreboard_api
-    scoreboard_invoke = aws_cloudwatch_event_rule.scoreboard_invoke
+    identity           = aws_cloudwatch_event_rule.identity_escalation
+    audit              = aws_cloudwatch_event_rule.audit_tampering
+    archive            = aws_cloudwatch_event_rule.archive_tampering
+    alerting           = aws_cloudwatch_event_rule.alerting_tampering
+    alerting_modify    = aws_cloudwatch_event_rule.alerting_modification
+    iot                = aws_cloudwatch_event_rule.iot_tampering
+    logs               = aws_cloudwatch_event_rule.audit_log_tampering
+    scoreboard_signin  = aws_cloudwatch_event_rule.scoreboard_signin
+    scoreboard_api     = aws_cloudwatch_event_rule.scoreboard_api
+    scoreboard_invoke  = aws_cloudwatch_event_rule.scoreboard_invoke
+    scoreboard_support = aws_cloudwatch_event_rule.scoreboard_support
   }
 
   # Raw CloudTrail JSON is unreadable on a phone, so the alert is rendered as a
@@ -161,16 +162,17 @@ locals {
   # sentence lands inside a JSON string in the template below.
   archive_alert_meaning = "If this was not you, assume the archive's MFA gate is bypassed."
   security_alert_meaning = {
-    identity          = local.archive_alert_meaning
-    audit             = local.archive_alert_meaning
-    archive           = local.archive_alert_meaning
-    alerting          = local.archive_alert_meaning
-    alerting_modify   = "If this was not you, assume a security alarm has been reconfigured rather than removed, which is the quieter way to silence it. Check the pattern and targets of every hockeytrack-sec rule, the security topic's policy and its subscription list, and the threshold, actions, actions-enabled flag and state of every hockeytrack-security and scoreboard alarm, against this repository."
-    iot               = "If this was not you, assume an AWS credential is compromised, and check the scoreboard's device policy, certificates and IoT logging."
-    logs              = "If this was not you, assume audit history has been destroyed, shortened or redirected. Check that both audit log groups still exist with 90-day retention, that the root sign-in metric filter is intact, and whether a subscription filter, KMS key or account-level log policy has appeared."
-    scoreboard_signin = "If this was not you, assume the scoreboard admin site's sign-in gate may be bypassed. Check the invite list, the user pool's triggers, app clients, identity providers and users, and the authgate function's code and environment, against the scoreboard repository."
-    scoreboard_api    = "If this was not you, assume the scoreboard admin API may accept tokens or requests it should not. Check its JWT authorizer's issuer and audience, its routes' authorizers and integrations, the scoreboard-api and scoreboard-enroll functions' USER_POOL_ID and APP_CLIENT_ID environment variables, and their code, configuration, role and permissions, against the scoreboard repository."
-    scoreboard_invoke = "If this was not you, assume someone with credentials in this account called a scoreboard admin function directly, skipping API Gateway or Cognito. Find the caller and access key in the CloudTrail record, check what the function did in its logs at that time, revoke the key, then check the admin API and sign-in gate against the scoreboard repository."
+    identity           = local.archive_alert_meaning
+    audit              = local.archive_alert_meaning
+    archive            = local.archive_alert_meaning
+    alerting           = local.archive_alert_meaning
+    alerting_modify    = "If this was not you, assume a security alarm has been reconfigured rather than removed, which is the quieter way to silence it. Check the pattern and targets of every hockeytrack-sec rule, the security topic's policy and its subscription list, and the threshold, actions, actions-enabled flag and state of every hockeytrack-security and scoreboard alarm, against this repository."
+    iot                = "If this was not you, assume an AWS credential is compromised, and check the scoreboard's device policy, certificates and IoT logging."
+    logs               = "If this was not you, assume audit history has been destroyed, shortened or redirected. Check that both audit log groups still exist with 90-day retention, that the root sign-in metric filter is intact, and whether a subscription filter, KMS key or account-level log policy has appeared."
+    scoreboard_signin  = "If this was not you, assume the scoreboard admin site's sign-in gate may be bypassed. Check the invite list, the user pool's triggers, app clients, identity providers and users, and the authgate function's code and environment, against the scoreboard repository."
+    scoreboard_api     = "If this was not you, assume the scoreboard admin API may accept tokens or requests it should not. Check its JWT authorizer's issuer and audience, its routes' authorizers and integrations, the scoreboard-api and scoreboard-enroll functions' USER_POOL_ID and APP_CLIENT_ID environment variables, and their code, configuration, role and permissions, against the scoreboard repository."
+    scoreboard_invoke  = "If this was not you, assume someone with credentials in this account called a scoreboard admin function directly, skipping API Gateway or Cognito. Find the caller and access key in the CloudTrail record, check what the function did in its logs at that time, revoke the key, then check the admin API and sign-in gate against the scoreboard repository."
+    scoreboard_support = "If this was not you, assume the scoreboard's supporting resources have been changed: a function's role, the log groups its alarms and recovery steps read, or the site's bucket or distribution. Check the enroll role's IoT permissions, the metric filters and retention on every scoreboard log group, and the site bucket's policy and the distribution's origins and behaviors, against the scoreboard repository."
   }
 
   security_alert_template = {
@@ -1085,24 +1087,26 @@ resource "aws_cloudwatch_event_rule" "alerting_modification" {
 # invite list.
 #
 # The rest: the static site's bucket and distribution, which could serve a
-# look-alike sign-in page; a crash or throttle, which are not API calls and
-# which the scoreboard's own authgate alarms watch; rewriting this rule, which
-# section 9 catches; a pool replacement between HockeyTrack applies, covered
-# above; and a call that names one of these three resources only through a
-# field not listed above, the same silent-failure mode as section 8's and
-# section 9's field lists.
+# look-alike sign-in page -- which section 13 now pages on; a crash or
+# throttle, which are not API calls and which the scoreboard's own authgate
+# alarms watch; rewriting this rule, which section 9 catches; a pool
+# replacement between HockeyTrack applies, covered above; and a call that
+# names one of these three resources only through a field not listed above,
+# the same silent-failure mode as section 8's and section 9's field lists.
 #
 # Nor does it see the quieter ways to blind or close the gate, because it
 # watches neither CloudWatch Logs nor IAM. Deleting or rewriting the metric
 # filters on /aws/lambda/scoreboard-authgate silences the refusal and failures
-# alarms; section 8 names only the trail group and AWSIotLogsV2. Taking the
-# logs permissions off the gate's role does the same while the gate carries on
-# deciding, and taking ssm:GetParameter off it fails the gate closed, logging
-# each refusal as "invite list unavailable" but paging only at three in an
-# hour. Section 1 deliberately excludes role-policy churn. The failures filter
-# also assumes Lambda's default text log format: switching the function to
-# JSON logging changes how the runtime writes those lines, though that switch
-# is itself an UpdateFunctionConfiguration, which this rule pages on.
+# alarms, which section 13 now pages on; section 8 names only the trail group
+# and AWSIotLogsV2. Taking the logs permissions off the gate's role does the
+# same while the gate carries on deciding -- section 13 now pages on that too,
+# scoped to these seven roles -- and taking ssm:GetParameter off it fails the
+# gate closed, logging each refusal as "invite list unavailable" but paging
+# only at three in an hour. Section 1 deliberately excludes role-policy churn.
+# The failures filter also assumes Lambda's default text log format: switching
+# the function to JSON logging changes how the runtime writes those lines,
+# though that switch is itself an UpdateFunctionConfiguration, which this rule
+# pages on.
 data "aws_cognito_user_pools" "scoreboard" {
   name = "scoreboard-admins"
 }
@@ -1253,11 +1257,11 @@ resource "aws_cloudwatch_event_rule" "scoreboard_signin" {
 #     Gateway did not make.
 #   - Deleting or shortening the logs the recovery steps read. A DeleteLogGroup,
 #     DeleteLogStream or PutRetentionPolicy on /aws/apigateway/scoreboard-admin,
-#     /aws/lambda/scoreboard-api or /aws/lambda/scoreboard-enroll pages nobody:
-#     section 8 names only the trail group and AWSIotLogsV2. The threat
-#     model's recovery entry depends on those groups. Removing access logging
-#     from the stage itself does page, because UpdateStage and
-#     DeleteAccessLogSettings both name the API.
+#     /aws/lambda/scoreboard-api or /aws/lambda/scoreboard-enroll used to page
+#     nobody -- section 8 names only the trail group and AWSIotLogsV2 -- but
+#     section 13 now pages on it. The threat model's recovery entry depends on
+#     those groups. Removing access logging from the stage itself does page,
+#     because UpdateStage and DeleteAccessLogSettings both name the API.
 #   - A custom domain rerouted away from the API. DeleteApiMapping names only
 #     the domain and the mapping, and UpdateDomainName names only the domain.
 #     CreateRoutingRule and PutRoutingRule do carry the API ID, but nested at
@@ -1266,10 +1270,11 @@ resource "aws_cloudwatch_event_rule" "scoreboard_signin" {
 #     can reach it yet. Adding one means adding its domainName here.
 #   - The two functions' IAM roles. HockeyTrack's identity rule excludes role-policy
 #     churn deliberately, but scoreboard-enroll's role can mint device
-#     certificates, so a widened grant there is a real route this does not watch.
+#     certificates, so a widened grant there is a real route this does not
+#     watch -- section 13 now pages on it, scoped to these seven roles.
 #   - The devices table's ownership rows. Writes to them are DynamoDB data events,
 #     which the trail does not log.
-#   - The static site's bucket and distribution.
+#   - The static site's bucket and distribution, which section 13 now pages on.
 #   - A call that names these resources only through a field not listed above,
 #     the silent-failure mode sections 8 to 10 share.
 #   - Rewriting this rule, which section 9 catches.
@@ -1415,6 +1420,211 @@ resource "aws_cloudwatch_event_rule" "scoreboard_invoke" {
     precondition {
       condition     = length(local.scoreboard_invoke_pattern) <= 2048
       error_message = "The scoreboard invoke rule's event pattern is ${length(local.scoreboard_invoke_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
+    }
+  }
+}
+
+# ---- 13. The scoreboard's supporting control plane ----
+#
+# Sections 10 to 12 watch who may sign in, what a token is worth, and who may
+# call the functions. Each of them leans on three things nothing watched until
+# now, and each is a way to take control or go blind without touching what
+# those rules see:
+#
+#   The roles          scoreboard-enroll's role can create IoT certificates and
+#                      attach the device policy, so a widened grant there mints
+#                      device identities. Section 1 excludes role-policy churn
+#                      deliberately, because this account's own applies are
+#                      noisy; scoped to these seven roles it is not.
+#   The log groups     Every alarm here is a metric filter on a log group:
+#                      refused sign-ins, gate crashes, the token mismatch.
+#                      Deleting a filter silences the alarm while leaving the
+#                      alarm in place, and deleting a group or shortening its
+#                      retention destroys what the recovery procedures read.
+#   The static site    The bucket and distribution serve the sign-in page on
+#                      the real domain. A changed bucket policy or a repointed
+#                      origin serves a look-alike page to the owner.
+#
+# Which fields name them. Most rows were confirmed against real events on
+# 2026-09-16; the ones marked model-only were not, because no matching event
+# occurred in the 90-day window, and come instead from walking the input of
+# every write operation in the iam, logs, s3 and cloudfront service models
+# shipped with aws-cli 2.33.2 -- the same method section 8 used for the log
+# group field list:
+#
+#   roleName            every IAM write that takes a role; these roles'
+#                       policies are all inline, so no write names them only
+#                       by policy ARN
+#   logGroupName        PutRetentionPolicy, PutMetricFilter,
+#                       DeleteMetricFilter, DeleteLogGroup,
+#                       PutSubscriptionFilter
+#   logGroupIdentifier  model-only: PutTransformer, DeleteTransformer
+#                       (rewrite events at ingestion -- blinds the refusal,
+#                       crash and mismatch filters), PutDataProtectionPolicy
+#                       (masks content, same effect),
+#                       PutLogGroupDeletionProtection, PutIndexPolicy,
+#                       DeleteIndexPolicy. Takes a name or an ARN, so it is
+#                       matched against both forms.
+#   resourceArn         model-only: TagResource, PutResourcePolicy,
+#                       PutDeliverySource (a copy-out route). Matched against
+#                       both forms for the same reason, though a bare name in
+#                       an ARN-typed field is not expected to occur.
+#   bucketName          S3 bucket writes, which also name the bucket in
+#                       resources[]
+#   id                  CloudFront UpdateDistribution and DeleteDistribution
+#   Resource / resource CloudFront TagResource/UntagResource, a distribution
+#                       ARN. Both casings are matched: the service model gives
+#                       Resource, but CloudTrail lowercases the first letter
+#                       of CloudFront request parameters, the way sections 10
+#                       and 11 found for Lambda's identically-modeled
+#                       "resource" member. No CloudFront TagResource occurred
+#                       in the 90-day window, so this row is model-only too,
+#                       and both casings are matched because of that.
+#
+# Site deploys stay silent without naming an event, which is how sections 9 to
+# 12 are built: CreateInvalidation names the distribution in distributionId,
+# which this pattern does not match, while configuration changes name it in id,
+# which it does. If CloudFront ever records an invalidation under id, every
+# deploy starts paging -- noisy, not blind, and the fix is a field list here.
+#
+# Measured over ninety days to 2026-09-16: 40,420 management events scanned
+# across the four sources, none lacking a readOnly key. The rule as first
+# written would have matched 1,368 of them: CreateLogStream 1,333,
+# PutRolePolicy 9, CreateRole 7, CreateLogGroup 6, PutRetentionPolicy 6,
+# PutMetricFilter 4, PutBucketPolicy 1, PutBucketPublicAccessBlock 1,
+# CreateBucket 1. Every Lambda cold start creates a log stream, and that call
+# names the group, so it matched. It creates a stream and destroys nothing, so
+# it is the one event name this rule excludes -- the same trade the
+# invalidation field choice makes, but explicit, because no field
+# distinguishes it. What still pages: DeleteLogStream, DeleteLogGroup,
+# PutRetentionPolicy, PutMetricFilter, DeleteMetricFilter,
+# PutSubscriptionFilter, and everything on the roles and the site. After the
+# exclusion the same ninety days hold 35 matches, all scoreboard applies:
+# about one every two or three days, and they are deliberate. The exclusion
+# sits at the top level, next to $or, and no branch below touches eventName --
+# section 8 found that constraining eventName both beside a $or and inside one
+# of its branches makes EventBridge's answer depend on JSON key order, but that
+# trap needs a branch-level eventName to trigger, and this rule has none, so it
+# does not apply here.
+#
+# IAM is a global service, but CloudTrail records its calls to us-east-1
+# regardless of where the caller sits, so the roleName branch needs no
+# regional caveat. The bucket and all six log groups (five function groups
+# plus /aws/apigateway/scoreboard-admin) are themselves in us-east-1, and so
+# is this rule, so a us-east-1 rule sees their management events without one
+# either.
+#
+# The distribution ID (E3Q7R79Q7PXH26) is a literal, not looked up by name the
+# way section 10's pool and section 11's API are. A deleted distribution fails
+# this data source outright, at apply, and blocks every other security change
+# in this repository's plan until someone edits the ID by hand.
+#
+# What it does not see:
+#   - Objects in the site bucket. PutObject is a data event, and the trail logs
+#     object events only for the raw archive, so a page replaced in place is
+#     invisible. The distribution's origins and behaviors are what this covers.
+#   - A moved domain alias. AssociateAlias names the target distribution, which
+#     for an attacker's copy is not this one, and the DNS record lives outside
+#     the resources this account watches.
+#   - The OAC, a copied distribution or its monitoring subscription.
+#     UpdateOriginAccessControl names only the OAC's own Id (the live
+#     distribution uses OAC E2JHBLRJXX211W); CopyDistribution names the source
+#     in PrimaryDistributionId; Create/DeleteMonitoringSubscription name it in
+#     DistributionId. None of those fields is matched here. Swapping a
+#     response-headers policy on the distribution's own behaviors is, by
+#     contrast, an UpdateDistribution, which does page.
+#   - Customer-managed policies. These roles use inline policies only; a
+#     managed policy attached later could be widened by a CreatePolicyVersion
+#     that names only the policy ARN.
+#   - The list-valued log-group fields: logGroupIdentifiers, logGroupArnList
+#     and logGroupNames. CreateScheduledQuery, CreateLogAnomalyDetector and
+#     PutQueryDefinition carry them, but those are query and anomaly-detector
+#     calls, not blinding routes, so they are recorded here rather than added
+#     to the pattern.
+#   - Identities that can already reach these resources, which section 1 covers
+#     for the account's own escalation paths.
+#   - Rewriting this rule, which section 9 catches.
+#   - A log stream created to impersonate a log source. CreateLogStream is
+#     excluded account-wide within this rule's four sources, so one crafted to
+#     look like a cold start does not page either.
+#   - A call that names one of these resources only through a field not listed
+#     above, the same silent-failure mode sections 8 to 11 share.
+data "aws_iam_role" "scoreboard" {
+  for_each = toset([
+    "scoreboard-api",
+    "scoreboard-authgate",
+    "scoreboard-enroll",
+    "scoreboard-iot-logging",
+    "scoreboard-reducer",
+    "scoreboard-scheduler-invoke",
+    "scoreboard-today",
+  ])
+  name = each.key
+}
+
+data "aws_s3_bucket" "scoreboard_site" {
+  bucket = "scoreboard-site-${data.aws_caller_identity.current.account_id}"
+}
+
+data "aws_cloudfront_distribution" "scoreboard_site" {
+  id = "E3Q7R79Q7PXH26"
+}
+
+locals {
+  scoreboard_role_names                   = sort([for r in data.aws_iam_role.scoreboard : r.name])
+  scoreboard_site_bucket                  = data.aws_s3_bucket.scoreboard_site.bucket
+  scoreboard_site_distribution            = data.aws_cloudfront_distribution.scoreboard_site.id
+  scoreboard_site_alias                   = "scoreboard.davidjdrake.com"
+  scoreboard_site_distribution_arn_prefix = "arn:aws:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/${local.scoreboard_site_distribution}"
+
+  # The name form of the two scoreboard log groups, and their ARN form.
+  # logGroupName can only hold the name; logGroupIdentifier and resourceArn
+  # are matched against both forms below. The ARN form is matched by prefix,
+  # not wildcard: EventBridge rejects a field carrying two wildcard values
+  # that each hold more than a couple of "*" characters as "too complex" --
+  # verified live against this exact pair -- and a fixed region and account
+  # need no wildcard character to begin with.
+  scoreboard_log_group_names = [{ "wildcard" = "/aws/lambda/scoreboard-*" }, "/aws/apigateway/scoreboard-admin"]
+  scoreboard_log_group_arn_prefixes = [
+    { "prefix" = "arn:aws:logs:${var.region}:${data.aws_caller_identity.current.account_id}:log-group:/aws/lambda/scoreboard-" },
+    { "prefix" = "arn:aws:logs:${var.region}:${data.aws_caller_identity.current.account_id}:log-group:/aws/apigateway/scoreboard-admin" },
+  ]
+
+  scoreboard_support_pattern = jsonencode({
+    "detail-type" = ["AWS API Call via CloudTrail"]
+    "detail" = {
+      "eventSource"   = ["iam.amazonaws.com", "logs.amazonaws.com", "s3.amazonaws.com", "cloudfront.amazonaws.com"]
+      "eventCategory" = ["Management"]
+      "readOnly"      = [false]
+      "eventName"     = [{ "anything-but" = ["CreateLogStream"] }]
+      "$or" = [
+        { "requestParameters" = { "roleName" = local.scoreboard_role_names } },
+        { "requestParameters" = { "logGroupName" = local.scoreboard_log_group_names } },
+        { "requestParameters" = { "logGroupIdentifier" = concat(local.scoreboard_log_group_names, local.scoreboard_log_group_arn_prefixes) } },
+        { "requestParameters" = { "resourceArn" = concat(local.scoreboard_log_group_names, local.scoreboard_log_group_arn_prefixes) } },
+        { "requestParameters" = { "bucketName" = [local.scoreboard_site_bucket] } },
+        { "requestParameters" = { "id" = [local.scoreboard_site_distribution] } },
+        { "requestParameters" = { "Resource" = [{ "prefix" = local.scoreboard_site_distribution_arn_prefix }] } },
+        { "requestParameters" = { "resource" = [{ "prefix" = local.scoreboard_site_distribution_arn_prefix }] } },
+        { "resources" = { "ARN" = ["arn:aws:s3:::${local.scoreboard_site_bucket}"] } },
+      ]
+    }
+  })
+}
+
+resource "aws_cloudwatch_event_rule" "scoreboard_support" {
+  name          = "hockeytrack-sec-scoreboard-support"
+  description   = "Any write naming a scoreboard role, a scoreboard log group, or the static site's bucket or distribution: the routes to widening a role, silencing an alarm, or serving a look-alike page"
+  event_pattern = local.scoreboard_support_pattern
+
+  lifecycle {
+    precondition {
+      condition     = contains(data.aws_cloudfront_distribution.scoreboard_site.aliases, local.scoreboard_site_alias)
+      error_message = "Distribution ${local.scoreboard_site_distribution} does not serve ${local.scoreboard_site_alias}. The scoreboard site's distribution has been replaced, and this rule would watch the wrong one."
+    }
+    precondition {
+      condition     = length(local.scoreboard_support_pattern) <= 2048
+      error_message = "The scoreboard support rule's event pattern is ${length(local.scoreboard_support_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
     }
   }
 }
