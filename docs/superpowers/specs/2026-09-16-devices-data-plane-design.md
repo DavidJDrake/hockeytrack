@@ -84,3 +84,34 @@ Alert sentence: *If this was not you, assume someone read or changed the rows th
 
 - **§4** gains a paragraph: the rows themselves are now watched, and what that does not cover.
 - **§7** gains a recovery entry: from the record, identify the caller and what it read or wrote; compare the devices table's owners against who should hold each panel; revoke certificates issued since; treat every hash in the enrollments table as known, which means rotating the affected panels' collection tokens by re-enrolling them.
+
+## 6. Verification record (2026-09-16)
+
+All times UTC.
+
+### Before applying
+
+- **The pattern is 395 characters.** It carries no event names and no table names: the trail's selector decides which tables are logged, so every DynamoDB data event EventBridge can see is one of these two tables' rows.
+- **Two corrections came out of review, both from live testing.**
+  - The first draft matched `exists: false` on the `sessionContext` object. EventBridge's `exists` works on leaf nodes, and on an object it always evaluates true, so the rule would have paged on every legitimate call. It now tests the leaf.
+  - The draft also gated on `requestParameters.tableName`, which only the single-table operations carry. `BatchGetItem`, `BatchWriteItem`, `TransactWriteItems`, PartiQL `ExecuteStatement` and a `GetItem` naming the table by ARN were all verified silent against that version. Deleting the gate covers them, at the stated cost that widening the selector later makes this rule page on the new table until it is updated.
+  - The allowlist matches each role's ARN rather than its name, so a role called `scoreboard-api` in another account is not exempt.
+- **12 of 12 `test-event-pattern` cases behaved as intended,** re-run independently by the reviewer: the five previously-missed shapes match; both roles' reads do not; a session with no issuer ARN, a root session, a cross-account same-named role, and an IAM user all match; a management event does not.
+
+### Applied 2026-09-16 13:56
+
+`2 to add, 3 to change`: the rule and its target added; the trail gained a third selector (`All`, no management events, the two table ARNs), and the two rule-list policies changed. `hockeytrack-foreign-project-deny` re-planned because its document names the trail's ARN and resolved to no change, still `v1`. The trail now carries S3 objects write-only with management events, Lambda invocations, and DynamoDB rows.
+
+### Breaks, 14:01:47 to 14:01:51
+
+As `funandgames`: `GetItem` and `PutItem` on `scoreboard-devices`, `DeleteItem` removing that same row, a `Scan` of `scoreboard-enrollments`, and a `Scan --select COUNT` of `scoreboard-devices` to confirm the table was empty again. Five events, five matches, five invocations, no failed invocations, dead-letter queue 0. Every record arrived as `IAMUser` with no session issuer, which is the branch that matched them. The devices table ended at 0 rows.
+
+**A five-minute wait preceded the breaks,** because the 2026-09-15 work found a new selector does not log immediately. Every break was recorded.
+
+### Negative, 15:51:22
+
+`GET /api/enroll` with a junk collection token, over the public endpoint, makes `scoreboard-enroll` look the token up and answer 404 — a real function-path read with no state change. CloudTrail recorded it as `GetItem` on `scoreboard-enrollments` by `AssumedRole` with `sessionIssuer.arn` = `arn:aws:iam::989232581535:role/scoreboard-enroll`, and the rule matched nothing.
+
+### Drift
+
+`terraform plan -detailed-exitcode` exits 0 in this repository after the apply.
