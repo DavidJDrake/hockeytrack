@@ -17,7 +17,7 @@ Sections 10 to 12 watch who may sign in, what a token is worth, and who may call
 
 1. **The scoreboard has seven roles:** `scoreboard-api`, `scoreboard-authgate`, `scoreboard-enroll`, `scoreboard-iot-logging`, `scoreboard-reducer`, `scoreboard-scheduler-invoke`, `scoreboard-today`. All their policies are inline, so every write names the role in `requestParameters.roleName` (`PutRolePolicy`, `AttachRolePolicy`, `DeleteRolePolicy`, `UpdateAssumeRolePolicy`, `TagRole` and the rest).
 2. **Six log groups matter here:** `/aws/lambda/scoreboard-{api,authgate,enroll,reducer,today}` and `/aws/apigateway/scoreboard-admin`. `AWSIotLogsV2`, which the scoreboard stack also owns, is section 8's already. `PutRetentionPolicy`, `PutMetricFilter` and `DeleteMetricFilter` all carry `requestParameters.logGroupName`.
-3. **S3 writes carry `bucketName`,** and also name the bucket in `resources[].ARN`. The site bucket is `scoreboard-site-989232581535`.
+3. **S3 writes carry `bucketName`,** and also name the bucket in `resources[].ARN`. The site bucket is `scoreboard-site-<account id>`, the same way the threat model writes it; the Terraform interpolates the account ID rather than carrying it as a literal.
 4. **CloudFront names the distribution differently depending on the call.** `UpdateDistribution` and `DeleteDistribution` carry `requestParameters.id`; `CreateInvalidation` carries `requestParameters.distributionId`. The site distribution is `E3Q7R79Q7PXH26`.
 5. **Ninety-day sweep of the pattern's own four sources, to 2026-09-16:** 40,420 management events scanned; none lacked a `readOnly` key. The rule as first written would have matched 1,368 of them: `CreateLogStream` 1,333, `PutRolePolicy` 9, `CreateRole` 7, `CreateLogGroup` 6, `PutRetentionPolicy` 6, `PutMetricFilter` 4, `PutBucketPolicy` 1, `PutBucketPublicAccessBlock` 1, `CreateBucket` 1. `CreateLogStream` is a Lambda cold-start side effect, not a change to anything, and it drowns out the rest by three orders of magnitude, so it is excluded by name; after that, 35 matches remain over the same 90 days, all scoreboard applies.
 
@@ -59,6 +59,7 @@ Alert sentence: *If this was not you, assume the scoreboard's supporting resourc
 - **Customer-managed policies.** These roles use inline policies only, so `CreatePolicyVersion` on a managed policy attached later would name only a policy ARN.
 - **Identities that can already reach these resources,** which section 1 covers for the account's own escalation paths.
 - **Rewriting this rule,** which section 9 catches.
+- **A log stream created to impersonate a log source.** `CreateLogStream` is excluded account-wide within this rule's four sources, so one crafted to look like a cold start does not page either.
 
 ## 5. Testing
 
@@ -74,12 +75,18 @@ Alert sentence: *If this was not you, assume the scoreboard's supporting resourc
 
 ## 7. Verification record (2026-09-16)
 
-All times UTC.
+All times UTC. The `test-event-pattern` set below is the pre-exclusion test
+set: it does not include a `CreateLogStream` case, because the exclusion was
+the sweep's own finding, made after this record's "Before applying" section
+was first written. It is added below, verified live in the fix round that
+closed I1/I2 (`.superpowers/sdd/2026-09-16-control-plane-detection/final-fix-report.md`
+carries that round's full table against the rule as fixed).
 
 ### Before applying
 
 - **The pattern is 874 characters,** well inside the 2048 the precondition enforces.
 - **`test-event-pattern` against real events, 8 of 8 as expected.** Matching: `PutRolePolicy` on `scoreboard-authgate`, `PutRetentionPolicy` on `/aws/lambda/scoreboard-authgate`, `PutMetricFilter` on `/aws/lambda/scoreboard-enroll`, and a real `UpdateDistribution` with its `id` swapped to the site's. Not matching: `PutRolePolicy` on an EbookShare role, `PutBucketPolicy` on another project's bucket, a real `CreateInvalidation` on the site's distribution, and a read (`GetBucketPolicy`) on the site bucket.
+- **`CreateLogStream` negative, added in the fix round, 9 of 9 total.** A synthetic `CreateLogStream` naming a scoreboard log group in `logGroupName` was checked with `test-event-pattern` against the fixed rule's pattern (I1/I2 applied, not yet re-applied to AWS) and did not match, confirming the top-level exclusion does what the comment says; the fix round did not touch that exclusion, so the result holds for the deployed rule too. It was not part of the original 8; the scoreboard-plan negative in §5 ("Negatives: a site deploy … and a scoreboard plan produce no email") was likewise never run as its own `test-event-pattern` case — only the deploy negative was, at 01:46:34 below. The scoreboard-plan negative is instead covered by the Drift entry: a scoreboard `terraform plan` after this rule's apply reads these resources with `Describe`/`Get`/`List` calls, which are `readOnly true` and so never reach an `ENABLED` rule at all (the same reasoning section 9 gives), and the repository's own drift check exiting 0 confirms nothing about that plan paged.
 - **The 90-day sweep changed the rule.** Scanning all 40,420 management events from the four sources over the 90 days to 2026-09-16 — none of them lacking a `readOnly` key — the rule as first written would have matched 1,368. Of those, 1,333 were `CreateLogStream`: every Lambda cold start creates a stream, and the call names the group. Fifteen pages a day would have trained the reader to ignore the rule, so `CreateLogStream` is the one event name the pattern excludes, and the comment says what that costs. The remaining 35 are `PutRolePolicy` 9, `CreateRole` 7, `CreateLogGroup` 6, `PutRetentionPolicy` 6, `PutMetricFilter` 4, `PutBucketPolicy` 1, `PutBucketPublicAccessBlock` 1 and `CreateBucket` 1 — all scoreboard applies, about one every two or three days.
 
 ### Applied 2026-09-16 01:35

@@ -311,10 +311,11 @@ any write that names the `scoreboard-admin` API, in `apiId` or by ARN, or either
 function. Like the sign-in rule, it lists no event names and is scoped to the
 scoreboard's resources, because the account runs three other HTTP APIs. It
 ignores invocations, which the next paragraph covers. What it does not see is
-named in its comment, and includes the functions' IAM roles, deletion or
-shortened retention of the API's and functions' log groups, the devices
-table's ownership rows, whose writes the trail does not log, the static site,
-and a custom domain rerouted away from the API (there is none today). A
+named in its comment, and includes the functions' IAM roles and deletion or
+shortened retention of the API's and functions' log groups — both of which
+section 13 now pages on — the devices table's ownership rows, whose writes the
+trail does not log, the static site, which section 13 also now pages on, and a
+custom domain rerouted away from the API (there is none today). A
 scoreboard apply no longer redeploys a function, and so no longer pages,
 unless that function's code, dependencies or Go toolchain change: the
 scoreboard's build no longer stamps each binary with its commit (the
@@ -338,19 +339,24 @@ the reducer or the daily schedule function, whose forged invocations would
 corrupt displayed game state but grant no control of a panel.
 
 **Changing what the scoreboard's rules lean on pages someone.** Three things
-carry the rules above, and none of them was watched. The seven roles the
-scoreboard's functions assume, `scoreboard-enroll`'s above all, which may
-create IoT certificates and attach the device policy. The log groups whose
-metric filters are the refusal, crash and mismatch alarms, and whose history
-the recovery procedures read: deleting a filter silences an alarm without
-touching it, and shortening retention destroys the evidence. And the static
-site's bucket and distribution, which serve the sign-in page on the real
-domain. A fourth rule now fires on any write naming one of them. It is scoped
-to those resources and lists no event names, so ordinary site deploys stay
-silent only because an invalidation names the distribution in a different
-field than a configuration change does. It does not see objects replaced
-inside the site bucket, which are data events the trail does not log, nor the
-DNS record that points the domain at the distribution.
+carry the rules above, and none of them was watched. The seven scoreboard
+roles, `scoreboard-enroll`'s above all, which may create IoT certificates and
+attach the device policy — not all seven belong to a function, but every one
+of them was open. The log groups whose metric filters are the refusal, crash
+and mismatch alarms, and whose history the recovery procedures read: deleting
+a filter silences an alarm without touching it, and shortening retention
+destroys the evidence. And the static site's bucket and distribution, which
+serve the sign-in page on the real domain. A fourth rule now fires on any
+write naming one of them. It is scoped to those resources and lists exactly
+one excluded event name, `CreateLogStream`: a 90-day sweep found 1,333 of the
+rule's 1,368 pre-exclusion matches were Lambda cold starts creating a stream
+and destroying nothing, so that call is excluded by name rather than left to
+drown out the other 35. Ordinary site deploys stay silent for a different
+reason: an invalidation names the distribution in a different field than a
+configuration change does. It does not see objects replaced inside the site
+bucket, which are data events the trail does not log; a log stream created to
+impersonate a log source, since the exclusion is by name rather than by
+origin; nor the DNS record that points the domain at the distribution.
 
 **Destroying the archive is gated, but the gate is honest about its size.**
 Versioning makes an accidental overwrite reversible; it does nothing against a

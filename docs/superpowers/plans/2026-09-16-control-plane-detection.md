@@ -1,5 +1,9 @@
 # Scoreboard Supporting Control Plane Detection Implementation Plan
 
+> **Superseded by the fix-wave sweep.** This plan is frozen pre-fix: it has no `eventName` constraint on the rule below, and the HCL it carries predates I1-I4 and the minors closed in the final review
+> (`.superpowers/sdd/2026-09-16-control-plane-detection/final-fix-report.md`). See
+> `docs/superpowers/specs/2026-09-16-control-plane-detection-design.md` for the current design.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Page on any write to the scoreboard's seven IAM roles, its six log groups, or the static site's bucket and distribution.
