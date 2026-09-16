@@ -1458,14 +1458,20 @@ resource "aws_cloudwatch_event_rule" "scoreboard_invoke" {
 # which it does. If CloudFront ever records an invalidation under id, every
 # deploy starts paging -- noisy, not blind, and the fix is a field list here.
 #
-# Measured over ninety days to 2026-09-16, account-wide: CreateInvalidation
-# past the 50-event query cap, UpdateDistribution 17 (all while the site was
-# being built), PutRolePolicy 50 of which about 10 name scoreboard roles,
-# PutRetentionPolicy 27, PutMetricFilter 6, PutBucketPolicy 13 (none on the
-# site bucket), DeleteLogGroup 0. So the accepted noise is a scoreboard apply
-# that changes a role policy, a retention or filter change, and the occasional
-# distribution change. All are deliberate, and the person doing them is the
-# person reading the alert.
+# Measured over ninety days to 2026-09-16: 40,420 management events scanned
+# across the four sources, none lacking a readOnly key. The rule as first
+# written would have matched 1,368 of them: CreateLogStream 1,333,
+# PutRolePolicy 9, CreateRole 7, CreateLogGroup 6, PutRetentionPolicy 6,
+# PutMetricFilter 4, PutBucketPolicy 1, PutBucketPublicAccessBlock 1,
+# CreateBucket 1. Every Lambda cold start creates a log stream, and that call
+# names the group, so it matched. It creates a stream and destroys nothing, so
+# it is the one event name this rule excludes -- the same trade the
+# invalidation field choice makes, but explicit, because no field
+# distinguishes it. What still pages: DeleteLogStream, DeleteLogGroup,
+# PutRetentionPolicy, PutMetricFilter, DeleteMetricFilter,
+# PutSubscriptionFilter, and everything on the roles and the site. After the
+# exclusion the same ninety days hold 35 matches, all scoreboard applies:
+# about one every two or three days, and they are deliberate.
 #
 # What it does not see:
 #   - Objects in the site bucket. PutObject is a data event, and the trail logs
@@ -1480,6 +1486,9 @@ resource "aws_cloudwatch_event_rule" "scoreboard_invoke" {
 #   - Identities that can already reach these resources, which section 1 covers
 #     for the account's own escalation paths.
 #   - Rewriting this rule, which section 9 catches.
+#   - A log stream created to impersonate a log source. CreateLogStream is
+#     excluded account-wide within this rule's four sources, so one crafted to
+#     look like a cold start does not page either.
 data "aws_iam_role" "scoreboard" {
   for_each = toset([
     "scoreboard-api",
@@ -1513,6 +1522,7 @@ locals {
       "eventSource"   = ["iam.amazonaws.com", "logs.amazonaws.com", "s3.amazonaws.com", "cloudfront.amazonaws.com"]
       "eventCategory" = ["Management"]
       "readOnly"      = [false]
+      "eventName"     = [{ "anything-but" = ["CreateLogStream"] }]
       "$or" = [
         { "requestParameters" = { "roleName" = local.scoreboard_role_names } },
         { "requestParameters" = { "logGroupName" = [{ "wildcard" = "/aws/lambda/scoreboard-*" }, "/aws/apigateway/scoreboard-admin"] } },
