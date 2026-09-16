@@ -71,3 +71,31 @@ Alert sentence: *If this was not you, assume the scoreboard's supporting resourc
 
 - **§4** gains a paragraph covering all three resources and naming what stays unwatched.
 - **§7** gains a recovery entry: from the record, identify which of the three was touched; for a role, compare its inline policies with the scoreboard repository and check IoT certificates created since; for a log group, check the filters and retention against the repository and whether an alarm has been in INSUFFICIENT_DATA since; for the site, compare the bucket policy and the distribution's origins, behaviors and aliases, then invalidate and redeploy from the repository.
+
+## 7. Verification record (2026-09-16)
+
+All times UTC.
+
+### Before applying
+
+- **The pattern is 874 characters,** well inside the 2048 the precondition enforces.
+- **`test-event-pattern` against real events, 8 of 8 as expected.** Matching: `PutRolePolicy` on `scoreboard-authgate`, `PutRetentionPolicy` on `/aws/lambda/scoreboard-authgate`, `PutMetricFilter` on `/aws/lambda/scoreboard-enroll`, and a real `UpdateDistribution` with its `id` swapped to the site's. Not matching: `PutRolePolicy` on an EbookShare role, `PutBucketPolicy` on another project's bucket, a real `CreateInvalidation` on the site's distribution, and a read (`GetBucketPolicy`) on the site bucket.
+- **The 90-day sweep changed the rule.** Scanning all 40,420 management events from the four sources over the 90 days to 2026-09-16 — none of them lacking a `readOnly` key — the rule as first written would have matched 1,368. Of those, 1,333 were `CreateLogStream`: every Lambda cold start creates a stream, and the call names the group. Fifteen pages a day would have trained the reader to ignore the rule, so `CreateLogStream` is the one event name the pattern excludes, and the comment says what that costs. The remaining 35 are `PutRolePolicy` 9, `CreateRole` 7, `CreateLogGroup` 6, `PutRetentionPolicy` 6, `PutMetricFilter` 4, `PutBucketPolicy` 1, `PutBucketPublicAccessBlock` 1 and `CreateBucket` 1 — all scoreboard applies, about one every two or three days.
+
+### Applied 2026-09-16 01:35
+
+`Plan: 2 to add, 2 to change, 0 to destroy` — the rule and its SNS target added, the topic and dead-letter queue policies updated.
+
+### Breaks, 01:37:40 to 01:37:55
+
+Each re-saves a value that was already set, so nothing changed: a tag added and removed on `scoreboard-enroll`'s role, `/aws/lambda/scoreboard-api`'s retention re-saved at 30 days, and the site bucket's current policy re-saved. Afterwards the role had no tags, retention was still 30, and the policy still had its single statement.
+
+All four paged. `MatchedEvents` 4, `Invocations` 4, no `FailedInvocations`, and the dead-letter queue at 0. The emails arrived between 01:37:52 and 01:38:13, each carrying the section 13 sentence, for example *HOCKEYTRACK SECURITY: PutRetentionPolicy … Actor: …user/funandgames*.
+
+### Negative, 01:46:34
+
+A CloudFront invalidation on the site's distribution — what every `make site` deploy issues — was recorded by CloudTrail and matched nothing. The rule's `MatchedEvents` stayed empty for that window. Deploys are silent because an invalidation names the distribution in `distributionId` while a configuration change names it in `id`.
+
+### Drift
+
+`terraform plan -detailed-exitcode` exits 0 in this repository after the apply.
