@@ -16,7 +16,7 @@ Sections 10 to 12 watch who may sign in, what a token is worth, and who may call
 ## 2. Facts established by investigation (2026-09-16, read-only)
 
 1. **The scoreboard has seven roles:** `scoreboard-api`, `scoreboard-authgate`, `scoreboard-enroll`, `scoreboard-iot-logging`, `scoreboard-reducer`, `scoreboard-scheduler-invoke`, `scoreboard-today`. All their policies are inline, so every write names the role in `requestParameters.roleName` (`PutRolePolicy`, `AttachRolePolicy`, `DeleteRolePolicy`, `UpdateAssumeRolePolicy`, `TagRole` and the rest).
-2. **Seven log groups matter:** `/aws/lambda/scoreboard-{api,authgate,enroll,reducer,today}`, `/aws/apigateway/scoreboard-admin`, and the IoT group the scoreboard also owns. `PutRetentionPolicy`, `PutMetricFilter` and `DeleteMetricFilter` all carry `requestParameters.logGroupName`.
+2. **Six log groups matter here:** `/aws/lambda/scoreboard-{api,authgate,enroll,reducer,today}` and `/aws/apigateway/scoreboard-admin`. `AWSIotLogsV2`, which the scoreboard stack also owns, is section 8's already. `PutRetentionPolicy`, `PutMetricFilter` and `DeleteMetricFilter` all carry `requestParameters.logGroupName`.
 3. **S3 writes carry `bucketName`,** and also name the bucket in `resources[].ARN`. The site bucket is `scoreboard-site-989232581535`.
 4. **CloudFront names the distribution differently depending on the call.** `UpdateDistribution` and `DeleteDistribution` carry `requestParameters.id`; `CreateInvalidation` carries `requestParameters.distributionId`. The site distribution is `E3Q7R79Q7PXH26`.
 5. **Ninety-day write volume, whole account:** `CreateInvalidation` exceeded the 50-event query cap, `UpdateDistribution` 17, `PutRolePolicy` 50 (about 10 of them naming scoreboard roles), `PutRetentionPolicy` 27, `PutMetricFilter` 6, `PutBucketPolicy` 13 (none on the site bucket), `DeleteLogGroup` 0.
@@ -37,7 +37,7 @@ event_pattern = jsonencode({
       { "requestParameters" = { "logGroupName" = [{ "wildcard" = "/aws/lambda/scoreboard-*" }, "/aws/apigateway/scoreboard-admin"] } },
       { "requestParameters" = { "bucketName" = [local.scoreboard_site_bucket] } },
       { "requestParameters" = { "id" = [local.scoreboard_site_distribution] } },
-      { "requestParameters" = { "Resource" = [{ "prefix" = "arn:aws:cloudfront::<account>:distribution/${local.scoreboard_site_distribution}" }] } },
+      { "requestParameters" = { "Resource" = [{ "prefix" = "arn:aws:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/${local.scoreboard_site_distribution}" }] } },
       { "resources" = { "ARN" = ["arn:aws:s3:::${local.scoreboard_site_bucket}"] } },
     ]
   }
