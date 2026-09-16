@@ -157,3 +157,13 @@ was live, not hypothetical.
   the bulk-route case alongside the role, log-group and site cases.
 - Not yet applied or broken live; the pattern is checked offline
   (`terraform validate`, `test-event-pattern`) pending the next apply.
+
+### Extended to DynamoDB management writes (2026-09-16 16:48)
+
+The devices-data-plane review found a bulk-read path nothing watched: point-in-time recovery is enabled on `scoreboard-enrollments`, and `ExportTableToPointInTime` copies the whole table to S3 as a management event, producing no row-level events at all. `CreateBackup` and the restore calls are the same shape, and no rule in this repository watched `dynamodb.amazonaws.com` management events.
+
+Section 13 now covers them: `dynamodb.amazonaws.com` joins its event sources, with branches on the two tables' names and ARNs. The pattern grew from 1,572 to 1,994 characters, against the 2,048 the precondition enforces — worth knowing before anything else is added to it.
+
+**Verified live.** Before applying, 20 `test-event-pattern` cases: `ExportTableToPointInTime`, `CreateBackup` and `UpdateTable` match on the two tables and not on a third; a DynamoDB row event does not match, because section 14 owns those; and every earlier case still behaves as it did. After applying, a tag added and removed on `scoreboard-enrollments` produced four matches on section 13 — CloudTrail recorded the untag three times — and none on section 14. The table has no tags left, the dead-letter queue is empty, and a sign-in six minutes later paged nothing.
+
+What still is not watched: a restore names a new table, so the restored copy falls outside both rules.
