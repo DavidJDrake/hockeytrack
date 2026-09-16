@@ -1,5 +1,7 @@
 # Devices and Enrollments Data-Plane Detection Implementation Plan
 
+> **Superseded during implementation** in two places (the `exists:false` leaf and the dropped `tableName` gate) — `docs/superpowers/specs/2026-09-16-devices-data-plane-design.md` is the authority.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Page on any read or write of the `scoreboard-devices` or `scoreboard-enrollments` rows that was not made by the `scoreboard-api` or `scoreboard-enroll` role.
