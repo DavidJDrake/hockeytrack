@@ -129,6 +129,7 @@ locals {
     scoreboard_api     = aws_cloudwatch_event_rule.scoreboard_api
     scoreboard_invoke  = aws_cloudwatch_event_rule.scoreboard_invoke
     scoreboard_support = aws_cloudwatch_event_rule.scoreboard_support
+    scoreboard_state   = aws_cloudwatch_event_rule.scoreboard_state
   }
 
   # Raw CloudTrail JSON is unreadable on a phone, so the alert is rendered as a
@@ -172,7 +173,8 @@ locals {
     scoreboard_signin  = "If this was not you, assume the scoreboard admin site's sign-in gate may be bypassed. Check the invite list, the user pool's triggers, app clients, identity providers and users, and the authgate function's code and environment, against the scoreboard repository."
     scoreboard_api     = "If this was not you, assume the scoreboard admin API may accept tokens or requests it should not. Check its JWT authorizer's issuer and audience, its routes' authorizers and integrations, the scoreboard-api and scoreboard-enroll functions' USER_POOL_ID and APP_CLIENT_ID environment variables, and their code, configuration, role and permissions, against the scoreboard repository."
     scoreboard_invoke  = "If this was not you, assume someone with credentials in this account called a scoreboard admin function directly, skipping API Gateway or Cognito. Find the caller and access key in the CloudTrail record, check what the function did in its logs at that time, revoke the key, then check the admin API and sign-in gate against the scoreboard repository."
-    scoreboard_support = "If this was not you, assume the scoreboard's supporting resources have been changed: a function's role, the log groups its alarms and recovery steps read, or the site's bucket or distribution. Check the enroll role's IoT permissions, the metric filters and retention on every scoreboard log group, and the site bucket's policy and the distribution's origins and behaviors, against the scoreboard repository."
+    scoreboard_support = "If this was not you, assume the scoreboard's supporting resources have been changed: a function's role, the log groups its alarms and recovery steps read, the site's bucket or distribution, or a bulk export, backup or restore point on scoreboard-devices or scoreboard-enrollments. Check the enroll role's IoT permissions, the metric filters and retention on every scoreboard log group, the site bucket's policy and the distribution's origins and behaviors, and where any export or backup landed, against the scoreboard repository."
+    scoreboard_state   = "If this was not you, assume someone read or changed the rows that decide who owns a panel and which enrollment codes are live. Check the devices table's owner column against who should hold each panel, list IoT certificates created since, and treat every claim code in the enrollments table as recoverable from its hash by the caller."
   }
 
   security_alert_template = {
@@ -1272,8 +1274,7 @@ resource "aws_cloudwatch_event_rule" "scoreboard_signin" {
 #     churn deliberately, but scoreboard-enroll's role can mint device
 #     certificates, so a widened grant there is a real route this does not
 #     watch -- section 13 now pages on it, scoped to these seven roles.
-#   - The devices table's ownership rows. Writes to them are DynamoDB data events,
-#     which the trail does not log.
+#   - The devices table's ownership rows, which section 14 now pages on.
 #   - The static site's bucket and distribution, which section 13 now pages on.
 #   - A call that names these resources only through a field not listed above,
 #     the silent-failure mode sections 8 to 10 share.
@@ -1369,15 +1370,16 @@ resource "aws_cloudwatch_event_rule" "scoreboard_api" {
 #   - Rewriting this rule, which section 9 catches.
 #   - An AWSService caller with no invokedBy at all. Each of the pattern's
 #     first two branches excludes a named invokedBy value with anything-but,
-#     which -- like an exists:false branch -- does not match a field that is
-#     simply absent, and the third branch only catches a caller whose type is
-#     not AWSService. So a hypothetical AWSService invocation carrying no
-#     invokedBy would match none of the three and would not page. This has
-#     not been observed: the resource policies on all three functions grant
-#     invoke only to the apigateway.amazonaws.com and cognito-idp.amazonaws.com
-#     service principals, and both were seen carrying invokedBy on 2026-09-15.
-#     Recorded here rather than fixed, because there is no real record to
-#     write the branch against.
+#     which does not match a field that is simply absent -- the opposite of
+#     an exists:false branch, which matches only when a field is absent, as
+#     section 14 relies on -- and the third branch only catches a caller
+#     whose type is not AWSService. So a hypothetical AWSService invocation
+#     carrying no invokedBy would match none of the three and would not page.
+#     This has not been observed: the resource policies on all three functions
+#     grant invoke only to the apigateway.amazonaws.com and
+#     cognito-idp.amazonaws.com service principals, and both were seen
+#     carrying invokedBy on 2026-09-15. Recorded here rather than fixed,
+#     because there is no real record to write the branch against.
 #
 # A separate API invoking any of the three through its own role, rather than
 # through a grant on the function, does page here -- as AssumedRole, caught by
@@ -1427,7 +1429,7 @@ resource "aws_cloudwatch_event_rule" "scoreboard_invoke" {
 # ---- 13. The scoreboard's supporting control plane ----
 #
 # Sections 10 to 12 watch who may sign in, what a token is worth, and who may
-# call the functions. Each of them leans on three things nothing watched until
+# call the functions. Each of them leans on four things nothing watched until
 # now, and each is a way to take control or go blind without touching what
 # those rules see:
 #
@@ -1444,6 +1446,13 @@ resource "aws_cloudwatch_event_rule" "scoreboard_invoke" {
 #   The static site    The bucket and distribution serve the sign-in page on
 #                      the real domain. A changed bucket policy or a repointed
 #                      origin serves a look-alike page to the owner.
+#   The bulk routes    ExportTableToPointInTime and CreateBackup copy a whole
+#                      state table out as a management event, producing no
+#                      data event of its own -- section 14 only sees the
+#                      tables' row-level traffic, so a bulk export or backup
+#                      is invisible to it. PITR is enabled on
+#                      scoreboard-enrollments today, so this is not
+#                      hypothetical.
 #
 # Which fields name them. Most rows were confirmed against real events on
 # 2026-09-16; the ones marked model-only were not, because no matching event
@@ -1465,10 +1474,15 @@ resource "aws_cloudwatch_event_rule" "scoreboard_invoke" {
 #                       PutLogGroupDeletionProtection, PutIndexPolicy,
 #                       DeleteIndexPolicy. Takes a name or an ARN, so it is
 #                       matched against both forms.
-#   resourceArn         model-only: TagResource, PutResourcePolicy,
-#                       PutDeliverySource (a copy-out route). Matched against
-#                       both forms for the same reason, though a bare name in
-#                       an ARN-typed field is not expected to occur.
+#   resourceArn         model-only for the log groups: TagResource,
+#                       PutResourcePolicy, PutDeliverySource (a copy-out
+#                       route). Matched against both forms for the same
+#                       reason, though a bare name in an ARN-typed field is
+#                       not expected to occur. Confirmed for DynamoDB: this
+#                       is also where TagResource names a table, since the
+#                       service model gives it only ResourceArn -- no table
+#                       name form -- so the two table ARNs ride in this same
+#                       branch rather than a fifth one.
 #   bucketName          S3 bucket writes, which also name the bucket in
 #                       resources[]
 #   id                  CloudFront UpdateDistribution and DeleteDistribution
@@ -1480,6 +1494,15 @@ resource "aws_cloudwatch_event_rule" "scoreboard_invoke" {
 #                       "resource" member. No CloudFront TagResource occurred
 #                       in the 90-day window, so this row is model-only too,
 #                       and both casings are matched because of that.
+#   tableName           confirmed: CreateBackup, UpdateTable, DeleteTable,
+#                       UpdateContinuousBackups. Every one of these DynamoDB
+#                       management writes names the table by TableName; none
+#                       of them takes an ARN, so this branch needs no ARN
+#                       form of its own.
+#   tableArn            confirmed: ExportTableToPointInTime, the one DynamoDB
+#                       management write that names the table only by
+#                       TableArn -- it has no TableName parameter at all, so
+#                       the tableName branch above cannot see it.
 #
 # Site deploys stay silent without naming an event, which is how sections 9 to
 # 12 are built: CreateInvalidation names the distribution in distributionId,
@@ -1506,6 +1529,16 @@ resource "aws_cloudwatch_event_rule" "scoreboard_invoke" {
 # of its branches makes EventBridge's answer depend on JSON key order, but that
 # trap needs a branch-level eventName to trigger, and this rule has none, so it
 # does not apply here.
+#
+# The DynamoDB branch was added in a later review round, after the sweep
+# above, and was checked differently: not a full scan of every
+# dynamodb.amazonaws.com event over ninety days, but a lookup per event name
+# this branch's fields cover, against the two tables by name. Over the ninety
+# days to 2026-09-16: CreateBackup 0, ExportTableToPointInTime 0, DeleteTable 0
+# and TagResource 0 for either table; UpdateTable 1 on scoreboard-devices and
+# UpdateContinuousBackups 4 on scoreboard-enrollments, both this repository's
+# own applies enabling point-in-time recovery. Five real matches, all
+# deliberate -- the same shape as the 35 above, not a new source of noise.
 #
 # IAM is a global service, but CloudTrail records its calls to us-east-1
 # regardless of where the caller sits, so the roleName branch needs no
@@ -1545,8 +1578,15 @@ resource "aws_cloudwatch_event_rule" "scoreboard_invoke" {
 #     for the account's own escalation paths.
 #   - Rewriting this rule, which section 9 catches.
 #   - A log stream created to impersonate a log source. CreateLogStream is
-#     excluded account-wide within this rule's four sources, so one crafted to
+#     excluded account-wide within this rule's five sources, so one crafted to
 #     look like a cold start does not page either.
+#   - A restore of either state table. RestoreTableFromBackup names the source
+#     only as BackupArn and the copy as TargetTableName, neither of which this
+#     rule matches. RestoreTableToPointInTime does name the source table, but
+#     as SourceTableName and SourceTableArn -- not TableName or TableArn --
+#     so it slips this rule's tableName and tableArn branches the same way.
+#     Section 14's gap list carries the same point: the restored copy is a new
+#     table, outside both rules, whichever route created it.
 #   - A call that names one of these resources only through a field not listed
 #     above, the same silent-failure mode sections 8 to 11 share.
 data "aws_iam_role" "scoreboard" {
@@ -1590,10 +1630,18 @@ locals {
     { "prefix" = "arn:aws:logs:${var.region}:${data.aws_caller_identity.current.account_id}:log-group:/aws/apigateway/scoreboard-admin" },
   ]
 
+  # The two state tables' name and ARN forms, for the DynamoDB branches
+  # below. Reuses data.aws_dynamodb_table.scoreboard_state (cloudtrail.tf),
+  # the same lookup that scopes the trail's third selector and section 14,
+  # so a renamed table fails this plan rather than silently dropping out of
+  # this rule too.
+  scoreboard_state_table_names = sort([for t in data.aws_dynamodb_table.scoreboard_state : t.name])
+  scoreboard_state_table_arns  = sort([for t in data.aws_dynamodb_table.scoreboard_state : t.arn])
+
   scoreboard_support_pattern = jsonencode({
     "detail-type" = ["AWS API Call via CloudTrail"]
     "detail" = {
-      "eventSource"   = ["iam.amazonaws.com", "logs.amazonaws.com", "s3.amazonaws.com", "cloudfront.amazonaws.com"]
+      "eventSource"   = ["iam.amazonaws.com", "logs.amazonaws.com", "s3.amazonaws.com", "cloudfront.amazonaws.com", "dynamodb.amazonaws.com"]
       "eventCategory" = ["Management"]
       "readOnly"      = [false]
       "eventName"     = [{ "anything-but" = ["CreateLogStream"] }]
@@ -1601,12 +1649,14 @@ locals {
         { "requestParameters" = { "roleName" = local.scoreboard_role_names } },
         { "requestParameters" = { "logGroupName" = local.scoreboard_log_group_names } },
         { "requestParameters" = { "logGroupIdentifier" = concat(local.scoreboard_log_group_names, local.scoreboard_log_group_arn_prefixes) } },
-        { "requestParameters" = { "resourceArn" = concat(local.scoreboard_log_group_names, local.scoreboard_log_group_arn_prefixes) } },
+        { "requestParameters" = { "resourceArn" = concat(local.scoreboard_log_group_names, local.scoreboard_log_group_arn_prefixes, local.scoreboard_state_table_arns) } },
         { "requestParameters" = { "bucketName" = [local.scoreboard_site_bucket] } },
         { "requestParameters" = { "id" = [local.scoreboard_site_distribution] } },
         { "requestParameters" = { "Resource" = [{ "prefix" = local.scoreboard_site_distribution_arn_prefix }] } },
         { "requestParameters" = { "resource" = [{ "prefix" = local.scoreboard_site_distribution_arn_prefix }] } },
         { "resources" = { "ARN" = ["arn:aws:s3:::${local.scoreboard_site_bucket}"] } },
+        { "requestParameters" = { "tableName" = local.scoreboard_state_table_names } },
+        { "requestParameters" = { "tableArn" = local.scoreboard_state_table_arns } },
       ]
     }
   })
@@ -1614,7 +1664,7 @@ locals {
 
 resource "aws_cloudwatch_event_rule" "scoreboard_support" {
   name          = "hockeytrack-sec-scoreboard-support"
-  description   = "Any write naming a scoreboard role, a scoreboard log group, or the static site's bucket or distribution: the routes to widening a role, silencing an alarm, or serving a look-alike page"
+  description   = "Any write naming a scoreboard role, a scoreboard log group, the static site's bucket or distribution, or a management write on the scoreboard's state tables: the routes to widening a role, silencing an alarm, serving a look-alike page, or bulk-copying the tables out from under section 14"
   event_pattern = local.scoreboard_support_pattern
 
   lifecycle {
@@ -1625,6 +1675,139 @@ resource "aws_cloudwatch_event_rule" "scoreboard_support" {
     precondition {
       condition     = length(local.scoreboard_support_pattern) <= 2048
       error_message = "The scoreboard support rule's event pattern is ${length(local.scoreboard_support_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
+    }
+  }
+}
+
+# ---- 14. The scoreboard's state tables ----
+#
+# Sections 10 to 13 watch the control plane around the scoreboard's data: who
+# may sign in, what a token is worth, who may call the functions, and who may
+# widen their roles. This watches the rows.
+#
+#   scoreboard-devices      which account owns which panel. A write here hands
+#                           somebody a panel with no API call, no token and no
+#                           configuration change.
+#   scoreboard-enrollments  the hashes of the collection tokens and claim codes
+#                           that turn a fresh panel into a device with a
+#                           certificate. A read here is enough to matter.
+#
+# Only two identities have a reason to touch them: the scoreboard-api role
+# reads and updates devices, and the scoreboard-enroll role reads and writes
+# enrollments but only writes devices -- it never reads that table. Their
+# calls arrive as userIdentity.type AssumedRole with
+# sessionContext.sessionIssuer.arn equal to the role's ARN. ARN, not the
+# userName section 12 matches on for invokedBy: a role named scoreboard-api
+# in some other account is a different principal with no reason to be
+# exempt, and only the ARN says which account issued the session. The ARNs
+# are read from data.aws_iam_role.scoreboard (section 13) rather than typed
+# as literals, so a role recreated with a new ID keeps resolving and a
+# renamed role fails this plan instead of silently exempting nothing. So the
+# rule allows those two and pages on everything else, including an IAM user,
+# whose events carry no sessionContext at all and need their own branch,
+# exactly as section 12's missing invokedBy does.
+#
+# That branch checks exists:false on sessionIssuer.arn, not on sessionContext
+# itself, and the difference is load-bearing. Verified live with aws events
+# test-event-pattern: exists:false on sessionContext -- an object-valued
+# field once present -- matched a scoreboard-api-issued event as readily as
+# an IAM user's, because EventBridge's exists test does not reliably see
+# presence or absence of a field whose value is itself an object, only of a
+# leaf. sessionIssuer.arn is a leaf: present on every AssumedRole call,
+# absent whenever sessionContext is absent altogether, so exists:false on it
+# correctly isolates the IAM-user case alone. The same trap would have hit an
+# exists:false on invokedBy in section 12 had that field ever been an object
+# instead of a string.
+#
+# The trail logs these as data events, reads included (cloudtrail.tf). No
+# event names and no table names are listed in this rule at all: the
+# event_selector above is what decides which tables the trail logs, this
+# trail carries exactly one AWS::DynamoDB::Table selector, and it names
+# exactly these two tables -- so every DynamoDB data event EventBridge can
+# deliver already belongs to one of them, whatever operation produced it and
+# whatever field that operation names the table in. That is deliberate:
+# GetItem, Query, Scan, PutItem, UpdateItem and DeleteItem all name the table
+# directly, but BatchGetItem and BatchWriteItem name it inside
+# requestItems, TransactWriteItems inside transactItems[].put.tableName,
+# ExecuteStatement (PartiQL) inside a statement string, and any of them can
+# name it by ARN instead of by name. A requestParameters.tableName clause --
+# the first draft of this rule carried one -- matches none of those five
+# shapes and was verified live to stay silent on all of them.
+# eventCategory is Data, so management writes to the tables stay with
+# whatever already covers them.
+#
+# The cost of dropping the table-name clauses is that this rule is no longer
+# scoped to these two tables by its own content, only by what the selector
+# above logs: if that selector is ever widened to a third table, this rule
+# starts paging on that table's ordinary traffic until the rule is updated to
+# match it. That is the loud direction to be wrong in, not the silent one.
+#
+# A stream is the same shape of loud, not silent. AWS documents that an
+# AWS::DynamoDB::Table data-event selector logs the table's stream as well as
+# its items, so turning a stream on for either table would make its
+# consumer's GetRecords and GetShardIterator calls data events under this
+# same selector. The consumer's role is neither scoreboard-api's nor
+# scoreboard-enroll's, so it would match the first branch below and page on
+# every read of the stream -- continuously, until the rule is updated to
+# exempt it or the stream is turned back off. Neither table has a stream
+# today.
+#
+# Expected noise: none. Nothing but the two functions touches these tables
+# today, and the 30 days to 2026-09-16 recorded 3 read capacity units across
+# both and no writes. The owner's own scan during a recovery does page, which
+# is correct: the alert names the caller, and the sentence says to check the
+# owners.
+#
+# What it does not see:
+#   - Anyone holding the scoreboard-api or scoreboard-enroll role's
+#     credentials, not just the function itself. The match is on
+#     sessionIssuer.arn alone, so a credential lifted from either Lambda's
+#     environment and replayed from outside AWS -- or from a different
+#     function altogether -- still carries that ARN and reads and writes
+#     these tables exactly as the real function would. Section 13 pages when
+#     the role's policy is widened, section 12 when the function is invoked
+#     directly; neither is a substitute for detecting a stolen credential
+#     used as itself.
+#   - A restore. RestoreTableFromBackup and RestoreTableToPointInTime are
+#     management events that name a new table, not either of these two, so
+#     the restored copy sits outside this rule and outside section 13's
+#     reach until something is pointed at it by name. The backup or export
+#     that fed it is not a blind spot any more: section 13 now pages on
+#     ExportTableToPointInTime, CreateBackup and the rest of the DynamoDB
+#     management writes on these two tables.
+#   - Rewriting this rule, which section 9 catches.
+locals {
+  scoreboard_state_role_arns = [
+    data.aws_iam_role.scoreboard["scoreboard-api"].arn,
+    data.aws_iam_role.scoreboard["scoreboard-enroll"].arn,
+  ]
+
+  scoreboard_state_pattern = jsonencode({
+    "detail-type" = ["AWS API Call via CloudTrail"]
+    "detail" = {
+      "eventSource"   = ["dynamodb.amazonaws.com"]
+      "eventCategory" = ["Data"]
+      "$or" = [
+        {
+          "userIdentity" = { "sessionContext" = { "sessionIssuer" = { "arn" = [{ "anything-but" = local.scoreboard_state_role_arns }] } } }
+        },
+        {
+          "userIdentity" = { "sessionContext" = { "sessionIssuer" = { "arn" = [{ "exists" = false }] } } }
+        },
+      ]
+    }
+  })
+}
+
+resource "aws_cloudwatch_event_rule" "scoreboard_state" {
+  name          = "hockeytrack-sec-scoreboard-state"
+  description   = "Any read or write of the scoreboard-devices or scoreboard-enrollments rows not made by the scoreboard-api or scoreboard-enroll role"
+  event_pattern = local.scoreboard_state_pattern
+
+  lifecycle {
+    precondition {
+      condition     = length(local.scoreboard_state_pattern) <= 2048
+      error_message = "The scoreboard state rule's event pattern is ${length(local.scoreboard_state_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
     }
   }
 }

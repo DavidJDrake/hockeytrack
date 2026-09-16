@@ -284,18 +284,44 @@ resource "aws_cloudtrail" "account" {
   # include_management_events is tied to the selector above rather than
   # hardcoded false: that selector only exists when
   # cloudtrail_archive_data_events is true, so if it were ever false, this
-  # selector would be the trail's only one, and a hardcoded false here would
-  # leave management events unlogged account-wide -- the root sign-in metric
-  # filter included. The expression keeps exactly one selector logging
-  # management events, whichever one is present, and CloudTrail never logs
-  # them twice. The variable is true today, so this is a no-op for the live
-  # trail.
+  # selector becomes one of two still standing -- alongside the DynamoDB
+  # selector below, whose include_management_events is unconditionally
+  # false and so never contends for the role -- and a hardcoded false here
+  # would leave management events unlogged account-wide -- the root sign-in
+  # metric filter included. The expression keeps exactly one selector
+  # logging management events in either state of the variable, and
+  # CloudTrail never logs them twice. The variable is true today, so this is
+  # a no-op for the live trail.
   event_selector {
     read_write_type           = "All"
     include_management_events = !var.cloudtrail_archive_data_events
     data_resource {
       type   = "AWS::Lambda::Function"
       values = [for f in data.aws_lambda_function.scoreboard_admin_path : f.arn]
+    }
+  }
+
+  # Row-level access to the scoreboard's state. Writes hand a panel to a
+  # different owner without any API call; reads hand over the collection-token
+  # and claim-code hashes that gate a certificate, and the addresses that own
+  # each panel. Both are worth the same attention, so this is "All" rather
+  # than write-only: over the 30 days to 2026-09-16 these two tables consumed
+  # 2 and 1 read capacity units respectively and no write capacity at all, so
+  # at $0.10 per 100,000 data events the reads cost nothing to log today. That
+  # is two idle tables, not the ceiling: the scoreboard's terraform/admin.tf
+  # throttles GET /api/enroll to 5 rps, so the worst sustained case this
+  # selector could ever log is about 432,000 data events a day, roughly $13 a
+  # month -- and the realistic case is far below that. A single panel waiting
+  # to be claimed polls at the 30-second tail of device/scoreboard/enroll.py's
+  # backoff, which costs about $0.09 a month to log.
+  # security-alarms.tf section 14 pages on any of these events not made by the
+  # scoreboard-api or scoreboard-enroll role.
+  event_selector {
+    read_write_type           = "All"
+    include_management_events = false
+    data_resource {
+      type   = "AWS::DynamoDB::Table"
+      values = [for t in data.aws_dynamodb_table.scoreboard_state : t.arn]
     }
   }
 
@@ -355,4 +381,14 @@ resource "aws_iam_role_policy" "cloudtrail_logs" {
 data "aws_lambda_function" "scoreboard_admin_path" {
   for_each      = toset(["scoreboard-api", "scoreboard-enroll", "scoreboard-authgate"])
   function_name = each.key
+}
+
+# The two tables that decide who owns a panel and which enrollment secrets are
+# live. Looked up by name so a renamed table fails this plan instead of
+# silently logging nothing, the way the admin-path functions are -- at the
+# same cost: this repository's plan fails until the scoreboard's tables exist
+# again.
+data "aws_dynamodb_table" "scoreboard_state" {
+  for_each = toset(["scoreboard-devices", "scoreboard-enrollments"])
+  name     = each.key
 }

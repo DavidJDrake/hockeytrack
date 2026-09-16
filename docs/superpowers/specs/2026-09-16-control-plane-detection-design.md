@@ -50,7 +50,7 @@ event_pattern = jsonencode({
 - **Accepted noise:** the sweep's 35 post-exclusion matches in 90 days, all scoreboard applies, roughly one every two or three days: `PutRolePolicy` 9, `CreateRole` 7, `CreateLogGroup` 6, `PutRetentionPolicy` 6, `PutMetricFilter` 4, `PutBucketPolicy` 1, `PutBucketPublicAccessBlock` 1, `CreateBucket` 1. No `UpdateDistribution` on the site's own distribution landed in the window — the earlier 17 was an account-wide count across every distribution, not this one — so the site-change noise is unmeasured rather than zero by nature; the pattern still admits one when it happens. All are deliberate, and the person making the change is the person reading the alert.
 - **Length precondition** `<= 2048`, like sections 9 to 12.
 
-Alert sentence: *If this was not you, assume the scoreboard's supporting resources have been changed: a function's role, the log groups its alarms and recovery steps read, or the site's bucket or distribution. Check the enroll role's IoT permissions, the metric filters and retention on every scoreboard log group, and the site bucket's policy and the distribution's origins and behaviors, against the scoreboard repository.*
+Alert sentence: *If this was not you, assume the scoreboard's supporting resources have been changed: a function's role, the log groups its alarms and recovery steps read, the site's bucket or distribution, or a bulk export, backup or restore point on scoreboard-devices or scoreboard-enrollments. Check the enroll role's IoT permissions, the metric filters and retention on every scoreboard log group, the site bucket's policy and the distribution's origins and behaviors, and where any export or backup landed, against the scoreboard repository.* (Extended in the devices-data-plane whole-branch review; see the section below.)
 
 ## 4. What it does not see
 
@@ -116,3 +116,54 @@ The review found two gaps in the rule as first applied, and four documents that 
 - **EventBridge rejects a pattern with too many wildcards in one field,** and only at apply, where `terraform validate` cannot see it. The ARN branches use `prefix` with the account and region written out instead.
 - **Breaks for the newly covered routes, 03:04:13 to 03:04:18:** a tag added and removed on the distribution, and a data-protection policy put and deleted on `/aws/lambda/scoreboard-api`. All four paged: `MatchedEvents` 4, `Invocations` 4, no `FailedInvocations`, dead-letter queue 0. Nothing was left behind — the distribution has no tags, and the policy is deleted.
 - **The documents were reconciled.** The threat model no longer says the rule lists no event names, and the six places in sections 10, 11 and the threat model that called these routes unwatched now point at section 13.
+
+### The devices-data-plane whole-branch review (2026-09-16)
+
+That review found a bulk-read bypass: `ExportTableToPointInTime` dumps a whole
+table to S3 as a management event, producing no data event at all, so section
+14 (which only sees data events) cannot see it; `CreateBackup` plus
+`RestoreTableFromBackup`/`RestoreTableToPointInTime` are the same shape.
+Point-in-time recovery is enabled on `scoreboard-enrollments` today, so this
+was live, not hypothetical.
+
+- **`eventSource` gained `dynamodb.amazonaws.com`,** and two new `$or`
+  branches were added: `requestParameters.tableName` against the two table
+  names (`CreateBackup`, `UpdateTable`, `DeleteTable`,
+  `UpdateContinuousBackups`) and `requestParameters.tableArn` against the two
+  table ARNs (`ExportTableToPointInTime`, the one write that carries no
+  `TableName`). The existing `resourceArn` branch also gained the two table
+  ARNs, since DynamoDB's `TagResource` carries only `ResourceArn`, the same
+  field name the log-group branch already matched. Both new locals reuse
+  `data.aws_dynamodb_table.scoreboard_state` (`cloudtrail.tf`) rather than
+  adding a second lookup of the same tables.
+- **The pattern grew from 1,572 to 1,994 characters,** still well inside 2048.
+- **`test-event-pattern`, 17 of 17 as expected:** `ExportTableToPointInTime`
+  and `CreateBackup` on `scoreboard-enrollments` matched; `UpdateTable` on
+  `scoreboard-devices` matched; the same three calls on a third table
+  (`scoreboard-games`) did not; a DynamoDB data event (`GetItem`) did not,
+  since `eventCategory` stays `Management`; and the rule's eight pre-existing
+  positives and negatives (`PutRolePolicy`, `PutRetentionPolicy`,
+  `PutBucketPolicy`, `UpdateDistribution`, `PutTransformer`, `CreateLogStream`,
+  `CreateInvalidation`) were unaffected.
+- **What still isn't seen:** a restore. `RestoreTableFromBackup` names the
+  source only as `BackupArn` and the copy as `TargetTableName`;
+  `RestoreTableToPointInTime` does name the source table, but as
+  `SourceTableName`/`SourceTableArn`, not `TableName`/`TableArn`, so neither
+  field this rule matches sees it. The restored copy is a new table either
+  way, outside both this rule and section 14 until something is pointed at it
+  by name.
+- **The alert sentence and the threat model's recovery entry (§7, "A
+  scoreboard support alert you cannot account for") were extended** to name
+  the bulk-route case alongside the role, log-group and site cases.
+- Not yet applied or broken live; the pattern is checked offline
+  (`terraform validate`, `test-event-pattern`) pending the next apply.
+
+### Extended to DynamoDB management writes (2026-09-16 16:48)
+
+The devices-data-plane review found a bulk-read path nothing watched: point-in-time recovery is enabled on `scoreboard-enrollments`, and `ExportTableToPointInTime` copies the whole table to S3 as a management event, producing no row-level events at all. `CreateBackup` and the restore calls are the same shape, and no rule in this repository watched `dynamodb.amazonaws.com` management events.
+
+Section 13 now covers them: `dynamodb.amazonaws.com` joins its event sources, with branches on the two tables' names and ARNs. The pattern grew from 1,572 to 1,994 characters, against the 2,048 the precondition enforces — worth knowing before anything else is added to it.
+
+**Verified live.** Before applying, 20 `test-event-pattern` cases: `ExportTableToPointInTime`, `CreateBackup` and `UpdateTable` match on the two tables and not on a third; a DynamoDB row event does not match, because section 14 owns those; and every earlier case still behaves as it did. After applying, a tag added and removed on `scoreboard-enrollments` produced four matches on section 13 — CloudTrail recorded the untag three times — and none on section 14. The table has no tags left, the dead-letter queue is empty, and a sign-in six minutes later paged nothing.
+
+What still is not watched: a restore names a new table, so the restored copy falls outside both rules.
