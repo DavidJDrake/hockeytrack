@@ -161,13 +161,16 @@ public access is fully blocked, and objects are encrypted at rest. Nothing in
 the pipeline deletes.
 
 **Account activity is logged and the log is tamper-evident.** A multi-region
-CloudTrail records management events across the account and write events on
-the archive, delivering to a bucket separate from the one it describes —
-whatever could destroy the archive cannot quietly erase the record of it. Log
-file validation is on, so a delivered log can be proven unaltered. Write
-events rather than reads is a deliberate trade: reads are the volume driver
-and buy exfiltration detection, writes are what would destroy the one asset
-here that cannot be rebuilt.
+CloudTrail carries three selectors: management events across the account plus
+write-only data events on the archive's S3 objects; invocations of the three
+scoreboard admin-path functions; and row-level data events on the two
+scoreboard state tables. It delivers to a bucket separate from the one it
+describes — whatever could destroy the archive cannot quietly erase the
+record of it. Log file validation is on, so a delivered log can be proven
+unaltered. Write-only rather than reads is a deliberate trade scoped to the
+archive alone: reads are the volume driver and buy exfiltration detection,
+writes are what would destroy the one asset here that cannot be rebuilt. The
+Lambda and DynamoDB selectors log both reads and writes.
 
 **Changing the log groups that hold audit evidence pages someone.** Two
 CloudWatch Logs groups are evidence rather than output: the trail's copy,
@@ -313,8 +316,8 @@ scoreboard's resources, because the account runs three other HTTP APIs. It
 ignores invocations, which the next paragraph covers. What it does not see is
 named in its comment, and includes the functions' IAM roles and deletion or
 shortened retention of the API's and functions' log groups — both of which
-section 13 now pages on — the devices table's ownership rows, whose writes the
-trail does not log, the static site, which section 13 also now pages on, and a
+section 13 now pages on — the devices table's ownership rows, which section 14
+now pages on, the static site, which section 13 also now pages on, and a
 custom domain rerouted away from the API (there is none today). A
 scoreboard apply no longer redeploys a function, and so no longer pages,
 unless that function's code, dependencies or Go toolchain change: the
@@ -834,30 +837,53 @@ event name says which. In us-east-1:
    re-run the scoreboard's `make site` from a clean checkout, which uploads
    every file and invalidates, and confirm the sign-in page's script and style
    sources against the repository.
-4. In every case, the credential in the Actor line is the thing to cut off
+4. **A bulk export, backup or table change on `scoreboard-devices` or
+   `scoreboard-enrollments`** (`ExportTableToPointInTime`, `CreateBackup`,
+   `UpdateTable`, `DeleteTable`, `UpdateContinuousBackups`, `TagResource`, …).
+   These are management writes, not row access, so run the scoreboard state
+   entry below too if the table itself was also touched. `aws dynamodb
+   list-backups --table-name <table>` and, for an export,
+   `aws dynamodb list-exports --table-arn <table arn>` give the destination
+   and time; find and secure or delete anything you did not create, and treat
+   every row in it as compromised the same way the scoreboard state entry
+   treats a live read. `aws dynamodb describe-table --table-name <table>` and
+   `aws dynamodb describe-continuous-backups --table-name <table>` confirm the
+   table's billing mode and point-in-time recovery setting still match the
+   scoreboard repository's `terraform/`.
+5. In every case, the credential in the Actor line is the thing to cut off
    first; the direct-invoke entry's step 2 says how.
 
 **A scoreboard state alert you cannot account for.** Assume the rows that
 decide who owns a panel, or the secrets that mint a certificate, are in
 somebody else's hands. In us-east-1:
 1. Find what they touched. The alert gives the time and the Actor ARN; the
-   record carries the table, the operation and the key:
-   `aws logs filter-log-events --log-group-name /aws/cloudtrail/hockeytrack-account --start-time <ms> --end-time <ms> --filter-pattern '{ ($.eventSource = "dynamodb.amazonaws.com") && ($.eventCategory = "Data") }'`.
+   record carries the table, the operation and the key. The bare filter below
+   also matches the two roles' own traffic, which by the time panels exist is
+   most of what these tables see, so exclude them and look at what is left:
+   `aws logs filter-log-events --log-group-name /aws/cloudtrail/hockeytrack-account --start-time <ms> --end-time <ms> --filter-pattern '{ ($.eventSource = "dynamodb.amazonaws.com") && ($.eventCategory = "Data") && ($.userIdentity.sessionContext.sessionIssuer.arn != "arn:aws:iam::989232581535:role/scoreboard-api") && ($.userIdentity.sessionContext.sessionIssuer.arn != "arn:aws:iam::989232581535:role/scoreboard-enroll") }'`.
    Start one minute before the alert's time and end at least twenty minutes
    after it: the log group stamps each record when CloudTrail delivers it, not
    when the call happened.
 2. Cut the credential off, as the direct-invoke entry's step 2 describes.
 3. **If `scoreboard-devices` was written:** every panel's owner is now
    suspect. `aws dynamodb scan --table-name scoreboard-devices` and compare
-   each row's owner with who should hold that panel. A row whose owner you do
+   each row's owner with who should hold that panel. This scan is itself
+   neither role, so section 14 pages on it too — expect a second alert with
+   your own Actor ARN and no cause for alarm in it. A row whose owner you do
    not recognize means that panel is being driven by somebody else: put the
    right owner back, then treat the panel as theirs until its certificate is
    replaced, because the owner column does not control the device's identity.
-4. **If `scoreboard-enrollments` was read:** treat every collection token and
-   claim code it held as known. A pending enrollment can be claimed by
-   whoever holds its code, so delete the pending rows and re-enroll those
-   panels; a completed row's collection token still fetches the certificate
-   that was minted for it, so the panels it covers need new certificates.
+4. **If `scoreboard-enrollments` was read:** the two secrets it holds do not
+   fail the same way. The claim code is 8 characters over a 30-character
+   alphabet (about 2^39.3) stored as an unsalted SHA-256 hash — brute-forceable
+   offline in minutes, well inside its own rotation window — so it must be
+   assumed recovered: delete the pending rows and re-enroll those panels. The
+   collection token is 32 bytes of `crypto/rand`, also stored as an unsalted
+   SHA-256 hash, and is not recoverable from that hash, so a read alone does
+   not compromise it. A completed row's certificate is not at risk from the
+   read either: enrollment is a CSR flow (the panel generates its own key
+   pair and the scoreboard only signs the CSR), the private key never leaves
+   the panel, and collection returns nothing but the certificate PEM.
 5. **Either way, check the certificates.** `aws iot list-certificates` gives
    each one's creation date; anything created in the window that you cannot
    account for gets revoked and detached, as the admin API entry's step 8

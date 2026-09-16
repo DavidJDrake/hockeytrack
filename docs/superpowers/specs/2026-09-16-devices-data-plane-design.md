@@ -64,7 +64,7 @@ Two changes from the first draft, both found in review and verified live with `a
 - **Expected noise: none.** Nothing but the two functions touches these tables today. The owner's own `aws dynamodb scan` during a recovery will page, which is correct: the alert names them, and the sentence says as much.
 - **Length precondition** `<= 2048`, like sections 9 to 13. The shipped pattern is 395 characters.
 
-Alert sentence: *If this was not you, assume someone read or changed the rows that decide who owns a panel and which enrollment codes are live. Check the devices table's owner column against who should hold each panel, list IoT certificates created since, and treat every collection token and claim code in the enrollments table as known to the caller.*
+Alert sentence: *If this was not you, assume someone read or changed the rows that decide who owns a panel and which enrollment codes are live. Check the devices table's owner column against who should hold each panel, list IoT certificates created since, and treat every claim code in the enrollments table as recoverable from its hash by the caller.*
 
 ### 3.3 What it does not see
 
@@ -105,6 +105,8 @@ All times UTC.
 ### Breaks, 14:01:47 to 14:01:51
 
 As `funandgames`: `GetItem` and `PutItem` on `scoreboard-devices`, `DeleteItem` removing that same row, a `Scan` of `scoreboard-enrollments`, and a `Scan --select COUNT` of `scoreboard-devices` to confirm the table was empty again. Five events, five matches, five invocations, no failed invocations, dead-letter queue 0. Every record arrived as `IAMUser` with no session issuer, which is the branch that matched them. The devices table ended at 0 rows.
+
+The bar this meets is target invocation, not delivery: five `Invocations` with zero `FailedInvocations` and an empty dead-letter queue proves EventBridge handed the rendered alert to SNS successfully, which is what §4 calls proving delivery only if judged on the alert actually arriving. No email was read for this rule to confirm that last hop, the way section 13's verification record shows emails arriving in the inbox.
 
 **A five-minute wait preceded the breaks,** because the 2026-09-15 work found a new selector does not log immediately. Every break was recorded.
 

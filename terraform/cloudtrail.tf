@@ -307,7 +307,13 @@ resource "aws_cloudtrail" "account" {
   # each panel. Both are worth the same attention, so this is "All" rather
   # than write-only: over the 30 days to 2026-09-16 these two tables consumed
   # 2 and 1 read capacity units respectively and no write capacity at all, so
-  # at $0.10 per 100,000 data events the reads cost nothing to log.
+  # at $0.10 per 100,000 data events the reads cost nothing to log today. That
+  # is two idle tables, not the ceiling: the scoreboard's terraform/admin.tf
+  # throttles GET /api/enroll to 5 rps, so the worst sustained case this
+  # selector could ever log is about 432,000 data events a day, roughly $13 a
+  # month -- and the realistic case is far below that. A single panel waiting
+  # to be claimed polls at the 30-second tail of device/scoreboard/enroll.py's
+  # backoff, which costs about $0.09 a month to log.
   # security-alarms.tf section 14 pages on any of these events not made by the
   # scoreboard-api or scoreboard-enroll role.
   event_selector {
@@ -379,7 +385,9 @@ data "aws_lambda_function" "scoreboard_admin_path" {
 
 # The two tables that decide who owns a panel and which enrollment secrets are
 # live. Looked up by name so a renamed table fails this plan instead of
-# silently logging nothing, the way the admin-path functions are.
+# silently logging nothing, the way the admin-path functions are -- at the
+# same cost: this repository's plan fails until the scoreboard's tables exist
+# again.
 data "aws_dynamodb_table" "scoreboard_state" {
   for_each = toset(["scoreboard-devices", "scoreboard-enrollments"])
   name     = each.key
