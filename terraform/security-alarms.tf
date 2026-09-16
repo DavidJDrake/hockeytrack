@@ -129,6 +129,7 @@ locals {
     scoreboard_api     = aws_cloudwatch_event_rule.scoreboard_api
     scoreboard_invoke  = aws_cloudwatch_event_rule.scoreboard_invoke
     scoreboard_support = aws_cloudwatch_event_rule.scoreboard_support
+    scoreboard_state   = aws_cloudwatch_event_rule.scoreboard_state
   }
 
   # Raw CloudTrail JSON is unreadable on a phone, so the alert is rendered as a
@@ -173,6 +174,7 @@ locals {
     scoreboard_api     = "If this was not you, assume the scoreboard admin API may accept tokens or requests it should not. Check its JWT authorizer's issuer and audience, its routes' authorizers and integrations, the scoreboard-api and scoreboard-enroll functions' USER_POOL_ID and APP_CLIENT_ID environment variables, and their code, configuration, role and permissions, against the scoreboard repository."
     scoreboard_invoke  = "If this was not you, assume someone with credentials in this account called a scoreboard admin function directly, skipping API Gateway or Cognito. Find the caller and access key in the CloudTrail record, check what the function did in its logs at that time, revoke the key, then check the admin API and sign-in gate against the scoreboard repository."
     scoreboard_support = "If this was not you, assume the scoreboard's supporting resources have been changed: a function's role, the log groups its alarms and recovery steps read, or the site's bucket or distribution. Check the enroll role's IoT permissions, the metric filters and retention on every scoreboard log group, and the site bucket's policy and the distribution's origins and behaviors, against the scoreboard repository."
+    scoreboard_state   = "If this was not you, assume someone read or changed the rows that decide who owns a panel and which enrollment codes are live. Check the devices table's owner column against who should hold each panel, list IoT certificates created since, and treat every collection token and claim code in the enrollments table as known to the caller."
   }
 
   security_alert_template = {
@@ -1625,6 +1627,98 @@ resource "aws_cloudwatch_event_rule" "scoreboard_support" {
     precondition {
       condition     = length(local.scoreboard_support_pattern) <= 2048
       error_message = "The scoreboard support rule's event pattern is ${length(local.scoreboard_support_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
+    }
+  }
+}
+
+# ---- 14. The scoreboard's state tables ----
+#
+# Sections 10 to 13 watch the control plane around the scoreboard's data: who
+# may sign in, what a token is worth, who may call the functions, and who may
+# widen their roles. This watches the rows.
+#
+#   scoreboard-devices      which account owns which panel. A write here hands
+#                           somebody a panel with no API call, no token and no
+#                           configuration change.
+#   scoreboard-enrollments  the hashes of the collection tokens and claim codes
+#                           that turn a fresh panel into a device with a
+#                           certificate. A read here is enough to matter.
+#
+# Only two identities have a reason to touch them: the scoreboard-api role
+# reads and updates devices, and the scoreboard-enroll role reads and writes
+# both. Their calls arrive as userIdentity.type AssumedRole with
+# sessionContext.sessionIssuer.userName equal to the role name -- stable
+# across cold starts, unlike the session name. So the rule allows those two
+# and pages on everything else, including an IAM user, whose events carry no
+# sessionContext at all and need their own branch, exactly as section 12's
+# missing invokedBy does.
+#
+# That branch checks exists:false on sessionIssuer.userName, not on
+# sessionContext itself, and the difference is load-bearing. Verified live
+# with aws events test-event-pattern: exists:false on sessionContext -- an
+# object-valued field once present -- matched a scoreboard-api-issued event
+# as readily as an IAM user's, because EventBridge's exists test does not
+# reliably see presence or absence of a field whose value is itself an
+# object, only of a leaf. sessionIssuer.userName is a leaf: present on every
+# AssumedRole call, absent whenever sessionContext is absent altogether, so
+# exists:false on it correctly isolates the IAM-user case alone. The same
+# trap would have hit an exists:false on invokedBy in section 12 had that
+# field ever been an object instead of a string.
+#
+# The trail logs these as data events, reads included (cloudtrail.tf). No
+# event names are listed, so GetItem, Query, Scan, PutItem, UpdateItem,
+# DeleteItem, BatchWriteItem, TransactWriteItems and ExecuteStatement are
+# covered alike. eventCategory is Data, so management writes to the tables
+# stay with whatever already covers them.
+#
+# Expected noise: none. Nothing but the two functions touches these tables
+# today, and the 30 days to 2026-09-16 recorded 3 read capacity units across
+# both and no writes. The owner's own scan during a recovery does page, which
+# is correct: the alert names the caller, and the sentence says to check the
+# owners.
+#
+# What it does not see:
+#   - The two functions' own access. A compromised scoreboard-enroll role
+#     reads and writes these tables exactly as it should. Section 13 pages
+#     when that role is widened, section 12 when the function is invoked
+#     directly.
+#   - A stream or a restored backup. Neither table has a stream today, and
+#     RestoreTableFromBackup is a management event naming a new table.
+#   - A call that names a table only through a field not listed above, the
+#     silent-failure mode sections 10 to 13 share.
+#   - Rewriting this rule, which section 9 catches.
+locals {
+  scoreboard_state_tables = sort([for t in data.aws_dynamodb_table.scoreboard_state : t.name])
+  scoreboard_state_roles  = ["scoreboard-api", "scoreboard-enroll"]
+
+  scoreboard_state_pattern = jsonencode({
+    "detail-type" = ["AWS API Call via CloudTrail"]
+    "detail" = {
+      "eventSource"   = ["dynamodb.amazonaws.com"]
+      "eventCategory" = ["Data"]
+      "$or" = [
+        {
+          "requestParameters" = { "tableName" = local.scoreboard_state_tables }
+          "userIdentity"      = { "sessionContext" = { "sessionIssuer" = { "userName" = [{ "anything-but" = local.scoreboard_state_roles }] } } }
+        },
+        {
+          "requestParameters" = { "tableName" = local.scoreboard_state_tables }
+          "userIdentity"      = { "sessionContext" = { "sessionIssuer" = { "userName" = [{ "exists" = false }] } } }
+        },
+      ]
+    }
+  })
+}
+
+resource "aws_cloudwatch_event_rule" "scoreboard_state" {
+  name          = "hockeytrack-sec-scoreboard-state"
+  description   = "Any read or write of the scoreboard-devices or scoreboard-enrollments rows not made by the scoreboard-api or scoreboard-enroll role"
+  event_pattern = local.scoreboard_state_pattern
+
+  lifecycle {
+    precondition {
+      condition     = length(local.scoreboard_state_pattern) <= 2048
+      error_message = "The scoreboard state rule's event pattern is ${length(local.scoreboard_state_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
     }
   }
 }

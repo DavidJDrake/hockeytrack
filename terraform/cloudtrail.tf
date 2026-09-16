@@ -299,6 +299,24 @@ resource "aws_cloudtrail" "account" {
     }
   }
 
+  # Row-level access to the scoreboard's state. Writes hand a panel to a
+  # different owner without any API call; reads hand over the collection-token
+  # and claim-code hashes that gate a certificate, and the addresses that own
+  # each panel. Both are worth the same attention, so this is "All" rather
+  # than write-only: over the 30 days to 2026-09-16 these two tables consumed
+  # 2 and 1 read capacity units respectively and no write capacity at all, so
+  # at $0.10 per 100,000 data events the reads cost nothing to log.
+  # security-alarms.tf section 14 pages on any of these events not made by the
+  # scoreboard-api or scoreboard-enroll role.
+  event_selector {
+    read_write_type           = "All"
+    include_management_events = false
+    data_resource {
+      type   = "AWS::DynamoDB::Table"
+      values = [for t in data.aws_dynamodb_table.scoreboard_state : t.arn]
+    }
+  }
+
   # Every region's events, in one us-east-1 log group. This exists for one
   # specific reason: console sign-in is NOT global. CloudTrail regionalises it
   # to the region behind the sign-in endpoint, and this account has real root
@@ -355,4 +373,12 @@ resource "aws_iam_role_policy" "cloudtrail_logs" {
 data "aws_lambda_function" "scoreboard_admin_path" {
   for_each      = toset(["scoreboard-api", "scoreboard-enroll", "scoreboard-authgate"])
   function_name = each.key
+}
+
+# The two tables that decide who owns a panel and which enrollment secrets are
+# live. Looked up by name so a renamed table fails this plan instead of
+# silently logging nothing, the way the admin-path functions are.
+data "aws_dynamodb_table" "scoreboard_state" {
+  for_each = toset(["scoreboard-devices", "scoreboard-enrollments"])
+  name     = each.key
 }

@@ -358,6 +358,19 @@ bucket, which are data events the trail does not log; a log stream created to
 impersonate a log source, since the exclusion is by name rather than by
 origin; nor the DNS record that points the domain at the distribution.
 
+**Reading or changing the scoreboard's rows pages someone.** Every rule above
+watches the control plane around two tables; these are the tables. One holds
+which account owns which panel, so a single write hands somebody a panel with
+no API call and no token. The other holds the hashes of the collection tokens
+and claim codes that turn a fresh panel into a device with a certificate, so a
+read is enough to matter. The trail now logs both tables' rows, reads
+included, and a fifth rule pages on any access that did not come from the
+`scoreboard-api` or `scoreboard-enroll` role. Nothing else touches them today,
+so the expected noise is none — including the owner's own scan during a
+recovery, which pages by design. What it cannot see is those two roles' own
+access: a compromised function reads and writes exactly as it should, which is
+why widening either role pages separately.
+
 **Destroying the archive is gated, but the gate is honest about its size.**
 Versioning makes an accidental overwrite reversible; it does nothing against a
 valid credential used deliberately. So every action that would destroy or
@@ -823,6 +836,32 @@ event name says which. In us-east-1:
    sources against the repository.
 4. In every case, the credential in the Actor line is the thing to cut off
    first; the direct-invoke entry's step 2 says how.
+
+**A scoreboard state alert you cannot account for.** Assume the rows that
+decide who owns a panel, or the secrets that mint a certificate, are in
+somebody else's hands. In us-east-1:
+1. Find what they touched. The alert gives the time and the Actor ARN; the
+   record carries the table, the operation and the key:
+   `aws logs filter-log-events --log-group-name /aws/cloudtrail/hockeytrack-account --start-time <ms> --end-time <ms> --filter-pattern '{ ($.eventSource = "dynamodb.amazonaws.com") && ($.eventCategory = "Data") }'`.
+   Start one minute before the alert's time and end at least twenty minutes
+   after it: the log group stamps each record when CloudTrail delivers it, not
+   when the call happened.
+2. Cut the credential off, as the direct-invoke entry's step 2 describes.
+3. **If `scoreboard-devices` was written:** every panel's owner is now
+   suspect. `aws dynamodb scan --table-name scoreboard-devices` and compare
+   each row's owner with who should hold that panel. A row whose owner you do
+   not recognize means that panel is being driven by somebody else: put the
+   right owner back, then treat the panel as theirs until its certificate is
+   replaced, because the owner column does not control the device's identity.
+4. **If `scoreboard-enrollments` was read:** treat every collection token and
+   claim code it held as known. A pending enrollment can be claimed by
+   whoever holds its code, so delete the pending rows and re-enroll those
+   panels; a completed row's collection token still fetches the certificate
+   that was minted for it, so the panels it covers need new certificates.
+5. **Either way, check the certificates.** `aws iot list-certificates` gives
+   each one's creation date; anything created in the window that you cannot
+   account for gets revoked and detached, as the admin API entry's step 8
+   describes.
 
 **The archive has lost objects.** Do not write anything to the bucket. Every
 object is versioned, the five most recent noncurrent versions of each key are
