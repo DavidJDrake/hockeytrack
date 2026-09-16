@@ -1371,10 +1371,12 @@ resource "aws_cloudwatch_event_rule" "scoreboard_api" {
 #   - Rewriting this rule, which section 9 catches.
 #   - An AWSService caller with no invokedBy at all. Each of the pattern's
 #     first two branches excludes a named invokedBy value with anything-but,
-#     which -- like an exists:false branch -- does not match a field that is
-#     simply absent, and the third branch only catches a caller whose type is
-#     not AWSService. So a hypothetical AWSService invocation carrying no
-#     invokedBy would match none of the three and would not page. This has
+#     which does not match a field that is simply absent -- the opposite of
+#     an exists:false branch, which matches only when a field is absent, as
+#     section 14 relies on -- and the third branch only catches a caller
+#     whose type is not AWSService. So a hypothetical AWSService invocation
+#     carrying no invokedBy would match none of the three and would not
+#     page. This has
 #     not been observed: the resource policies on all three functions grant
 #     invoke only to the apigateway.amazonaws.com and cognito-idp.amazonaws.com
 #     service principals, and both were seen carrying invokedBy on 2026-09-15.
@@ -1646,30 +1648,53 @@ resource "aws_cloudwatch_event_rule" "scoreboard_support" {
 #
 # Only two identities have a reason to touch them: the scoreboard-api role
 # reads and updates devices, and the scoreboard-enroll role reads and writes
-# both. Their calls arrive as userIdentity.type AssumedRole with
-# sessionContext.sessionIssuer.userName equal to the role name -- stable
-# across cold starts, unlike the session name. So the rule allows those two
-# and pages on everything else, including an IAM user, whose events carry no
-# sessionContext at all and need their own branch, exactly as section 12's
-# missing invokedBy does.
+# enrollments but only writes devices -- it never reads that table. Their
+# calls arrive as userIdentity.type AssumedRole with
+# sessionContext.sessionIssuer.arn equal to the role's ARN. ARN, not the
+# userName section 12 matches on for invokedBy: a role named scoreboard-api
+# in some other account is a different principal with no reason to be
+# exempt, and only the ARN says which account issued the session. The ARNs
+# are read from data.aws_iam_role.scoreboard (section 13) rather than typed
+# as literals, so a role recreated with a new ID keeps resolving and a
+# renamed role fails this plan instead of silently exempting nothing. So the
+# rule allows those two and pages on everything else, including an IAM user,
+# whose events carry no sessionContext at all and need their own branch,
+# exactly as section 12's missing invokedBy does.
 #
-# That branch checks exists:false on sessionIssuer.userName, not on
-# sessionContext itself, and the difference is load-bearing. Verified live
-# with aws events test-event-pattern: exists:false on sessionContext -- an
-# object-valued field once present -- matched a scoreboard-api-issued event
-# as readily as an IAM user's, because EventBridge's exists test does not
-# reliably see presence or absence of a field whose value is itself an
-# object, only of a leaf. sessionIssuer.userName is a leaf: present on every
-# AssumedRole call, absent whenever sessionContext is absent altogether, so
-# exists:false on it correctly isolates the IAM-user case alone. The same
-# trap would have hit an exists:false on invokedBy in section 12 had that
-# field ever been an object instead of a string.
+# That branch checks exists:false on sessionIssuer.arn, not on sessionContext
+# itself, and the difference is load-bearing. Verified live with aws events
+# test-event-pattern: exists:false on sessionContext -- an object-valued
+# field once present -- matched a scoreboard-api-issued event as readily as
+# an IAM user's, because EventBridge's exists test does not reliably see
+# presence or absence of a field whose value is itself an object, only of a
+# leaf. sessionIssuer.arn is a leaf: present on every AssumedRole call,
+# absent whenever sessionContext is absent altogether, so exists:false on it
+# correctly isolates the IAM-user case alone. The same trap would have hit an
+# exists:false on invokedBy in section 12 had that field ever been an object
+# instead of a string.
 #
 # The trail logs these as data events, reads included (cloudtrail.tf). No
-# event names are listed, so GetItem, Query, Scan, PutItem, UpdateItem,
-# DeleteItem, BatchWriteItem, TransactWriteItems and ExecuteStatement are
-# covered alike. eventCategory is Data, so management writes to the tables
-# stay with whatever already covers them.
+# event names and no table names are listed in this rule at all: the
+# event_selector above is what decides which tables the trail logs, this
+# trail carries exactly one AWS::DynamoDB::Table selector, and it names
+# exactly these two tables -- so every DynamoDB data event EventBridge can
+# deliver already belongs to one of them, whatever operation produced it and
+# whatever field that operation names the table in. That is deliberate:
+# GetItem, Query, Scan, PutItem, UpdateItem and DeleteItem all name the table
+# directly, but BatchGetItem and BatchWriteItem name it inside
+# requestItems, TransactWriteItems inside transactItems[].put.tableName,
+# ExecuteStatement (PartiQL) inside a statement string, and any of them can
+# name it by ARN instead of by name. A requestParameters.tableName clause --
+# the first draft of this rule carried one -- matches none of those five
+# shapes and was verified live to stay silent on all of them.
+# eventCategory is Data, so management writes to the tables stay with
+# whatever already covers them.
+#
+# The cost of dropping the table-name clauses is that this rule is no longer
+# scoped to these two tables by its own content, only by what the selector
+# above logs: if that selector is ever widened to a third table, this rule
+# starts paging on that table's ordinary traffic until the rule is updated to
+# match it. That is the loud direction to be wrong in, not the silent one.
 #
 # Expected noise: none. Nothing but the two functions touches these tables
 # today, and the 30 days to 2026-09-16 recorded 3 read capacity units across
@@ -1684,12 +1709,12 @@ resource "aws_cloudwatch_event_rule" "scoreboard_support" {
 #     directly.
 #   - A stream or a restored backup. Neither table has a stream today, and
 #     RestoreTableFromBackup is a management event naming a new table.
-#   - A call that names a table only through a field not listed above, the
-#     silent-failure mode sections 10 to 13 share.
 #   - Rewriting this rule, which section 9 catches.
 locals {
-  scoreboard_state_tables = sort([for t in data.aws_dynamodb_table.scoreboard_state : t.name])
-  scoreboard_state_roles  = ["scoreboard-api", "scoreboard-enroll"]
+  scoreboard_state_role_arns = [
+    data.aws_iam_role.scoreboard["scoreboard-api"].arn,
+    data.aws_iam_role.scoreboard["scoreboard-enroll"].arn,
+  ]
 
   scoreboard_state_pattern = jsonencode({
     "detail-type" = ["AWS API Call via CloudTrail"]
@@ -1698,12 +1723,10 @@ locals {
       "eventCategory" = ["Data"]
       "$or" = [
         {
-          "requestParameters" = { "tableName" = local.scoreboard_state_tables }
-          "userIdentity"      = { "sessionContext" = { "sessionIssuer" = { "userName" = [{ "anything-but" = local.scoreboard_state_roles }] } } }
+          "userIdentity" = { "sessionContext" = { "sessionIssuer" = { "arn" = [{ "anything-but" = local.scoreboard_state_role_arns }] } } }
         },
         {
-          "requestParameters" = { "tableName" = local.scoreboard_state_tables }
-          "userIdentity"      = { "sessionContext" = { "sessionIssuer" = { "userName" = [{ "exists" = false }] } } }
+          "userIdentity" = { "sessionContext" = { "sessionIssuer" = { "arn" = [{ "exists" = false }] } } }
         },
       ]
     }

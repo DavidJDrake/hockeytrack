@@ -284,12 +284,14 @@ resource "aws_cloudtrail" "account" {
   # include_management_events is tied to the selector above rather than
   # hardcoded false: that selector only exists when
   # cloudtrail_archive_data_events is true, so if it were ever false, this
-  # selector would be the trail's only one, and a hardcoded false here would
-  # leave management events unlogged account-wide -- the root sign-in metric
-  # filter included. The expression keeps exactly one selector logging
-  # management events, whichever one is present, and CloudTrail never logs
-  # them twice. The variable is true today, so this is a no-op for the live
-  # trail.
+  # selector becomes one of two still standing -- alongside the DynamoDB
+  # selector below, whose include_management_events is unconditionally
+  # false and so never contends for the role -- and a hardcoded false here
+  # would leave management events unlogged account-wide -- the root sign-in
+  # metric filter included. The expression keeps exactly one selector
+  # logging management events in either state of the variable, and
+  # CloudTrail never logs them twice. The variable is true today, so this is
+  # a no-op for the live trail.
   event_selector {
     read_write_type           = "All"
     include_management_events = !var.cloudtrail_archive_data_events
