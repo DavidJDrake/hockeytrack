@@ -25,6 +25,8 @@ operational and should not be.
 |---|---|---|
 | **The AWS account** | Everything else lives inside it | Total. Every asset below is downstream of it |
 | **The raw archive** | 72,921 games, 11.3 GB, rebuilt over many hours at 3 requests/second against a third-party API | Irreplaceable in practice. The NHL API is the only source and re-fetching is a multi-hour, rate-limited walk |
+| **The device image mirror** | `scoreboard-images-<account>` behind `images.scoreboard.davidjdrake.com`: the `.img.xz` every panel is flashed from and the `latest.json` an unattended panel follows | Code execution on every panel flashed or updated afterwards, on hardware in somebody's home. The objects themselves are rebuildable from a tagged release; what is lost is the assurance that what a panel runs is what was reviewed |
+| **The release identity** | `scoreboard-image-publisher`, assumed only by the `image-release` GitHub environment through the shared GitHub OIDC provider | Whoever holds it can publish an image the mirror will serve as genuine. Its trust policy is only as good as the OIDC provider behind it |
 | **Device private keys** | X.509 keys that authenticate a physical panel | A stolen key can subscribe to public game data. Deliberately worth little — see §4 |
 | **The public website** | The project's visible face | Defacement is reputational, not material. Content is regenerated from the archive |
 | **The event bus** | The integration point other projects consume | Injected events would render wrong scores on consumers |
@@ -373,6 +375,107 @@ so the expected noise is none — including the owner's own scan during a
 recovery, which pages by design. What it cannot see is those two roles' own
 access: a compromised function reads and writes exactly as it should, which is
 why widening either role pages separately.
+
+**Changing what a panel runs pages someone, with one deliberate exemption.**
+Every rule above protects data or access. This one protects code. The
+scoreboard's release workflow builds a Raspberry Pi image, publishes it to
+`scoreboard-images-<account>` behind `images.scoreboard.davidjdrake.com`, and
+every panel flashed or updated afterwards executes it — so an object replaced
+there is not a data loss, it is somebody else's code running on hardware in a
+living room. Four things carry that chain and each substitutes an image on its
+own: the objects, the distribution that is the only name the panels know, the
+`scoreboard-image-publisher` role, and the GitHub OIDC provider its trust
+rests on. The trail now logs object writes in the mirror — write-only, because
+what it serves is public by design — and a sixth rule pages on any of them
+whose session was not issued by the publisher role, and on any write naming
+the bucket, the distribution, that role by exact name, or the provider by ARN.
+Measured over the ninety days to 2026-09-17, counting only those four things,
+one CloudTrail query per resource: seven management writes in total — five on
+the bucket, two on the publisher role, none on the distribution and none on the
+provider — every one of them the single Terraform apply that created them, and
+no object writes at all.
+
+Seven things it does not see, stated plainly because the first is the largest
+residual in this file:
+
+- **The publisher role's own writes are exempt by design.** They are the
+  release doing its job, several times per release, and a rule that pages on
+  every release is a rule nobody reads. So a stolen publisher session can
+  overwrite an older `images/<v>/` object — one nothing is about to
+  re-publish, so nothing disagrees about it — and this rule stays quiet. What
+  guards a malicious release through the real workflow is the environment
+  approval on `image-release` and the build attestation the workflow
+  publishes, not detection. The scoreboard's spec §9.12 records the same gap
+  from the other side.
+- **Invalidations do not page, by anyone.** `CreateInvalidation` names its
+  target in `distributionId`; configuration changes name it in `id`, and only
+  `id` and the ARN forms are matched. 487 invalidations in ninety days across
+  this account made that the right trade, and the reasoning is the
+  scoreboard's spec §9.8: an invalidation only makes CloudFront re-read an
+  origin whose every write already pages here.
+- **The divergence monitor is up to about twelve hours late.**
+  `scoreboard-imagecheck` compares the mirror against the GitHub release; it is
+  what finds the two disagreeing after a write this rule exempted. It runs
+  twice a day, at 11:00 and 23:00 UTC — verified read-only on 2026-09-17
+  against the live schedule, `cron(0 11,23 * * ? *)` — so the worst case is
+  about twelve hours, not a day. The scoreboard's spec §9.6 records why twice
+  rather than once: the monitor's own not-running alarm is built on the
+  `Invocations` metric's 24-hour period, and a once-daily run leaves that
+  window empty just after each run.
+- **GitHub-side tampering is outside AWS entirely.** A GitHub organization
+  admin can replace the release asset the workflow uploaded without a single
+  AWS API call. The monitor sees that only as the mirror and the release
+  disagreeing, and only while the mirror still holds the original.
+- **A moved alias is not matched, in the direction that matters.**
+  `AssociateAlias` names the distribution the alias is moving *to*, in
+  `targetDistributionId`, and that branch is pinned to this distribution's ID.
+  So moving `images.scoreboard.davidjdrake.com` onto somebody else's copy
+  names theirs, not ours, and matches nothing here.
+- **The DNS record is in this account and watched by nothing.** Worth stating
+  precisely, because the obvious phrasing is wrong: the
+  `davidjdrake.com` public hosted zone (`Z04202891HM5X7HAEVE8H`) lives in this
+  same account, and it holds the live `images.scoreboard.davidjdrake.com` A and
+  AAAA aliases pointing at the mirror's distribution — verified read-only on
+  2026-09-17. The trail records Route 53 writes like any other management
+  event, but no rule in `security-alarms.tf` matches `route53.amazonaws.com`.
+  So repointing the hostname at somebody else's distribution is an unwatched
+  call *inside* the blast radius, not a call somewhere beyond it. The rule that
+  watches the static site carries the same gap for the site's own record, so
+  closing it is one change for both rather than a patch here.
+- **A second distribution is not named, and needs no access to the bucket.**
+  `CreateDistributionWithTags` and `CreateDistribution` carry only the config
+  they are given; the new distribution's ID and ARN exist only in the response,
+  which no rule matches. The bucket policy is a weaker obstacle than it looks.
+  It stops a copy that reads the bucket **directly** — that copy's own OAC is
+  not in the grant, so it would need a `PutBucketPolicy`, which does page. But
+  the mirror serves public, unauthenticated objects: verified read-only on
+  2026-09-17, the distribution has no WAF, no geo restriction and no trusted
+  signers or key groups on either cache behavior. So a second distribution can
+  simply use the real distribution as a **custom origin** and re-serve the
+  genuine objects with no bucket access and no policy change at all — or point
+  at the attacker's own bucket and serve their image instead. Neither variant
+  touches S3. Matching every distribution creation in the account would page on
+  unrelated work.
+
+Those last three bullets are not three separate gaps; they are one substitution
+route, and **no step in it pages.** Stand up a distribution in front of your own
+bucket (no `id` or ARN in the request), move the alias to it (`AssociateAlias`
+names the attacker's distribution, and this rule's `targetDistributionId` branch
+is pinned to ours), then repoint `images.scoreboard.davidjdrake.com` at it (no
+rule matches Route 53). Confirmed on 2026-09-17 by running all three calls, plus
+the custom-origin variant, against the rule's rendered pattern: every one
+returned no match. Nothing on the panel catches it either, because there is no
+panel-side check to catch it with: verified on 2026-09-17, no code under the
+scoreboard repository's `device/` fetches `latest.json`, the images host or an
+`.img.xz` at all. What stands between this route and a flashed panel today is a
+person — the download page renders three verification commands as text, and two
+of them (the GitHub release's own `.sha256`, and `gh attestation verify`) reach
+GitHub rather than the mirror, so they fail on a substituted image, but only if
+somebody runs them. The monitor does not reach it either: it compares the mirror
+against the GitHub release, and a panel redirected away from the mirror never
+touches what it inspects. This is the largest structural gap in the section and
+the strongest argument for the prevention side of the chain, image signature
+verification on the panel, over adding more detection here.
 
 **Destroying the archive is gated, but the gate is honest about its size.**
 Versioning makes an accidental overwrite reversible; it does nothing against a
@@ -888,6 +991,75 @@ somebody else's hands. In us-east-1:
    each one's creation date; anything created in the window that you cannot
    account for gets revoked and detached, as the admin API entry's step 8
    describes.
+
+**A scoreboard image alert you cannot account for.** Assume the next panel
+flashed or updated would run somebody else's code, and that every image on the
+mirror is suspect until proven otherwise. **Do not flash or update a panel
+until step 3 passes.** In us-east-1:
+1. Find what they touched. The alert gives the time and the Actor ARN. Object
+   writes and management writes sit in the same log group:
+   `aws logs filter-log-events --log-group-name /aws/cloudtrail/hockeytrack-account --start-time <ms> --end-time <ms> --filter-pattern '{ ($.requestParameters.bucketName = "scoreboard-images-989232581535") || ($.requestParameters.id = "E1GT880VF9CHFS") || ($.requestParameters.targetDistributionId = "E1GT880VF9CHFS") || ($.requestParameters.roleName = "scoreboard-image-publisher") || ($.requestParameters.openIDConnectProviderArn = "arn:aws:iam::989232581535:oidc-provider/token.actions.githubusercontent.com") }'`.
+   `bucketName` catches both the object writes and the bucket's own management
+   writes: S3 data events carry it alongside `key`, which is confirmed against
+   the archive's own records in this same log group. Start one minute before
+   the alert's time and end at least twenty minutes after it: the log group
+   stamps each record when CloudTrail delivers it, not when the call happened.
+2. Cut the credential off, as the direct-invoke entry's step 2 describes. If
+   the Actor is the publisher role, the session came from GitHub Actions or
+   from something holding its credentials: check the `image-release`
+   environment's recent deployments in the scoreboard repository for a run
+   that accounts for it, and if none does, delete the role's inline policy
+   before anything else — that stops further writes without waiting for the
+   OIDC trust to be rewritten.
+3. Prove what the mirror is serving. For every key under `images/` and for
+   `latest.json`, compare the object against the GitHub release it claims to
+   come from: `aws s3api list-object-versions --bucket scoreboard-images-989232581535 --prefix images/`
+   shows every version and when it was written, and
+   `gh release view <tag> --repo DavidJDrake/hockeytrack-scoreboard`
+   gives the assets and their digests. A current version written outside a
+   release run is the answer. Restore by copying the last known good version
+   over the current one, as the archive entry describes; the bucket is
+   versioned, so the original is almost certainly still there.
+4. Check the path, not just the objects.
+   `aws cloudfront get-distribution-config --id E1GT880VF9CHFS` must still show
+   the images bucket as its origin, the OAC in front of it, and
+   `images.scoreboard.davidjdrake.com` as its only alias. A repointed origin
+   serves a different bucket under the same URL with every object untouched.
+5. Check who may publish.
+   `aws iam get-role --role-name scoreboard-image-publisher` and
+   `aws iam list-role-policies`/`get-role-policy` against the scoreboard
+   repository's `terraform/`: the trust policy must name the GitHub OIDC
+   provider and the exact subject
+   `repo:DavidJDrake/hockeytrack-scoreboard:environment:image-release`, with
+   no second repository, no second environment and no wildcard in the subject.
+   Then `aws iam get-open-id-connect-provider --open-id-connect-provider-arn arn:aws:iam::989232581535:oidc-provider/token.actions.githubusercontent.com`
+   for a client ID or thumbprint you did not add — that one affects every role
+   in the account that trusts GitHub, not just this one.
+6. Assume any panel flashed since the write is running that image. Reflash it
+   from a release you verified in step 3; its device certificate should be
+   replaced too, as the state entry's step 5 describes, because whatever ran
+   on it had the private key.
+
+Two caveats on what this rule has actually demonstrated, in the order they
+matter. First, the rule is unapplied: it has never fired, because none of this
+has been applied yet, so what follows is evidence about its parts, not a record
+of it working. For the management half that evidence is strong — the field
+shapes are confirmed against real records in this account, and management-event
+delivery to EventBridge is what the earlier management rules in this file
+already rest on, the sign-in, admin API and support rules among them. Not all of
+the earlier rules: the direct-invoke and state rules match `eventCategory: Data`,
+which is exactly why the next paragraph can cite those two as evidence for the
+other half.
+
+Second, the object half rested on an assumption this account had not observed
+end to end: CloudTrail was confirmed to *log* S3 object data events in the shape
+the rule matches, but no such event had been *delivered* to an EventBridge rule
+here. The break test settled it on 2026-09-18. The funandgames IAM user, which
+is not the publisher role, wrote and then deleted `images/break-test.txt` in the
+mirror; MatchedEvents reached 2 about seventy seconds later, FailedInvocations
+stayed at 0 and the security DLQ stayed empty. An object write by a stranger now
+pages, demonstrated rather than argued. Step 3 still does not depend on the
+alert and remains the check that stands on its own.
 
 **The archive has lost objects.** Do not write anything to the bucket. Every
 object is versioned, the five most recent noncurrent versions of each key are

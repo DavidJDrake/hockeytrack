@@ -130,6 +130,7 @@ locals {
     scoreboard_invoke  = aws_cloudwatch_event_rule.scoreboard_invoke
     scoreboard_support = aws_cloudwatch_event_rule.scoreboard_support
     scoreboard_state   = aws_cloudwatch_event_rule.scoreboard_state
+    scoreboard_image   = aws_cloudwatch_event_rule.scoreboard_image
   }
 
   # Raw CloudTrail JSON is unreadable on a phone, so the alert is rendered as a
@@ -175,6 +176,7 @@ locals {
     scoreboard_invoke  = "If this was not you, assume someone with credentials in this account called a scoreboard admin function directly, skipping API Gateway or Cognito. Find the caller and access key in the CloudTrail record, check what the function did in its logs at that time, revoke the key, then check the admin API and sign-in gate against the scoreboard repository."
     scoreboard_support = "If this was not you, assume the scoreboard's supporting resources have been changed: a function's role, the log groups its alarms and recovery steps read, the site's bucket or distribution, or a bulk export, backup or restore point on scoreboard-devices or scoreboard-enrollments. Check the enroll role's IoT permissions, the metric filters and retention on every scoreboard log group, the site bucket's policy and the distribution's origins and behaviors, and where any export or backup landed, against the scoreboard repository."
     scoreboard_state   = "If this was not you, assume someone read or changed the rows that decide who owns a panel and which enrollment codes are live. Check the devices table's owner column against who should hold each panel, list IoT certificates created since, and treat every claim code in the enrollments table as recoverable from its hash by the caller."
+    scoreboard_image   = "If this was not you, assume the next panel flashed or updated would run somebody else's code. Treat every image on the mirror as suspect until its checksum matches the GitHub release it claims to come from, and do not flash a panel until it does. Check latest.json, the objects under images/, the bucket's versions for an overwrite, the distribution's origin and aliases, and the publisher role's trust and permissions policies, against the scoreboard repository."
   }
 
   security_alert_template = {
@@ -1808,6 +1810,337 @@ resource "aws_cloudwatch_event_rule" "scoreboard_state" {
     precondition {
       condition     = length(local.scoreboard_state_pattern) <= 2048
       error_message = "The scoreboard state rule's event pattern is ${length(local.scoreboard_state_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
+    }
+  }
+}
+
+# ---- 15. The scoreboard's device-image supply chain ----
+#
+# Sections 10 to 14 watch who may sign in, what a token is worth, who may call
+# the functions, who may widen their roles, and who reads the rows. This
+# watches what a panel runs. The scoreboard's release workflow builds a
+# Raspberry Pi image, publishes it to a mirror, and every panel flashed or
+# updated afterwards executes it. That makes the mirror the most valuable
+# write target in this account after the archive -- and unlike the archive,
+# what it costs is not data but code execution on hardware in someone's home.
+#
+# Four things carry the chain, and a change to any one of them substitutes an
+# image without touching the others:
+#
+#   The objects       images/<version>/scoreboard-<version>.img.xz is what a
+#                     panel is flashed from, and latest.json is what an
+#                     unattended panel follows to decide there is a newer one.
+#                     Overwriting either serves attacker code on the next
+#                     flash or the next update. The bucket is versioned, so
+#                     the original survives -- but only if someone notices.
+#   The distribution  images.scoreboard.davidjdrake.com is the only name the
+#                     panels know. Repointing its origin, or moving the alias
+#                     to a different distribution, serves a different bucket
+#                     under the same URL with the objects untouched.
+#   The publisher     scoreboard-image-publisher is assumed only by GitHub
+#                     Actions in the image-release environment, through the
+#                     shared GitHub OIDC provider. Widening its trust policy
+#                     -- another repository, another environment, a wildcard
+#                     subject -- hands the mirror to a workflow nobody
+#                     reviewed, and widening its permissions policy hands it
+#                     the rest of the account.
+#   The OIDC provider The trust policy is only as good as the issuer behind
+#                     it. A new client ID or a rewritten thumbprint list
+#                     changes which assertions this account accepts, for the
+#                     publisher role and for every other role that trusts
+#                     GitHub.
+#
+# The publisher role's own object writes are exempt, by design: that is the
+# release workflow doing its job, several times per release, and a rule that
+# pages on every release is a rule nobody reads. What guards a malicious
+# release through the real workflow is the environment approval on
+# image-release and the build attestation the workflow publishes, not this
+# rule. The residual is written down honestly in the scoreboard's spec §9.12
+# and in docs/threat-model.md §4: a stolen publisher session can overwrite an
+# older images/<v>/ object -- one nothing is about to re-publish, so nothing
+# disagrees about it -- and this rule will not page. The
+# scoreboard-imagecheck monitor is what finds the mirror disagreeing with the
+# GitHub release. It runs twice a day, at 11:00 and 23:00 UTC -- verified
+# read-only on 2026-09-17 against the live schedule, cron(0 11,23 * * ? *) --
+# so that is up to about twelve hours later, not a day. The scoreboard's spec
+# §9.6 records why twice rather than once: the monitor's own not-running
+# alarm is built on the Invocations metric's 24-hour period, and a once-daily
+# run leaves that window empty just after each run.
+#
+# Which fields name these things. Every row was confirmed against real records
+# in the ninety days to 2026-09-17 unless marked model-only:
+#
+#   resources[].ARN     the object ARN on an S3 data event, matched by prefix
+#                       on the bucket ARN plus "/" -- the same shape the
+#                       trail's fourth selector uses, so the rule is scoped by
+#                       its own content and not only by the selector.
+#   bucketName          confirmed: CreateBucket, PutBucketPolicy,
+#                       PutBucketVersioning, PutBucketPublicAccessBlock and
+#                       PutBucketEncryption on this bucket, the five writes
+#                       its creation made on 2026-09-17.
+#   resources[].ARN     the bucket ARN on an S3 *management* event, for the
+#                       writes that name the bucket only there.
+#   id                  confirmed: UpdateDistribution, 17 records, all
+#                       requestParameters {distributionConfig, id, ifMatch}.
+#                       DeleteDistribution is model-only here but takes the
+#                       same {Id, IfMatch} pair, and the sibling deletes that
+#                       did occur -- DeleteOriginAccessControl, DeletePublicKey
+#                       -- both recorded {id, ifMatch}.
+#   targetDistributionId  model-only: AssociateAlias, whose only reference to
+#                       the distribution is TargetDistributionId. Moving the
+#                       alias to an attacker's distribution names that one, not
+#                       this one, and is a gap section 13 records too; moving it
+#                       *back*, or onto this one, is what this branch sees.
+#   Resource/resource   confirmed lowercase: TagResource and UntagResource, one
+#                       record each, both requestParameters {resource, ...}
+#                       carrying a distribution ARN. Both casings are matched
+#                       anyway, as section 13 does, because the service model
+#                       says Resource and CloudTrail lowercases the first
+#                       letter of CloudFront request parameters.
+#   roleName            confirmed: PutRolePolicy on scoreboard-image-publisher,
+#                       and CreateRole, on 2026-09-17. Matched exactly, not by
+#                       prefix, which is what keeps scoreboard-imagecheck -- the
+#                       monitor's own role, whose policy this repository and the
+#                       scoreboard both touch -- out of the rule.
+#   openIDConnectProviderArn  model-only: every IAM write on a provider takes
+#                       OpenIDConnectProviderArn and nothing else that names it.
+#                       No such call occurred in the window; the provider
+#                       predates it.
+#
+# Why CreateInvalidation is deliberately absent. It is the one frequent write
+# that names a distribution, and the measurement says how frequent: 487
+# invalidations in ninety days across eight distributions in this account, 250
+# of them on one. None named this distribution, which has existed for a day.
+# It names its target in distributionId -- 487 records, no exceptions -- and
+# this rule matches id, targetDistributionId and the ARN forms, never
+# distributionId, so no eventName exclusion is needed to keep invalidations
+# quiet: no branch can see them. That is the same field choice section 13
+# makes, and the scoreboard's spec §9.8 states the reason: an invalidation only
+# makes CloudFront re-read an origin whose every write already pages here. If
+# CloudFront ever records an invalidation under id instead, every deploy starts
+# paging -- noisy, not blind, and the fix is a field list here.
+#
+# Expected noise: none, and it is measured rather than assumed. Counting only
+# the four things this rule watches, by a lookup-events ResourceName query per
+# resource over the ninety days to 2026-09-17: five management writes on the
+# bucket (CreateBucket, PutBucketEncryption, PutBucketPublicAccessBlock,
+# PutBucketVersioning, PutBucketPolicy), two on the publisher role (CreateRole,
+# PutRolePolicy), none on the distribution and none on the OIDC provider.
+# Seven in total, every one of them the single Terraform apply on 2026-09-17
+# that created them. The same apply made other writes -- scoreboard-imagecheck's
+# role and function, the distribution's own creation, its origin access control
+# -- but none of those is one of the four things counted here, and the ones
+# that are not are not matched by this rule either. There were no object writes
+# at all, because no release has been published yet. The
+# steady state is a handful of matches per release, all of them the publisher
+# role's and all of them exempt.
+#
+# The two data branches carry readOnly false as well as the selector's
+# write-only scope. That readOnly is really present on an S3 data event was
+# confirmed against real records rather than assumed -- lookup-events returns
+# management events only, so this was checked in the trail's log group, where
+# the archive's own PutObject and DeleteObject records carry
+# eventCategory "Data", readOnly false, and a resources[] holding the bucket
+# ARN and the object ARN. A field this rule gated on that turned out to be
+# absent would make both branches silently never match, which is the failure
+# this file exists to avoid. It is deliberate belt and braces: the selector
+# decides what CloudTrail logs, the branch decides what pages, and if the
+# selector is ever widened to "All" -- the way cloudtrail_archive_read_events
+# widens the archive's -- this rule keeps its shape instead of paging on every
+# CloudFront origin fetch.
+#
+# That log-group evidence proves CloudTrail *logs* S3 object data events in
+# this shape; on its own it does not prove EventBridge *delivers* them, and
+# sections 12 and 14 rest on delivery seen for Lambda and DynamoDB data events
+# rather than S3 object ones. The break test settled it here on 2026-09-18:
+# the funandgames IAM user, which is not the publisher role, wrote and then
+# deleted images/break-test.txt in the mirror, and this rule's MatchedEvents
+# reached 2 about seventy seconds later, with FailedInvocations at 0 and the
+# security DLQ empty. Both branches of the object half have now fired against
+# a real event.
+#
+# The second data branch tests exists:false on sessionIssuer.arn, the leaf,
+# not on sessionContext, the object above it. Section 14 found live that
+# EventBridge's exists test does not reliably see an object-valued field's
+# presence, so exists:false on sessionContext matched a role's own event as
+# readily as an IAM user's. The leaf is present on every AssumedRole call and
+# absent whenever sessionContext is, so this branch isolates the IAM-user and
+# root cases -- and makes an identity shape nobody anticipated page rather
+# than go quiet.
+#
+# Every branch repeats its own eventSource, eventCategory and readOnly
+# constraints, and nothing is constrained beside the $or. Section 8 found that
+# constraining one field both beside a $or and inside a branch makes
+# EventBridge's verdict depend on JSON key order, and jsonencode always sorts
+# "$or" first, which is the broken order.
+#
+# The bucket-by-ARN branch carries eventCategory Management for a reason worth
+# stating: an S3 data event's resources[] lists the bucket ARN alongside the
+# object ARN, so without that constraint every release's own object writes
+# would match this branch and page -- the exact case the publisher exemption
+# exists to prevent.
+#
+# What it does not see, the most important first:
+#   - The publisher role's own writes to the mirror. See above; this is the
+#     designed exemption and the biggest residual in the rule.
+#   - A tampered GitHub release asset. A GitHub organization admin can replace
+#     what the workflow uploaded, and no AWS API call occurs. The monitor
+#     compares the mirror against the release, so this shows up as the two
+#     disagreeing only if the mirror still holds the original.
+#   - An invalidation, by anyone. See above.
+#   - A moved alias, in the direction that matters: AssociateAlias onto an
+#     attacker's copy names that distribution, not this one, and the DNS record
+#     lives outside the resources this account watches -- not outside the
+#     account. Verified read-only on 2026-09-17: the davidjdrake.com public
+#     hosted zone (Z04202891HM5X7HAEVE8H) is in this same account, and it holds
+#     the live images.scoreboard.davidjdrake.com A and AAAA aliases pointing at
+#     this distribution. The trail records Route 53 writes like any other
+#     management event, but no rule in this file matches
+#     route53.amazonaws.com, so repointing that record to somebody else's
+#     distribution is an unwatched call inside the blast radius, not a call
+#     somewhere else. Section 13 records the same gap for the site, and
+#     closing it for both is a change to make once rather than here.
+#   - A second distribution, which needs no access to the bucket at all.
+#     CreateDistributionWithTags carries only distributionConfigWithTags, and
+#     CreateDistribution only distributionConfig: neither names an existing
+#     distribution's id, and the new distribution's own id and ARN appear only
+#     in responseElements, which this rule does not match. Confirmed against
+#     all five CreateDistributionWithTags records in the ninety days to
+#     2026-09-17 -- one of which created this very distribution. The origin
+#     bucket's policy is a weaker obstacle here than it first appears. It does
+#     stop a copy that reads the bucket DIRECTLY: that copy's own OAC is not in
+#     the grant, so it would need a PutBucketPolicy, which the bucket branches
+#     above do page on. But the mirror serves public, unauthenticated objects
+#     -- verified read-only on 2026-09-17: no WAF, no geo restriction, and no
+#     trusted signers or key groups on either cache behavior -- so a second
+#     distribution can use this distribution as a CUSTOM ORIGIN and re-serve
+#     the genuine objects with no bucket access and no policy change, or point
+#     at the attacker's own bucket and serve their image instead. Neither
+#     variant touches S3, so neither meets a branch of this rule. Recorded
+#     rather than closed: matching every CreateDistribution* would page on
+#     every unrelated distribution this account creates.
+#
+#     Those two entries and the moved alias above are one substitution route,
+#     not three separate gaps, and NO STEP IN IT PAGES. Create a distribution
+#     over your own bucket (no id or ARN in the request), AssociateAlias onto
+#     it (the targetDistributionId branch is pinned to our ID, so naming the
+#     attacker's distribution does not match), then repoint the hostname in
+#     Route 53 (no branch matches route53.amazonaws.com). Verified on
+#     2026-09-17 by running all three calls, plus the custom-origin variant,
+#     against this rule's rendered pattern: every one returned no match. The
+#     twice-daily scoreboard-imagecheck monitor does not close it either,
+#     because it compares the mirror against the GitHub release and a panel
+#     redirected away from the mirror never touches what it inspects. Nor does
+#     anything on the panel: verified on 2026-09-17, no code under the
+#     scoreboard repository's device/ fetches latest.json, the images host or
+#     an .img.xz at all. What stands between this route and a flashed panel
+#     today is a person running the download page's verification commands, two
+#     of which (the GitHub release's own .sha256, and gh attestation verify)
+#     reach GitHub rather than the mirror and so fail on a substituted image.
+#     This is the largest structural gap in this section, and the honest
+#     conclusion is that it argues for prevention on the panel -- verifying the
+#     image's signature before flashing it -- rather than for more branches
+#     here.
+#   - CopyDistribution, Create/DeleteMonitoringSubscription and
+#     UpdateOriginAccessControl, which name the distribution in
+#     primaryDistributionId, distributionId and the OAC's own id respectively
+#     -- none of them fields this rule matches. distributionId is excluded on
+#     purpose, and the price of that choice is these two.
+#   - Anyone holding the publisher role's credentials rather than the role
+#     itself, which is what the exemption means in practice, and the same gap
+#     section 14 carries for the two function roles.
+#   - Objects in the bucket while the trail is not logging, which the audit
+#     rule pages on when logging stops or the selectors change.
+#   - Rewriting this rule, which section 9 catches.
+data "aws_iam_role" "scoreboard_image_publisher" {
+  name = "scoreboard-image-publisher"
+}
+
+# The shared GitHub OIDC provider, looked up by URL rather than written as an
+# ARN literal: this account has exactly one, several roles trust it, and a
+# deleted provider fails this plan instead of leaving a branch matching an ARN
+# that no longer exists.
+data "aws_iam_openid_connect_provider" "github" {
+  url = "https://token.actions.githubusercontent.com"
+}
+
+data "aws_cloudfront_distribution" "scoreboard_images" {
+  id = var.scoreboard_images_distribution_id
+}
+
+locals {
+  scoreboard_images_bucket_arn    = data.aws_s3_bucket.scoreboard_images.arn
+  scoreboard_images_publisher_arn = data.aws_iam_role.scoreboard_image_publisher.arn
+  scoreboard_images_alias         = "images.scoreboard.davidjdrake.com"
+  scoreboard_images_dist_arn      = "arn:aws:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/${var.scoreboard_images_distribution_id}"
+
+  scoreboard_image_pattern = jsonencode({
+    "detail-type" = ["AWS API Call via CloudTrail"]
+    "detail" = {
+      "$or" = [
+        # An object write in the mirror whose session was issued by some role
+        # other than the publisher's.
+        {
+          "eventSource"   = ["s3.amazonaws.com"]
+          "eventCategory" = ["Data"]
+          "readOnly"      = [false]
+          "resources"     = { "ARN" = [{ "prefix" = "${local.scoreboard_images_bucket_arn}/" }] }
+          "userIdentity"  = { "sessionContext" = { "sessionIssuer" = { "arn" = [{ "anything-but" = [local.scoreboard_images_publisher_arn] }] } } }
+        },
+        # The same write with no session issuer at all: an IAM user, root, or
+        # an identity shape not seen before.
+        {
+          "eventSource"   = ["s3.amazonaws.com"]
+          "eventCategory" = ["Data"]
+          "readOnly"      = [false]
+          "resources"     = { "ARN" = [{ "prefix" = "${local.scoreboard_images_bucket_arn}/" }] }
+          "userIdentity"  = { "sessionContext" = { "sessionIssuer" = { "arn" = [{ "exists" = false }] } } }
+        },
+        # A management write naming the bucket by name.
+        {
+          "eventSource"       = ["s3.amazonaws.com"]
+          "eventCategory"     = ["Management"]
+          "readOnly"          = [false]
+          "requestParameters" = { "bucketName" = [data.aws_s3_bucket.scoreboard_images.bucket] }
+        },
+        # A management write naming the bucket only in resources[]. Management,
+        # or every object write above would match it too.
+        {
+          "eventSource"   = ["s3.amazonaws.com"]
+          "eventCategory" = ["Management"]
+          "readOnly"      = [false]
+          "resources"     = { "ARN" = [local.scoreboard_images_bucket_arn] }
+        },
+        # The distribution, by ID, by alias target, and by ARN in both casings.
+        { "eventSource" = ["cloudfront.amazonaws.com"], "readOnly" = [false], "requestParameters" = { "id" = [var.scoreboard_images_distribution_id] } },
+        { "eventSource" = ["cloudfront.amazonaws.com"], "readOnly" = [false], "requestParameters" = { "targetDistributionId" = [var.scoreboard_images_distribution_id] } },
+        { "eventSource" = ["cloudfront.amazonaws.com"], "readOnly" = [false], "requestParameters" = { "Resource" = [{ "prefix" = local.scoreboard_images_dist_arn }] } },
+        { "eventSource" = ["cloudfront.amazonaws.com"], "readOnly" = [false], "requestParameters" = { "resource" = [{ "prefix" = local.scoreboard_images_dist_arn }] } },
+        # The publisher role, by exact name, and the issuer its trust rests on.
+        { "eventSource" = ["iam.amazonaws.com"], "readOnly" = [false], "requestParameters" = { "roleName" = [data.aws_iam_role.scoreboard_image_publisher.name] } },
+        { "eventSource" = ["iam.amazonaws.com"], "readOnly" = [false], "requestParameters" = { "openIDConnectProviderArn" = [data.aws_iam_openid_connect_provider.github.arn] } },
+      ]
+    }
+  })
+}
+
+resource "aws_cloudwatch_event_rule" "scoreboard_image" {
+  name          = "hockeytrack-sec-scoreboard-image"
+  description   = "Any write to the scoreboard device-image mirror not made by the publisher role, or any change to its bucket, distribution, publisher role or GitHub OIDC provider: the routes to running attacker code on every panel flashed afterwards"
+  event_pattern = local.scoreboard_image_pattern
+
+  lifecycle {
+    precondition {
+      condition     = can(regex("^E[A-Z0-9]+$", var.scoreboard_images_distribution_id))
+      error_message = "scoreboard_images_distribution_id is \"${var.scoreboard_images_distribution_id}\", which is not a CloudFront distribution ID (^E[A-Z0-9]+$). Set it in terraform.tfvars."
+    }
+    precondition {
+      condition     = contains(data.aws_cloudfront_distribution.scoreboard_images.aliases, local.scoreboard_images_alias)
+      error_message = "Distribution ${var.scoreboard_images_distribution_id} does not serve ${local.scoreboard_images_alias}. A well-formed ID that names the wrong distribution would leave the image mirror unwatched."
+    }
+    precondition {
+      condition     = length(local.scoreboard_image_pattern) <= 2048
+      error_message = "The scoreboard image rule's event pattern is ${length(local.scoreboard_image_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
     }
   }
 }

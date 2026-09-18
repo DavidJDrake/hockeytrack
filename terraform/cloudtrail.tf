@@ -325,6 +325,40 @@ resource "aws_cloudtrail" "account" {
     }
   }
 
+  # Writes to the scoreboard device-image mirror. The objects under
+  # images/<version>/ are the .img.xz a panel is flashed from, and latest.json
+  # is what an unattended panel follows, so an object overwritten here is code
+  # execution on every panel imaged afterwards -- the highest-value write in
+  # this account after the archive itself. Without a selector the trail cannot
+  # see an object being replaced at all: PutObject is a data event.
+  #
+  # Write-only, not "All". The bucket is read by CloudFront through an origin
+  # access control on every cache miss and by whoever downloads an image, so
+  # reads are the volume driver here exactly as they are on the archive, while
+  # writes are the handful a release makes: one image, one checksum, one
+  # latest.json. What the mirror serves is public by design, so logging the
+  # reads would buy no exfiltration detection worth the bill.
+  #
+  # The value ends in "/" so it is a StartsWith prefix on the object ARN, which
+  # covers every key in the bucket and nothing in any other bucket.
+  # security-alarms.tf section 15 pages on any of these writes whose session
+  # was not issued by the scoreboard-image-publisher role.
+  #
+  # This is a basic selector rather than an advanced one because the trail's
+  # three selectors above are basic, and CloudTrail accepts one style per
+  # trail: an advanced selector here would have to be a rewrite of all four.
+  # The two express the same thing -- read_write_type "WriteOnly" is
+  # readOnly equals false, and an AWS::S3::Object data resource whose value
+  # ends in "/" is resources.ARN StartsWith that prefix.
+  event_selector {
+    read_write_type           = "WriteOnly"
+    include_management_events = false
+    data_resource {
+      type   = "AWS::S3::Object"
+      values = ["${data.aws_s3_bucket.scoreboard_images.arn}/"]
+    }
+  }
+
   # Every region's events, in one us-east-1 log group. This exists for one
   # specific reason: console sign-in is NOT global. CloudTrail regionalises it
   # to the region behind the sign-in endpoint, and this account has real root
@@ -391,4 +425,14 @@ data "aws_lambda_function" "scoreboard_admin_path" {
 data "aws_dynamodb_table" "scoreboard_state" {
   for_each = toset(["scoreboard-devices", "scoreboard-enrollments"])
   name     = each.key
+}
+
+# The bucket holding the scoreboard's device images. Looked up by name, like
+# the admin-path functions and the state tables above, so a renamed or deleted
+# bucket fails this plan instead of silently logging nothing -- and so the ARN
+# the selector and section 15 match on is the real one rather than a string
+# assembled here. The name is derived from the caller identity rather than
+# written out, so a fork of this repository in another account resolves its own.
+data "aws_s3_bucket" "scoreboard_images" {
+  bucket = "scoreboard-images-${data.aws_caller_identity.current.account_id}"
 }
