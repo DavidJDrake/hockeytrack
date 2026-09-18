@@ -1858,9 +1858,14 @@ resource "aws_cloudwatch_event_rule" "scoreboard_state" {
 # rule. The residual is written down honestly in the scoreboard's spec §9.12
 # and in docs/threat-model.md §4: a stolen publisher session can overwrite an
 # older images/<v>/ object -- one nothing is about to re-publish, so nothing
-# disagrees about it -- and this rule will not page. The daily
+# disagrees about it -- and this rule will not page. The
 # scoreboard-imagecheck monitor is what finds the mirror disagreeing with the
-# GitHub release, up to 24 hours later.
+# GitHub release. It runs twice a day, at 11:00 and 23:00 UTC -- verified
+# read-only on 2026-09-17 against the live schedule, cron(0 11,23 * * ? *) --
+# so that is up to about twelve hours later, not a day. The scoreboard's spec
+# §9.6 records why twice rather than once: the monitor's own not-running
+# alarm is built on the Invocations metric's 24-hour period, and a once-daily
+# run leaves that window empty just after each run.
 #
 # Which fields name these things. Every row was confirmed against real records
 # in the ninety days to 2026-09-17 unless marked model-only:
@@ -2022,12 +2027,19 @@ resource "aws_cloudwatch_event_rule" "scoreboard_state" {
 #     Route 53 (no branch matches route53.amazonaws.com). Verified on
 #     2026-09-17 by running all three calls, plus the custom-origin variant,
 #     against this rule's rendered pattern: every one returned no match. The
-#     daily scoreboard-imagecheck monitor does not close it either, because it
-#     compares the mirror against the GitHub release and a panel redirected
-#     away from the mirror never touches what it inspects. This is the largest
-#     structural gap in this section, and the honest conclusion is that it
-#     argues for prevention on the panel -- verifying the image's signature
-#     before flashing it -- rather than for more branches here.
+#     twice-daily scoreboard-imagecheck monitor does not close it either,
+#     because it compares the mirror against the GitHub release and a panel
+#     redirected away from the mirror never touches what it inspects. Nor does
+#     anything on the panel: verified on 2026-09-17, no code under the
+#     scoreboard repository's device/ fetches latest.json, the images host or
+#     an .img.xz at all. What stands between this route and a flashed panel
+#     today is a person running the download page's verification commands, two
+#     of which (the GitHub release's own .sha256, and gh attestation verify)
+#     reach GitHub rather than the mirror and so fail on a substituted image.
+#     This is the largest structural gap in this section, and the honest
+#     conclusion is that it argues for prevention on the panel -- verifying the
+#     image's signature before flashing it -- rather than for more branches
+#     here.
 #   - CopyDistribution, Create/DeleteMonitoringSubscription and
 #     UpdateOriginAccessControl, which name the distribution in
 #     primaryDistributionId, distributionId and the OAC's own id respectively

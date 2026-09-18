@@ -395,7 +395,7 @@ the bucket, two on the publisher role, none on the distribution and none on the
 provider — every one of them the single Terraform apply that created them, and
 no object writes at all.
 
-Six things it does not see, stated plainly because the first is the largest
+Seven things it does not see, stated plainly because the first is the largest
 residual in this file:
 
 - **The publisher role's own writes are exempt by design.** They are the
@@ -413,13 +413,24 @@ residual in this file:
   this account made that the right trade, and the reasoning is the
   scoreboard's spec §9.8: an invalidation only makes CloudFront re-read an
   origin whose every write already pages here.
-- **The daily monitor is up to 24 hours late.** `scoreboard-imagecheck`
-  compares the mirror against the GitHub release; it is what finds the two
-  disagreeing after a write this rule exempted, and it runs once a day.
+- **The divergence monitor is up to about twelve hours late.**
+  `scoreboard-imagecheck` compares the mirror against the GitHub release; it is
+  what finds the two disagreeing after a write this rule exempted. It runs
+  twice a day, at 11:00 and 23:00 UTC — verified read-only on 2026-09-17
+  against the live schedule, `cron(0 11,23 * * ? *)` — so the worst case is
+  about twelve hours, not a day. The scoreboard's spec §9.6 records why twice
+  rather than once: the monitor's own not-running alarm is built on the
+  `Invocations` metric's 24-hour period, and a once-daily run leaves that
+  window empty just after each run.
 - **GitHub-side tampering is outside AWS entirely.** A GitHub organization
   admin can replace the release asset the workflow uploaded without a single
   AWS API call. The monitor sees that only as the mirror and the release
   disagreeing, and only while the mirror still holds the original.
+- **A moved alias is not matched, in the direction that matters.**
+  `AssociateAlias` names the distribution the alias is moving *to*, in
+  `targetDistributionId`, and that branch is pinned to this distribution's ID.
+  So moving `images.scoreboard.davidjdrake.com` onto somebody else's copy
+  names theirs, not ours, and matches nothing here.
 - **The DNS record is in this account and watched by nothing.** Worth stating
   precisely, because the obvious phrasing is wrong: the
   `davidjdrake.com` public hosted zone (`Z04202891HM5X7HAEVE8H`) lives in this
@@ -446,20 +457,25 @@ residual in this file:
   touches S3. Matching every distribution creation in the account would page on
   unrelated work.
 
-Those last two bullets and the moved alias are not three separate gaps; they are
-one substitution route, and **no step in it pages.** Stand up a distribution in
-front of your own bucket (no `id` or ARN in the request), move the alias to it
-(`AssociateAlias` names the attacker's distribution, and this rule's
-`targetDistributionId` branch is pinned to ours), then repoint
-`images.scoreboard.davidjdrake.com` at it (no rule matches Route 53). Confirmed
-on 2026-09-17 by running all four calls, plus the custom-origin variant, against
-the rule's rendered pattern: every one returned no match. What still catches the
-substitution is not this rule but the panel's own checks and the daily monitor
-comparing the mirror against the GitHub release — and the monitor watches the
-mirror, so a panel redirected away from it is outside even that. This is the
-largest structural gap in the section and the strongest argument for the
-prevention side of the chain, image signature verification on the panel, over
-adding more detection here.
+Those last three bullets are not three separate gaps; they are one substitution
+route, and **no step in it pages.** Stand up a distribution in front of your own
+bucket (no `id` or ARN in the request), move the alias to it (`AssociateAlias`
+names the attacker's distribution, and this rule's `targetDistributionId` branch
+is pinned to ours), then repoint `images.scoreboard.davidjdrake.com` at it (no
+rule matches Route 53). Confirmed on 2026-09-17 by running all three calls, plus
+the custom-origin variant, against the rule's rendered pattern: every one
+returned no match. Nothing on the panel catches it either, because there is no
+panel-side check to catch it with: verified on 2026-09-17, no code under the
+scoreboard repository's `device/` fetches `latest.json`, the images host or an
+`.img.xz` at all. What stands between this route and a flashed panel today is a
+person — the download page renders three verification commands as text, and two
+of them (the GitHub release's own `.sha256`, and `gh attestation verify`) reach
+GitHub rather than the mirror, so they fail on a substituted image, but only if
+somebody runs them. The monitor does not reach it either: it compares the mirror
+against the GitHub release, and a panel redirected away from the mirror never
+touches what it inspects. This is the largest structural gap in the section and
+the strongest argument for the prevention side of the chain, image signature
+verification on the panel, over adding more detection here.
 
 **Destroying the archive is gated, but the gate is honest about its size.**
 Versioning makes an accidental overwrite reversible; it does nothing against a
