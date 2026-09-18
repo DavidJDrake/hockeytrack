@@ -1994,24 +1994,40 @@ resource "aws_cloudwatch_event_rule" "scoreboard_state" {
 #     distribution is an unwatched call inside the blast radius, not a call
 #     somewhere else. Section 13 records the same gap for the site, and
 #     closing it for both is a change to make once rather than here.
-#   - A second distribution stood up in front of the same origin.
+#   - A second distribution, which needs no access to the bucket at all.
 #     CreateDistributionWithTags carries only distributionConfigWithTags, and
 #     CreateDistribution only distributionConfig: neither names an existing
 #     distribution's id, and the new distribution's own id and ARN appear only
 #     in responseElements, which this rule does not match. Confirmed against
 #     all five CreateDistributionWithTags records in the ninety days to
 #     2026-09-17 -- one of which created this very distribution. The origin
-#     bucket's policy names the distribution its OAC belongs to, so serving
-#     the real objects through a copy needs a PutBucketPolicy, which the
-#     bucket branches above do page on; and serving them under the real
-#     hostname needs the DNS move listed above, which is unwatched rather than
-#     out of reach and so adds no obstacle of its own -- it is the second
-#     unwatched step in the same route, not a barrier. The PutBucketPolicy is
-#     the step that pages, and it is the only one, so what makes this a
-#     completeness gap rather than a standalone route is that grant and
-#     nothing else. It is recorded rather than closed: matching every
-#     CreateDistribution* would page on every unrelated distribution this
-#     account creates.
+#     bucket's policy is a weaker obstacle here than it first appears. It does
+#     stop a copy that reads the bucket DIRECTLY: that copy's own OAC is not in
+#     the grant, so it would need a PutBucketPolicy, which the bucket branches
+#     above do page on. But the mirror serves public, unauthenticated objects
+#     -- verified read-only on 2026-09-17: no WAF, no geo restriction, and no
+#     trusted signers or key groups on either cache behavior -- so a second
+#     distribution can use this distribution as a CUSTOM ORIGIN and re-serve
+#     the genuine objects with no bucket access and no policy change, or point
+#     at the attacker's own bucket and serve their image instead. Neither
+#     variant touches S3, so neither meets a branch of this rule. Recorded
+#     rather than closed: matching every CreateDistribution* would page on
+#     every unrelated distribution this account creates.
+#
+#     Those two entries and the moved alias above are one substitution route,
+#     not three separate gaps, and NO STEP IN IT PAGES. Create a distribution
+#     over your own bucket (no id or ARN in the request), AssociateAlias onto
+#     it (the targetDistributionId branch is pinned to our ID, so naming the
+#     attacker's distribution does not match), then repoint the hostname in
+#     Route 53 (no branch matches route53.amazonaws.com). Verified on
+#     2026-09-17 by running all three calls, plus the custom-origin variant,
+#     against this rule's rendered pattern: every one returned no match. The
+#     daily scoreboard-imagecheck monitor does not close it either, because it
+#     compares the mirror against the GitHub release and a panel redirected
+#     away from the mirror never touches what it inspects. This is the largest
+#     structural gap in this section, and the honest conclusion is that it
+#     argues for prevention on the panel -- verifying the image's signature
+#     before flashing it -- rather than for more branches here.
 #   - CopyDistribution, Create/DeleteMonitoringSubscription and
 #     UpdateOriginAccessControl, which name the distribution in
 #     primaryDistributionId, distributionId and the OAC's own id respectively

@@ -431,15 +431,35 @@ residual in this file:
   call *inside* the blast radius, not a call somewhere beyond it. The rule that
   watches the static site carries the same gap for the site's own record, so
   closing it is one change for both rather than a patch here.
-- **A second distribution in front of the same origin is not named.**
+- **A second distribution is not named, and needs no access to the bucket.**
   `CreateDistributionWithTags` and `CreateDistribution` carry only the config
   they are given; the new distribution's ID and ARN exist only in the response,
-  which no rule matches. What makes this a completeness point rather than a
-  route on its own is the origin: the bucket policy names the distribution its
-  OAC belongs to, so serving the real objects through a copy needs a
-  bucket-policy change, which does page. The DNS step above adds no obstacle —
-  it is simply the second unwatched step in the same route. Matching every
-  distribution creation in the account would page on unrelated work.
+  which no rule matches. The bucket policy is a weaker obstacle than it looks.
+  It stops a copy that reads the bucket **directly** — that copy's own OAC is
+  not in the grant, so it would need a `PutBucketPolicy`, which does page. But
+  the mirror serves public, unauthenticated objects: verified read-only on
+  2026-09-17, the distribution has no WAF, no geo restriction and no trusted
+  signers or key groups on either cache behavior. So a second distribution can
+  simply use the real distribution as a **custom origin** and re-serve the
+  genuine objects with no bucket access and no policy change at all — or point
+  at the attacker's own bucket and serve their image instead. Neither variant
+  touches S3. Matching every distribution creation in the account would page on
+  unrelated work.
+
+Those last two bullets and the moved alias are not three separate gaps; they are
+one substitution route, and **no step in it pages.** Stand up a distribution in
+front of your own bucket (no `id` or ARN in the request), move the alias to it
+(`AssociateAlias` names the attacker's distribution, and this rule's
+`targetDistributionId` branch is pinned to ours), then repoint
+`images.scoreboard.davidjdrake.com` at it (no rule matches Route 53). Confirmed
+on 2026-09-17 by running all four calls, plus the custom-origin variant, against
+the rule's rendered pattern: every one returned no match. What still catches the
+substitution is not this rule but the panel's own checks and the daily monitor
+comparing the mirror against the GitHub release — and the monitor watches the
+mirror, so a panel redirected away from it is outside even that. This is the
+largest structural gap in the section and the strongest argument for the
+prevention side of the chain, image signature verification on the panel, over
+adding more detection here.
 
 **Destroying the archive is gated, but the gate is honest about its size.**
 Versioning makes an accidental overwrite reversible; it does nothing against a
@@ -1009,7 +1029,11 @@ matter. First, the rule is unapplied: it has never fired, because none of this
 has been applied yet, so what follows is evidence about its parts, not a record
 of it working. For the management half that evidence is strong — the field
 shapes are confirmed against real records in this account, and management-event
-delivery to EventBridge is what the five rules before this one already rest on.
+delivery to EventBridge is what the earlier management rules in this file
+already rest on, the sign-in, admin API and support rules among them. Not all of
+the earlier rules: the direct-invoke and state rules match `eventCategory: Data`,
+which is exactly why the next paragraph can cite those two as evidence for the
+other half.
 
 Second, the object half carries one assumption nothing here has observed end to
 end. CloudTrail is confirmed to *log* S3 object data events in the shape the
