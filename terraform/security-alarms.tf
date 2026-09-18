@@ -1915,11 +1915,18 @@ resource "aws_cloudwatch_event_rule" "scoreboard_state" {
 # CloudFront ever records an invalidation under id instead, every deploy starts
 # paging -- noisy, not blind, and the fix is a field list here.
 #
-# Expected noise: none, and it is measured rather than assumed. Over the ninety
-# days to 2026-09-17 the bucket had five management writes, the publisher role
-# two, the OIDC provider none, and the distribution none -- the fifteen writes
-# of a single Terraform apply on 2026-09-17 that created all of them. There
-# were no object writes at all, because no release has been published yet. The
+# Expected noise: none, and it is measured rather than assumed. Counting only
+# the four things this rule watches, by a lookup-events ResourceName query per
+# resource over the ninety days to 2026-09-17: five management writes on the
+# bucket (CreateBucket, PutBucketEncryption, PutBucketPublicAccessBlock,
+# PutBucketVersioning, PutBucketPolicy), two on the publisher role (CreateRole,
+# PutRolePolicy), none on the distribution and none on the OIDC provider.
+# Seven in total, every one of them the single Terraform apply on 2026-09-17
+# that created them. The same apply made other writes -- scoreboard-imagecheck's
+# role and function, the distribution's own creation, its origin access control
+# -- but none of those is one of the four things counted here, and the ones
+# that are not are not matched by this rule either. There were no object writes
+# at all, because no release has been published yet. The
 # steady state is a handful of matches per release, all of them the publisher
 # role's and all of them exempt.
 #
@@ -1936,6 +1943,15 @@ resource "aws_cloudwatch_event_rule" "scoreboard_state" {
 # selector is ever widened to "All" -- the way cloudtrail_archive_read_events
 # widens the archive's -- this rule keeps its shape instead of paging on every
 # CloudFront origin fetch.
+#
+# That log-group evidence proves CloudTrail *logs* S3 object data events in
+# this shape; it does not prove EventBridge *delivers* them. Sections 12 and 14
+# rest on delivery that has been seen in this account -- Lambda and DynamoDB
+# data events both -- but no S3 object data event has yet been delivered to a
+# rule here, because the selector above is new and the mirror has never been
+# written to. That is the single unobserved assumption in this rule, and the
+# Task 9 break test closes it: a write and a delete in the mirror by a
+# principal that is not the publisher role should produce two alerts.
 #
 # The second data branch tests exists:false on sessionIssuer.arn, the leaf,
 # not on sessionContext, the object above it. Section 14 found live that
@@ -1970,6 +1986,20 @@ resource "aws_cloudwatch_event_rule" "scoreboard_state" {
 #     attacker's copy names that distribution, not this one, and the DNS record
 #     lives outside this account's resources. Section 13 records the same gap
 #     for the site.
+#   - A second distribution stood up in front of the same origin.
+#     CreateDistributionWithTags carries only distributionConfigWithTags, and
+#     CreateDistribution only distributionConfig: neither names an existing
+#     distribution's id, and the new distribution's own id and ARN appear only
+#     in responseElements, which this rule does not match. Confirmed against
+#     all five CreateDistributionWithTags records in the ninety days to
+#     2026-09-17 -- one of which created this very distribution. The origin
+#     bucket's policy names the distribution its OAC belongs to, so serving
+#     the real objects through a copy needs a PutBucketPolicy, which the
+#     bucket branches above do page on; and serving them under the real
+#     hostname needs the DNS move listed above, which is outside this account.
+#     So this is a completeness gap rather than a standalone route, and it is
+#     recorded rather than closed: matching every CreateDistribution* in the
+#     account would page on every unrelated distribution this account creates.
 #   - CopyDistribution, Create/DeleteMonitoringSubscription and
 #     UpdateOriginAccessControl, which name the distribution in
 #     primaryDistributionId, distributionId and the OAC's own id respectively

@@ -389,8 +389,10 @@ rests on. The trail now logs object writes in the mirror — write-only, because
 what it serves is public by design — and a sixth rule pages on any of them
 whose session was not issued by the publisher role, and on any write naming
 the bucket, the distribution, that role by exact name, or the provider by ARN.
-Measured over the ninety days to 2026-09-17: fifteen management writes across
-all four, every one of them the single Terraform apply that created them, and
+Measured over the ninety days to 2026-09-17, counting only those four things,
+one CloudTrail query per resource: seven management writes in total — five on
+the bucket, two on the publisher role, none on the distribution and none on the
+provider — every one of them the single Terraform apply that created them, and
 no object writes at all.
 
 Four things it does not see, stated plainly because the first is the largest
@@ -418,6 +420,14 @@ residual in this file:
   admin can replace the release asset the workflow uploaded without a single
   AWS API call. The monitor sees that only as the mirror and the release
   disagreeing, and only while the mirror still holds the original.
+- **A second distribution in front of the same origin is not named.**
+  `CreateDistributionWithTags` and `CreateDistribution` carry only the config
+  they are given; the new distribution's ID and ARN exist only in the response,
+  which no rule matches. Serving the real objects through a copy still needs a
+  bucket-policy change, which does page, and serving them under the real
+  hostname still needs the DNS move above, which is outside this account — so
+  this is a completeness point rather than a route on its own. Matching every
+  distribution creation in the account would page on unrelated work.
 
 **Destroying the archive is gated, but the gate is honest about its size.**
 Versioning makes an accidental overwrite reversible; it does nothing against a
@@ -981,6 +991,17 @@ until step 3 passes.** In us-east-1:
    from a release you verified in step 3; its device certificate should be
    replaced too, as the state entry's step 5 describes, because whatever ran
    on it had the private key.
+
+The management half of this rule is proven against real events. The object half
+carries one assumption that has not been observed end to end in this account:
+CloudTrail is confirmed to *log* S3 object data events in the shape the rule
+matches, but no such event has yet been *delivered* to an EventBridge rule here,
+because the selector is new and nothing has been written to the mirror. Lambda
+and DynamoDB data events are proven to deliver, so the shape of the assumption
+is ordinary rather than novel — but until the break test writes and deletes an
+object in the mirror as a non-publisher principal and two alerts arrive, absence
+of an object alert is not yet evidence that nothing was written. Step 3 does not
+depend on the alert and is the check that stands on its own.
 
 **The archive has lost objects.** Do not write anything to the bucket. Every
 object is versioned, the five most recent noncurrent versions of each key are
