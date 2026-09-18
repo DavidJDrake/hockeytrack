@@ -1984,8 +1984,16 @@ resource "aws_cloudwatch_event_rule" "scoreboard_state" {
 #   - An invalidation, by anyone. See above.
 #   - A moved alias, in the direction that matters: AssociateAlias onto an
 #     attacker's copy names that distribution, not this one, and the DNS record
-#     lives outside this account's resources. Section 13 records the same gap
-#     for the site.
+#     lives outside the resources this account watches -- not outside the
+#     account. Verified read-only on 2026-09-17: the davidjdrake.com public
+#     hosted zone (Z04202891HM5X7HAEVE8H) is in this same account, and it holds
+#     the live images.scoreboard.davidjdrake.com A and AAAA aliases pointing at
+#     this distribution. The trail records Route 53 writes like any other
+#     management event, but no rule in this file matches
+#     route53.amazonaws.com, so repointing that record to somebody else's
+#     distribution is an unwatched call inside the blast radius, not a call
+#     somewhere else. Section 13 records the same gap for the site, and
+#     closing it for both is a change to make once rather than here.
 #   - A second distribution stood up in front of the same origin.
 #     CreateDistributionWithTags carries only distributionConfigWithTags, and
 #     CreateDistribution only distributionConfig: neither names an existing
@@ -1996,10 +2004,14 @@ resource "aws_cloudwatch_event_rule" "scoreboard_state" {
 #     bucket's policy names the distribution its OAC belongs to, so serving
 #     the real objects through a copy needs a PutBucketPolicy, which the
 #     bucket branches above do page on; and serving them under the real
-#     hostname needs the DNS move listed above, which is outside this account.
-#     So this is a completeness gap rather than a standalone route, and it is
-#     recorded rather than closed: matching every CreateDistribution* in the
-#     account would page on every unrelated distribution this account creates.
+#     hostname needs the DNS move listed above, which is unwatched rather than
+#     out of reach and so adds no obstacle of its own -- it is the second
+#     unwatched step in the same route, not a barrier. The PutBucketPolicy is
+#     the step that pages, and it is the only one, so what makes this a
+#     completeness gap rather than a standalone route is that grant and
+#     nothing else. It is recorded rather than closed: matching every
+#     CreateDistribution* would page on every unrelated distribution this
+#     account creates.
 #   - CopyDistribution, Create/DeleteMonitoringSubscription and
 #     UpdateOriginAccessControl, which name the distribution in
 #     primaryDistributionId, distributionId and the OAC's own id respectively

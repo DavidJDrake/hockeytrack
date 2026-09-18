@@ -395,7 +395,7 @@ the bucket, two on the publisher role, none on the distribution and none on the
 provider — every one of them the single Terraform apply that created them, and
 no object writes at all.
 
-Four things it does not see, stated plainly because the first is the largest
+Six things it does not see, stated plainly because the first is the largest
 residual in this file:
 
 - **The publisher role's own writes are exempt by design.** They are the
@@ -420,13 +420,25 @@ residual in this file:
   admin can replace the release asset the workflow uploaded without a single
   AWS API call. The monitor sees that only as the mirror and the release
   disagreeing, and only while the mirror still holds the original.
+- **The DNS record is in this account and watched by nothing.** Worth stating
+  precisely, because the obvious phrasing is wrong: the
+  `davidjdrake.com` public hosted zone (`Z04202891HM5X7HAEVE8H`) lives in this
+  same account, and it holds the live `images.scoreboard.davidjdrake.com` A and
+  AAAA aliases pointing at the mirror's distribution — verified read-only on
+  2026-09-17. The trail records Route 53 writes like any other management
+  event, but no rule in `security-alarms.tf` matches `route53.amazonaws.com`.
+  So repointing the hostname at somebody else's distribution is an unwatched
+  call *inside* the blast radius, not a call somewhere beyond it. The rule that
+  watches the static site carries the same gap for the site's own record, so
+  closing it is one change for both rather than a patch here.
 - **A second distribution in front of the same origin is not named.**
   `CreateDistributionWithTags` and `CreateDistribution` carry only the config
   they are given; the new distribution's ID and ARN exist only in the response,
-  which no rule matches. Serving the real objects through a copy still needs a
-  bucket-policy change, which does page, and serving them under the real
-  hostname still needs the DNS move above, which is outside this account — so
-  this is a completeness point rather than a route on its own. Matching every
+  which no rule matches. What makes this a completeness point rather than a
+  route on its own is the origin: the bucket policy names the distribution its
+  OAC belongs to, so serving the real objects through a copy needs a
+  bucket-policy change, which does page. The DNS step above adds no obstacle —
+  it is simply the second unwatched step in the same route. Matching every
   distribution creation in the account would page on unrelated work.
 
 **Destroying the archive is gated, but the gate is honest about its size.**
@@ -992,16 +1004,22 @@ until step 3 passes.** In us-east-1:
    replaced too, as the state entry's step 5 describes, because whatever ran
    on it had the private key.
 
-The management half of this rule is proven against real events. The object half
-carries one assumption that has not been observed end to end in this account:
-CloudTrail is confirmed to *log* S3 object data events in the shape the rule
-matches, but no such event has yet been *delivered* to an EventBridge rule here,
-because the selector is new and nothing has been written to the mirror. Lambda
-and DynamoDB data events are proven to deliver, so the shape of the assumption
-is ordinary rather than novel — but until the break test writes and deletes an
-object in the mirror as a non-publisher principal and two alerts arrive, absence
-of an object alert is not yet evidence that nothing was written. Step 3 does not
-depend on the alert and is the check that stands on its own.
+Two caveats on what this rule has actually demonstrated, in the order they
+matter. First, the rule is unapplied: it has never fired, because none of this
+has been applied yet, so what follows is evidence about its parts, not a record
+of it working. For the management half that evidence is strong — the field
+shapes are confirmed against real records in this account, and management-event
+delivery to EventBridge is what the five rules before this one already rest on.
+
+Second, the object half carries one assumption nothing here has observed end to
+end. CloudTrail is confirmed to *log* S3 object data events in the shape the
+rule matches, but no such event has yet been *delivered* to an EventBridge rule
+in this account, because the selector is new and nothing has been written to the
+mirror. Lambda and DynamoDB data events are proven to deliver, so the shape of
+the assumption is ordinary rather than novel — but until the break test writes
+and deletes an object in the mirror as a non-publisher principal and two alerts
+arrive, absence of an object alert is not yet evidence that nothing was written.
+Step 3 does not depend on the alert and is the check that stands on its own.
 
 **The archive has lost objects.** Do not write anything to the bucket. Every
 object is versioned, the five most recent noncurrent versions of each key are
