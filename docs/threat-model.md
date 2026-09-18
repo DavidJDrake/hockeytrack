@@ -1051,15 +1051,15 @@ the earlier rules: the direct-invoke and state rules match `eventCategory: Data`
 which is exactly why the next paragraph can cite those two as evidence for the
 other half.
 
-Second, the object half carries one assumption nothing here has observed end to
-end. CloudTrail is confirmed to *log* S3 object data events in the shape the
-rule matches, but no such event has yet been *delivered* to an EventBridge rule
-in this account, because the selector is new and nothing has been written to the
-mirror. Lambda and DynamoDB data events are proven to deliver, so the shape of
-the assumption is ordinary rather than novel — but until the break test writes
-and deletes an object in the mirror as a non-publisher principal and two alerts
-arrive, absence of an object alert is not yet evidence that nothing was written.
-Step 3 does not depend on the alert and is the check that stands on its own.
+Second, the object half rested on an assumption this account had not observed
+end to end: CloudTrail was confirmed to *log* S3 object data events in the shape
+the rule matches, but no such event had been *delivered* to an EventBridge rule
+here. The break test settled it on 2026-09-18. The funandgames IAM user, which
+is not the publisher role, wrote and then deleted `images/break-test.txt` in the
+mirror; MatchedEvents reached 2 about seventy seconds later, FailedInvocations
+stayed at 0 and the security DLQ stayed empty. An object write by a stranger now
+pages, demonstrated rather than argued. Step 3 still does not depend on the
+alert and remains the check that stands on its own.
 
 **The archive has lost objects.** Do not write anything to the bucket. Every
 object is versioned, the five most recent noncurrent versions of each key are

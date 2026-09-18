@@ -1950,13 +1950,14 @@ resource "aws_cloudwatch_event_rule" "scoreboard_state" {
 # CloudFront origin fetch.
 #
 # That log-group evidence proves CloudTrail *logs* S3 object data events in
-# this shape; it does not prove EventBridge *delivers* them. Sections 12 and 14
-# rest on delivery that has been seen in this account -- Lambda and DynamoDB
-# data events both -- but no S3 object data event has yet been delivered to a
-# rule here, because the selector above is new and the mirror has never been
-# written to. That is the single unobserved assumption in this rule, and the
-# Task 9 break test closes it: a write and a delete in the mirror by a
-# principal that is not the publisher role should produce two alerts.
+# this shape; on its own it does not prove EventBridge *delivers* them, and
+# sections 12 and 14 rest on delivery seen for Lambda and DynamoDB data events
+# rather than S3 object ones. The break test settled it here on 2026-09-18:
+# the funandgames IAM user, which is not the publisher role, wrote and then
+# deleted images/break-test.txt in the mirror, and this rule's MatchedEvents
+# reached 2 about seventy seconds later, with FailedInvocations at 0 and the
+# security DLQ empty. Both branches of the object half have now fired against
+# a real event.
 #
 # The second data branch tests exists:false on sessionIssuer.arn, the leaf,
 # not on sessionContext, the object above it. Section 14 found live that
