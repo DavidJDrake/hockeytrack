@@ -183,7 +183,7 @@ func Run(ctx context.Context, d Deps, cfg Config, gameID int64, owner string, sh
 			}
 		}
 		running := score
-		for _, p := range NewPlays(pbp.Plays, sent, IsFinalState(pbp.GameState)) {
+		for _, p := range NewPlays(pbp.Plays, sent) {
 			running = RunningScore(pbp, p, running)
 			if err := d.Pub.Publish(ctx, events.DTPlay, BuildPlayEvent(pbp, p, running)); err != nil {
 				slog.Warn("play publish failed; will retry next cycle", "gameId", gameID, "eventId", p.EventID, "seq", p.SortOrder, "err", err)

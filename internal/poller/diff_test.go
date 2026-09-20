@@ -23,7 +23,7 @@ func loadPBP(t *testing.T) *nhl.PlayByPlay {
 
 func TestNewPlaysAreTheOnesNotYetSent(t *testing.T) {
 	pbp := loadPBP(t)
-	all := NewPlays(pbp.Plays, nil, false)
+	all := NewPlays(pbp.Plays, nil)
 	if len(all) != len(pbp.Plays) {
 		t.Fatalf("with nothing sent: %d plays, want all %d", len(all), len(pbp.Plays))
 	}
@@ -39,7 +39,7 @@ func TestNewPlaysAreTheOnesNotYetSent(t *testing.T) {
 	for _, p := range all[:half] {
 		sent[p.EventID] = true
 	}
-	rest := NewPlays(pbp.Plays, sent, false)
+	rest := NewPlays(pbp.Plays, sent)
 	if len(rest) != len(all)-half {
 		t.Errorf("after sending %d: got %d plays, want %d", half, len(rest), len(all)-half)
 	}
@@ -52,7 +52,7 @@ func TestNewPlaysAreTheOnesNotYetSent(t *testing.T) {
 	for _, p := range rest {
 		sent[p.EventID] = true
 	}
-	if got := NewPlays(pbp.Plays, sent, false); len(got) != 0 {
+	if got := NewPlays(pbp.Plays, sent); len(got) != 0 {
 		t.Errorf("expected 0 new plays, got %d", len(got))
 	}
 }
@@ -63,7 +63,7 @@ func TestGoldenEventSequence(t *testing.T) {
 	pbp := loadPBP(t)
 	score := map[string]int{pbp.HomeTeam.Abbrev: 0, pbp.AwayTeam.Abbrev: 0}
 	var goals []string
-	for _, p := range NewPlays(pbp.Plays, nil, false) {
+	for _, p := range NewPlays(pbp.Plays, nil) {
 		score = RunningScore(pbp, p, score)
 		e := BuildPlayEvent(pbp, p, score)
 		if e.SchemaVersion != 1 || e.GameID != 2025020001 {

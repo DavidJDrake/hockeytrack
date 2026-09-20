@@ -74,32 +74,31 @@ func TestTheFixturesAreWhatTheyClaimToBe(t *testing.T) {
 	}
 }
 
-func TestAProvisionalPlayIsHeldBackUntilItHasItsRealNumber(t *testing.T) {
+func TestAProvisionalPlayIsSentAtOnceAndNeverAgain(t *testing.T) {
 	sent := map[int64]bool{}
-	markSent(sent, NewPlays(snapshot(t, "pbp_before_period.json").Plays, sent, false))
+	markSent(sent, NewPlays(snapshot(t, "pbp_before_period.json").Plays, sent))
 
-	// The poll that used to poison the game.
-	got := NewPlays(snapshot(t, "pbp_provisional.json").Plays, sent, false)
-	if len(got) != 0 {
-		t.Fatalf("sent %v while they carried provisional numbers", ids(got))
+	// The poll that used to poison the game. The two plays go out now, with
+	// the numbers they have: a live board should not wait a minute for them,
+	// and the plays that get provisional numbers include real ones.
+	got := NewPlays(snapshot(t, "pbp_provisional.json").Plays, sent)
+	if len(got) != 2 || got[0].EventID != 386 || got[1].EventID != 385 {
+		t.Fatalf("sent %v, want the period-start and the faceoff", ids(got))
 	}
+	markSent(sent, got)
 
-	// Forty-one seconds later they have real numbers, and a stoppage has
-	// happened since. All three go, in order, numbered as the NHL now has them.
-	got = NewPlays(snapshot(t, "pbp_renumbered.json").Plays, sent, false)
-	want := []int64{386, 385, 24}
-	if len(got) != 3 || got[0].EventID != want[0] || got[1].EventID != want[1] || got[2].EventID != want[2] {
-		t.Fatalf("sent %v, want %v", ids(got), want)
-	}
-	if got[0].SortOrder != 283 || got[1].SortOrder != 284 || got[2].SortOrder != 285 {
-		t.Errorf("sort orders %d %d %d, want 283 284 285", got[0].SortOrder, got[1].SortOrder, got[2].SortOrder)
+	// Forty-one seconds later they have real numbers. They are the same
+	// plays and are not sent again; the stoppage that has happened since is.
+	got = NewPlays(snapshot(t, "pbp_renumbered.json").Plays, sent)
+	if len(got) != 1 || got[0].EventID != 24 || got[0].SortOrder != 285 {
+		t.Fatalf("sent %v, want only the new stoppage (24)", ids(got))
 	}
 }
 
 func TestNothingIsEverSentTwice(t *testing.T) {
 	sent := map[int64]bool{}
 	for _, name := range []string{"pbp_before_period.json", "pbp_provisional.json", "pbp_renumbered.json", "pbp_renumbered.json"} {
-		plays := NewPlays(snapshot(t, name).Plays, sent, false)
+		plays := NewPlays(snapshot(t, name).Plays, sent)
 		for _, p := range plays {
 			if sent[p.EventID] {
 				t.Fatalf("%s: event %d sent twice", name, p.EventID)
@@ -107,7 +106,7 @@ func TestNothingIsEverSentTwice(t *testing.T) {
 		}
 		markSent(sent, plays)
 	}
-	if got := NewPlays(snapshot(t, "pbp_renumbered.json").Plays, sent, false); len(got) != 0 {
+	if got := NewPlays(snapshot(t, "pbp_renumbered.json").Plays, sent); len(got) != 0 {
 		t.Errorf("a snapshot already sent produced %v", ids(got))
 	}
 }
@@ -125,20 +124,9 @@ func TestAPlayInsertedBelowTheHighestNumberSentIsStillSent(t *testing.T) {
 		}
 		sent[p.EventID] = true
 	}
-	got := NewPlays(plays, sent, false)
+	got := NewPlays(plays, sent)
 	if len(got) != 1 || got[0].EventID != late.EventID {
 		t.Fatalf("sent %v, want only the late play %d", ids(got), late.EventID)
-	}
-}
-
-// If a play never gets a real number, the end of the game is the last chance
-// to send it. Nothing is lost for the sake of a tidy sequence.
-func TestAtTheFinalWhateverIsLeftIsSent(t *testing.T) {
-	sent := map[int64]bool{}
-	markSent(sent, NewPlays(snapshot(t, "pbp_before_period.json").Plays, sent, false))
-	got := NewPlays(snapshot(t, "pbp_provisional.json").Plays, sent, true)
-	if len(got) != 2 {
-		t.Fatalf("at the final, sent %v; want the two held-back plays", ids(got))
 	}
 }
 
@@ -149,18 +137,18 @@ func TestAGameAlreadyUnderWayIsNotReplayed(t *testing.T) {
 	plays := snapshot(t, "pbp_renumbered.json").Plays
 
 	healthy := SeedSent(plays, 276) // the mark after the first period
-	got := NewPlays(plays, healthy, false)
+	got := NewPlays(plays, healthy)
 	if len(got) != 3 {
 		t.Errorf("a healthy game resumes with %v, want the three plays after 276", ids(got))
 	}
 
 	poisoned := SeedSent(plays, 9004)
-	if got := NewPlays(plays, poisoned, false); len(got) != 0 {
+	if got := NewPlays(plays, poisoned); len(got) != 0 {
 		t.Errorf("a poisoned game replayed %v", ids(got))
 	}
 	// ...and from here on it works: the next play the NHL adds is sent.
 	next := append(append([]nhl.Play{}, plays...), nhl.Play{EventID: 999, SortOrder: 290, TypeDescKey: "penalty"})
-	if got := NewPlays(next, poisoned, false); len(got) != 1 || got[0].EventID != 999 {
+	if got := NewPlays(next, poisoned); len(got) != 1 || got[0].EventID != 999 {
 		t.Errorf("a poisoned game is still stuck: sent %v", ids(got))
 	}
 
@@ -265,12 +253,6 @@ func TestAPollThatCatchesTheProvisionalNumbersNoLongerStopsTheGame(t *testing.T)
 			t.Errorf("event %d was never published: %v", want, got)
 		}
 	}
-	for _, e := range pub.Published {
-		if e.DetailType == events.DTPlay && e.Detail.(events.PlayEvent).Seq >= ProvisionalSortOrder {
-			t.Errorf("published event %d with provisional seq %d", e.Detail.(events.PlayEvent).EventID, e.Detail.(events.PlayEvent).Seq)
-		}
-	}
-
 	rec, _ := gs.Get(context.Background(), 2026010004)
 	if rec.LastPlaySortOrder >= ProvisionalSortOrder {
 		t.Errorf("the recorded mark is %d; a provisional number must never be recorded", rec.LastPlaySortOrder)
@@ -293,8 +275,9 @@ func TestAGameAlreadyPoisonedStartsWorkingAgainWithoutReplayingItself(t *testing
 	if out, err := Run(context.Background(), d, DefaultConfig(), 2026010004, "link", func() bool { return false }); err != nil || out != OutcomeFinal {
 		t.Fatalf("outcome=%v err=%v", out, err)
 	}
-	// Everything in the feed at the moment of the fix is treated as gone.
-	// The one play that arrives afterwards is published: the game is unstuck.
+	// Everything at or below the old mark is treated as gone -- which, for a
+	// mark in the 9000s, is every play in the feed at that moment. The one
+	// play that arrives afterwards is published: the game is unstuck.
 	got := playIDs(pub)
 	if len(got) != 1 || got[0] != 24 {
 		t.Errorf("published %v, want only the play that arrived after the fix (24)", got)

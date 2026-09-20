@@ -9,12 +9,13 @@ import (
 	"hockeytrack/internal/nhl"
 )
 
-// ProvisionalSortOrder is where the NHL parks plays it has not placed yet. At
-// the start of a period it appends the period-start and the opening faceoff
-// with sort orders in the 9000s and renumbers them to their real positions
-// within a minute or so (seen in this project's own archive: 9003 and 9004
-// becoming 283 and 284 forty-one seconds later). Real sort orders run to a
-// few thousand at most.
+// ProvisionalSortOrder is where the NHL parks plays it has not placed yet. In
+// the first minute or so of a period, new plays arrive with sort orders in
+// the 9000s and are renumbered to their real positions afterwards. Seen in
+// this project's own archive (9003 and 9004 becoming 283 and 284 forty-one
+// seconds later) and live on 2026-09-20, when a shot 25 seconds into overtime
+// carried 9009 for at least fifteen seconds: it is not only the period-start
+// and the opening faceoff. Real sort orders run to a few thousand at most.
 const ProvisionalSortOrder = 9000
 
 // NewPlays returns the plays not yet sent, in sort order.
@@ -26,17 +27,16 @@ const ProvisionalSortOrder = 9000
 // as already sent. A set has no such single point of failure, and it also
 // picks up plays the NHL inserts late, below numbers already sent.
 //
-// A play still carrying a provisional number is held back until it has its
-// real one, so that seq means something to whoever receives it -- except at
-// the final, when whatever is left goes regardless: nothing is lost for the
-// sake of a tidy sequence.
-func NewPlays(plays []nhl.Play, sent map[int64]bool, final bool) []nhl.Play {
+// A play carrying a provisional number is sent at once, with that number as
+// its seq. Holding it back until it was renumbered was tried and dropped: the
+// plays that get provisional numbers include real ones, and a goal in the
+// first minute of a period would have reached consumers up to a minute late
+// for the sake of a tidy sequence. Consumers identify plays by eventId, and
+// are told that a seq of 9000 or more is provisional.
+func NewPlays(plays []nhl.Play, sent map[int64]bool) []nhl.Play {
 	var out []nhl.Play
 	for _, p := range plays {
 		if sent[p.EventID] {
-			continue
-		}
-		if p.SortOrder >= ProvisionalSortOrder && !final {
 			continue
 		}
 		out = append(out, p)
