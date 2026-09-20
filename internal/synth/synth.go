@@ -31,6 +31,10 @@ const critThreshold = 300
 
 // Options controls how Snapshots paces and labels the reconstructed poll
 // sequence.
+// evenStrength is five skaters and a goalie a side: the NHL sends no
+// situation at all then.
+const evenStrength = "1551"
+
 type Options struct {
 	// Interval groups plays into one snapshot per Interval of elapsed game
 	// time. Zero emits one snapshot per play: denser than any real poll
@@ -142,7 +146,7 @@ func Snapshots(finalRaw []byte, opts Options) ([]Snapshot, error) {
 	doc["gameState"] = "PRE"
 	doc["periodDescriptor"] = map[string]any{"number": 1, "periodType": "REG"}
 	doc["clock"] = clockDoc("20:00", pregameSeconds, false, false)
-	delete(doc, "situationCode")
+	delete(doc, "situation")
 	homeTeam["score"], homeTeam["sog"] = 0, 0
 	awayTeam["score"], awayTeam["sog"] = 0, 0
 	if err := emit(); err != nil {
@@ -172,10 +176,15 @@ func Snapshots(finalRaw []byte, opts Options) ([]Snapshot, error) {
 		doc["periodDescriptor"] = periodDescs[i]
 		doc["gameState"] = gameState(p, st, last)
 		doc["clock"] = clockDocFor(final.Plays, i)
-		if st.situation != "" {
-			doc["situationCode"] = st.situation
+		// Where and when the real feed says it: under "situation", and
+		// only while the teams are not at even strength. This used to write
+		// a top-level situationCode, which the real feed does not have --
+		// the synthetic feed and the poller agreed with each other and with
+		// nothing else, so no test saw that power plays never arrived.
+		if st.situation != "" && st.situation != evenStrength {
+			doc["situation"] = map[string]any{"situationCode": st.situation}
 		} else {
-			delete(doc, "situationCode")
+			delete(doc, "situation")
 		}
 		// Fact F6: the shootout winner's goal is in no play's running
 		// score, so the last snapshot defers to the document itself.

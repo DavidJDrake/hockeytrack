@@ -162,6 +162,12 @@ func (p *Play) ParsedDetails() PlayDetails {
 	return d
 }
 
+// Situation is the feed's account of a manpower difference: "1451" is one
+// away goalie, four away skaters, five home skaters, one home goalie.
+type Situation struct {
+	SituationCode string `json:"situationCode"`
+}
+
 type PlayByPlay struct {
 	ID               int64            `json:"id"`
 	Season           int64            `json:"season"`
@@ -171,7 +177,11 @@ type PlayByPlay struct {
 	HomeTeam         PBPTeam          `json:"homeTeam"`
 	PeriodDescriptor PeriodDescriptor `json:"periodDescriptor"`
 	Clock            Clock            `json:"clock"`
-	SituationCode    string           `json:"situationCode"`
-	RosterSpots      []RosterSpot     `json:"rosterSpots"`
-	Plays            []Play           `json:"plays"`
+	// Situation is present only while the teams are not at even strength.
+	// Its absence is the information: there is no top-level situationCode
+	// in this feed, which is what this struct used to look for, so no power
+	// play ever reached a consumer.
+	Situation   *Situation   `json:"situation"`
+	RosterSpots []RosterSpot `json:"rosterSpots"`
+	Plays       []Play       `json:"plays"`
 }

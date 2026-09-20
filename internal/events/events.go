@@ -1,5 +1,7 @@
 // Package events defines the versioned EventBridge event contract.
-// Consumers dedupe on (gameId, seq); delivery is at-least-once.
+// Consumers dedupe on (gameId, eventId); delivery is at-least-once. seq is
+// the NHL's sort order at the time of publishing: good for ordering, no good
+// as an identity, because the NHL renumbers plays.
 package events
 
 import (
@@ -24,18 +26,23 @@ const (
 )
 
 type PlayEvent struct {
-	SchemaVersion int             `json:"schemaVersion"`
-	GameID        int64           `json:"gameId"`
-	Seq           int64           `json:"seq"`
-	PlayType      string          `json:"playType"`
-	HomeTeam      string          `json:"homeTeam"`
-	AwayTeam      string          `json:"awayTeam"`
-	ActingTeam    string          `json:"actingTeam,omitempty"`
-	ScoringTeam   string          `json:"scoringTeam,omitempty"`
-	Period        int             `json:"period"`
-	TimeInPeriod  string          `json:"timeInPeriod"`
-	Score         map[string]int  `json:"score"`
-	Raw           json.RawMessage `json:"raw"`
+	SchemaVersion int   `json:"schemaVersion"`
+	GameID        int64 `json:"gameId"`
+	Seq           int64 `json:"seq"`
+	// EventID is the NHL's own id for the play and the only thing about it
+	// that does not change: Seq is the sort order, which the NHL renumbers.
+	// Dedupe on (gameId, eventId). Absent (0) from events published before
+	// 2026-09-20.
+	EventID      int64           `json:"eventId,omitempty"`
+	PlayType     string          `json:"playType"`
+	HomeTeam     string          `json:"homeTeam"`
+	AwayTeam     string          `json:"awayTeam"`
+	ActingTeam   string          `json:"actingTeam,omitempty"`
+	ScoringTeam  string          `json:"scoringTeam,omitempty"`
+	Period       int             `json:"period"`
+	TimeInPeriod string          `json:"timeInPeriod"`
+	Score        map[string]int  `json:"score"`
+	Raw          json.RawMessage `json:"raw"`
 }
 
 type StatusEvent struct {

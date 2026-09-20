@@ -97,8 +97,10 @@ func TestSnapshotsScoreAndShotsAtCutPoints(t *testing.T) {
 		if p.PeriodDescriptor.Number != c.period || p.Clock.TimeRemaining != c.remaining {
 			t.Errorf("sort %d clock = P%d %s, want P%d %s", c.sortOrder, p.PeriodDescriptor.Number, p.Clock.TimeRemaining, c.period, c.remaining)
 		}
-		if p.SituationCode != "1551" {
-			t.Errorf("sort %d situationCode = %q", c.sortOrder, p.SituationCode)
+		// Even strength throughout these samples: the real feed sends no
+		// situation then, and neither does this one.
+		if p.Situation != nil {
+			t.Errorf("sort %d situation = %+v, want none at even strength", c.sortOrder, p.Situation)
 		}
 	}
 }
@@ -169,8 +171,8 @@ func TestSnapshotsPreModernTierStillEndsFinal(t *testing.T) {
 	if last.AwayTeam.SOG != 0 || last.HomeTeam.SOG != 0 {
 		t.Errorf("shots = %d-%d, want 0-0 (feed records no shots)", last.AwayTeam.SOG, last.HomeTeam.SOG)
 	}
-	if last.SituationCode != "" {
-		t.Errorf("situationCode = %q, want empty", last.SituationCode)
+	if last.Situation != nil {
+		t.Errorf("situation = %+v, want none", last.Situation)
 	}
 	if last.AwayTeam.Score != 7 || last.HomeTeam.Score != 4 {
 		t.Errorf("score = %d-%d, want 7-4", last.AwayTeam.Score, last.HomeTeam.Score)

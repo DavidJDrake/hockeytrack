@@ -26,7 +26,7 @@ func TestBuildClockEvent(t *testing.T) {
 	p := fixturePBP(t)
 	p.GameState = "LIVE"
 	p.Clock = nhl.Clock{TimeRemaining: "14:32", SecondsRemaining: 872, Running: true}
-	p.SituationCode = "1451"
+	p.Situation = &nhl.Situation{SituationCode: "1451"}
 	at := time.Date(2025, 10, 7, 21, 30, 0, 0, time.UTC)
 
 	e := BuildClockEvent(p, at)

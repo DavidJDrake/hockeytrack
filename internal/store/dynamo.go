@@ -34,6 +34,7 @@ type ddbGame struct {
 	GameState         string            `dynamodbav:"gameState"`
 	ScheduleEntryName string            `dynamodbav:"scheduleEntryName"`
 	LastPlaySortOrder int64             `dynamodbav:"lastPlaySortOrder"`
+	SentEventIDs      []int64           `dynamodbav:"sentEventIds,omitempty"`
 	SnapshotHashes    map[string]string `dynamodbav:"snapshotHashes,omitempty"`
 	ChainCount        int               `dynamodbav:"chainCount"`
 	LeaseOwner        string            `dynamodbav:"leaseOwner,omitempty"`
@@ -48,7 +49,7 @@ func toRecord(g ddbGame) GameRecord {
 		GameID: g.GameID, Season: g.Season, GameDate: g.GameDate,
 		StartTimeUTC: start, HomeAbbrev: g.HomeAbbrev, AwayAbbrev: g.AwayAbbrev,
 		Venue: g.Venue, GameState: g.GameState, ScheduleEntryName: g.ScheduleEntryName,
-		LastPlaySortOrder: g.LastPlaySortOrder, SnapshotHashes: g.SnapshotHashes,
+		LastPlaySortOrder: g.LastPlaySortOrder, SentEventIDs: g.SentEventIDs, SnapshotHashes: g.SnapshotHashes,
 		ChainCount: g.ChainCount, LeaseOwner: g.LeaseOwner, LeaseExpiresAt: lease,
 		Done: g.Done,
 	}
@@ -177,12 +178,23 @@ func (d *DynamoStore) UpdatePollerState(ctx context.Context, gameID int64, st Po
 	if err != nil {
 		return err
 	}
+	// A list, not a number set: a set cannot be empty, and a game that has
+	// sent nothing yet is an ordinary state. A few hundred numbers a game.
+	sent := st.SentEventIDs
+	if sent == nil {
+		sent = []int64{}
+	}
+	sv, err := attributevalue.Marshal(sent)
+	if err != nil {
+		return err
+	}
 	_, err = d.client.UpdateItem(ctx, &dynamodb.UpdateItemInput{
 		TableName:        aws.String(d.table),
 		Key:              d.key(gameID),
-		UpdateExpression: aws.String("SET lastPlaySortOrder=:so, snapshotHashes=:sh, chainCount=:cc, gameState=:gs, done=:dn"),
+		UpdateExpression: aws.String("SET lastPlaySortOrder=:so, sentEventIds=:se, snapshotHashes=:sh, chainCount=:cc, gameState=:gs, done=:dn"),
 		ExpressionAttributeValues: map[string]types.AttributeValue{
 			":so": &types.AttributeValueMemberN{Value: itoa(st.LastPlaySortOrder)},
+			":se": sv,
 			":sh": hv,
 			":cc": &types.AttributeValueMemberN{Value: itoa(int64(st.ChainCount))},
 			":gs": &types.AttributeValueMemberS{Value: st.GameState},
