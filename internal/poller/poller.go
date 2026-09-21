@@ -190,7 +190,12 @@ func Run(ctx context.Context, d Deps, cfg Config, gameID int64, owner string, sh
 				break // not marked sent, so the next cycle tries it again
 			}
 			sent[p.EventID] = true
-			if p.SortOrder < ProvisionalSortOrder && p.SortOrder > state.LastPlaySortOrder {
+			// For the record only. It never takes a provisional number, and
+			// one left behind by the old rule is replaced by the first real
+			// one (seen in production after the fix: two recovered games
+			// still recorded 9017 and 9005).
+			if p.SortOrder < ProvisionalSortOrder &&
+				(p.SortOrder > state.LastPlaySortOrder || state.LastPlaySortOrder >= ProvisionalSortOrder) {
 				state.LastPlaySortOrder = p.SortOrder
 			}
 		}

@@ -282,6 +282,10 @@ func TestAGameAlreadyPoisonedStartsWorkingAgainWithoutReplayingItself(t *testing
 	if len(got) != 1 || got[0] != 24 {
 		t.Errorf("published %v, want only the play that arrived after the fix (24)", got)
 	}
+	// And the record stops saying 9004.
+	if rec, _ := gs.Get(context.Background(), 2026010004); rec.LastPlaySortOrder != 285 {
+		t.Errorf("the recorded mark is %d, want the real 285", rec.LastPlaySortOrder)
+	}
 }
 
 func TestTheSentListSurvivesAHandOff(t *testing.T) {
