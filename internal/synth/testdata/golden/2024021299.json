@@ -297,7 +297,7 @@
     "CGY": 0,
     "VGK": 0
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "20:00"
   }
  },
@@ -305,6 +305,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 52,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -339,7 +340,7 @@
     "CGY": 0,
     "VGK": 1
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "19:10"
   }
  },
@@ -348,6 +349,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 51,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -366,6 +368,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 103,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -383,6 +386,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 8,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -401,6 +405,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 53,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -418,6 +423,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 9,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -452,7 +458,7 @@
     "CGY": 0,
     "VGK": 1
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:36"
   }
  },
@@ -461,6 +467,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 54,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -479,6 +486,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 122,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -496,6 +504,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 10,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -530,7 +539,7 @@
     "CGY": 0,
     "VGK": 1
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "17:46"
   }
  },
@@ -539,6 +548,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 151,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -557,6 +567,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 149,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -574,6 +585,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 11,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -592,6 +604,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 152,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -610,6 +623,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 120,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -644,7 +658,7 @@
     "CGY": 0,
     "VGK": 1
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "16:45"
   }
  },
@@ -653,6 +667,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 121,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -671,6 +686,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 139,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -689,6 +705,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 142,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -706,6 +723,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 12,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -740,7 +758,7 @@
     "CGY": 2,
     "VGK": 1
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "16:12"
   }
  },
@@ -749,6 +767,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 153,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -767,6 +786,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 140,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -785,6 +805,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 141,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -803,6 +824,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 144,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -837,7 +859,7 @@
     "CGY": 3,
     "VGK": 1
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:35"
   }
  },
@@ -846,6 +868,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 145,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -864,6 +887,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 146,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -882,6 +906,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 201,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -899,6 +924,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 13,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -917,6 +943,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 154,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -935,6 +962,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 205,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -969,7 +997,7 @@
     "CGY": 3,
     "VGK": 1
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:00"
   }
  },
@@ -977,6 +1005,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 14,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -995,6 +1024,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 55,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1013,6 +1043,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 231,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1031,6 +1062,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 207,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1049,6 +1081,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 223,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1083,7 +1116,7 @@
     "CGY": 4,
     "VGK": 2
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:15"
   }
  },
@@ -1091,6 +1124,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 15,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1109,6 +1143,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 156,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1127,6 +1162,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 241,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1145,6 +1181,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 219,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1164,6 +1201,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 57,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1182,6 +1220,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 260,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1200,6 +1239,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 224,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1234,7 +1274,7 @@
     "CGY": 5,
     "VGK": 2
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "13:20"
   }
  },
@@ -1243,6 +1283,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 256,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1261,6 +1302,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 262,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1279,6 +1321,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 227,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1296,6 +1339,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 16,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1314,6 +1358,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 157,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1332,6 +1377,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 277,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1366,7 +1412,7 @@
     "CGY": 5,
     "VGK": 2
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:32"
   }
  },
@@ -1375,6 +1421,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 270,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1393,6 +1440,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 271,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1411,6 +1459,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 279,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1428,6 +1477,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 17,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1462,7 +1512,7 @@
     "CGY": 5,
     "VGK": 2
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:57"
   }
  },
@@ -1471,6 +1521,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 159,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1489,6 +1540,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 247,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1523,7 +1575,7 @@
     "CGY": 5,
     "VGK": 3
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:18"
   }
  },
@@ -1532,6 +1584,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 284,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1550,6 +1603,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 253,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1584,7 +1638,7 @@
     "CGY": 5,
     "VGK": 3
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "10:46"
   }
  },
@@ -1592,6 +1646,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 18,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1610,6 +1665,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 160,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1627,6 +1683,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 19,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1645,6 +1702,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 161,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1663,6 +1721,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 264,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1681,6 +1740,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 309,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1715,7 +1775,7 @@
     "CGY": 5,
     "VGK": 4
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "10:13"
   }
  },
@@ -1724,6 +1784,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 266,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1758,7 +1819,7 @@
     "CGY": 6,
     "VGK": 4
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "09:43"
   }
  },
@@ -1766,6 +1827,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 20,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1784,6 +1846,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 58,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1802,6 +1865,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 274,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1819,6 +1883,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 21,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1837,6 +1902,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 162,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1855,6 +1921,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 280,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1874,6 +1941,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 163,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1891,6 +1959,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 22,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1925,7 +1994,7 @@
     "CGY": 6,
     "VGK": 4
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:38"
   }
  },
@@ -1934,6 +2003,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 164,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1952,6 +2022,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 287,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1970,6 +2041,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 288,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -1988,6 +2060,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 289,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2006,6 +2079,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 340,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2040,7 +2114,7 @@
     "CGY": 6,
     "VGK": 4
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "07:32"
   }
  },
@@ -2049,6 +2123,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 343,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2067,6 +2142,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 329,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2085,6 +2161,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 298,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2103,6 +2180,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 339,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2121,6 +2199,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 350,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2155,7 +2234,7 @@
     "CGY": 6,
     "VGK": 4
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "06:59"
   }
  },
@@ -2164,6 +2243,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 346,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2182,6 +2262,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 348,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2200,6 +2281,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 349,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2218,6 +2300,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 318,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2236,6 +2319,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 401,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2270,7 +2354,7 @@
     "CGY": 7,
     "VGK": 4
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:27"
   }
  },
@@ -2279,6 +2363,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 321,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2297,6 +2382,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 61,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2314,6 +2400,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 23,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2332,6 +2419,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 165,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2350,6 +2438,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 62,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2384,7 +2473,7 @@
     "CGY": 8,
     "VGK": 5
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:45"
   }
  },
@@ -2393,6 +2482,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 404,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2411,6 +2501,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 337,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2430,6 +2521,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 63,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2448,6 +2540,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 344,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2482,7 +2575,7 @@
     "CGY": 8,
     "VGK": 5
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "03:38"
   }
  },
@@ -2490,6 +2583,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 24,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2508,6 +2602,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 166,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2525,6 +2620,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 25,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2543,6 +2639,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 168,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2561,6 +2658,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 436,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2595,7 +2693,7 @@
     "CGY": 8,
     "VGK": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:51"
   }
  },
@@ -2604,6 +2702,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 415,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2621,6 +2720,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 26,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2639,6 +2739,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 64,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2657,6 +2758,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 417,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2675,6 +2777,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 418,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2693,6 +2796,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 419,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2727,7 +2831,7 @@
     "CGY": 9,
     "VGK": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:02"
   }
  },
@@ -2736,6 +2840,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 447,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2754,6 +2859,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 451,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2772,6 +2878,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 454,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2790,6 +2897,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 429,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2824,7 +2932,7 @@
     "CGY": 9,
     "VGK": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:30"
   }
  },
@@ -2832,6 +2940,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 27,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2850,6 +2959,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 170,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2868,6 +2978,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 433,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2885,6 +2996,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 28,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2903,6 +3015,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 171,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2920,6 +3033,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 29,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2954,7 +3068,7 @@
     "CGY": 9,
     "VGK": 9
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:00"
   }
  },
@@ -2963,6 +3077,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 172,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2981,6 +3096,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 443,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -2998,6 +3114,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 30,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -3032,7 +3149,7 @@
     "CGY": 9,
     "VGK": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:24"
   }
  },
@@ -3041,6 +3158,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 66,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -3059,6 +3177,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 448,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -3077,6 +3196,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 457,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -3095,6 +3215,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 458,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -3113,6 +3234,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 449,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -3148,7 +3270,7 @@
     "CGY": 9,
     "VGK": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:00"
   }
  },
@@ -3157,6 +3279,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 67,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -3174,6 +3297,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 31,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -3192,6 +3316,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 68,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -3209,6 +3334,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 32,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 1,
@@ -3243,7 +3369,7 @@
     "CGY": 9,
     "VGK": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "20:00"
   }
  },
@@ -3251,6 +3377,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 174,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3285,7 +3412,7 @@
     "CGY": 10,
     "VGK": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "19:03"
   }
  },
@@ -3294,6 +3421,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 173,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3312,6 +3440,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 461,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3330,6 +3459,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 462,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3348,6 +3478,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 477,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3382,7 +3513,7 @@
     "CGY": 10,
     "VGK": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:10"
   }
  },
@@ -3391,6 +3522,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 478,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3409,6 +3541,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 495,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3427,6 +3560,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 563,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3461,7 +3595,7 @@
     "CGY": 10,
     "VGK": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "17:31"
   }
  },
@@ -3470,6 +3604,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 486,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3504,7 +3639,7 @@
     "CGY": 10,
     "VGK": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "16:41"
   }
  },
@@ -3513,6 +3648,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 497,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3531,6 +3667,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 588,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3565,7 +3702,7 @@
     "CGY": 13,
     "VGK": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:57"
   }
  },
@@ -3574,6 +3711,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 492,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3592,6 +3730,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 559,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3610,6 +3749,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 493,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3628,6 +3768,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 177,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3646,6 +3787,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 494,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3664,6 +3806,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 496,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3682,6 +3825,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 567,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3716,7 +3860,7 @@
     "CGY": 13,
     "VGK": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:21"
   }
  },
@@ -3725,6 +3869,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 556,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3743,6 +3888,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 558,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3777,7 +3923,7 @@
     "CGY": 13,
     "VGK": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:38"
   }
  },
@@ -3786,6 +3932,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 561,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3803,6 +3950,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 37,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3821,6 +3969,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 178,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3839,6 +3988,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 566,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3857,6 +4007,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 592,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3875,6 +4026,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 594,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3893,6 +4045,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 568,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3927,7 +4080,7 @@
     "CGY": 13,
     "VGK": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:05"
   }
  },
@@ -3935,6 +4088,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 38,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3953,6 +4107,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 179,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -3971,6 +4126,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 607,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4005,7 +4161,7 @@
     "CGY": 13,
     "VGK": 12
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "13:32"
   }
  },
@@ -4014,6 +4170,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 576,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4032,6 +4189,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 613,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4050,6 +4208,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 590,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4084,7 +4243,7 @@
     "CGY": 13,
     "VGK": 13
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "13:02"
   }
  },
@@ -4093,6 +4252,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 581,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4110,6 +4270,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 39,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4128,6 +4289,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 69,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4145,6 +4307,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 40,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4179,7 +4342,7 @@
     "CGY": 14,
     "VGK": 14
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:30"
   }
  },
@@ -4188,6 +4351,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 70,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4206,6 +4370,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 595,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4223,6 +4388,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 41,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4241,6 +4407,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 71,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4259,6 +4426,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 599,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4277,6 +4445,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 634,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4311,7 +4480,7 @@
     "CGY": 14,
     "VGK": 14
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:59"
   }
  },
@@ -4320,6 +4489,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 636,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4354,7 +4524,7 @@
     "CGY": 15,
     "VGK": 14
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:06"
   }
  },
@@ -4363,6 +4533,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 637,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4381,6 +4552,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 644,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4399,6 +4571,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 612,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4433,7 +4606,7 @@
     "CGY": 15,
     "VGK": 14
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "10:08"
   }
  },
@@ -4441,6 +4614,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 42,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4459,6 +4633,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 180,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4477,6 +4652,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 751,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4511,7 +4687,7 @@
     "CGY": 15,
     "VGK": 14
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "09:37"
   }
  },
@@ -4520,6 +4696,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 632,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4538,6 +4715,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 629,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4555,6 +4733,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 43,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4573,6 +4752,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 181,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4591,6 +4771,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 635,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4609,6 +4790,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 752,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4643,7 +4825,7 @@
     "CGY": 15,
     "VGK": 14
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "09:06"
   }
  },
@@ -4652,6 +4834,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 645,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4669,6 +4852,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 44,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4687,6 +4871,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 72,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4705,6 +4890,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 707,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4739,7 +4925,7 @@
     "CGY": 15,
     "VGK": 15
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:13"
   }
  },
@@ -4748,6 +4934,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 712,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4766,6 +4953,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 643,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4784,6 +4972,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 720,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4802,6 +4991,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 702,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4836,7 +5026,7 @@
     "CGY": 15,
     "VGK": 15
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "07:24"
   }
  },
@@ -4845,6 +5035,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 703,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4863,6 +5054,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 729,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4897,7 +5089,7 @@
     "CGY": 15,
     "VGK": 15
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "06:45"
   }
  },
@@ -4906,6 +5098,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 737,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4923,6 +5116,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 45,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4957,7 +5151,7 @@
     "CGY": 15,
     "VGK": 17
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "06:09"
   }
  },
@@ -4966,6 +5160,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 183,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -4983,6 +5178,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 46,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5001,6 +5197,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 184,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5019,6 +5216,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 722,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5037,6 +5235,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 724,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5055,6 +5254,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 753,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5073,6 +5273,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 725,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5107,7 +5308,7 @@
     "CGY": 15,
     "VGK": 17
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:27"
   }
  },
@@ -5115,6 +5316,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 47,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5133,6 +5335,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 185,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5151,6 +5354,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 73,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5169,6 +5373,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 748,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5187,6 +5392,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 738,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5205,6 +5411,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 802,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5239,7 +5446,7 @@
     "CGY": 15,
     "VGK": 17
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:49"
   }
  },
@@ -5247,6 +5454,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 48,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5265,6 +5473,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 75,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5283,6 +5492,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 740,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5301,6 +5511,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 816,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5319,6 +5530,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 826,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5337,6 +5549,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 741,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5371,7 +5584,7 @@
     "CGY": 15,
     "VGK": 19
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:19"
   }
  },
@@ -5380,6 +5593,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 742,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5397,6 +5611,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 49,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5415,6 +5630,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 187,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5433,6 +5649,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 746,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5450,6 +5667,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 50,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5468,6 +5686,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 188,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5486,6 +5705,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 749,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5503,6 +5723,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 351,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5521,6 +5742,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 189,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5539,6 +5761,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 801,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5573,7 +5796,7 @@
     "CGY": 15,
     "VGK": 21
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "03:43"
   }
  },
@@ -5582,6 +5805,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 857,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5600,6 +5824,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 803,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5618,6 +5843,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 754,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5636,6 +5862,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 858,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5670,7 +5897,7 @@
     "CGY": 15,
     "VGK": 23
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "03:00"
   }
  },
@@ -5679,6 +5906,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 811,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5696,6 +5924,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 352,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5714,6 +5943,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 190,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5732,6 +5962,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 814,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5749,6 +5980,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 353,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5767,6 +5999,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 191,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5784,6 +6017,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 354,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5818,7 +6052,7 @@
     "CGY": 15,
     "VGK": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:25"
   }
  },
@@ -5827,6 +6061,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 76,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5845,6 +6080,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 819,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5863,6 +6099,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 859,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5897,7 +6134,7 @@
     "CGY": 15,
     "VGK": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:32"
   }
  },
@@ -5906,6 +6143,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 829,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5924,6 +6162,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 860,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5958,7 +6197,7 @@
     "CGY": 16,
     "VGK": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:50"
   }
  },
@@ -5967,6 +6206,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 832,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -5985,6 +6225,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 851,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -6003,6 +6244,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 844,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -6037,7 +6279,7 @@
     "CGY": 17,
     "VGK": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:12"
   }
  },
@@ -6046,6 +6288,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 845,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -6064,6 +6307,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 846,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -6081,6 +6325,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 355,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -6099,6 +6344,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 77,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -6117,6 +6363,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 852,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -6160,6 +6407,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 78,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -6178,6 +6426,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 193,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -6195,6 +6444,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 356,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 2,
@@ -6237,6 +6487,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 195,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6280,6 +6531,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 194,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6298,6 +6550,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 867,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6316,6 +6569,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 863,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6351,7 +6605,7 @@
     "CGY": 19,
     "VGK": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:56"
   }
  },
@@ -6360,6 +6614,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 197,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6378,6 +6633,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 869,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6396,6 +6652,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 872,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6431,7 +6688,7 @@
     "CGY": 19,
     "VGK": 27
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:21"
   }
  },
@@ -6440,6 +6697,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 198,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6458,6 +6716,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 912,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6476,6 +6735,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 876,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6494,6 +6754,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 877,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6511,6 +6772,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 361,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6529,6 +6791,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 79,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6547,6 +6810,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 199,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6564,6 +6828,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 362,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6582,6 +6847,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 80,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6600,6 +6866,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 932,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6634,7 +6901,7 @@
     "CGY": 19,
     "VGK": 28
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "17:40"
   }
  },
@@ -6643,6 +6910,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 940,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6661,6 +6929,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 889,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6695,7 +6964,7 @@
     "CGY": 20,
     "VGK": 28
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "17:05"
   }
  },
@@ -6704,6 +6973,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 942,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6722,6 +6992,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 944,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6740,6 +7011,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 945,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6758,6 +7030,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 894,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6776,6 +7049,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 898,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6810,7 +7084,7 @@
     "CGY": 21,
     "VGK": 28
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "16:07"
   }
  },
@@ -6819,6 +7093,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 899,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6837,6 +7112,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 950,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6855,6 +7131,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 914,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6873,6 +7150,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 903,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6891,6 +7169,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 913,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6925,7 +7204,7 @@
     "CGY": 21,
     "VGK": 28
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:09"
   }
  },
@@ -6934,6 +7213,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 925,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6968,7 +7248,7 @@
     "CGY": 22,
     "VGK": 28
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:39"
   }
  },
@@ -6977,6 +7257,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 927,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -6995,6 +7276,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 81,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7013,6 +7295,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 200,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7047,7 +7330,7 @@
     "CGY": 23,
     "VGK": 28
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "13:43"
   }
  },
@@ -7055,6 +7338,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 363,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7073,6 +7357,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 501,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7091,6 +7376,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 83,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7125,7 +7411,7 @@
     "CGY": 24,
     "VGK": 28
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:54"
   }
  },
@@ -7133,6 +7419,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 364,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7151,6 +7438,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 502,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7169,6 +7457,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 946,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7187,6 +7476,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 975,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7205,6 +7495,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 948,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7239,7 +7530,7 @@
     "CGY": 24,
     "VGK": 29
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:03"
   }
  },
@@ -7247,6 +7538,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 365,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7265,6 +7557,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 503,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7283,6 +7576,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 956,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7326,6 +7620,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 366,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7344,6 +7639,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 959,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7362,6 +7658,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 969,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7380,6 +7677,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 84,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7398,6 +7696,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1006,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7441,6 +7740,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1007,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7459,6 +7759,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 972,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7476,6 +7777,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 367,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7494,6 +7796,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 85,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7512,6 +7815,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1009,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7546,7 +7850,7 @@
     "CGY": 24,
     "VGK": 30
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "09:26"
   }
  },
@@ -7555,6 +7859,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 984,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7573,6 +7878,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1013,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7607,7 +7913,7 @@
     "CGY": 26,
     "VGK": 31
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:48"
   }
  },
@@ -7616,6 +7922,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 994,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7634,6 +7941,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1025,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7652,6 +7960,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 998,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7671,6 +7980,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 504,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7689,6 +7999,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1002,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7732,6 +8043,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 369,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7750,6 +8062,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1010,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7768,6 +8081,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 86,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7786,6 +8100,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1015,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7829,6 +8144,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1016,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7847,6 +8163,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1017,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7865,6 +8182,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 505,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7908,6 +8226,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1056,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7942,7 +8261,7 @@
     "CGY": 26,
     "VGK": 34
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "06:13"
   }
  },
@@ -7951,6 +8270,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1057,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -7969,6 +8289,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1063,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8003,7 +8324,7 @@
     "CGY": 26,
     "VGK": 35
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:21"
   }
  },
@@ -8012,6 +8333,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1065,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8030,6 +8352,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1039,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8048,6 +8371,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1054,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8095,7 +8419,7 @@
     "CGY": 26,
     "VGK": 36
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:50"
   }
  },
@@ -8104,6 +8428,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1051,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8121,6 +8446,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 370,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8139,6 +8465,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 507,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8157,6 +8484,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1080,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8174,6 +8502,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 371,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8208,7 +8537,7 @@
     "CGY": 26,
     "VGK": 36
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "03:40"
   }
  },
@@ -8217,6 +8546,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 508,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8235,6 +8565,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1066,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8252,6 +8583,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 372,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8270,6 +8602,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 509,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8288,6 +8621,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1077,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8322,7 +8656,7 @@
     "CGY": 27,
     "VGK": 36
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:46"
   }
  },
@@ -8331,6 +8665,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1078,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8348,6 +8683,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 373,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8366,6 +8702,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 87,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8384,6 +8721,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1083,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8402,6 +8740,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1162,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8436,7 +8775,7 @@
     "CGY": 27,
     "VGK": 36
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:48"
   }
  },
@@ -8445,6 +8784,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1091,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8463,6 +8803,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1098,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8481,6 +8822,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1093,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8499,6 +8841,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1100,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8533,7 +8876,7 @@
     "CGY": 27,
     "VGK": 36
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:16"
   }
  },
@@ -8542,6 +8885,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1151,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8559,6 +8903,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 374,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8577,6 +8922,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 510,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8595,6 +8941,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1155,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8629,7 +8976,7 @@
     "CGY": 27,
     "VGK": 36
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:39"
   }
  },
@@ -8638,6 +8985,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1175,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8656,6 +9004,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 511,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8690,7 +9039,7 @@
     "CGY": 27,
     "VGK": 39
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:00"
   }
  },
@@ -8699,6 +9048,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1166,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8716,6 +9066,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 375,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8734,6 +9085,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 512,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8752,6 +9104,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 89,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8770,6 +9123,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 513,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8787,6 +9141,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 376,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8805,6 +9160,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 90,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8823,6 +9179,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1171,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8840,6 +9197,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 377,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8858,6 +9216,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 91,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8876,6 +9235,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1191,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8893,6 +9253,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 378,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 3,
@@ -8948,6 +9309,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 515,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -8991,6 +9353,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 514,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9009,6 +9372,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1203,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9027,6 +9391,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1183,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9069,6 +9434,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 383,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9087,6 +9453,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 755,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9105,6 +9472,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1186,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9123,6 +9491,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1194,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9166,6 +9535,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1195,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9184,6 +9554,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1218,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9227,6 +9598,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1200,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9245,6 +9617,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1197,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9262,6 +9635,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 384,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9280,6 +9654,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 516,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9298,6 +9673,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1202,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9341,6 +9717,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1204,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9359,6 +9736,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1205,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9402,6 +9780,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 1213,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9444,6 +9823,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 385,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9462,6 +9842,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 517,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9480,6 +9861,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 1216,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9497,6 +9879,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 386,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 4,
@@ -9539,6 +9922,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 391,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 5,
@@ -9582,6 +9966,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 392,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 5,
@@ -9600,6 +9985,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 393,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 5,
@@ -9618,6 +10004,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 394,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 5,
@@ -9636,6 +10023,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 395,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 5,
@@ -9654,6 +10042,7 @@
   "detail": {
    "actingTeam": "CGY",
    "awayTeam": "VGK",
+   "eventId": 396,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 5,
@@ -9673,6 +10062,7 @@
   "detail": {
    "actingTeam": "VGK",
    "awayTeam": "VGK",
+   "eventId": 397,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 5,
@@ -9690,6 +10080,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 398,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 5,
@@ -9707,6 +10098,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 399,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 5,
@@ -9737,6 +10129,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "VGK",
+   "eventId": 1103,
    "gameId": 2024021299,
    "homeTeam": "CGY",
    "period": 5,

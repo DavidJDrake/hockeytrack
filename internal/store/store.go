@@ -18,15 +18,22 @@ type GameRecord struct {
 	GameState         string
 	ScheduleEntryName string
 	LastPlaySortOrder int64
-	SnapshotHashes    map[string]string
-	ChainCount        int
-	LeaseOwner        string
-	LeaseExpiresAt    time.Time
-	Done              bool
+	// SentEventIDs is every play already published, by the NHL's eventId.
+	// It, and not LastPlaySortOrder, decides what is new: see
+	// poller.NewPlays. Absent on games polled before 2026-09-20.
+	SentEventIDs   []int64
+	SnapshotHashes map[string]string
+	ChainCount     int
+	LeaseOwner     string
+	LeaseExpiresAt time.Time
+	Done           bool
 }
 
 type PollerState struct {
+	// LastPlaySortOrder is kept for the record only: the highest real sort
+	// order published. Nothing decides anything by it any more.
 	LastPlaySortOrder int64
+	SentEventIDs      []int64
 	SnapshotHashes    map[string]string
 	ChainCount        int
 	GameState         string
@@ -137,6 +144,7 @@ func (f *FakeGameStore) UpdatePollerState(_ context.Context, gameID int64, st Po
 	defer f.mu.Unlock()
 	if r, ok := f.games[gameID]; ok {
 		r.LastPlaySortOrder = st.LastPlaySortOrder
+		r.SentEventIDs = append([]int64(nil), st.SentEventIDs...)
 		r.SnapshotHashes = st.SnapshotHashes
 		r.ChainCount = st.ChainCount
 		r.GameState = st.GameState

@@ -21,11 +21,11 @@ func loadPBP(t *testing.T) *nhl.PlayByPlay {
 	return &p
 }
 
-func TestNewPlaysHighWaterMark(t *testing.T) {
+func TestNewPlaysAreTheOnesNotYetSent(t *testing.T) {
 	pbp := loadPBP(t)
-	all := NewPlays(pbp.Plays, 0)
+	all := NewPlays(pbp.Plays, nil)
 	if len(all) != len(pbp.Plays) {
-		t.Fatalf("from zero: %d plays, want all %d", len(all), len(pbp.Plays))
+		t.Fatalf("with nothing sent: %d plays, want all %d", len(all), len(pbp.Plays))
 	}
 	// Ascending order.
 	for i := 1; i < len(all); i++ {
@@ -33,19 +33,26 @@ func TestNewPlaysHighWaterMark(t *testing.T) {
 			t.Fatalf("not ascending at %d: %d then %d", i, all[i-1].SortOrder, all[i].SortOrder)
 		}
 	}
-	// Simulate: we've seen the first half; only the rest come back.
-	mid := all[len(all)/2].SortOrder
-	rest := NewPlays(pbp.Plays, mid)
-	if len(rest) != len(all)-len(all)/2-1 {
-		t.Errorf("after mark %d: got %d plays, want %d", mid, len(rest), len(all)-len(all)/2-1)
+	// We have sent the first half; only the rest come back.
+	sent := map[int64]bool{}
+	half := len(all) / 2
+	for _, p := range all[:half] {
+		sent[p.EventID] = true
+	}
+	rest := NewPlays(pbp.Plays, sent)
+	if len(rest) != len(all)-half {
+		t.Errorf("after sending %d: got %d plays, want %d", half, len(rest), len(all)-half)
 	}
 	for _, p := range rest {
-		if p.SortOrder <= mid {
-			t.Errorf("play %d at or below mark %d", p.SortOrder, mid)
+		if sent[p.EventID] {
+			t.Errorf("play %d sent twice", p.EventID)
 		}
 	}
-	// Nothing new when mark is at the end.
-	if got := NewPlays(pbp.Plays, all[len(all)-1].SortOrder); len(got) != 0 {
+	// Nothing new once everything has gone.
+	for _, p := range rest {
+		sent[p.EventID] = true
+	}
+	if got := NewPlays(pbp.Plays, sent); len(got) != 0 {
 		t.Errorf("expected 0 new plays, got %d", len(got))
 	}
 }
@@ -56,8 +63,7 @@ func TestGoldenEventSequence(t *testing.T) {
 	pbp := loadPBP(t)
 	score := map[string]int{pbp.HomeTeam.Abbrev: 0, pbp.AwayTeam.Abbrev: 0}
 	var goals []string
-	var last int64
-	for _, p := range NewPlays(pbp.Plays, last) {
+	for _, p := range NewPlays(pbp.Plays, nil) {
 		score = RunningScore(pbp, p, score)
 		e := BuildPlayEvent(pbp, p, score)
 		if e.SchemaVersion != 1 || e.GameID != 2025020001 {
@@ -71,7 +77,6 @@ func TestGoldenEventSequence(t *testing.T) {
 		} else if e.ScoringTeam != "" {
 			t.Errorf("%s event has scoringTeam %q", p.TypeDescKey, e.ScoringTeam)
 		}
-		last = p.SortOrder
 	}
 	if len(goals) != 5 { // 2+3 total goals in this game
 		t.Errorf("saw %d goal events, want 5: %v", len(goals), goals)

@@ -297,7 +297,7 @@
     "CHI": 0,
     "FLA": 0
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "20:00"
   }
  },
@@ -305,6 +305,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 52,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -339,7 +340,7 @@
     "CHI": 0,
     "FLA": 0
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "19:26"
   }
  },
@@ -348,6 +349,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 51,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -366,6 +368,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 101,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -383,6 +386,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 8,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -417,7 +421,7 @@
     "CHI": 0,
     "FLA": 0
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:50"
   }
  },
@@ -426,6 +430,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 55,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -444,6 +449,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 74,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -462,6 +468,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 851,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -496,7 +503,7 @@
     "CHI": 0,
     "FLA": 2
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:16"
   }
  },
@@ -505,6 +512,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 67,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -522,6 +530,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 9,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -540,6 +549,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 68,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -558,6 +568,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 71,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -575,6 +586,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 10,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -593,6 +605,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 72,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -610,6 +623,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 11,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -628,6 +642,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 75,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -646,6 +661,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 102,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -663,6 +679,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 12,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -681,6 +698,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 78,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -699,6 +717,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 80,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -733,7 +752,7 @@
     "CHI": 1,
     "FLA": 2
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "17:45"
   }
  },
@@ -741,6 +760,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 13,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -759,6 +779,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 81,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -777,6 +798,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 86,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -795,6 +817,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 87,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -813,6 +836,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 164,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -847,7 +871,7 @@
     "CHI": 2,
     "FLA": 2
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "17:08"
   }
  },
@@ -856,6 +880,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 175,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -873,6 +898,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 14,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -891,6 +917,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 97,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -909,6 +936,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 153,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -943,7 +971,7 @@
     "CHI": 2,
     "FLA": 2
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "16:29"
   }
  },
@@ -952,6 +980,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 168,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -970,6 +999,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 171,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -988,6 +1018,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 162,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1022,7 +1053,7 @@
     "CHI": 2,
     "FLA": 4
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:54"
   }
  },
@@ -1031,6 +1062,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 163,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1048,6 +1080,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 15,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1066,6 +1099,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 165,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1084,6 +1118,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 170,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1102,6 +1137,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 172,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1120,6 +1156,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 103,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1154,7 +1191,7 @@
     "CHI": 2,
     "FLA": 4
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:19"
   }
  },
@@ -1163,6 +1200,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 181,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1197,7 +1235,7 @@
     "CHI": 2,
     "FLA": 5
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:44"
   }
  },
@@ -1206,6 +1244,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 104,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1224,6 +1263,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 203,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1242,6 +1282,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 182,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1260,6 +1301,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 208,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1294,7 +1336,7 @@
     "CHI": 2,
     "FLA": 5
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:07"
   }
  },
@@ -1303,6 +1345,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 221,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1321,6 +1364,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 235,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1355,7 +1399,7 @@
     "CHI": 2,
     "FLA": 5
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "13:25"
   }
  },
@@ -1364,6 +1408,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 245,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1381,6 +1426,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 16,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1399,6 +1445,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 199,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1417,6 +1464,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 204,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1434,6 +1482,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 17,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1452,6 +1501,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 205,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1469,6 +1519,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 18,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1512,6 +1563,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 209,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1530,6 +1582,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 257,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1548,6 +1601,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 218,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1566,6 +1620,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 214,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1584,6 +1639,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 105,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1627,6 +1683,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 225,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1645,6 +1702,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 226,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1663,6 +1721,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 880,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1705,6 +1764,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 19,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1739,7 +1799,7 @@
     "CHI": 2,
     "FLA": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "10:26"
   }
  },
@@ -1748,6 +1808,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 241,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1766,6 +1827,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 883,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1784,6 +1846,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 251,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1818,7 +1881,7 @@
     "CHI": 3,
     "FLA": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "09:35"
   }
  },
@@ -1826,6 +1889,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 301,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1844,6 +1908,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 252,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1862,6 +1927,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 297,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1880,6 +1946,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 258,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1899,6 +1966,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 259,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1917,6 +1985,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 298,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1951,7 +2020,7 @@
     "CHI": 3,
     "FLA": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:57"
   }
  },
@@ -1960,6 +2029,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 106,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1978,6 +2048,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 353,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -1996,6 +2067,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 263,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2014,6 +2086,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 273,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2048,7 +2121,7 @@
     "CHI": 3,
     "FLA": 9
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:22"
   }
  },
@@ -2057,6 +2130,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 274,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2076,6 +2150,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 275,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2094,6 +2169,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 279,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2128,7 +2204,7 @@
     "CHI": 3,
     "FLA": 9
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "07:40"
   }
  },
@@ -2137,6 +2213,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 451,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2155,6 +2232,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 287,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2173,6 +2251,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 375,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2191,6 +2270,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 289,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2234,6 +2314,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 294,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2251,6 +2332,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 401,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2269,6 +2351,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 290,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2287,6 +2370,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 383,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2305,6 +2389,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 351,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2347,6 +2432,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 20,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2365,6 +2451,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 352,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2383,6 +2470,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 357,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2401,6 +2489,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 358,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2435,7 +2524,7 @@
     "CHI": 3,
     "FLA": 12
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:44"
   }
  },
@@ -2444,6 +2533,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 365,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2462,6 +2552,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 366,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2481,6 +2572,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 367,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2498,6 +2590,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 402,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2532,7 +2625,7 @@
     "CHI": 3,
     "FLA": 13
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:09"
   }
  },
@@ -2541,6 +2634,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 372,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2559,6 +2653,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 390,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2576,6 +2671,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 403,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2594,6 +2690,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 379,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2612,6 +2709,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 400,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2630,6 +2728,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 382,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2648,6 +2747,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 397,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2682,7 +2782,7 @@
     "CHI": 3,
     "FLA": 14
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:36"
   }
  },
@@ -2691,6 +2791,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 502,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2709,6 +2810,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 385,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2726,6 +2828,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 22,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2744,6 +2847,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 386,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2762,6 +2866,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 392,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2796,7 +2901,7 @@
     "CHI": 3,
     "FLA": 16
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "03:17"
   }
  },
@@ -2805,6 +2910,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 107,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2823,6 +2929,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 108,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2840,6 +2947,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 23,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2858,6 +2966,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 393,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2876,6 +2985,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 398,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2893,6 +3003,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 24,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2911,6 +3022,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 399,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2929,6 +3041,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 515,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2963,7 +3076,7 @@
     "CHI": 3,
     "FLA": 16
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:47"
   }
  },
@@ -2972,6 +3085,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 25,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -2990,6 +3104,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 28,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -3008,6 +3123,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 511,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -3026,6 +3142,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 517,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -3060,7 +3177,7 @@
     "CHI": 3,
     "FLA": 16
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:58"
   }
  },
@@ -3069,6 +3186,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 606,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -3103,7 +3221,7 @@
     "CHI": 3,
     "FLA": 16
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:23"
   }
  },
@@ -3112,6 +3230,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 885,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -3130,6 +3249,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 607,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -3148,6 +3268,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 608,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -3182,7 +3303,7 @@
     "CHI": 3,
     "FLA": 16
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:49"
   }
  },
@@ -3191,6 +3312,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 610,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -3209,6 +3331,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 611,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -3243,7 +3366,7 @@
     "CHI": 3,
     "FLA": 17
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:17"
   }
  },
@@ -3252,6 +3375,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 609,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -3270,6 +3394,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 545,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -3288,6 +3413,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 546,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -3306,6 +3432,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 612,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -3324,6 +3451,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 613,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -3342,6 +3470,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 550,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -3376,7 +3505,7 @@
     "CHI": 3,
     "FLA": 17
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:00"
   }
  },
@@ -3384,6 +3513,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 31,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 1,
@@ -3418,7 +3548,7 @@
     "CHI": 3,
     "FLA": 17
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "20:00"
   }
  },
@@ -3426,6 +3556,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 617,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3460,7 +3591,7 @@
     "CHI": 3,
     "FLA": 17
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "19:30"
   }
  },
@@ -3469,6 +3600,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 616,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3487,6 +3619,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 628,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3505,6 +3638,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 635,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3523,6 +3657,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 619,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3557,7 +3692,7 @@
     "CHI": 5,
     "FLA": 17
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:51"
   }
  },
@@ -3566,6 +3701,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 623,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3584,6 +3720,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 630,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3628,6 +3765,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 632,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3646,6 +3784,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 639,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3664,6 +3803,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 636,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3682,6 +3822,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 663,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3724,6 +3865,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 302,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3742,6 +3884,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 645,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3760,6 +3903,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 452,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3794,7 +3938,7 @@
     "CHI": 5,
     "FLA": 17
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "16:34"
   }
  },
@@ -3803,6 +3947,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 651,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3820,6 +3965,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 36,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3838,6 +3984,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 652,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3856,6 +4003,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 677,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3890,7 +4038,7 @@
     "CHI": 5,
     "FLA": 17
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:45"
   }
  },
@@ -3898,6 +4046,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 37,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3916,6 +4065,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 664,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3934,6 +4084,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 684,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3952,6 +4103,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 686,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -3986,7 +4138,7 @@
     "CHI": 5,
     "FLA": 18
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:02"
   }
  },
@@ -3995,6 +4147,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 671,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4013,6 +4166,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 672,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4030,6 +4184,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 38,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4048,6 +4203,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 673,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4066,6 +4222,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 681,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4100,7 +4257,7 @@
     "CHI": 5,
     "FLA": 19
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:29"
   }
  },
@@ -4108,6 +4265,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 39,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4126,6 +4284,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 682,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4144,6 +4303,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 700,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4162,6 +4322,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 687,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4196,7 +4357,7 @@
     "CHI": 6,
     "FLA": 19
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "13:35"
   }
  },
@@ -4205,6 +4366,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 714,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4223,6 +4385,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 716,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4241,6 +4404,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 696,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4275,7 +4439,7 @@
     "CHI": 7,
     "FLA": 20
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:50"
   }
  },
@@ -4284,6 +4448,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 697,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4301,6 +4466,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 40,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4319,6 +4485,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 698,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4337,6 +4504,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 703,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4355,6 +4523,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 724,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4373,6 +4542,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 732,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4407,7 +4577,7 @@
     "CHI": 7,
     "FLA": 22
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:13"
   }
  },
@@ -4416,6 +4586,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 745,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4434,6 +4605,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 707,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4452,6 +4624,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 710,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4486,7 +4659,7 @@
     "CHI": 9,
     "FLA": 22
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:43"
   }
  },
@@ -4494,6 +4667,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 41,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4512,6 +4686,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 712,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4530,6 +4705,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 717,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4547,6 +4723,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 42,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4565,6 +4742,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 718,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4583,6 +4761,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 765,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4601,6 +4780,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 45,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4619,6 +4799,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 721,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4637,6 +4818,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 727,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4680,6 +4862,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 722,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4698,6 +4881,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 740,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4716,6 +4900,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 833,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4734,6 +4919,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 733,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4777,6 +4963,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 736,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4795,6 +4982,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 769,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4829,7 +5017,7 @@
     "CHI": 10,
     "FLA": 23
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:33"
   }
  },
@@ -4838,6 +5026,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 770,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4872,7 +5061,7 @@
     "CHI": 10,
     "FLA": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:00"
   }
  },
@@ -4881,6 +5070,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 763,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4898,6 +5088,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 44,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4916,6 +5107,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 764,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4934,6 +5126,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 109,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4952,6 +5145,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 782,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -4986,7 +5180,7 @@
     "CHI": 10,
     "FLA": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "07:30"
   }
  },
@@ -4995,6 +5189,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 775,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5013,6 +5208,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 778,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5031,6 +5227,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 790,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5065,7 +5262,7 @@
     "CHI": 10,
     "FLA": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "06:58"
   }
  },
@@ -5074,6 +5271,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 781,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5092,6 +5290,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 783,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5110,6 +5309,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 799,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5144,7 +5344,7 @@
     "CHI": 10,
     "FLA": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "06:14"
   }
  },
@@ -5153,6 +5353,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 809,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5171,6 +5372,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 810,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5189,6 +5391,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 791,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5223,7 +5426,7 @@
     "CHI": 10,
     "FLA": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:10"
   }
  },
@@ -5232,6 +5435,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 811,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5250,6 +5454,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 816,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5268,6 +5473,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 818,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5286,6 +5492,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 825,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5303,6 +5510,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 46,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5337,7 +5545,7 @@
     "CHI": 11,
     "FLA": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "03:53"
   }
  },
@@ -5346,6 +5554,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 805,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5364,6 +5573,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 812,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5381,6 +5591,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 47,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5399,6 +5610,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 813,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5417,6 +5629,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 854,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5451,7 +5664,7 @@
     "CHI": 11,
     "FLA": 25
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "03:23"
   }
  },
@@ -5460,6 +5673,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 110,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5478,6 +5692,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 881,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5496,6 +5711,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 832,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5530,7 +5746,7 @@
     "CHI": 12,
     "FLA": 25
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:53"
   }
  },
@@ -5539,6 +5755,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 454,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5557,6 +5774,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 841,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5591,7 +5809,7 @@
     "CHI": 12,
     "FLA": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:15"
   }
  },
@@ -5600,6 +5818,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 863,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5618,6 +5837,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 844,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5635,6 +5855,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 48,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5653,6 +5874,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 846,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5671,6 +5893,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 878,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5705,7 +5928,7 @@
     "CHI": 13,
     "FLA": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:53"
   }
  },
@@ -5714,6 +5937,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 882,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5731,6 +5955,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 49,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5749,6 +5974,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 852,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5767,6 +5993,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 868,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5801,7 +6028,7 @@
     "CHI": 14,
     "FLA": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:03"
   }
  },
@@ -5810,6 +6037,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 872,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5827,6 +6055,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 50,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5845,6 +6074,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 874,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5863,6 +6093,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 455,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5897,7 +6128,7 @@
     "CHI": 14,
     "FLA": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:00"
   }
  },
@@ -5906,6 +6137,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 884,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5923,6 +6155,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 551,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 2,
@@ -5957,7 +6190,7 @@
     "CHI": 14,
     "FLA": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "20:00"
   }
  },
@@ -5965,6 +6198,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 889,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -5999,7 +6233,7 @@
     "CHI": 14,
     "FLA": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "19:26"
   }
  },
@@ -6008,6 +6242,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 888,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6026,6 +6261,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 897,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6044,6 +6280,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 898,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6062,6 +6299,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 900,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6080,6 +6318,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 891,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6098,6 +6337,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 892,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6132,7 +6372,7 @@
     "CHI": 14,
     "FLA": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:45"
   }
  },
@@ -6140,6 +6380,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 556,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6158,6 +6399,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 893,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6176,6 +6418,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 911,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6194,6 +6437,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 928,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6228,7 +6472,7 @@
     "CHI": 14,
     "FLA": 27
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:02"
   }
  },
@@ -6236,6 +6480,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 557,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6254,6 +6499,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 908,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6272,6 +6518,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 912,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6306,7 +6553,7 @@
     "CHI": 14,
     "FLA": 27
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "17:21"
   }
  },
@@ -6315,6 +6562,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 932,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6333,6 +6581,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 111,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6351,6 +6600,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 945,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6385,7 +6635,7 @@
     "CHI": 14,
     "FLA": 28
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "16:49"
   }
  },
@@ -6394,6 +6644,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 944,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6412,6 +6663,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 923,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6430,6 +6682,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 952,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6448,6 +6701,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 966,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6482,7 +6736,7 @@
     "CHI": 15,
     "FLA": 28
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:43"
   }
  },
@@ -6491,6 +6745,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 931,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6509,6 +6764,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 960,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6526,6 +6782,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 558,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6544,6 +6801,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 938,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6562,6 +6820,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 977,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6596,7 +6855,7 @@
     "CHI": 15,
     "FLA": 28
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:11"
   }
  },
@@ -6605,6 +6864,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 986,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6623,6 +6883,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 112,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6641,6 +6902,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 953,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6675,7 +6937,7 @@
     "CHI": 15,
     "FLA": 28
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:35"
   }
  },
@@ -6684,6 +6946,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 990,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6701,6 +6964,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 559,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6735,7 +6999,7 @@
     "CHI": 15,
     "FLA": 29
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:04"
   }
  },
@@ -6744,6 +7008,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 964,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6762,6 +7027,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 113,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6780,6 +7046,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 967,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6797,6 +7064,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 560,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6815,6 +7083,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 968,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6833,6 +7102,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 561,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6851,6 +7121,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 973,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6894,6 +7165,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 970,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6912,6 +7184,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 978,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6930,6 +7203,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1002,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6947,6 +7221,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 303,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6965,6 +7240,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 980,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -6983,6 +7259,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 983,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7025,6 +7302,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 562,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7043,6 +7321,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 984,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7061,6 +7340,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 987,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7079,6 +7359,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 991,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7113,7 +7394,7 @@
     "CHI": 16,
     "FLA": 29
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:52"
   }
  },
@@ -7121,6 +7402,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 563,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7139,6 +7421,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 992,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7157,6 +7440,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1029,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7175,6 +7459,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 456,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7192,6 +7477,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 564,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7210,6 +7496,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 996,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7228,6 +7515,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1028,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7262,7 +7550,7 @@
     "CHI": 16,
     "FLA": 29
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:14"
   }
  },
@@ -7271,6 +7559,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1032,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7289,6 +7578,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1033,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7323,7 +7613,7 @@
     "CHI": 16,
     "FLA": 30
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "10:20"
   }
  },
@@ -7332,6 +7622,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1035,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7350,6 +7641,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1013,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7368,6 +7660,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1044,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7386,6 +7679,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1101,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7421,7 +7715,7 @@
     "CHI": 16,
     "FLA": 31
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "09:22"
   }
  },
@@ -7430,6 +7724,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1022,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7447,6 +7742,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 565,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7465,6 +7761,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1026,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7483,6 +7780,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1040,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7517,7 +7815,7 @@
     "CHI": 16,
     "FLA": 33
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:46"
   }
  },
@@ -7525,6 +7823,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 566,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7543,6 +7842,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1041,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7561,6 +7861,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1046,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7578,6 +7879,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 567,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7596,6 +7898,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1047,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7614,6 +7917,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1065,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7632,6 +7936,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1070,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7650,6 +7955,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1050,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7684,7 +7990,7 @@
     "CHI": 16,
     "FLA": 34
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "07:55"
   }
  },
@@ -7693,6 +7999,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1063,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7711,6 +8018,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1064,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7729,6 +8037,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 114,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7747,6 +8056,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1057,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7781,7 +8091,7 @@
     "CHI": 16,
     "FLA": 34
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "07:07"
   }
  },
@@ -7789,6 +8099,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 568,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7807,6 +8118,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1059,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7825,6 +8137,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1066,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7842,6 +8155,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 569,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7860,6 +8174,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1067,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7877,6 +8192,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 570,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7895,6 +8211,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1071,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7912,6 +8229,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 571,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7930,6 +8248,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1074,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7948,6 +8267,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1076,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -7966,6 +8286,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1100,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8000,7 +8321,7 @@
     "CHI": 17,
     "FLA": 35
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "06:25"
   }
  },
@@ -8009,6 +8330,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1078,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8026,6 +8348,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 572,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8044,6 +8367,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1079,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8062,6 +8386,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1083,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8080,6 +8405,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1084,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8097,6 +8423,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 573,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8115,6 +8442,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1085,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8133,6 +8461,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1090,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8167,7 +8496,7 @@
     "CHI": 18,
     "FLA": 35
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:37"
   }
  },
@@ -8176,6 +8505,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1157,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8194,6 +8524,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1099,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8241,7 +8572,7 @@
     "CHI": 19,
     "FLA": 35
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:39"
   }
  },
@@ -8250,6 +8581,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 457,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8268,6 +8600,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1155,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8285,6 +8618,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 574,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8303,6 +8637,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1152,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8321,6 +8656,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1158,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8339,6 +8675,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1161,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8373,7 +8710,7 @@
     "CHI": 19,
     "FLA": 36
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:06"
   }
  },
@@ -8381,6 +8718,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 575,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8399,6 +8737,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1162,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8417,6 +8756,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1166,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8434,6 +8774,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 576,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8452,6 +8793,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1167,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8470,6 +8812,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1191,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8488,6 +8831,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1171,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8522,7 +8866,7 @@
     "CHI": 19,
     "FLA": 36
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "03:29"
   }
  },
@@ -8530,6 +8874,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 577,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8548,6 +8893,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1172,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8566,6 +8912,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1261,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8584,6 +8931,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1179,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8618,7 +8966,7 @@
     "CHI": 19,
     "FLA": 36
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:42"
   }
  },
@@ -8627,6 +8975,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1186,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8645,6 +8994,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1253,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8679,7 +9029,7 @@
     "CHI": 19,
     "FLA": 37
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:53"
   }
  },
@@ -8688,6 +9038,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1262,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8706,6 +9057,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1252,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8740,7 +9092,7 @@
     "CHI": 19,
     "FLA": 37
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:21"
   }
  },
@@ -8749,6 +9101,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1269,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8791,6 +9144,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 578,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8808,6 +9162,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 579,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8826,6 +9181,7 @@
   "detail": {
    "actingTeam": "FLA",
    "awayTeam": "CHI",
+   "eventId": 1259,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8844,6 +9200,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1266,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8887,6 +9244,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1267,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8905,6 +9263,7 @@
   "detail": {
    "actingTeam": "CHI",
    "awayTeam": "CHI",
+   "eventId": 1268,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8922,6 +9281,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 580,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,
@@ -8952,6 +9312,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "CHI",
+   "eventId": 584,
    "gameId": 2025020001,
    "homeTeam": "FLA",
    "period": 3,

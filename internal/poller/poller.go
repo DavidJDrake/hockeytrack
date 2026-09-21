@@ -5,6 +5,7 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 	"log/slog"
+	"sort"
 	"time"
 
 	"hockeytrack/internal/events"
@@ -76,6 +77,7 @@ func Run(ctx context.Context, d Deps, cfg Config, gameID int64, owner string, sh
 	chain := rec.ChainCount + 1
 	state := store.PollerState{
 		LastPlaySortOrder: rec.LastPlaySortOrder,
+		SentEventIDs:      append([]int64(nil), rec.SentEventIDs...),
 		SnapshotHashes:    map[string]string{},
 		ChainCount:        chain,
 		GameState:         rec.GameState,
@@ -96,6 +98,8 @@ func Run(ctx context.Context, d Deps, cfg Config, gameID int64, owner string, sh
 		return 0, err
 	}
 
+	// Every play published so far, by eventId. Loaded on the first fetch.
+	var sent map[int64]bool
 	for {
 		if err := ctx.Err(); err != nil {
 			return 0, err
@@ -163,15 +167,39 @@ func Run(ctx context.Context, d Deps, cfg Config, gameID int64, owner string, sh
 			}
 		}
 
+		// A game that was already being polled when the sent-list arrived
+		// has a mark and no list. Work the list out once, from the mark, so
+		// nothing already sent (or already lost) is replayed as news.
+		if sent == nil {
+			sent = map[int64]bool{}
+			for _, id := range state.SentEventIDs {
+				sent[id] = true
+			}
+			if len(sent) == 0 {
+				if seeded := SeedSent(pbp.Plays, state.LastPlaySortOrder); seeded != nil {
+					slog.Info("seeded the sent list from the old mark", "gameId", gameID, "mark", state.LastPlaySortOrder, "plays", len(seeded))
+					sent = seeded
+				}
+			}
+		}
 		running := score
-		for _, p := range NewPlays(pbp.Plays, state.LastPlaySortOrder) {
+		for _, p := range NewPlays(pbp.Plays, sent) {
 			running = RunningScore(pbp, p, running)
 			if err := d.Pub.Publish(ctx, events.DTPlay, BuildPlayEvent(pbp, p, running)); err != nil {
-				slog.Warn("play publish failed; will retry next cycle", "gameId", gameID, "seq", p.SortOrder, "err", err)
-				break // do not advance the mark past a failed publish
+				slog.Warn("play publish failed; will retry next cycle", "gameId", gameID, "eventId", p.EventID, "seq", p.SortOrder, "err", err)
+				break // not marked sent, so the next cycle tries it again
 			}
-			state.LastPlaySortOrder = p.SortOrder
+			sent[p.EventID] = true
+			// For the record only. It never takes a provisional number, and
+			// one left behind by the old rule is replaced by the first real
+			// one (seen in production after the fix: two recovered games
+			// still recorded 9017 and 9005).
+			if p.SortOrder < ProvisionalSortOrder &&
+				(p.SortOrder > state.LastPlaySortOrder || state.LastPlaySortOrder >= ProvisionalSortOrder) {
+				state.LastPlaySortOrder = p.SortOrder
+			}
 		}
+		state.SentEventIDs = sortedIDs(sent)
 
 		if err := d.Store.UpdatePollerState(ctx, gameID, state); err != nil {
 			return 0, err
@@ -230,4 +258,13 @@ func archiveFinal(ctx context.Context, d Deps, pbp *nhl.PlayByPlay, gameID int64
 	put("landing", landing, err)
 	shifts, err := d.Feed.ShiftCharts(ctx, gameID)
 	put("shifts", shifts, err)
+}
+
+func sortedIDs(set map[int64]bool) []int64 {
+	out := make([]int64, 0, len(set))
+	for id := range set {
+		out = append(out, id)
+	}
+	sort.Slice(out, func(i, j int) bool { return out[i] < out[j] })
+	return out
 }

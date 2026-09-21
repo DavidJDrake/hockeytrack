@@ -297,7 +297,7 @@
     "ANA": 0,
     "MIN": 0
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "20:00"
   }
  },
@@ -305,6 +305,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 52,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -339,7 +340,7 @@
     "ANA": 0,
     "MIN": 0
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "19:29"
   }
  },
@@ -348,6 +349,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 51,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -366,6 +368,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 103,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -400,7 +403,7 @@
     "ANA": 0,
     "MIN": 0
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:45"
   }
  },
@@ -409,6 +412,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 116,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -426,6 +430,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 8,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -444,6 +449,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 53,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -462,6 +468,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 126,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -480,6 +487,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 129,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -514,7 +522,7 @@
     "ANA": 0,
     "MIN": 1
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "17:54"
   }
  },
@@ -523,6 +531,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 115,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -541,6 +550,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 117,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -559,6 +569,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 149,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -593,7 +604,7 @@
     "ANA": 1,
     "MIN": 1
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "16:46"
   }
  },
@@ -602,6 +613,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 141,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -620,6 +632,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 131,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -638,6 +651,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 134,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -656,6 +670,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 143,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -690,7 +705,7 @@
     "ANA": 1,
     "MIN": 1
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:42"
   }
  },
@@ -699,6 +714,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 148,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -717,6 +733,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 160,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -751,7 +768,7 @@
     "ANA": 1,
     "MIN": 2
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:41"
   }
  },
@@ -760,6 +777,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 182,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -778,6 +796,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 189,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -796,6 +815,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 167,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -814,6 +834,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 191,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -848,7 +869,7 @@
     "ANA": 1,
     "MIN": 4
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "13:36"
   }
  },
@@ -857,6 +878,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 174,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -875,6 +897,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 184,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -893,6 +916,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 175,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -911,6 +935,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 177,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -929,6 +954,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 186,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -963,7 +989,7 @@
     "ANA": 1,
     "MIN": 4
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:58"
   }
  },
@@ -971,6 +997,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 10,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -989,6 +1016,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 54,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1007,6 +1035,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 193,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1041,7 +1070,7 @@
     "ANA": 1,
     "MIN": 4
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:23"
   }
  },
@@ -1050,6 +1079,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 196,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1068,6 +1098,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 209,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1086,6 +1117,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 201,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1104,6 +1136,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 215,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1138,7 +1171,7 @@
     "ANA": 2,
     "MIN": 4
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:41"
   }
  },
@@ -1147,6 +1180,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 205,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1164,6 +1198,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 12,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1182,6 +1217,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 55,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1200,6 +1236,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 213,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1234,7 +1271,7 @@
     "ANA": 2,
     "MIN": 4
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "10:54"
   }
  },
@@ -1242,6 +1279,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 13,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1276,7 +1314,7 @@
     "ANA": 3,
     "MIN": 6
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "10:13"
   }
  },
@@ -1285,6 +1323,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 56,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1303,6 +1342,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 229,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1321,6 +1361,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 230,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1339,6 +1380,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 236,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1374,7 +1416,7 @@
     "ANA": 5,
     "MIN": 6
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "09:31"
   }
  },
@@ -1383,6 +1425,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 57,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1401,6 +1444,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 240,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1418,6 +1462,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 14,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1436,6 +1481,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 58,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1454,6 +1500,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 253,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1472,6 +1519,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 244,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1490,6 +1538,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 254,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1524,7 +1573,7 @@
     "ANA": 5,
     "MIN": 7
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:49"
   }
  },
@@ -1533,6 +1582,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 248,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1550,6 +1600,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 15,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1568,6 +1619,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 59,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1586,6 +1638,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 266,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1620,7 +1673,7 @@
     "ANA": 5,
     "MIN": 7
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:03"
   }
  },
@@ -1629,6 +1682,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 264,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1647,6 +1701,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 265,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1681,7 +1736,7 @@
     "ANA": 5,
     "MIN": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "06:48"
   }
  },
@@ -1690,6 +1745,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 282,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1708,6 +1764,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 277,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1742,7 +1799,7 @@
     "ANA": 6,
     "MIN": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "06:15"
   }
  },
@@ -1750,6 +1807,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 16,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1768,6 +1826,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 401,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1786,6 +1845,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 283,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1804,6 +1864,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 284,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1838,7 +1899,7 @@
     "ANA": 7,
     "MIN": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:32"
   }
  },
@@ -1847,6 +1908,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 285,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1866,6 +1928,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 60,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1884,6 +1947,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 315,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1902,6 +1966,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 300,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1920,6 +1985,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 294,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1954,7 +2020,7 @@
     "ANA": 8,
     "MIN": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:00"
   }
  },
@@ -1963,6 +2029,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 304,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -1981,6 +2048,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 329,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2015,7 +2083,7 @@
     "ANA": 8,
     "MIN": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:13"
   }
  },
@@ -2024,6 +2092,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 332,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2042,6 +2111,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 324,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2076,7 +2146,7 @@
     "ANA": 8,
     "MIN": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "03:16"
   }
  },
@@ -2085,6 +2155,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 333,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2103,6 +2174,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 316,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2121,6 +2193,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 331,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2155,7 +2228,7 @@
     "ANA": 10,
     "MIN": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:43"
   }
  },
@@ -2164,6 +2237,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 61,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2181,6 +2255,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 17,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2199,6 +2274,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 62,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2217,6 +2293,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 334,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2235,6 +2312,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 403,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2253,6 +2331,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 402,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2271,6 +2350,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 335,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2289,6 +2369,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 501,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2323,7 +2404,7 @@
     "ANA": 10,
     "MIN": 9
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:55"
   }
  },
@@ -2331,6 +2412,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 18,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2349,6 +2431,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 63,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2367,6 +2450,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 340,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2385,6 +2469,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 339,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2403,6 +2488,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 346,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2437,7 +2523,7 @@
     "ANA": 12,
     "MIN": 10
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:15"
   }
  },
@@ -2446,6 +2532,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 341,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2463,6 +2550,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 19,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2481,6 +2569,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 64,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2499,6 +2588,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 345,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2517,6 +2607,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 354,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2535,6 +2626,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 347,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2578,6 +2670,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 348,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2596,6 +2689,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 351,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2614,6 +2708,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 65,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2632,6 +2727,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 356,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2649,6 +2745,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 20,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2667,6 +2764,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 66,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2684,6 +2782,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 21,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2727,6 +2826,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 67,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2745,6 +2845,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 364,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2762,6 +2863,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 22,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 1,
@@ -2804,6 +2906,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 69,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -2847,6 +2950,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 68,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -2865,6 +2969,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 367,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -2883,6 +2988,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 378,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -2926,6 +3032,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 375,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -2944,6 +3051,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 70,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -2962,6 +3070,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 379,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -2979,6 +3088,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 27,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -2997,6 +3107,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 71,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3015,6 +3126,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 382,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3058,6 +3170,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 383,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3076,6 +3189,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 384,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3094,6 +3208,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 385,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3137,6 +3252,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 394,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3171,7 +3287,7 @@
     "ANA": 13,
     "MIN": 16
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "16:20"
   }
  },
@@ -3180,6 +3296,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 396,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3197,6 +3314,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 28,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3215,6 +3333,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 72,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3233,6 +3352,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 553,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3267,7 +3387,7 @@
     "ANA": 14,
     "MIN": 16
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:50"
   }
  },
@@ -3276,6 +3396,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 554,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3294,6 +3415,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 558,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3311,6 +3433,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 29,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3329,6 +3452,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 73,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3346,6 +3470,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 30,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3364,6 +3489,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 74,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3381,6 +3507,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 31,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3399,6 +3526,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 75,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3417,6 +3545,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 561,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3451,7 +3580,7 @@
     "ANA": 14,
     "MIN": 16
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:48"
   }
  },
@@ -3460,6 +3589,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 562,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3478,6 +3608,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 572,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3512,7 +3643,7 @@
     "ANA": 14,
     "MIN": 17
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:12"
   }
  },
@@ -3521,6 +3652,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 579,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3539,6 +3671,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 405,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3573,7 +3706,7 @@
     "ANA": 14,
     "MIN": 17
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "13:29"
   }
  },
@@ -3582,6 +3715,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 582,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3600,6 +3734,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 577,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3617,6 +3752,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 32,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3635,6 +3771,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 76,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3653,6 +3790,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 589,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3687,7 +3825,7 @@
     "ANA": 14,
     "MIN": 17
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:53"
   }
  },
@@ -3696,6 +3834,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 591,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3713,6 +3852,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 33,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3731,6 +3871,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 77,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3749,6 +3890,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 593,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3767,6 +3909,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 651,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3801,7 +3944,7 @@
     "ANA": 14,
     "MIN": 18
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:19"
   }
  },
@@ -3810,6 +3953,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 661,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3844,7 +3988,7 @@
     "ANA": 14,
     "MIN": 18
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "10:40"
   }
  },
@@ -3853,6 +3997,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 668,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3871,6 +4016,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 663,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3905,7 +4051,7 @@
     "ANA": 14,
     "MIN": 20
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "09:33"
   }
  },
@@ -3913,6 +4059,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 34,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3931,6 +4078,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 78,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3949,6 +4097,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 669,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -3967,6 +4116,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 676,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4001,7 +4151,7 @@
     "ANA": 15,
     "MIN": 21
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:43"
   }
  },
@@ -4009,6 +4159,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 35,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4027,6 +4178,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 79,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4045,6 +4197,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 406,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4063,6 +4216,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 683,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4081,6 +4235,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 680,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4099,6 +4254,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 681,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4117,6 +4273,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 684,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4151,7 +4308,7 @@
     "ANA": 15,
     "MIN": 21
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:11"
   }
  },
@@ -4159,6 +4316,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 36,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4177,6 +4335,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 80,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4195,6 +4354,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 694,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4213,6 +4373,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 699,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4247,7 +4408,7 @@
     "ANA": 15,
     "MIN": 21
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "07:27"
   }
  },
@@ -4256,6 +4417,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 705,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4274,6 +4436,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 710,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4308,7 +4471,7 @@
     "ANA": 15,
     "MIN": 21
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "06:51"
   }
  },
@@ -4317,6 +4480,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 712,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4335,6 +4499,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 708,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4353,6 +4518,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 700,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4371,6 +4537,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 711,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4405,7 +4572,7 @@
     "ANA": 15,
     "MIN": 21
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:40"
   }
  },
@@ -4414,6 +4581,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 702,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4431,6 +4599,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 37,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4449,6 +4618,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 81,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4467,6 +4637,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 729,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4501,7 +4672,7 @@
     "ANA": 15,
     "MIN": 21
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "03:59"
   }
  },
@@ -4510,6 +4681,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 718,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4528,6 +4700,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 736,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4562,7 +4735,7 @@
     "ANA": 15,
     "MIN": 22
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "03:14"
   }
  },
@@ -4571,6 +4744,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 746,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4589,6 +4763,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 730,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4607,6 +4782,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 744,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4641,7 +4817,7 @@
     "ANA": 15,
     "MIN": 23
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:40"
   }
  },
@@ -4649,6 +4825,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 38,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4667,6 +4844,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 82,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4684,6 +4862,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 39,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4702,6 +4881,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 83,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4719,6 +4899,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 40,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4737,6 +4918,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 84,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4755,6 +4937,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 749,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4789,7 +4972,7 @@
     "ANA": 15,
     "MIN": 23
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:01"
   }
  },
@@ -4798,6 +4981,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 767,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4816,6 +5000,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 758,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4850,7 +5035,7 @@
     "ANA": 15,
     "MIN": 23
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:30"
   }
  },
@@ -4859,6 +5044,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 774,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4893,7 +5079,7 @@
     "ANA": 15,
     "MIN": 23
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:00"
   }
  },
@@ -4902,6 +5088,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 778,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4920,6 +5107,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 781,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4938,6 +5126,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 768,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4972,7 +5161,7 @@
     "ANA": 15,
     "MIN": 23
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:03"
   }
  },
@@ -4980,6 +5169,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 41,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -4998,6 +5188,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 85,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -5016,6 +5207,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 772,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -5034,6 +5226,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 773,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -5052,6 +5245,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 777,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -5070,6 +5264,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 775,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -5087,6 +5282,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 42,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -5121,7 +5317,7 @@
     "ANA": 15,
     "MIN": 23
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:00"
   }
  },
@@ -5130,6 +5326,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 86,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -5147,6 +5344,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 43,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 2,
@@ -5181,7 +5379,7 @@
     "ANA": 15,
     "MIN": 23
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "20:00"
   }
  },
@@ -5189,6 +5387,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 88,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5223,7 +5422,7 @@
     "ANA": 15,
     "MIN": 23
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "19:19"
   }
  },
@@ -5232,6 +5431,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 87,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5250,6 +5450,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 408,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5268,6 +5469,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 89,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5302,7 +5504,7 @@
     "ANA": 15,
     "MIN": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:46"
   }
  },
@@ -5311,6 +5513,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 803,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5329,6 +5532,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 789,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5347,6 +5551,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 409,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5365,6 +5570,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 794,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5399,7 +5605,7 @@
     "ANA": 16,
     "MIN": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:15"
   }
  },
@@ -5408,6 +5614,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 796,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5426,6 +5633,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 802,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5443,6 +5651,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 48,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5461,6 +5670,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 90,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5479,6 +5689,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 808,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5496,6 +5707,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 49,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5530,7 +5742,7 @@
     "ANA": 16,
     "MIN": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "17:37"
   }
  },
@@ -5539,6 +5751,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 91,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5557,6 +5770,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 810,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5575,6 +5789,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 811,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5609,7 +5824,7 @@
     "ANA": 16,
     "MIN": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "17:02"
   }
  },
@@ -5617,6 +5832,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 50,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5635,6 +5851,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 92,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5653,6 +5870,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 822,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5670,6 +5888,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 451,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5704,7 +5923,7 @@
     "ANA": 16,
     "MIN": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "16:28"
   }
  },
@@ -5713,6 +5932,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 93,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5731,6 +5951,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 832,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5749,6 +5970,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 836,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5783,7 +6005,7 @@
     "ANA": 16,
     "MIN": 27
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:25"
   }
  },
@@ -5792,6 +6014,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 833,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5810,6 +6033,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 839,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5844,7 +6068,7 @@
     "ANA": 16,
     "MIN": 28
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:23"
   }
  },
@@ -5852,6 +6076,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 452,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5870,6 +6095,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 94,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5888,6 +6114,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 844,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5906,6 +6133,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 848,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5924,6 +6152,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 845,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5942,6 +6171,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 846,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -5976,7 +6206,7 @@
     "ANA": 16,
     "MIN": 29
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:49"
   }
  },
@@ -5985,6 +6215,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 410,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6003,6 +6234,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 847,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6021,6 +6253,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 855,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6038,6 +6271,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 453,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6056,6 +6290,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 95,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6074,6 +6309,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 871,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6108,7 +6344,7 @@
     "ANA": 18,
     "MIN": 29
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:18"
   }
  },
@@ -6117,6 +6353,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 867,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6135,6 +6372,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 96,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6152,6 +6390,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 454,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6170,6 +6409,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 411,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6188,6 +6428,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 872,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6206,6 +6447,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 873,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6240,7 +6482,7 @@
     "ANA": 18,
     "MIN": 29
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:41"
   }
  },
@@ -6248,6 +6490,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 455,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6266,6 +6509,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 97,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6284,6 +6528,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 877,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6302,6 +6547,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 883,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6320,6 +6566,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 879,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6354,7 +6601,7 @@
     "ANA": 19,
     "MIN": 31
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:01"
   }
  },
@@ -6363,6 +6610,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 880,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6381,6 +6629,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 882,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6400,6 +6649,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 99,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6418,6 +6668,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 888,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6452,7 +6703,7 @@
     "ANA": 19,
     "MIN": 33
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "10:30"
   }
  },
@@ -6461,6 +6712,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 889,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6479,6 +6731,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 893,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6497,6 +6750,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 903,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6531,7 +6785,7 @@
     "ANA": 19,
     "MIN": 35
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "09:25"
   }
  },
@@ -6540,6 +6794,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 896,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6558,6 +6813,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 897,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6576,6 +6832,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 904,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6594,6 +6851,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 899,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6611,6 +6869,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 456,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6629,6 +6888,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 100,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6647,6 +6907,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 906,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6681,7 +6942,7 @@
     "ANA": 19,
     "MIN": 35
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:04"
   }
  },
@@ -6689,6 +6950,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 457,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6707,6 +6969,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 601,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6725,6 +6988,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 910,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6742,6 +7006,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 458,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6760,6 +7025,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 602,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6778,6 +7044,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 918,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6795,6 +7062,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 459,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6829,7 +7097,7 @@
     "ANA": 20,
     "MIN": 35
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "07:06"
   }
  },
@@ -6838,6 +7106,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 603,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6856,6 +7125,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 932,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6890,7 +7160,7 @@
     "ANA": 21,
     "MIN": 35
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "06:28"
   }
  },
@@ -6899,6 +7169,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 933,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6917,6 +7188,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 934,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6934,6 +7206,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 460,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6952,6 +7225,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 604,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6970,6 +7244,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 938,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -6987,6 +7262,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 461,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7005,6 +7281,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 605,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7023,6 +7300,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 943,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7041,6 +7319,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 412,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7075,7 +7354,7 @@
     "ANA": 21,
     "MIN": 35
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:38"
   }
  },
@@ -7084,6 +7363,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 960,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7131,7 +7411,7 @@
     "ANA": 22,
     "MIN": 35
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:44"
   }
  },
@@ -7140,6 +7420,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 961,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7158,6 +7439,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 962,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7192,7 +7474,7 @@
     "ANA": 23,
     "MIN": 35
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:07"
   }
  },
@@ -7201,6 +7483,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 963,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7219,6 +7502,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 973,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7253,7 +7537,7 @@
     "ANA": 23,
     "MIN": 35
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "03:25"
   }
  },
@@ -7261,6 +7545,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 462,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7279,6 +7564,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 606,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7297,6 +7583,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 984,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7331,7 +7618,7 @@
     "ANA": 24,
     "MIN": 35
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:54"
   }
  },
@@ -7340,6 +7627,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 994,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7358,6 +7646,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 997,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7376,6 +7665,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 998,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7394,6 +7684,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 990,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7411,6 +7702,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 463,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7429,6 +7721,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 607,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7447,6 +7740,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 999,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7481,7 +7775,7 @@
     "ANA": 24,
     "MIN": 35
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:18"
   }
  },
@@ -7489,6 +7783,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 464,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7507,6 +7802,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 608,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7525,6 +7821,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 1002,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7543,6 +7840,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 413,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7577,7 +7875,7 @@
     "ANA": 24,
     "MIN": 35
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:46"
   }
  },
@@ -7586,6 +7884,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 1015,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7604,6 +7903,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 609,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7647,6 +7947,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 1016,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7664,6 +7965,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 465,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7707,6 +8009,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 610,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7725,6 +8028,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 1022,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7743,6 +8047,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 1027,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7761,6 +8066,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 1018,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7795,7 +8101,7 @@
     "ANA": 24,
     "MIN": 37
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:00"
   }
  },
@@ -7804,6 +8110,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 1031,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7822,6 +8129,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 1026,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7840,6 +8148,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 414,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7859,6 +8168,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 611,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7876,6 +8186,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 466,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 3,
@@ -7931,6 +8242,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 613,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -7974,6 +8286,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 612,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -7992,6 +8305,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 1036,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8010,6 +8324,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 1039,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8027,6 +8342,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 472,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8045,6 +8361,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 615,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8063,6 +8380,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 1043,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8081,6 +8399,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 1048,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8124,6 +8443,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 1045,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8142,6 +8462,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 1046,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8185,6 +8506,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 1055,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8228,6 +8550,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 1057,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8246,6 +8569,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 1058,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8263,6 +8587,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 473,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8281,6 +8606,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 616,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8299,6 +8625,7 @@
   "detail": {
    "actingTeam": "ANA",
    "awayTeam": "ANA",
+   "eventId": 1062,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8342,6 +8669,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 1063,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8359,6 +8687,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 474,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8377,6 +8706,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 617,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8395,6 +8725,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 1070,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8437,6 +8768,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 475,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8480,6 +8812,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 618,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8498,6 +8831,7 @@
   "detail": {
    "actingTeam": "MIN",
    "awayTeam": "ANA",
+   "eventId": 1080,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8516,6 +8850,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 476,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,
@@ -8546,6 +8881,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "ANA",
+   "eventId": 480,
    "gameId": 2024021298,
    "homeTeam": "MIN",
    "period": 4,

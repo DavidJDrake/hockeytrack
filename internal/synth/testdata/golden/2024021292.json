@@ -297,7 +297,7 @@
     "BUF": 0,
     "TOR": 0
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "20:00"
   }
  },
@@ -305,6 +305,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 52,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -339,7 +340,7 @@
     "BUF": 0,
     "TOR": 0
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "19:17"
   }
  },
@@ -348,6 +349,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 53,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -365,6 +367,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 8,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -383,6 +386,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 54,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -401,6 +405,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 121,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -435,7 +440,7 @@
     "BUF": 1,
     "TOR": 0
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:19"
   }
  },
@@ -444,6 +449,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 129,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -462,6 +468,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 106,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -480,6 +487,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 117,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -498,6 +506,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 107,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -516,6 +525,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 116,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -550,7 +560,7 @@
     "BUF": 1,
     "TOR": 0
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "17:33"
   }
  },
@@ -559,6 +569,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 159,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -593,7 +604,7 @@
     "BUF": 1,
     "TOR": 0
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "16:35"
   }
  },
@@ -602,6 +613,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 161,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -620,6 +632,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 146,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -654,7 +667,7 @@
     "BUF": 1,
     "TOR": 0
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:31"
   }
  },
@@ -663,6 +676,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 174,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -681,6 +695,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 162,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -715,7 +730,7 @@
     "BUF": 1,
     "TOR": 2
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:53"
   }
  },
@@ -724,6 +739,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 301,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -742,6 +758,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 163,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -760,6 +777,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 164,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -778,6 +796,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 169,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -812,7 +831,7 @@
     "BUF": 2,
     "TOR": 2
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "13:41"
   }
  },
@@ -820,6 +839,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 9,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -838,6 +858,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 251,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -856,6 +877,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 189,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -874,6 +896,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 184,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -908,7 +931,7 @@
     "BUF": 3,
     "TOR": 2
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:46"
   }
  },
@@ -917,6 +940,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 185,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -934,6 +958,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 10,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -952,6 +977,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 56,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -970,6 +996,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 190,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -988,6 +1015,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 191,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1006,6 +1034,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 201,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1040,7 +1069,7 @@
     "BUF": 3,
     "TOR": 2
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:48"
   }
  },
@@ -1049,6 +1078,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 208,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1083,7 +1113,7 @@
     "BUF": 3,
     "TOR": 3
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:14"
   }
  },
@@ -1091,6 +1121,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 11,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1109,6 +1140,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 57,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1127,6 +1159,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 213,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1144,6 +1177,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 252,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1178,7 +1212,7 @@
     "BUF": 3,
     "TOR": 3
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "10:39"
   }
  },
@@ -1187,6 +1221,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 58,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1205,6 +1240,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 221,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1223,6 +1259,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 226,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1257,7 +1294,7 @@
     "BUF": 4,
     "TOR": 3
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "10:04"
   }
  },
@@ -1265,6 +1302,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 253,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1283,6 +1321,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 59,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1301,6 +1340,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 225,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1335,7 +1375,7 @@
     "BUF": 5,
     "TOR": 4
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "09:09"
   }
  },
@@ -1343,6 +1383,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 12,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1361,6 +1402,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 60,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1379,6 +1421,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 230,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1397,6 +1440,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 302,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1415,6 +1459,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 231,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1433,6 +1478,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 304,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1467,7 +1513,7 @@
     "BUF": 8,
     "TOR": 4
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:20"
   }
  },
@@ -1476,6 +1522,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 305,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1494,6 +1541,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 240,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1512,6 +1560,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 13,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1530,6 +1579,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 242,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1548,6 +1598,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 243,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1566,6 +1617,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 248,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1584,6 +1636,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 61,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1618,7 +1671,7 @@
     "BUF": 8,
     "TOR": 5
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "07:46"
   }
  },
@@ -1626,6 +1679,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 14,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1644,6 +1698,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 254,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1662,6 +1717,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 359,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1680,6 +1736,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 368,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1698,6 +1755,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 356,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1716,6 +1774,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 358,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1750,7 +1809,7 @@
     "BUF": 9,
     "TOR": 5
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "07:12"
   }
  },
@@ -1759,6 +1818,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 371,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1777,6 +1837,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 363,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1794,6 +1855,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 15,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1812,6 +1874,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 255,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1830,6 +1893,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 306,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1864,7 +1928,7 @@
     "BUF": 9,
     "TOR": 5
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "06:29"
   }
  },
@@ -1873,6 +1937,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 378,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1891,6 +1956,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 382,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1909,6 +1975,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 381,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1927,6 +1994,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 372,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1945,6 +2013,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 307,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1962,6 +2031,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 16,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1980,6 +2050,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 62,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -1998,6 +2069,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 387,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2032,7 +2104,7 @@
     "BUF": 9,
     "TOR": 6
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:50"
   }
  },
@@ -2041,6 +2113,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 383,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2058,6 +2131,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 17,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2076,6 +2150,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 256,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2094,6 +2169,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 392,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2112,6 +2188,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 399,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2146,7 +2223,7 @@
     "BUF": 10,
     "TOR": 6
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:03"
   }
  },
@@ -2155,6 +2232,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 390,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2173,6 +2251,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 391,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2191,6 +2270,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 407,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2225,7 +2305,7 @@
     "BUF": 10,
     "TOR": 6
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:33"
   }
  },
@@ -2234,6 +2314,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 409,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2252,6 +2333,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 411,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2270,6 +2352,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 414,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2304,7 +2387,7 @@
     "BUF": 10,
     "TOR": 6
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:03"
   }
  },
@@ -2313,6 +2396,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 415,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2331,6 +2415,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 416,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2348,6 +2433,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 257,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2366,6 +2452,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 63,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2384,6 +2471,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 419,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2427,6 +2515,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 64,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2445,6 +2534,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 423,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2462,6 +2552,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 258,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2480,6 +2571,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 65,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2498,6 +2590,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 428,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2516,6 +2609,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 426,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2559,6 +2653,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 427,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2577,6 +2672,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 259,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2595,6 +2691,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 429,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2637,6 +2734,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 18,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2655,6 +2753,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 66,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2673,6 +2772,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 442,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2691,6 +2791,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 444,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2709,6 +2810,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 439,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2752,6 +2854,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 260,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2770,6 +2873,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 454,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2812,6 +2916,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 19,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2830,6 +2935,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 261,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2848,6 +2954,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 457,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2865,6 +2972,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 20,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2883,6 +2991,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 262,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2901,6 +3010,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 471,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2935,7 +3045,7 @@
     "BUF": 13,
     "TOR": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:06"
   }
  },
@@ -2944,6 +3054,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 473,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2962,6 +3073,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 308,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -2996,7 +3108,7 @@
     "BUF": 13,
     "TOR": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:00"
   }
  },
@@ -3004,6 +3116,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 21,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 1,
@@ -3038,7 +3151,7 @@
     "BUF": 13,
     "TOR": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "20:00"
   }
  },
@@ -3046,6 +3159,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 68,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3080,7 +3194,7 @@
     "BUF": 13,
     "TOR": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "19:05"
   }
  },
@@ -3089,6 +3203,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 67,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3106,6 +3221,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 26,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3140,7 +3256,7 @@
     "BUF": 13,
     "TOR": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:28"
   }
  },
@@ -3149,6 +3265,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 69,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3167,6 +3284,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 490,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3184,6 +3302,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 27,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3218,7 +3337,7 @@
     "BUF": 13,
     "TOR": 9
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "17:39"
   }
  },
@@ -3227,6 +3346,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 263,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3245,6 +3365,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 503,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3263,6 +3384,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 498,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3306,6 +3428,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 505,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3324,6 +3447,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 264,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3342,6 +3466,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 508,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3360,6 +3485,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 509,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3378,6 +3504,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 511,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3396,6 +3523,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 518,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3439,6 +3567,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 515,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3456,6 +3585,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 28,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3490,7 +3620,7 @@
     "BUF": 13,
     "TOR": 10
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:31"
   }
  },
@@ -3499,6 +3629,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 265,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3517,6 +3648,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 70,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3551,7 +3683,7 @@
     "BUF": 13,
     "TOR": 10
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:46"
   }
  },
@@ -3560,6 +3692,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 537,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3578,6 +3711,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 533,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3596,6 +3730,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 534,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3613,6 +3748,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 29,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3631,6 +3767,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 71,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3649,6 +3786,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 651,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3683,7 +3821,7 @@
     "BUF": 14,
     "TOR": 10
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "13:26"
   }
  },
@@ -3692,6 +3830,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 542,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3710,6 +3849,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 656,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3744,7 +3884,7 @@
     "BUF": 14,
     "TOR": 10
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:40"
   }
  },
@@ -3753,6 +3893,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 662,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3771,6 +3912,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 663,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3789,6 +3931,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 664,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3806,6 +3949,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 30,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3824,6 +3968,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 72,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3842,6 +3987,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 678,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3876,7 +4022,7 @@
     "BUF": 14,
     "TOR": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:04"
   }
  },
@@ -3885,6 +4031,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 669,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3903,6 +4050,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 676,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3937,7 +4085,7 @@
     "BUF": 14,
     "TOR": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:27"
   }
  },
@@ -3945,6 +4093,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 31,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3963,6 +4112,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 73,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3981,6 +4131,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 692,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -3999,6 +4150,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 694,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4033,7 +4185,7 @@
     "BUF": 15,
     "TOR": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "10:49"
   }
  },
@@ -4042,6 +4194,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 693,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4076,7 +4229,7 @@
     "BUF": 15,
     "TOR": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "09:59"
   }
  },
@@ -4085,6 +4238,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 752,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4103,6 +4257,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 758,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4121,6 +4276,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 763,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4139,6 +4295,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 765,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4173,7 +4330,7 @@
     "BUF": 15,
     "TOR": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "09:29"
   }
  },
@@ -4182,6 +4339,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 756,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4199,6 +4357,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 32,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4233,7 +4392,7 @@
     "BUF": 15,
     "TOR": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:34"
   }
  },
@@ -4242,6 +4401,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 74,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4260,6 +4420,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 768,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4277,6 +4438,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 33,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4295,6 +4457,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 75,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4313,6 +4476,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 783,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4347,7 +4511,7 @@
     "BUF": 16,
     "TOR": 12
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "07:46"
   }
  },
@@ -4356,6 +4520,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 776,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4374,6 +4539,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 789,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4392,6 +4558,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 780,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4410,6 +4577,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 266,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4428,6 +4596,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 787,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4462,7 +4631,7 @@
     "BUF": 17,
     "TOR": 13
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "07:10"
   }
  },
@@ -4471,6 +4640,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 796,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4489,6 +4659,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 797,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4507,6 +4678,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 792,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4524,6 +4696,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 267,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4542,6 +4715,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 268,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4560,6 +4734,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 801,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4578,6 +4753,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 798,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4612,7 +4788,7 @@
     "BUF": 17,
     "TOR": 16
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:45"
   }
  },
@@ -4621,6 +4797,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 799,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4639,6 +4816,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 800,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4656,6 +4834,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 34,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4674,6 +4853,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 269,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4692,6 +4872,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 811,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4727,7 +4908,7 @@
     "BUF": 17,
     "TOR": 16
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:58"
   }
  },
@@ -4736,6 +4917,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 270,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4754,6 +4936,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 842,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4788,7 +4971,7 @@
     "BUF": 18,
     "TOR": 17
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:03"
   }
  },
@@ -4797,6 +4980,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 822,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4815,6 +4999,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 828,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4833,6 +5018,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 829,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4867,7 +5053,7 @@
     "BUF": 19,
     "TOR": 17
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "03:14"
   }
  },
@@ -4876,6 +5062,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 886,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4894,6 +5081,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 838,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4911,6 +5099,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 35,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4929,6 +5118,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 76,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4947,6 +5137,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 851,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -4981,7 +5172,7 @@
     "BUF": 19,
     "TOR": 17
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:44"
   }
  },
@@ -4990,6 +5181,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 855,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5008,6 +5200,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 879,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5026,6 +5219,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 863,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5060,7 +5254,7 @@
     "BUF": 19,
     "TOR": 18
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:13"
   }
  },
@@ -5069,6 +5263,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 850,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5087,6 +5282,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 852,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5105,6 +5301,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 853,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5123,6 +5320,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 854,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5141,6 +5339,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 856,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5175,7 +5374,7 @@
     "BUF": 21,
     "TOR": 19
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:28"
   }
  },
@@ -5184,6 +5383,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 857,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5201,6 +5401,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 36,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5219,6 +5420,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 77,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5237,6 +5439,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 883,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5254,6 +5457,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 37,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5272,6 +5476,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 271,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5290,6 +5495,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 865,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5308,6 +5514,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 866,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5326,6 +5533,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 874,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5360,7 +5568,7 @@
     "BUF": 22,
     "TOR": 19
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:49"
   }
  },
@@ -5369,6 +5577,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 875,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5387,6 +5596,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 870,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5404,6 +5614,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 38,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5422,6 +5633,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 78,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5440,6 +5652,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 884,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5458,6 +5671,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 877,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5476,6 +5690,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 885,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5510,7 +5725,7 @@
     "BUF": 22,
     "TOR": 19
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:12"
   }
  },
@@ -5519,6 +5734,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 311,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5537,6 +5753,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 310,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5571,7 +5788,7 @@
     "BUF": 22,
     "TOR": 19
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:00"
   }
  },
@@ -5579,6 +5796,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 39,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 2,
@@ -5613,7 +5831,7 @@
     "BUF": 22,
     "TOR": 19
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "20:00"
   }
  },
@@ -5621,6 +5839,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 273,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -5655,7 +5874,7 @@
     "BUF": 24,
     "TOR": 19
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:50"
   }
  },
@@ -5664,6 +5883,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 272,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -5682,6 +5902,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 889,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -5700,6 +5921,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 890,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -5717,6 +5939,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 44,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -5735,6 +5958,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 79,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -5753,6 +5977,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 952,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -5787,7 +6012,7 @@
     "BUF": 24,
     "TOR": 20
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:19"
   }
  },
@@ -5796,6 +6021,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 953,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -5814,6 +6040,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 954,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -5831,6 +6058,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 45,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -5849,6 +6077,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 275,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -5867,6 +6096,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 959,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -5885,6 +6115,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 960,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -5919,7 +6150,7 @@
     "BUF": 24,
     "TOR": 23
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "17:32"
   }
  },
@@ -5928,6 +6159,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 963,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -5946,6 +6178,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 964,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -5964,6 +6197,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 975,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -5998,7 +6232,7 @@
     "BUF": 24,
     "TOR": 23
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "16:57"
   }
  },
@@ -6007,6 +6241,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 987,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6025,6 +6260,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 981,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6059,7 +6295,7 @@
     "BUF": 24,
     "TOR": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "16:20"
   }
  },
@@ -6068,6 +6304,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 312,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6085,6 +6322,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 46,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6103,6 +6341,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 81,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6121,6 +6360,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 990,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6163,6 +6403,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 47,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6181,6 +6422,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 276,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6198,6 +6440,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 48,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6216,6 +6459,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 997,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6234,6 +6478,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 82,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6252,6 +6497,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1001,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6270,6 +6516,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1002,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6287,6 +6534,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 277,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6305,6 +6553,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 83,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6323,6 +6572,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1004,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6366,6 +6616,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1020,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6384,6 +6635,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1018,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6418,7 +6670,7 @@
     "BUF": 27,
     "TOR": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:08"
   }
  },
@@ -6427,6 +6679,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1024,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6445,6 +6698,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1021,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6479,7 +6733,7 @@
     "BUF": 27,
     "TOR": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "13:30"
   }
  },
@@ -6488,6 +6742,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1034,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6505,6 +6760,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 49,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6539,7 +6795,7 @@
     "BUF": 27,
     "TOR": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:03"
   }
  },
@@ -6548,6 +6804,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 278,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6566,6 +6823,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1040,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6584,6 +6842,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1036,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6602,6 +6861,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1037,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6619,6 +6879,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 50,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6637,6 +6898,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 279,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6655,6 +6917,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1042,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6673,6 +6936,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1043,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6690,6 +6954,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 551,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6724,7 +6989,7 @@
     "BUF": 27,
     "TOR": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:15"
   }
  },
@@ -6733,6 +6998,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 84,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6751,6 +7017,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1059,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6769,6 +7036,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1066,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6787,6 +7055,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 313,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6821,7 +7090,7 @@
     "BUF": 27,
     "TOR": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "10:39"
   }
  },
@@ -6830,6 +7099,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1065,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6848,6 +7118,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1073,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6865,6 +7136,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 552,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6899,7 +7171,7 @@
     "BUF": 27,
     "TOR": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "10:09"
   }
  },
@@ -6908,6 +7180,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 85,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6926,6 +7199,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1079,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6943,6 +7217,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 553,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -6977,7 +7252,7 @@
     "BUF": 27,
     "TOR": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "09:25"
   }
  },
@@ -6986,6 +7261,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 86,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7003,6 +7279,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 554,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7021,6 +7298,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 87,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7038,6 +7316,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 555,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7056,6 +7335,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 282,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7074,6 +7354,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1090,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7108,7 +7389,7 @@
     "BUF": 27,
     "TOR": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:24"
   }
  },
@@ -7116,6 +7397,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 556,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7134,6 +7416,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 283,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7152,6 +7435,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1104,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7186,7 +7470,7 @@
     "BUF": 27,
     "TOR": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "06:13"
   }
  },
@@ -7195,6 +7479,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1125,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7229,7 +7514,7 @@
     "BUF": 27,
     "TOR": 27
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:31"
   }
  },
@@ -7237,6 +7522,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 557,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7255,6 +7541,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 284,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7272,6 +7559,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 558,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7290,6 +7578,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 285,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7308,6 +7597,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1135,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7326,6 +7616,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1133,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7360,7 +7651,7 @@
     "BUF": 27,
     "TOR": 28
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:01"
   }
  },
@@ -7368,6 +7659,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 559,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7386,6 +7678,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 286,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7404,6 +7697,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1138,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7422,6 +7716,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1139,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7440,6 +7735,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1140,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7487,7 +7783,7 @@
     "BUF": 28,
     "TOR": 29
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:31"
   }
  },
@@ -7496,6 +7792,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1144,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7513,6 +7810,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 560,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7531,6 +7829,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 88,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7549,6 +7848,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1149,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7567,6 +7867,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1145,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7585,6 +7886,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1146,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7632,7 +7934,7 @@
     "BUF": 29,
     "TOR": 30
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:01"
   }
  },
@@ -7641,6 +7943,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 314,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7659,6 +7962,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1147,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7678,6 +7982,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 287,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7695,6 +8000,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 288,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7713,6 +8019,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 89,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7731,6 +8038,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1153,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7748,6 +8056,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 561,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7782,7 +8091,7 @@
     "BUF": 29,
     "TOR": 30
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:55"
   }
  },
@@ -7791,6 +8100,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 90,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7809,6 +8119,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1185,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7827,6 +8138,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 315,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7870,6 +8182,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1166,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7887,6 +8200,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 562,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7905,6 +8219,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 91,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7922,6 +8237,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 563,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7940,6 +8256,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 92,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7958,6 +8275,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1172,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7976,6 +8294,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1173,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -7994,6 +8313,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1174,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -8012,6 +8332,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1175,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -8030,6 +8351,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1176,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -8064,7 +8386,7 @@
     "BUF": 34,
     "TOR": 31
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:32"
   }
  },
@@ -8073,6 +8395,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1177,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -8091,6 +8414,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1178,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -8109,6 +8433,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 316,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -8127,6 +8452,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1181,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -8146,6 +8472,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 289,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -8164,6 +8491,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1186,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -8198,7 +8526,7 @@
     "BUF": 34,
     "TOR": 32
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:01"
   }
  },
@@ -8207,6 +8535,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1188,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -8226,6 +8555,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 290,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -8244,6 +8574,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1205,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -8278,7 +8609,7 @@
     "BUF": 34,
     "TOR": 32
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:27"
   }
  },
@@ -8287,6 +8618,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1208,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -8305,6 +8637,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 1206,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -8339,7 +8672,7 @@
     "BUF": 35,
     "TOR": 32
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:00"
   }
  },
@@ -8348,6 +8681,7 @@
   "detail": {
    "actingTeam": "BUF",
    "awayTeam": "TOR",
+   "eventId": 1201,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -8365,6 +8699,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 564,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -8383,6 +8718,7 @@
   "detail": {
    "actingTeam": "TOR",
    "awayTeam": "TOR",
+   "eventId": 93,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -8400,6 +8736,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 565,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,
@@ -8430,6 +8767,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "TOR",
+   "eventId": 569,
    "gameId": 2024021292,
    "homeTeam": "BUF",
    "period": 3,

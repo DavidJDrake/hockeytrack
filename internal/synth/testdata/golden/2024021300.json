@@ -297,7 +297,7 @@
     "LAK": 0,
     "SEA": 0
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "20:00"
   }
  },
@@ -305,6 +305,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 9,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -339,7 +340,7 @@
     "LAK": 0,
     "SEA": 0
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:57"
   }
  },
@@ -348,6 +349,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 8,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -366,6 +368,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 67,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -384,6 +387,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 79,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -418,7 +422,7 @@
     "LAK": 0,
     "SEA": 2
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:26"
   }
  },
@@ -427,6 +431,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 61,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -444,6 +449,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 10,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -462,6 +468,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 11,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -480,6 +487,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 65,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -498,6 +506,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 66,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -532,7 +541,7 @@
     "LAK": 0,
     "SEA": 2
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "17:54"
   }
  },
@@ -541,6 +550,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 151,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -575,7 +585,7 @@
     "LAK": 0,
     "SEA": 2
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "17:02"
   }
  },
@@ -584,6 +594,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 77,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -602,6 +613,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 78,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -620,6 +632,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 93,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -654,7 +667,7 @@
     "LAK": 0,
     "SEA": 4
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:55"
   }
  },
@@ -663,6 +676,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 87,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -681,6 +695,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 13,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -699,6 +714,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 16,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -717,6 +733,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 17,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -735,6 +752,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 100,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -753,6 +771,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 96,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -787,7 +806,7 @@
     "LAK": 1,
     "SEA": 5
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:23"
   }
  },
@@ -796,6 +815,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 98,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -814,6 +834,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 551,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -831,6 +852,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 18,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -849,6 +871,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 20,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -867,6 +890,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 113,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -885,6 +909,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 104,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -919,7 +944,7 @@
     "LAK": 1,
     "SEA": 6
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:34"
   }
  },
@@ -928,6 +953,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 123,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -946,6 +972,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 152,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -964,6 +991,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 124,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -982,6 +1010,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 127,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1016,7 +1045,7 @@
     "LAK": 1,
     "SEA": 7
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "13:52"
   }
  },
@@ -1025,6 +1054,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 119,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1042,6 +1072,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 21,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1060,6 +1091,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 22,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1077,6 +1109,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 23,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1111,7 +1144,7 @@
     "LAK": 2,
     "SEA": 8
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:26"
   }
  },
@@ -1120,6 +1153,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 24,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1138,6 +1172,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 140,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1156,6 +1191,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 128,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1174,6 +1210,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 129,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1192,6 +1229,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 130,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1210,6 +1248,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 141,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1244,7 +1283,7 @@
     "LAK": 2,
     "SEA": 9
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:27"
   }
  },
@@ -1253,6 +1292,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 150,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1271,6 +1311,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 376,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1305,7 +1346,7 @@
     "LAK": 2,
     "SEA": 10
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "10:34"
   }
  },
@@ -1314,6 +1355,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 358,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1332,6 +1374,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 369,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1350,6 +1393,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 378,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1368,6 +1412,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 387,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1386,6 +1431,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 153,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1420,7 +1466,7 @@
     "LAK": 2,
     "SEA": 10
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "09:34"
   }
  },
@@ -1428,6 +1474,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 25,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1446,6 +1493,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 26,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1464,6 +1512,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 413,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1482,6 +1531,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 397,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1500,6 +1550,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 415,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1534,7 +1585,7 @@
     "LAK": 3,
     "SEA": 10
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "09:02"
   }
  },
@@ -1543,6 +1594,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 380,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1561,6 +1613,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 383,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1579,6 +1632,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 423,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1613,7 +1667,7 @@
     "LAK": 3,
     "SEA": 10
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:12"
   }
  },
@@ -1622,6 +1676,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 449,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1656,7 +1711,7 @@
     "LAK": 3,
     "SEA": 10
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "07:32"
   }
  },
@@ -1665,6 +1720,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 461,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1699,7 +1755,7 @@
     "LAK": 3,
     "SEA": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "07:01"
   }
  },
@@ -1708,6 +1764,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 406,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1726,6 +1783,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 411,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1743,6 +1801,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 27,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1777,7 +1836,7 @@
     "LAK": 3,
     "SEA": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "06:06"
   }
  },
@@ -1786,6 +1845,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 28,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1804,6 +1864,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 429,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1838,7 +1899,7 @@
     "LAK": 3,
     "SEA": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:30"
   }
  },
@@ -1847,6 +1908,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 464,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1865,6 +1927,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 446,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1899,7 +1962,7 @@
     "LAK": 4,
     "SEA": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:46"
   }
  },
@@ -1908,6 +1971,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 154,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1926,6 +1990,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 444,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1961,7 +2026,7 @@
     "LAK": 4,
     "SEA": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:06"
   }
  },
@@ -1970,6 +2035,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 29,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -1988,6 +2054,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 462,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -2006,6 +2073,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 30,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -2040,7 +2108,7 @@
     "LAK": 5,
     "SEA": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "03:26"
   }
  },
@@ -2049,6 +2117,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 457,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -2066,6 +2135,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 31,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -2084,6 +2154,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 32,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -2101,6 +2172,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 33,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -2119,6 +2191,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 34,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -2137,6 +2210,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 465,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -2156,6 +2230,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 35,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -2173,6 +2248,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 36,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -2207,7 +2283,7 @@
     "LAK": 5,
     "SEA": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:56"
   }
  },
@@ -2216,6 +2292,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 37,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -2234,6 +2311,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 471,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -2268,7 +2346,7 @@
     "LAK": 5,
     "SEA": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:45"
   }
  },
@@ -2277,6 +2355,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 482,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -2295,6 +2374,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 483,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -2329,7 +2409,7 @@
     "LAK": 5,
     "SEA": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:47"
   }
  },
@@ -2338,6 +2418,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 492,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -2372,7 +2453,7 @@
     "LAK": 5,
     "SEA": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:11"
   }
  },
@@ -2381,6 +2462,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 501,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -2399,6 +2481,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 502,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -2433,7 +2516,7 @@
     "LAK": 5,
     "SEA": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:00"
   }
  },
@@ -2441,6 +2524,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 38,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 1,
@@ -2475,7 +2559,7 @@
     "LAK": 5,
     "SEA": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "20:00"
   }
  },
@@ -2483,6 +2567,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 44,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -2517,7 +2602,7 @@
     "LAK": 5,
     "SEA": 11
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:43"
   }
  },
@@ -2526,6 +2611,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 43,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -2544,6 +2630,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 505,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -2562,6 +2649,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 506,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -2580,6 +2668,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 525,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -2614,7 +2703,7 @@
     "LAK": 5,
     "SEA": 12
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:04"
   }
  },
@@ -2623,6 +2712,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 519,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -2666,6 +2756,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 45,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -2684,6 +2775,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 522,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -2702,6 +2794,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 528,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -2745,6 +2838,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 46,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -2763,6 +2857,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 252,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -2781,6 +2876,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 531,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -2799,6 +2895,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 532,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -2817,6 +2914,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 533,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -2835,6 +2933,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 253,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -2878,6 +2977,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 48,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -2896,6 +2996,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 255,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -2939,6 +3040,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 156,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -2982,6 +3084,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 257,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3000,6 +3103,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 157,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3044,6 +3148,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 49,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3062,6 +3167,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 615,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3080,6 +3186,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 618,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3114,7 +3221,7 @@
     "LAK": 7,
     "SEA": 15
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "13:10"
   }
  },
@@ -3123,6 +3230,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 613,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3140,6 +3248,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 50,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3174,7 +3283,7 @@
     "LAK": 7,
     "SEA": 15
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:28"
   }
  },
@@ -3183,6 +3292,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 301,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3201,6 +3311,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 620,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3219,6 +3330,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 629,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3237,6 +3349,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 633,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3271,7 +3384,7 @@
     "LAK": 7,
     "SEA": 15
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:58"
   }
  },
@@ -3280,6 +3393,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 621,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3298,6 +3412,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 623,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3316,6 +3431,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 625,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3334,6 +3450,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 626,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3368,7 +3485,7 @@
     "LAK": 7,
     "SEA": 17
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:14"
   }
  },
@@ -3377,6 +3494,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 639,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3395,6 +3513,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 627,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3413,6 +3532,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 552,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3430,6 +3550,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 302,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3448,6 +3569,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 303,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3465,6 +3587,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 304,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3483,6 +3606,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 305,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3501,6 +3625,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 648,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3535,7 +3660,7 @@
     "LAK": 7,
     "SEA": 17
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "10:04"
   }
  },
@@ -3544,6 +3669,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 306,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3587,6 +3713,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 641,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3605,6 +3732,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 644,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3623,6 +3751,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 307,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3641,6 +3770,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 672,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3659,6 +3789,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 658,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3677,6 +3808,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 660,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3711,7 +3843,7 @@
     "LAK": 7,
     "SEA": 19
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "07:56"
   }
  },
@@ -3720,6 +3852,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 663,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3738,6 +3871,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 664,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3756,6 +3890,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 308,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3799,6 +3934,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 673,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3816,6 +3952,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 309,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3834,6 +3971,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 310,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3852,6 +3990,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 676,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3895,6 +4034,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 679,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3929,7 +4069,7 @@
     "LAK": 8,
     "SEA": 21
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "06:10"
   }
  },
@@ -3938,6 +4078,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 682,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3957,6 +4098,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 311,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3975,6 +4117,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 687,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -3993,6 +4136,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 690,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4011,6 +4155,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 691,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4045,7 +4190,7 @@
     "LAK": 8,
     "SEA": 21
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:34"
   }
  },
@@ -4054,6 +4199,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 688,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4071,6 +4217,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 312,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4089,6 +4236,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 313,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4106,6 +4254,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 314,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4124,6 +4273,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 315,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4142,6 +4292,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 699,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4176,7 +4327,7 @@
     "LAK": 8,
     "SEA": 22
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:26"
   }
  },
@@ -4185,6 +4336,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 695,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4202,6 +4354,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 316,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4220,6 +4373,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 317,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4238,6 +4392,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 709,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4256,6 +4411,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 712,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4290,7 +4446,7 @@
     "LAK": 10,
     "SEA": 22
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "03:55"
   }
  },
@@ -4298,6 +4454,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 318,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4316,6 +4473,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 319,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4334,6 +4492,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 713,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4352,6 +4511,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 714,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4387,7 +4547,7 @@
     "LAK": 10,
     "SEA": 22
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "03:19"
   }
  },
@@ -4396,6 +4556,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 320,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4413,6 +4574,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 321,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4431,6 +4593,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 322,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4449,6 +4612,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 725,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4483,7 +4647,7 @@
     "LAK": 11,
     "SEA": 22
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:45"
   }
  },
@@ -4492,6 +4656,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 720,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4510,6 +4675,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 323,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4527,6 +4693,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 324,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4545,6 +4712,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 325,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4563,6 +4731,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 326,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4597,7 +4766,7 @@
     "LAK": 12,
     "SEA": 22
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "02:15"
   }
  },
@@ -4606,6 +4775,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 726,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4625,6 +4795,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 327,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4643,6 +4814,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 801,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4677,7 +4849,7 @@
     "LAK": 12,
     "SEA": 22
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "01:23"
   }
  },
@@ -4686,6 +4858,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 806,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4704,6 +4877,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 809,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4738,7 +4912,7 @@
     "LAK": 14,
     "SEA": 22
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:46"
   }
  },
@@ -4747,6 +4921,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 807,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4765,6 +4940,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 741,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4783,6 +4959,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 744,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4817,7 +4994,7 @@
     "LAK": 14,
     "SEA": 22
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:16"
   }
  },
@@ -4826,6 +5003,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 745,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4843,6 +5021,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 328,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4861,6 +5040,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 329,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4879,6 +5059,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 808,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4913,7 +5094,7 @@
     "LAK": 14,
     "SEA": 22
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "00:00"
   }
  },
@@ -4921,6 +5102,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 330,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 2,
@@ -4955,7 +5137,7 @@
     "LAK": 14,
     "SEA": 22
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "20:00"
   }
  },
@@ -4963,6 +5145,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 336,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -4997,7 +5180,7 @@
     "LAK": 15,
     "SEA": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "19:24"
   }
  },
@@ -5006,6 +5189,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 335,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5024,6 +5208,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 812,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5042,6 +5227,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 813,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5059,6 +5245,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 337,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5077,6 +5264,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 338,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5095,6 +5283,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 817,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5113,6 +5302,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 818,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5147,7 +5337,7 @@
     "LAK": 15,
     "SEA": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "18:45"
   }
  },
@@ -5156,6 +5346,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 828,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5173,6 +5364,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 339,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5191,6 +5383,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 340,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5209,6 +5402,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 823,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5243,7 +5437,7 @@
     "LAK": 16,
     "SEA": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "17:53"
   }
  },
@@ -5252,6 +5446,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 830,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5270,6 +5465,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 824,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5288,6 +5484,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 825,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5307,6 +5504,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 341,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5324,6 +5522,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 342,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5358,7 +5557,7 @@
     "LAK": 18,
     "SEA": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "17:22"
   }
  },
@@ -5367,6 +5566,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 343,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5385,6 +5585,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 833,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5403,6 +5604,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 847,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5421,6 +5623,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 836,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5439,6 +5642,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 837,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5474,7 +5678,7 @@
     "LAK": 18,
     "SEA": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "16:40"
   }
  },
@@ -5483,6 +5687,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 344,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5501,6 +5706,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 843,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5535,7 +5741,7 @@
     "LAK": 19,
     "SEA": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "16:06"
   }
  },
@@ -5543,6 +5749,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 345,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5561,6 +5768,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 346,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5579,6 +5787,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 848,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5596,6 +5805,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 347,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5614,6 +5824,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 348,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5632,6 +5843,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 850,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5650,6 +5862,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 851,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5668,6 +5881,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 852,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5685,6 +5899,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 349,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5703,6 +5918,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 350,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5721,6 +5937,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 866,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5755,7 +5972,7 @@
     "LAK": 20,
     "SEA": 24
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "15:31"
   }
  },
@@ -5764,6 +5981,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 854,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5782,6 +6000,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 870,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5800,6 +6019,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 855,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5818,6 +6038,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 857,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5852,7 +6073,7 @@
     "LAK": 20,
     "SEA": 25
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:48"
   }
  },
@@ -5860,6 +6081,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 751,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5878,6 +6100,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 752,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5896,6 +6119,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 868,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5914,6 +6138,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 863,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5949,7 +6174,7 @@
     "LAK": 20,
     "SEA": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "14:11"
   }
  },
@@ -5958,6 +6183,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 753,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5976,6 +6202,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 882,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -5994,6 +6221,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 869,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6012,6 +6240,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 554,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6046,7 +6275,7 @@
     "LAK": 21,
     "SEA": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "13:35"
   }
  },
@@ -6055,6 +6284,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 881,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6089,7 +6319,7 @@
     "LAK": 21,
     "SEA": 26
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:35"
   }
  },
@@ -6098,6 +6328,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 884,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6116,6 +6347,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 894,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6150,7 +6382,7 @@
     "LAK": 21,
     "SEA": 27
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "12:00"
   }
  },
@@ -6158,6 +6390,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 754,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6176,6 +6409,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 755,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6194,6 +6428,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 899,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6211,6 +6446,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 756,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6229,6 +6465,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 757,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6247,6 +6484,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 912,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6281,7 +6519,7 @@
     "LAK": 22,
     "SEA": 27
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "11:09"
   }
  },
@@ -6290,6 +6528,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 916,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6308,6 +6547,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 908,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6342,7 +6582,7 @@
     "LAK": 22,
     "SEA": 27
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "10:29"
   }
  },
@@ -6351,6 +6591,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 553,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6369,6 +6610,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 160,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6386,6 +6628,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 758,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6404,6 +6647,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 259,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6422,6 +6666,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 913,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6456,7 +6701,7 @@
     "LAK": 22,
     "SEA": 27
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "09:57"
   }
  },
@@ -6464,6 +6709,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 760,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6482,6 +6728,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 761,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6500,6 +6747,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 919,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6517,6 +6765,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 762,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6535,6 +6784,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 763,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6553,6 +6803,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 921,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6570,6 +6821,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 764,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6588,6 +6840,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 765,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6606,6 +6859,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 923,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6624,6 +6878,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 953,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6658,7 +6913,7 @@
     "LAK": 22,
     "SEA": 27
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "09:20"
   }
  },
@@ -6667,6 +6922,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 955,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6701,7 +6957,7 @@
     "LAK": 22,
     "SEA": 27
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:33"
   }
  },
@@ -6710,6 +6966,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 935,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6727,6 +6984,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 766,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6761,7 +7019,7 @@
     "LAK": 22,
     "SEA": 27
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "08:01"
   }
  },
@@ -6770,6 +7028,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 767,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6788,6 +7047,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 946,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6806,6 +7066,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 947,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6823,6 +7084,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 768,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6857,7 +7119,7 @@
     "LAK": 22,
     "SEA": 28
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "07:03"
   }
  },
@@ -6866,6 +7128,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 769,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6884,6 +7147,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 973,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6902,6 +7166,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 957,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6919,6 +7184,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 770,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6937,6 +7203,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 771,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6955,6 +7222,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 161,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6973,6 +7241,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 260,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -6991,6 +7260,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 977,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7034,6 +7304,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 981,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7052,6 +7323,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 966,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7070,6 +7342,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 970,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7088,6 +7361,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 772,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7106,6 +7380,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 975,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7141,7 +7416,7 @@
     "LAK": 23,
     "SEA": 29
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:54"
   }
  },
@@ -7150,6 +7425,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 773,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7168,6 +7444,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 994,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7186,6 +7463,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 982,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7220,7 +7498,7 @@
     "LAK": 23,
     "SEA": 29
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "05:23"
   }
  },
@@ -7229,6 +7507,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 261,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7247,6 +7526,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 996,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7281,7 +7561,7 @@
     "LAK": 24,
     "SEA": 29
    },
-   "situationCode": "1551",
+   "situationCode": "",
    "timeRemaining": "04:51"
   }
  },
@@ -7289,6 +7569,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 774,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7307,6 +7588,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 775,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7325,6 +7607,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 995,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7368,6 +7651,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 1064,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7411,6 +7695,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 1068,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7429,6 +7714,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 1071,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7471,6 +7757,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 776,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7489,6 +7776,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 777,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7507,6 +7795,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 1076,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7562,6 +7851,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 778,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7580,6 +7870,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 779,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7598,6 +7889,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 1081,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7616,6 +7908,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 1083,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7634,6 +7927,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 1084,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7653,6 +7947,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 780,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7671,6 +7966,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 1092,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7713,6 +8009,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 781,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7731,6 +8028,7 @@
   "detail": {
    "actingTeam": "LAK",
    "awayTeam": "LAK",
+   "eventId": 782,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7748,6 +8046,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 783,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7766,6 +8065,7 @@
   "detail": {
    "actingTeam": "SEA",
    "awayTeam": "LAK",
+   "eventId": 784,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7783,6 +8083,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 785,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,
@@ -7813,6 +8114,7 @@
   "detailType": "nhl.game.play",
   "detail": {
    "awayTeam": "LAK",
+   "eventId": 789,
    "gameId": 2024021300,
    "homeTeam": "SEA",
    "period": 3,

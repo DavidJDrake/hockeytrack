@@ -24,13 +24,23 @@ func BuildClockEvent(pbp *nhl.PlayByPlay, observedAt time.Time) events.ClockEven
 		TimeRemaining:    pbp.Clock.TimeRemaining,
 		Running:          pbp.Clock.Running,
 		InIntermission:   pbp.Clock.InIntermission,
-		SituationCode:    pbp.SituationCode,
+		SituationCode:    situationCode(pbp),
 		HomeTeam:         pbp.HomeTeam.Abbrev,
 		AwayTeam:         pbp.AwayTeam.Abbrev,
 		Score:            map[string]int{pbp.HomeTeam.Abbrev: pbp.HomeTeam.Score, pbp.AwayTeam.Abbrev: pbp.AwayTeam.Score},
 		Shots:            map[string]int{pbp.HomeTeam.Abbrev: pbp.HomeTeam.SOG, pbp.AwayTeam.Abbrev: pbp.AwayTeam.SOG},
 		ObservedAt:       observedAt.UTC(),
 	}
+}
+
+// situationCode is the manpower code, or nothing at even strength. Nothing,
+// not the last play's code: a penalty can expire with no play to mark it,
+// and a stale code would leave a consumer showing a power play that is over.
+func situationCode(pbp *nhl.PlayByPlay) string {
+	if pbp.Situation == nil {
+		return ""
+	}
+	return pbp.Situation.SituationCode
 }
 
 // BuildRosterEvent lists every roster spot with its sweater number, sorted
