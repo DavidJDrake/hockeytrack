@@ -131,6 +131,8 @@ locals {
     scoreboard_support = aws_cloudwatch_event_rule.scoreboard_support
     scoreboard_state   = aws_cloudwatch_event_rule.scoreboard_state
     scoreboard_image   = aws_cloudwatch_event_rule.scoreboard_image
+    scoreboard_sign    = aws_cloudwatch_event_rule.scoreboard_sign
+    scoreboard_signing = aws_cloudwatch_event_rule.scoreboard_signing_key
   }
 
   # Raw CloudTrail JSON is unreadable on a phone, so the alert is rendered as a
@@ -146,6 +148,8 @@ locals {
   # userAgent is deliberately NOT interpolated. EventBridge does not escape the
   # values it extracts, and userAgent is attacker-controlled, so a crafted quote
   # could break the template and suppress the very alert that matters.
+  # errorMessage stays out for the same reason: section 16 matches on it, and
+  # it is service-generated text that can quote what the caller sent.
   security_alert_transform = {
     account = "$.account"
     region  = "$.region"
@@ -177,6 +181,8 @@ locals {
     scoreboard_support = "If this was not you, assume the scoreboard's supporting resources have been changed: a function's role, the log groups its alarms and recovery steps read, the site's bucket or distribution, or a bulk export, backup or restore point on scoreboard-devices or scoreboard-enrollments. Check the enroll role's IoT permissions, the metric filters and retention on every scoreboard log group, the site bucket's policy and the distribution's origins and behaviors, and where any export or backup landed, against the scoreboard repository."
     scoreboard_state   = "If this was not you, assume someone read or changed the rows that decide who owns a panel and which enrollment codes are live. Check the devices table's owner column against who should hold each panel, list IoT certificates created since, and treat every claim code in the enrollments table as recoverable from its hash by the caller."
     scoreboard_image   = "If this was not you, assume the next panel flashed or updated would run somebody else's code. Treat every image on the mirror as suspect until its checksum matches the GitHub release it claims to come from, and do not flash a panel until it does. Check latest.json, the objects under images/, the bucket's versions for an overwrite, the distribution's origin and aliases, and the publisher role's trust and permissions policies, against the scoreboard repository."
+    scoreboard_sign    = "If this was not the release workflow, assume the release-signing key has been asked to sign something every enrolled panel would install as root. Read the CloudTrail record: a denied Sign is an attempt with a credential that should not have tried, or the publisher role finding the key's policy no longer allows it, and an allowed one means the key's policy or the publisher role's trust was already changed. Find what was signed and where it was put, verify the mirror's manifest against the GitHub release before any panel is flashed or updated, and rotate the key in the scoreboard repository's terraform/release-signing.tf."
+    scoreboard_signing = "If this was not you, assume the release-signing key's policy, alias or grants have been changed so that another caller can sign, or so that the key is about to disappear. Check the key's policy and grants and where alias/scoreboard-release-signing points, against the scoreboard repository's terraform/release-signing.tf, cancel any pending deletion, and treat every Sign since this event as the signing alert describes."
   }
 
   security_alert_template = {
@@ -903,10 +909,12 @@ resource "aws_cloudwatch_event_rule" "audit_log_tampering" {
 # this rule, because EventBridge documents that a rule in the ENABLED state
 # matches everything "except for read-only AWS management events delivered
 # through CloudTrail" -- receiving those needs the state
-# ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS, which nothing here sets. So
-# readOnly [false] is a second lock on a door that is already shut: it costs
-# nothing, it makes those 677 events testable as negatives, and it is what
-# would hold if that state were ever changed.
+# ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS, which only section 16's Sign
+# rule sets, because KMS records Sign as read-only; that state is per rule, so
+# the door stays shut for this one. So readOnly [false] is a second lock on a
+# door that is already shut: it costs nothing, it makes those 677 events
+# testable as negatives, and it is what would hold if that state were ever
+# changed here.
 #
 # eventSource rather than source. The two say the same thing, but eventSource
 # is the field this was verified against, because it appears in the CloudTrail
@@ -2141,6 +2149,379 @@ resource "aws_cloudwatch_event_rule" "scoreboard_image" {
     precondition {
       condition     = length(local.scoreboard_image_pattern) <= 2048
       error_message = "The scoreboard image rule's event pattern is ${length(local.scoreboard_image_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
+    }
+  }
+}
+
+# ---- 16. The release-signing key (SCO-71) ----
+#
+# Section 15 watches where a panel's image comes from. This watches what
+# makes a panel believe it. Once the scoreboard's OTA design lands, every
+# enrolled panel installs, unattended and as root, any release whose manifest
+# verifies against the public half of alias/scoreboard-release-signing, a KMS
+# key in this account (the scoreboard's terraform/release-signing.tf). The key
+# is in KMS precisely so that every signature is a CloudTrail record from a
+# caller with a name, which is worth nothing unless something reads the
+# record. Until this section nothing did: the design's section 9 named these
+# events as the ones that must page, and no pattern in this file mentioned
+# kms.amazonaws.com. The other half of the design's argument -- that the key
+# policy's Administer statement can safely be the account's :root, the
+# delegate-to-IAM idiom, so that any administrator can rewrite the policy --
+# also rests on the rewrite paging, and it did not.
+#
+# Two rules, because the two things worth paging on are different events with
+# different meanings and different recovery steps:
+#
+#   Sign by anyone but the publisher role   -> the key was used. The key policy
+#                                              grants Sign to one role only, so
+#                                              a stranger's Sign is denied and
+#                                              still recorded; an allowed one
+#                                              means the policy was already
+#                                              changed. Either is a page.
+#   PutKeyPolicy, CreateGrant, RevokeGrant  -> the set of callers who may sign
+#   or RetireGrant on the key                  was changed. The policy is the
+#                                              only thing between an
+#                                              administrator credential and a
+#                                              signature; a grant is the quieter
+#                                              way to widen it.
+#   UpdateAlias or DeleteAlias              -> the name the workflow and the
+#                                              monitor sign and verify with was
+#                                              moved or removed. Pointing it at
+#                                              a key the attacker controls makes
+#                                              the workflow sign with the wrong
+#                                              key; the panels then reject every
+#                                              release, which is denial of
+#                                              service rather than substitution,
+#                                              but it is also the first step of
+#                                              a rotation nobody asked for.
+#   ScheduleKeyDeletion or DisableKey       -> the key is going away. The
+#                                              deletion window is thirty days,
+#                                              and CancelKeyDeletion is the
+#                                              whole recovery, which is why the
+#                                              page matters more than the
+#                                              deletion.
+#   ReplicateKey                            -> the key is single-region, so this
+#                                              call fails today; it is listed
+#                                              because a replica is the only way
+#                                              a Sign could ever happen outside
+#                                              us-east-1, where these rules
+#                                              look, and a failed attempt is
+#                                              still a record.
+#
+# Sign is the reason this section does not look like sections 10 to 15. KMS
+# records Sign with readOnly true -- the documented example in the KMS
+# developer guide's CloudTrail chapter shows "readOnly": true on a Sign, the
+# same as the Decrypt records this account produces by the thousand -- and, as
+# section 9 explains, a rule in the ENABLED state never receives a read-only
+# management event. A Sign rule with the default state would exist, report as
+# enabled, and never fire, which is the exact failure this file is written to
+# avoid. So the Sign rule's state is ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS,
+# the one place in this file that sets it. The cost is bounded by the pattern:
+# it is pinned to eventName Sign on this one key, so the door is open to
+# read-only events for one rule that can match nothing else. The rule for the
+# writes keeps the default state; every event it lists is recorded readOnly
+# false (CreateGrant, RetireGrant and CreateAlias were confirmed against real
+# records, the rest follow the same KMS convention). A metric filter on the
+# trail's log group, as section 5 uses, was the alternative: it would see the
+# record whatever its readOnly flag, but it cannot render the caller into the
+# alert, and the caller is the whole question here.
+#
+# No Sign has happened yet, so the publisher exemption's shape is taken from
+# section 15, where it has fired live: the exemption tests
+# sessionContext.sessionIssuer.arn, the leaf, with anything-but the publisher
+# role's ARN, and a second branch tests exists:false on that same leaf, so a
+# Sign from an IAM user, root, or an identity shape nobody anticipated pages
+# rather than falling through the exemption. The sweep below turned up a
+# shape worth noting for that second branch: an IAM user's call made through
+# a service (invokedBy lambda.amazonaws.com) carries a sessionContext with
+# attributes but no sessionIssuer, so a test on sessionContext's presence
+# would have called it a role. The leaf test does not.
+#
+# Which fields name the key. Every KMS record in the sweep, read-only or not,
+# carries the key's ARN in resources[].ARN, resolved from whatever the caller
+# passed: the owner's GetPublicKey named alias/scoreboard-release-signing in
+# requestParameters.keyId and its resources[] holds the key ARN. CreateAlias
+# lists both the key ARN and the alias ARN there, and RetireGrant, whose
+# requestParameters is empty, still names the key. So resources[].ARN, matched
+# against the key ARN and the alias ARN, is the primary branch. A second
+# branch matches requestParameters.keyId in all four spellings a caller can
+# use -- the bare id, the key ARN, the alias name, the alias ARN -- and a
+# third, on the writes, matches requestParameters.aliasName, which is how
+# UpdateAlias and DeleteAlias name their alias. The second branch exists for
+# the record nobody has seen yet: a DENIED Sign. The request is logged with
+# what the caller asked for, and whether KMS resolves resources[] before
+# refusing is not something this account has a record to confirm, so the
+# rule does not depend on it.
+#
+# Nor does it depend on the request. Review of this section ran a denied
+# Sign through test-event-pattern in the shape nobody can rule out -- an IAM
+# user, errorCode AccessDenied, requestParameters null, no resources[] -- and
+# neither branch above matched it. The account cannot settle whether KMS
+# writes a refusal that way: the trail log group holds no kms.amazonaws.com
+# record with any errorCode in the ninety-day window, and the KMS developer
+# guide's failure examples (IncorrectKeyException, KMSInvalidStateException)
+# carry both fields, but AccessDenied is not among them. So the Sign rule has
+# a third net that needs neither field: errorMessage. IAM's authorization
+# failure text always names the resource ARN ("... is not authorized to
+# perform: kms:Sign on resource: arn:aws:kms:..."), so a wildcard around the
+# key ARN matches a denied Sign whatever else the record carries, and it
+# matched that record. errorMessage is service-generated text, and it is
+# MATCHED ONLY: security_alert_transform does not interpolate it into the
+# alert, for the reason userAgent is not, and it must not be added there. The
+# branch carries no publisher exemption, and that is a choice as much as a
+# constraint. The choice: the key policy allows the publisher role to sign,
+# under a kms:SigningAlgorithm condition, so a denied Sign by that role means
+# the policy or the condition has drifted from the workflow, which is a page
+# worth having rather than a silence. The constraint: the rendered Sign
+# pattern is 1,749 characters with this branch; the same branch in the two
+# exemption shapes the other branches use would be 2,164, past EventBridge's
+# 2,048 limit, which the precondition below turns into a plan failure.
+#
+# Both ARNs and the publisher role are looked up, not typed. The alias is the
+# scoreboard's fixed name, so if that repository renames it -- or the
+# publisher role, which section 15 looks up by its fixed name -- this plan
+# fails at the lookup rather than watching a name that no longer exists. That
+# is the section 10 trade: HockeyTrack's plan is blocked until the rename is
+# mirrored here, and a rotation that creates the next key behind the same
+# alias is picked up at HockeyTrack's next apply, not the scoreboard's. Until
+# that apply, a Sign on the NEW key by a stranger matches only the alias
+# branches, which see it if the caller named the alias, and the writes rule
+# matches only the alias ARN and alias-name branches. Rotation is a deliberate,
+# documented step in the scoreboard repository, so a HockeyTrack apply after
+# it is a line in that procedure, not a thing to be remembered.
+#
+# awsRegion is constrained explicitly, though the key is regional and these
+# rules sit on the us-east-1 bus, which only receives us-east-1 calls: it costs
+# nothing and it makes the regional assumption a fact in the pattern rather
+# than a fact about the bus. Every branch repeats its own eventSource,
+# awsRegion and eventName constraints, and nothing is constrained beside the
+# $or, for the key-order reason section 8 found and section 15 restates.
+#
+# Expected noise: none, measured. Ninety days of CloudTrail in us-east-1 to
+# 2026-09-30, by event name (lookup-events, read-only): Sign 0, Verify 0,
+# GetPublicKey 1, PutKeyPolicy 0, ScheduleKeyDeletion 0, CancelKeyDeletion 0,
+# UpdateAlias 0, DeleteAlias 0, RevokeGrant 0, DisableKey 0, EnableKey 0,
+# ReplicateKey 0, CreateKey 1, CreateAlias 1, UpdateKeyDescription 1,
+# TagResource 0; CreateGrant 165 and RetireGrant 14, every one of them on the
+# account's other keys -- the AWS-managed Lambda and ACM keys that HealthTracker,
+# EbookShare, CDK and this stack's own functions use -- and none on this one;
+# DescribeKey 193, 4 of them on this key. The whole of kms.amazonaws.com in
+# that window is 58,932 events, of which 58,750 are read-only -- 57,934 of
+# them Decrypt, for Lambda environment variables, SSM parameters and
+# CloudFront across three projects -- which is why the writes rule is scoped
+# to the key rather than to the service, and why the Sign rule's open door to
+# read-only events is bounded by its eventName rather than by the volume
+# behind it. Every record naming this key in the
+# window is seven, all the funandgames user: CreateKey, CreateAlias and a
+# DescribeKey from the scoreboard's apply on 2026-09-26, GetPublicKey and
+# DescribeKey from the CLI a minute later when the owner exported the public
+# half, and a DescribeKey from each of two later Terraform plans. Not one of
+# the seven matches either rule: creation is not in the writes list on
+# purpose, because a CreateKey names no existing key and a CreateAlias on
+# this alias is the scoreboard's own apply, one time; the reads are excluded
+# by event name.
+# The steady state is one Sign per release, by the publisher role, exempt; the
+# scoreboard-imagecheck monitor's twice-daily GetPublicKey and DescribeKey,
+# which no branch names; and, once per rotation, the handful of alias and
+# policy writes the scoreboard's apply makes, each of which pages, as
+# intended.
+#
+# Verification record. On 2026-09-30 both rendered patterns were run through
+# EventBridge's test-event-pattern (read-only) against 28 records: the real
+# GetPublicKey, CreateAlias and DescribeKey on this key, the real CreateGrant
+# and RetireGrant on another key, and synthetic Sign, PutKeyPolicy, CreateGrant,
+# RetireGrant (empty request), UpdateAlias, DeleteAlias, ScheduleKeyDeletion,
+# DisableKey, ReplicateKey and CancelKeyDeletion records in every identity
+# shape above, with and without resources[], in us-east-1 and us-east-2. Every
+# one returned the verdict this header claims: the six real records and the
+# publisher's Sign no match, the strangers' and the denied Signs a match, the
+# listed writes a match by each field in turn, and the unlisted writes and
+# the other region none. After review added the errorMessage branch, the
+# rendered Sign pattern was run the same way, the same day, against nine more
+# Sign records, each with and without the branch: the denied Sign by an IAM
+# user with requestParameters null and no resources[] (no match before, match
+# after; the case the branch exists for), the same denial naming the alias in
+# the request and the same denial with resources[] (match both ways), the
+# same denial by the publisher role (no match before, match after, as
+# intended), the publisher's allowed Sign (no match either way), another
+# role's allowed Sign (match either way), and, no match either way, a denial
+# naming a different key, a denial in us-east-2, and a denial with an
+# errorCode but no errorMessage. That proves the patterns say what they
+# mean; it does not prove delivery, and no branch has yet matched a delivered
+# event because the events it exists for have not happened. The live tests
+# are the owner's, and each slot is PENDING until it is run; the ticket stays
+# open until all three are recorded here:
+#   - A read-only kms:GetPublicKey on the alias, by the funandgames user, must
+#     NOT page. This is the negative test that matters most, because the Sign
+#     rule now receives read-only events and only its eventName keeps them out.
+#   - One deliberate `aws kms sign` on the alias by the funandgames user, which
+#     the key policy denies, MUST page the Sign rule with the user as the
+#     actor. This is the only way to fire the Sign rule without a release. Its
+#     outcome is a fact this header is waiting for: whether the delivered
+#     record carried requestParameters and resources[], and which branch
+#     matched, is to be written here, so that the keyId branches stop being a
+#     guess and the errorMessage branch is known to be a net or the net.
+#   - The first real release's Sign by the publisher role must NOT page.
+#   - No DescribeKey pattern is included, so no DescribeKey test is needed.
+#
+# What it does not see, the most important first:
+#   - The publisher role signing something it should not. A stolen publisher
+#     session, or a malicious release approved through the real workflow,
+#     signs with the right role and this rule is silent by design, exactly as
+#     section 15 is silent on that role's object writes. The environment
+#     approval and the build attestation are the controls there, and they are
+#     people and GitHub, not this file.
+#   - A Sign in another region. The key cannot be used from one -- it is
+#     single-region -- and ReplicateKey, the only route to that, is listed
+#     above. A second key created elsewhere signs nothing a panel trusts.
+#   - A second key in this region: CreateKey names no existing key, and the
+#     panels trust only the public halves they carry, so the attacker's key
+#     signs nothing a panel accepts until a panel is given its public half,
+#     which is a change to the scoreboard repository or an image, not an
+#     event here.
+#   - A rotation between the scoreboard's apply and this stack's, covered
+#     above.
+#   - A denied Sign that KMS records without resources[], without a keyId in
+#     the four spellings listed (there is no fifth in the API), AND with an
+#     errorMessage that does not name the key ARN. IAM's denial names the
+#     resource; KMS's own refusals (a disabled key, a wrong algorithm) are
+#     documented to carry keyId and resources[]. No record with none of the
+#     three has been seen, and the live denied-Sign test above is where the
+#     first one would show.
+#   - CancelKeyDeletion, EnableKey, UpdateKeyDescription and tagging, which
+#     undo or decorate rather than widen. Each was zero in the window and each
+#     would be noise on a legitimate recovery.
+#   - Rewriting this rule, which section 9 catches, and the residual section 9
+#     itself records for a rule rewritten faster than its own event arrives.
+data "aws_kms_alias" "scoreboard_release_signing" {
+  name = "alias/scoreboard-release-signing"
+}
+
+locals {
+  scoreboard_signing_key_arn   = data.aws_kms_alias.scoreboard_release_signing.target_key_arn
+  scoreboard_signing_alias_arn = data.aws_kms_alias.scoreboard_release_signing.arn
+  # The four ways a caller can name this key in a request, so that a denied
+  # call, which may carry the request and nothing else, still matches.
+  scoreboard_signing_key_ids = [
+    data.aws_kms_alias.scoreboard_release_signing.target_key_id,
+    local.scoreboard_signing_key_arn,
+    data.aws_kms_alias.scoreboard_release_signing.name,
+    local.scoreboard_signing_alias_arn,
+  ]
+  scoreboard_signing_writes = [
+    "PutKeyPolicy", "ScheduleKeyDeletion", "UpdateAlias", "DeleteAlias",
+    "CreateGrant", "RetireGrant", "RevokeGrant", "DisableKey", "ReplicateKey",
+  ]
+
+  scoreboard_sign_pattern = jsonencode({
+    "detail-type" = ["AWS API Call via CloudTrail"]
+    "detail" = {
+      "$or" = [
+        # A Sign on this key whose session was issued by some role other than
+        # the publisher's.
+        {
+          "eventSource"  = ["kms.amazonaws.com"]
+          "awsRegion"    = [var.region]
+          "eventName"    = ["Sign"]
+          "resources"    = { "ARN" = [local.scoreboard_signing_key_arn] }
+          "userIdentity" = { "sessionContext" = { "sessionIssuer" = { "arn" = [{ "anything-but" = [local.scoreboard_images_publisher_arn] }] } } }
+        },
+        # The same Sign with no session issuer at all: an IAM user, root, or an
+        # identity shape not seen before.
+        {
+          "eventSource"  = ["kms.amazonaws.com"]
+          "awsRegion"    = [var.region]
+          "eventName"    = ["Sign"]
+          "resources"    = { "ARN" = [local.scoreboard_signing_key_arn] }
+          "userIdentity" = { "sessionContext" = { "sessionIssuer" = { "arn" = [{ "exists" = false }] } } }
+        },
+        # Both again by the request's own naming of the key, for the denied
+        # call whose resources[] may not have been resolved.
+        {
+          "eventSource"       = ["kms.amazonaws.com"]
+          "awsRegion"         = [var.region]
+          "eventName"         = ["Sign"]
+          "requestParameters" = { "keyId" = local.scoreboard_signing_key_ids }
+          "userIdentity"      = { "sessionContext" = { "sessionIssuer" = { "arn" = [{ "anything-but" = [local.scoreboard_images_publisher_arn] }] } } }
+        },
+        {
+          "eventSource"       = ["kms.amazonaws.com"]
+          "awsRegion"         = [var.region]
+          "eventName"         = ["Sign"]
+          "requestParameters" = { "keyId" = local.scoreboard_signing_key_ids }
+          "userIdentity"      = { "sessionContext" = { "sessionIssuer" = { "arn" = [{ "exists" = false }] } } }
+        },
+        # A DENIED Sign on this key by anyone, the publisher included, matched
+        # on the authorization failure text, which names the key ARN whether or
+        # not KMS logged the request or resolved resources[]. errorMessage is
+        # matched here and never rendered into the alert; see the header for
+        # why there is no exemption on this branch and why there cannot be.
+        {
+          "eventSource"  = ["kms.amazonaws.com"]
+          "awsRegion"    = [var.region]
+          "eventName"    = ["Sign"]
+          "errorMessage" = [{ "wildcard" = "*${local.scoreboard_signing_key_arn}*" }]
+        },
+      ]
+    }
+  })
+
+  scoreboard_signing_key_pattern = jsonencode({
+    "detail-type" = ["AWS API Call via CloudTrail"]
+    "detail" = {
+      "$or" = [
+        # A listed write naming the key or its alias in resources[], which
+        # every KMS record carries, RetireGrant's empty request included.
+        {
+          "eventSource" = ["kms.amazonaws.com"]
+          "awsRegion"   = [var.region]
+          "eventName"   = local.scoreboard_signing_writes
+          "resources"   = { "ARN" = [local.scoreboard_signing_key_arn, local.scoreboard_signing_alias_arn] }
+        },
+        # The same writes by the request's naming of the key, and of the alias.
+        {
+          "eventSource"       = ["kms.amazonaws.com"]
+          "awsRegion"         = [var.region]
+          "eventName"         = local.scoreboard_signing_writes
+          "requestParameters" = { "keyId" = local.scoreboard_signing_key_ids }
+        },
+        {
+          "eventSource"       = ["kms.amazonaws.com"]
+          "awsRegion"         = [var.region]
+          "eventName"         = local.scoreboard_signing_writes
+          "requestParameters" = { "aliasName" = [data.aws_kms_alias.scoreboard_release_signing.name] }
+        },
+      ]
+    }
+  })
+}
+
+resource "aws_cloudwatch_event_rule" "scoreboard_sign" {
+  name          = "hockeytrack-sec-scoreboard-sign"
+  description   = "A Sign on the scoreboard release-signing key by any caller other than the image publisher role, denied or not: the route to a release every panel would install"
+  event_pattern = local.scoreboard_sign_pattern
+  # KMS records Sign as read-only, and the default ENABLED state never
+  # receives read-only management events; see the section header. The
+  # pattern is pinned to one event name on one key, so nothing else arrives.
+  state = "ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS"
+
+  lifecycle {
+    precondition {
+      condition     = length(local.scoreboard_sign_pattern) <= 2048
+      error_message = "The scoreboard sign rule's event pattern is ${length(local.scoreboard_sign_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
+    }
+  }
+}
+
+resource "aws_cloudwatch_event_rule" "scoreboard_signing_key" {
+  name          = "hockeytrack-sec-scoreboard-signing-key"
+  description   = "Any change to the scoreboard release-signing key's policy, grants or alias, or its disabling, deletion or replication, by anyone: the routes to widening who may sign or to losing the key"
+  event_pattern = local.scoreboard_signing_key_pattern
+
+  lifecycle {
+    precondition {
+      condition     = length(local.scoreboard_signing_key_pattern) <= 2048
+      error_message = "The scoreboard signing key rule's event pattern is ${length(local.scoreboard_signing_key_pattern)} characters. EventBridge rejects patterns over 2048, and only at apply."
     }
   }
 }
