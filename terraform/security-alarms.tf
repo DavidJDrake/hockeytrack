@@ -1599,8 +1599,7 @@ data "aws_iam_role" "scoreboard" {
     "scoreboard-iot-logging",
     "scoreboard-reducer",
     "scoreboard-scheduler-invoke",
-    "scoreboard-today",
-  ])
+  "scoreboard-today", "scoreboard-director"])
   name = each.key
 }
 
@@ -1754,11 +1753,24 @@ resource "aws_cloudwatch_event_rule" "scoreboard_support" {
 # exempt it or the stream is turned back off. Neither table has a stream
 # today.
 #
-# Expected noise: none. Nothing but the two functions touches these tables
-# today, and the 30 days to 2026-09-16 recorded 3 read capacity units across
-# both and no writes. The owner's own scan during a recovery does page, which
-# is correct: the alert names the caller, and the sentence says to check the
-# owners.
+# Expected noise: none. Nothing but the three functions touches these tables
+# today. The 30 days to 2026-09-16 recorded 3 read capacity units across
+# both and no writes; since 2026-09-24 scoreboard-director scans
+# scoreboard-devices once a minute by design (the scoreboard's SCO-42: it
+# works out each scheduled panel's current game and, on a change, writes
+# gameId, chosenAt and sent on that panel's row with an UpdateItem whose
+# grant is limited to those attributes by a dynamodb:Attributes condition).
+# Its role was added to the list on 2026-09-30, after this rule had paged on
+# every one of those scans for six days -- about 1,440 alerts a day to the
+# security topic, all of them the director doing its job. The lesson is
+# written here so it is not relearned: a new role that reads or writes these
+# tables must be added to this list in the SAME change that creates it, and
+# the scoreboard repository's director.tf now says so. The director's
+# exemption rests on its policy (Scan and GetItem on devices, the
+# attribute-limited UpdateItem, and no other table write); section 13 pages
+# if that policy is widened. The owner's own scan during a recovery still
+# pages, which is correct: the alert names the caller, and the sentence says
+# to check the owners.
 #
 # What it does not see:
 #   - Anyone holding the scoreboard-api or scoreboard-enroll role's
@@ -1782,6 +1794,7 @@ locals {
   scoreboard_state_role_arns = [
     data.aws_iam_role.scoreboard["scoreboard-api"].arn,
     data.aws_iam_role.scoreboard["scoreboard-enroll"].arn,
+    data.aws_iam_role.scoreboard["scoreboard-director"].arn,
   ]
 
   scoreboard_state_pattern = jsonencode({
@@ -1803,7 +1816,7 @@ locals {
 
 resource "aws_cloudwatch_event_rule" "scoreboard_state" {
   name          = "hockeytrack-sec-scoreboard-state"
-  description   = "Any read or write of the scoreboard-devices or scoreboard-enrollments rows not made by the scoreboard-api or scoreboard-enroll role"
+  description   = "Any read or write of the scoreboard-devices or scoreboard-enrollments rows not made by the scoreboard-api, scoreboard-enroll or scoreboard-director role"
   event_pattern = local.scoreboard_state_pattern
 
   lifecycle {
