@@ -315,7 +315,7 @@ resource "aws_cloudtrail" "account" {
   # to be claimed polls at the 30-second tail of device/scoreboard/enroll.py's
   # backoff, which costs about $0.09 a month to log.
   # security-alarms.tf section 14 pages on any of these events not made by the
-  # scoreboard-api or scoreboard-enroll role.
+  # scoreboard-api, scoreboard-enroll or scoreboard-sweep role.
   event_selector {
     read_write_type           = "All"
     include_management_events = false
