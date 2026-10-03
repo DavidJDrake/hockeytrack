@@ -1112,7 +1112,7 @@ resource "aws_cloudwatch_event_rule" "alerting_modification" {
 # alarms, which section 13 now pages on; section 8 names only the trail group
 # and AWSIotLogsV2. Taking the logs permissions off the gate's role does the
 # same while the gate carries on deciding -- section 13 now pages on that too,
-# scoped to these seven roles -- and taking ssm:GetParameter off it fails the
+# scoped to these eight roles -- and taking ssm:GetParameter off it fails the
 # gate closed, logging each refusal as "invite list unavailable" but paging
 # only at three in an hour. Section 1 deliberately excludes role-policy churn.
 # The failures filter also assumes Lambda's default text log format: switching
@@ -1283,7 +1283,7 @@ resource "aws_cloudwatch_event_rule" "scoreboard_signin" {
 #   - The two functions' IAM roles. HockeyTrack's identity rule excludes role-policy
 #     churn deliberately, but scoreboard-enroll's role can mint device
 #     certificates, so a widened grant there is a real route this does not
-#     watch -- section 13 now pages on it, scoped to these seven roles.
+#     watch -- section 13 now pages on it, scoped to these eight roles.
 #   - The devices table's ownership rows, which section 14 now pages on.
 #   - The static site's bucket and distribution, which section 13 now pages on.
 #   - A call that names these resources only through a field not listed above,
@@ -1447,7 +1447,7 @@ resource "aws_cloudwatch_event_rule" "scoreboard_invoke" {
 #                      attach the device policy, so a widened grant there mints
 #                      device identities. Section 1 excludes role-policy churn
 #                      deliberately, because this account's own applies are
-#                      noisy; scoped to these seven roles it is not.
+#                      noisy; scoped to these eight roles it is not.
 #   The log groups     Every alarm here is a metric filter on a log group:
 #                      refused sign-ins, gate crashes, the token mismatch.
 #                      Deleting a filter silences the alarm while leaving the
@@ -1607,7 +1607,10 @@ data "aws_iam_role" "scoreboard" {
     "scoreboard-iot-logging",
     "scoreboard-reducer",
     "scoreboard-scheduler-invoke",
-  "scoreboard-today", "scoreboard-director"])
+    "scoreboard-sweep",
+    "scoreboard-today",
+    "scoreboard-director",
+  ])
   name = each.key
 }
 
@@ -1701,9 +1704,21 @@ resource "aws_cloudwatch_event_rule" "scoreboard_support" {
 #                           that turn a fresh panel into a device with a
 #                           certificate. A read here is enough to matter.
 #
-# Only two identities have a reason to touch them: the scoreboard-api role
-# reads and updates devices, and the scoreboard-enroll role reads and writes
-# enrollments but only writes devices -- it never reads that table. Their
+# Four identities touch them today, and three are on this rule's list: the
+# scoreboard-api role reads and updates devices, the scoreboard-enroll role
+# reads and writes enrollments but only writes devices -- it never reads
+# that table -- and the scoreboard-sweep role (SCO-33) reads devices once a
+# day, a Scan filtered to the unowned rows, and writes nothing: its role
+# policy in the scoreboard repository (terraform/sweep.tf) holds
+# dynamodb:Scan on that one table and no write action of any kind, which is
+# the proof the exemption rests on. Widening that policy is a section 13
+# page, since the role is in data.aws_iam_role.scoreboard, and a write it
+# made anyway would be by a listed role, which is the same gap as a stolen
+# credential below. The fourth, scoreboard-director (scoreboard
+# terraform/director.tf, a role created 2026-09-24), Scans devices every
+# minute for its work list and updates three named attributes of a row each
+# time it sends a game, and it is not on the list: the noise paragraph
+# below says what that costs today and why it is not added here. Their
 # calls arrive as userIdentity.type AssumedRole with
 # sessionContext.sessionIssuer.arn equal to the role's ARN. ARN, not the
 # userName section 12 matches on for invokedBy: a role named scoreboard-api
@@ -1712,7 +1727,7 @@ resource "aws_cloudwatch_event_rule" "scoreboard_support" {
 # are read from data.aws_iam_role.scoreboard (section 13) rather than typed
 # as literals, so a role recreated with a new ID keeps resolving and a
 # renamed role fails this plan instead of silently exempting nothing. So the
-# rule allows those two and pages on everything else, including an IAM user,
+# rule allows those three and pages on everything else, including an IAM user,
 # whose events carry no sessionContext at all and need their own branch,
 # exactly as section 12's missing invokedBy does.
 #
@@ -1761,7 +1776,7 @@ resource "aws_cloudwatch_event_rule" "scoreboard_support" {
 # exempt it or the stream is turned back off. Neither table has a stream
 # today.
 #
-# Expected noise: none. Nothing but the three functions touches these tables
+# Expected noise: none. Nothing but the four functions touches these tables
 # today. The 30 days to 2026-09-16 recorded 3 read capacity units across
 # both and no writes; since 2026-09-24 scoreboard-director scans
 # scoreboard-devices once a minute by design (the scoreboard's SCO-42: it
@@ -1779,11 +1794,15 @@ resource "aws_cloudwatch_event_rule" "scoreboard_support" {
 # if that policy is widened. The owner's own scan during a recovery still
 # pages, which is correct: the alert names the caller, and the sentence says
 # to check the owners.
+# The sweep (SCO-33) is the other routine read: one Scan of
+# scoreboard-devices a day at 09:15 UTC, no writes, with its policy as the
+# proof. Left off the list it would add a page a day of the same kind, which
+# is why it is on the list by name rather than the filter being widened.
 #
 # What it does not see:
-#   - Anyone holding the scoreboard-api or scoreboard-enroll role's
-#     credentials, not just the function itself. The match is on
-#     sessionIssuer.arn alone, so a credential lifted from either Lambda's
+#   - Anyone holding the scoreboard-api, scoreboard-enroll or scoreboard-sweep
+#     role's credentials, not just the function itself. The match is on
+#     sessionIssuer.arn alone, so a credential lifted from any of the Lambdas'
 #     environment and replayed from outside AWS -- or from a different
 #     function altogether -- still carries that ARN and reads and writes
 #     these tables exactly as the real function would. Section 13 pages when
@@ -1803,6 +1822,20 @@ locals {
     data.aws_iam_role.scoreboard["scoreboard-api"].arn,
     data.aws_iam_role.scoreboard["scoreboard-enroll"].arn,
     data.aws_iam_role.scoreboard["scoreboard-director"].arn,
+    # The daily sweep (SCO-33): one read-only Scan of scoreboard-devices a
+    # day, no writes, with the role's policy as the proof (scoreboard
+    # terraform/sweep.tf). Listed by name, not by widening the filter, so a
+    # fourth role that starts reading these tables still pages. The
+    # scoreboard apply must create the role before this data source can
+    # read it; until then this plan fails, loudly, which is the intended
+    # order. Verification record: on 2026-09-30, read-only, the role did not
+    # exist yet (aws iam get-role scoreboard-sweep: NoSuchEntity), so no
+    # event could be matched. To verify after both applies: the sweep's
+    # first 09:15 UTC run leaves a dynamodb Scan data event on the trail
+    # with sessionIssuer.arn equal to this role's ARN, and the security
+    # topic must not have paged on it; a page on that event means the ARN
+    # here does not match the one the trail recorded.
+    data.aws_iam_role.scoreboard["scoreboard-sweep"].arn,
   ]
 
   scoreboard_state_pattern = jsonencode({
@@ -1824,7 +1857,7 @@ locals {
 
 resource "aws_cloudwatch_event_rule" "scoreboard_state" {
   name          = "hockeytrack-sec-scoreboard-state"
-  description   = "Any read or write of the scoreboard-devices or scoreboard-enrollments rows not made by the scoreboard-api, scoreboard-enroll or scoreboard-director role"
+  description   = "Any read or write of the scoreboard-devices or scoreboard-enrollments rows not made by the scoreboard-api, scoreboard-enroll, scoreboard-director or scoreboard-sweep role"
   event_pattern = local.scoreboard_state_pattern
 
   lifecycle {
