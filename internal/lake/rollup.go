@@ -67,6 +67,11 @@ func Rollup(season int64, games []GameSummary, now time.Time) *SeasonRollup {
 			}
 		}
 		for _, line := range g.Goalies {
+			// The boxscore lists the backup who never left the bench; a
+			// game played needs time on ice, a shot faced or a decision.
+			if line.TOISeconds == 0 && line.ShotsAgainst == 0 && line.Decision == "" && !line.Starter {
+				continue
+			}
 			k := playerKey{line.PlayerID, line.Team}
 			gl, ok := goalies[k]
 			if !ok {

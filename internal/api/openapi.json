@@ -1,0 +1,69 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "HockeyTrack API",
+    "version": "1",
+    "description": "Read-only JSON over the HockeyTrack archive: the NHL schedule, every archived game's summary, plays, boxscore and shift chart, the league standings, and season statistics derived from the archive. Public, unauthenticated, cached at the edge. Every list takes limit (default 100, max 1000) and offset and returns total, limit, offset and items. Errors are {\"error\": {\"code\", \"message\"}}. Team abbreviations are the NHL's (TBL, BOS). A season is written as 20252026. Game ids are the NHL's ten-digit ids. The details object on a play and everything under /raw/ is third-party JSON passed through verbatim: validate what you use."
+  },
+  "servers": [{"url": "https://api.hockeytrack.davidjdrake.com"}],
+  "paths": {
+    "/v1": {"get": {"summary": "Entry point", "description": "The current season, how many seasons are indexed, and links.", "responses": {"200": {"description": "OK"}}}},
+    "/v1/seasons": {"get": {"summary": "Seasons in the index", "responses": {"200": {"description": "List of {season, href}"}}}},
+    "/v1/seasons/{season}": {"get": {"summary": "One season's extent", "parameters": [{"$ref": "#/components/parameters/seasonPath"}], "responses": {"200": {"description": "games, finalGames, firstDate, lastDate, teams, skaters, goalies"}, "404": {"description": "Season not indexed"}}}},
+    "/v1/schedule": {"get": {"summary": "Games, past and future", "description": "From the published season schedule. Finished and live games carry a result. date=today is honored.", "parameters": [
+      {"name": "date", "in": "query", "schema": {"type": "string", "format": "date"}, "description": "YYYY-MM-DD or today"},
+      {"name": "from", "in": "query", "schema": {"type": "string", "format": "date"}},
+      {"name": "to", "in": "query", "schema": {"type": "string", "format": "date"}},
+      {"$ref": "#/components/parameters/team"}, {"$ref": "#/components/parameters/season"},
+      {"$ref": "#/components/parameters/type"},
+      {"name": "venue", "in": "query", "schema": {"type": "string"}, "description": "Case-insensitive substring of the venue name"},
+      {"$ref": "#/components/parameters/limit"}, {"$ref": "#/components/parameters/offset"}],
+      "responses": {"200": {"description": "List of schedule rows"}, "404": {"description": "No schedule document published"}}}},
+    "/v1/teams": {"get": {"summary": "Every team", "responses": {"200": {"description": "List of {abbrev, name}"}}}},
+    "/v1/teams/{team}": {"get": {"summary": "A team's card", "description": "Record from the archive, the NHL's standings row, last result and next game.", "parameters": [{"$ref": "#/components/parameters/teamPath"}, {"$ref": "#/components/parameters/season"}], "responses": {"200": {"description": "OK"}, "404": {"description": "Unknown team"}}}},
+    "/v1/teams/{team}/games": {"get": {"summary": "A team's games with results", "parameters": [{"$ref": "#/components/parameters/teamPath"}, {"$ref": "#/components/parameters/season"}, {"$ref": "#/components/parameters/type"}, {"$ref": "#/components/parameters/limit"}, {"$ref": "#/components/parameters/offset"}], "responses": {"200": {"description": "List of schedule rows"}}}},
+    "/v1/teams/{team}/roster": {"get": {"summary": "Everyone who dressed for the team that season", "parameters": [{"$ref": "#/components/parameters/teamPath"}, {"$ref": "#/components/parameters/season"}], "responses": {"200": {"description": "List of {playerId, name, number, position, gp, ...}"}}}},
+    "/v1/standings": {"get": {"summary": "The NHL's standings", "description": "The league's own table as archived each morning; the newest snapshot by default, or the newest on or before a date.", "parameters": [
+      {"name": "date", "in": "query", "schema": {"type": "string", "format": "date"}},
+      {"name": "conference", "in": "query", "schema": {"type": "string"}, "description": "Eastern or Western"},
+      {"name": "division", "in": "query", "schema": {"type": "string"}, "description": "Atlantic, Metropolitan, Central or Pacific"}],
+      "responses": {"200": {"description": "date, season, archived, total, items[]"}}}},
+    "/v1/games": {"get": {"summary": "Games the index holds, with results", "parameters": [{"$ref": "#/components/parameters/season"}, {"name": "date", "in": "query", "schema": {"type": "string", "format": "date"}}, {"$ref": "#/components/parameters/team"}, {"$ref": "#/components/parameters/type"}, {"$ref": "#/components/parameters/limit"}, {"$ref": "#/components/parameters/offset"}], "responses": {"200": {"description": "List of game rows"}}}},
+    "/v1/games/{id}": {"get": {"summary": "A game's summary", "description": "Header, both teams' lines, every skater and goalie line, the scoring summary and three stars. A game in progress is built from its newest snapshot and marked live.", "parameters": [{"$ref": "#/components/parameters/gameId"}], "responses": {"200": {"description": "GameSummary"}, "404": {"description": "Not in the archive"}, "502": {"description": "The archived feed is unreadable"}}}},
+    "/v1/games/{id}/plays": {"get": {"summary": "A game's plays", "description": "Typed plays in the NHL's order. type takes a comma-separated list (goal, shot-on-goal, penalty, faceoff, hit, blocked-shot, missed-shot, giveaway, takeaway, stoppage, period-start, period-end, game-end). player matches any role on the play.", "parameters": [{"$ref": "#/components/parameters/gameId"},
+      {"name": "type", "in": "query", "schema": {"type": "string"}}, {"$ref": "#/components/parameters/team"},
+      {"name": "period", "in": "query", "schema": {"type": "integer"}}, {"name": "player", "in": "query", "schema": {"type": "integer"}},
+      {"$ref": "#/components/parameters/limit"}, {"$ref": "#/components/parameters/offset"}], "responses": {"200": {"description": "List of plays"}}}},
+    "/v1/games/{id}/boxscore": {"get": {"summary": "A game's boxscore", "parameters": [{"$ref": "#/components/parameters/gameId"}], "responses": {"200": {"description": "game, away, home, skaters[], goalies[]"}}}},
+    "/v1/games/{id}/shifts": {"get": {"summary": "A game's shift chart", "parameters": [{"$ref": "#/components/parameters/gameId"}, {"$ref": "#/components/parameters/team"}, {"name": "period", "in": "query", "schema": {"type": "integer"}}, {"name": "player", "in": "query", "schema": {"type": "integer"}}, {"$ref": "#/components/parameters/limit"}, {"$ref": "#/components/parameters/offset"}], "responses": {"200": {"description": "List of shifts"}, "404": {"description": "No chart archived (none before 2010-11)"}}}},
+    "/v1/games/{id}/raw/{feed}": {"get": {"summary": "An archived feed, verbatim", "parameters": [{"$ref": "#/components/parameters/gameId"}, {"name": "feed", "in": "path", "required": true, "schema": {"type": "string", "enum": ["pbp", "boxscore", "landing", "shifts"]}}], "responses": {"200": {"description": "The NHL's JSON as archived; X-Archive-Key names the object"}}}},
+    "/v1/stats/skaters": {"get": {"summary": "Skater leaderboard", "description": "Season totals from the archive. A traded player is one row with every team listed; team= returns that team's split.", "parameters": [{"$ref": "#/components/parameters/season"}, {"$ref": "#/components/parameters/team"},
+      {"name": "position", "in": "query", "schema": {"type": "string", "enum": ["C", "L", "R", "D", "F"]}},
+      {"name": "minGp", "in": "query", "schema": {"type": "integer"}},
+      {"name": "sort", "in": "query", "schema": {"type": "string", "enum": ["goals", "assists", "points", "plusMinus", "pim", "hits", "sog", "blocked", "ppGoals", "giveaways", "takeaways", "shifts", "toi", "faceoffWins", "faceoffPct", "shootingPct", "pointsPerGame", "toiPerGame", "gp"], "default": "points"}},
+      {"$ref": "#/components/parameters/order"}, {"$ref": "#/components/parameters/limit"}, {"$ref": "#/components/parameters/offset"}], "responses": {"200": {"description": "List of skater rows"}}}},
+    "/v1/stats/goalies": {"get": {"summary": "Goalie leaderboard", "parameters": [{"$ref": "#/components/parameters/season"}, {"$ref": "#/components/parameters/team"}, {"name": "minGp", "in": "query", "schema": {"type": "integer"}},
+      {"name": "sort", "in": "query", "schema": {"type": "string", "enum": ["wins", "losses", "otLosses", "gp", "starts", "shutouts", "savePct", "gaa", "shotsAgainst", "saves", "goalsAgainst", "toi"], "default": "wins"}},
+      {"$ref": "#/components/parameters/order"}, {"$ref": "#/components/parameters/limit"}, {"$ref": "#/components/parameters/offset"}], "responses": {"200": {"description": "List of goalie rows"}}}},
+    "/v1/stats/teams": {"get": {"summary": "Team totals from the archive", "description": "Computed from archived games, so it can differ from the NHL's standings when games are missing; /v1/standings is the league's own table.", "parameters": [{"$ref": "#/components/parameters/season"},
+      {"name": "sort", "in": "query", "schema": {"type": "string", "enum": ["points", "wins", "losses", "otLosses", "gp", "row", "goalsFor", "goalsAgainst", "goalDifferential", "shotsFor", "shotsAgainst", "pim", "ppGoals", "hits", "blocked", "faceoffPct", "pointPct"], "default": "points"}},
+      {"$ref": "#/components/parameters/order"}], "responses": {"200": {"description": "List of team rows"}}}},
+    "/v1/players/{id}": {"get": {"summary": "A player's season", "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "integer"}}, {"$ref": "#/components/parameters/season"}], "responses": {"200": {"description": "Totals, per-team splits, teams"}, "404": {"description": "No games that season"}}}},
+    "/v1/players/{id}/games": {"get": {"summary": "A player's game log", "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "integer"}}, {"$ref": "#/components/parameters/season"}, {"$ref": "#/components/parameters/limit"}, {"$ref": "#/components/parameters/offset"}], "responses": {"200": {"description": "List of {game, skater | goalie}"}}}},
+    "/v1/search": {"get": {"summary": "Find teams, players, venues and games", "description": "Case-insensitive substring over names. A ten-digit number finds a game by id, a date finds that day's games, and two abbreviations (TBL BOS, bos@tbl) find the matchup.", "parameters": [{"name": "q", "in": "query", "required": true, "schema": {"type": "string", "minLength": 2, "maxLength": 64}}, {"$ref": "#/components/parameters/season"}], "responses": {"200": {"description": "teams[], players[], venues[], games[]"}}}},
+    "/healthz": {"get": {"summary": "Liveness", "responses": {"200": {"description": "OK"}}}}
+  },
+  "components": {
+    "parameters": {
+      "season": {"name": "season", "in": "query", "schema": {"type": "integer", "example": 20252026}, "description": "Defaults to the newest indexed season"},
+      "seasonPath": {"name": "season", "in": "path", "required": true, "schema": {"type": "integer", "example": 20252026}},
+      "team": {"name": "team", "in": "query", "schema": {"type": "string", "example": "TBL"}},
+      "teamPath": {"name": "team", "in": "path", "required": true, "schema": {"type": "string", "example": "TBL"}},
+      "gameId": {"name": "id", "in": "path", "required": true, "schema": {"type": "integer", "example": 2025020001}},
+      "type": {"name": "type", "in": "query", "schema": {"type": "integer", "enum": [1, 2, 3]}, "description": "1 preseason, 2 regular season, 3 playoffs"},
+      "order": {"name": "order", "in": "query", "schema": {"type": "string", "enum": ["asc", "desc"], "default": "desc"}},
+      "limit": {"name": "limit", "in": "query", "schema": {"type": "integer", "default": 100, "maximum": 1000}},
+      "offset": {"name": "offset", "in": "query", "schema": {"type": "integer", "default": 0}}
+    }
+  }
+}
