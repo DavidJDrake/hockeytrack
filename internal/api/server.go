@@ -212,24 +212,31 @@ func (s *Server) gamePrefix(ctx context.Context, id int64) (string, error) {
 	} else if !errors.Is(err, errNotFound) {
 		return "", err
 	}
-	v, err := s.memo.get(fmt.Sprintf("prefix:%d", id), ttlFinal, func() (any, error) {
-		slog.Info("locating game by listing its season", "gameId", id, "season", season)
+	// The listing is cached per season, not per id, so a run of unknown ids
+	// costs one listing rather than one each.
+	v, err := s.memo.get(fmt.Sprintf("prefixes:%d", season), ttlIndex, func() (any, error) {
+		slog.Info("listing a season to locate games", "gameId", id, "season", season)
 		keys, err := s.deps.Raw.List(ctx, fmt.Sprintf("raw/%d/", season))
 		if err != nil {
 			return nil, err
 		}
-		want := fmt.Sprintf("/%d/", id)
+		prefixes := map[int64]string{}
 		for _, k := range keys {
-			if i := strings.Index(k, want); i >= 0 {
-				return k[:i+len(want)], nil
+			if _, _, gameID, ok := lake.ParseGamePrefix(k); ok {
+				if _, seen := prefixes[gameID]; !seen {
+					prefixes[gameID] = k[:strings.Index(k, fmt.Sprintf("/%d/", gameID))+len(fmt.Sprintf("/%d/", gameID))]
+				}
 			}
 		}
-		return nil, fmt.Errorf("game %d is not in the archive: %w", id, errNotFound)
+		return prefixes, nil
 	})
 	if err != nil {
 		return "", err
 	}
-	return v.(string), nil
+	if prefix, ok := v.(map[int64]string)[id]; ok {
+		return prefix, nil
+	}
+	return "", fmt.Errorf("game %d is not in the archive: %w", id, errNotFound)
 }
 
 // gameFeeds locates a game's feeds in the archive.

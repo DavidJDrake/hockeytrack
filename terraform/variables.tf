@@ -5,7 +5,7 @@ variable "region" {
 
 variable "image_tag" {
   type        = string
-  description = "ECR image tag (git SHA) all three Lambdas run"
+  description = "ECR image tag (git SHA) all five Lambdas run"
 }
 
 # Must stay above the number of tagged images currently in the repository, or
@@ -46,7 +46,7 @@ variable "cloudtrail_archive_data_events" {
 }
 
 variable "cloudtrail_archive_read_events" {
-  description = "Widen archive data events from writes to reads as well. Reads are far more numerous, so this costs more; it buys exfiltration detection."
+  description = "Widen archive data events from writes to reads as well. Reads are far more numerous, so this costs more; it buys exfiltration detection. The query API (api.tf) reads the archive on every cache miss, so turning this on logs its traffic too."
   type        = bool
   default     = false
 }

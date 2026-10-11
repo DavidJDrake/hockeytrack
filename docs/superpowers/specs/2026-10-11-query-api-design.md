@@ -1,6 +1,6 @@
 # A Query API over the Archive — Design
 
-**Status:** proposed (built autonomously from a one-line request; the assumptions in §2 are the ones Jay should check first)
+**Status:** built on branch `glados/23be6e29`, not yet reviewed or deployed (built autonomously from a one-line request; the assumptions in §2 are the ones Jay should check first)
 **Date:** 2026-10-11
 **Request:** "Build a full-featured API that allows searching the data lake, enabling queries about statistics, game schedules, and other hockey data."
 **Repository:** HockeyTrack only.
@@ -57,7 +57,8 @@ The Lambda entry is a small adapter from the Function URL event (payload format 
 |---|---|---|
 | `/v1` | links and the season the API treats as current | index listing |
 | `/v1/openapi.json` | the OpenAPI 3.1 description of everything below | embedded |
-| `/v1/seasons` | seasons the index knows, with game counts and date ranges | rollups |
+| `/v1/seasons` | seasons the index knows (from the key listing, so a century of seasons costs one list call) | index listing |
+| `/v1/seasons/{season}` | one season's extent: game counts, date range, teams | rollup |
 | `/v1/schedule?date=\|from=&to=\|team=\|season=\|type=\|limit=&offset=` | games, past and future, with results attached when known; `date=today` is honored | schedule document + rollup |
 | `/v1/teams` | every team in the current schedule, with name | schedule document |
 | `/v1/teams/{abbrev}?season=` | record, standings row, last result, next game | rollup, standings, schedule |
@@ -78,7 +79,9 @@ The Lambda entry is a small adapter from the Function URL event (payload format 
 | `/v1/search?q=&season=` | teams, players, venues and games matching a string | schedule document + rollup |
 | `/healthz` | liveness | — |
 
-Game lookup by id resolves the game's date (needed for the S3 prefix) from the rollup first, then the schedule document, then by listing the season prefix. The id encodes the season, as `synth.SeasonOf` already relies on.
+Game lookup by id resolves the game's date (needed for the S3 prefix) from the rollup first, then the schedule document, then by listing the season prefix; that listing is cached per season, so a run of unknown ids costs one list call rather than one each. The id encodes the season, as `synth.SeasonOf` already relies on.
+
+Two things the implementation settled that this design left open: a goalie who dressed but never played (the boxscore lists the backup with no time on ice, no shots and no decision) counts toward nothing in the rollup, and a shootout's deciding goal appears in the scoring summary but is nobody's goal in the statistics, both as the NHL counts them.
 
 ### 4.4 The indexer
 

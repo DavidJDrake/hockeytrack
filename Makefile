@@ -23,7 +23,7 @@ export XDG_RUNTIME_DIR := $(shell test -w "$${XDG_RUNTIME_DIR}" 2>/dev/null && e
 SEASONS     ?= all
 RPS         ?= 3
 
-.PHONY: test vuln build push deploy site backfill og replay golden golden-update livefire
+.PHONY: test vuln build push deploy site backfill og replay golden golden-update livefire index api
 
 test: vuln
 	go test ./...
@@ -58,6 +58,22 @@ deploy: push
 # resumable; see README "Backfilling history".
 backfill:
 	AWS_REGION=$(REGION) go run ./cmd/backfill -bucket $$(cd terraform && terraform output -raw raw_bucket) -seasons $(SEASONS) -rps $(RPS)
+
+# Build the API's index (per-game summaries and season rollups) for past
+# seasons from the raw bucket into the index bucket. Resumable; the indexer
+# Lambda keeps the current season up to date after this. See README "The API".
+index:
+	AWS_REGION=$(REGION) go run ./cmd/index \
+		-bucket $$(cd terraform && terraform output -raw raw_bucket) \
+		-index-bucket $$(cd terraform && terraform output -raw index_bucket) \
+		-seasons $(SEASONS)
+
+# Serve the API locally against the real buckets.
+api:
+	AWS_REGION=$(REGION) go run ./cmd/api \
+		-bucket $$(cd terraform && terraform output -raw raw_bucket) \
+		-index-bucket $$(cd terraform && terraform output -raw index_bucket) \
+		-site-bucket $$(cd terraform && terraform output -raw site_bucket)
 
 # Re-render the home page's Open Graph card from docs/og/home.html with the
 # countdown as of now (needs google-chrome). The digits in the card are a

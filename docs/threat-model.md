@@ -39,6 +39,7 @@ The archive is the crown jewel. Nothing else here is hard to rebuild.
 ```
    NHL API ──────────▶ poller        untrusted input, third party, no contract
    internet ─────────▶ CloudFront    public read, no write path
+   internet ─────────▶ query API     public read of the archive through CloudFront, no write path
    workstation ──────▶ AWS           long-lived admin credentials (two users)
    EventBridge bus ──▶ consumers     cross-project, same account
    IoT broker ───────▶ devices       physical devices in other people's homes
@@ -511,6 +512,22 @@ recoverable for a quarter.
 typed structs; raw payloads are stored and forwarded, never evaluated. The
 website escapes on output and runs under a CSP with no inline scripts.
 
+**The query API can read the archive and nothing else.** `hockeytrack-api`
+answers `api.hockeytrack.davidjdrake.com` from the raw bucket, the index
+bucket and the site's schedule document, and its role grants `GetObject` and
+`ListBucket` on those and a log group: no DynamoDB, no bus, no Scheduler, no
+other function. Its Function URL is in IAM mode and only the CloudFront
+distribution may invoke it, through an origin access control that signs
+every origin request, so there is no route to the function that skips the
+edge cache. Every path value is validated before it can reach a lookup
+(numeric ids, letter-only abbreviations, ISO dates, a fixed list of feed
+names) and no query parameter is ever interpolated into an object key. The
+only writer the API introduces is `hockeytrack-indexer`, which reads raw/
+and writes to the separate index bucket, whose contents are derived and
+rebuildable with one command; the raw archive's write-once properties are
+untouched. What it serves is public game data, so the API carries no
+authentication and no per-client limit; the exposure it does carry is in §5.
+
 **Secrets are absent, not hidden.** No key, certificate or credential exists
 in either repository's history — verified across every blob in the object
 database, not just the working tree. Configuration carrying real email
@@ -559,6 +576,19 @@ Stated so they are decisions rather than oversights.
   unsatisfiable by any principal except root, which is why the enforcement
   policy in `terraform/iam-mfa.tf` ships disabled: enabling it before enrolling
   a device would deny the very calls that enroll one.
+- **The query API shares the Lambda concurrency pool with the pollers.** A
+  traffic spike on `api.hockeytrack.davidjdrake.com` — a crawler walking
+  distinct URLs is enough, since the edge cache only absorbs repeats — runs
+  `hockeytrack-api` on the same account-wide concurrency the pollers need
+  during a game, and at the default quota of 10 that is a real availability
+  risk to the archive's own ingest. The function cannot be capped yet: AWS
+  requires 10 unreserved executions, which at that quota leaves nothing to
+  reserve. `api_reserved_concurrency` in `terraform/api.tf` exists for the day
+  the quota is raised; until then this is accepted on the grounds that the
+  pipeline's worst case is a missed poll, not lost data, because the final
+  sweep and the backfill re-fetch anything a poller misses. A WAF rate rule is
+  the next step if traffic ever justifies it, on the same reasoning
+  `terraform/site.tf` records for the website.
 - **The pairing model for the admin site is "you can see the screen".** For a
   device in a living room this is the right threshold; it would not be for
   anything carrying personal data.
