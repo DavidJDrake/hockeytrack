@@ -84,7 +84,7 @@ func writeError(w http.ResponseWriter, r *http.Request, err error) {
 	switch {
 	case errors.As(err, &ae):
 	case errors.Is(err, errNotFound):
-		ae = notFound("%s", err.Error())
+		ae = notFound("%s", strings.TrimSuffix(err.Error(), ": "+errNotFound.Error()))
 	case r.Context().Err() != nil:
 		ae = &apiError{Status: 499, Code: "canceled", Message: "request canceled"}
 	default:
@@ -92,7 +92,14 @@ func writeError(w http.ResponseWriter, r *http.Request, err error) {
 		ae = &apiError{Status: http.StatusServiceUnavailable, Code: "unavailable", Message: "the archive could not be read; retry shortly"}
 		w.Header().Set("Retry-After", "5")
 	}
-	writeJSON(w, ae.Status, 0, map[string]any{"error": map[string]string{"code": ae.Code, "message": ae.Message}})
+	// A client error is cached briefly at the edge so a crawler walking
+	// unknown ids does not reach the function for every one; a server
+	// error is never cached, so a recovered archive answers at once.
+	ttl := time.Duration(0)
+	if ae.Status >= 400 && ae.Status < 500 {
+		ttl = time.Minute
+	}
+	writeJSON(w, ae.Status, ttl, map[string]any{"error": map[string]string{"code": ae.Code, "message": ae.Message}})
 }
 
 // page is the envelope every list endpoint returns.
