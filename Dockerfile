@@ -2,7 +2,7 @@
 # be silently repointed. The tag is kept for readability only. To bump: run
 # `docker buildx imagetools inspect <image>:<tag>` and copy the top-level
 # (multi-arch index) Digest line.
-FROM golang:1.27@sha256:f44f6e88636cfb311f9ebace870ded69d943f227bb3cb27d32ffd84ea18c43ea AS build
+FROM golang:1.27.2@sha256:820153096fda4de6ac1b7194d12e416b7dd8f4e9a33d17e0345b111b945162d8 AS build
 WORKDIR /src
 COPY go.mod go.sum ./
 RUN go mod download

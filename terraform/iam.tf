@@ -43,7 +43,7 @@ data "aws_iam_policy_document" "scheduler_assume" {
 locals {
   logs_actions = ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents"]
   lambda_log_group_arn = {
-    for name in ["hockeytrack-schedule-sync", "hockeytrack-poller", "hockeytrack-sweeper"] :
+    for name in ["hockeytrack-schedule-sync", "hockeytrack-poller", "hockeytrack-sweeper", "hockeytrack-api", "hockeytrack-indexer"] :
     name => "arn:aws:logs:${var.region}:${data.aws_caller_identity.current.account_id}:log-group:/aws/lambda/${name}:*"
   }
 }

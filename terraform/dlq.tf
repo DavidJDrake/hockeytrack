@@ -1,5 +1,7 @@
-# Three Lambda DLQs plus one for the ECR scan-findings EventBridge target
-# (ecr-alerts.tf) and one for the security alert targets (security-alarms.tf).
+# Four Lambda DLQs (the API function has none: a Function URL invocation is
+# synchronous and its failure is the caller's 5xx) plus one for the ECR
+# scan-findings EventBridge target (ecr-alerts.tf) and one for the security
+# alert targets (security-alarms.tf).
 # Every queue here gets a depth alarm from alarms.tf, which is what makes a
 # dropped security alert visible rather than merely absent.
 #
@@ -9,7 +11,7 @@
 # content on that one apply. It is cosmetic and it settles afterwards. Worth
 # knowing before assuming an unexplained IAM diff means something changed.
 resource "aws_sqs_queue" "dlq" {
-  for_each                  = toset(["schedule-sync", "poller", "sweeper", "ecr-scan-findings", "security-alerts"])
+  for_each                  = toset(["schedule-sync", "poller", "sweeper", "indexer", "ecr-scan-findings", "security-alerts"])
   name                      = "hockeytrack-${each.key}-dlq"
   message_retention_seconds = 1209600 # 14 days
 }

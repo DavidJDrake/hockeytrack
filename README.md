@@ -14,13 +14,15 @@ A serverless NHL game-data ingestion pipeline on AWS. It watches the league sche
   <img src="docs/architecture.svg" alt="HockeyTrack architecture: schedule-sync records every game in DynamoDB and creates a Scheduler entry per game; at puck drop the entry starts a game-poller that polls the NHL API every 5 seconds, archives raw JSON to S3, and publishes play events to an EventBridge bus consumed by your own rules; a sweeper restarts any poller that dies mid-game." width="960">
 </p>
 
-One Go binary, shipped as a single container image, runs in three modes selected by a `MODE` env var:
+One Go binary, shipped as a single container image, runs in five modes selected by a `MODE` env var:
 
 | Mode | Trigger | Job |
 |---|---|---|
 | `schedule-sync` | daily cron | Pull the full published season (following the API's week-to-week links), record games in DynamoDB, create/move/delete per-game Scheduler entries (handles reschedules and postponements); then archive the day's league standings and publish both site documents |
 | `poller` | per-game Scheduler entry | Poll play-by-play + boxscore every 5s, diff against a DynamoDB high-water mark, publish new events, snapshot changed JSON to S3; near the 15-minute Lambda limit it re-invokes itself and hands off (a DynamoDB lease guarantees exactly one active chain per game); at game end it runs the archive sweep |
 | `sweeper` | 5-minute rate rule | Restart any poller chain that died mid-game, detected via expired leases |
+| `indexer` | every `nhl.game.final` event, and daily | Derive one summary per finished game and one rollup per season from the archive into the index bucket (see [The API](#the-api)) |
+| `api` | HTTPS via CloudFront | Answer `api.hockeytrack.davidjdrake.com` from the archive, the index and the schedule document |
 
 The poll loop itself is runtime-agnostic — Lambda's 15-minute ceiling is handled by an injected `shouldHandOff()` callback. Point the same container at ECS/Fargate with a callback that always returns false and it simply polls a whole game in one run. That migration is a new thin entrypoint, not a rewrite.
 
@@ -43,6 +45,39 @@ The script (`site/assets/countdown.js`, ~9 KB, no dependencies) mounts a clock i
 </p>
 
 It is a static site on S3 behind CloudFront. The documents it renders are `data/schedule.json` and `data/standings.json`, which `schedule-sync` republishes every morning (the standings are a trimmed copy of `api-web.nhle.com/v1/standings/now`, whose raw response is also archived under `raw/standings/{date}.json`), so the pages stay current with reschedules and results without any manual step. Off-season, the NHL serves the previous season's final table until the first game is played, and the page labels it by that season. The pages live in `site/` and are uploaded with `make site`; the infrastructure (bucket, distribution, certificate, DNS) is `terraform/site.tf`.
+
+## The API
+
+**`https://api.hockeytrack.davidjdrake.com/v1`** is a public, read-only JSON API over the archive: the schedule with results, every archived game's summary, plays, boxscore and shift chart, the league standings on any archived day, season statistics, player cards and game logs, and a search. The description is at [`/v1/openapi.json`](https://api.hockeytrack.davidjdrake.com/v1/openapi.json); the design is in `docs/superpowers/specs/2026-10-11-query-api-design.md`.
+
+```
+GET /v1/schedule?date=today                       tonight's games, with scores once they have them
+GET /v1/schedule?team=TBL&from=2026-01-01         a team's games in a range (season, type, venue filters too)
+GET /v1/standings?division=atlantic               the NHL's own table, newest snapshot (or ?date=)
+GET /v1/games/2025020001                          header, team lines, every skater and goalie, scoring summary, three stars
+GET /v1/games/2025020001/plays?type=goal,penalty  typed plays with the NHL's details object passed through
+GET /v1/games/2025020001/shifts?player=8478402    the shift chart as rows
+GET /v1/games/2025020001/raw/pbp                  the archived feed, verbatim
+GET /v1/stats/skaters?sort=points&limit=10        leaderboards; any numeric column sorts, team/position/minGp filter
+GET /v1/stats/goalies?sort=savePct&minGp=5
+GET /v1/stats/teams?sort=goalDifferential
+GET /v1/players/8478402?season=20252026           a player's season, with per-team splits
+GET /v1/players/8478402/games                     game log
+GET /v1/teams/TBL                                 record, standings row, last result, next game
+GET /v1/search?q=kucherov                         teams, players, venues and games (ids, dates, "TBL BOS")
+```
+
+Lists take `limit` (default 100, max 1000) and `offset` and return `total`. A game still in progress is served from its newest snapshot and marked `live`. Everything is cached at the edge for as long as its `Cache-Control` says: a day for a finished game, ten seconds for a live one, five minutes for the index and the schedule, an hour for standings.
+
+**How it is served.** Two more modes of the same image. `indexer` runs on every `nhl.game.final` event (the README's own "post-game analytics" pattern, one EventBridge rule) and once a day at 10:00 UTC; it reads a game's `final/` feeds and writes a summary to the index bucket, then rebuilds the season's rollup from every summary. `api` runs behind a Lambda Function URL that only the CloudFront distribution may invoke, so the cache cannot be bypassed, and reads the raw bucket, the index bucket and the site's `data/schedule.json`. Both are read-only against the archive; the index bucket is derived data and can be rebuilt from `raw/` at any time:
+
+```bash
+make index SEASONS=20252026           # one season into the index bucket
+make index SEASONS=20102011-20242025  # a range, newest first; resumable
+go run ./cmd/api -dir ./mirror -index-dir ./index -site-dir ./site   # serve locally from mirrors
+```
+
+Everything derived from the raw feeds is decoded as untrusted: a field of an unexpected type blanks one cell, only malformed JSON fails a game, and what the API passes through unchanged (`details` on a play, everything under `/raw/`) carries the same warning as `raw` on the event bus below. Season statistics are computed from the games the archive holds, so `/v1/stats/teams` can differ from `/v1/standings`, which is the league's table; the standings endpoint is the one to cite. There is no authentication and no per-client rate limit; the security reasoning, including the concurrency the API shares with the pollers, is in the [threat model](docs/threat-model.md).
 
 ## The event contract
 
@@ -120,7 +155,9 @@ aws service-quotas request-service-quota-increase --service-code lambda --quota-
 
 This is also why `terraform/lambda.tf` sets no reserved concurrency on the poller: AWS requires 10 unreserved executions account-wide, so there is nothing to reserve until the quota is raised.
 
-Variables: `region` (default `us-east-1`), `image_tag` (set by `make deploy`), and two **required** notification variables that have no default on purpose: `alert_email` (subscribes you to CloudWatch alarms for DLQ depth — the three Lambda DLQs and the DLQ behind the ECR scan-findings EventBridge target — poller errors, and a silent sweeper (no invocations for 30 minutes, which means EventBridge Scheduler is not invoking Lambdas at all), and to ECR scan results with CRITICAL/HIGH findings) and `team_alerts` (the per-team alert rules in `terraform/notifications.tf`, see [Extending it](#extending-it)). Set `alert_email` to `""`, or a team's `email` to `""`, to opt out of that subscription; `team_alerts = {}` removes the team resources entirely. Put them in a gitignored `terraform/terraform.tfvars`, which Terraform loads automatically so `make deploy` carries them every time:
+The first deploy with the API creates a second certificate and distribution for `api.hockeytrack.davidjdrake.com` (`terraform/api.tf`; certificate validation adds a few minutes), and the index bucket starts empty: run `make index SEASONS=<current season>` once, and the indexer keeps it current from there.
+
+Variables: `region` (default `us-east-1`), `image_tag` (set by `make deploy`), `api_reserved_concurrency` (default none; see `terraform/api.tf` for why), and two **required** notification variables that have no default on purpose: `alert_email` (subscribes you to CloudWatch alarms for DLQ depth — the three Lambda DLQs and the DLQ behind the ECR scan-findings EventBridge target — poller errors, and a silent sweeper (no invocations for 30 minutes, which means EventBridge Scheduler is not invoking Lambdas at all), and to ECR scan results with CRITICAL/HIGH findings) and `team_alerts` (the per-team alert rules in `terraform/notifications.tf`, see [Extending it](#extending-it)). Set `alert_email` to `""`, or a team's `email` to `""`, to opt out of that subscription; `team_alerts = {}` removes the team resources entirely. Put them in a gitignored `terraform/terraform.tfvars`, which Terraform loads automatically so `make deploy` carries them every time:
 
 ```hcl
 alert_email = "you@example.com"
@@ -182,13 +219,17 @@ Runs are resumable and idempotent: objects already in the bucket are skipped, so
 The whole history is roughly 70,000 games, 235,000 requests, and 20 GB, which is about a day of wall time at the default pace and under $0.50/month to keep.
 
 ```
-cmd/ingestor/     entrypoint; MODE selects schedule-sync | poller | sweeper
+cmd/ingestor/     entrypoint; MODE selects schedule-sync | poller | sweeper | indexer | api
 cmd/backfill/     historical season backfill (local CLI, S3 only)
 cmd/replay/       offline replay harness (recorded snapshots or a synthesized game)
 cmd/livefire/     replay a synthesized game onto the real event bus
 cmd/analyze/      archive → CSV flattener (local CLI, reads S3 or a local mirror)
+cmd/index/        build the API's index for past seasons (local CLI, S3 or mirrors)
+cmd/api/          serve the API locally from S3 or mirrors
 site/             the website (static pages; data/*.json published by schedule-sync)
 internal/nhl/     NHL API client + captured fixtures
+internal/lake/    raw feeds → per-game summaries and season rollups (the index)
+internal/api/     the HTTP API over the archive, the index and the schedule
 internal/analyze/ final/ feeds → games/plays/shifts tables
 internal/poller/  diff logic + the runtime-agnostic poll loop
 internal/backfill/  season walk + final-feed fetch with pacing, retry, resume
