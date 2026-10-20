@@ -231,6 +231,27 @@ func TestSchedule(t *testing.T) {
 	wantStatus(t, s, "/v1/schedule?limit=0", 400)
 	wantStatus(t, s, "/v1/schedule?offset=-1", 400)
 
+	// Games the schedule document no longer lists come from the index:
+	// schedule-sync publishes from today forward, so last week's games and
+	// every past season exist only as rollup rows.
+	p = list(t, s, "/v1/schedule?season=20242025")
+	rows = items[scheduleGame](t, p)
+	if p.Total != 6 || len(rows) == 0 || rows[0].Result == nil || rows[0].Season != 20242025 || rows[0].Date != "2025-04-15" || rows[0].Away == "" || rows[0].HomeName == "" {
+		t.Fatalf("past season from the index = %d %+v", p.Total, rows)
+	}
+	away := rows[0].Away
+	p = list(t, s, "/v1/schedule?date=2025-04-15&team="+away)
+	if p.Total < 1 || items[scheduleGame](t, p)[0].Result == nil {
+		t.Errorf("past date and team from the index = %+v", p)
+	}
+	if p = list(t, s, "/v1/schedule?from=2025-04-01&to=2025-10-07"); p.Total != 8 {
+		t.Errorf("range spanning two seasons = %d, want 6 indexed + 2 scheduled", p.Total)
+	}
+	// A game in both is listed once.
+	if p = list(t, s, "/v1/schedule?date=2025-10-07"); p.Total != 1 {
+		t.Errorf("game in document and index = %d", p.Total)
+	}
+
 	// Without a schedule document the endpoint says so.
 	noSite := New(Deps{Raw: store.NewFakeArchive(), Index: store.NewFakeArchive(), Now: func() time.Time { return testNow }})
 	wantStatus(t, noSite, "/v1/schedule", 404)
