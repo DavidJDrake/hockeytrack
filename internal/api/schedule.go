@@ -134,6 +134,40 @@ func (s *Server) scheduleRows(r *http.Request, f scheduleFilter) ([]scheduleGame
 		}
 		rows = append(rows, row)
 	}
+	// schedule-sync publishes from today forward, so a game already played
+	// this season, and every game of a past season, is only in the index.
+	listed := make(map[int64]bool, len(rows))
+	for _, r := range rows {
+		listed[r.ID] = true
+	}
+	for _, season := range f.seasons(sched, s.deps.Now()) {
+		ro, seen := rollups[season]
+		if !seen {
+			ro, err = s.rollup(ctx, season)
+			if err != nil && !errors.Is(err, errNotFound) {
+				return nil, err
+			}
+			rollups[season] = ro
+		}
+		if ro == nil {
+			continue
+		}
+		for _, g := range ro.Games {
+			if listed[g.ID] {
+				continue
+			}
+			sg := schedsync.SiteGame{ID: g.ID, Date: g.Date, Start: g.Start, Away: g.Away.Abbrev, Home: g.Home.Abbrev, Type: g.Type, Venue: g.Venue}
+			if !f.keep(sg) {
+				continue
+			}
+			listed[g.ID] = true
+			rows = append(rows, scheduleGame{
+				ID: g.ID, Season: lake.SeasonOf(g.ID), Type: g.Type, Date: g.Date, Start: g.Start,
+				Away: sg.Away, Home: sg.Home, AwayName: teamName(sched, g.Away), HomeName: teamName(sched, g.Home), Venue: g.Venue,
+				Result: &gameResult{AwayScore: g.Away.Score, HomeScore: g.Home.Score, State: g.State, LastPeriodType: g.LastPeriodType, Live: g.Live},
+			})
+		}
+	}
 	sort.SliceStable(rows, func(i, j int) bool {
 		if !rows[i].Start.Equal(rows[j].Start) {
 			return rows[i].Start.Before(rows[j].Start)
@@ -141,6 +175,52 @@ func (s *Server) scheduleRows(r *http.Request, f scheduleFilter) ([]scheduleGame
 		return rows[i].ID < rows[j].ID
 	})
 	return rows, nil
+}
+
+// maxRangeSeasons caps how many seasons a from/to range pulls from the
+// index; older games are a season= query away.
+const maxRangeSeasons = 5
+
+// seasons lists the rollups that can hold games matching f: the one it
+// names, or else every season its dates and the schedule document touch.
+func (f scheduleFilter) seasons(sched *schedsync.SitePayload, now time.Time) []int64 {
+	if f.season != 0 {
+		return []int64{f.season}
+	}
+	set := map[int64]bool{lake.CurrentSeason(now): true}
+	for _, g := range sched.Games {
+		set[lake.SeasonOf(g.ID)] = true
+	}
+	for _, d := range []string{f.date, f.from, f.to} {
+		if t, err := time.Parse("2006-01-02", d); err == nil {
+			set[lake.CurrentSeason(t)] = true
+		}
+	}
+	if f.from != "" && f.to != "" {
+		a, errA := time.Parse("2006-01-02", f.from)
+		b, errB := time.Parse("2006-01-02", f.to)
+		if errA == nil && errB == nil {
+			// Bounded: each season is a rollup read, and the API is public.
+			for se, n := lake.CurrentSeason(a), 0; se < lake.CurrentSeason(b) && n < maxRangeSeasons; se, n = se+10001, n+1 {
+				set[se] = true
+			}
+		}
+	}
+	out := make([]int64, 0, len(set))
+	for se := range set {
+		out = append(out, se)
+	}
+	sort.Slice(out, func(i, j int) bool { return out[i] < out[j] })
+	return out
+}
+
+// teamName prefers the schedule document's name for a team, falling back
+// to the one the archived game carried.
+func teamName(sched *schedsync.SitePayload, t lake.TeamRef) string {
+	if n := sched.Teams[t.Abbrev]; n != "" {
+		return n
+	}
+	return t.Name
 }
 
 func resultFor(ro *lake.SeasonRollup, id int64) *gameResult {
