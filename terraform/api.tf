@@ -163,6 +163,20 @@ resource "aws_lambda_permission" "api_cloudfront" {
   function_url_auth_type = "AWS_IAM"
 }
 
+# Function URLs created since October 2025 also need lambda:InvokeFunction;
+# with only the statement above, every request CloudFront signs is refused
+# with a 403 before the function runs. invoked_via_function_url scopes this
+# grant to calls that arrive through the URL, so the distribution still
+# cannot invoke the function any other way.
+resource "aws_lambda_permission" "api_cloudfront_invoke" {
+  statement_id             = "AllowCloudFrontInvokeFunctionViaURL"
+  action                   = "lambda:InvokeFunction"
+  function_name            = aws_lambda_function.api.function_name
+  principal                = "cloudfront.amazonaws.com"
+  source_arn               = aws_cloudfront_distribution.api.arn
+  invoked_via_function_url = true
+}
+
 resource "aws_lambda_function" "indexer" {
   function_name = "hockeytrack-indexer"
   package_type  = "Image"
