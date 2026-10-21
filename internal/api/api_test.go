@@ -257,6 +257,33 @@ func TestSchedule(t *testing.T) {
 	wantStatus(t, noSite, "/v1/schedule", 404)
 }
 
+// "today" is a UTC date unless the caller names a time zone: at 02:00 UTC
+// on 8 October it is still the evening of the 7th in New York.
+func TestScheduleTimeZone(t *testing.T) {
+	s := fixture(t)
+	s.deps.Now = func() time.Time { return time.Date(2025, 10, 8, 2, 0, 0, 0, time.UTC) }
+	p := list(t, s, "/v1/schedule?date=today")
+	if p.Total != 1 || items[scheduleGame](t, p)[0].ID != 2025020002 {
+		t.Errorf("today in UTC = %+v", p)
+	}
+	p = list(t, s, "/v1/schedule?date=today&tz=America/New_York")
+	if p.Total != 1 || items[scheduleGame](t, p)[0].ID != 2025020001 {
+		t.Errorf("today in New York = %+v", p)
+	}
+	if p = list(t, s, "/v1/schedule?from=today&to=today&tz=America/New_York"); p.Total != 1 {
+		t.Errorf("from/to today in New York = %d", p.Total)
+	}
+	// An explicit date is a date; tz does not shift it.
+	p = list(t, s, "/v1/schedule?date=2025-10-08&tz=Pacific/Kiritimati")
+	if p.Total != 1 || items[scheduleGame](t, p)[0].ID != 2025020002 {
+		t.Errorf("explicit date with tz = %+v", p)
+	}
+	for _, bad := range []string{"Mars/Olympus", "../../etc/passwd", "Local", "/usr/share/zoneinfo/UTC", strings.Repeat("A", 65)} {
+		wantStatus(t, s, "/v1/schedule?date=today&tz="+bad, 400)
+	}
+	wantStatus(t, s, "/v1/standings?date=today&tz=Nowhere/Here", 400)
+}
+
 func TestTeams(t *testing.T) {
 	s := fixture(t)
 	p := list(t, s, "/v1/teams")
