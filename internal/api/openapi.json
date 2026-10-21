@@ -12,6 +12,7 @@
     "/v1/seasons/{season}": {"get": {"summary": "One season's extent", "parameters": [{"$ref": "#/components/parameters/seasonPath"}], "responses": {"200": {"description": "games, finalGames, firstDate, lastDate, teams, skaters, goalies"}, "404": {"description": "Season not indexed"}}}},
     "/v1/schedule": {"get": {"summary": "Games, past and future", "description": "From the published season schedule. Finished and live games carry a result. date=today is honored.", "parameters": [
       {"name": "date", "in": "query", "schema": {"type": "string", "format": "date"}, "description": "YYYY-MM-DD or today"},
+      {"$ref": "#/components/parameters/tz"},
       {"name": "from", "in": "query", "schema": {"type": "string", "format": "date"}},
       {"name": "to", "in": "query", "schema": {"type": "string", "format": "date"}},
       {"$ref": "#/components/parameters/team"}, {"$ref": "#/components/parameters/season"},
@@ -24,11 +25,12 @@
     "/v1/teams/{team}/games": {"get": {"summary": "A team's games with results", "parameters": [{"$ref": "#/components/parameters/teamPath"}, {"$ref": "#/components/parameters/season"}, {"$ref": "#/components/parameters/type"}, {"$ref": "#/components/parameters/limit"}, {"$ref": "#/components/parameters/offset"}], "responses": {"200": {"description": "List of schedule rows"}}}},
     "/v1/teams/{team}/roster": {"get": {"summary": "Everyone who dressed for the team that season", "parameters": [{"$ref": "#/components/parameters/teamPath"}, {"$ref": "#/components/parameters/season"}], "responses": {"200": {"description": "List of {playerId, name, number, position, gp, ...}"}}}},
     "/v1/standings": {"get": {"summary": "The NHL's standings", "description": "The league's own table as archived each morning; the newest snapshot by default, or the newest on or before a date.", "parameters": [
-      {"name": "date", "in": "query", "schema": {"type": "string", "format": "date"}},
+      {"name": "date", "in": "query", "schema": {"type": "string", "format": "date"}, "description": "YYYY-MM-DD or today"},
+      {"$ref": "#/components/parameters/tz"},
       {"name": "conference", "in": "query", "schema": {"type": "string"}, "description": "Eastern or Western"},
       {"name": "division", "in": "query", "schema": {"type": "string"}, "description": "Atlantic, Metropolitan, Central or Pacific"}],
       "responses": {"200": {"description": "date, season, archived, total, items[]"}}}},
-    "/v1/games": {"get": {"summary": "Games the index holds, with results", "parameters": [{"$ref": "#/components/parameters/season"}, {"name": "date", "in": "query", "schema": {"type": "string", "format": "date"}}, {"$ref": "#/components/parameters/team"}, {"$ref": "#/components/parameters/type"}, {"$ref": "#/components/parameters/limit"}, {"$ref": "#/components/parameters/offset"}], "responses": {"200": {"description": "List of game rows"}}}},
+    "/v1/games": {"get": {"summary": "Games the index holds, with results", "parameters": [{"$ref": "#/components/parameters/season"}, {"name": "date", "in": "query", "schema": {"type": "string", "format": "date"}, "description": "YYYY-MM-DD or today"}, {"$ref": "#/components/parameters/tz"}, {"$ref": "#/components/parameters/team"}, {"$ref": "#/components/parameters/type"}, {"$ref": "#/components/parameters/limit"}, {"$ref": "#/components/parameters/offset"}], "responses": {"200": {"description": "List of game rows"}}}},
     "/v1/games/{id}": {"get": {"summary": "A game's summary", "description": "Header, both teams' lines, every skater and goalie line, the scoring summary and three stars. A game in progress is built from its newest snapshot and marked live.", "parameters": [{"$ref": "#/components/parameters/gameId"}], "responses": {"200": {"description": "GameSummary"}, "404": {"description": "Not in the archive"}, "502": {"description": "The archived feed is unreadable"}}}},
     "/v1/games/{id}/plays": {"get": {"summary": "A game's plays", "description": "Typed plays in the NHL's order. type takes a comma-separated list (goal, shot-on-goal, penalty, faceoff, hit, blocked-shot, missed-shot, giveaway, takeaway, stoppage, period-start, period-end, game-end). player matches any role on the play.", "parameters": [{"$ref": "#/components/parameters/gameId"},
       {"name": "type", "in": "query", "schema": {"type": "string"}}, {"$ref": "#/components/parameters/team"},
@@ -55,6 +57,7 @@
   },
   "components": {
     "parameters": {
+      "tz": {"name": "tz", "in": "query", "schema": {"type": "string", "example": "America/New_York"}, "description": "IANA time zone in which date=today (and from/to=today) is reckoned. Defaults to UTC; never shifts an explicit YYYY-MM-DD."},
       "season": {"name": "season", "in": "query", "schema": {"type": "integer", "example": 20252026}, "description": "Defaults to the newest indexed season"},
       "seasonPath": {"name": "season", "in": "path", "required": true, "schema": {"type": "integer", "example": 20252026}},
       "team": {"name": "team", "in": "query", "schema": {"type": "string", "example": "TBL"}},

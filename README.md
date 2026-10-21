@@ -51,7 +51,8 @@ It is a static site on S3 behind CloudFront. The documents it renders are `data/
 **`https://api.hockeytrack.davidjdrake.com/v1`** is a public, read-only JSON API over the archive: the schedule with results, every archived game's summary, plays, boxscore and shift chart, the league standings on any archived day, season statistics, player cards and game logs, and a search. The description is at [`/v1/openapi.json`](https://api.hockeytrack.davidjdrake.com/v1/openapi.json); the design is in `docs/superpowers/specs/2026-10-11-query-api-design.md`.
 
 ```
-GET /v1/schedule?date=today                       tonight's games, with scores once they have them
+GET /v1/schedule?date=today                       today's games (UTC date), with scores once they have them
+GET /v1/schedule?date=today&tz=America/New_York   "today" reckoned in any IANA zone (also on /v1/games, /v1/standings)
 GET /v1/schedule?team=TBL&from=2026-01-01         a team's games in a range (season, type, venue filters too)
 GET /v1/standings?division=atlantic               the NHL's own table, newest snapshot (or ?date=)
 GET /v1/games/2025020001                          header, team lines, every skater and goalie, scoring summary, three stars

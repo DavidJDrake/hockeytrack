@@ -9,6 +9,9 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	// The zone database is compiled in, so tz= does not depend on the
+	// image carrying /usr/share/zoneinfo (~450 KB).
+	_ "time/tzdata"
 )
 
 // Cache lifetimes, sent as Cache-Control so CloudFront and any client cache
@@ -182,13 +185,37 @@ func queryDate(r *http.Request, key string, now time.Time) (string, bool, error)
 	if v == "" {
 		return "", false, nil
 	}
+	loc, err := queryLocation(r)
+	if err != nil {
+		return "", false, err
+	}
 	if v == "today" {
-		return now.UTC().Format("2006-01-02"), true, nil
+		return now.In(loc).Format("2006-01-02"), true, nil
 	}
 	if _, err := time.Parse("2006-01-02", v); err != nil {
 		return "", false, badRequest("%s must be a date (YYYY-MM-DD)", key)
 	}
 	return v, true, nil
+}
+
+// queryLocation reads the optional tz parameter: the IANA zone (such as
+// America/New_York) in which "today" is reckoned. Without it, today is the
+// UTC date. It never shifts an explicit YYYY-MM-DD. "Local" and anything
+// path-like are refused, so the answer cannot depend on the server.
+func queryLocation(r *http.Request) (*time.Location, error) {
+	v := r.URL.Query().Get("tz")
+	if v == "" {
+		return time.UTC, nil
+	}
+	bad := badRequest("tz must be an IANA time zone such as America/New_York")
+	if len(v) > 64 || v == "Local" || strings.HasPrefix(v, "/") || strings.Contains(v, "..") || strings.Contains(v, "\\") {
+		return nil, bad
+	}
+	loc, err := time.LoadLocation(v)
+	if err != nil {
+		return nil, bad
+	}
+	return loc, nil
 }
 
 // queryTeam reads an optional team abbreviation, upper-cased. Abbreviations
